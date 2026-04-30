@@ -15,6 +15,11 @@ export const faqItems: FaqItem[] = [
       "No. Las URLs que mostramos apuntan a servicios públicos de favicons de Google y DuckDuckGo. No hace falta cuenta ni clave para armar el enlace; solo reemplazá el dominio por el de la entidad.",
   },
   {
+    question: "¿Hay un api?",
+    answer:
+      "Sí. Tenés disponible `GET /api/logos` para consultar entidades y filtrar por `q`, `domain` y `category` (opcional), con `limit` y `offset` para paginar. La documentación y ejemplos están en `/docs`.",
+  },
+  {
     question: "¿Cuál es la diferencia entre Google y DuckDuckGo?",
     answer:
       "Ambos resuelven un favicon a partir del dominio. Google suele devolver PNG según el parámetro de tamaño (sz). DuckDuckGo entrega .ico en una ruta fija. Podés probar ambos y quedarte con el que mejor se vea en tu app u hoja de cálculo.",

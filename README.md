@@ -7,6 +7,8 @@ La app permite:
 - filtrar por categoría,
 - previsualizar y copiar endpoints/curls de Google y DuckDuckGo.
 
+Documentación de API disponible en [`/docs`](http://localhost:3000/docs) al correr la app localmente.
+
 ## Stack
 
 - Next.js 16 (App Router)
