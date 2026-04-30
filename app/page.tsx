@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Search, Code, Zap, Building2, Wallet, TrendingUp } from "lucide-react"
 import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import { CategorySection } from "@/components/category-section"
 import { ConfigPanel } from "@/components/config-panel"
 import { ConfigProvider } from "@/lib/config-context"
@@ -17,6 +18,7 @@ const categoryIcons: Record<string, React.ElementType> = {
 function HomeContent() {
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
+  const [showConfig, setShowConfig] = useState(false)
 
   const filteredCategories: Category[] = categories
     .map((category) => ({
@@ -125,7 +127,22 @@ function HomeContent() {
       {/* Config Panel */}
       <div className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          <ConfigPanel />
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-sm text-muted-foreground">Parámetros de endpoints</p>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => setShowConfig((prev) => !prev)}
+            >
+              {showConfig ? "Ocultar configuración" : "Mostrar configuración"}
+            </Button>
+          </div>
+          {showConfig && (
+            <div className="mt-4">
+              <ConfigPanel />
+            </div>
+          )}
         </div>
       </div>
 
