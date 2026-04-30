@@ -73,6 +73,15 @@ export const categories: Category[] = [
       { id: 49, name: "SBS Trading", domain: "www.gruposbs.com" },
     ],
   },
+  {
+    id: "entes-estatales",
+    name: "Entes estatales",
+    description: "Organismos públicos con servicios fiscales y tributarios",
+    entities: [
+      { id: 61, name: "ARCA (ex AFIP)", domain: "www.afip.gob.ar" },
+      { id: 62, name: "AGIP", domain: "www.agip.gob.ar" },
+    ],
+  },
 ]
 
 export function getGoogleFaviconUrl(domain: string, size: number = 128): string {
