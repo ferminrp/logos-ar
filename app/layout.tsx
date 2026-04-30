@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     locale: 'es_AR',
     images: [
       {
-        url: '/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: 'Logos Argentina - Directorio de Favicons',
+        url: '/og-image.jpg',
+        width: 1024,
+        height: 682,
+        alt: 'Logos Argentina',
       },
     ],
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Logos Argentina - Directorio de Favicons',
     description: 'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.',
-    images: ['/twitter-image'],
+    images: ['/og-image.jpg'],
   },
   icons: {
     icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇦🇷</text></svg>',
