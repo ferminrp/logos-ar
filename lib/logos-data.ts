@@ -213,7 +213,6 @@ export const categories: Category[] = [
       { id: 182, name: "Grimoldi", domain: "grimoldi.com" },
       { id: 183, name: "Cheeky", domain: "cheeky.com.ar" },
       { id: 184, name: "Mimo", domain: "mimo.com.ar" },
-      { id: 185, name: "Todomoda", domain: "ar.todomoda.com" },
       { id: 186, name: "Markova", domain: "markova.com" },
       { id: 187, name: "Maria Cher", domain: "maria-cher.com.ar" },
     ],
@@ -255,7 +254,6 @@ export const categories: Category[] = [
     description: "Distribuidoras y empresas del sector energético",
     entities: [
       { id: 211, name: "Edenor", domain: "edenor.com" },
-      { id: 212, name: "Edesur", domain: "www.edesur.com.ar" },
       { id: 213, name: "Camuzzi Gas", domain: "camuzzigas.com" },
       { id: 214, name: "Metrogas", domain: "metrogas.com.ar" },
       { id: 215, name: "Pampa Energía", domain: "pampaenergia.com" },
