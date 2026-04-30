@@ -8,11 +8,41 @@ import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  process.env.NEXT_PUBLIC_APP_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? process.env.VERCEL_PROJECT_PRODUCTION_URL.startsWith('http')
+      ? process.env.VERCEL_PROJECT_PRODUCTION_URL
+      : `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : null) ??
+  'https://logos-ar.vercel.app'
 
 export const metadata: Metadata = {
   title: 'Logos Argentina - Directorio de Favicons',
   description: 'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.',
   generator: 'v0.app',
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: 'Logos Argentina - Directorio de Favicons',
+    description: 'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.',
+    type: 'website',
+    locale: 'es_AR',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Logos Argentina - Directorio de Favicons',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Logos Argentina - Directorio de Favicons',
+    description: 'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.',
+    images: ['/twitter-image'],
+  },
   icons: {
     icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇦🇷</text></svg>',
   },
