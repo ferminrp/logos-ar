@@ -56,7 +56,6 @@ export const categories: Category[] = [
       { id: 37, name: "Cocos", domain: "cocos.capital" },
       { id: 38, name: "Claro Pay", domain: "claropay.com.ar" },
       { id: 39, name: "Astropay", domain: "astropay.com" },
-      { id: 40, name: "Nubi", domain: "nubi.com" },
     ],
   },
   {
