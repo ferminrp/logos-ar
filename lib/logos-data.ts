@@ -73,7 +73,7 @@ export const categories: Category[] = [
       { id: 42, name: "Balanz", domain: "balanz.com" },
       { id: 43, name: "Allaria", domain: "allaria.com.ar" },
       { id: 44, name: "Bull Market Brokers", domain: "bullmarketbrokers.com" },
-      { id: 46, name: "IEB (Invertir en Bolsa)", domain: "invertirenbolsa.com.ar" },
+      { id: 46, name: "IEB (Invertir en Bolsa)", domain: "www.iebmas.com.ar" },
       { id: 47, name: "Cohen Aliados", domain: "cohen.com.ar" },
       { id: 49, name: "SBS Trading", domain: "www.gruposbs.com" },
     ],
