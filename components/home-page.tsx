@@ -14,6 +14,11 @@ import {
   Car,
   UtensilsCrossed,
   Fuel,
+  Shield,
+  Shirt,
+  Bike,
+  Plane,
+  Lightbulb,
 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -32,6 +37,11 @@ const categoryIcons: Record<string, React.ElementType> = {
   automotrices: Car,
   alimentos: UtensilsCrossed,
   combustibles: Fuel,
+  seguros: Shield,
+  indumentaria: Shirt,
+  delivery: Bike,
+  turismo: Plane,
+  energia: Lightbulb,
 }
 
 export function HomePage() {
