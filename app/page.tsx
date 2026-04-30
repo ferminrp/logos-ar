@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Search, Code, Zap, Building2, Wallet, TrendingUp, Landmark } from "lucide-react"
+import { Search, Code, Zap, Building2, Wallet, TrendingUp, Landmark, Store, Newspaper, Car, UtensilsCrossed } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { CategorySection } from "@/components/category-section"
@@ -14,6 +14,10 @@ const categoryIcons: Record<string, React.ElementType> = {
   fintechs: Wallet,
   alycs: TrendingUp,
   "entes-estatales": Landmark,
+  retail: Store,
+  medios: Newspaper,
+  automotrices: Car,
+  alimentos: UtensilsCrossed,
 }
 
 function HomeContent() {
