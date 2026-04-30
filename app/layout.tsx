@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Script from 'next/script'
+import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
+import { SiteNavbar } from '@/components/site-navbar'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -26,6 +28,9 @@ export default function RootLayout({
   return (
     <html lang="es" className="bg-background">
       <body className="font-sans antialiased">
+        <Suspense fallback={null}>
+          <SiteNavbar />
+        </Suspense>
         {children}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}

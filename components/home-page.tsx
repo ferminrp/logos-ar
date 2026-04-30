@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import { useSearchParams } from "next/navigation"
 import {
-  Search,
   Code,
   Zap,
   Building2,
@@ -20,7 +20,6 @@ import {
   Plane,
   Lightbulb,
 } from "lucide-react"
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { CategorySection } from "@/components/category-section"
 import { ConfigPanel } from "@/components/config-panel"
@@ -45,7 +44,8 @@ const categoryIcons: Record<string, React.ElementType> = {
 }
 
 export function HomePage() {
-  const [searchQuery, setSearchQuery] = useState("")
+  const searchParams = useSearchParams()
+  const searchQuery = (searchParams.get("q") ?? "").trim()
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [showConfig, setShowConfig] = useState(false)
 
@@ -70,30 +70,9 @@ export function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <h1 className="text-xl font-bold text-foreground sm:text-2xl">
-                Logos Argentina
-              </h1>
-              <p className="text-sm text-muted-foreground">
-                {"¿Sabías que hay APIs gratuitas de logos?"}
-              </p>
-            </div>
-            <div className="relative w-full sm:w-72">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Buscar por nombre o dominio..."
-                className="pl-9"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setActiveCategory(null)}
               className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
@@ -130,7 +109,7 @@ export function HomePage() {
             })}
           </div>
         </div>
-      </header>
+      </div>
 
       <div className="border-b border-border bg-card">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
