@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
 import { SiteNavbar } from '@/components/site-navbar'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -56,12 +57,19 @@ export default function RootLayout({
   const gaMeasurementId = 'G-GZLZ092Z7S'
 
   return (
-    <html lang="es" className="bg-background">
+    <html lang="es" suppressHydrationWarning>
       <body className="font-sans antialiased">
-        <Suspense fallback={null}>
-          <SiteNavbar />
-        </Suspense>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Suspense fallback={null}>
+            <SiteNavbar />
+          </Suspense>
+          {children}
+        </ThemeProvider>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
           strategy="afterInteractive"
