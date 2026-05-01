@@ -1,6 +1,6 @@
 {
-  "version": "c3cad38cde6b",
-  "totalItems": 151,
+  "version": "70b5da4f6752",
+  "totalItems": 158,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -235,14 +235,6 @@
       "categoryName": "Fintechs"
     },
     {
-      "name": "Cocos",
-      "domain": "cocos.capital",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cocos.capital&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/cocos.capital.ico",
-      "categoryId": "fintechs",
-      "categoryName": "Fintechs"
-    },
-    {
       "name": "Claro Pay",
       "domain": "claropay.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=claropay.com.ar&sz=128",
@@ -323,6 +315,38 @@
       "categoryName": "Fintechs"
     },
     {
+      "name": "Wise",
+      "domain": "wise.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=wise.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/wise.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Payoneer",
+      "domain": "payoneer.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=payoneer.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/payoneer.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Pomelo",
+      "domain": "pomelo.la",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pomelo.la&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pomelo.la.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Tapi",
+      "domain": "tapi.la",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tapi.la&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/tapi.la.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
       "name": "Invertir Online (IOL)",
       "domain": "invertironline.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=invertironline.com&sz=128",
@@ -355,6 +379,14 @@
       "categoryName": "ALyCs"
     },
     {
+      "name": "PPI",
+      "domain": "ppi.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ppi.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ppi.com.ar.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
       "name": "IEB (Invertir en Bolsa)",
       "domain": "www.iebmas.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.iebmas.com.ar&sz=128",
@@ -379,6 +411,14 @@
       "categoryName": "ALyCs"
     },
     {
+      "name": "Cocos",
+      "domain": "cocos.capital",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cocos.capital&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cocos.capital.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
       "name": "ARCA (ex AFIP)",
       "domain": "www.afip.gob.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.afip.gob.ar&sz=128",
@@ -391,6 +431,22 @@
       "domain": "www.agip.gob.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.agip.gob.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.agip.gob.ar.ico",
+      "categoryId": "entes-estatales",
+      "categoryName": "Entes estatales"
+    },
+    {
+      "name": "BCRA",
+      "domain": "bcra.gob.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bcra.gob.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bcra.gob.ar.ico",
+      "categoryId": "entes-estatales",
+      "categoryName": "Entes estatales"
+    },
+    {
+      "name": "CNV",
+      "domain": "cnv.gob.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cnv.gob.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cnv.gob.ar.ico",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales"
     },

@@ -53,7 +53,6 @@ export const categories: Category[] = [
       { id: 32, name: "Buenbit", domain: "buenbit.com" },
       { id: 34, name: "Carrefour Banco", domain: "www.bancodeserviciosfinancieros.com.ar" },
       { id: 35, name: "Openbank", domain: "openbank.com.ar" },
-      { id: 37, name: "Cocos", domain: "cocos.capital" },
       { id: 38, name: "Claro Pay", domain: "claropay.com.ar" },
       { id: 39, name: "Astropay", domain: "astropay.com" },
       { id: 63, name: "MODO", domain: "www.modo.com.ar" },
@@ -64,6 +63,10 @@ export const categories: Category[] = [
       { id: 69, name: "Coinbase", domain: "coinbase.com" },
       { id: 70, name: "Roxom", domain: "roxom.com" },
       { id: 71, name: "Berry", domain: "berryinvesting.com" },
+      { id: 72, name: "Wise", domain: "wise.com" },
+      { id: 74, name: "Payoneer", domain: "payoneer.com" },
+      { id: 75, name: "Pomelo", domain: "pomelo.la" },
+      { id: 76, name: "Tapi", domain: "tapi.la" },
     ],
   },
   {
@@ -75,9 +78,11 @@ export const categories: Category[] = [
       { id: 42, name: "Balanz", domain: "balanz.com" },
       { id: 43, name: "Allaria", domain: "allaria.com.ar" },
       { id: 44, name: "Bull Market Brokers", domain: "bullmarketbrokers.com" },
+      { id: 45, name: "PPI", domain: "ppi.com.ar" },
       { id: 46, name: "IEB (Invertir en Bolsa)", domain: "www.iebmas.com.ar" },
       { id: 47, name: "Cohen Aliados", domain: "cohen.com.ar" },
       { id: 49, name: "SBS Trading", domain: "www.gruposbs.com" },
+      { id: 37, name: "Cocos", domain: "cocos.capital" },
     ],
   },
   {
@@ -87,6 +92,8 @@ export const categories: Category[] = [
     entities: [
       { id: 61, name: "ARCA (ex AFIP)", domain: "www.afip.gob.ar" },
       { id: 62, name: "AGIP", domain: "www.agip.gob.ar" },
+      { id: 65, name: "BCRA", domain: "bcra.gob.ar" },
+      { id: 73, name: "CNV", domain: "cnv.gob.ar" },
     ],
   },
   {
