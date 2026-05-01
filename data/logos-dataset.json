@@ -1,0 +1,1214 @@
+{
+  "version": "c3cad38cde6b",
+  "totalItems": 151,
+  "items": [
+    {
+      "name": "Banco de la Nación Argentina",
+      "domain": "bna.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bna.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bna.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Santander Río",
+      "domain": "santander.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=santander.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/santander.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "BBVA Argentina",
+      "domain": "bbva.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bbva.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bbva.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Galicia",
+      "domain": "www.galicia.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.galicia.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.galicia.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Macro",
+      "domain": "macro.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=macro.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/macro.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Provincia (Bs. As.)",
+      "domain": "bancoprovincia.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancoprovincia.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bancoprovincia.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Ciudad",
+      "domain": "bancociudad.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancociudad.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bancociudad.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Patagonia",
+      "domain": "bancopatagonia.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancopatagonia.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bancopatagonia.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Hipotecario",
+      "domain": "hipotecario.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=hipotecario.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/hipotecario.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Supervielle",
+      "domain": "www.supervielle.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.supervielle.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.supervielle.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Comafi",
+      "domain": "www.comafi.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.comafi.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.comafi.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Piano",
+      "domain": "www.bancopiano.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.bancopiano.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.bancopiano.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco de Corrientes (BANCOR)",
+      "domain": "bancor.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancor.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bancor.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "BPN (Banco Provincia de Neuquén)",
+      "domain": "www.bpn.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.bpn.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.bpn.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Naranja X",
+      "domain": "naranjax.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=naranjax.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/naranjax.com.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Brubank",
+      "domain": "brubank.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=brubank.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/brubank.com.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Uilo Bank (ex Wilobank)",
+      "domain": "uilo.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=uilo.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/uilo.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Ualá",
+      "domain": "uala.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=uala.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/uala.com.ar.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Mercado Pago",
+      "domain": "mercadopago.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=mercadopago.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/mercadopago.com.ar.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Belo",
+      "domain": "belo.app",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=belo.app&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/belo.app.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Lemon Cash",
+      "domain": "lemon.me",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=lemon.me&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/lemon.me.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Personal Pay",
+      "domain": "www.personal.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.personal.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.personal.com.ar.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Prex",
+      "domain": "prex.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=prex.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/prex.com.ar.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "ARQ",
+      "domain": "www.arqfinance.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.arqfinance.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.arqfinance.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Fiwind",
+      "domain": "fiwind.io",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=fiwind.io&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/fiwind.io.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Ripio",
+      "domain": "ripio.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ripio.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ripio.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Buenbit",
+      "domain": "buenbit.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=buenbit.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/buenbit.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Carrefour Banco",
+      "domain": "www.bancodeserviciosfinancieros.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.bancodeserviciosfinancieros.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.bancodeserviciosfinancieros.com.ar.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Openbank",
+      "domain": "openbank.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=openbank.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/openbank.com.ar.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Cocos",
+      "domain": "cocos.capital",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cocos.capital&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cocos.capital.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Claro Pay",
+      "domain": "claropay.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=claropay.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/claropay.com.ar.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Astropay",
+      "domain": "astropay.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=astropay.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/astropay.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "MODO",
+      "domain": "www.modo.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.modo.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.modo.com.ar.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Binance",
+      "domain": "binance.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=binance.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/binance.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Nexo",
+      "domain": "nexo.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nexo.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/nexo.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "OKX",
+      "domain": "okx.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=okx.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/okx.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Kraken",
+      "domain": "kraken.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=kraken.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/kraken.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Coinbase",
+      "domain": "coinbase.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=coinbase.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/coinbase.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Roxom",
+      "domain": "roxom.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=roxom.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/roxom.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Berry",
+      "domain": "berryinvesting.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=berryinvesting.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/berryinvesting.com.ico",
+      "categoryId": "fintechs",
+      "categoryName": "Fintechs"
+    },
+    {
+      "name": "Invertir Online (IOL)",
+      "domain": "invertironline.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=invertironline.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/invertironline.com.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
+      "name": "Balanz",
+      "domain": "balanz.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=balanz.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/balanz.com.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
+      "name": "Allaria",
+      "domain": "allaria.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=allaria.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/allaria.com.ar.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
+      "name": "Bull Market Brokers",
+      "domain": "bullmarketbrokers.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bullmarketbrokers.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bullmarketbrokers.com.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
+      "name": "IEB (Invertir en Bolsa)",
+      "domain": "www.iebmas.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.iebmas.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.iebmas.com.ar.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
+      "name": "Cohen Aliados",
+      "domain": "cohen.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cohen.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cohen.com.ar.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
+      "name": "SBS Trading",
+      "domain": "www.gruposbs.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.gruposbs.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.gruposbs.com.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
+      "name": "ARCA (ex AFIP)",
+      "domain": "www.afip.gob.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.afip.gob.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.afip.gob.ar.ico",
+      "categoryId": "entes-estatales",
+      "categoryName": "Entes estatales"
+    },
+    {
+      "name": "AGIP",
+      "domain": "www.agip.gob.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.agip.gob.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.agip.gob.ar.ico",
+      "categoryId": "entes-estatales",
+      "categoryName": "Entes estatales"
+    },
+    {
+      "name": "Mercado Libre",
+      "domain": "mercadolibre.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=mercadolibre.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/mercadolibre.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Carrefour",
+      "domain": "carrefour.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=carrefour.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/carrefour.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Frávega",
+      "domain": "fravega.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=fravega.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/fravega.com.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Coto",
+      "domain": "coto.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=coto.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/coto.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Jumbo",
+      "domain": "jumbo.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=jumbo.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/jumbo.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Disco",
+      "domain": "disco.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=disco.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/disco.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Vea",
+      "domain": "vea.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=vea.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/vea.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "La Anónima",
+      "domain": "laanonima.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=laanonima.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/laanonima.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Supermercados DIA",
+      "domain": "supermercadosdia.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=supermercadosdia.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/supermercadosdia.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Hiper Libertad",
+      "domain": "hiperlibertad.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=hiperlibertad.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/hiperlibertad.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Makro",
+      "domain": "makro.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=makro.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/makro.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Farmacity",
+      "domain": "farmacity.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=farmacity.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/farmacity.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Easy",
+      "domain": "easy.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=easy.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/easy.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "ChangoMas",
+      "domain": "changomas.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=changomas.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/changomas.com.ar.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Garbarino",
+      "domain": "garbarino.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=garbarino.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/garbarino.com.ico",
+      "categoryId": "retail",
+      "categoryName": "Retail"
+    },
+    {
+      "name": "Infobae",
+      "domain": "infobae.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=infobae.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/infobae.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "La Nación",
+      "domain": "lanacion.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=lanacion.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/lanacion.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "TN (Todo Noticias)",
+      "domain": "tn.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tn.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/tn.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Clarín",
+      "domain": "clarin.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=clarin.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/clarin.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "El Cronista",
+      "domain": "cronista.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cronista.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cronista.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Página/12",
+      "domain": "pagina12.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pagina12.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pagina12.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Perfil",
+      "domain": "perfil.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=perfil.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/perfil.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Ámbito Financiero",
+      "domain": "ambito.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ambito.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ambito.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "El Destape",
+      "domain": "www.eldestapeweb.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.eldestapeweb.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.eldestapeweb.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "La Voz del Interior",
+      "domain": "lavoz.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=lavoz.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/lavoz.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "La Gaceta (Tucumán)",
+      "domain": "lagaceta.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=lagaceta.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/lagaceta.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Diario UNO",
+      "domain": "diariouno.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=diariouno.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/diariouno.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Crónica",
+      "domain": "cronica.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cronica.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cronica.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Los Andes (Mendoza)",
+      "domain": "losandes.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=losandes.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/losandes.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "La Capital",
+      "domain": "www.lacapital.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.lacapital.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.lacapital.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Toyota",
+      "domain": "toyota.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=toyota.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/toyota.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Volkswagen",
+      "domain": "volkswagen.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=volkswagen.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/volkswagen.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Fiat",
+      "domain": "fiat.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=fiat.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/fiat.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Renault",
+      "domain": "renault.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=renault.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/renault.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Peugeot",
+      "domain": "peugeot.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=peugeot.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/peugeot.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Ford",
+      "domain": "ford.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ford.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ford.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Chevrolet",
+      "domain": "chevrolet.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=chevrolet.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/chevrolet.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Citroën",
+      "domain": "citroen.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=citroen.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/citroen.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Jeep",
+      "domain": "jeep.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=jeep.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/jeep.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Nissan",
+      "domain": "nissan.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nissan.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/nissan.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Hyundai",
+      "domain": "hyundai.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=hyundai.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/hyundai.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Honda",
+      "domain": "honda.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=honda.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/honda.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Kia",
+      "domain": "www.kia.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.kia.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.kia.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Chery",
+      "domain": "chery.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=chery.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/chery.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "BYD",
+      "domain": "byd.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=byd.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/byd.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Suzuki",
+      "domain": "suzuki.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=suzuki.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/suzuki.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Mercedes-Benz",
+      "domain": "mercedes-benz.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=mercedes-benz.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/mercedes-benz.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "BMW",
+      "domain": "bmw.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bmw.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bmw.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Audi",
+      "domain": "audi.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=audi.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/audi.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Arcor",
+      "domain": "arcor.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=arcor.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/arcor.com.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "Molinos Río de la Plata",
+      "domain": "molinos.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=molinos.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/molinos.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "La Serenísima (Mastellone)",
+      "domain": "laserenisima.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=laserenisima.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/laserenisima.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "Nestlé",
+      "domain": "nestle.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nestle.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/nestle.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "Unilever",
+      "domain": "unilever.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=unilever.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/unilever.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "Mondelez",
+      "domain": "mondelezinternational.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=mondelezinternational.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/mondelezinternational.com.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "Grupo Bimbo",
+      "domain": "grupobimbo.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=grupobimbo.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/grupobimbo.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "Cervecería Quilmes",
+      "domain": "quilmes.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=quilmes.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/quilmes.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "Havanna",
+      "domain": "www.tienda.havanna.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.tienda.havanna.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.tienda.havanna.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "Molino Cañuelas",
+      "domain": "molinocanuelas.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=molinocanuelas.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/molinocanuelas.com.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "Ledesma",
+      "domain": "ledesma.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ledesma.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ledesma.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos"
+    },
+    {
+      "name": "YPF",
+      "domain": "ypf.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ypf.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ypf.com.ico",
+      "categoryId": "combustibles",
+      "categoryName": "Combustibles"
+    },
+    {
+      "name": "Shell",
+      "domain": "shell.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=shell.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/shell.com.ar.ico",
+      "categoryId": "combustibles",
+      "categoryName": "Combustibles"
+    },
+    {
+      "name": "AXION energy",
+      "domain": "axionenergy.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=axionenergy.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/axionenergy.com.ico",
+      "categoryId": "combustibles",
+      "categoryName": "Combustibles"
+    },
+    {
+      "name": "Esso",
+      "domain": "esso.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=esso.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/esso.com.ico",
+      "categoryId": "combustibles",
+      "categoryName": "Combustibles"
+    },
+    {
+      "name": "Gulf",
+      "domain": "gulfcombustibles.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=gulfcombustibles.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/gulfcombustibles.com.ico",
+      "categoryId": "combustibles",
+      "categoryName": "Combustibles"
+    },
+    {
+      "name": "Puma Energy",
+      "domain": "pumaenergyarg.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pumaenergyarg.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pumaenergyarg.com.ar.ico",
+      "categoryId": "combustibles",
+      "categoryName": "Combustibles"
+    },
+    {
+      "name": "Oil Combustibles",
+      "domain": "oilcombustibles.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=oilcombustibles.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/oilcombustibles.com.ico",
+      "categoryId": "combustibles",
+      "categoryName": "Combustibles"
+    },
+    {
+      "name": "Federación Patronal Seguros",
+      "domain": "fedpat.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=fedpat.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/fedpat.com.ar.ico",
+      "categoryId": "seguros",
+      "categoryName": "Seguros"
+    },
+    {
+      "name": "Sancor Seguros",
+      "domain": "sancorseguros.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=sancorseguros.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/sancorseguros.com.ar.ico",
+      "categoryId": "seguros",
+      "categoryName": "Seguros"
+    },
+    {
+      "name": "La Segunda Seguros",
+      "domain": "lasegunda.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=lasegunda.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/lasegunda.com.ar.ico",
+      "categoryId": "seguros",
+      "categoryName": "Seguros"
+    },
+    {
+      "name": "San Cristóbal Seguros",
+      "domain": "sancristobal.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=sancristobal.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/sancristobal.com.ar.ico",
+      "categoryId": "seguros",
+      "categoryName": "Seguros"
+    },
+    {
+      "name": "La Caja Seguros",
+      "domain": "lacaja.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=lacaja.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/lacaja.com.ar.ico",
+      "categoryId": "seguros",
+      "categoryName": "Seguros"
+    },
+    {
+      "name": "Mapfre",
+      "domain": "mapfre.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=mapfre.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/mapfre.com.ar.ico",
+      "categoryId": "seguros",
+      "categoryName": "Seguros"
+    },
+    {
+      "name": "Allianz",
+      "domain": "allianz.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=allianz.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/allianz.com.ar.ico",
+      "categoryId": "seguros",
+      "categoryName": "Seguros"
+    },
+    {
+      "name": "Provincia Seguros",
+      "domain": "provinciaseguros.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=provinciaseguros.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/provinciaseguros.com.ar.ico",
+      "categoryId": "seguros",
+      "categoryName": "Seguros"
+    },
+    {
+      "name": "Rapsodia",
+      "domain": "rapsodia.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rapsodia.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/rapsodia.com.ar.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Grimoldi",
+      "domain": "grimoldi.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=grimoldi.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/grimoldi.com.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Cheeky",
+      "domain": "cheeky.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cheeky.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cheeky.com.ar.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Mimo",
+      "domain": "mimo.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=mimo.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/mimo.com.ar.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Markova",
+      "domain": "markova.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=markova.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/markova.com.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Maria Cher",
+      "domain": "maria-cher.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=maria-cher.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/maria-cher.com.ar.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "PedidosYa",
+      "domain": "pedidosya.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pedidosya.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pedidosya.com.ar.ico",
+      "categoryId": "delivery",
+      "categoryName": "Delivery"
+    },
+    {
+      "name": "Rappi",
+      "domain": "rappi.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rappi.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/rappi.com.ar.ico",
+      "categoryId": "delivery",
+      "categoryName": "Delivery"
+    },
+    {
+      "name": "Uber Eats",
+      "domain": "ubereats.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ubereats.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ubereats.com.ico",
+      "categoryId": "delivery",
+      "categoryName": "Delivery"
+    },
+    {
+      "name": "Aerolíneas Argentinas",
+      "domain": "aerolineas.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=aerolineas.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/aerolineas.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Flybondi",
+      "domain": "flybondi.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=flybondi.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/flybondi.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "JetSMART",
+      "domain": "jetsmart.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=jetsmart.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/jetsmart.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "LATAM",
+      "domain": "latam.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=latam.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/latam.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Despegar",
+      "domain": "despegar.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=despegar.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/despegar.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Almundo",
+      "domain": "almundo.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=almundo.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/almundo.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Booking.com",
+      "domain": "booking.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=booking.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/booking.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Airbnb",
+      "domain": "airbnb.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=airbnb.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/airbnb.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Hilton",
+      "domain": "hilton.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=hilton.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/hilton.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Accor (Ibis, Novotel, etc.)",
+      "domain": "all.accor.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=all.accor.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/all.accor.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Wyndham / Howard Johnson",
+      "domain": "wyndhamhotels.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=wyndhamhotels.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/wyndhamhotels.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Hertz",
+      "domain": "hertz.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=hertz.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/hertz.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Avis",
+      "domain": "avis.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=avis.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/avis.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Dollar Rent a Car",
+      "domain": "dollar.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=dollar.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/dollar.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Edenor",
+      "domain": "edenor.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=edenor.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/edenor.com.ico",
+      "categoryId": "energia",
+      "categoryName": "Energía"
+    },
+    {
+      "name": "Camuzzi Gas",
+      "domain": "camuzzigas.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=camuzzigas.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/camuzzigas.com.ico",
+      "categoryId": "energia",
+      "categoryName": "Energía"
+    },
+    {
+      "name": "Metrogas",
+      "domain": "metrogas.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=metrogas.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/metrogas.com.ar.ico",
+      "categoryId": "energia",
+      "categoryName": "Energía"
+    },
+    {
+      "name": "Pampa Energía",
+      "domain": "pampaenergia.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pampaenergia.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pampaenergia.com.ico",
+      "categoryId": "energia",
+      "categoryName": "Energía"
+    }
+  ]
+}
