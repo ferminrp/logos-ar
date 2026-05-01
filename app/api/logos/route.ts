@@ -1,9 +1,5 @@
 import { NextResponse } from "next/server"
-import {
-  categories,
-  getDuckDuckGoFaviconUrl,
-  getGoogleFaviconUrl,
-} from "@/lib/logos-data"
+import logosDataset from "@/data/logos-dataset.json"
 
 type LogoItem = {
   name: string
@@ -16,8 +12,11 @@ type LogoItem = {
 
 const DEFAULT_LIMIT = 50
 const MAX_LIMIT = 200
-const CACHE_CONTROL_HEADER =
+const CACHE_CONTROL_FILTERED =
+  "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+const CACHE_CONTROL_UNFILTERED =
   "public, max-age=0, s-maxage=31536000, stale-while-revalidate=31536000"
+const KNOWN_CATEGORIES = new Set(logosDataset.items.map((item) => item.categoryId.toLowerCase()))
 
 function parsePositiveInt(value: string | null, fallback: number): number {
   if (!value) return fallback
@@ -40,24 +39,14 @@ export async function GET(request: Request) {
     MAX_LIMIT,
   )
 
-  const requestedCategory = category
-    ? categories.find((entry) => entry.id.toLowerCase() === category)
-    : null
-
-  const sourceCategories = requestedCategory ? [requestedCategory] : categories
-
-  const allItems: LogoItem[] = sourceCategories.flatMap((entry) =>
-    entry.entities.map((entity) => ({
-      name: entity.name,
-      domain: entity.domain,
-      google_domain: getGoogleFaviconUrl(entity.domain),
-      duck_domain: getDuckDuckGoFaviconUrl(entity.domain),
-      categoryId: entry.id,
-      categoryName: entry.name,
-    })),
-  )
+  const hasKnownCategory = category ? KNOWN_CATEGORIES.has(category) : false
+  const allItems: LogoItem[] = logosDataset.items
 
   const filteredItems = allItems.filter((item) => {
+    if (hasKnownCategory && item.categoryId.toLowerCase() !== category) {
+      return false
+    }
+
     if (q && !item.name.toLowerCase().includes(q) && !item.domain.toLowerCase().includes(q)) {
       return false
     }
@@ -76,16 +65,23 @@ export async function GET(request: Request) {
     items: pagedItems,
     total: filteredItems.length,
     hasMore,
+    datasetVersion: logosDataset.version,
     filters: {
       q: q || null,
       domain: domain || null,
-      category: requestedCategory?.id ?? (category || null),
+      category: hasKnownCategory ? category : (category || null),
       limit,
       offset,
     },
   })
 
-  response.headers.set("Cache-Control", CACHE_CONTROL_HEADER)
+  const hasSearchFilters = Boolean(q || domain || (category && hasKnownCategory))
+
+  response.headers.set(
+    "Cache-Control",
+    hasSearchFilters ? CACHE_CONTROL_FILTERED : CACHE_CONTROL_UNFILTERED,
+  )
+  response.headers.set("X-Logos-Dataset-Version", logosDataset.version)
 
   return response
 }

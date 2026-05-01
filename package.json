@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node --experimental-strip-types scripts/generate-logos-dataset.mts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."

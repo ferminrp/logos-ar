@@ -1,6 +1,6 @@
 {
   "version": "70b5da4f6752",
-  "totalItems": 158,
+  "totalItems": 175,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -380,9 +380,9 @@
     },
     {
       "name": "PPI",
-      "domain": "ppi.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ppi.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/ppi.com.ar.ico",
+      "domain": "www.portfoliopersonal.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.portfoliopersonal.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.portfoliopersonal.com.ico",
       "categoryId": "alycs",
       "categoryName": "ALyCs"
     },
@@ -444,9 +444,9 @@
     },
     {
       "name": "CNV",
-      "domain": "cnv.gob.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cnv.gob.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/cnv.gob.ar.ico",
+      "domain": "www.cnv.gov.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.cnv.gov.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.cnv.gov.ar.ico",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales"
     },
@@ -779,14 +779,6 @@
       "categoryName": "Automotrices"
     },
     {
-      "name": "Honda",
-      "domain": "honda.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=honda.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/honda.com.ar.ico",
-      "categoryId": "automotrices",
-      "categoryName": "Automotrices"
-    },
-    {
       "name": "Kia",
       "domain": "www.kia.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.kia.com.ar&sz=128",
@@ -848,7 +840,7 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=arcor.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/arcor.com.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "Molinos Río de la Plata",
@@ -856,7 +848,7 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=molinos.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/molinos.com.ar.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "La Serenísima (Mastellone)",
@@ -864,7 +856,7 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=laserenisima.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/laserenisima.com.ar.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "Nestlé",
@@ -872,7 +864,7 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nestle.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/nestle.com.ar.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "Unilever",
@@ -880,7 +872,7 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=unilever.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/unilever.com.ar.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "Mondelez",
@@ -888,15 +880,15 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=mondelezinternational.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/mondelezinternational.com.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
-      "name": "Grupo Bimbo",
-      "domain": "grupobimbo.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=grupobimbo.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/grupobimbo.com.ar.ico",
+      "name": "Bimbo",
+      "domain": "www.bimbo.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.bimbo.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.bimbo.com.ar.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "Cervecería Quilmes",
@@ -904,7 +896,7 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=quilmes.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/quilmes.com.ar.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "Havanna",
@@ -912,7 +904,7 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.tienda.havanna.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.tienda.havanna.com.ar.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "Molino Cañuelas",
@@ -920,7 +912,7 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=molinocanuelas.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/molinocanuelas.com.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "Ledesma",
@@ -928,7 +920,15 @@
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ledesma.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/ledesma.com.ar.ico",
       "categoryId": "alimentos",
-      "categoryName": "Alimentos"
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Cervecería Patagonia",
+      "domain": "www.cervezapatagonia.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.cervezapatagonia.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.cervezapatagonia.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
     },
     {
       "name": "YPF",
@@ -1036,9 +1036,9 @@
     },
     {
       "name": "Allianz",
-      "domain": "allianz.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=allianz.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/allianz.com.ar.ico",
+      "domain": "www.allianz.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.allianz.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.allianz.com.ar.ico",
       "categoryId": "seguros",
       "categoryName": "Seguros"
     },
@@ -1103,24 +1103,88 @@
       "domain": "pedidosya.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pedidosya.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/pedidosya.com.ar.ico",
-      "categoryId": "delivery",
-      "categoryName": "Delivery"
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
     },
     {
       "name": "Rappi",
       "domain": "rappi.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rappi.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/rappi.com.ar.ico",
-      "categoryId": "delivery",
-      "categoryName": "Delivery"
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
     },
     {
       "name": "Uber Eats",
       "domain": "ubereats.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ubereats.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/ubereats.com.ico",
-      "categoryId": "delivery",
-      "categoryName": "Delivery"
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
+    },
+    {
+      "name": "Morfy",
+      "domain": "www.morfy.app",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.morfy.app&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.morfy.app.ico",
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
+    },
+    {
+      "name": "McDonald's",
+      "domain": "www.mcdonalds.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.mcdonalds.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.mcdonalds.com.ar.ico",
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
+    },
+    {
+      "name": "Mostaza",
+      "domain": "www.mostazaweb.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.mostazaweb.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.mostazaweb.com.ar.ico",
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
+    },
+    {
+      "name": "Burger King",
+      "domain": "www.burgerking.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.burgerking.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.burgerking.com.ar.ico",
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
+    },
+    {
+      "name": "El Club de la Milanesa",
+      "domain": "elclubdelamilanesa.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=elclubdelamilanesa.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/elclubdelamilanesa.com.ico",
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
+    },
+    {
+      "name": "Almacén de Pizzas",
+      "domain": "almacendepizzas.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=almacendepizzas.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/almacendepizzas.com.ico",
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
+    },
+    {
+      "name": "Starbucks",
+      "domain": "www.starbucks.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.starbucks.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.starbucks.com.ar.ico",
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
+    },
+    {
+      "name": "Café Martínez",
+      "domain": "www.cafemartinez.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.cafemartinez.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.cafemartinez.com.ico",
+      "categoryId": "gastronomia",
+      "categoryName": "Gastronomía"
     },
     {
       "name": "Aerolíneas Argentinas",
@@ -1265,6 +1329,78 @@
       "duck_domain": "https://icons.duckduckgo.com/ip3/pampaenergia.com.ico",
       "categoryId": "energia",
       "categoryName": "Energía"
+    },
+    {
+      "name": "ComparaTasas",
+      "domain": "comparatasas.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=comparatasas.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/comparatasas.ar.ico",
+      "categoryId": "indie-projects",
+      "categoryName": "Indie Projects"
+    },
+    {
+      "name": "Rendimientos",
+      "domain": "rendimientos.co",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rendimientos.co&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/rendimientos.co.ico",
+      "categoryId": "indie-projects",
+      "categoryName": "Indie Projects"
+    },
+    {
+      "name": "Dolarito",
+      "domain": "www.dolarito.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.dolarito.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.dolarito.ar.ico",
+      "categoryId": "indie-projects",
+      "categoryName": "Indie Projects"
+    },
+    {
+      "name": "Infleta",
+      "domain": "infleta.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=infleta.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/infleta.com.ar.ico",
+      "categoryId": "indie-projects",
+      "categoryName": "Indie Projects"
+    },
+    {
+      "name": "Impuestito",
+      "domain": "www.impuestito.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.impuestito.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.impuestito.org.ico",
+      "categoryId": "indie-projects",
+      "categoryName": "Indie Projects"
+    },
+    {
+      "name": "Bond Terminal",
+      "domain": "bondterminal.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bondterminal.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bondterminal.com.ico",
+      "categoryId": "indie-projects",
+      "categoryName": "Indie Projects"
+    },
+    {
+      "name": "FinanzasArgy",
+      "domain": "finanzasargy.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=finanzasargy.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/finanzasargy.com.ico",
+      "categoryId": "indie-projects",
+      "categoryName": "Indie Projects"
+    },
+    {
+      "name": "Steamcito",
+      "domain": "steamcito.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=steamcito.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/steamcito.com.ar.ico",
+      "categoryId": "indie-projects",
+      "categoryName": "Indie Projects"
+    },
+    {
+      "name": "Gasti",
+      "domain": "gasti.pro",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=gasti.pro&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/gasti.pro.ico",
+      "categoryId": "indie-projects",
+      "categoryName": "Indie Projects"
     }
   ]
 }

@@ -51,6 +51,7 @@ GET /api/logos?category=bancos&q=banco`}
         <h2 className="text-xl font-semibold text-foreground">Respuesta</h2>
         <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">
 {`{
+  "datasetVersion": "7f2bce765b13",
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -72,6 +73,23 @@ GET /api/logos?category=bancos&q=banco`}
   }
 }`}
         </pre>
+        <p className="text-xs text-muted-foreground">
+          También se incluye el header <code>X-Logos-Dataset-Version</code> para facilitar debugging
+          de cache/CDN.
+        </p>
+      </section>
+
+      <section className="mt-6 space-y-3 rounded-lg border border-border bg-card p-5">
+        <h2 className="text-xl font-semibold text-foreground">Cache</h2>
+        <ul className="list-disc space-y-2 pl-6 text-sm text-muted-foreground">
+          <li>
+            Sin filtros: cache agresiva de CDN para minimizar cómputo.
+          </li>
+          <li>
+            Con filtros (<code>q</code>, <code>domain</code>, <code>category</code> válida): cache de 24h
+            con stale-while-revalidate.
+          </li>
+        </ul>
       </section>
 
     </main>

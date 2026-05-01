@@ -46,9 +46,10 @@ const categoryIcons: Record<string, React.ElementType> = {
   combustibles: Fuel,
   seguros: Shield,
   indumentaria: Shirt,
-  delivery: Bike,
+  gastronomia: Bike,
   turismo: Plane,
   energia: Lightbulb,
+  "indie-projects": Code,
 }
 
 const primaryCategoryIds = [
