@@ -38,8 +38,8 @@ export function SiteNavbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-transparent">
-      <div className="mx-auto w-full px-4 pt-4 sm:px-6 lg:px-8">
+    <header className="bg-transparent">
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div className="rounded-b-[2rem] bg-gradient-to-r from-[#0f3d2e] to-[#14532d] px-4 pb-10 pt-8 shadow-xl sm:px-6 sm:pb-12 lg:px-8">
           <div className="mx-auto grid w-full max-w-7xl gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,600px)_minmax(0,1fr)] lg:items-center">
             <div className="flex items-center gap-3 lg:justify-self-start">
