@@ -52,10 +52,7 @@ export function SiteNavbar() {
           </div>
 
           <div className="relative mx-auto grid w-full max-w-7xl gap-4 lg:grid-cols-[auto_minmax(20rem,1fr)_auto] lg:items-center lg:gap-8">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#2ba35f] text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] ring-1 ring-white/16">
-                LA
-              </div>
+            <div className="flex items-center">
               <div className="min-w-0">
                 <Link
                   href="/"
