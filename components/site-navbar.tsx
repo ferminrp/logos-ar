@@ -38,43 +38,71 @@ export function SiteNavbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <div className="space-y-1">
-          <Link href="/" className="text-xl font-bold text-foreground sm:text-2xl">
-            Logos Argentina
-          </Link>
-          <p className="text-sm text-muted-foreground">
-            {"¿Sabías que hay APIs gratuitas de logos?"}
-          </p>
-        </div>
+    <header className="sticky top-0 z-50 bg-transparent">
+      <div className="mx-auto w-full px-4 pt-4 sm:px-6 lg:px-8">
+        <div className="rounded-b-[2rem] bg-gradient-to-r from-[#0f3d2e] to-[#14532d] px-4 pb-10 pt-8 shadow-xl sm:px-6 sm:pb-12 lg:px-8">
+          <div className="mx-auto grid w-full max-w-7xl gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,600px)_minmax(0,1fr)] lg:items-center">
+            <div className="flex items-center gap-3 lg:justify-self-start">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-sm font-semibold text-white ring-1 ring-white/30">
+                LA
+              </div>
+              <div className="space-y-1">
+                <Link
+                  href="/"
+                  className="text-xl font-bold leading-none text-white sm:text-2xl"
+                >
+                  Logos Argentina
+                </Link>
+                <p className="text-sm text-emerald-100">
+                  APIs gratuitas de logos
+                </p>
+              </div>
+            </div>
 
-        <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center lg:w-auto">
-          <form onSubmit={handleSubmit} className="relative w-full sm:w-80">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Buscar por nombre o dominio..."
-              className="pl-9"
-              value={searchValue}
-              onChange={(event) => setSearchValue(event.target.value)}
-            />
-          </form>
+            <form
+              onSubmit={handleSubmit}
+              className="relative w-full lg:justify-self-center"
+            >
+              <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-emerald-900/60" />
+              <Input
+                type="search"
+                placeholder="Buscar por nombre o dominio..."
+                className="h-14 w-full rounded-full border-0 bg-white pl-14 pr-4 text-base text-foreground shadow-lg shadow-black/20 ring-1 ring-white/40 placeholder:text-muted-foreground/80 focus-visible:ring-2 focus-visible:ring-emerald-300"
+                value={searchValue}
+                onChange={(event) => setSearchValue(event.target.value)}
+              />
+            </form>
 
-          <div className="flex items-center gap-2">
-            <Button asChild variant="outline" size="sm">
-              <Link href="/docs">API</Link>
-            </Button>
-            <Button asChild variant="outline" size="sm">
-              <a
-                href="https://github.com/ferminrp/logos-ar"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Repositorio de Logos AR en GitHub"
+            <div className="flex flex-wrap items-center gap-2 lg:justify-self-end">
+              <Button
+                asChild
+                size="sm"
+                className="bg-white/10 text-white hover:bg-white/20"
               >
-                <Github className="h-4 w-4" />
-              </a>
-            </Button>
+                <Link href="/docs">API</Link>
+              </Button>
+              <Button
+                asChild
+                size="sm"
+                className="bg-white/10 text-white hover:bg-white/20"
+              >
+                <Link href="/docs">Documentación</Link>
+              </Button>
+              <Button
+                asChild
+                size="icon"
+                className="h-9 w-9 bg-white/10 text-white hover:bg-white/20"
+              >
+                <a
+                  href="https://github.com/ferminrp/logos-ar"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Repositorio de Logos AR en GitHub"
+                >
+                  <Github className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
