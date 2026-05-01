@@ -1,26 +1,23 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    @media (prefers-color-scheme: light) {
-      .background { fill: black; }
-      .foreground { fill: white; }
-    }
-    @media (prefers-color-scheme: dark) {
-      .background { fill: white; }
-      .foreground { fill: black; }
-    }
-  </style>
-  <g clip-path="url(#clip0_7960_43945)">
-    <rect class="background" width="180" height="180" rx="37" />
-    <g style="transform: scale(95%); transform-origin: center">
-      <path class="foreground"
-        d="M101.141 53H136.632C151.023 53 162.689 64.6662 162.689 79.0573V112.904H148.112V79.0573C148.112 78.7105 148.098 78.3662 148.072 78.0251L112.581 112.898C112.701 112.902 112.821 112.904 112.941 112.904H148.112V126.672H112.941C98.5504 126.672 86.5638 114.891 86.5638 100.5V66.7434H101.141V100.5C101.141 101.15 101.191 101.792 101.289 102.422L137.56 66.7816C137.255 66.7563 136.945 66.7434 136.632 66.7434H101.141V53Z" />
-      <path class="foreground"
-        d="M65.2926 124.136L14 66.7372H34.6355L64.7495 100.436V66.7372H80.1365V118.47C80.1365 126.278 70.4953 129.958 65.2926 124.136Z" />
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
   <defs>
-    <clipPath id="clip0_7960_43945">
-      <rect width="180" height="180" fill="white" />
-    </clipPath>
+    <linearGradient id="bg" x1="58" x2="454" y1="44" y2="468" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B5335"/>
+      <stop offset=".52" stop-color="#063F28"/>
+      <stop offset="1" stop-color="#052F1E"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="86" x2="412" y1="112" y2="418" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2CD567"/>
+      <stop offset="1" stop-color="#1A9B45"/>
+    </linearGradient>
+    <filter id="shadow" width="512" height="512" x="0" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#01170e" flood-opacity=".22"/>
+    </filter>
   </defs>
+  <g filter="url(#shadow)">
+    <rect width="512" height="512" rx="104" fill="url(#bg)"/>
+  </g>
+  <path stroke="url(#ring)" stroke-linecap="round" stroke-width="16" d="M402 144c-38-42-92-69-152-69-115 0-208 93-208 208s93 208 208 208c56 0 106-22 144-58"/>
+  <path fill="#fff" d="M127 164c0-9 7-16 16-16h40c9 0 16 7 16 16v132h68c9 0 16 7 16 16v24c0 9-7 16-16 16H143c-9 0-16-7-16-16V164Z"/>
+  <path fill="#fff" d="M307.53 157.77c4.11-9.75 13.64-16.08 24.21-16.08h19.36c10.62 0 20.18 6.39 24.26 16.2l75.3 180.9c4.1 9.86-3.14 20.72-13.82 20.72h-34.95c-6.69 0-12.73-4.05-15.23-10.23L341.7 229.81l-45.52 119.52c-2.52 6.14-8.54 10.18-15.18 10.18h-33.62c-10.62 0-17.86-10.76-13.86-20.59l74.01-181.15Z"/>
+  <path fill="#5FD34E" d="M318.2 300.3c3.08-5.27 10.7-5.27 13.78 0l27.64 47.37c3.1 5.33-.74 11.99-6.9 11.99h-55.27c-6.15 0-10-6.65-6.89-11.97l27.65-47.39Z"/>
 </svg>
