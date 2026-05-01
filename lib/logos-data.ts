@@ -62,6 +62,7 @@ export const categories: Category[] = [
       { id: 67, name: "OKX", domain: "okx.com" },
       { id: 68, name: "Kraken", domain: "kraken.com" },
       { id: 69, name: "Coinbase", domain: "coinbase.com" },
+      { id: 70, name: "Roxom", domain: "roxom.com" },
     ],
   },
   {
