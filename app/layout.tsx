@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
 import Script from 'next/script'
 import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
@@ -8,7 +8,16 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { getSiteUrl } from '@/lib/site-url'
 import './globals.css'
 
-const geist = Geist({ subsets: ['latin'] })
+const geistSans = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist-sans',
+})
+
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+})
+
 const siteUrl = getSiteUrl()
 
 export const metadata: Metadata = {
@@ -65,7 +74,9 @@ export default function RootLayout({
 
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${geist.className} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
