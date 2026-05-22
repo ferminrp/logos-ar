@@ -38,6 +38,9 @@ export function SiteNavbar() {
     router.push(nextUrl)
   }
 
+  const brandClassName =
+    "block truncate text-xl font-semibold leading-none text-white sm:text-[1.7rem]"
+
   return (
     <header className="bg-background px-2 pt-2 sm:px-4 sm:pt-3">
       <div className="mx-auto max-w-[96rem]">
@@ -54,10 +57,7 @@ export function SiteNavbar() {
           <div className="relative mx-auto grid w-full max-w-7xl gap-4 lg:grid-cols-[auto_minmax(20rem,1fr)_auto] lg:items-center lg:gap-8">
             <div className="flex items-center">
               <div className="min-w-0">
-                <Link
-                  href="/"
-                  className="block truncate text-xl font-semibold leading-none text-white sm:text-[1.7rem]"
-                >
+                <Link href="/" className={brandClassName}>
                   Logos Argentina
                 </Link>
                 <p className="mt-1 text-sm text-emerald-50/86">
@@ -77,7 +77,7 @@ export function SiteNavbar() {
               />
             </form>
 
-            <div className="hidden flex-wrap items-center gap-2 sm:flex lg:justify-self-end">
+            <div className="flex flex-wrap items-center gap-2 lg:justify-self-end">
               <Button
                 asChild
                 size="sm"
@@ -86,17 +86,7 @@ export function SiteNavbar() {
                   "focus-visible:ring-white/30"
                 )}
               >
-                <Link href="/docs">API</Link>
-              </Button>
-              <Button
-                asChild
-                size="sm"
-                className={cn(
-                  "h-9 rounded-lg border-0 bg-white/9 px-4 text-white shadow-none hover:bg-white/16",
-                  "focus-visible:ring-white/30"
-                )}
-              >
-                <Link href="/docs">Documentación</Link>
+                <Link href="/docs">Documentación API</Link>
               </Button>
               <Button
                 asChild
@@ -109,7 +99,7 @@ export function SiteNavbar() {
                 <a
                   href="https://github.com/ferminrp/logos-ar"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label="Repositorio de Logos AR en GitHub"
                 >
                   <Github className="h-4 w-4" />

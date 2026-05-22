@@ -47,6 +47,8 @@ export function LogoCard({ entity }: LogoCardProps) {
             <img
               src={googleUrl}
               alt={`Logo de ${entity.name}`}
+              width={40}
+              height={40}
               className="h-10 w-10 rounded-md object-contain"
               onError={() => setImageError(true)}
               referrerPolicy="no-referrer"
@@ -55,6 +57,8 @@ export function LogoCard({ entity }: LogoCardProps) {
             <img
               src={duckUrl}
               alt={`Logo de ${entity.name}`}
+              width={40}
+              height={40}
               className="h-10 w-10 rounded-md object-contain"
               referrerPolicy="no-referrer"
               onError={(e) => {

@@ -17,7 +17,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "¿Hay un api?",
     answer:
-      "Sí. Tenés disponible `GET /api/logos` para consultar entidades y filtrar por `q`, `domain` y `category` (opcional), con `limit` y `offset` para paginar. La documentación y ejemplos están en `/docs`.",
+      "Sí. Tenés disponible GET /api/logos para consultar entidades y filtrar por q, domain y category (opcional), con limit y offset para paginar. La documentación y ejemplos están en /docs.",
   },
   {
     question: "¿Cuál es la diferencia entre Google y DuckDuckGo?",

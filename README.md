@@ -9,6 +9,8 @@ La app permite:
 
 Documentación de API disponible en [`/docs`](http://localhost:3000/docs) al correr la app localmente.
 
+**Producción:** [https://loguitos.app](https://loguitos.app) — documentación en [https://loguitos.app/docs](https://loguitos.app/docs).
+
 ## Stack
 
 - Next.js 16 (App Router)
@@ -38,6 +40,10 @@ Abrí [http://localhost:3000](http://localhost:3000).
 - `pnpm start`: correr build en modo producción
 
 Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse localmente.
+
+### URL canónica (SEO)
+
+Para override en otros entornos, definí `NEXT_PUBLIC_SITE_URL`. Sin esa variable, metadata, sitemap y `robots.txt` usan `https://loguitos.app` por defecto.
 
 ## Estructura del proyecto
 
