@@ -121,18 +121,34 @@ export function HomePage() {
     setActiveCategory((current) => (current === categoryId ? null : categoryId))
   }
 
+  const handleCategoryClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    categoryId: string
+  ) => {
+    if (activeCategory === categoryId) {
+      event.preventDefault()
+      setActiveCategory(null)
+    } else {
+      setActiveCategory(categoryId)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="relative z-20 -mt-5 px-4 sm:-mt-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="rounded-[1.8rem] bg-white/96 p-2.5 shadow-[0_16px_48px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/80 backdrop-blur">
             <div className="hidden items-center justify-between gap-1 lg:flex">
-              <button
-                onClick={() => setActiveCategory(null)}
+              <a
+                href="#"
+                onClick={(event) => {
+                  event.preventDefault()
+                  setActiveCategory(null)
+                }}
                 className={categoryButtonClassName(activeCategory === null)}
               >
                 Todos
-              </button>
+              </a>
 
               {primaryCategories.map((category, index) => {
                 const Icon = categoryIcons[category.id]
@@ -143,8 +159,9 @@ export function HomePage() {
                     {index > 0 && (
                       <div className="mx-1 h-6 w-px bg-slate-200" aria-hidden="true" />
                     )}
-                    <button
-                      onClick={() => toggleCategory(category.id)}
+                    <a
+                      href={`#${category.id}`}
+                      onClick={(event) => handleCategoryClick(event, category.id)}
                       className={categoryButtonClassName(isActive)}
                     >
                       {Icon && <Icon className="h-3.5 w-3.5 shrink-0" />}
@@ -159,7 +176,7 @@ export function HomePage() {
                       >
                         {category.entities.length}
                       </span>
-                    </button>
+                    </a>
                   </div>
                 )
               })}
@@ -207,20 +224,25 @@ export function HomePage() {
 
             <div className="overflow-x-auto lg:hidden">
               <div className="flex min-w-max items-center gap-2 pr-1">
-                <button
-                  onClick={() => setActiveCategory(null)}
+                <a
+                  href="#"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    setActiveCategory(null)
+                  }}
                   className={categoryButtonClassName(activeCategory === null)}
                 >
                   Todos
-                </button>
+                </a>
                 {categories.map((category) => {
                   const Icon = categoryIcons[category.id]
                   const isActive = activeCategory === category.id
 
                   return (
-                    <button
+                    <a
                       key={category.id}
-                      onClick={() => toggleCategory(category.id)}
+                      href={`#${category.id}`}
+                      onClick={(event) => handleCategoryClick(event, category.id)}
                       className={categoryButtonClassName(isActive)}
                     >
                       {Icon && <Icon className="h-3.5 w-3.5 shrink-0" />}
@@ -235,7 +257,7 @@ export function HomePage() {
                       >
                         {category.entities.length}
                       </span>
-                    </button>
+                    </a>
                   )
                 })}
               </div>

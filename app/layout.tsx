@@ -1,29 +1,34 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist } from 'next/font/google'
 import Script from 'next/script'
 import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
 import { SiteNavbar } from '@/components/site-navbar'
 import { ThemeProvider } from '@/components/theme-provider'
+import { getSiteUrl } from '@/lib/site-url'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  process.env.NEXT_PUBLIC_APP_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? process.env.VERCEL_PROJECT_PRODUCTION_URL.startsWith('http')
-      ? process.env.VERCEL_PROJECT_PRODUCTION_URL
-      : `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : null) ??
-  'https://logos-ar.vercel.app'
+const geist = Geist({ subsets: ['latin'] })
+const siteUrl = getSiteUrl()
 
 export const metadata: Metadata = {
   title: 'Logos Argentina - Directorio de Favicons',
   description: 'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.',
-  generator: 'v0.app',
+  keywords: [
+    'logos argentina',
+    'favicons bancos',
+    'api logos',
+    'fintech argentina',
+    'logos fintech',
+  ],
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: 'Logos Argentina - Directorio de Favicons',
     description: 'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.',
@@ -60,7 +65,7 @@ export default function RootLayout({
 
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+      <body className={`${geist.className} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

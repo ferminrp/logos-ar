@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +8,24 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { faqItems } from "@/lib/faq-data"
+
+function FaqAnswer({ question, answer }: { question: string; answer: string }) {
+  if (question === "¿Hay un api?") {
+    return (
+      <>
+        Sí. Tenés disponible <code>GET /api/logos</code> para consultar entidades
+        y filtrar por <code>q</code>, <code>domain</code> y <code>category</code>{" "}
+        (opcional), con <code>limit</code> y <code>offset</code> para paginar. La{" "}
+        <Link href="/docs" className="text-primary underline-offset-4 hover:underline">
+          documentación de la API
+        </Link>{" "}
+        incluye ejemplos y detalles del endpoint.
+      </>
+    )
+  }
+
+  return <>{answer}</>
+}
 
 export function FaqSection() {
   return (
@@ -29,7 +48,7 @@ export function FaqSection() {
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">
-                  {item.answer}
+                  <FaqAnswer question={item.question} answer={item.answer} />
                 </AccordionContent>
               </AccordionItem>
             ))}
