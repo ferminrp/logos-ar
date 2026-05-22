@@ -1,26 +1,10 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import {
-  Code,
-  Zap,
-  Building2,
-  Wallet,
-  TrendingUp,
-  Landmark,
-  Store,
-  Newspaper,
-  Car,
-  UtensilsCrossed,
-  Fuel,
-  Shield,
-  Shirt,
-  Bike,
-  Plane,
-  Lightbulb,
-  ChevronDown,
-} from "lucide-react"
+import { Code, Zap, ChevronDown } from "lucide-react"
+import { categoryIcons } from "@/lib/category-icons"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -33,24 +17,6 @@ import { ConfigPanel } from "@/components/config-panel"
 import { FaqSection } from "@/components/faq-section"
 import { categories, type Category } from "@/lib/logos-data"
 import { cn } from "@/lib/utils"
-
-const categoryIcons: Record<string, React.ElementType> = {
-  bancos: Building2,
-  fintechs: Wallet,
-  alycs: TrendingUp,
-  "entes-estatales": Landmark,
-  retail: Store,
-  medios: Newspaper,
-  automotrices: Car,
-  alimentos: UtensilsCrossed,
-  combustibles: Fuel,
-  seguros: Shield,
-  indumentaria: Shirt,
-  gastronomia: Bike,
-  turismo: Plane,
-  energia: Lightbulb,
-  "indie-projects": Code,
-}
 
 const primaryCategoryIds = [
   "bancos",
@@ -67,9 +33,10 @@ const overflowCategoryIds = [
   "combustibles",
   "seguros",
   "indumentaria",
-  "delivery",
+  "gastronomia",
   "turismo",
   "energia",
+  "indie-projects",
 ] as const
 
 const primaryCategorySet = new Set<string>(primaryCategoryIds)
@@ -87,7 +54,6 @@ function categoryButtonClassName(isActive: boolean) {
 export function HomePage() {
   const searchParams = useSearchParams()
   const searchQuery = (searchParams.get("q") ?? "").trim()
-  const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [showConfig, setShowConfig] = useState(false)
   const primaryCategories = categories.filter((category) =>
     primaryCategorySet.has(category.id)
@@ -95,10 +61,6 @@ export function HomePage() {
   const overflowCategories = categories.filter((category) =>
     overflowCategorySet.has(category.id)
   )
-  const isOverflowActive = activeCategory
-    ? overflowCategorySet.has(activeCategory)
-    : false
-
   const filteredCategories: Category[] = categories
     .map((category) => ({
       ...category,
@@ -108,75 +70,40 @@ export function HomePage() {
           entity.domain.toLowerCase().includes(searchQuery.toLowerCase())
       ),
     }))
-    .filter((category) => {
-      if (activeCategory && category.id !== activeCategory) return false
-      return category.entities.length > 0
-    })
+    .filter((category) => category.entities.length > 0)
 
   const totalEntities = filteredCategories.reduce(
     (acc, cat) => acc + cat.entities.length,
     0
   )
-  const toggleCategory = (categoryId: string) => {
-    setActiveCategory((current) => (current === categoryId ? null : categoryId))
-  }
-
-  const handleCategoryClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    categoryId: string
-  ) => {
-    if (activeCategory === categoryId) {
-      event.preventDefault()
-      setActiveCategory(null)
-    } else {
-      setActiveCategory(categoryId)
-    }
-  }
-
   return (
     <div className="min-h-screen bg-background">
       <div className="relative z-20 -mt-5 px-4 sm:-mt-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="rounded-[1.8rem] bg-white/96 p-2.5 shadow-[0_16px_48px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/80 backdrop-blur">
             <div className="hidden items-center justify-between gap-1 lg:flex">
-              <a
-                href="#"
-                onClick={(event) => {
-                  event.preventDefault()
-                  setActiveCategory(null)
-                }}
-                className={categoryButtonClassName(activeCategory === null)}
-              >
+              <Link href="/" className={categoryButtonClassName(true)}>
                 Todos
-              </a>
+              </Link>
 
               {primaryCategories.map((category, index) => {
                 const Icon = categoryIcons[category.id]
-                const isActive = activeCategory === category.id
 
                 return (
                   <div key={category.id} className="flex items-center">
                     {index > 0 && (
                       <div className="mx-1 h-6 w-px bg-slate-200" aria-hidden="true" />
                     )}
-                    <a
-                      href={`#${category.id}`}
-                      onClick={(event) => handleCategoryClick(event, category.id)}
-                      className={categoryButtonClassName(isActive)}
+                    <Link
+                      href={`/categoria/${category.id}`}
+                      className={categoryButtonClassName(false)}
                     >
                       {Icon && <Icon className="h-3.5 w-3.5 shrink-0" />}
                       <span>{category.name}</span>
-                      <span
-                        className={cn(
-                          "rounded-full px-1.5 py-0.5 text-xs leading-none",
-                          isActive
-                            ? "bg-white/18 text-white"
-                            : "bg-slate-100 text-slate-500"
-                        )}
-                      >
+                      <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-xs leading-none text-slate-500">
                         {category.entities.length}
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 )
               })}
@@ -186,7 +113,7 @@ export function HomePage() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button
-                    className={categoryButtonClassName(isOverflowActive)}
+                    className={categoryButtonClassName(false)}
                     aria-label="Más categorías"
                   >
                     <span>Más</span>
@@ -199,22 +126,19 @@ export function HomePage() {
                 >
                   {overflowCategories.map((category) => {
                     const Icon = categoryIcons[category.id]
-                    const isActive = activeCategory === category.id
 
                     return (
-                      <DropdownMenuItem
-                        key={category.id}
-                        onSelect={() => toggleCategory(category.id)}
-                        className={cn(
-                          "rounded-xl px-3 py-2.5 text-slate-700 focus:bg-slate-100",
-                          isActive && "bg-emerald-50 text-emerald-900"
-                        )}
-                      >
-                        {Icon && <Icon className="h-4 w-4" />}
-                        <span>{category.name}</span>
-                        <span className="ml-auto rounded-full bg-slate-100 px-1.5 py-0.5 text-xs text-slate-500">
-                          {category.entities.length}
-                        </span>
+                      <DropdownMenuItem key={category.id} asChild>
+                        <Link
+                          href={`/categoria/${category.id}`}
+                          className="flex cursor-pointer items-center gap-2 rounded-xl px-3 py-2.5 text-slate-700 focus:bg-slate-100"
+                        >
+                          {Icon && <Icon className="h-4 w-4" />}
+                          <span>{category.name}</span>
+                          <span className="ml-auto rounded-full bg-slate-100 px-1.5 py-0.5 text-xs text-slate-500">
+                            {category.entities.length}
+                          </span>
+                        </Link>
                       </DropdownMenuItem>
                     )
                   })}
@@ -224,40 +148,24 @@ export function HomePage() {
 
             <div className="overflow-x-auto lg:hidden">
               <div className="flex min-w-max items-center gap-2 pr-1">
-                <a
-                  href="#"
-                  onClick={(event) => {
-                    event.preventDefault()
-                    setActiveCategory(null)
-                  }}
-                  className={categoryButtonClassName(activeCategory === null)}
-                >
+                <Link href="/" className={categoryButtonClassName(true)}>
                   Todos
-                </a>
+                </Link>
                 {categories.map((category) => {
                   const Icon = categoryIcons[category.id]
-                  const isActive = activeCategory === category.id
 
                   return (
-                    <a
+                    <Link
                       key={category.id}
-                      href={`#${category.id}`}
-                      onClick={(event) => handleCategoryClick(event, category.id)}
-                      className={categoryButtonClassName(isActive)}
+                      href={`/categoria/${category.id}`}
+                      className={categoryButtonClassName(false)}
                     >
                       {Icon && <Icon className="h-3.5 w-3.5 shrink-0" />}
                       <span>{category.name}</span>
-                      <span
-                        className={cn(
-                          "rounded-full px-1.5 py-0.5 text-xs leading-none",
-                          isActive
-                            ? "bg-white/18 text-white"
-                            : "bg-slate-100 text-slate-500"
-                        )}
-                      >
+                      <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-xs leading-none text-slate-500">
                         {category.entities.length}
                       </span>
-                    </a>
+                    </Link>
                   )
                 })}
               </div>
@@ -321,6 +229,12 @@ export function HomePage() {
             </div>
           )}
         </div>
+
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          <Link href="/categorias" className="text-primary hover:underline">
+            Ver todas las categorías
+          </Link>
+        </p>
       </main>
 
       <FaqSection />
