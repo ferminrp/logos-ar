@@ -13,6 +13,7 @@ next.user-config.*
 # Common ignores
 node_modules
 .next/
+public/sitemap.xml
 .DS_Store
 .vercel
 .pnpm-store/
