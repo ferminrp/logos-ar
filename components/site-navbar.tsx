@@ -86,6 +86,16 @@ export function SiteNavbar() {
                   "focus-visible:ring-white/30"
                 )}
               >
+                <Link href="/categorias">Categorías</Link>
+              </Button>
+              <Button
+                asChild
+                size="sm"
+                className={cn(
+                  "h-9 rounded-lg border-0 bg-white/9 px-4 text-white shadow-none hover:bg-white/16",
+                  "focus-visible:ring-white/30"
+                )}
+              >
                 <Link href="/docs">Documentación API</Link>
               </Button>
               <Button

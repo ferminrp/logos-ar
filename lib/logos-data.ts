@@ -294,18 +294,11 @@ export const categories: Category[] = [
   },
 ]
 
-export function getGoogleFaviconUrl(domain: string, size: number = 128): string {
-  return `https://s2.googleusercontent.com/s2/favicons?domain=${domain}&sz=${size}`
-}
-
-export function getDuckDuckGoFaviconUrl(domain: string): string {
-  return `https://icons.duckduckgo.com/ip3/${domain}.ico`
-}
-
-export function getGoogleCurl(domain: string, size: number = 128): string {
-  return `curl "${getGoogleFaviconUrl(domain, size)}" -o ${domain.replace(/\./g, "_")}_favicon.png`
-}
-
-export function getDuckDuckGoCurl(domain: string): string {
-  return `curl "${getDuckDuckGoFaviconUrl(domain)}" -o ${domain.replace(/\./g, "_")}_favicon.ico`
-}
+export {
+  getGoogleFaviconUrl,
+  getDuckDuckGoFaviconUrl,
+  getGoogleCurl,
+  getDuckDuckGoCurl,
+  type CurlConfig,
+  defaultCurlConfig,
+} from "./favicon-urls.ts"

@@ -1,7 +1,9 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Check, Copy, ExternalLink } from "lucide-react"
+import { getEntitySlug } from "@/lib/entity-index"
 import { Button } from "@/components/ui/button"
 import {
   Tooltip,
@@ -72,7 +74,14 @@ export function LogoCard({ entity }: LogoCardProps) {
 
         {/* Info */}
         <div className="min-w-0 flex-1">
-          <h3 className="truncate font-medium text-foreground">{entity.name}</h3>
+          <h3 className="truncate font-medium text-foreground">
+            <Link
+              href={`/logo/${getEntitySlug(entity)}`}
+              className="hover:text-primary"
+            >
+              {entity.name}
+            </Link>
+          </h3>
           <a
             href={`https://${entity.domain}`}
             target="_blank"
