@@ -6,6 +6,7 @@
     "dev": "next dev",
     "prebuild": "node --experimental-strip-types scripts/generate-logos-dataset.mts",
     "build": "next build",
+    "postbuild": "node --experimental-strip-types scripts/generate-sitemap.mts && node --experimental-strip-types scripts/verify-sitemap.mts",
     "start": "next start",
     "lint": "eslint ."
   },

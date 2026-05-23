@@ -1,4 +1,4 @@
-import { categories, type Category, type Entity } from "@/lib/logos-data"
+import { categories, type Category, type Entity } from "./logos-data.ts"
 
 export interface EntityRecord extends Entity {
   slug: string

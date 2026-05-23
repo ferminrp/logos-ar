@@ -45,6 +45,25 @@ Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse lo
 
 Para override en otros entornos, definí `NEXT_PUBLIC_SITE_URL`. Sin esa variable, metadata, sitemap y `robots.txt` usan `https://loguitos.app` por defecto.
 
+En producción (Vercel), conviene fijar explícitamente:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://loguitos.app
+```
+
+### Sitemap y Google Search Console
+
+El build genera `public/sitemap.xml` (archivo estático) y valida el XML en `postbuild`. La ruta pública es:
+
+`https://loguitos.app/sitemap.xml`
+
+Si Search Console muestra **Couldn't fetch** después de un deploy:
+
+1. Verificá en vivo con inspección de URL que el sitemap devuelva **200** y XML válido.
+2. En **Sitemaps**, eliminá el envío fallido y volvé a enviar la misma URL.
+3. Si el error persiste (caché de GSC), probá una URL alternativa para forzar un fetch nuevo, por ejemplo `https://loguitos.app/sitemap.xml?v=2`.
+4. En Vercel → **Security**, confirmá que no haya *Deployment Protection* ni reglas de firewall que bloqueen a Googlebot.
+
 ## Estructura del proyecto
 
 Puntos clave para contributors:
