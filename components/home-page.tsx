@@ -7,16 +7,6 @@ import { FaqSection } from "@/components/faq-section"
 import { categories, type Category } from "@/lib/logos-data"
 import { cn } from "@/lib/utils"
 
-const featuredCategoryIds = [
-  "bancos",
-  "fintechs",
-  "alycs",
-  "retail",
-  "medios",
-] as const
-
-const featuredCategorySet = new Set<string>(featuredCategoryIds)
-
 function categoryChipClassName() {
   return cn(
     "rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors",
@@ -27,9 +17,6 @@ function categoryChipClassName() {
 export function HomePage() {
   const searchParams = useSearchParams()
   const searchQuery = (searchParams.get("q") ?? "").trim()
-  const featuredCategories = categories.filter((category) =>
-    featuredCategorySet.has(category.id)
-  )
   const filteredCategories: Category[] = categories
     .map((category) => ({
       ...category,
@@ -51,7 +38,7 @@ export function HomePage() {
         ) : null}
 
         <nav
-          aria-label="Accesos rápidos por categoría"
+          aria-label="Categorías"
           className="mb-8 flex flex-wrap items-center gap-2"
         >
           <span
@@ -61,7 +48,7 @@ export function HomePage() {
           >
             Todos
           </span>
-          {featuredCategories.map((category) => (
+          {categories.map((category) => (
             <Link
               key={category.id}
               href={`/categoria/${category.id}`}
