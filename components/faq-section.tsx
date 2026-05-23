@@ -9,6 +9,10 @@ import {
 } from "@/components/ui/accordion"
 import { faqItems } from "@/lib/faq-data"
 
+interface FaqSectionProps {
+  limit?: number
+}
+
 function FaqAnswer({ question, answer }: { question: string; answer: string }) {
   if (question === "¿Hay un api?") {
     return (
@@ -27,7 +31,9 @@ function FaqAnswer({ question, answer }: { question: string; answer: string }) {
   return <>{answer}</>
 }
 
-export function FaqSection() {
+export function FaqSection({ limit }: FaqSectionProps) {
+  const visibleItems = limit ? faqItems.slice(0, limit) : faqItems
+
   return (
     <section
       className="border-t border-border bg-background"
@@ -42,7 +48,7 @@ export function FaqSection() {
         </h2>
         <div className="rounded-lg border border-border bg-card px-4 sm:px-6">
           <Accordion type="single" collapsible className="w-full">
-            {faqItems.map((item, index) => (
+            {visibleItems.map((item, index) => (
               <AccordionItem key={index} value={`faq-${index}`}>
                 <AccordionTrigger className="text-foreground hover:no-underline">
                   {item.question}
@@ -54,6 +60,13 @@ export function FaqSection() {
             ))}
           </Accordion>
         </div>
+        {limit ? (
+          <p className="mt-4 text-sm text-muted-foreground">
+            <Link href="/docs" className="text-primary hover:underline">
+              Ver documentación y más preguntas
+            </Link>
+          </p>
+        ) : null}
       </div>
     </section>
   )

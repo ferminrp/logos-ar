@@ -1,39 +1,39 @@
-"use client"
-
 import Link from "next/link"
-import { LogoCard } from "./logo-card"
-import type { Category } from "@/lib/logos-data"
+import { EntityPreviewCard } from "./entity-preview-card"
+import { getEntitySlug } from "@/lib/entity-index"
+import type { EntityRecord } from "@/lib/entity-index"
+import type { Category, Entity } from "@/lib/logos-data"
 
 interface CategorySectionProps {
   category: Category
 }
 
+function toEntityRecord(entity: Entity, category: Category): EntityRecord {
+  return {
+    ...entity,
+    slug: getEntitySlug(entity),
+    categoryId: category.id,
+    categoryName: category.name,
+  }
+}
+
 export function CategorySection({ category }: CategorySectionProps) {
   return (
     <section id={category.id} className="scroll-mt-20">
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-foreground">
-          <Link
-            href={`/categoria/${category.id}`}
-            className="hover:text-primary"
-          >
-            {category.name}
-          </Link>
-        </h2>
-        <p className="text-muted-foreground">{category.description}</p>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {category.entities.length} entidades ·{" "}
-          <Link
-            href={`/categoria/${category.id}`}
-            className="text-primary hover:underline"
-          >
-            Ver categoría
-          </Link>
-        </p>
-      </div>
+      <h2 className="mb-4 text-xl font-bold text-foreground">
+        <Link
+          href={`/categoria/${category.id}`}
+          className="hover:text-primary"
+        >
+          {category.name}
+        </Link>
+      </h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {category.entities.map((entity) => (
-          <LogoCard key={entity.id} entity={entity} />
+          <EntityPreviewCard
+            key={entity.id}
+            entity={toEntityRecord(entity, category)}
+          />
         ))}
       </div>
     </section>
