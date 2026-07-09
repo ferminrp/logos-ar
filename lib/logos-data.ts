@@ -29,7 +29,7 @@ export const categories: Category[] = [
       { id: 10, name: "Banco Supervielle", domain: "www.supervielle.com.ar" },
       { id: 13, name: "Banco Comafi", domain: "www.comafi.com.ar" },
       { id: 16, name: "Banco Piano", domain: "www.bancopiano.com.ar" },
-      { id: 17, name: "Banco de Corrientes (BANCOR)", domain: "bancor.com.ar" },
+      { id: 17, name: "Banco de Córdoba (BANCOR)", domain: "bancor.com.ar" },
       { id: 18, name: "BPN (Banco Provincia de Neuquén)", domain: "www.bpn.com.ar" },
       { id: 23, name: "Naranja X", domain: "naranjax.com" },
       { id: 24, name: "Brubank", domain: "brubank.com" },
