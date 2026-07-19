@@ -1,8 +1,8 @@
 "use client"
 
+import { useState } from "react"
 import { Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { getGoogleFaviconUrl } from "@/lib/favicon-urls"
 
 type LogoFormat = "png" | "svg"
 
@@ -22,8 +22,28 @@ function trackLogoDownload(slug: string, name: string, format: LogoFormat) {
   }
 }
 
+function getDownloadUrl(domain: string, format: LogoFormat): string {
+  const params = new URLSearchParams({
+    domain,
+    format,
+    size: "256",
+  })
+
+  return `/api/logo-download?${params.toString()}`
+}
+
+function getFilename(domain: string, format: LogoFormat): string {
+  const base = domain.replace(/\./g, "_")
+  return `${base}_logo.${format}`
+}
+
 async function triggerDownload(url: string, filename: string) {
   const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error("download_failed")
+  }
+
   const blob = await response.blob()
   const objectUrl = URL.createObjectURL(blob)
   const anchor = document.createElement("a")
@@ -35,38 +55,60 @@ async function triggerDownload(url: string, filename: string) {
   URL.revokeObjectURL(objectUrl)
 }
 
-function getFilename(domain: string, format: LogoFormat): string {
-  const base = domain.replace(/\./g, "_")
-  return `${base}_logo.${format}`
-}
-
 export function LogoDownloadButtons({
   slug,
   name,
   domain,
 }: LogoDownloadButtonsProps) {
-  const pngUrl = getGoogleFaviconUrl(domain, 256)
+  const [downloadingFormat, setDownloadingFormat] = useState<LogoFormat | null>(
+    null,
+  )
+  const [error, setError] = useState<string | null>(null)
 
-  function handleDownload(format: LogoFormat) {
+  async function handleDownload(format: LogoFormat) {
+    setDownloadingFormat(format)
+    setError(null)
     trackLogoDownload(slug, name, format)
-    void triggerDownload(pngUrl, getFilename(domain, format))
+
+    try {
+      await triggerDownload(
+        getDownloadUrl(domain, format),
+        getFilename(domain, format),
+      )
+    } catch {
+      setError("No se pudo descargar el logo. Intentá de nuevo.")
+    } finally {
+      setDownloadingFormat(null)
+    }
   }
 
   return (
-    <div className="flex flex-wrap gap-2">
-      <Button type="button" variant="outline" onClick={() => handleDownload("png")}>
-        <Download className="h-4 w-4" />
-        Descargar PNG
-      </Button>
-      <Button
-        type="button"
-        variant="outline"
-        onClick={() => handleDownload("svg")}
-      >
-        <Download className="h-4 w-4" />
-        Descargar SVG
-      </Button>
+    <div className="space-y-2">
+      <div className="flex flex-wrap gap-2">
+        <Button
+          type="button"
+          variant="outline"
+          disabled={downloadingFormat !== null}
+          onClick={() => void handleDownload("png")}
+        >
+          <Download className="h-4 w-4" />
+          {downloadingFormat === "png" ? "Descargando..." : "Descargar PNG"}
+        </Button>
+        <Button
+          type="button"
+          variant="outline"
+          disabled={downloadingFormat !== null}
+          onClick={() => void handleDownload("svg")}
+        >
+          <Download className="h-4 w-4" />
+          {downloadingFormat === "svg" ? "Descargando..." : "Descargar SVG"}
+        </Button>
+      </div>
+      {error ? (
+        <p className="text-sm text-destructive" role="alert">
+          {error}
+        </p>
+      ) : null}
     </div>
   )
 }
-
