@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ExternalLink } from "lucide-react"
 import { CopyButton } from "@/components/copy-button"
 import { EntityPreviewCard } from "@/components/entity-preview-card"
+import { LogoDownloadButtons } from "@/components/logo-download-buttons"
 import type { EntityRecord } from "@/lib/entity-index"
 import {
   defaultCurlConfig,
@@ -15,9 +16,10 @@ import {
 interface EntityDetailProps {
   entity: EntityRecord
   related: EntityRecord[]
+  slug: string
 }
 
-export function EntityDetail({ entity, related }: EntityDetailProps) {
+export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
   const googleUrl = getGoogleFaviconUrl(entity.domain)
   const duckUrl = getDuckDuckGoFaviconUrl(entity.domain)
   const googleCurl = getGoogleCurl(entity.domain, defaultCurlConfig)
@@ -26,6 +28,22 @@ export function EntityDetail({ entity, related }: EntityDetailProps) {
 
   return (
     <div className="space-y-8">
+      <div className="space-y-4">
+        <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
+          Logo {entity.name}
+        </h1>
+        <p className="text-sm text-muted-foreground">
+          Logo oficial de {entity.name} en resolución alta, formato PNG
+          transparente y SVG vectorial. Descarga gratis para uso en diseño web,
+          presentaciones y documentos.
+        </p>
+        <LogoDownloadButtons
+          slug={slug}
+          name={entity.name}
+          domain={entity.domain}
+        />
+      </div>
+
       <div className="flex flex-col gap-6 rounded-xl border border-border bg-card p-6 sm:flex-row sm:items-start">
         <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-secondary">
           <img
@@ -38,14 +56,11 @@ export function EntityDetail({ entity, related }: EntityDetailProps) {
           />
         </div>
         <div className="min-w-0 flex-1">
-          <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Logo y favicon de {entity.name}
-          </h1>
           <a
             href={`https://${entity.domain}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-primary"
+            className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-primary"
           >
             {entity.domain}
             <ExternalLink className="h-3.5 w-3.5" />
