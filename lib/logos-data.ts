@@ -8,6 +8,8 @@ export interface Category {
   id: string
   name: string
   description: string
+  seoTopEntities: [string, string, string]
+  seoIntro: string
   entities: Entity[]
 }
 
@@ -16,6 +18,9 @@ export const categories: Category[] = [
     id: "bancos",
     name: "Bancos",
     description: "Bancos tradicionales y públicos de Argentina",
+    seoTopEntities: ["Banco Nación", "Banco Galicia", "BBVA"],
+    seoIntro:
+      "Logos oficiales de bancos argentinos en PNG y SVG transparente. Banco Nación, Galicia, BBVA, Santander, Macro, Provincia y 10 entidades más. Descarga gratis los logos de los principales bancos tradicionales y públicos de Argentina para diseño, presentaciones y proyectos.",
     entities: [
       { id: 1, name: "Banco de la Nación Argentina", domain: "bna.com.ar" },
       { id: 2, name: "Banco Santander Río", domain: "santander.com.ar" },
@@ -40,6 +45,9 @@ export const categories: Category[] = [
     id: "fintechs",
     name: "Fintechs",
     description: "Billeteras digitales, neobancos y apps financieras",
+    seoTopEntities: ["Ualá", "Mercado Pago", "Lemon Cash"],
+    seoIntro:
+      "Logos de fintechs, billeteras digitales y neobancos en Argentina en PNG y SVG. Ualá, Mercado Pago, Lemon Cash, Prex, Personal Pay, MODO, Belo y 19 entidades más. Descarga gratis los logos de las principales apps financieras de Argentina.",
     entities: [
       { id: 21, name: "Ualá", domain: "uala.com.ar" },
       { id: 22, name: "Mercado Pago", domain: "mercadopago.com.ar" },
@@ -73,6 +81,9 @@ export const categories: Category[] = [
     id: "alycs",
     name: "ALyCs",
     description: "Agentes de Liquidación y Compensación (brokers)",
+    seoTopEntities: ["Balanz", "IOL", "PPI"],
+    seoIntro:
+      "Logos de ALyCs y brokers de bolsa argentina en PNG y SVG. Balanz, InvertirOnline, PPI, Allaria, Bull Market, Cohen y 3 más. Descarga gratis los logos de los principales agentes de liquidación.",
     entities: [
       { id: 41, name: "Invertir Online (IOL)", domain: "invertironline.com" },
       { id: 42, name: "Balanz", domain: "balanz.com" },
@@ -89,6 +100,9 @@ export const categories: Category[] = [
     id: "entes-estatales",
     name: "Entes estatales",
     description: "Organismos públicos con servicios fiscales y tributarios",
+    seoTopEntities: ["ARCA", "BCRA", "AGIP"],
+    seoIntro:
+      "Logos de organismos públicos y entes estatales argentinos en PNG y SVG. ARCA (ex AFIP), BCRA, AGIP, CNV. Descarga gratis los logos de los principales organismos fiscales y de regulación.",
     entities: [
       { id: 61, name: "ARCA (ex AFIP)", domain: "www.afip.gob.ar" },
       { id: 62, name: "AGIP", domain: "www.agip.gob.ar" },
@@ -100,6 +114,9 @@ export const categories: Category[] = [
     id: "retail",
     name: "Retail",
     description: "Comercios y cadenas de consumo masivo en Argentina",
+    seoTopEntities: ["Mercado Libre", "Coto", "Frávega"],
+    seoIntro:
+      "Logos de cadenas de retail argentinas en PNG y SVG. Mercado Libre, Coto, Frávega, Jumbo, Disco y 10 comercios más. Descarga gratis los logos de las principales marcas de consumo masivo de Argentina.",
     entities: [
       { id: 81, name: "Mercado Libre", domain: "mercadolibre.com.ar" },
       { id: 82, name: "Carrefour", domain: "carrefour.com.ar" },
@@ -122,6 +139,9 @@ export const categories: Category[] = [
     id: "medios",
     name: "Medios",
     description: "Medios periodísticos y portales de noticias de Argentina",
+    seoTopEntities: ["Infobae", "La Nación", "Clarín"],
+    seoIntro:
+      "Logos de medios y portales de noticias argentinos en PNG y SVG. Infobae, La Nación, Clarín, TN, El Cronista y 10 medios más. Descarga gratis los logos de los principales medios de comunicación de Argentina.",
     entities: [
       { id: 101, name: "Infobae", domain: "infobae.com" },
       { id: 102, name: "La Nación", domain: "lanacion.com.ar" },
@@ -144,6 +164,9 @@ export const categories: Category[] = [
     id: "automotrices",
     name: "Automotrices",
     description: "Marcas automotrices con presencia en Argentina",
+    seoTopEntities: ["Toyota", "Volkswagen", "Ford"],
+    seoIntro:
+      "Logos de marcas automotrices en Argentina en PNG y SVG transparente. Toyota, Volkswagen, Ford, Chevrolet, Renault, Fiat y 12 marcas más. Descarga gratis los logos de las principales marcas de autos con presencia en Argentina.",
     entities: [
       { id: 121, name: "Toyota", domain: "toyota.com.ar" },
       { id: 122, name: "Volkswagen", domain: "volkswagen.com.ar" },
@@ -169,6 +192,9 @@ export const categories: Category[] = [
     id: "alimentos",
     name: "Alimentos y bebidas",
     description: "Empresas de alimentos y bebidas en Argentina",
+    seoTopEntities: ["Arcor", "La Serenísima", "Quilmes"],
+    seoIntro:
+      "Logos de empresas de alimentos y bebidas argentinas en PNG y SVG. Arcor, La Serenísima, Quilmes, Nestlé, Bimbo y 7 marcas más. Descarga gratis los logos de las principales empresas de alimentos de Argentina.",
     entities: [
       { id: 141, name: "Arcor", domain: "arcor.com" },
       { id: 142, name: "Molinos Río de la Plata", domain: "molinos.com.ar" },
@@ -188,6 +214,9 @@ export const categories: Category[] = [
     id: "combustibles",
     name: "Combustibles",
     description: "Empresas de combustibles y estaciones de servicio",
+    seoTopEntities: ["YPF", "Shell", "AXION"],
+    seoIntro:
+      "Logos de empresas de combustibles y estaciones de servicio en Argentina en PNG y SVG. YPF, Shell, AXION, Puma, Gulf y 2 más. Descarga gratis los logos de las principales marcas de combustibles.",
     entities: [
       { id: 161, name: "YPF", domain: "ypf.com" },
       { id: 162, name: "Shell", domain: "shell.com.ar" },
@@ -202,6 +231,9 @@ export const categories: Category[] = [
     id: "seguros",
     name: "Seguros",
     description: "Compañías de seguros con operación en Argentina",
+    seoTopEntities: ["San Cristóbal", "Mapfre", "Allianz"],
+    seoIntro:
+      "Logos de compañías de seguros en Argentina en PNG y SVG. San Cristóbal, Mapfre, Allianz, La Caja, Provincia Seguros y 3 más. Descarga gratis los logos de las principales aseguradoras del país.",
     entities: [
       { id: 171, name: "Federación Patronal Seguros", domain: "fedpat.com.ar" },
       { id: 172, name: "Sancor Seguros", domain: "sancorseguros.com.ar" },
@@ -217,6 +249,9 @@ export const categories: Category[] = [
     id: "indumentaria",
     name: "Indumentaria",
     description: "Marcas y cadenas de indumentaria en Argentina",
+    seoTopEntities: ["Rapsodia", "Cheeky", "Grimoldi"],
+    seoIntro:
+      "Logos de marcas y cadenas de indumentaria argentina en PNG y SVG. Rapsodia, Cheeky, Grimoldi, Maria Cher, Mimo, Markova. Descarga gratis los logos de las principales marcas de moda de Argentina.",
     entities: [
       { id: 181, name: "Rapsodia", domain: "rapsodia.com.ar" },
       { id: 182, name: "Grimoldi", domain: "grimoldi.com" },
@@ -230,6 +265,9 @@ export const categories: Category[] = [
     id: "gastronomia",
     name: "Gastronomía",
     description: "Apps y marcas gastronómicas",
+    seoTopEntities: ["PedidosYa", "Rappi", "Burger King"],
+    seoIntro:
+      "Logos de apps y marcas gastronómicas en Argentina en PNG y SVG. PedidosYa, Rappi, Burger King, McDonald's, Starbucks, Mostaza y 5 marcas más. Descarga gratis los logos de las principales cadenas de comida y delivery.",
     entities: [
       { id: 191, name: "PedidosYa", domain: "pedidosya.com.ar" },
       { id: 192, name: "Rappi", domain: "rappi.com.ar" },
@@ -248,6 +286,9 @@ export const categories: Category[] = [
     id: "turismo",
     name: "Turismo",
     description: "Hotelería, viajes y paquetes turísticos",
+    seoTopEntities: ["Despegar", "Aerolíneas Argentinas", "Booking"],
+    seoIntro:
+      "Logos de empresas de turismo, aerolíneas y hoteles en Argentina en PNG y SVG. Despegar, Aerolíneas Argentinas, Booking, Airbnb, Flybondi y 9 marcas más. Descarga gratis los logos de las principales empresas de viajes.",
     entities: [
       { id: 201, name: "Aerolíneas Argentinas", domain: "aerolineas.com.ar" },
       { id: 202, name: "Flybondi", domain: "flybondi.com" },
@@ -269,6 +310,9 @@ export const categories: Category[] = [
     id: "energia",
     name: "Energía",
     description: "Distribuidoras y empresas del sector energético",
+    seoTopEntities: ["Edenor", "Camuzzi", "Metrogas"],
+    seoIntro:
+      "Logos de distribuidoras y empresas de energía en Argentina en PNG y SVG. Edenor, Camuzzi, Metrogas, Pampa Energía. Descarga gratis los logos de las principales empresas del sector energético.",
     entities: [
       { id: 211, name: "Edenor", domain: "edenor.com" },
       { id: 213, name: "Camuzzi Gas", domain: "camuzzigas.com" },
@@ -280,6 +324,9 @@ export const categories: Category[] = [
     id: "indie-projects",
     name: "Indie Projects",
     description: "Proyectos independientes del ecosistema fintech argentino",
+    seoTopEntities: ["Bond Terminal", "Dolarito", "Steamcito"],
+    seoIntro:
+      "Logos de proyectos independientes del ecosistema fintech argentino en PNG y SVG. Bond Terminal, Dolarito, Steamcito, ComparaTasas, Rendimientos, Impuestito y 3 más. Descarga gratis los logos de los principales indie projects de finanzas.",
     entities: [
       { id: 301, name: "ComparaTasas", domain: "comparatasas.ar" },
       { id: 302, name: "Rendimientos", domain: "rendimientos.co" },
