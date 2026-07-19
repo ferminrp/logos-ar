@@ -22,15 +22,17 @@ function trackLogoDownload(slug: string, name: string, format: LogoFormat) {
   }
 }
 
-function triggerDownload(url: string, filename: string) {
+async function triggerDownload(url: string, filename: string) {
+  const response = await fetch(url)
+  const blob = await response.blob()
+  const objectUrl = URL.createObjectURL(blob)
   const anchor = document.createElement("a")
-  anchor.href = url
+  anchor.href = objectUrl
   anchor.download = filename
-  anchor.target = "_blank"
-  anchor.rel = "noopener noreferrer"
   document.body.appendChild(anchor)
   anchor.click()
   document.body.removeChild(anchor)
+  URL.revokeObjectURL(objectUrl)
 }
 
 function getFilename(domain: string, format: LogoFormat): string {
@@ -47,7 +49,7 @@ export function LogoDownloadButtons({
 
   function handleDownload(format: LogoFormat) {
     trackLogoDownload(slug, name, format)
-    triggerDownload(pngUrl, getFilename(domain, format))
+    void triggerDownload(pngUrl, getFilename(domain, format))
   }
 
   return (
