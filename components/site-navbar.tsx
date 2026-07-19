@@ -64,7 +64,7 @@ export function SiteNavbar() {
               <Input
                 type="search"
                 placeholder="Buscar por nombre o dominio..."
-                className="h-12 rounded-2xl border border-border bg-white pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 sm:h-14 sm:pl-11 sm:text-[15px]"
+                className="h-12 rounded-2xl border border-border bg-white pl-10 pr-4 text-base text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 sm:h-14 sm:pl-11 md:text-sm"
                 value={searchValue}
                 onChange={(event) => setSearchValue(event.target.value)}
               />
