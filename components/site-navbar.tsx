@@ -45,10 +45,9 @@ export function SiteNavbar() {
   )
 
   return (
-    <header className="bg-background px-2 pt-2 sm:px-4 sm:pt-3">
-      <div className="mx-auto max-w-[96rem]">
-        <div className="rounded-2xl border border-border/70 bg-card px-5 pb-6 pt-4 shadow-[0_1px_3px_rgba(40,35,30,0.04),0_8px_24px_rgba(40,35,30,0.04)] sm:px-8 sm:pb-7 sm:pt-5">
-          <div className="mx-auto grid w-full max-w-7xl gap-4 lg:grid-cols-[auto_minmax(20rem,1fr)_auto] lg:items-center lg:gap-8">
+    <header className="bg-background">
+      <div className="mx-auto max-w-7xl px-4 pb-6 pt-4 sm:px-6 sm:pb-7 sm:pt-5 lg:px-8">
+        <div className="grid w-full gap-4 lg:grid-cols-[auto_minmax(20rem,1fr)_auto] lg:items-center lg:gap-8">
             <div className="flex items-center">
               <div className="min-w-0">
                 <Link
@@ -57,9 +56,6 @@ export function SiteNavbar() {
                 >
                   Logos Argentina
                 </Link>
-                <p className="mt-1.5 text-sm text-muted-foreground">
-                  Directorio de favicons
-                </p>
               </div>
             </div>
 
@@ -68,7 +64,7 @@ export function SiteNavbar() {
               <Input
                 type="search"
                 placeholder="Buscar por nombre o dominio..."
-                className="h-12 rounded-2xl border border-border bg-background pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 sm:h-14 sm:pl-11 sm:text-[15px]"
+                className="h-12 rounded-2xl border border-border bg-white pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 sm:h-14 sm:pl-11 sm:text-[15px]"
                 value={searchValue}
                 onChange={(event) => setSearchValue(event.target.value)}
               />
@@ -79,7 +75,7 @@ export function SiteNavbar() {
                 <Link href="/categorias">Categorías</Link>
               </Button>
               <Button asChild size="sm" variant="ghost" className={navButtonClassName}>
-                <Link href="/docs">Docs</Link>
+                <Link href="/docs">API</Link>
               </Button>
               <Button
                 asChild
@@ -97,7 +93,6 @@ export function SiteNavbar() {
                 </a>
               </Button>
             </div>
-          </div>
         </div>
       </div>
     </header>
