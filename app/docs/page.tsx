@@ -3,19 +3,19 @@ export default function DocsPage() {
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold tracking-tight text-foreground">API de logos</h1>
+      <h1 className="font-serif text-3xl font-medium tracking-tight text-foreground">API de logos</h1>
       <p className="mt-3 text-muted-foreground">
         Endpoint para consultar logos por nombre, dominio y categoría opcional.
       </p>
 
-      <section className="mt-8 space-y-3 rounded-lg border border-border bg-card p-5">
+      <section className="mt-8 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
         <h2 className="text-xl font-semibold text-foreground">Endpoint</h2>
         <p className="text-sm text-muted-foreground">
           <code>GET {baseApi}</code>
         </p>
       </section>
 
-      <section className="mt-6 space-y-3 rounded-lg border border-border bg-card p-5">
+      <section className="mt-6 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
         <h2 className="text-xl font-semibold text-foreground">Query params</h2>
         <ul className="list-disc space-y-2 pl-6 text-sm text-muted-foreground">
           <li>
@@ -36,7 +36,7 @@ export default function DocsPage() {
         </ul>
       </section>
 
-      <section className="mt-6 space-y-3 rounded-lg border border-border bg-card p-5">
+      <section className="mt-6 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
         <h2 className="text-xl font-semibold text-foreground">Ejemplos</h2>
         <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">
 {`GET /api/logos
@@ -47,7 +47,7 @@ GET /api/logos?category=bancos&q=banco`}
         </pre>
       </section>
 
-      <section className="mt-6 space-y-3 rounded-lg border border-border bg-card p-5">
+      <section className="mt-6 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
         <h2 className="text-xl font-semibold text-foreground">Respuesta</h2>
         <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">
 {`{
@@ -79,7 +79,7 @@ GET /api/logos?category=bancos&q=banco`}
         </p>
       </section>
 
-      <section className="mt-6 space-y-3 rounded-lg border border-border bg-card p-5">
+      <section className="mt-6 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
         <h2 className="text-xl font-semibold text-foreground">Cache</h2>
         <ul className="list-disc space-y-2 pl-6 text-sm text-muted-foreground">
           <li>

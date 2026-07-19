@@ -38,64 +38,54 @@ export function SiteNavbar() {
     router.push(nextUrl)
   }
 
-  const brandClassName =
-    "block truncate text-xl font-semibold leading-none text-white sm:text-[1.7rem]"
+  const navButtonClassName = cn(
+    "h-9 rounded-xl border border-border/80 bg-transparent px-4 text-foreground shadow-none",
+    "hover:bg-muted hover:text-foreground",
+    "focus-visible:ring-ring/40"
+  )
 
   return (
     <header className="bg-background px-2 pt-2 sm:px-4 sm:pt-3">
       <div className="mx-auto max-w-[96rem]">
-        <div className="rounded-2xl bg-[#12633f] px-5 pb-7 pt-4 shadow-sm sm:px-8 sm:pb-8 sm:pt-6">
+        <div className="rounded-2xl border border-border/70 bg-card px-5 pb-6 pt-4 shadow-[0_1px_3px_rgba(40,35,30,0.04),0_8px_24px_rgba(40,35,30,0.04)] sm:px-8 sm:pb-7 sm:pt-5">
           <div className="mx-auto grid w-full max-w-7xl gap-4 lg:grid-cols-[auto_minmax(20rem,1fr)_auto] lg:items-center lg:gap-8">
             <div className="flex items-center">
               <div className="min-w-0">
-                <Link href="/" className={brandClassName}>
+                <Link
+                  href="/"
+                  className="font-serif block truncate text-xl font-medium leading-none tracking-tight text-foreground sm:text-[1.7rem]"
+                >
                   Logos Argentina
                 </Link>
-                <p className="mt-1 text-sm text-emerald-50/90">
+                <p className="mt-1.5 text-sm text-muted-foreground">
                   Directorio de favicons
                 </p>
               </div>
             </div>
 
             <form onSubmit={handleSubmit} className="relative w-full">
-              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-emerald-100/80" />
+              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder="Buscar por nombre o dominio..."
-                className="h-12 rounded-full border border-white/15 bg-white/15 pl-10 pr-4 text-sm text-white placeholder:text-white/65 focus-visible:border-emerald-200/60 focus-visible:ring-2 focus-visible:ring-emerald-100/35 sm:h-14 sm:pl-11 sm:text-[15px]"
+                className="h-12 rounded-2xl border border-border bg-background pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 sm:h-14 sm:pl-11 sm:text-[15px]"
                 value={searchValue}
                 onChange={(event) => setSearchValue(event.target.value)}
               />
             </form>
 
             <div className="flex flex-wrap items-center gap-2 lg:justify-self-end">
-              <Button
-                asChild
-                size="sm"
-                className={cn(
-                  "h-9 rounded-lg border-0 bg-white/10 px-4 text-white shadow-none hover:bg-white/18",
-                  "focus-visible:ring-white/30"
-                )}
-              >
+              <Button asChild size="sm" variant="ghost" className={navButtonClassName}>
                 <Link href="/categorias">Categorías</Link>
               </Button>
-              <Button
-                asChild
-                size="sm"
-                className={cn(
-                  "h-9 rounded-lg border-0 bg-white/10 px-4 text-white shadow-none hover:bg-white/18",
-                  "focus-visible:ring-white/30"
-                )}
-              >
+              <Button asChild size="sm" variant="ghost" className={navButtonClassName}>
                 <Link href="/docs">Docs</Link>
               </Button>
               <Button
                 asChild
                 size="icon"
-                className={cn(
-                  "h-9 w-9 rounded-lg border-0 bg-white/10 text-white shadow-none hover:bg-white/18",
-                  "focus-visible:ring-white/30"
-                )}
+                variant="ghost"
+                className={cn(navButtonClassName, "w-9 px-0")}
               >
                 <a
                   href="https://github.com/ferminrp/logos-ar"

@@ -42,11 +42,11 @@ export function FaqSection({ limit }: FaqSectionProps) {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <h2
           id="faq-heading"
-          className="mb-6 text-lg font-semibold text-foreground"
+          className="font-serif mb-6 text-xl font-medium tracking-tight text-foreground"
         >
           Preguntas frecuentes
         </h2>
-        <div className="rounded-lg border border-border bg-card px-4 sm:px-6">
+        <div className="rounded-2xl border border-border/80 bg-card px-4 sm:px-6">
           <Accordion type="single" collapsible className="w-full">
             {visibleItems.map((item, index) => (
               <AccordionItem key={index} value={`faq-${index}`}>
