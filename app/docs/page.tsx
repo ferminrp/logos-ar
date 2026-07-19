@@ -8,14 +8,14 @@ export default function DocsPage() {
         Endpoint para consultar logos por nombre, dominio y categoría opcional.
       </p>
 
-      <section className="mt-8 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
+      <section className="mt-8 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Endpoint</h2>
         <p className="text-sm text-muted-foreground">
           <code>GET {baseApi}</code>
         </p>
       </section>
 
-      <section className="mt-6 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
+      <section className="mt-6 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Query params</h2>
         <ul className="list-disc space-y-2 pl-6 text-sm text-muted-foreground">
           <li>
@@ -36,7 +36,7 @@ export default function DocsPage() {
         </ul>
       </section>
 
-      <section className="mt-6 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
+      <section className="mt-6 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Ejemplos</h2>
         <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">
 {`GET /api/logos
@@ -47,7 +47,7 @@ GET /api/logos?category=bancos&q=banco`}
         </pre>
       </section>
 
-      <section className="mt-6 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
+      <section className="mt-6 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Respuesta</h2>
         <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">
 {`{
@@ -79,7 +79,7 @@ GET /api/logos?category=bancos&q=banco`}
         </p>
       </section>
 
-      <section className="mt-6 space-y-3 rounded-2xl border border-border/80 bg-card p-5">
+      <section className="mt-6 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Cache</h2>
         <ul className="list-disc space-y-2 pl-6 text-sm text-muted-foreground">
           <li>
