@@ -22,7 +22,7 @@ export function EntityPreviewCard({ entity }: EntityPreviewCardProps) {
         className="h-5 w-5 shrink-0 rounded object-contain"
         referrerPolicy="no-referrer"
       />
-      <h3 className="min-w-0 flex-1 truncate text-sm text-foreground group-hover:text-primary">
+      <h3 className="min-w-0 flex-1 truncate text-sm font-medium text-foreground group-hover:text-primary">
         {entity.name}
       </h3>
     </Link>
