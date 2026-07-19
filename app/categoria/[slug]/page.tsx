@@ -92,18 +92,16 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <p className="text-muted-foreground leading-relaxed">{category.seoIntro}</p>
       </section>
 
-      <ul className="mt-6 max-w-2xl columns-1 gap-x-8 text-sm sm:columns-2">
-        {entities.map((entity) => (
-          <li key={entity.id} className="mb-1 break-inside-avoid">
-            <Link
-              href={`/logo/${entity.slug}`}
-              className="text-primary hover:underline"
-            >
-              Logo {entity.name} PNG
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <section
+        className="mt-8"
+        aria-label={`Logos de ${category.name}`}
+      >
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {entities.map((entity) => (
+            <EntityPreviewCard key={entity.id} entity={entity} />
+          ))}
+        </div>
+      </section>
 
       <section className="mt-10 max-w-2xl" aria-labelledby="category-faq-heading">
         <h2
@@ -118,10 +116,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               ¿Cómo descargar los logos?
             </summary>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Entrá a la página de cada entidad desde el listado o las tarjetas de
-              abajo. Ahí vas a encontrar la URL del favicon y el comando curl listo
-              para copiar (Google y DuckDuckGo). Podés usar la URL directamente en
-              diseño, presentaciones o hojas de cálculo.
+              Entrá a la página de cada entidad desde el listado de arriba. Ahí vas a
+              encontrar la URL del favicon y el comando curl listo para copiar (Google
+              y DuckDuckGo). Podés usar la URL directamente en diseño, presentaciones
+              o hojas de cálculo.
             </p>
           </details>
           <details className="rounded-2xl border border-border/80 bg-card px-4 py-3">
@@ -148,12 +146,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </details>
         </div>
       </section>
-
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {entities.map((entity) => (
-          <EntityPreviewCard key={entity.id} entity={entity} />
-        ))}
-      </div>
 
       <p className="mt-10 text-sm text-muted-foreground">
         <Link href="/categorias" className="text-primary hover:underline">
