@@ -79,7 +79,7 @@ export function SiteNavbar() {
                 <Link href="/categorias">Categorías</Link>
               </Button>
               <Button asChild size="sm" variant="ghost" className={navButtonClassName}>
-                <Link href="/docs">Docs</Link>
+                <Link href="/docs">API</Link>
               </Button>
               <Button
                 asChild
