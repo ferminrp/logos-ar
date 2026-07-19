@@ -54,7 +54,7 @@ export function LogoDownloadButtons({
 
   return (
     <div className="flex flex-wrap gap-2">
-      <Button type="button" onClick={() => handleDownload("png")}>
+      <Button type="button" variant="outline" onClick={() => handleDownload("png")}>
         <Download className="h-4 w-4" />
         Descargar PNG
       </Button>
