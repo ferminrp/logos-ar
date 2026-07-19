@@ -44,7 +44,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
         />
       </div>
 
-      <div className="flex flex-col gap-6 rounded-2xl border border-border/80 bg-card p-6 shadow-[0_1px_2px_rgba(40,35,30,0.03)] sm:flex-row sm:items-start">
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary">
           <img
             src={googleUrl}
@@ -80,7 +80,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
       <section className="space-y-4">
         <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">URLs de favicon</h2>
 
-        <div className="space-y-3 rounded-2xl border border-border/80 bg-card p-4 shadow-[0_1px_2px_rgba(40,35,30,0.03)]">
+        <div className="space-y-3">
           <div>
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Google (128px)
@@ -109,7 +109,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
 
       <section className="space-y-4">
         <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">Comandos curl</h2>
-        <div className="space-y-3 rounded-2xl border border-border/80 bg-card p-4 shadow-[0_1px_2px_rgba(40,35,30,0.03)]">
+        <div className="space-y-3">
           <div>
             <p className="mb-1 text-xs font-medium text-muted-foreground">Google</p>
             <div className="flex items-start gap-2">
@@ -146,8 +146,8 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
         <p className="text-sm text-muted-foreground">
           Pegá esta fórmula en una celda para mostrar el favicon:
         </p>
-        <div className="flex items-center gap-2 rounded-2xl border border-border/80 bg-card p-4 shadow-[0_1px_2px_rgba(40,35,30,0.03)]">
-          <code className="flex-1 break-all font-mono text-sm text-foreground">
+        <div className="flex items-center gap-2">
+          <code className="flex-1 break-all rounded bg-secondary px-2 py-1.5 font-mono text-sm text-foreground">
             {sheetsFormula}
           </code>
           <CopyButton value={sheetsFormula} label="Copiar fórmula IMAGE" />
@@ -161,7 +161,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
         </p>
       </section>
 
-      <p className="rounded-2xl border border-border/80 bg-accent/60 px-4 py-3 text-sm text-muted-foreground">
+      <p className="text-sm text-muted-foreground">
         Los favicons se obtienen de servicios públicos según el dominio de la entidad.
         No somos fuente oficial de marca; para uso corporativo consultá las guías de cada
         organización.
