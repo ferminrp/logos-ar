@@ -1,6 +1,6 @@
 {
-  "version": "b16c4042680d",
-  "totalItems": 201,
+  "version": "ee7637ea1967",
+  "totalItems": 224,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -135,6 +135,54 @@
       "domain": "uilo.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=uilo.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/uilo.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Itaú Argentina",
+      "domain": "itau.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=itau.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/itau.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco Credicoop",
+      "domain": "credicoop.coop",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=credicoop.coop&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/credicoop.coop.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "HSBC Argentina",
+      "domain": "hsbc.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=hsbc.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/hsbc.com.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco del Tucumán",
+      "domain": "btucuman.gob.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=btucuman.gob.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/btucuman.gob.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco de Corrientes",
+      "domain": "bancocorrientes.gob.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancocorrientes.gob.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bancocorrientes.gob.ar.ico",
+      "categoryId": "bancos",
+      "categoryName": "Bancos"
+    },
+    {
+      "name": "Banco de La Pampa",
+      "domain": "bancodelapampa.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancodelapampa.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bancodelapampa.com.ar.ico",
       "categoryId": "bancos",
       "categoryName": "Bancos"
     },
@@ -691,6 +739,78 @@
       "categoryName": "Medios"
     },
     {
+      "name": "C5N",
+      "domain": "c5n.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=c5n.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/c5n.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "A24",
+      "domain": "a24.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=a24.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/a24.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Telefe",
+      "domain": "telefe.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=telefe.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/telefe.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "El Trece",
+      "domain": "eltrece.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=eltrece.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/eltrece.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "América TV",
+      "domain": "americatv.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=americatv.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/americatv.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Canal 26",
+      "domain": "canal26.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=canal26.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/canal26.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "La Prensa",
+      "domain": "laprensa.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=laprensa.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/laprensa.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "El Día (La Plata)",
+      "domain": "eldia.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=eldia.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/eldia.com.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "Río Negro",
+      "domain": "rionegro.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rionegro.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/rionegro.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
       "name": "Toyota",
       "domain": "toyota.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=toyota.com.ar&sz=128",
@@ -831,6 +951,70 @@
       "domain": "audi.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=audi.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/audi.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Honda",
+      "domain": "honda.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=honda.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/honda.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Porsche",
+      "domain": "porsche.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=porsche.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/porsche.com.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Ram",
+      "domain": "ramtrucks.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ramtrucks.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ramtrucks.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Land Rover",
+      "domain": "landrover.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=landrover.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/landrover.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Dodge",
+      "domain": "dodge.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=dodge.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/dodge.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Subaru",
+      "domain": "subaru.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=subaru.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/subaru.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Great Wall Motors",
+      "domain": "gwmargentina.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=gwmargentina.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/gwmargentina.com.ar.ico",
+      "categoryId": "automotrices",
+      "categoryName": "Automotrices"
+    },
+    {
+      "name": "Changan",
+      "domain": "changan.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=changan.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/changan.com.ar.ico",
       "categoryId": "automotrices",
       "categoryName": "Automotrices"
     },
