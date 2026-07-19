@@ -47,7 +47,7 @@ export const categories: Category[] = [
     description: "Billeteras digitales, neobancos y apps financieras",
     seoTopEntities: ["Ualá", "Mercado Pago", "Lemon Cash"],
     seoIntro:
-      "Logos de fintechs, billeteras digitales y neobancos en Argentina en PNG y SVG. Ualá, Mercado Pago, Lemon Cash, Prex, Personal Pay, MODO, Brubank y 19 entidades más. Descarga gratis los logos de las principales apps financieras de Argentina.",
+      "Logos de fintechs, billeteras digitales y neobancos en Argentina en PNG y SVG. Ualá, Mercado Pago, Lemon Cash, Prex, Personal Pay, MODO, Belo y 19 entidades más. Descarga gratis los logos de las principales apps financieras de Argentina.",
     entities: [
       { id: 21, name: "Ualá", domain: "uala.com.ar" },
       { id: 22, name: "Mercado Pago", domain: "mercadopago.com.ar" },
