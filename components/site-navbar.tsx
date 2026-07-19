@@ -47,7 +47,7 @@ export function SiteNavbar() {
   return (
     <header className="bg-background px-2 pt-2 sm:px-4 sm:pt-3">
       <div className="mx-auto max-w-[96rem]">
-        <div className="rounded-2xl border border-border/70 bg-card px-5 pb-6 pt-4 shadow-[0_1px_3px_rgba(40,35,30,0.04),0_8px_24px_rgba(40,35,30,0.04)] sm:px-8 sm:pb-7 sm:pt-5">
+        <div className="rounded-2xl border border-border/70 px-5 pb-6 pt-4 shadow-[0_1px_3px_rgba(40,35,30,0.04),0_8px_24px_rgba(40,35,30,0.04)] sm:px-8 sm:pb-7 sm:pt-5">
           <div className="mx-auto grid w-full max-w-7xl gap-4 lg:grid-cols-[auto_minmax(20rem,1fr)_auto] lg:items-center lg:gap-8">
             <div className="flex items-center">
               <div className="min-w-0">
