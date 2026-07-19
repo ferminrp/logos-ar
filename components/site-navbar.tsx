@@ -57,9 +57,6 @@ export function SiteNavbar() {
                 >
                   Logos Argentina
                 </Link>
-                <p className="mt-1.5 text-sm text-muted-foreground">
-                  Directorio de favicons
-                </p>
               </div>
             </div>
 
