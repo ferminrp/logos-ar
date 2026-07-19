@@ -2,7 +2,7 @@ export default function DocsPage() {
   const baseApi = "/api/logos"
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <h1 className="font-serif text-3xl font-medium tracking-tight text-foreground">API de logos</h1>
       <p className="mt-3 text-muted-foreground">
         Endpoint para consultar logos por nombre, dominio y categoría opcional.
