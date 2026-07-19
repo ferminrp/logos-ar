@@ -28,8 +28,8 @@ export async function generateMetadata({
     return { title: "Logo no encontrado" }
   }
 
-  const title = `Logo y favicon de ${entity.name}`
-  const description = `URL y curl del favicon de ${entity.name} (${entity.domain}) vía Google y DuckDuckGo. Copiá para web, Sheets o tu app.`
+  const title = `Logo ${entity.name} PNG y SVG transparente | Loguitos`
+  const description = `Descargar logo de ${entity.name} en PNG y SVG transparente. Logo oficial para uso en presentaciones, web y diseño. Dominio: ${entity.domain}.`
 
   return {
     title,
@@ -38,7 +38,7 @@ export async function generateMetadata({
       canonical: `/logo/${slug}`,
     },
     openGraph: {
-      title: `${title} | Logos Argentina`,
+      title,
       description,
       url: `/logo/${slug}`,
       type: "website",
@@ -67,7 +67,7 @@ export default async function LogoPage({ params }: LogoPageProps) {
     <main className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <Breadcrumbs items={breadcrumbItems} />
-      <EntityDetail entity={entity} related={related} />
+      <EntityDetail entity={entity} related={related} slug={slug} />
 
       <p className="mt-10 text-sm text-muted-foreground">
         <Link
