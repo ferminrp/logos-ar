@@ -1,6 +1,6 @@
 {
-  "version": "bf1549ebb36e",
-  "totalItems": 175,
+  "version": "b16c4042680d",
+  "totalItems": 201,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -931,6 +931,86 @@
       "categoryName": "Alimentos y bebidas"
     },
     {
+      "name": "Coca-Cola (Femsa)",
+      "domain": "coca-colafemsa.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=coca-colafemsa.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/coca-colafemsa.com.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "PepsiCo",
+      "domain": "pepsico.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pepsico.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pepsico.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Heineken",
+      "domain": "heineken.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=heineken.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/heineken.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Stella Artois",
+      "domain": "stellartois.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=stellartois.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/stellartois.com.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Cerveza Corona",
+      "domain": "cervecacorona.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cervecacorona.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cervecacorona.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Brahma",
+      "domain": "brahma.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=brahma.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/brahma.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Ilolay",
+      "domain": "ilolay.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ilolay.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ilolay.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "SanCor",
+      "domain": "sancor.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=sancor.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/sancor.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Danone",
+      "domain": "danone.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=danone.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/danone.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Paladini",
+      "domain": "paladini.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=paladini.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/paladini.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
       "name": "YPF",
       "domain": "ypf.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ypf.com&sz=128",
@@ -1095,6 +1175,54 @@
       "domain": "maria-cher.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=maria-cher.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/maria-cher.com.ar.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Zara",
+      "domain": "zara.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=zara.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/zara.com.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Nike",
+      "domain": "nike.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nike.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/nike.com.ar.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Adidas",
+      "domain": "adidas.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=adidas.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/adidas.com.ar.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Puma",
+      "domain": "puma.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=puma.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/puma.com.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Lacoste",
+      "domain": "lacoste.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=lacoste.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/lacoste.com.ico",
+      "categoryId": "indumentaria",
+      "categoryName": "Indumentaria"
+    },
+    {
+      "name": "Tommy Hilfiger",
+      "domain": "tommy.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tommy.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/tommy.com.ar.ico",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria"
     },
@@ -1295,6 +1423,86 @@
       "domain": "dollar.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=dollar.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/dollar.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Marriott",
+      "domain": "marriott.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=marriott.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/marriott.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Hyatt",
+      "domain": "hyatt.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=hyatt.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/hyatt.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "InterContinental (IHG)",
+      "domain": "ihg.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ihg.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ihg.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Radisson",
+      "domain": "radisson.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=radisson.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/radisson.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Meliá",
+      "domain": "melia.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=melia.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/melia.com.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Expedia",
+      "domain": "expedia.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=expedia.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/expedia.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Kayak",
+      "domain": "kayak.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=kayak.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/kayak.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "TripAdvisor",
+      "domain": "tripadvisor.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tripadvisor.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/tripadvisor.com.ar.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Gol Linhas Aéreas",
+      "domain": "voegol.com.br",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=voegol.com.br&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/voegol.com.br.ico",
+      "categoryId": "turismo",
+      "categoryName": "Turismo"
+    },
+    {
+      "name": "Copa Airlines",
+      "domain": "copaair.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=copaair.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/copaair.com.ico",
       "categoryId": "turismo",
       "categoryName": "Turismo"
     },
