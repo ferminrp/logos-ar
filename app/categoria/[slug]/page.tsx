@@ -77,7 +77,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       />
       <Breadcrumbs items={breadcrumbItems} />
 
-      <h1 className="text-3xl font-bold tracking-tight text-foreground">
+      <h1 className="font-serif text-3xl font-medium tracking-tight text-foreground">
         Logos de {category.name} en Argentina
       </h1>
       <p className="mt-3 max-w-2xl text-muted-foreground">{category.description}</p>
@@ -113,7 +113,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           Preguntas frecuentes
         </h2>
         <div className="mt-4 space-y-2">
-          <details className="rounded-lg border border-border bg-card px-4 py-3">
+          <details className="rounded-2xl border border-border/80 bg-card px-4 py-3">
             <summary className="cursor-pointer font-medium text-foreground">
               ¿Cómo descargar los logos?
             </summary>
@@ -124,7 +124,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               diseño, presentaciones o hojas de cálculo.
             </p>
           </details>
-          <details className="rounded-lg border border-border bg-card px-4 py-3">
+          <details className="rounded-2xl border border-border/80 bg-card px-4 py-3">
             <summary className="cursor-pointer font-medium text-foreground">
               ¿Son logos oficiales?
             </summary>
@@ -135,7 +135,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               al área legal o marketing de cada empresa.
             </p>
           </details>
-          <details className="rounded-lg border border-border bg-card px-4 py-3">
+          <details className="rounded-2xl border border-border/80 bg-card px-4 py-3">
             <summary className="cursor-pointer font-medium text-foreground">
               ¿Qué formatos están disponibles?
             </summary>

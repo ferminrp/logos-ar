@@ -33,7 +33,7 @@ export default function CategoriasPage() {
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <Breadcrumbs items={breadcrumbItems} />
 
-      <h1 className="text-3xl font-bold tracking-tight text-foreground">
+      <h1 className="font-serif text-3xl font-medium tracking-tight text-foreground">
         Categorías de logos en Argentina
       </h1>
       <p className="mt-3 max-w-2xl text-muted-foreground">

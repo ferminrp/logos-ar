@@ -20,7 +20,7 @@ function toEntityRecord(entity: Entity, category: Category): EntityRecord {
 export function CategorySection({ category }: CategorySectionProps) {
   return (
     <section id={category.id} className="scroll-mt-20">
-      <h2 className="mb-4 text-xl font-bold text-foreground">
+      <h2 className="font-serif mb-4 text-xl font-medium tracking-tight text-foreground">
         <Link
           href={`/categoria/${category.id}`}
           className="hover:text-primary"

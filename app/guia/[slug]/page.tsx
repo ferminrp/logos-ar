@@ -58,7 +58,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <Breadcrumbs items={breadcrumbItems} />
 
-      <h1 className="text-3xl font-bold tracking-tight text-foreground">
+      <h1 className="font-serif text-3xl font-medium tracking-tight text-foreground">
         {guide.title}
       </h1>
       <p className="mt-3 text-muted-foreground">{guide.description}</p>
@@ -66,7 +66,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
       <div className="mt-10 space-y-10">
         {guide.sections.map((section) => (
           <section key={section.heading}>
-            <h2 className="text-xl font-semibold text-foreground">
+            <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">
               {section.heading}
             </h2>
             <div className="mt-3 space-y-3 text-muted-foreground">
@@ -75,7 +75,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
               ))}
             </div>
             {section.code && (
-              <div className="mt-4 flex items-start gap-2 rounded-lg border border-border bg-card p-4">
+              <div className="mt-4 flex items-start gap-2 rounded-2xl border border-border/80 bg-card p-4">
                 <pre className="flex-1 overflow-x-auto font-mono text-xs text-foreground">
                   {section.code}
                 </pre>
@@ -90,7 +90,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
         ))}
       </div>
 
-      <div className="mt-12 rounded-lg border border-border bg-muted/30 p-5 text-sm text-muted-foreground">
+      <div className="mt-12 rounded-2xl border border-border/80 bg-accent/60 p-5 text-sm text-muted-foreground">
         <p>
           Explorá el{" "}
           <Link href="/" className="text-primary hover:underline">

@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 
 function categoryChipClassName() {
   return cn(
-    "rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors",
+    "rounded-xl px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors",
     "hover:bg-muted hover:text-foreground"
   )
 }
@@ -43,7 +43,7 @@ export function HomePage() {
         >
           <span
             className={cn(
-              "rounded-full bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground"
+              "rounded-xl bg-accent px-3 py-1.5 text-sm font-medium text-accent-foreground"
             )}
           >
             Todos

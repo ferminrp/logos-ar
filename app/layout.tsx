@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { DM_Sans, Geist_Mono, Newsreader } from 'next/font/google'
 import Script from 'next/script'
 import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/next'
@@ -8,9 +8,14 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { getSiteUrl } from '@/lib/site-url'
 import './globals.css'
 
-const geistSans = Geist({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-geist-sans',
+  variable: '--font-dm-sans',
+})
+
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-newsreader',
 })
 
 const geistMono = Geist_Mono({
@@ -75,7 +80,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${dmSans.variable} ${newsreader.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
