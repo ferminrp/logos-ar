@@ -1,17 +1,3 @@
-export const categoryNavItems = [
-  { id: "bancos", name: "Bancos" },
-  { id: "fintechs", name: "Fintechs" },
-  { id: "alycs", name: "ALyCs" },
-  { id: "entes-estatales", name: "Entes estatales" },
-  { id: "retail", name: "Retail" },
-  { id: "medios", name: "Medios" },
-  { id: "automotrices", name: "Automotrices" },
-  { id: "alimentos", name: "Alimentos y bebidas" },
-  { id: "combustibles", name: "Combustibles" },
-  { id: "seguros", name: "Seguros" },
-  { id: "indumentaria", name: "Indumentaria" },
-  { id: "gastronomia", name: "Gastronomía" },
-  { id: "turismo", name: "Turismo" },
-  { id: "energia", name: "Energía" },
-  { id: "indie-projects", name: "Indie Projects" },
-] as const
+import { categories } from "@/lib/logos-data"
+
+export const categoryNavItems = categories.map(({ id, name }) => ({ id, name }))

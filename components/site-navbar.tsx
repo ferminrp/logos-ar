@@ -25,7 +25,7 @@ export function SiteNavbar() {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
-  const currentQuery = searchParams.get("q") ?? ""
+  const currentQuery = (searchParams.get("q") ?? "").trim()
   const [searchValue, setSearchValue] = useState(currentQuery)
   const [menuOpen, setMenuOpen] = useState(false)
 
