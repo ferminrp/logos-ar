@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { CategorySection } from "@/components/category-section"
 import { FaqSection } from "@/components/faq-section"
+import { Button } from "@/components/ui/button"
 import { categories, type Category } from "@/lib/logos-data"
 import { cn } from "@/lib/utils"
 
@@ -73,15 +74,14 @@ export function HomePage() {
           )}
         </div>
 
-        <p className="mt-10 text-center text-sm text-muted-foreground">
-          <Link href="/categorias" className="text-primary hover:underline">
-            Ver todas las categorías
-          </Link>
-          {" · "}
-          <Link href="/docs" className="text-primary hover:underline">
-            Documentación API
-          </Link>
-        </p>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <Button asChild variant="outline" className="rounded-xl">
+            <Link href="/categorias">Ver todas las categorías</Link>
+          </Button>
+          <Button asChild variant="outline" className="rounded-xl">
+            <Link href="/docs">Documentación API</Link>
+          </Button>
+        </div>
       </main>
 
       <FaqSection limit={3} />
