@@ -1,6 +1,6 @@
 {
-  "version": "d700b5797697",
-  "totalItems": 215,
+  "version": "7a6845909d68",
+  "totalItems": 218,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -431,6 +431,14 @@
       "domain": "cocos.capital",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cocos.capital&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/cocos.capital.ico",
+      "categoryId": "alycs",
+      "categoryName": "ALyCs"
+    },
+    {
+      "name": "Veta Capital",
+      "domain": "vetacap.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=vetacap.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/vetacap.com.ar.ico",
       "categoryId": "alycs",
       "categoryName": "ALyCs"
     },
@@ -1119,6 +1127,22 @@
       "domain": "paladini.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=paladini.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/paladini.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Tregar",
+      "domain": "www.tregar.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.tregar.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.tregar.com.ar.ico",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas"
+    },
+    {
+      "name": "Beaudroit",
+      "domain": "www.familiabeaudroit.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.familiabeaudroit.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.familiabeaudroit.com.ar.ico",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas"
     },

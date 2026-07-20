@@ -96,6 +96,7 @@ export const categories: Category[] = [
       { id: 47, name: "Cohen Aliados", domain: "cohen.com.ar" },
       { id: 49, name: "SBS Trading", domain: "www.gruposbs.com" },
       { id: 37, name: "Cocos", domain: "cocos.capital" },
+      { id: 360, name: "Veta Capital", domain: "vetacap.com.ar" },
     ],
   },
   {
@@ -232,6 +233,8 @@ export const categories: Category[] = [
       { id: 314, name: "Cerveza Corona", domain: "www.cervezacorona.com.ar" },
       { id: 315, name: "Brahma", domain: "brahma.com.ar" },
       { id: 319, name: "Paladini", domain: "paladini.com.ar" },
+      { id: 361, name: "Tregar", domain: "www.tregar.com.ar" },
+      { id: 362, name: "Beaudroit", domain: "www.familiabeaudroit.com.ar" },
     ],
   },
   {
