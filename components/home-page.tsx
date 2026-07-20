@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { CategorySection } from "@/components/category-section"
 import { FaqSection } from "@/components/faq-section"
+import { SiteFooter } from "@/components/site-footer"
 import { categories, type Category } from "@/lib/logos-data"
 import { cn } from "@/lib/utils"
 
@@ -39,7 +40,7 @@ export function HomePage() {
 
         <nav
           aria-label="Categorías"
-          className="mb-8 flex flex-wrap items-center gap-2"
+          className="mb-8 flex flex-wrap items-center gap-2 lg:hidden"
         >
           <span
             className={cn(
@@ -86,17 +87,7 @@ export function HomePage() {
 
       <FaqSection limit={3} />
 
-      <footer className="border-t border-border bg-card">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <p className="text-sm text-muted-foreground">
-            Datos recopilados de entidades argentinas. Los logos son propiedad de
-            sus respectivas empresas.{" "}
-            <Link href="/docs" className="text-primary hover:underline">
-              Cómo usar los endpoints
-            </Link>
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }

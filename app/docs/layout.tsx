@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SiteFooter } from '@/components/site-footer'
 
 export const metadata: Metadata = {
   title: 'API de logos — Logos Argentina',
@@ -28,5 +29,10 @@ export default function DocsLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return children
+  return (
+    <>
+      {children}
+      <SiteFooter />
+    </>
+  )
 }
