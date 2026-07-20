@@ -18,7 +18,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { categories } from "@/lib/logos-data"
+import { categoryNavItems } from "@/lib/category-nav"
 import { cn } from "@/lib/utils"
 
 export function SiteNavbar() {
@@ -32,6 +32,19 @@ export function SiteNavbar() {
   useEffect(() => {
     setSearchValue(currentQuery)
   }, [currentQuery])
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)")
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        setMenuOpen(false)
+      }
+    }
+
+    mediaQuery.addEventListener("change", handleChange)
+    return () => mediaQuery.removeEventListener("change", handleChange)
+  }, [])
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -62,13 +75,16 @@ export function SiteNavbar() {
 
   const mobileNavButtonClassName = cn(navButtonClassName, "px-3 text-sm")
 
-  const searchForm = (className?: string) => (
+  const searchForm = (className?: string, inputClassName?: string) => (
     <form onSubmit={handleSubmit} className={cn("relative w-full", className)}>
       <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       <Input
         type="search"
         placeholder="Buscar por nombre o dominio..."
-        className="h-12 rounded-2xl border border-border bg-white pl-10 pr-4 text-base text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 md:text-sm"
+        className={cn(
+          "h-12 rounded-2xl border border-border bg-white pl-10 pr-4 text-base text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 md:text-sm",
+          inputClassName
+        )}
         value={searchValue}
         onChange={(event) => setSearchValue(event.target.value)}
       />
@@ -81,6 +97,7 @@ export function SiteNavbar() {
         <div className="flex items-center justify-between gap-2 lg:hidden">
           <Link
             href="/"
+            onClick={() => setMenuOpen(false)}
             className="font-serif shrink-0 text-xl font-medium leading-none tracking-tight text-foreground"
           >
             L.A.
@@ -88,10 +105,14 @@ export function SiteNavbar() {
 
           <div className="flex min-w-0 items-center gap-2">
             <Button asChild size="sm" variant="ghost" className={mobileNavButtonClassName}>
-              <Link href="/categorias">Categorías</Link>
+              <Link href="/categorias" onClick={() => setMenuOpen(false)}>
+                Categorías
+              </Link>
             </Button>
             <Button asChild size="sm" variant="ghost" className={mobileNavButtonClassName}>
-              <Link href="/docs">API</Link>
+              <Link href="/docs" onClick={() => setMenuOpen(false)}>
+                API
+              </Link>
             </Button>
 
             <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
@@ -120,7 +141,7 @@ export function SiteNavbar() {
                       <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-data-[state=open]:rotate-180" />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-1 pl-1">
-                      {categories.map((category) => (
+                      {categoryNavItems.map((category) => (
                         <Link
                           key={category.id}
                           href={`/categoria/${category.id}`}
@@ -165,7 +186,7 @@ export function SiteNavbar() {
             </div>
           </div>
 
-          {searchForm()}
+          {searchForm(undefined, "sm:h-14 sm:pl-11")}
 
           <div className="flex flex-wrap items-center gap-2 lg:justify-self-end">
             <Button asChild size="sm" variant="ghost" className={navButtonClassName}>
