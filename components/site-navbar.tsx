@@ -18,14 +18,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { categoryNavItems } from "@/lib/category-nav"
+import { categories } from "@/lib/logos-data"
 import { cn } from "@/lib/utils"
 
 export function SiteNavbar() {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
-  const currentQuery = searchParams.get("q") ?? ""
+  const currentQuery = (searchParams.get("q") ?? "").trim()
   const [searchValue, setSearchValue] = useState(currentQuery)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -141,7 +141,7 @@ export function SiteNavbar() {
                       <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-data-[state=open]:rotate-180" />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-1 pl-1">
-                      {categoryNavItems.map((category) => (
+                      {categories.map((category) => (
                         <Link
                           key={category.id}
                           href={`/categoria/${category.id}`}
