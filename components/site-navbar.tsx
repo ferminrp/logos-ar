@@ -54,7 +54,7 @@ export function SiteNavbar() {
                   href="/"
                   className="font-serif block truncate text-xl font-medium leading-none tracking-tight text-foreground sm:text-[1.7rem]"
                 >
-                  Logos Argentina
+                  Loguitos.app
                 </Link>
               </div>
             </div>
