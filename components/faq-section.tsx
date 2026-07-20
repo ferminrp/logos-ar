@@ -14,6 +14,23 @@ interface FaqSectionProps {
 }
 
 function FaqAnswer({ question, answer }: { question: string; answer: string }) {
+  if (question === "¿Cómo propongo cambios o nuevas adhesiones?") {
+    return (
+      <>
+        Escribime por X (Twitter) a{" "}
+        <a
+          href="https://x.com/ferminrp"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline-offset-4 hover:underline"
+        >
+          x.com/ferminrp
+        </a>{" "}
+        con el nombre de la entidad, el dominio y el cambio que sugerís.
+      </>
+    )
+  }
+
   if (question === "¿Hay un api?") {
     return (
       <>

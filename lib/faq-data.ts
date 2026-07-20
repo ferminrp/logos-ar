@@ -5,6 +5,11 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
+    question: "¿Cómo propongo cambios o nuevas adhesiones?",
+    answer:
+      "Escribime por X (Twitter) a https://x.com/ferminrp con el nombre de la entidad, el dominio y el cambio que sugerís.",
+  },
+  {
     question: "¿Cómo puedo usar estos logos en spreadsheets?",
     answer:
       "Copiá la URL del favicon que mostramos (Google o DuckDuckGo) y usala como imagen por URL. En Google Sheets podés usar la función IMAGE(url) en una celda. En Excel, Insertar > Imágenes > Insertar imagen desde vínculo depende de la versión; si no carga, probá descargar la imagen o usar otro proveedor. La disponibilidad y el formato (.ico vs PNG) dependen del servicio y del dominio.",

@@ -128,7 +128,7 @@ export function HomePage() {
         </div>
       </main>
 
-      <FaqSection limit={3} />
+      <FaqSection limit={4} />
 
       <SiteFooter />
     </div>
