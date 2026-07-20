@@ -1,97 +1,93 @@
-export default function DocsPage() {
-  const baseApi = "/api/logos"
+import { DocsCopyMarkdownButton } from "@/components/docs-copy-markdown-button"
+import {
+  API_DOCS_BASE_API,
+  API_DOCS_CACHE_ITEMS,
+  API_DOCS_EXAMPLES,
+  API_DOCS_INTRO,
+  API_DOCS_QUERY_PARAMS,
+  API_DOCS_RESPONSE_EXAMPLE,
+  API_DOCS_RESPONSE_NOTE,
+} from "@/lib/api-docs-content"
 
+export default function DocsPage() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <h1 className="font-serif text-3xl font-medium tracking-tight text-foreground">API de logos</h1>
-      <p className="mt-3 text-muted-foreground">
-        Endpoint para consultar logos por nombre, dominio y categoría opcional.
-      </p>
+      <p className="mt-3 text-muted-foreground">{API_DOCS_INTRO}</p>
+      <div className="mt-4">
+        <DocsCopyMarkdownButton />
+      </div>
 
       <section className="mt-8 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Endpoint</h2>
         <p className="text-sm text-muted-foreground">
-          <code>GET {baseApi}</code>
+          <code>GET {API_DOCS_BASE_API}</code>
         </p>
       </section>
 
       <section className="mt-6 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Query params</h2>
         <ul className="list-disc space-y-2 pl-6 text-sm text-muted-foreground">
-          <li>
-            <code>q</code>: texto libre para buscar por nombre o dominio.
-          </li>
-          <li>
-            <code>domain</code>: filtro parcial por dominio.
-          </li>
-          <li>
-            <code>category</code>: categoría opcional (ej: <code>bancos</code>, <code>fintechs</code>).
-          </li>
-          <li>
-            <code>limit</code>: cantidad máxima por página (default: 50, max: 200).
-          </li>
-          <li>
-            <code>offset</code>: desplazamiento para paginación (default: 0).
-          </li>
+          {API_DOCS_QUERY_PARAMS.map((item) => (
+            <li key={item.param}>
+              <code>{item.param}</code>:{" "}
+              {"inlineCodes" in item ? (
+                <>
+                  {item.description}
+                  {item.inlineCodes.map((code, index) => (
+                    <span key={code}>
+                      {index > 0 ? ", " : null}
+                      <code>{code}</code>
+                    </span>
+                  ))}
+                  {item.descriptionSuffix}
+                </>
+              ) : (
+                item.description
+              )}
+            </li>
+          ))}
         </ul>
       </section>
 
       <section className="mt-6 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Ejemplos</h2>
-        <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">
-{`GET /api/logos
-GET /api/logos?category=fintechs
-GET /api/logos?q=galicia
-GET /api/logos?domain=com.ar&limit=20&offset=0
-GET /api/logos?category=bancos&q=banco`}
-        </pre>
+        <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">{API_DOCS_EXAMPLES}</pre>
       </section>
 
       <section className="mt-6 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Respuesta</h2>
-        <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">
-{`{
-  "datasetVersion": "7f2bce765b13",
-  "items": [
-    {
-      "name": "Banco de la Nación Argentina",
-      "domain": "bna.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bna.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/bna.com.ar.ico",
-      "categoryId": "bancos",
-      "categoryName": "Bancos"
-    }
-  ],
-  "total": 1,
-  "hasMore": false,
-  "filters": {
-    "q": "nacion",
-    "domain": null,
-    "category": "bancos",
-    "limit": 50,
-    "offset": 0
-  }
-}`}
-        </pre>
+        <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">{API_DOCS_RESPONSE_EXAMPLE}</pre>
         <p className="text-xs text-muted-foreground">
-          También se incluye el header <code>X-Logos-Dataset-Version</code> para facilitar debugging
-          de cache/CDN.
+          {API_DOCS_RESPONSE_NOTE.before}
+          <code>{API_DOCS_RESPONSE_NOTE.header}</code>
+          {API_DOCS_RESPONSE_NOTE.after}
         </p>
       </section>
 
       <section className="mt-6 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Cache</h2>
         <ul className="list-disc space-y-2 pl-6 text-sm text-muted-foreground">
-          <li>
-            Sin filtros: cache agresiva de CDN para minimizar cómputo.
-          </li>
-          <li>
-            Con filtros (<code>q</code>, <code>domain</code>, <code>category</code> válida): cache de 24h
-            con stale-while-revalidate.
-          </li>
+          {API_DOCS_CACHE_ITEMS.map((item) => (
+            <li key={"text" in item ? item.text : item.prefix}>
+              {"inlineCodes" in item ? (
+                <>
+                  {item.prefix}
+                  {item.inlineCodes.map((code, index) => (
+                    <span key={code}>
+                      {index > 0 ? ", " : null}
+                      <code>{code}</code>
+                    </span>
+                  ))}
+                  {item.suffix}
+                </>
+              ) : (
+                item.text
+              )}
+            </li>
+          ))}
         </ul>
       </section>
-
     </main>
   )
 }

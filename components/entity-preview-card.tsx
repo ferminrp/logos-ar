@@ -27,7 +27,7 @@ export function EntityPreviewCard({ entity }: EntityPreviewCardProps) {
         {entity.name}
       </h3>
       <ArrowUpRight
-        className="h-4 w-4 shrink-0 text-muted-foreground sm:hidden"
+        className="h-4 w-4 shrink-0 text-muted-foreground"
         aria-hidden
       />
     </Link>
