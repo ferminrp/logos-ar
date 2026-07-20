@@ -1,3 +1,5 @@
+import { DocsCopyMarkdownButton } from "@/components/docs-copy-markdown-button"
+
 export default function DocsPage() {
   const baseApi = "/api/logos"
 
@@ -7,6 +9,9 @@ export default function DocsPage() {
       <p className="mt-3 text-muted-foreground">
         Endpoint para consultar logos por nombre, dominio y categoría opcional.
       </p>
+      <div className="mt-4">
+        <DocsCopyMarkdownButton />
+      </div>
 
       <section className="mt-8 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Endpoint</h2>
