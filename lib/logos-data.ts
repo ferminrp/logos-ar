@@ -234,7 +234,7 @@ export const categories: Category[] = [
       { id: 315, name: "Brahma", domain: "brahma.com.ar" },
       { id: 319, name: "Paladini", domain: "paladini.com.ar" },
       { id: 361, name: "Tregar", domain: "www.tregar.com.ar" },
-      { id: 362, name: "Beaudroit", domain: "www.familiabeaudroit.com.ar" },
+      { id: 362, name: "Beaudroit", domain: "familiabeaudroit.com.ar" },
     ],
   },
   {

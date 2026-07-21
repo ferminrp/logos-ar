@@ -1,5 +1,5 @@
 {
-  "version": "7a6845909d68",
+  "version": "54ea8da9181f",
   "totalItems": 218,
   "items": [
     {
@@ -1140,9 +1140,9 @@
     },
     {
       "name": "Beaudroit",
-      "domain": "www.familiabeaudroit.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.familiabeaudroit.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.familiabeaudroit.com.ar.ico",
+      "domain": "familiabeaudroit.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=familiabeaudroit.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/familiabeaudroit.com.ar.ico",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas"
     },
