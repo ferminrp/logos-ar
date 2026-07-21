@@ -122,7 +122,7 @@ export const categories: Category[] = [
       { id: 375, name: "Supervielle", domain: "www.supervielle.com.ar" },
       { id: 376, name: "Transener", domain: "www.transener.com.ar" },
       { id: 377, name: "Ternium", domain: "ar.ternium.com" },
-      { id: 378, name: "Banco de Valores", domain: "www.valo.ar" },
+      { id: 378, name: "Banco de Valores", domain: "valo.ar" },
       { id: 379, name: "A3 Mercados", domain: "a3mercados.com.ar" },
       { id: 380, name: "Banco Patagonia", domain: "bancopatagonia.com.ar" },
       { id: 381, name: "Celulosa Argentina", domain: "www.celulosaargentina.com.ar" },

@@ -1,5 +1,5 @@
 {
-  "version": "90f615f0a9e1",
+  "version": "c2e0b4d17d28",
   "totalItems": 237,
   "items": [
     {
@@ -564,9 +564,9 @@
     },
     {
       "name": "Banco de Valores",
-      "domain": "www.valo.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.valo.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.valo.ar.ico",
+      "domain": "valo.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=valo.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/valo.ar.ico",
       "categoryId": "acciones",
       "categoryName": "Acciones"
     },
