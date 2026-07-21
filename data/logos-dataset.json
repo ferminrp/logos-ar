@@ -1,6 +1,6 @@
 {
-  "version": "54ea8da9181f",
-  "totalItems": 218,
+  "version": "90f615f0a9e1",
+  "totalItems": 237,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -441,6 +441,158 @@
       "duck_domain": "https://icons.duckduckgo.com/ip3/vetacap.com.ar.ico",
       "categoryId": "alycs",
       "categoryName": "ALyCs"
+    },
+    {
+      "name": "Aluar",
+      "domain": "www.aluar.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.aluar.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.aluar.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "YPF",
+      "domain": "ypf.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ypf.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ypf.com.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "BBVA",
+      "domain": "bbva.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bbva.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bbva.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Macro",
+      "domain": "macro.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=macro.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/macro.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "BYMA",
+      "domain": "www.byma.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.byma.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.byma.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Central Puerto",
+      "domain": "www.centralpuerto.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.centralpuerto.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.centralpuerto.com.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Cresud",
+      "domain": "www.cresud.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.cresud.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.cresud.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Edenor",
+      "domain": "edenor.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=edenor.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/edenor.com.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Galicia",
+      "domain": "www.galicia.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.galicia.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.galicia.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Loma Negra",
+      "domain": "www.lomanegra.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.lomanegra.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.lomanegra.com.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Metrogas",
+      "domain": "metrogas.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=metrogas.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/metrogas.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Pampa",
+      "domain": "pampa.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pampa.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pampa.com.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Supervielle",
+      "domain": "www.supervielle.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.supervielle.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.supervielle.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Transener",
+      "domain": "www.transener.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.transener.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.transener.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Ternium",
+      "domain": "ar.ternium.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ar.ternium.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/ar.ternium.com.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Banco de Valores",
+      "domain": "www.valo.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.valo.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.valo.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "A3 Mercados",
+      "domain": "a3mercados.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=a3mercados.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/a3mercados.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Banco Patagonia",
+      "domain": "bancopatagonia.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancopatagonia.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bancopatagonia.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
+    },
+    {
+      "name": "Celulosa Argentina",
+      "domain": "www.celulosaargentina.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.celulosaargentina.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.celulosaargentina.com.ar.ico",
+      "categoryId": "acciones",
+      "categoryName": "Acciones"
     },
     {
       "name": "ARCA (ex AFIP)",
@@ -1180,9 +1332,9 @@
     },
     {
       "name": "Gulf",
-      "domain": "www.gulfcombustibles.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.gulfcombustibles.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.gulfcombustibles.com.ico",
+      "domain": "gulfcombustibles.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=gulfcombustibles.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/gulfcombustibles.com.ico",
       "categoryId": "combustibles",
       "categoryName": "Combustibles"
     },
