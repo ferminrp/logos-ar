@@ -3,12 +3,6 @@
 import { useState } from "react"
 import { Check, Copy } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import type { Flag } from "@/lib/flags-data"
 import { getFlagImgSnippet, getFlagSvgUrl, type FlagRatio } from "@/lib/flag-urls"
 
@@ -30,11 +24,11 @@ export function FlagCard({ flag, ratio = "3x2" }: FlagCardProps) {
   const imgSnippet = getFlagImgSnippet(flag.code, flag.name, ratio)
 
   return (
-    <div className="group relative rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/50 hover:bg-card/80">
-      <div className="flex items-start gap-4">
+    <div className="group relative min-w-0 rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/50 hover:bg-card/80">
+      <div className="flex items-start gap-3">
         <div
           className={`flex shrink-0 items-center justify-center overflow-hidden rounded-lg bg-secondary ${
-            ratio === "1x1" ? "h-14 w-14" : "h-14 w-[4.25rem]"
+            ratio === "1x1" ? "h-12 w-12" : "h-12 w-[4.5rem]"
           }`}
         >
           <img
@@ -44,7 +38,7 @@ export function FlagCard({ flag, ratio = "3x2" }: FlagCardProps) {
             height={ratio === "1x1" ? 40 : 32}
             className={
               ratio === "1x1"
-                ? "h-10 w-10 object-cover"
+                ? "h-9 w-9 object-cover"
                 : "h-8 w-12 object-cover"
             }
           />
@@ -56,52 +50,35 @@ export function FlagCard({ flag, ratio = "3x2" }: FlagCardProps) {
         </div>
       </div>
 
-      <div className="mt-4 space-y-2">
-        <TooltipProvider delayDuration={0}>
-          <div className="flex items-center gap-2">
-            <code className="flex-1 truncate rounded bg-secondary px-2 py-1.5 font-mono text-xs text-muted-foreground">
-              SVG ({ratio})
-            </code>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-8 w-8 p-0"
-                  onClick={() => copyToClipboard(svgUrl, "svg-url")}
-                >
-                  {copiedField === "svg-url" ? (
-                    <Check className="h-4 w-4 text-primary" />
-                  ) : (
-                    <Copy className="h-4 w-4" />
-                  )}
-                  <span className="sr-only">Copiar URL del SVG</span>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="top">
-                <p>Copiar URL</p>
-              </TooltipContent>
-            </Tooltip>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="h-8 px-2 font-mono text-xs"
-                  onClick={() => copyToClipboard(imgSnippet, "img-snippet")}
-                >
-                  {copiedField === "img-snippet" ? (
-                    <Check className="mr-1 h-3 w-3 text-primary" />
-                  ) : null}
-                  img
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="top">
-                <p>Copiar snippet HTML</p>
-              </TooltipContent>
-            </Tooltip>
-          </div>
-        </TooltipProvider>
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          className="h-9 min-w-0 px-2 text-xs"
+          onClick={() => copyToClipboard(svgUrl, "svg-url")}
+        >
+          {copiedField === "svg-url" ? (
+            <Check className="mr-1.5 h-3.5 w-3.5 shrink-0 text-primary" />
+          ) : (
+            <Copy className="mr-1.5 h-3.5 w-3.5 shrink-0" />
+          )}
+          <span className="truncate">Copiar URL</span>
+        </Button>
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          className="h-9 min-w-0 px-2 text-xs"
+          onClick={() => copyToClipboard(imgSnippet, "img-snippet")}
+        >
+          {copiedField === "img-snippet" ? (
+            <Check className="mr-1.5 h-3.5 w-3.5 shrink-0 text-primary" />
+          ) : (
+            <Copy className="mr-1.5 h-3.5 w-3.5 shrink-0" />
+          )}
+          <span className="truncate">Copiar HTML</span>
+        </Button>
       </div>
     </div>
   )
