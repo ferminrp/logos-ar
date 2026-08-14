@@ -66,7 +66,7 @@ function matchesDomain(item: CatalogItem, domain: string): boolean {
   if (!domain) return true
 
   if (isFlagItem(item)) {
-    return item.code.toLowerCase().includes(domain)
+    return false
   }
 
   return item.domain.toLowerCase().includes(domain)

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { FlagCard } from "@/components/flag-card"
+import { FlagPreviewCard } from "@/components/flag-preview-card"
 import type { Flag } from "@/lib/flags-data"
 
 interface FlagsSectionProps {
@@ -21,7 +21,7 @@ export function FlagsSection({ flags, showTitleLink = true }: FlagsSectionProps)
       </h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {flags.map((flag) => (
-          <FlagCard key={flag.code} flag={flag} />
+          <FlagPreviewCard key={flag.code} flag={flag} />
         ))}
       </div>
     </section>

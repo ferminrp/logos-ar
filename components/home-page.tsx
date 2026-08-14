@@ -42,8 +42,9 @@ export function HomePage() {
       flag.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       flag.code.toLowerCase().includes(searchQuery.toLowerCase())
   )
-  const showFlagsSection = filteredFlags.length > 0
-  const hasResults = filteredCategories.length > 0 || filteredFlags.length > 0
+  const showFlagsSection = searchQuery.length > 0 && filteredFlags.length > 0
+  const hasResults =
+    filteredCategories.length > 0 || showFlagsSection
 
   useEffect(() => {
     setSearchValue(searchQuery)

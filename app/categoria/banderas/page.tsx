@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { ItemListJsonLd } from "@/components/item-list-json-ld"
 import { FlagCard } from "@/components/flag-card"
 import { FLAGS_CATEGORY, flags, flagsTotalCount } from "@/lib/flags-data"
 import { FLAG_SOURCE_PAGES_URL, FLAG_SOURCE_URL } from "@/lib/flag-urls"
@@ -99,22 +100,9 @@ export default function BanderasCategoryPage() {
         </Link>
       </p>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            name: "Banderas de países y regiones",
-            numberOfItems: flagsTotalCount,
-            itemListElement: itemListEntries.map((entry, index) => ({
-              "@type": "ListItem",
-              position: index + 1,
-              name: entry.name,
-              url: entry.url,
-            })),
-          }),
-        }}
+      <ItemListJsonLd
+        name="Banderas de países y regiones"
+        items={itemListEntries}
       />
     </main>
   )
