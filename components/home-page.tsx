@@ -6,10 +6,12 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { Search } from "lucide-react"
 import { CategorySection } from "@/components/category-section"
 import { FaqSection } from "@/components/faq-section"
+import { FlagsSection } from "@/components/flags-section"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { categories, type Category } from "@/lib/logos-data"
+import { FLAGS_CATEGORY, flags } from "@/lib/flags-data"
 import { cn } from "@/lib/utils"
 
 function categoryChipClassName() {
@@ -35,6 +37,13 @@ export function HomePage() {
       ),
     }))
     .filter((category) => category.entities.length > 0)
+  const filteredFlags = flags.filter(
+    (flag) =>
+      flag.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      flag.code.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+  const showFlagsSection = filteredFlags.length > 0
+  const hasResults = filteredCategories.length > 0 || filteredFlags.length > 0
 
   useEffect(() => {
     setSearchValue(searchQuery)
@@ -69,7 +78,7 @@ export function HomePage() {
           <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             type="search"
-            placeholder="Buscar por nombre o dominio..."
+            placeholder="Buscar por nombre, dominio o código..."
             className="h-12 rounded-2xl border border-border bg-white pl-10 pr-4 text-base text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 md:text-sm"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
@@ -102,13 +111,24 @@ export function HomePage() {
               {category.name}
             </Link>
           ))}
+          <Link
+            href="/categoria/banderas"
+            className={categoryChipClassName()}
+          >
+            {FLAGS_CATEGORY.name}
+          </Link>
         </nav>
 
         <div className="space-y-10">
-          {filteredCategories.length > 0 ? (
-            filteredCategories.map((category) => (
-              <CategorySection key={category.id} category={category} />
-            ))
+          {hasResults ? (
+            <>
+              {filteredCategories.map((category) => (
+                <CategorySection key={category.id} category={category} />
+              ))}
+              {showFlagsSection ? (
+                <FlagsSection flags={filteredFlags} />
+              ) : null}
+            </>
           ) : (
             <div className="py-12 text-center">
               <p className="text-lg text-muted-foreground">

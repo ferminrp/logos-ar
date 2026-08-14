@@ -80,7 +80,7 @@ export function SiteNavbar() {
       <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       <Input
         type="search"
-        placeholder="Buscar por nombre o dominio..."
+        placeholder="Buscar por nombre, dominio o código..."
         className={cn(
           "h-12 rounded-2xl border border-border bg-white pl-10 pr-4 text-base text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 md:text-sm",
           inputClassName

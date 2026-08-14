@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { BanderasHubCard } from "@/components/banderas-hub-card"
 import { CategoryHubCard } from "@/components/category-hub-card"
 import { categories } from "@/lib/logos-data"
 
@@ -46,6 +47,7 @@ export default function CategoriasPage() {
         {categories.map((category) => (
           <CategoryHubCard key={category.id} category={category} />
         ))}
+        <BanderasHubCard />
       </div>
 
       <p className="mt-10 text-sm text-muted-foreground">
