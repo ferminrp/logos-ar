@@ -26,12 +26,3 @@ export function getApiCatalogPayload() {
     ],
   }
 }
-
-export function getHomeLinkHeader(): string {
-  const siteUrl = getSiteUrl()
-
-  return [
-    `<${siteUrl}/.well-known/api-catalog>; rel="api-catalog"`,
-    `<${siteUrl}/api/logos>; rel="item"; type="application/json"`,
-  ].join(", ")
-}

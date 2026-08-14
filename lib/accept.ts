@@ -29,5 +29,11 @@ export function prefersMarkdown(accept: string | null): boolean {
   const html = types.get("text/html") ?? 0
   const wildcard = types.get("*/*") ?? 0
 
-  return markdown > Math.max(html, wildcard)
+  if (markdown === 0) return false
+
+  const bestAlternative = Math.max(html, wildcard)
+  return (
+    markdown > bestAlternative ||
+    (markdown === bestAlternative && bestAlternative > 0)
+  )
 }
