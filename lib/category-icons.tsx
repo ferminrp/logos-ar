@@ -3,6 +3,7 @@ import {
   Car,
   CandlestickChart,
   Code,
+  Flag,
   Fuel,
   Landmark,
   Lightbulb,
@@ -35,6 +36,7 @@ export const categoryIcons: Record<string, LucideIcon> = {
   turismo: Plane,
   energia: Lightbulb,
   "indie-projects": Code,
+  banderas: Flag,
 }
 
 export function getCategoryIcon(categoryId: string): LucideIcon | null {

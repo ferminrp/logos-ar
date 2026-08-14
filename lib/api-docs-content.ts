@@ -1,7 +1,7 @@
 export const API_DOCS_BASE_API = "/api/logos"
 
 export const API_DOCS_INTRO =
-  "Endpoint para consultar logos por nombre, dominio y categoría opcional."
+  "Endpoint para consultar logos por nombre, dominio y categoría opcional. Incluye banderas (`category=banderas`) con URL SVG desde country-flag-icons."
 
 type QueryParam =
   | {
@@ -21,7 +21,7 @@ export const API_DOCS_QUERY_PARAMS: readonly QueryParam[] = [
   {
     param: "category",
     description: "categoría opcional (ej: ",
-    inlineCodes: ["bancos", "fintechs"],
+    inlineCodes: ["bancos", "fintechs", "banderas"],
     descriptionSuffix: ").",
   },
   { param: "limit", description: "cantidad máxima por página (default: 50, max: 200)." },
@@ -30,7 +30,9 @@ export const API_DOCS_QUERY_PARAMS: readonly QueryParam[] = [
 
 export const API_DOCS_EXAMPLES = `GET /api/logos
 GET /api/logos?category=fintechs
+GET /api/logos?category=banderas
 GET /api/logos?q=galicia
+GET /api/logos?q=argentina&category=banderas
 GET /api/logos?domain=com.ar&limit=20&offset=0
 GET /api/logos?category=bancos&q=banco`
 

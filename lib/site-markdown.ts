@@ -1,4 +1,5 @@
 import { categories } from "@/lib/logos-data"
+import { FLAGS_CATEGORY, flagsTotalCount } from "@/lib/flags-data"
 import { getAllEntities } from "@/lib/entity-index"
 import { getSiteUrl } from "@/lib/site-url"
 
@@ -31,7 +32,6 @@ function formatCategorySection(
 
 export function getHomeMarkdown(): string {
   const siteUrl = getSiteUrl()
-  const totalEntities = getAllEntities().length
 
   const categorySections = categories.map((category) => {
     const sample = category.entities
@@ -51,14 +51,21 @@ export function getHomeMarkdown(): string {
     "",
     HOME_DESCRIPTION,
     "",
-    `- **Entidades:** ${totalEntities}`,
-    `- **Categorías:** ${categories.length}`,
+    `- **Entidades:** ${getAllEntities().length}`,
+    `- **Banderas:** ${flagsTotalCount}`,
+    `- **Categorías:** ${categories.length + 1}`,
     `- **API pública:** \`GET ${siteUrl}/api/logos\``,
     `- **Documentación:** ${siteUrl}/docs`,
     "",
     "## Categorías",
     "",
     ...categorySections.flatMap((section) => [section, ""]),
+    `### ${FLAGS_CATEGORY.name}`,
+    "",
+    `${FLAGS_CATEGORY.description} (${flagsTotalCount} banderas).`,
+    "",
+    `- [Ver categoría](${siteUrl}/categoria/banderas)`,
+    "",
     "## Enlaces",
     "",
     `- [Directorio completo](${siteUrl}/)`,
@@ -101,6 +108,16 @@ export function getCategoriasMarkdown(): string {
     "## Categorías",
     "",
     ...categorySections.flatMap((section) => [section, ""]),
+    [
+      `### ${FLAGS_CATEGORY.name}`,
+      "",
+      FLAGS_CATEGORY.description,
+      "",
+      `**${flagsTotalCount} banderas** — [/banderas](${siteUrl}/categoria/banderas)`,
+      "",
+      `- [Ver categoría](${siteUrl}/categoria/banderas)`,
+    ].join("\n"),
+    "",
     "## Enlaces",
     "",
     `- [Inicio](${siteUrl}/)`,

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { categories } from "@/lib/logos-data"
+import { FLAGS_CATEGORY } from "@/lib/flags-data"
 import { cn } from "@/lib/utils"
 
 function categoryLinkClassName() {
@@ -29,6 +30,12 @@ export function SiteFooter() {
                 {category.name}
               </Link>
             ))}
+            <Link
+              href="/categoria/banderas"
+              className={categoryLinkClassName()}
+            >
+              {FLAGS_CATEGORY.name}
+            </Link>
           </div>
         </nav>
 

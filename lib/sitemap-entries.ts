@@ -33,12 +33,20 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
     },
   ]
 
-  const categoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
-    url: `${siteUrl}/categoria/${category.id}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }))
+  const categoryPages: MetadataRoute.Sitemap = [
+    ...categories.map((category) => ({
+      url: `${siteUrl}/categoria/${category.id}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
+    {
+      url: `${siteUrl}/categoria/banderas`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  ]
 
   const entityPages: MetadataRoute.Sitemap = getAllEntitySlugs().map(
     (slug) => ({

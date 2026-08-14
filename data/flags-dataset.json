@@ -1,0 +1,1861 @@
+{
+  "version": "baac132bd986",
+  "totalItems": 265,
+  "items": [
+    {
+      "code": "AC",
+      "name": "Isla de la Ascensión",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AD",
+      "name": "Andorra",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AD.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AE",
+      "name": "Emiratos Árabes Unidos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AF",
+      "name": "Afganistán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AF.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AG",
+      "name": "Antigua y Barbuda",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AI",
+      "name": "Anguila",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AL",
+      "name": "Albania",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AL.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AM",
+      "name": "Armenia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AO",
+      "name": "Angola",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AQ",
+      "name": "Antártida",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AQ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AR",
+      "name": "Argentina",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AS",
+      "name": "Samoa Americana",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AT",
+      "name": "Austria",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AW",
+      "name": "Aruba",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AX",
+      "name": "Islas Aland",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AX.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "AZ",
+      "name": "Azerbaiyán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/AZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BA",
+      "name": "Bosnia y Herzegovina",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BB",
+      "name": "Barbados",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BB.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BD",
+      "name": "Bangladés",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BD.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BE",
+      "name": "Bélgica",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BF",
+      "name": "Burkina Faso",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BF.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BG",
+      "name": "Bulgaria",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BH",
+      "name": "Baréin",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BH.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BI",
+      "name": "Burundi",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BJ",
+      "name": "Benín",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BJ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BL",
+      "name": "San Bartolomé",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BL.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BM",
+      "name": "Bermudas",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BN",
+      "name": "Brunéi",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BO",
+      "name": "Bolivia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BQ-BO",
+      "name": "Bonaire",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BQ-BO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BQ-SA",
+      "name": "Saba",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BQ-SA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BQ-SE",
+      "name": "San Eustacio",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BQ-SE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BQ",
+      "name": "Caribe neerlandés",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BQ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BR",
+      "name": "Brasil",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BS",
+      "name": "Bahamas",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BT",
+      "name": "Bután",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BV",
+      "name": "Isla Bouvet",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BV.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BW",
+      "name": "Botsuana",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BY",
+      "name": "Bielorrusia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BY.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "BZ",
+      "name": "Belice",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/BZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CA",
+      "name": "Canadá",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CC",
+      "name": "Islas Cocos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CD",
+      "name": "República Democrática del Congo",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CD.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CF",
+      "name": "República Centroafricana",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CF.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CG",
+      "name": "Congo",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CH",
+      "name": "Suiza",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CH.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CI",
+      "name": "Côte d’Ivoire",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CK",
+      "name": "Islas Cook",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CL",
+      "name": "Chile",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CL.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CM",
+      "name": "Camerún",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CO",
+      "name": "Colombia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CR",
+      "name": "Costa Rica",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CU",
+      "name": "Cuba",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CV",
+      "name": "Cabo Verde",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CV.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CW",
+      "name": "Curazao",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CX",
+      "name": "Isla de Navidad",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CX.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CY",
+      "name": "Chipre",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CY.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "CZ",
+      "name": "Chequia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/CZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "DE",
+      "name": "Alemania",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/DE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "DJ",
+      "name": "Yibuti",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/DJ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "DK",
+      "name": "Dinamarca",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/DK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "DM",
+      "name": "Dominica",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/DM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "DO",
+      "name": "República Dominicana",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/DO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "DZ",
+      "name": "Argelia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/DZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "EC",
+      "name": "Ecuador",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/EC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "EE",
+      "name": "Estonia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/EE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "EG",
+      "name": "Egipto",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/EG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "EH",
+      "name": "Sáhara Occidental",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/EH.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ER",
+      "name": "Eritrea",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ER.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ES-CT",
+      "name": "Cataluña",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ES-CT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ES",
+      "name": "España",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ES.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ET",
+      "name": "Etiopía",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ET.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "EU",
+      "name": "Unión Europea",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/EU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "FI",
+      "name": "Finlandia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/FI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "FJ",
+      "name": "Fiyi",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/FJ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "FK",
+      "name": "Islas Malvinas",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/FK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "FM",
+      "name": "Micronesia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/FM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "FO",
+      "name": "Islas Feroe",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/FO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "FR",
+      "name": "Francia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/FR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GA",
+      "name": "Gabón",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GB-ENG",
+      "name": "Inglaterra",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GB-ENG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GB-NIR",
+      "name": "Irlanda del Norte",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GB-NIR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GB-SCT",
+      "name": "Escocia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GB-SCT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GB-WLS",
+      "name": "Gales",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GB-WLS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GB",
+      "name": "Reino Unido",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GB.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GD",
+      "name": "Granada",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GD.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GE",
+      "name": "Georgia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GF",
+      "name": "Guayana Francesa",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GF.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GG",
+      "name": "Guernesey",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GH",
+      "name": "Ghana",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GH.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GI",
+      "name": "Gibraltar",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GL",
+      "name": "Groenlandia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GL.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GM",
+      "name": "Gambia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GN",
+      "name": "Guinea",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GP",
+      "name": "Guadalupe",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GP.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GQ",
+      "name": "Guinea Ecuatorial",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GQ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GR",
+      "name": "Grecia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GS",
+      "name": "Islas Georgia del Sur y Sandwich del Sur",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GT",
+      "name": "Guatemala",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GU",
+      "name": "Guam",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GW",
+      "name": "Guinea-Bisáu",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "GY",
+      "name": "Guyana",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/GY.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "HK",
+      "name": "RAE de Hong Kong (China)",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/HK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "HM",
+      "name": "Islas Heard y McDonald",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/HM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "HN",
+      "name": "Honduras",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/HN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "HR",
+      "name": "Croacia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/HR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "HT",
+      "name": "Haití",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/HT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "HU",
+      "name": "Hungría",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/HU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IC",
+      "name": "Canarias",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ID.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IE",
+      "name": "Irlanda",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IL",
+      "name": "Israel",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IL.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IM",
+      "name": "Isla de Man",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IO",
+      "name": "Territorio Británico del Océano Índico",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IQ",
+      "name": "Irak",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IQ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IR",
+      "name": "Irán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IS",
+      "name": "Islandia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "IT",
+      "name": "Italia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/IT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "JE",
+      "name": "Jersey",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/JE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "JM",
+      "name": "Jamaica",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/JM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "JO",
+      "name": "Jordania",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/JO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "JP",
+      "name": "Japón",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/JP.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KE",
+      "name": "Kenia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KG",
+      "name": "Kirguistán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KH",
+      "name": "Camboya",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KH.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KI",
+      "name": "Kiribati",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KM",
+      "name": "Comoras",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KN",
+      "name": "San Cristóbal y Nieves",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KP",
+      "name": "Corea del Norte",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KP.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KR",
+      "name": "Corea del Sur",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KW",
+      "name": "Kuwait",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KY",
+      "name": "Islas Caimán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KY.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "KZ",
+      "name": "Kazajistán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/KZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LA",
+      "name": "Laos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LB",
+      "name": "Líbano",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LB.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LC",
+      "name": "Santa Lucía",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LI",
+      "name": "Liechtenstein",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LK",
+      "name": "Sri Lanka",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LR",
+      "name": "Liberia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LS",
+      "name": "Lesoto",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LT",
+      "name": "Lituania",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LU",
+      "name": "Luxemburgo",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LV",
+      "name": "Letonia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LV.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "LY",
+      "name": "Libia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/LY.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MA",
+      "name": "Marruecos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MC",
+      "name": "Mónaco",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MD",
+      "name": "Moldavia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MD.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ME",
+      "name": "Montenegro",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ME.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MF",
+      "name": "San Martín",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MF.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MG",
+      "name": "Madagascar",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MH",
+      "name": "Islas Marshall",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MH.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MK",
+      "name": "Macedonia del Norte",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ML",
+      "name": "Mali",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ML.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MM",
+      "name": "Myanmar (Birmania)",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MN",
+      "name": "Mongolia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MO",
+      "name": "RAE de Macao (China)",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MP",
+      "name": "Islas Marianas del Norte",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MP.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MQ",
+      "name": "Martinica",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MQ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MR",
+      "name": "Mauritania",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MS",
+      "name": "Montserrat",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MT",
+      "name": "Malta",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MU",
+      "name": "Mauricio",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MV",
+      "name": "Maldivas",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MV.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MW",
+      "name": "Malaui",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MX",
+      "name": "México",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MX.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MY",
+      "name": "Malasia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MY.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "MZ",
+      "name": "Mozambique",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/MZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NA",
+      "name": "Namibia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NC",
+      "name": "Nueva Caledonia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NE",
+      "name": "Níger",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NF",
+      "name": "Isla Norfolk",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NF.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NG",
+      "name": "Nigeria",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NI",
+      "name": "Nicaragua",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NL",
+      "name": "Países Bajos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NL.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NO",
+      "name": "Noruega",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NP",
+      "name": "Nepal",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NP.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NR",
+      "name": "Nauru",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NU",
+      "name": "Niue",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "NZ",
+      "name": "Nueva Zelanda",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/NZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "OM",
+      "name": "Omán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/OM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PA",
+      "name": "Panamá",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PE",
+      "name": "Perú",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PF",
+      "name": "Polinesia Francesa",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PF.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PG",
+      "name": "Papúa Nueva Guinea",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PH",
+      "name": "Filipinas",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PH.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PK",
+      "name": "Pakistán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PL",
+      "name": "Polonia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PL.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PM",
+      "name": "San Pedro y Miquelón",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PN",
+      "name": "Islas Pitcairn",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PR",
+      "name": "Puerto Rico",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PS",
+      "name": "Territorios Palestinos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PW",
+      "name": "Palaos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "PY",
+      "name": "Paraguay",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/PY.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "QA",
+      "name": "Catar",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/QA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "RE",
+      "name": "Reunión",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/RE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "RO",
+      "name": "Rumanía",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/RO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "RS",
+      "name": "Serbia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/RS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "RU",
+      "name": "Rusia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/RU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "RW",
+      "name": "Ruanda",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/RW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SA",
+      "name": "Arabia Saudí",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SB",
+      "name": "Islas Salomón",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SB.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SC",
+      "name": "Seychelles",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SD",
+      "name": "Sudán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SD.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SE",
+      "name": "Suecia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SG",
+      "name": "Singapur",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SH",
+      "name": "Santa Elena",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SH.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SI",
+      "name": "Eslovenia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SJ",
+      "name": "Svalbard y Jan Mayen",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SJ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SK",
+      "name": "Eslovaquia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SL",
+      "name": "Sierra Leona",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SL.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SM",
+      "name": "San Marino",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SN",
+      "name": "Senegal",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SO",
+      "name": "Somalia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SR",
+      "name": "Surinam",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SS",
+      "name": "Sudán del Sur",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ST",
+      "name": "Santo Tomé y Príncipe",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ST.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SV",
+      "name": "El Salvador",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SV.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SX",
+      "name": "Sint Maarten",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SX.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SY",
+      "name": "Siria",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SY.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "SZ",
+      "name": "Esuatini",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/SZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TA",
+      "name": "Tristán de Acuña",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TC",
+      "name": "Islas Turcas y Caicos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TD",
+      "name": "Chad",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TD.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TF",
+      "name": "Territorios Australes Franceses",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TF.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TG",
+      "name": "Togo",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TH",
+      "name": "Tailandia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TH.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TJ",
+      "name": "Tayikistán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TJ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TK",
+      "name": "Tokelau",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TL",
+      "name": "Timor-Leste",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TL.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TM",
+      "name": "Turkmenistán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TN",
+      "name": "Túnez",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TO",
+      "name": "Tonga",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TR",
+      "name": "Turquía",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TR.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TT",
+      "name": "Trinidad y Tobago",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TV",
+      "name": "Tuvalu",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TV.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TW",
+      "name": "Taiwán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "TZ",
+      "name": "Tanzania",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/TZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "UA",
+      "name": "Ucrania",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/UA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "UG",
+      "name": "Uganda",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/UG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "UM",
+      "name": "Islas menores alejadas de EE. UU.",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/UM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "US",
+      "name": "Estados Unidos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/US.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "UY",
+      "name": "Uruguay",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/UY.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "UZ",
+      "name": "Uzbekistán",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/UZ.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "VA",
+      "name": "Ciudad del Vaticano",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/VA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "VC",
+      "name": "San Vicente y las Granadinas",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/VC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "VE",
+      "name": "Venezuela",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/VE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "VG",
+      "name": "Islas Vírgenes Británicas",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/VG.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "VI",
+      "name": "Islas Vírgenes de EE. UU.",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/VI.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "VN",
+      "name": "Vietnam",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/VN.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "VU",
+      "name": "Vanuatu",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/VU.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "WF",
+      "name": "Wallis y Futuna",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/WF.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "WS",
+      "name": "Samoa",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/WS.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "XA",
+      "name": "Pseudoacentos",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/XA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "XC",
+      "name": "XC",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/XC.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "XK",
+      "name": "Kosovo",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/XK.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "XO",
+      "name": "XO",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/XO.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "YE",
+      "name": "Yemen",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/YE.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "YT",
+      "name": "Mayotte",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/YT.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ZA",
+      "name": "Sudáfrica",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ZA.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ZM",
+      "name": "Zambia",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ZM.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    },
+    {
+      "code": "ZW",
+      "name": "Zimbabue",
+      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/ZW.svg",
+      "categoryId": "banderas",
+      "categoryName": "Banderas"
+    }
+  ]
+}
