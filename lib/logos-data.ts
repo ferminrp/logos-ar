@@ -80,7 +80,7 @@ export const categories: Category[] = [
     description: "Exchanges, protocolos y wallets cripto",
     seoTopEntities: ["MetaMask", "Uniswap", "Ethereum"],
     seoIntro:
-      "Logos de exchanges, protocolos DeFi y wallets cripto en PNG y SVG. MetaMask, Uniswap, Binance, Ethereum, Coinbase, Aave, Phantom y 35 entidades más. Descarga gratis los logos de las principales plataformas crypto-native.",
+      "Logos de exchanges, protocolos DeFi y wallets cripto en PNG y SVG. MetaMask, Uniswap, Binance, Ethereum, Coinbase, Aave, Phantom y 31 entidades más. Descarga gratis los logos de las principales plataformas crypto-native.",
     entities: [
       { id: 64, name: "Binance", domain: "binance.com" },
       { id: 66, name: "Nexo", domain: "nexo.com" },
@@ -108,9 +108,6 @@ export const categories: Category[] = [
       { id: 401, name: "Hyperliquid", domain: "hyperliquid.xyz" },
       { id: 402, name: "Curve", domain: "curve.fi" },
       { id: 403, name: "Ethena", domain: "ethena.fi" },
-      { id: 404, name: "ether.fi", domain: "www.ether.fi" },
-      { id: 405, name: "Pendle", domain: "www.pendle.finance" },
-      { id: 406, name: "1inch", domain: "1inch.io" },
       { id: 407, name: "Jupiter", domain: "jup.ag" },
       { id: 408, name: "Ethereum", domain: "ethereum.org" },
       { id: 409, name: "Solana", domain: "solana.com" },
@@ -122,7 +119,6 @@ export const categories: Category[] = [
       { id: 415, name: "KuCoin", domain: "www.kucoin.com" },
       { id: 416, name: "Bitso", domain: "bitso.com" },
       { id: 417, name: "Gemini", domain: "www.gemini.com" },
-      { id: 418, name: "Deribit", domain: "www.deribit.com" },
       { id: 419, name: "Polymarket", domain: "polymarket.com" },
     ],
   },

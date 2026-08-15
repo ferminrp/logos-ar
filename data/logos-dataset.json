@@ -1,6 +1,6 @@
 {
-  "version": "ee1ab339eb1f",
-  "totalItems": 275,
+  "version": "e49b1ad787bf",
+  "totalItems": 271,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -531,30 +531,6 @@
       "categoryName": "Crypto"
     },
     {
-      "name": "ether.fi",
-      "domain": "www.ether.fi",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.ether.fi&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.ether.fi.ico",
-      "categoryId": "crypto",
-      "categoryName": "Crypto"
-    },
-    {
-      "name": "Pendle",
-      "domain": "www.pendle.finance",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.pendle.finance&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.pendle.finance.ico",
-      "categoryId": "crypto",
-      "categoryName": "Crypto"
-    },
-    {
-      "name": "1inch",
-      "domain": "1inch.io",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=1inch.io&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/1inch.io.ico",
-      "categoryId": "crypto",
-      "categoryName": "Crypto"
-    },
-    {
       "name": "Jupiter",
       "domain": "jup.ag",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=jup.ag&sz=128",
@@ -639,14 +615,6 @@
       "domain": "www.gemini.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.gemini.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.gemini.com.ico",
-      "categoryId": "crypto",
-      "categoryName": "Crypto"
-    },
-    {
-      "name": "Deribit",
-      "domain": "www.deribit.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.deribit.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.deribit.com.ico",
       "categoryId": "crypto",
       "categoryName": "Crypto"
     },
