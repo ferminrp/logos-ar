@@ -1,4 +1,5 @@
 import {
+  Bitcoin,
   Building2,
   Car,
   CandlestickChart,
@@ -22,6 +23,7 @@ import {
 export const categoryIcons: Record<string, LucideIcon> = {
   bancos: Building2,
   fintechs: Wallet,
+  crypto: Bitcoin,
   alycs: TrendingUp,
   acciones: CandlestickChart,
   "entes-estatales": Landmark,

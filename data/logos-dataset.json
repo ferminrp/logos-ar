@@ -1,6 +1,6 @@
 {
-  "version": "472977b0e707",
-  "totalItems": 238,
+  "version": "5a62c3ab4405",
+  "totalItems": 247,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -275,30 +275,6 @@
       "categoryName": "Fintechs"
     },
     {
-      "name": "Binance",
-      "domain": "binance.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=binance.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/binance.com.ico",
-      "categoryId": "fintechs",
-      "categoryName": "Fintechs"
-    },
-    {
-      "name": "Nexo",
-      "domain": "nexo.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nexo.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/nexo.com.ico",
-      "categoryId": "fintechs",
-      "categoryName": "Fintechs"
-    },
-    {
-      "name": "OKX",
-      "domain": "okx.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=okx.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/okx.com.ico",
-      "categoryId": "fintechs",
-      "categoryName": "Fintechs"
-    },
-    {
       "name": "Kraken",
       "domain": "kraken.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=kraken.com&sz=128",
@@ -361,6 +337,102 @@
       "duck_domain": "https://icons.duckduckgo.com/ip3/tapi.la.ico",
       "categoryId": "fintechs",
       "categoryName": "Fintechs"
+    },
+    {
+      "name": "Binance",
+      "domain": "binance.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=binance.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/binance.com.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Nexo",
+      "domain": "nexo.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nexo.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/nexo.com.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "OKX",
+      "domain": "okx.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=okx.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/okx.com.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "MiniPay",
+      "domain": "minipay.to",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=minipay.to&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/minipay.to.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Plasma",
+      "domain": "www.plasma.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.plasma.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.plasma.org.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Peanut",
+      "domain": "peanut.me",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=peanut.me&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/peanut.me.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Uniswap",
+      "domain": "uniswap.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=uniswap.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/uniswap.org.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Morpho",
+      "domain": "morpho.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=morpho.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/morpho.org.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Jumper",
+      "domain": "jumper.xyz",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=jumper.xyz&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/jumper.xyz.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Aave",
+      "domain": "aave.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=aave.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/aave.com.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Bybit",
+      "domain": "bybit.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bybit.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bybit.com.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Bitget",
+      "domain": "bitget.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bitget.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bitget.com.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
     },
     {
       "name": "Invertir Online (IOL)",
