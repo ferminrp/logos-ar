@@ -1,6 +1,6 @@
 {
-  "version": "e49b1ad787bf",
-  "totalItems": 271,
+  "version": "be474cb49483",
+  "totalItems": 299,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -625,6 +625,230 @@
       "duck_domain": "https://icons.duckduckgo.com/ip3/polymarket.com.ico",
       "categoryId": "crypto",
       "categoryName": "Crypto"
+    },
+    {
+      "name": "Next.js",
+      "domain": "nextjs.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nextjs.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/nextjs.org.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Astro",
+      "domain": "astro.build",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=astro.build&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/astro.build.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "React",
+      "domain": "react.dev",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=react.dev&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/react.dev.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Vue",
+      "domain": "vuejs.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=vuejs.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/vuejs.org.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Svelte",
+      "domain": "svelte.dev",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=svelte.dev&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/svelte.dev.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Nuxt",
+      "domain": "nuxt.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nuxt.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/nuxt.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Vite",
+      "domain": "vite.dev",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=vite.dev&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/vite.dev.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Tailwind",
+      "domain": "tailwindcss.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tailwindcss.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/tailwindcss.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "TypeScript",
+      "domain": "www.typescriptlang.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.typescriptlang.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.typescriptlang.org.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Python",
+      "domain": "www.python.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.python.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.python.org.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Go",
+      "domain": "go.dev",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=go.dev&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/go.dev.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Rust",
+      "domain": "rust-lang.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rust-lang.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/rust-lang.org.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Node.js",
+      "domain": "nodejs.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nodejs.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/nodejs.org.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Deno",
+      "domain": "deno.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=deno.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/deno.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Bun",
+      "domain": "bun.sh",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bun.sh&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bun.sh.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Vercel",
+      "domain": "vercel.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=vercel.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/vercel.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Cloudflare",
+      "domain": "www.cloudflare.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.cloudflare.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.cloudflare.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Netlify",
+      "domain": "www.netlify.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.netlify.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.netlify.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Redis",
+      "domain": "redis.io",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=redis.io&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/redis.io.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Postgres",
+      "domain": "www.postgresql.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.postgresql.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.postgresql.org.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "SQLite",
+      "domain": "sqlite.org",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=sqlite.org&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/sqlite.org.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Prisma",
+      "domain": "www.prisma.io",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.prisma.io&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.prisma.io.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Supabase",
+      "domain": "supabase.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=supabase.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/supabase.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Upstash",
+      "domain": "upstash.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=upstash.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/upstash.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Neon",
+      "domain": "neon.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=neon.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/neon.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Docker",
+      "domain": "www.docker.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.docker.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.docker.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "Clerk",
+      "domain": "clerk.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=clerk.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/clerk.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
+    },
+    {
+      "name": "GitHub",
+      "domain": "github.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=github.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/github.com.ico",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías"
     },
     {
       "name": "Invertir Online (IOL)",
