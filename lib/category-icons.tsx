@@ -1,9 +1,9 @@
 import {
-  Bitcoin,
   Building2,
   Car,
   CandlestickChart,
   Code,
+  Coins,
   Flag,
   Fuel,
   Landmark,
@@ -23,7 +23,7 @@ import {
 export const categoryIcons: Record<string, LucideIcon> = {
   bancos: Building2,
   fintechs: Wallet,
-  crypto: Bitcoin,
+  crypto: Coins,
   alycs: TrendingUp,
   acciones: CandlestickChart,
   "entes-estatales": Landmark,

@@ -79,10 +79,10 @@ export const categories: Category[] = [
   {
     id: "crypto",
     name: "Crypto",
-    description: "Exchanges, DeFi, wallets y protocolos crypto-native",
-    seoTopEntities: ["Binance", "Uniswap", "Aave"],
+    description: "Exchanges, protocolos y wallets cripto",
+    seoTopEntities: ["Uniswap", "Aave", "Binance"],
     seoIntro:
-      "Logos de exchanges, protocolos DeFi, wallets y plataformas crypto-native en PNG y SVG. Binance, Uniswap, Aave, OKX, Bybit, MiniPay, Morpho y 5 entidades más. Descarga gratis los logos de las principales empresas del ecosistema crypto.",
+      "Logos de exchanges, protocolos DeFi y wallets cripto en PNG y SVG. Uniswap, Aave, Binance, OKX, Bybit, MiniPay, Morpho y 5 entidades más. Descarga gratis los logos de las principales plataformas crypto-native.",
     entities: [
       { id: 64, name: "Binance", domain: "binance.com" },
       { id: 66, name: "Nexo", domain: "nexo.com" },
