@@ -1,6 +1,6 @@
 {
-  "version": "5a62c3ab4405",
-  "totalItems": 247,
+  "version": "574bdd9b7bea",
+  "totalItems": 250,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -431,6 +431,30 @@
       "domain": "bitget.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bitget.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/bitget.com.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Bitkey",
+      "domain": "bitkey.world",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bitkey.world&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/bitkey.world.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Exactly",
+      "domain": "exactly.app",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=exactly.app&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/exactly.app.ico",
+      "categoryId": "crypto",
+      "categoryName": "Crypto"
+    },
+    {
+      "name": "Fluidkey",
+      "domain": "www.fluidkey.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.fluidkey.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.fluidkey.com.ico",
       "categoryId": "crypto",
       "categoryName": "Crypto"
     },

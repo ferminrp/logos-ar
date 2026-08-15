@@ -82,7 +82,7 @@ export const categories: Category[] = [
     description: "Exchanges, protocolos y wallets cripto",
     seoTopEntities: ["Uniswap", "Aave", "Binance"],
     seoIntro:
-      "Logos de exchanges, protocolos DeFi y wallets cripto en PNG y SVG. Uniswap, Aave, Binance, OKX, Bybit, MiniPay, Morpho y 5 entidades más. Descarga gratis los logos de las principales plataformas crypto-native.",
+      "Logos de exchanges, protocolos DeFi y wallets cripto en PNG y SVG. Uniswap, Aave, Binance, OKX, Bybit, MiniPay, Morpho y 8 entidades más. Descarga gratis los logos de las principales plataformas crypto-native.",
     entities: [
       { id: 64, name: "Binance", domain: "binance.com" },
       { id: 66, name: "Nexo", domain: "nexo.com" },
@@ -96,6 +96,9 @@ export const categories: Category[] = [
       { id: 389, name: "Aave", domain: "aave.com" },
       { id: 390, name: "Bybit", domain: "bybit.com" },
       { id: 391, name: "Bitget", domain: "bitget.com" },
+      { id: 392, name: "Bitkey", domain: "bitkey.world" },
+      { id: 393, name: "Exactly", domain: "exactly.app" },
+      { id: 394, name: "Fluidkey", domain: "www.fluidkey.com" },
     ],
   },
   {
