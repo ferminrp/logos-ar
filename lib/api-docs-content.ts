@@ -21,7 +21,7 @@ export const API_DOCS_QUERY_PARAMS: readonly QueryParam[] = [
   {
     param: "category",
     description: "categoría opcional (ej: ",
-    inlineCodes: ["bancos", "fintechs", "crypto", "tecnologias", "banderas"],
+    inlineCodes: ["bancos", "fintechs", "crypto", "tecnologias", "prepagas", "banderas"],
     descriptionSuffix: ").",
   },
   { param: "limit", description: "cantidad máxima por página (default: 50, max: 200)." },
@@ -32,6 +32,7 @@ export const API_DOCS_EXAMPLES = `GET /api/logos
 GET /api/logos?category=fintechs
 GET /api/logos?category=crypto
 GET /api/logos?category=tecnologias
+GET /api/logos?category=prepagas
 GET /api/logos?category=banderas
 GET /api/logos?q=galicia
 GET /api/logos?q=argentina&category=banderas

@@ -213,13 +213,32 @@ export const categories: Category[] = [
     id: "entes-estatales",
     name: "Entes estatales",
     description: "Organismos públicos con servicios fiscales y tributarios",
-    seoTopEntities: ["ARCA", "BCRA", "AGIP"],
+    seoTopEntities: ["ARCA", "ANSES", "PAMI"],
     seoIntro:
-      "Logos de organismos públicos y entes estatales argentinos en PNG y SVG. ARCA (ex AFIP), BCRA y AGIP. Descarga gratis los logos de los principales organismos fiscales y de regulación.",
+      "Logos de organismos públicos y entes estatales argentinos en PNG y SVG. ARCA (ex AFIP), ANSES, PAMI, BCRA, AGIP, ARBA y Mi Argentina. Descarga gratis los logos de los principales organismos del Estado argentino para diseño, presentaciones y proyectos.",
     entities: [
       { id: 61, name: "ARCA (ex AFIP)", domain: "www.afip.gob.ar" },
       { id: 62, name: "AGIP", domain: "www.agip.gob.ar" },
       { id: 65, name: "BCRA", domain: "bcra.gob.ar" },
+      { id: 448, name: "ANSES", domain: "anses.gob.ar" },
+      { id: 449, name: "Mi Argentina", domain: "mi.argentina.gob.ar" },
+      { id: 450, name: "ARBA", domain: "web.arba.gov.ar" },
+      { id: 451, name: "PAMI", domain: "www.pami.org.ar" },
+    ],
+  },
+  {
+    id: "prepagas",
+    name: "Prepagas",
+    description: "Empresas de medicina prepaga de Argentina",
+    seoTopEntities: ["OSDE", "Swiss Medical", "Galeno"],
+    seoIntro:
+      "Logos de empresas de medicina prepaga en Argentina en PNG y SVG. OSDE, Swiss Medical, Galeno, Medicus y Omint. Descarga gratis los logos de las principales prepagas del país para diseño, presentaciones y proyectos.",
+    entities: [
+      { id: 452, name: "OSDE", domain: "www.osde.com.ar" },
+      { id: 453, name: "Swiss Medical", domain: "www.swissmedical.com.ar" },
+      { id: 454, name: "Galeno", domain: "www.galeno.com.ar" },
+      { id: 455, name: "Medicus", domain: "medicus.com.ar" },
+      { id: 456, name: "Omint", domain: "www.omint.com.ar" },
     ],
   },
   {

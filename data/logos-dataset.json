@@ -1,6 +1,6 @@
 {
-  "version": "be474cb49483",
-  "totalItems": 299,
+  "version": "206e4bf57f02",
+  "totalItems": 308,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -1105,6 +1105,78 @@
       "duck_domain": "https://icons.duckduckgo.com/ip3/bcra.gob.ar.ico",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales"
+    },
+    {
+      "name": "ANSES",
+      "domain": "anses.gob.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=anses.gob.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/anses.gob.ar.ico",
+      "categoryId": "entes-estatales",
+      "categoryName": "Entes estatales"
+    },
+    {
+      "name": "Mi Argentina",
+      "domain": "mi.argentina.gob.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=mi.argentina.gob.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/mi.argentina.gob.ar.ico",
+      "categoryId": "entes-estatales",
+      "categoryName": "Entes estatales"
+    },
+    {
+      "name": "ARBA",
+      "domain": "web.arba.gov.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=web.arba.gov.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/web.arba.gov.ar.ico",
+      "categoryId": "entes-estatales",
+      "categoryName": "Entes estatales"
+    },
+    {
+      "name": "PAMI",
+      "domain": "www.pami.org.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.pami.org.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.pami.org.ar.ico",
+      "categoryId": "entes-estatales",
+      "categoryName": "Entes estatales"
+    },
+    {
+      "name": "OSDE",
+      "domain": "www.osde.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.osde.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.osde.com.ar.ico",
+      "categoryId": "prepagas",
+      "categoryName": "Prepagas"
+    },
+    {
+      "name": "Swiss Medical",
+      "domain": "www.swissmedical.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.swissmedical.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.swissmedical.com.ar.ico",
+      "categoryId": "prepagas",
+      "categoryName": "Prepagas"
+    },
+    {
+      "name": "Galeno",
+      "domain": "www.galeno.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.galeno.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.galeno.com.ar.ico",
+      "categoryId": "prepagas",
+      "categoryName": "Prepagas"
+    },
+    {
+      "name": "Medicus",
+      "domain": "medicus.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=medicus.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/medicus.com.ar.ico",
+      "categoryId": "prepagas",
+      "categoryName": "Prepagas"
+    },
+    {
+      "name": "Omint",
+      "domain": "www.omint.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.omint.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.omint.com.ar.ico",
+      "categoryId": "prepagas",
+      "categoryName": "Prepagas"
     },
     {
       "name": "Mercado Libre",
