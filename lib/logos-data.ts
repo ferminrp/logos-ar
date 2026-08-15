@@ -197,6 +197,7 @@ export const categories: Category[] = [
       { id: 342, name: "La Prensa", domain: "laprensa.com.ar" },
       { id: 343, name: "El Día (La Plata)", domain: "eldia.com" },
       { id: 344, name: "Río Negro", domain: "rionegro.com.ar" },
+      { id: 382, name: "SLA", domain: "slatv.live" },
     ],
   },
   {

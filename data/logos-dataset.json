@@ -1,6 +1,6 @@
 {
-  "version": "c2e0b4d17d28",
-  "totalItems": 237,
+  "version": "472977b0e707",
+  "totalItems": 238,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -919,6 +919,14 @@
       "domain": "rionegro.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rionegro.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/rionegro.com.ar.ico",
+      "categoryId": "medios",
+      "categoryName": "Medios"
+    },
+    {
+      "name": "SLA",
+      "domain": "slatv.live",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=slatv.live&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/slatv.live.ico",
       "categoryId": "medios",
       "categoryName": "Medios"
     },
