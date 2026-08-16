@@ -1,3 +1,4 @@
+import Link from "next/link"
 import type { Flag } from "@/lib/flags-data"
 import { getFlagSvgUrl } from "@/lib/flag-urls"
 
@@ -9,7 +10,10 @@ export function FlagPreviewCard({ flag }: FlagPreviewCardProps) {
   const svgUrl = getFlagSvgUrl(flag.code)
 
   return (
-    <div className="group flex items-center gap-2">
+    <Link
+      href={`/categoria/banderas#${flag.code}`}
+      className="group flex items-center gap-2"
+    >
       <img
         src={svgUrl}
         alt={`Bandera de ${flag.name}`}
@@ -23,6 +27,6 @@ export function FlagPreviewCard({ flag }: FlagPreviewCardProps) {
       <span className="shrink-0 font-mono text-xs text-muted-foreground">
         {flag.code}
       </span>
-    </div>
+    </Link>
   )
 }
