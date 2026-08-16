@@ -105,6 +105,11 @@ export default function RootLayout({
             gtag('config', '${gaMeasurementId}');
           `}
         </Script>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="wl/5EowQBWcULMyxUNjhlA"
+          strategy="afterInteractive"
+        />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
