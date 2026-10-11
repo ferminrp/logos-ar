@@ -8,7 +8,9 @@
     "build": "next build",
     "postbuild": "node --experimental-strip-types scripts/generate-sitemap.mts && node --experimental-strip-types scripts/verify-sitemap.mts",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "indexnow:submit-all": "node --experimental-strip-types scripts/indexnow-submit-all.mts",
+    "indexnow:ping-changed": "node --experimental-strip-types scripts/indexnow-ping-changed.mts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

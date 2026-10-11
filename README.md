@@ -38,6 +38,8 @@ Abrí [http://localhost:3000](http://localhost:3000).
 - `pnpm lint`: lint del proyecto
 - `pnpm build`: build de producción
 - `pnpm start`: correr build en modo producción
+- `pnpm indexnow:submit-all`: notificar todas las URLs del sitemap a IndexNow
+- `pnpm indexnow:ping-changed`: notificar solo URLs con `<lastmod>` cambiado
 
 Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse localmente.
 
@@ -63,6 +65,26 @@ Si Search Console muestra **Couldn't fetch** después de un deploy:
 2. En **Sitemaps**, eliminá el envío fallido y volvé a enviar la misma URL.
 3. Si el error persiste (caché de GSC), probá una URL alternativa para forzar un fetch nuevo, por ejemplo `https://loguitos.app/sitemap.xml?v=2`.
 4. En Vercel → **Security**, confirmá que no haya *Deployment Protection* ni reglas de firewall que bloqueen a Googlebot.
+
+### IndexNow
+
+Tras el deploy, el sitio expone la clave de verificación en la raíz (`public/<key>.txt`) y un workflow de GitHub notifica a IndexNow solo las URLs cuyo `<lastmod>` cambió respecto al sitemap anterior (cache en Actions).
+
+Comandos (después de `pnpm build`, que genera `public/sitemap.xml`):
+
+```bash
+# Envío inicial o reindex completo (verifica la clave en producción y POST a api.indexnow.org)
+pnpm indexnow:submit-all
+
+# Solo URLs con lastmod nuevo o distinto (usa .cache/indexnow-previous-sitemap.xml por defecto)
+pnpm indexnow:ping-changed
+```
+
+Variables opcionales para `indexnow:ping-changed`:
+
+- `INDEXNOW_FETCH_CURRENT=1` — lee el sitemap en vivo desde `NEXT_PUBLIC_SITE_URL` / `https://loguitos.app`
+- `INDEXNOW_PREVIOUS_SITEMAP_PATH` — ruta al XML baseline anterior
+- `INDEXNOW_CURRENT_SITEMAP_PATH` — ruta al sitemap actual (si no se usa fetch)
 
 ## Estructura del proyecto
 
