@@ -17,3 +17,4 @@ public/sitemap.xml
 .DS_Store
 .vercel
 .pnpm-store/
+.cache/
