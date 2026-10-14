@@ -26,19 +26,27 @@ function buildEntityIndex(): EntityRecord[] {
       let slug: string
 
       if (entity.slug) {
-        slug = entity.slug
-        const taken = slugCounts.get(slug) ?? 0
-        slugCounts.set(slug, taken + 1)
-        if (taken > 0 && process.env.NODE_ENV !== "production") {
-          console.warn(
-            `[entity-index] Duplicate explicit slug "${slug}" for "${entity.name}"`
-          )
+        const requested = entity.slug
+        const taken = slugCounts.get(requested) ?? 0
+        slugCounts.set(requested, taken + 1)
+        slug = taken > 0 ? `${requested}-${entity.id}` : requested
+        if (slug !== requested) {
+          slugCounts.set(slug, (slugCounts.get(slug) ?? 0) + 1)
+          if (process.env.NODE_ENV !== "production") {
+            console.warn(
+              `[entity-index] Duplicate explicit slug "${requested}" for "${entity.name}": using "${slug}"`
+            )
+          }
         }
       } else {
         const baseSlug = slugify(entity.name)
         const count = slugCounts.get(baseSlug) ?? 0
         slugCounts.set(baseSlug, count + 1)
         slug = count === 0 ? baseSlug : `${baseSlug}-${entity.id}`
+
+        if (slug !== baseSlug) {
+          slugCounts.set(slug, (slugCounts.get(slug) ?? 0) + 1)
+        }
 
         if (count > 0 && process.env.NODE_ENV !== "production") {
           console.warn(

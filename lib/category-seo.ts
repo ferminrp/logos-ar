@@ -26,7 +26,7 @@ const CATEGORY_SEO: Partial<Record<string, CategorySeoCopy>> = {
   },
   automotrices: {
     h1: "Logos de marcas de autos en Argentina",
-    title: "Logos de marcas de autos argentinas (PNG, SVG) | Loguitos",
+    title: "Logos de marcas de autos en Argentina (PNG, SVG) | Loguitos",
     metaDescription:
       "Logos de marcas de autos con presencia en Argentina: Toyota, VW, Ford, Chevrolet, Fiat, Audi y más. PNG y SVG transparente, descarga gratis.",
     introLead:
