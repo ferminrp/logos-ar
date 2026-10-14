@@ -1,5 +1,5 @@
 {
-  "version": "9f7c63315e0a",
+  "version": "0d945e8d9652",
   "totalItems": 408,
   "items": [
     {
@@ -2131,10 +2131,10 @@
       "categoryName": "Telecomunicaciones"
     },
     {
-      "name": "Personal",
-      "domain": "www.personal.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.personal.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.personal.com.ar.ico",
+      "name": "Telecentro",
+      "domain": "www.telecentro.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.telecentro.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.telecentro.com.ar.ico",
       "categoryId": "telecomunicaciones",
       "categoryName": "Telecomunicaciones"
     },

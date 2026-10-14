@@ -398,7 +398,7 @@ export const categories: Category[] = [
     entities: [
       { id: 503, name: "Claro Argentina", domain: "www.claro.com.ar" },
       { id: 504, name: "Movistar Argentina", domain: "www.movistar.com.ar" },
-      { id: 505, name: "Personal", domain: "www.personal.com.ar" },
+      { id: 505, name: "Telecentro", domain: "www.telecentro.com.ar" },
       { id: 506, name: "Telecom Argentina", domain: "www.telecom.com.ar" },
       { id: 507, name: "Flow", domain: "www.flow.com.ar" },
       { id: 508, name: "Fibertel", domain: "www.fibertel.com.ar" },

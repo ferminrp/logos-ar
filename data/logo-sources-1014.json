@@ -592,12 +592,12 @@
     "demandReason": "GSC-style: logo Payway"
   },
   {
-    "slug": "personal",
-    "name": "Personal",
+    "slug": "telecentro",
+    "name": "Telecentro",
     "categoryId": "telecomunicaciones",
-    "domain": "www.personal.com.ar",
-    "sourceUrl": "https://www.personal.com.ar",
-    "demandReason": "GSC-style: logo Personal"
+    "domain": "www.telecentro.com.ar",
+    "sourceUrl": "https://www.telecentro.com.ar",
+    "demandReason": "Net-new telco; replaced duplicate Personal domain (GSC personal pay → existing Personal Pay)"
   },
   {
     "slug": "premier",
