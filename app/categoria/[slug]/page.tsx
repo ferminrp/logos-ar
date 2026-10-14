@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs"
 import { EntityPreviewCard } from "@/components/entity-preview-card"
 import { ItemListJsonLd } from "@/components/item-list-json-ld"
 import { getAllEntities, getCategoryById } from "@/lib/entity-index"
+import { getCategorySeoCopy } from "@/lib/category-seo"
 import { categories } from "@/lib/logos-data"
 
 interface CategoryPageProps {
@@ -26,8 +27,9 @@ export async function generateMetadata({
     return { title: "Categoría no encontrada" }
   }
 
-  const title = `Logos de ${category.name} en Argentina (PNG, SVG) | ${category.seoTopEntities[0]}`
-  const description = `${category.seoIntro} ${category.entities.length} entidades con URLs y curls de favicon (Google y DuckDuckGo).`
+  const seo = getCategorySeoCopy(category)
+  const title = seo.title
+  const description = seo.metaDescription
 
   return {
     title,
@@ -52,6 +54,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   if (!category) {
     notFound()
   }
+
+  const seo = getCategorySeoCopy(category)
 
   const breadcrumbItems = [
     { name: "Inicio", href: "/" },
@@ -78,9 +82,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <Breadcrumbs items={breadcrumbItems} />
 
       <h1 className="font-serif text-3xl font-medium tracking-tight text-foreground">
-        Logos de {category.name} en Argentina
+        {seo.h1}
       </h1>
-      <p className="mt-3 max-w-2xl text-muted-foreground">{category.description}</p>
+      <p className="mt-3 max-w-2xl text-muted-foreground">
+        {seo.introLead ?? category.description}
+      </p>
       <p className="mt-1 text-sm text-muted-foreground">
         {category.entities.length} entidades
       </p>

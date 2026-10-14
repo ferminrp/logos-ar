@@ -4,6 +4,7 @@ import { CopyButton } from "@/components/copy-button"
 import { EntityPreviewCard } from "@/components/entity-preview-card"
 import { LogoDownloadButtons } from "@/components/logo-download-buttons"
 import type { EntityRecord } from "@/lib/entity-index"
+import { buildEntityImageAlt } from "@/lib/entity-seo"
 import {
   defaultCurlConfig,
   getDuckDuckGoCurl,
@@ -26,29 +27,38 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
   const duckCurl = getDuckDuckGoCurl(entity.domain, defaultCurlConfig)
   const sheetsFormula = getSheetsImageFormula(googleUrl)
 
+  const imageAlt = buildEntityImageAlt(entity)
+
   return (
     <div className="space-y-8">
       <div className="space-y-4">
         <h1 className="font-serif text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
           Logo {entity.name}
         </h1>
-        <p className="text-sm text-muted-foreground">
-          Logo oficial de {entity.name} en resolución alta, formato PNG
-          transparente y SVG vectorial. Descarga gratis para uso en diseño web,
-          presentaciones y documentos.
-        </p>
         <LogoDownloadButtons
           slug={slug}
           name={entity.name}
           domain={entity.domain}
+          layout="hero"
         />
+        <p className="text-sm text-muted-foreground">
+          Logo de {entity.name} en PNG transparente y SVG. Descarga gratis para
+          diseño web, presentaciones y documentos. Más logos en{" "}
+          <Link
+            href={`/categoria/${entity.categoryId}`}
+            className="text-primary hover:underline"
+          >
+            {entity.categoryName}
+          </Link>
+          .
+        </p>
       </div>
 
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary">
           <img
             src={googleUrl}
-            alt={`Logo de ${entity.name}`}
+            alt={imageAlt}
             width={80}
             height={80}
             className="h-20 w-20 rounded-lg object-contain"

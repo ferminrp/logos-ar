@@ -2,6 +2,12 @@ export interface Entity {
   id: number
   name: string
   domain: string
+  /** Canonical URL slug under /logo/… */
+  slug?: string
+  /** Legacy or GSC slugs that should 301 to `slug` */
+  slugAliases?: string[]
+  /** Search variants from GSC to enrich title and meta description */
+  seoAliases?: string[]
 }
 
 export interface Category {
@@ -27,7 +33,14 @@ export const categories: Category[] = [
       { id: 3, name: "BBVA Argentina", domain: "bbva.com.ar" },
       { id: 4, name: "Banco Galicia", domain: "www.galicia.ar" },
       { id: 5, name: "Banco Macro", domain: "macro.com.ar" },
-      { id: 6, name: "Banco Provincia (Bs. As.)", domain: "bancoprovincia.com.ar" },
+      {
+        id: 6,
+        name: "Banco Provincia (Bs. As.)",
+        domain: "bancoprovincia.com.ar",
+        slug: "banco-provincia",
+        slugAliases: ["banco-provincia-bs-as"],
+        seoAliases: ["Banco Provincia Buenos Aires", "Bapro"],
+      },
       { id: 7, name: "Banco Ciudad", domain: "bancociudad.com.ar" },
       { id: 8, name: "Banco Patagonia", domain: "bancopatagonia.com.ar" },
       { id: 9, name: "Banco Hipotecario", domain: "hipotecario.com.ar" },
@@ -36,7 +49,12 @@ export const categories: Category[] = [
       { id: 16, name: "Banco Piano", domain: "www.bancopiano.com.ar" },
       { id: 17, name: "Banco de Córdoba (BANCOR)", domain: "bancor.com.ar" },
       { id: 18, name: "BPN (Banco Provincia de Neuquén)", domain: "www.bpn.com.ar" },
-      { id: 23, name: "Naranja X", domain: "naranjax.com" },
+      {
+        id: 23,
+        name: "Naranja X",
+        domain: "naranjax.com",
+        seoAliases: ["Naranja", "tarjeta Naranja"],
+      },
       { id: 24, name: "Brubank", domain: "brubank.com" },
       { id: 33, name: "Uilo Bank (ex Wilobank)", domain: "uilo.com.ar" },
       { id: 346, name: "Banco Credicoop", domain: "credicoop.coop" },
@@ -65,7 +83,12 @@ export const categories: Category[] = [
       { id: 34, name: "Carrefour Banco", domain: "www.bancodeserviciosfinancieros.com.ar" },
       { id: 38, name: "Claro Pay", domain: "claropay.com.ar" },
       { id: 39, name: "Astropay", domain: "astropay.com" },
-      { id: 63, name: "MODO", domain: "www.modo.com.ar" },
+      {
+        id: 63,
+        name: "MODO",
+        domain: "www.modo.com.ar",
+        seoAliases: ["app MODO", "MODO pagos"],
+      },
       { id: 70, name: "Roxom", domain: "roxom.com" },
       { id: 71, name: "Berry", domain: "berryinvesting.com" },
       { id: 72, name: "Wise", domain: "wise.com" },
@@ -217,7 +240,12 @@ export const categories: Category[] = [
     seoIntro:
       "Logos de organismos públicos y entes estatales argentinos en PNG y SVG. ARCA (ex AFIP), ANSES, PAMI, BCRA, AGIP, ARBA y Mi Argentina. Descarga gratis los logos de los principales organismos del Estado argentino para diseño, presentaciones y proyectos.",
     entities: [
-      { id: 61, name: "ARCA (ex AFIP)", domain: "www.afip.gob.ar" },
+      {
+        id: 61,
+        name: "ARCA (ex AFIP)",
+        domain: "www.afip.gob.ar",
+        seoAliases: ["ex AFIP", "nuevo logo", "AFIP"],
+      },
       { id: 62, name: "AGIP", domain: "www.agip.gob.ar" },
       { id: 65, name: "BCRA", domain: "bcra.gob.ar" },
       { id: 448, name: "ANSES", domain: "anses.gob.ar" },
@@ -235,7 +263,12 @@ export const categories: Category[] = [
       "Logos de empresas de medicina prepaga en Argentina en PNG y SVG. OSDE, Swiss Medical, Galeno, Medicus y Omint. Descarga gratis los logos de las principales prepagas del país para diseño, presentaciones y proyectos.",
     entities: [
       { id: 452, name: "OSDE", domain: "www.osde.com.ar" },
-      { id: 453, name: "Swiss Medical", domain: "www.swissmedical.com.ar" },
+      {
+        id: 453,
+        name: "Swiss Medical",
+        domain: "www.swissmedical.com.ar",
+        seoAliases: ["Swiss Medical prepaga", "obra social Swiss"],
+      },
       { id: 454, name: "Galeno", domain: "www.galeno.com.ar" },
       { id: 455, name: "Medicus", domain: "medicus.com.ar" },
       { id: 456, name: "Omint", domain: "www.omint.com.ar" },
@@ -275,7 +308,14 @@ export const categories: Category[] = [
     entities: [
       { id: 101, name: "Infobae", domain: "infobae.com" },
       { id: 102, name: "La Nación", domain: "lanacion.com.ar" },
-      { id: 103, name: "TN (Todo Noticias)", domain: "tn.com.ar" },
+      {
+        id: 103,
+        name: "TN (Todo Noticias)",
+        domain: "tn.com.ar",
+        slug: "tn",
+        slugAliases: ["tn-todo-noticias"],
+        seoAliases: ["Todo Noticias", "logo TN"],
+      },
       { id: 104, name: "Clarín", domain: "clarin.com" },
       { id: 105, name: "El Cronista", domain: "cronista.com" },
       { id: 106, name: "Página/12", domain: "pagina12.com.ar" },
@@ -326,7 +366,12 @@ export const categories: Category[] = [
       { id: 359, name: "Yamaha", domain: "www.yamaha-motor.com.ar" },
       { id: 137, name: "Mercedes-Benz", domain: "mercedes-benz.com.ar" },
       { id: 138, name: "BMW", domain: "bmw.com.ar" },
-      { id: 139, name: "Audi", domain: "audi.com.ar" },
+      {
+        id: 139,
+        name: "Audi",
+        domain: "audi.com.ar",
+        seoAliases: ["Audi Argentina", "logo Audi png"],
+      },
       { id: 351, name: "Honda", domain: "honda.com.ar" },
       { id: 352, name: "Porsche", domain: "porsche.com" },
       { id: 353, name: "Ram", domain: "www.ram.com.ar" },
@@ -432,8 +477,18 @@ export const categories: Category[] = [
     seoIntro:
       "Logos de apps y marcas gastronómicas en Argentina en PNG y SVG. PedidosYa, Rappi, Burger King, McDonald's, Starbucks, Mostaza y 5 marcas más. Descarga gratis los logos de las principales cadenas de comida y delivery.",
     entities: [
-      { id: 191, name: "PedidosYa", domain: "pedidosya.com.ar" },
-      { id: 192, name: "Rappi", domain: "rappi.com.ar" },
+      {
+        id: 191,
+        name: "PedidosYa",
+        domain: "pedidosya.com.ar",
+        seoAliases: ["Pedidos Ya", "logo PedidosYa png", "delivery"],
+      },
+      {
+        id: 192,
+        name: "Rappi",
+        domain: "rappi.com.ar",
+        seoAliases: ["Rappi Argentina", "logo Rappi png", "delivery"],
+      },
       { id: 193, name: "Uber Eats", domain: "ubereats.com" },
       { id: 194, name: "Morfy", domain: "www.morfy.app" },
       { id: 195, name: "McDonald's", domain: "www.mcdonalds.com.ar" },
