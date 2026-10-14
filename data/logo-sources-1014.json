@@ -1,0 +1,802 @@
+[
+  {
+    "slug": "accord-salud",
+    "name": "Accord Salud",
+    "categoryId": "prepagas",
+    "domain": "www.accordsalud.com.ar",
+    "sourceUrl": "https://www.accordsalud.com.ar",
+    "demandReason": "GSC-style: logo Accord"
+  },
+  {
+    "slug": "anmat",
+    "name": "ANMAT",
+    "categoryId": "entes-estatales",
+    "domain": "www.anmat.gob.ar",
+    "sourceUrl": "https://www.anmat.gob.ar",
+    "demandReason": "GSC-style: logo ANMAT"
+  },
+  {
+    "slug": "antina",
+    "name": "Antina",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.antina.com.ar",
+    "sourceUrl": "https://www.antina.com.ar",
+    "demandReason": "GSC-style: logo Antina"
+  },
+  {
+    "slug": "avalian",
+    "name": "Avalian",
+    "categoryId": "prepagas",
+    "domain": "avalian.com",
+    "sourceUrl": "https://avalian.com",
+    "demandReason": "GSC-style: logo Avalian"
+  },
+  {
+    "slug": "banco-bica",
+    "name": "Banco BICA",
+    "categoryId": "bancos",
+    "domain": "www.bica.com.ar",
+    "sourceUrl": "https://www.bica.com.ar",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "banco-cmf",
+    "name": "Banco CMF",
+    "categoryId": "bancos",
+    "domain": "cmf.com.ar",
+    "sourceUrl": "https://cmf.com.ar",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "banco-coinag",
+    "name": "Banco Coinag",
+    "categoryId": "bancos",
+    "domain": "coinag.com.ar",
+    "sourceUrl": "https://coinag.com.ar",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "banco-columbia",
+    "name": "Banco Columbia",
+    "categoryId": "bancos",
+    "domain": "bancocolumbia.com.ar",
+    "sourceUrl": "https://bancocolumbia.com.ar",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "banco-de-santiago-del-estero-banse",
+    "name": "Banco de Santiago del Estero (BANSE)",
+    "categoryId": "bancos",
+    "domain": "banse.com.ar",
+    "sourceUrl": "https://banse.com.ar",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "banco-del-sol",
+    "name": "Banco del Sol",
+    "categoryId": "bancos",
+    "domain": "bancodelsol.com",
+    "sourceUrl": "https://bancodelsol.com",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "banco-entre-rios-bersa",
+    "name": "Banco Entre Ríos (BERSA)",
+    "categoryId": "bancos",
+    "domain": "bersa.com.ar",
+    "sourceUrl": "https://bersa.com.ar",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "banco-icbc-argentina",
+    "name": "Banco ICBC Argentina",
+    "categoryId": "bancos",
+    "domain": "icbc.com.ar",
+    "sourceUrl": "https://icbc.com.ar",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "banco-roela",
+    "name": "Banco Roela",
+    "categoryId": "bancos",
+    "domain": "roela.com.ar",
+    "sourceUrl": "https://roela.com.ar",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "banco-santa-fe",
+    "name": "Banco Santa Fe",
+    "categoryId": "bancos",
+    "domain": "www.bsf.com.ar",
+    "sourceUrl": "https://www.bsf.com.ar",
+    "demandReason": "GSC-style: logo Banco"
+  },
+  {
+    "slug": "bind-banco-industrial",
+    "name": "BIND Banco Industrial",
+    "categoryId": "bancos",
+    "domain": "bind.com.ar",
+    "sourceUrl": "https://bind.com.ar",
+    "demandReason": "GSC-style: logo BIND"
+  },
+  {
+    "slug": "casa-del-audio",
+    "name": "Casa del Audio",
+    "categoryId": "retail",
+    "domain": "www.casadelaudio.com",
+    "sourceUrl": "https://www.casadelaudio.com",
+    "demandReason": "GSC-style: logo Casa"
+  },
+  {
+    "slug": "citibank-argentina",
+    "name": "Citibank Argentina",
+    "categoryId": "bancos",
+    "domain": "www.citibank.com.ar",
+    "sourceUrl": "https://www.citibank.com.ar",
+    "demandReason": "GSC-style: logo Citibank"
+  },
+  {
+    "slug": "claro-argentina",
+    "name": "Claro Argentina",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.claro.com.ar",
+    "sourceUrl": "https://www.claro.com.ar",
+    "demandReason": "GSC-style: logo Claro"
+  },
+  {
+    "slug": "cnv",
+    "name": "CNV",
+    "categoryId": "entes-estatales",
+    "domain": "www.cnv.gov.ar",
+    "sourceUrl": "https://www.cnv.gov.ar",
+    "demandReason": "GSC-style: logo CNV"
+  },
+  {
+    "slug": "compumundo",
+    "name": "Compumundo",
+    "categoryId": "retail",
+    "domain": "compumundo.com.ar",
+    "sourceUrl": "https://compumundo.com.ar",
+    "demandReason": "GSC-style: logo Compumundo"
+  },
+  {
+    "slug": "conicet",
+    "name": "CONICET",
+    "categoryId": "entes-estatales",
+    "domain": "www.conicet.gov.ar",
+    "sourceUrl": "https://www.conicet.gov.ar",
+    "demandReason": "GSC-style: logo CONICET"
+  },
+  {
+    "slug": "cooperativa-obrera",
+    "name": "Cooperativa Obrera",
+    "categoryId": "retail",
+    "domain": "www.cooperativaobrera.com.ar",
+    "sourceUrl": "https://www.cooperativaobrera.com.ar",
+    "demandReason": "GSC-style: logo Cooperativa"
+  },
+  {
+    "slug": "cupra",
+    "name": "CUPRA",
+    "categoryId": "automotrices",
+    "domain": "www.cupraofficial.com.ar",
+    "sourceUrl": "https://www.cupraofficial.com.ar",
+    "demandReason": "GSC-style: logo CUPRA"
+  },
+  {
+    "slug": "decrypto",
+    "name": "Decrypto",
+    "categoryId": "fintechs",
+    "domain": "decrypto.com.ar",
+    "sourceUrl": "https://decrypto.com.ar",
+    "demandReason": "GSC-style: logo Decrypto"
+  },
+  {
+    "slug": "dexter",
+    "name": "Dexter",
+    "categoryId": "retail",
+    "domain": "dexter.com.ar",
+    "sourceUrl": "https://dexter.com.ar",
+    "demandReason": "GSC-style: logo Dexter"
+  },
+  {
+    "slug": "diarco",
+    "name": "Diarco",
+    "categoryId": "retail",
+    "domain": "diarco.com.ar",
+    "sourceUrl": "https://diarco.com.ar",
+    "demandReason": "GSC-style: logo Diarco"
+  },
+  {
+    "slug": "directv",
+    "name": "DIRECTV",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.directv.com.ar",
+    "sourceUrl": "https://www.directv.com.ar",
+    "demandReason": "GSC-style: logo DIRECTV"
+  },
+  {
+    "slug": "enacom",
+    "name": "ENACOM",
+    "categoryId": "entes-estatales",
+    "domain": "www.enacom.gob.ar",
+    "sourceUrl": "https://www.enacom.gob.ar",
+    "demandReason": "GSC-style: logo ENACOM"
+  },
+  {
+    "slug": "enargas",
+    "name": "ENARGAS",
+    "categoryId": "entes-estatales",
+    "domain": "www.enargas.gob.ar",
+    "sourceUrl": "https://www.enargas.gob.ar",
+    "demandReason": "GSC-style: logo ENARGAS"
+  },
+  {
+    "slug": "fibertel",
+    "name": "Fibertel",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.fibertel.com.ar",
+    "sourceUrl": "https://www.fibertel.com.ar",
+    "demandReason": "GSC-style: logo Fibertel"
+  },
+  {
+    "slug": "flow",
+    "name": "Flow",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.flow.com.ar",
+    "sourceUrl": "https://www.flow.com.ar",
+    "demandReason": "GSC-style: logo Flow"
+  },
+  {
+    "slug": "gwm-great-wall",
+    "name": "GWM (Great Wall)",
+    "categoryId": "automotrices",
+    "domain": "gwm.com.ar",
+    "sourceUrl": "https://gwm.com.ar",
+    "demandReason": "GSC-style: logo GWM"
+  },
+  {
+    "slug": "haval",
+    "name": "Haval",
+    "categoryId": "automotrices",
+    "domain": "www.haval.com.ar",
+    "sourceUrl": "https://www.haval.com.ar",
+    "demandReason": "GSC-style: logo Haval"
+  },
+  {
+    "slug": "hospital-aleman",
+    "name": "Hospital Alemán",
+    "categoryId": "prepagas",
+    "domain": "www.hospitalaleman.org.ar",
+    "sourceUrl": "https://www.hospitalaleman.org.ar",
+    "demandReason": "GSC-style: logo Hospital"
+  },
+  {
+    "slug": "hospital-britanico",
+    "name": "Hospital Británico",
+    "categoryId": "prepagas",
+    "domain": "www.hospitalbritanico.com.ar",
+    "sourceUrl": "https://www.hospitalbritanico.com.ar",
+    "demandReason": "GSC-style: logo Hospital"
+  },
+  {
+    "slug": "hospital-italiano-de-buenos-aires",
+    "name": "Hospital Italiano de Buenos Aires",
+    "categoryId": "prepagas",
+    "domain": "www.hospitalitaliano.org.ar",
+    "sourceUrl": "https://www.hospitalitaliano.org.ar",
+    "demandReason": "GSC-style: logo Hospital"
+  },
+  {
+    "slug": "hsbc-argentina",
+    "name": "HSBC Argentina",
+    "categoryId": "bancos",
+    "domain": "www.hsbc.com.ar",
+    "sourceUrl": "https://www.hsbc.com.ar",
+    "demandReason": "GSC-style: logo HSBC"
+  },
+  {
+    "slug": "incaa",
+    "name": "INCAA",
+    "categoryId": "entes-estatales",
+    "domain": "www.incaa.gob.ar",
+    "sourceUrl": "https://www.incaa.gob.ar",
+    "demandReason": "GSC-style: logo INCAA"
+  },
+  {
+    "slug": "indec",
+    "name": "INDEC",
+    "categoryId": "entes-estatales",
+    "domain": "www.indec.gob.ar",
+    "sourceUrl": "https://www.indec.gob.ar",
+    "demandReason": "GSC-style: logo INDEC"
+  },
+  {
+    "slug": "inti",
+    "name": "INTI",
+    "categoryId": "entes-estatales",
+    "domain": "www.inti.gob.ar",
+    "sourceUrl": "https://www.inti.gob.ar",
+    "demandReason": "GSC-style: logo INTI"
+  },
+  {
+    "slug": "iosfa",
+    "name": "IOSFA",
+    "categoryId": "obras-sociales",
+    "domain": "www.iosfa.gob.ar",
+    "sourceUrl": "https://www.iosfa.gob.ar",
+    "demandReason": "GSC-style: logo IOSFA"
+  },
+  {
+    "slug": "isadora",
+    "name": "Isadora",
+    "categoryId": "retail",
+    "domain": "isadoraonline.com",
+    "sourceUrl": "https://isadoraonline.com",
+    "demandReason": "GSC-style: logo Isadora"
+  },
+  {
+    "slug": "isuzu",
+    "name": "Isuzu",
+    "categoryId": "automotrices",
+    "domain": "www.isuzu.com.ar",
+    "sourceUrl": "https://www.isuzu.com.ar",
+    "demandReason": "GSC-style: logo Isuzu"
+  },
+  {
+    "slug": "iveco",
+    "name": "Iveco",
+    "categoryId": "automotrices",
+    "domain": "www.iveco.com",
+    "sourceUrl": "https://www.iveco.com",
+    "demandReason": "GSC-style: logo Iveco"
+  },
+  {
+    "slug": "jac-motors",
+    "name": "JAC Motors",
+    "categoryId": "automotrices",
+    "domain": "www.jacmotors.com.ar",
+    "sourceUrl": "https://www.jacmotors.com.ar",
+    "demandReason": "GSC-style: logo JAC"
+  },
+  {
+    "slug": "letsbit",
+    "name": "Letsbit",
+    "categoryId": "fintechs",
+    "domain": "letsbit.io",
+    "sourceUrl": "https://letsbit.io",
+    "demandReason": "GSC-style: logo Letsbit"
+  },
+  {
+    "slug": "medife",
+    "name": "Medifé",
+    "categoryId": "prepagas",
+    "domain": "medife.com.ar",
+    "sourceUrl": "https://medife.com.ar",
+    "demandReason": "GSC-style: logo Medifé"
+  },
+  {
+    "slug": "megatone",
+    "name": "Megatone",
+    "categoryId": "retail",
+    "domain": "www.megatone.net",
+    "sourceUrl": "https://www.megatone.net",
+    "demandReason": "GSC-style: logo Megatone"
+  },
+  {
+    "slug": "mg-motor",
+    "name": "MG Motor",
+    "categoryId": "automotrices",
+    "domain": "www.mgmotor.com.ar",
+    "sourceUrl": "https://www.mgmotor.com.ar",
+    "demandReason": "GSC-style: logo MG"
+  },
+  {
+    "slug": "mini",
+    "name": "MINI",
+    "categoryId": "automotrices",
+    "domain": "www.mini.com.ar",
+    "sourceUrl": "https://www.mini.com.ar",
+    "demandReason": "GSC-style: logo MINI"
+  },
+  {
+    "slug": "mitsubishi-motors",
+    "name": "Mitsubishi Motors",
+    "categoryId": "automotrices",
+    "domain": "www.mitsubishi-motors.com.ar",
+    "sourceUrl": "https://www.mitsubishi-motors.com.ar",
+    "demandReason": "GSC-style: logo Mitsubishi"
+  },
+  {
+    "slug": "movistar-argentina",
+    "name": "Movistar Argentina",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.movistar.com.ar",
+    "sourceUrl": "https://www.movistar.com.ar",
+    "demandReason": "GSC-style: logo Movistar"
+  },
+  {
+    "slug": "musimundo",
+    "name": "Musimundo",
+    "categoryId": "retail",
+    "domain": "www.musimundo.com",
+    "sourceUrl": "https://www.musimundo.com",
+    "demandReason": "GSC-style: logo Musimundo"
+  },
+  {
+    "slug": "naldo",
+    "name": "Naldo",
+    "categoryId": "retail",
+    "domain": "www.naldo.com.ar",
+    "sourceUrl": "https://www.naldo.com.ar",
+    "demandReason": "GSC-style: logo Naldo"
+  },
+  {
+    "slug": "nubi",
+    "name": "Nubi",
+    "categoryId": "fintechs",
+    "domain": "nubi.com.ar",
+    "sourceUrl": "https://nubi.com.ar",
+    "demandReason": "GSC-style: logo Nubi"
+  },
+  {
+    "slug": "num-finance",
+    "name": "Num Finance",
+    "categoryId": "fintechs",
+    "domain": "num.finance",
+    "sourceUrl": "https://num.finance",
+    "demandReason": "GSC-style: logo Num"
+  },
+  {
+    "slug": "on-city",
+    "name": "On City",
+    "categoryId": "retail",
+    "domain": "oncity.com",
+    "sourceUrl": "https://oncity.com",
+    "demandReason": "GSC-style: logo On"
+  },
+  {
+    "slug": "open-sports",
+    "name": "Open Sports",
+    "categoryId": "retail",
+    "domain": "opensports.com.ar",
+    "sourceUrl": "https://opensports.com.ar",
+    "demandReason": "GSC-style: logo Open"
+  },
+  {
+    "slug": "openpay",
+    "name": "Openpay",
+    "categoryId": "fintechs",
+    "domain": "www.openpay.com",
+    "sourceUrl": "https://www.openpay.com",
+    "demandReason": "GSC-style: logo Openpay"
+  },
+  {
+    "slug": "osdop-docentes-particulares",
+    "name": "OSDOP (Docentes Particulares)",
+    "categoryId": "obras-sociales",
+    "domain": "www.osdop.com.ar",
+    "sourceUrl": "https://www.osdop.com.ar",
+    "demandReason": "GSC-style: logo OSDOP"
+  },
+  {
+    "slug": "osecac",
+    "name": "OSECAC",
+    "categoryId": "obras-sociales",
+    "domain": "www.osecac.org.ar",
+    "sourceUrl": "https://www.osecac.org.ar",
+    "demandReason": "GSC-style: logo OSECAC"
+  },
+  {
+    "slug": "osmata",
+    "name": "OSMATA",
+    "categoryId": "obras-sociales",
+    "domain": "www.osmata.org.ar",
+    "sourceUrl": "https://www.osmata.org.ar",
+    "demandReason": "GSC-style: logo OSMATA"
+  },
+  {
+    "slug": "osmm-maritimos",
+    "name": "OSMM (Marítimos)",
+    "categoryId": "obras-sociales",
+    "domain": "www.osmm.org.ar",
+    "sourceUrl": "https://www.osmm.org.ar",
+    "demandReason": "GSC-style: logo OSMM"
+  },
+  {
+    "slug": "ospac",
+    "name": "OSPAC",
+    "categoryId": "obras-sociales",
+    "domain": "www.ospac.org.ar",
+    "sourceUrl": "https://www.ospac.org.ar",
+    "demandReason": "GSC-style: logo OSPAC"
+  },
+  {
+    "slug": "ospat",
+    "name": "OSPAT",
+    "categoryId": "obras-sociales",
+    "domain": "www.ospat.org.ar",
+    "sourceUrl": "https://www.ospat.org.ar",
+    "demandReason": "GSC-style: logo OSPAT"
+  },
+  {
+    "slug": "ospe-petroleros",
+    "name": "OSPE (Petroleros)",
+    "categoryId": "obras-sociales",
+    "domain": "www.ospe.com.ar",
+    "sourceUrl": "https://www.ospe.com.ar",
+    "demandReason": "GSC-style: logo OSPE"
+  },
+  {
+    "slug": "ospecon",
+    "name": "OSPECON",
+    "categoryId": "obras-sociales",
+    "domain": "ospecon.org.ar",
+    "sourceUrl": "https://ospecon.org.ar",
+    "demandReason": "GSC-style: logo OSPECON"
+  },
+  {
+    "slug": "ospia",
+    "name": "OSPIA",
+    "categoryId": "obras-sociales",
+    "domain": "www.ospia.org.ar",
+    "sourceUrl": "https://www.ospia.org.ar",
+    "demandReason": "GSC-style: logo OSPIA"
+  },
+  {
+    "slug": "osplad",
+    "name": "OSPLAD",
+    "categoryId": "obras-sociales",
+    "domain": "www.osplad.org.ar",
+    "sourceUrl": "https://www.osplad.org.ar",
+    "demandReason": "GSC-style: logo OSPLAD"
+  },
+  {
+    "slug": "ospron",
+    "name": "OSPRON",
+    "categoryId": "obras-sociales",
+    "domain": "www.ospron.org.ar",
+    "sourceUrl": "https://www.ospron.org.ar",
+    "demandReason": "GSC-style: logo OSPRON"
+  },
+  {
+    "slug": "osuthgra",
+    "name": "OSUTHGRA",
+    "categoryId": "obras-sociales",
+    "domain": "www.osuthgra.org.ar",
+    "sourceUrl": "https://www.osuthgra.org.ar",
+    "demandReason": "GSC-style: logo OSUTHGRA"
+  },
+  {
+    "slug": "pagomiscuentas",
+    "name": "PagoMisCuentas",
+    "categoryId": "fintechs",
+    "domain": "pagomiscuentas.com",
+    "sourceUrl": "https://pagomiscuentas.com",
+    "demandReason": "GSC-style: logo PagoMisCuentas"
+  },
+  {
+    "slug": "pagos360",
+    "name": "Pagos360",
+    "categoryId": "fintechs",
+    "domain": "pagos360.com",
+    "sourceUrl": "https://pagos360.com",
+    "demandReason": "GSC-style: logo Pagos360"
+  },
+  {
+    "slug": "payway",
+    "name": "Payway",
+    "categoryId": "fintechs",
+    "domain": "www.payway.com.ar",
+    "sourceUrl": "https://www.payway.com.ar",
+    "demandReason": "GSC-style: logo Payway"
+  },
+  {
+    "slug": "personal",
+    "name": "Personal",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.personal.com.ar",
+    "sourceUrl": "https://www.personal.com.ar",
+    "demandReason": "GSC-style: logo Personal"
+  },
+  {
+    "slug": "premier",
+    "name": "Premier",
+    "categoryId": "prepagas",
+    "domain": "www.premier.com.ar",
+    "sourceUrl": "https://www.premier.com.ar",
+    "demandReason": "GSC-style: logo Premier"
+  },
+  {
+    "slug": "prisma-medios-de-pago",
+    "name": "Prisma Medios de Pago",
+    "categoryId": "fintechs",
+    "domain": "prismamediosdepago.com",
+    "sourceUrl": "https://prismamediosdepago.com",
+    "demandReason": "GSC-style: logo Prisma"
+  },
+  {
+    "slug": "procrear",
+    "name": "PROCREAR",
+    "categoryId": "entes-estatales",
+    "domain": "procrear.gob.ar",
+    "sourceUrl": "https://procrear.gob.ar",
+    "demandReason": "GSC-style: logo PROCREAR"
+  },
+  {
+    "slug": "prune",
+    "name": "Prüne",
+    "categoryId": "retail",
+    "domain": "prune.com.ar",
+    "sourceUrl": "https://prune.com.ar",
+    "demandReason": "GSC-style: logo Prüne"
+  },
+  {
+    "slug": "red-link",
+    "name": "Red Link",
+    "categoryId": "fintechs",
+    "domain": "redlink.com.ar",
+    "sourceUrl": "https://redlink.com.ar",
+    "demandReason": "GSC-style: logo Red"
+  },
+  {
+    "slug": "renaper",
+    "name": "RENAPER",
+    "categoryId": "entes-estatales",
+    "domain": "www.renaper.gob.ar",
+    "sourceUrl": "https://www.renaper.gob.ar",
+    "demandReason": "GSC-style: logo RENAPER"
+  },
+  {
+    "slug": "repetto",
+    "name": "Repetto",
+    "categoryId": "retail",
+    "domain": "repetto.com.ar",
+    "sourceUrl": "https://repetto.com.ar",
+    "demandReason": "GSC-style: logo Repetto"
+  },
+  {
+    "slug": "sancor-salud",
+    "name": "Sancor Salud",
+    "categoryId": "prepagas",
+    "domain": "www.sancorsalud.com.ar",
+    "sourceUrl": "https://www.sancorsalud.com.ar",
+    "demandReason": "GSC-style: logo Sancor"
+  },
+  {
+    "slug": "satoshitango",
+    "name": "SatoshiTango",
+    "categoryId": "fintechs",
+    "domain": "satoshitango.com",
+    "sourceUrl": "https://satoshitango.com",
+    "demandReason": "GSC-style: logo SatoshiTango"
+  },
+  {
+    "slug": "seat",
+    "name": "SEAT",
+    "categoryId": "automotrices",
+    "domain": "www.seat.com.ar",
+    "sourceUrl": "https://www.seat.com.ar",
+    "demandReason": "GSC-style: logo SEAT"
+  },
+  {
+    "slug": "sherman",
+    "name": "Sherman",
+    "categoryId": "retail",
+    "domain": "www.sherman.com.ar",
+    "sourceUrl": "https://www.sherman.com.ar",
+    "demandReason": "GSC-style: logo Sherman"
+  },
+  {
+    "slug": "sodimac",
+    "name": "Sodimac",
+    "categoryId": "retail",
+    "domain": "www.sodimac.com.ar",
+    "sourceUrl": "https://www.sodimac.com.ar",
+    "demandReason": "GSC-style: logo Sodimac"
+  },
+  {
+    "slug": "starlink",
+    "name": "Starlink",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.starlink.com",
+    "sourceUrl": "https://www.starlink.com",
+    "demandReason": "GSC-style: logo Starlink"
+  },
+  {
+    "slug": "stock-center",
+    "name": "Stock Center",
+    "categoryId": "retail",
+    "domain": "stockcenter.com.ar",
+    "sourceUrl": "https://stockcenter.com.ar",
+    "demandReason": "GSC-style: logo Stock"
+  },
+  {
+    "slug": "superintendencia-de-seguros-ssn",
+    "name": "Superintendencia de Seguros (SSN)",
+    "categoryId": "entes-estatales",
+    "domain": "www.ssn.gob.ar",
+    "sourceUrl": "https://www.ssn.gob.ar",
+    "demandReason": "GSC-style: logo Superintendencia"
+  },
+  {
+    "slug": "supermercados-libertad",
+    "name": "Supermercados Libertad",
+    "categoryId": "retail",
+    "domain": "superlibertad.com.ar",
+    "sourceUrl": "https://superlibertad.com.ar",
+    "demandReason": "GSC-style: logo Supermercados"
+  },
+  {
+    "slug": "telecom-argentina",
+    "name": "Telecom Argentina",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.telecom.com.ar",
+    "sourceUrl": "https://www.telecom.com.ar",
+    "demandReason": "GSC-style: logo Telecom"
+  },
+  {
+    "slug": "tesla",
+    "name": "Tesla",
+    "categoryId": "automotrices",
+    "domain": "www.tesla.com",
+    "sourceUrl": "https://www.tesla.com",
+    "demandReason": "GSC-style: logo Tesla"
+  },
+  {
+    "slug": "tienda-dolar",
+    "name": "Tienda Dólar",
+    "categoryId": "fintechs",
+    "domain": "tiendadolar.com.ar",
+    "sourceUrl": "https://tiendadolar.com.ar",
+    "demandReason": "GSC-style: logo Tienda"
+  },
+  {
+    "slug": "todomoda",
+    "name": "Todomoda",
+    "categoryId": "retail",
+    "domain": "todomoda.com",
+    "sourceUrl": "https://todomoda.com",
+    "demandReason": "GSC-style: logo Todomoda"
+  },
+  {
+    "slug": "topper",
+    "name": "Topper",
+    "categoryId": "retail",
+    "domain": "www.topper.com.ar",
+    "sourceUrl": "https://www.topper.com.ar",
+    "demandReason": "GSC-style: logo Topper"
+  },
+  {
+    "slug": "tuenti",
+    "name": "Tuenti",
+    "categoryId": "telecomunicaciones",
+    "domain": "www.tuenti.com.ar",
+    "sourceUrl": "https://www.tuenti.com.ar",
+    "demandReason": "GSC-style: logo Tuenti"
+  },
+  {
+    "slug": "voii",
+    "name": "Voii",
+    "categoryId": "fintechs",
+    "domain": "voii.com.ar",
+    "sourceUrl": "https://voii.com.ar",
+    "demandReason": "GSC-style: logo Voii"
+  },
+  {
+    "slug": "volvo",
+    "name": "Volvo",
+    "categoryId": "automotrices",
+    "domain": "www.volvocars.com",
+    "sourceUrl": "https://www.volvocars.com",
+    "demandReason": "GSC-style: logo Volvo"
+  },
+  {
+    "slug": "walmart-argentina",
+    "name": "Walmart Argentina",
+    "categoryId": "retail",
+    "domain": "www.walmart.com.ar",
+    "sourceUrl": "https://www.walmart.com.ar",
+    "demandReason": "GSC-style: logo Walmart"
+  }
+]
