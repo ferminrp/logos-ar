@@ -7,8 +7,20 @@ const siteUrl =
       : `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : 'https://loguitos.app')
 
+import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const permanentRedirects = JSON.parse(
+  readFileSync(path.join(__dirname, 'data/permanent-redirects.json'), 'utf8'),
+)
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return permanentRedirects
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

@@ -10,6 +10,7 @@ interface LogoDownloadButtonsProps {
   slug: string
   name: string
   domain: string
+  layout?: "hero" | "full"
 }
 
 function trackLogoDownload(slug: string, name: string, format: LogoFormat) {
@@ -59,6 +60,7 @@ export function LogoDownloadButtons({
   slug,
   name,
   domain,
+  layout = "full",
 }: LogoDownloadButtonsProps) {
   const [downloadingFormat, setDownloadingFormat] = useState<LogoFormat | null>(
     null,
@@ -82,27 +84,35 @@ export function LogoDownloadButtons({
     }
   }
 
+  const showPng = true
+  const showSvg = true
+  const pngVariant = layout === "hero" ? "default" : "outline"
+
   return (
     <div className="space-y-2">
       <div className="flex flex-wrap gap-2">
-        <Button
-          type="button"
-          variant="outline"
-          disabled={downloadingFormat !== null}
-          onClick={() => void handleDownload("png")}
-        >
-          <Download className="h-4 w-4" />
-          {downloadingFormat === "png" ? "Descargando..." : "Descargar PNG"}
-        </Button>
-        <Button
-          type="button"
-          variant="outline"
-          disabled={downloadingFormat !== null}
-          onClick={() => void handleDownload("svg")}
-        >
-          <Download className="h-4 w-4" />
-          {downloadingFormat === "svg" ? "Descargando..." : "Descargar SVG"}
-        </Button>
+        {showPng ? (
+          <Button
+            type="button"
+            variant={pngVariant}
+            disabled={downloadingFormat !== null}
+            onClick={() => void handleDownload("png")}
+          >
+            <Download className="h-4 w-4" />
+            {downloadingFormat === "png" ? "Descargando..." : "Descargar PNG"}
+          </Button>
+        ) : null}
+        {showSvg ? (
+          <Button
+            type="button"
+            variant="outline"
+            disabled={downloadingFormat !== null}
+            onClick={() => void handleDownload("svg")}
+          >
+            <Download className="h-4 w-4" />
+            {downloadingFormat === "svg" ? "Descargando..." : "Descargar SVG"}
+          </Button>
+        ) : null}
       </div>
       {error ? (
         <p className="text-sm text-destructive" role="alert">

@@ -9,6 +9,10 @@ import {
   getEntityBySlug,
   getRelatedEntities,
 } from "@/lib/entity-index"
+import {
+  buildEntityMetaDescription,
+  buildEntityPageTitle,
+} from "@/lib/entity-seo"
 
 interface LogoPageProps {
   params: Promise<{ slug: string }>
@@ -28,8 +32,8 @@ export async function generateMetadata({
     return { title: "Logo no encontrado" }
   }
 
-  const title = `Logo ${entity.name} PNG y SVG transparente | Loguitos`
-  const description = `Descargar logo de ${entity.name} en PNG y SVG transparente. Logo oficial para uso en presentaciones, web y diseño. Dominio: ${entity.domain}.`
+  const title = buildEntityPageTitle(entity)
+  const description = buildEntityMetaDescription(entity)
 
   return {
     title,

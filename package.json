@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node --experimental-strip-types scripts/generate-logos-dataset.mts && node --experimental-strip-types scripts/generate-flags-dataset.mts",
+    "prebuild": "node --experimental-strip-types scripts/generate-logos-dataset.mts && node --experimental-strip-types scripts/generate-flags-dataset.mts && node --experimental-strip-types scripts/generate-permanent-redirects.mts",
     "build": "next build",
     "postbuild": "node --experimental-strip-types scripts/generate-sitemap.mts && node --experimental-strip-types scripts/verify-sitemap.mts",
     "start": "next start",
