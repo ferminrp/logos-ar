@@ -98,15 +98,32 @@ function runCommand(
   })
 }
 
-async function waitForHttpOk(url: string, attempts = 60, delayMs = 1000): Promise<void> {
+async function waitForHttpOk(
+  url: string,
+  options: {
+    attempts?: number
+    delayMs?: number
+    child?: ChildProcess | null
+    bodyIncludes?: string
+  } = {}
+): Promise<void> {
+  const { attempts = 60, delayMs = 1000, child, bodyIncludes } = options
   let lastError = "unknown"
   for (let i = 0; i < attempts; i++) {
+    if (child && child.exitCode !== null) {
+      throw new Error(`Server process exited with code ${child.exitCode} before ${url} was ready`)
+    }
     try {
       const res = await fetch(url, { redirect: "follow" })
       if (res.ok) {
         const text = await res.text()
-        if (text.length > 0) return
-        lastError = "empty body"
+        if (text.length === 0) {
+          lastError = "empty body"
+        } else if (bodyIncludes && !text.includes(bodyIncludes)) {
+          lastError = `body missing "${bodyIncludes}"`
+        } else {
+          return
+        }
       } else {
         lastError = `status ${res.status}`
       }
@@ -116,6 +133,14 @@ async function waitForHttpOk(url: string, attempts = 60, delayMs = 1000): Promis
     await new Promise((r) => setTimeout(r, delayMs))
   }
   throw new Error(`Timed out waiting for ${url}: ${lastError}`)
+}
+
+async function resolveArtifactRunId(): Promise<string> {
+  return (
+    process.env.VERIFY_LOGUITOS_RUN_ID ??
+    (await readServerRecord())?.runId ??
+    runId()
+  )
 }
 
 let launchedChild: ChildProcess | null = null
@@ -166,7 +191,11 @@ async function launch(): Promise<ServerRecord> {
   await writeServerRecord(record)
   process.env.VERIFY_LOGUITOS_RUN_ID = run
 
-  await waitForHttpOk(`${baseUrl}/`)
+  const localUrl = `http://127.0.0.1:${port}`
+  await waitForHttpOk(`${localUrl}/`, {
+    child: launchedChild,
+    bodyIncludes: "Logos Argentina",
+  })
   console.log(`Server ready at ${baseUrl} (pid ${record.pid})`)
   return record
 }
@@ -247,7 +276,7 @@ async function doctor(): Promise<DoctorCheck[]> {
     })
   }
 
-  const run = process.env.VERIFY_LOGUITOS_RUN_ID ?? runId()
+  const run = await resolveArtifactRunId()
   const outDir = artifactsDir(run)
   await mkdir(outDir, { recursive: true })
   await writeFile(path.join(outDir, "doctor.json"), JSON.stringify({ baseUrl, checks }, null, 2))
@@ -264,7 +293,7 @@ async function doctor(): Promise<DoctorCheck[]> {
 
 async function drive(): Promise<void> {
   const baseUrl = await resolveBaseUrl()
-  const run = process.env.VERIFY_LOGUITOS_RUN_ID ?? (await readServerRecord())?.runId ?? runId()
+  const run = await resolveArtifactRunId()
   const outDir = artifactsDir(run)
   await mkdir(outDir, { recursive: true })
 
@@ -325,18 +354,24 @@ async function cleanup(): Promise<void> {
 }
 
 async function all(): Promise<void> {
-  const record = process.env.VERIFY_LOGUITOS_BASE_URL
-    ? null
-    : await launch()
-  if (record) {
-    process.env.VERIFY_LOGUITOS_RUN_ID = record.runId
+  const external = Boolean(process.env.VERIFY_LOGUITOS_BASE_URL)
+  try {
+    if (external) {
+      if (!process.env.VERIFY_LOGUITOS_RUN_ID) {
+        process.env.VERIFY_LOGUITOS_RUN_ID = await resolveArtifactRunId()
+      }
+    } else {
+      const record = await launch()
+      process.env.VERIFY_LOGUITOS_RUN_ID = record.runId
+    }
+    await doctor()
+    await drive()
+  } finally {
+    if (!external) {
+      await cleanup()
+    }
   }
-  await doctor()
-  await drive()
-  if (!process.env.VERIFY_LOGUITOS_BASE_URL) {
-    await cleanup()
-  }
-  const run = process.env.VERIFY_LOGUITOS_RUN_ID ?? "unknown"
+  const run = await resolveArtifactRunId()
   const artifactPath = artifactsDir(run)
   const doctorPath = path.join(artifactPath, "doctor.json")
   try {
@@ -372,7 +407,17 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((error) => {
+main().catch(async (error) => {
   console.error(error instanceof Error ? error.message : error)
-  process.exitCode = 1
+  if (launchedChild) {
+    if (launchedChild.exitCode === null) {
+      launchedChild.kill("SIGTERM")
+    }
+    try {
+      await cleanup()
+    } catch {
+      // best-effort shutdown on failure
+    }
+  }
+  process.exit(1)
 })
