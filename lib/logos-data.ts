@@ -392,9 +392,9 @@ export const categories: Category[] = [
     id: "telecomunicaciones",
     name: "Telecomunicaciones",
     description: "Telefonía móvil, internet y TV paga en Argentina",
-    seoTopEntities: ["Claro", "Movistar", "Personal"],
+    seoTopEntities: ["Claro", "Movistar", "Telecentro"],
     seoIntro:
-      "Logos de empresas de telecomunicaciones en Argentina en PNG y SVG. Claro, Movistar, Personal, Telecom, Flow, Fibertel y 7 marcas más. Descarga gratis los logos de las principales telcos y servicios de conectividad del país.",
+      "Logos de empresas de telecomunicaciones en Argentina en PNG y SVG. Claro, Movistar, Telecentro, Telecom, Flow, Fibertel y 7 marcas más. Descarga gratis los logos de las principales telcos y servicios de conectividad del país.",
     entities: [
       { id: 503, name: "Claro Argentina", domain: "www.claro.com.ar" },
       { id: 504, name: "Movistar Argentina", domain: "www.movistar.com.ar" },
