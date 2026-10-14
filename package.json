@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "eslint .",
     "indexnow:submit-all": "node --experimental-strip-types scripts/indexnow-submit-all.mts",
-    "indexnow:ping-changed": "node --experimental-strip-types scripts/indexnow-ping-changed.mts"
+    "indexnow:ping-changed": "node --experimental-strip-types scripts/indexnow-ping-changed.mts",
+    "verify:loguitos": "node --experimental-strip-types .cursor/skills/verify-loguitos/scripts/verify-loguitos.mts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -72,6 +73,7 @@
     "postcss": "^8.5",
     "tailwindcss": "^4.2.0",
     "tw-animate-css": "1.3.3",
+    "playwright": "^1.55.1",
     "typescript": "5.7.3"
   }
 }
