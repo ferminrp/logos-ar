@@ -355,6 +355,7 @@ async function cleanup(): Promise<void> {
 
 async function all(): Promise<void> {
   const external = Boolean(process.env.VERIFY_LOGUITOS_BASE_URL)
+  let launchedThisRun = false
   try {
     if (external) {
       if (!process.env.VERIFY_LOGUITOS_RUN_ID) {
@@ -363,11 +364,12 @@ async function all(): Promise<void> {
     } else {
       const record = await launch()
       process.env.VERIFY_LOGUITOS_RUN_ID = record.runId
+      launchedThisRun = true
     }
     await doctor()
     await drive()
   } finally {
-    if (!external) {
+    if (!external && launchedThisRun) {
       await cleanup()
     }
   }
