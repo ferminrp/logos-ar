@@ -249,6 +249,75 @@ async function doctor(): Promise<DoctorCheck[]> {
 
   await check("robots", `${baseUrl}/robots.txt`)
 
+  await check("category-bancos-seo", `${baseUrl}/categoria/bancos`, (_res, body) => {
+    if (!body.includes("Logos de bancos argentinos")) {
+      throw new Error('missing category SEO h1 "Logos de bancos argentinos"')
+    }
+    if (!body.includes("Directorio de logos de bancos tradicionales")) {
+      throw new Error("missing bancos introLead from lib/category-seo.ts")
+    }
+  })
+
+  await check("logo-banco-provincia-meta", `${baseUrl}/logo/banco-provincia`, (_res, body) => {
+    if (!body.includes("Descargá el logo de Banco Provincia")) {
+      throw new Error("missing entity meta description from lib/entity-seo.ts")
+    }
+    if (!body.includes("| Loguitos")) {
+      throw new Error("missing Loguitos suffix in document title")
+    }
+  })
+
+  async function checkPermanentRedirect(
+    name: string,
+    sourcePath: string,
+    destinationPath: string
+  ): Promise<void> {
+    try {
+      const res = await fetch(`${baseUrl}${sourcePath}`, { redirect: "manual" })
+      const location = res.headers.get("location") ?? ""
+      const okStatus = res.status === 301 || res.status === 308
+      const okLocation =
+        location === destinationPath ||
+        location.endsWith(destinationPath) ||
+        location.includes(destinationPath)
+      if (!okStatus || !okLocation) {
+        checks.push({
+          name,
+          ok: false,
+          detail: `HTTP ${res.status} location=${location || "(none)"}`,
+        })
+        return
+      }
+      checks.push({
+        name,
+        ok: true,
+        detail: `HTTP ${res.status} → ${destinationPath}`,
+      })
+    } catch (error) {
+      checks.push({
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      })
+    }
+  }
+
+  await checkPermanentRedirect(
+    "redirect-categoria-delivery",
+    "/categoria/delivery",
+    "/categoria/gastronomia"
+  )
+  await checkPermanentRedirect(
+    "redirect-logo-banco-provincia-alias",
+    "/logo/banco-provincia-bs-as",
+    "/logo/banco-provincia"
+  )
+  await checkPermanentRedirect(
+    "redirect-logo-tn-alias",
+    "/logo/tn-todo-noticias",
+    "/logo/tn"
+  )
+
   try {
     const apiUrl = `${baseUrl}/api/logos?q=galicia&limit=5`
     const res = await fetch(apiUrl)
@@ -317,6 +386,16 @@ async function drive(): Promise<void> {
     await desktop.getByRole("heading", { name: /Logo Banco Galicia/ }).waitFor({ timeout: 15000 })
     await desktop.screenshot({ path: path.join(outDir, "logo-detail-desktop.png"), fullPage: false })
     lines.push("logo-detail-desktop.png captured (feature: logo-detail)")
+
+    await desktop.goto(`${baseUrl}/categoria/bancos`, { waitUntil: "domcontentloaded" })
+    await desktop
+      .getByRole("heading", { level: 1, name: "Logos de bancos argentinos" })
+      .waitFor({ timeout: 15000 })
+    await desktop.screenshot({
+      path: path.join(outDir, "category-bancos-seo-desktop.png"),
+      fullPage: false,
+    })
+    lines.push("category-bancos-seo-desktop.png captured (feature: seo-ctr)")
   } finally {
     await browser.close()
   }
