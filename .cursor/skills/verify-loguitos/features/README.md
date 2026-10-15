@@ -34,3 +34,4 @@ Each feature file has four H2 sections in order: `Sub-features`, `How to get to 
 - [Logos API](./api-logos.md) — JSON catalog at `/api/logos`
 - [API docs](./docs-page.md) — static documentation at `/docs`
 - [Category hub](./category-hub.md) — browse a category such as bancos
+- [SEO / CTR](./seo-ctr.md) — category landing copy, entity metadata, permanent slug redirects

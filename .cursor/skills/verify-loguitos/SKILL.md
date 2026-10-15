@@ -48,6 +48,9 @@ Read-only checks before driving:
 - `GET /docs` → 200
 - `GET /api/logos?q=galicia&limit=5` → 200, JSON `items` array with at least one match whose `name` or `domain` mentions galicia (case-insensitive)
 - `GET /robots.txt` → 200
+- `GET /categoria/bancos` → 200, HTML contains SEO H1 `Logos de bancos argentinos`
+- `GET /logo/banco-provincia` → 200, HTML contains entity meta description and `| Loguitos` in `<title>`
+- `GET /categoria/delivery`, `/logo/banco-provincia-bs-as`, `/logo/tn-todo-noticias` with `redirect: manual` → 301 or 308 to the canonical paths in `data/permanent-redirects.json`
 
 Exit code non-zero on any failure. Run doctor whenever a drive step fails before retrying browser actions.
 
@@ -89,6 +92,7 @@ Default artifact directory: `.verify-loguitos/artifacts/<run-id>/` (also symlink
 | `home-desktop.png` | Home catalog renders (1280×800) |
 | `home-search-mobile.png` | Mobile search results for `galicia` (390×844) |
 | `logo-detail-desktop.png` | Entity detail for Banco Galicia |
+| `category-bancos-seo-desktop.png` | Category SEO landing for bancos (feature: seo-ctr) |
 | `drive-summary.txt` | Human-readable pass/fail log |
 
 Proof standards: use real routes and the public API, not test-only hooks. Capture the action (navigation or search) and the resulting UI or JSON, not only a generic 200. Cleanup must not remove these files.
