@@ -278,8 +278,7 @@ async function doctor(): Promise<DoctorCheck[]> {
       const okStatus = res.status === 301 || res.status === 308
       const okLocation =
         location === destinationPath ||
-        location.endsWith(destinationPath) ||
-        location.includes(destinationPath)
+        location.endsWith(destinationPath)
       if (!okStatus || !okLocation) {
         checks.push({
           name,
