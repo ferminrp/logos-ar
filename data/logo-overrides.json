@@ -656,8 +656,8 @@
     "logoSource": "site"
   },
   "finanzasargy.com": {
-    "logoUrl": "https://finanzasargy.com/icon-512x512.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/finanzasargy.png",
+    "logoSource": "hosted"
   },
   "gasti.pro": {
     "logoUrl": "https://gasti.pro/face.png",
@@ -1009,6 +1009,46 @@
   },
   "www.anmat.gob.ar": {
     "logoUrl": "/logos/anmat.png",
+    "logoSource": "hosted"
+  },
+  "www.prevencionsalud.com.ar": {
+    "logoUrl": "/logos/prevencion-salud.png",
+    "logoSource": "hosted"
+  },
+  "www.sossalud.com.ar": {
+    "logoUrl": "/logos/sos-salud.png",
+    "logoSource": "hosted"
+  },
+  "www.pluspagos.com": {
+    "logoUrl": "/logos/pluspagos.png",
+    "logoSource": "hosted"
+  },
+  "www.newbalance.com.ar": {
+    "logoUrl": "/logos/new-balance.png",
+    "logoSource": "hosted"
+  },
+  "www.natura.com.br": {
+    "logoUrl": "/logos/natura-cosmeticos.png",
+    "logoSource": "hosted"
+  },
+  "www.mobbex.com": {
+    "logoUrl": "/logos/mobbex.png",
+    "logoSource": "hosted"
+  },
+  "www.awada.com.ar": {
+    "logoUrl": "/logos/awada.png",
+    "logoSource": "hosted"
+  },
+  "www.kosiuko.com": {
+    "logoUrl": "/logos/kosiuko.png",
+    "logoSource": "hosted"
+  },
+  "www.heineken.com": {
+    "logoUrl": "/logos/heineken.png",
+    "logoSource": "hosted"
+  },
+  "www.fiwind.io": {
+    "logoUrl": "/logos/fiwind.png",
     "logoSource": "hosted"
   }
 }

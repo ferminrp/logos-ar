@@ -17,10 +17,12 @@ import {
   resolveSiteHostname,
 } from "./domain.ts"
 import { measureImage } from "./image-metrics.ts"
+import sharp from "sharp"
 import {
   DEFAULT_VISUAL_THRESHOLDS,
   analyzeLogoVisual,
   evaluateVisualAnalysis,
+  evaluateInvisibleOnLightBackground,
   hammingDistance,
 } from "./visual-analysis.ts"
 
@@ -259,6 +261,23 @@ export async function checkEntityLogo(
       if (analysis) {
         for (const issue of evaluateVisualAnalysis(analysis)) {
           visualIssues.push({ code: issue.code, message: issue.message })
+        }
+        const onWhite = await sharp(Buffer.from(bytes), { failOn: "none" })
+          .flatten({ background: "#ffffff" })
+          .png()
+          .toBuffer()
+        const lightAnalysis = await analyzeLogoVisual(new Uint8Array(onWhite))
+        if (lightAnalysis) {
+          for (const issue of evaluateInvisibleOnLightBackground(
+            lightAnalysis,
+            DEFAULT_VISUAL_THRESHOLDS,
+            analysis,
+          )) {
+            visualIssues.push({
+              code: "blank-or-faint",
+              message: `Logo casi invisible sobre fondo claro (${issue.message})`,
+            })
+          }
         }
         if (entity.id >= VISUAL_NEAR_DUP_MIN_ID) {
           const near = dHashOwners.find(

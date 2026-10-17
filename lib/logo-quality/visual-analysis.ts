@@ -7,9 +7,15 @@ export type VisualAnalysis = {
   contentHeight: number
   aspectRatio: number
   opaqueRatio: number
+  /** Trimmed bounding box area / full image area (0–1). */
+  contentFillRatio: number
+  /** Max channel spread (max-min) averaged on opaque pixels. */
+  contrastSpread: number
   /** Mean channel variance on opaque pixels (0–~65025). */
   variance: number
   uniqueColors: number
+  /** Average (R+G+B)/3 on opaque pixels (0–255). */
+  meanLuminance: number
   dHash: bigint
 }
 
@@ -90,6 +96,8 @@ export async function analyzeLogoVisual(bytes: Uint8Array): Promise<VisualAnalys
 
     const pixels = info.width * info.height
     const opaqueRatio = opaque / pixels
+    const meanLuminance =
+      opaque > 0 ? (sumR + sumG + sumB) / (opaque * 3) : 0
     const sampleCount = opaque * channels
     const mean = sampleCount > 0 ? (sumR + sumG + sumB) / sampleCount : 0
     const meanSq = sampleCount > 0 ? (sumSqR + sumSqG + sumSqB) / sampleCount : 0
@@ -99,6 +107,7 @@ export async function analyzeLogoVisual(bytes: Uint8Array): Promise<VisualAnalys
     let aspectRatio = width / height
     let contentWidth = width
     let contentHeight = height
+    let contrastSpread = 0
     try {
       const trimmed = await sharp(Buffer.from(bytes), { failOn: "none" })
         .trim()
@@ -110,9 +119,24 @@ export async function analyzeLogoVisual(bytes: Uint8Array): Promise<VisualAnalys
         contentHeight = th
         aspectRatio = tw / th
       }
+      const tStats = await sharp(trimmed.data, {
+        failOn: "none",
+        raw: {
+          width: tw,
+          height: th,
+          channels: trimmed.info.channels as sharp.Channels,
+        },
+      })
+        .ensureAlpha()
+        .stats()
+      const spreads = tStats.channels.slice(0, 3).map((c) => c.max - c.min)
+      contrastSpread = spreads.reduce((a, b) => a + b, 0) / spreads.length
     } catch {
       // keep full-frame aspect ratio
     }
+
+    const contentFillRatio =
+      width > 0 && height > 0 ? (contentWidth * contentHeight) / (width * height) : 0
 
     return {
       width,
@@ -121,8 +145,11 @@ export async function analyzeLogoVisual(bytes: Uint8Array): Promise<VisualAnalys
       contentHeight,
       aspectRatio,
       opaqueRatio,
+      contentFillRatio,
+      contrastSpread,
       variance,
       uniqueColors: colorSet.size,
+      meanLuminance,
       dHash,
     }
   } catch {
@@ -132,6 +159,8 @@ export async function analyzeLogoVisual(bytes: Uint8Array): Promise<VisualAnalys
 
 export type VisualQualityThresholds = {
   minOpaqueRatio: number
+  minContentFillRatio: number
+  minContrastSpread: number
   minVariance: number
   maxAspectRatio: number
   minAspectRatio: number
@@ -141,7 +170,9 @@ export type VisualQualityThresholds = {
 }
 
 export const DEFAULT_VISUAL_THRESHOLDS: VisualQualityThresholds = {
-  minOpaqueRatio: 0.08,
+  minOpaqueRatio: 0.12,
+  minContentFillRatio: 0.2,
+  minContrastSpread: 18,
   minVariance: 120,
   maxAspectRatio: 2.4,
   minAspectRatio: 0.42,
@@ -166,7 +197,33 @@ export function evaluateVisualAnalysis(
       ? Math.min(thresholds.minOpaqueRatio, 0.03)
       : thresholds.minOpaqueRatio
 
-  if (analysis.opaqueRatio < minOpaque) {
+  const maxDimRatio = Math.max(
+    analysis.contentWidth / analysis.width,
+    analysis.contentHeight / analysis.height,
+  )
+  const minDimRatio = Math.min(
+    analysis.contentWidth / analysis.width,
+    analysis.contentHeight / analysis.height,
+  )
+
+  const wideMark = analysis.aspectRatio > 2.1 || analysis.aspectRatio < 0.48
+
+  if (!wideMark && analysis.contentFillRatio < thresholds.minContentFillRatio) {
+    issues.push({
+      code: "blank-or-faint",
+      message: `Contenido recortado ocupa ${(analysis.contentFillRatio * 100).toFixed(1)}% del área del lienzo (mín. ${(thresholds.minContentFillRatio * 100).toFixed(0)}%)`,
+    })
+  } else if (wideMark && minDimRatio < 0.07) {
+    issues.push({
+      code: "blank-or-faint",
+      message: `Logo demasiado bajo o angosto (${(minDimRatio * 100).toFixed(1)}% del lado corto)`,
+    })
+  } else if (maxDimRatio < thresholds.minContentFillRatio) {
+    issues.push({
+      code: "blank-or-faint",
+      message: `Logo demasiado chico en el lienzo (${(maxDimRatio * 100).toFixed(1)}% del lado largo)`,
+    })
+  } else if (analysis.opaqueRatio < minOpaque) {
     issues.push({
       code: "blank-or-faint",
       message: `Logo casi vacío (${(analysis.opaqueRatio * 100).toFixed(1)}% píxeles visibles)`,
@@ -203,3 +260,36 @@ export function evaluateVisualAnalysis(
 
   return issues
 }
+
+/** Detect logos that disappear on a white UI background (e.g. white wordmarks). */
+export function evaluateInvisibleOnLightBackground(
+  analysis: VisualAnalysis,
+  thresholds: VisualQualityThresholds = DEFAULT_VISUAL_THRESHOLDS,
+  original?: VisualAnalysis,
+): Array<{ code: VisualIssueCode; message: string }> {
+  const issues: Array<{ code: VisualIssueCode; message: string }> = []
+  if (original && hammingDistance(original.dHash, analysis.dHash) > 4) {
+    return issues
+  }
+  if (
+    analysis.opaqueRatio > 0.9 &&
+    analysis.uniqueColors <= 3 &&
+    analysis.meanLuminance > 248
+  ) {
+    issues.push({
+      code: "blank-or-faint",
+      message: `Logo blanco o casi blanco sobre fondo claro (luminancia ${analysis.meanLuminance.toFixed(0)})`,
+    })
+  } else if (
+    analysis.contrastSpread < thresholds.minContrastSpread &&
+    analysis.variance < thresholds.minVariance
+  ) {
+    issues.push({
+      code: "blank-or-faint",
+      message: `Logo casi uniforme o invisible (contraste ${analysis.contrastSpread.toFixed(0)}, varianza ${Math.round(analysis.variance)})`,
+    })
+  }
+
+  return issues
+}
+

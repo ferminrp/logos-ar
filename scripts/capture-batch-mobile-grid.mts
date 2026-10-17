@@ -8,7 +8,7 @@ const repoRoot = path.resolve(__dirname, "..")
 const outDir =
   process.env.CONTACT_SHEET_OUT ??
   path.join("/cursor/stores/self/artifacts/loguitos")
-const port = Number(process.env.CONTACT_SHEET_PORT ?? "3101")
+const port = Number(process.env.CONTACT_SHEET_PORT ?? "3102")
 const baseUrl = `http://127.0.0.1:${port}`
 
 async function main() {
@@ -22,10 +22,9 @@ async function main() {
     waitUntil: "networkidle",
     timeout: 120_000,
   })
-  await page.evaluate(() => {
-    const el = document.querySelector("main") ?? document.body
-    el.scrollIntoView({ block: "start" })
-  })
+  const batchAnchor = page.locator('a[href="/logo/pluspagos"], a[href="/logo/mobbex"]').first()
+  await batchAnchor.scrollIntoViewIfNeeded({ timeout: 60_000 })
+  await page.evaluate(() => window.scrollBy(0, -120))
   await page.waitForTimeout(500)
   const outPath = path.join(outDir, "grid-mobile-batch-section.png")
   await page.screenshot({ path: outPath, fullPage: false })

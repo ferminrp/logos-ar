@@ -160,11 +160,31 @@ test("visual analysis flags wide photo-like asset", () => {
     contentHeight: 280,
     aspectRatio: 2.86,
     opaqueRatio: 0.92,
+    contentFillRatio: 0.95,
+    contrastSpread: 120,
     variance: 2400,
     uniqueColors: 220,
+    meanLuminance: 128,
     dHash: 0n,
   })
   assert.ok(issues.some((issue) => issue.code === "photo-or-screenshot"))
+})
+
+test("must-fail fixtures: Accord Salud and Trapiche white logos", async () => {
+  for (const file of ["must-fail-accord-salud.png", "must-fail-trapiche-white.png"]) {
+    const bytes = await readFile(path.join(fixturesDir, file))
+    const onWhite = await sharp(bytes).flatten({ background: "#ffffff" }).png().toBuffer()
+    const analysis = await analyzeLogoVisual(new Uint8Array(onWhite))
+    assert.ok(analysis)
+    const { evaluateInvisibleOnLightBackground } = await import(
+      "../lib/logo-quality/visual-analysis.ts"
+    )
+    const issues = evaluateInvisibleOnLightBackground(analysis!)
+    assert.ok(
+      issues.some((issue) => issue.code === "blank-or-faint"),
+      `expected blank-or-faint for ${file}, got: ${issues.map((i) => i.message).join("; ")}`,
+    )
+  }
 })
 
 test("dHash is stable across minor resize (perceptual match)", async () => {
