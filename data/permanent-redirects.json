@@ -1,0 +1,17 @@
+[
+  {
+    "source": "/logo/banco-provincia-bs-as",
+    "destination": "/logo/banco-provincia",
+    "permanent": true
+  },
+  {
+    "source": "/logo/tn-todo-noticias",
+    "destination": "/logo/tn",
+    "permanent": true
+  },
+  {
+    "source": "/categoria/delivery",
+    "destination": "/categoria/gastronomia",
+    "permanent": true
+  }
+]

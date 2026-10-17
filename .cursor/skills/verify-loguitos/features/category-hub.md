@@ -18,8 +18,8 @@ Preconditions:
 
 - Doctor pass
 
-- **Bancos hub.** `GET /categoria/bancos` returns 200 HTML containing `Banco Galicia` or category title for banks.
-- **Proof.** HTTP 200 plus known entity name in HTML (manual curl or browser).
+- **Bancos hub.** `GET /categoria/bancos` returns 200 with H1 `Logos de bancos argentinos` (see `lib/category-seo.ts`) and entity cards such as `Banco Galicia` in the grid.
+- **Proof.** HTTP 200 plus SEO H1 and a known entity name (manual curl or `category-bancos-seo-desktop.png` from `drive`).
 
 ## Gotchas
 
