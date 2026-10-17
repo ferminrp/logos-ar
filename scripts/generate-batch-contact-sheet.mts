@@ -45,7 +45,14 @@ async function sheetHtml(
   brands: Array<{ name: string; category: string; logoUrl: string }>,
   sheetIndex: number,
   totalSheets: number,
+  theme: "light" | "dark",
 ): Promise<string> {
+  const isDark = theme === "dark"
+  const pageBg = isDark ? "#0f172a" : "#f8fafc"
+  const text = isDark ? "#f1f5f9" : "#0f172a"
+  const tileBg = isDark ? "#1e293b" : "#fff"
+  const tileBorder = isDark ? "#334155" : "#e2e8f0"
+  const catColor = isDark ? "#94a3b8" : "#64748b"
   const width = COLS * TILE_W + PAD * 2
   const rows = Math.ceil(brands.length / COLS)
   const height = rows * TILE_H + PAD * 2 + 36
@@ -65,16 +72,16 @@ async function sheetHtml(
 <html><head><meta charset="utf-8"/>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, sans-serif; background: #f8fafc; color: #0f172a; }
+  body { font-family: system-ui, sans-serif; background: ${pageBg}; color: ${text}; }
   h1 { font-size: 14px; font-weight: 600; padding: 10px ${PAD}px 6px; }
   .grid { display: grid; grid-template-columns: repeat(${COLS}, ${TILE_W}px); gap: 8px; padding: 0 ${PAD}px ${PAD}px; width: ${width}px; }
-  .tile { width: ${TILE_W}px; height: ${TILE_H}px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .tile { width: ${TILE_W}px; height: ${TILE_H}px; background: ${tileBg}; border: 1px solid ${tileBorder}; border-radius: 8px; padding: 8px; display: flex; flex-direction: column; align-items: center; text-align: center; }
   img { object-fit: contain; }
   .name { font-size: 11px; font-weight: 600; margin-top: 6px; line-height: 1.2; max-height: 26px; overflow: hidden; }
-  .cat { font-size: 9px; color: #64748b; margin-top: 2px; }
+  .cat { font-size: 9px; color: ${catColor}; margin-top: 2px; }
 </style></head>
 <body>
-  <h1>PR #37 batch (id ≥ ${BATCH_MIN_ID}) — hoja ${sheetIndex + 1}/${totalSheets}</h1>
+  <h1>PR #37 batch (id ≥ ${BATCH_MIN_ID}) — ${theme} — hoja ${sheetIndex + 1}/${totalSheets}</h1>
   <div class="grid">${tiles}</div>
 </body></html>`
 }
@@ -99,15 +106,18 @@ async function main() {
   const browser = await chromium.launch()
   const page = await browser.newPage()
 
-  for (let i = 0; i < sheets.length; i++) {
-    const html = await sheetHtml(sheets[i]!, i, sheets.length)
-    const htmlPath = path.join(outDir, `_contact-sheet-${i + 1}.html`)
-    await writeFile(htmlPath, html)
-    await page.setContent(html, { waitUntil: "load" })
-    await page.waitForTimeout(300)
-    const outPath = path.join(outDir, `contact-sheet-${String(i + 1).padStart(2, "0")}.png`)
-    await page.screenshot({ path: outPath, fullPage: true })
-    console.log("wrote", outPath)
+  for (const theme of ["light", "dark"] as const) {
+    for (let i = 0; i < sheets.length; i++) {
+      const html = await sheetHtml(sheets[i]!, i, sheets.length, theme)
+      await page.setContent(html, { waitUntil: "load" })
+      await page.waitForTimeout(300)
+      const outPath = path.join(
+        outDir,
+        `contact-sheet-${theme}-${String(i + 1).padStart(2, "0")}.png`,
+      )
+      await page.screenshot({ path: outPath, fullPage: true })
+      console.log("wrote", outPath)
+    }
   }
 
   await browser.close()

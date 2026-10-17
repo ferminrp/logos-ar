@@ -18,7 +18,7 @@ async function main() {
     viewport: { width: 390, height: 844 },
     deviceScaleFactor: 2,
   })
-  await page.goto(`${baseUrl}/categoria/retail`, {
+  await page.goto(`${baseUrl}/categoria/fintechs`, {
     waitUntil: "networkidle",
     timeout: 120_000,
   })

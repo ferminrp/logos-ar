@@ -17,6 +17,13 @@ import {
   resolveSiteHostname,
 } from "./domain.ts"
 import { measureImage } from "./image-metrics.ts"
+import {
+  DEFAULT_VISUAL_THRESHOLDS,
+  analyzeLogoVisual,
+  evaluateVisualAnalysis,
+  hammingDistance,
+  type VisualAnalysis,
+} from "./visual-analysis.ts"
 
 export type LogoCheckCode =
   | "fetch-failed"
@@ -26,6 +33,9 @@ export type LogoCheckCode =
   | "generic-icon"
   | "redirect-mismatch"
   | "site-unreachable"
+  | "blank-or-faint"
+  | "photo-or-screenshot"
+  | "near-duplicate-visual"
 
 export type LogoCheckIssue = {
   code: LogoCheckCode
@@ -59,8 +69,19 @@ export type CheckCatalogOptions = {
   readFileImpl?: typeof readFile
   publicDir?: string
   skipRedirectCheck?: boolean
+  skipVisualCheck?: boolean
   concurrency?: number
 }
+
+type DHashOwner = {
+  slug: string
+  domain: string
+  dHash: bigint
+  opaqueRatio: number
+  id: number
+}
+
+const VISUAL_NEAR_DUP_MIN_ID = 452
 
 async function loadLogoBytes(
   logoUrl: string,
@@ -159,6 +180,7 @@ export function evaluateLogoBytes(
 export async function checkEntityLogo(
   entity: EntityLogoInput,
   sha256ToOwners: Map<string, HashOwner[]>,
+  dHashOwners: DHashOwner[],
   options: CheckCatalogOptions = {},
 ): Promise<LogoCheckResult> {
   const logoUrl = getEntityLogoUrl(entity, GOOGLE_FAVICON_CHECK_SIZE)
@@ -232,7 +254,41 @@ export async function checkEntityLogo(
     if (evaluated.metrics && contentType) {
       evaluated.metrics.contentType = contentType
     }
-    const allIssues = [...issues, ...evaluated.issues]
+    const visualIssues: LogoCheckIssue[] = []
+    if (!options.skipVisualCheck) {
+      const analysis = await analyzeLogoVisual(bytes)
+      if (analysis) {
+        for (const issue of evaluateVisualAnalysis(analysis)) {
+          visualIssues.push({ code: issue.code, message: issue.message })
+        }
+        if (entity.id >= VISUAL_NEAR_DUP_MIN_ID) {
+          const near = dHashOwners.find(
+            (owner) =>
+              owner.id >= VISUAL_NEAR_DUP_MIN_ID &&
+              owner.slug !== entity.slug &&
+              !domainsEquivalent(owner.domain, entity.domain) &&
+              analysis.opaqueRatio >= DEFAULT_VISUAL_THRESHOLDS.minOpaqueRatio &&
+              owner.opaqueRatio >= DEFAULT_VISUAL_THRESHOLDS.minOpaqueRatio &&
+              hammingDistance(owner.dHash, analysis.dHash) <=
+                DEFAULT_VISUAL_THRESHOLDS.maxHammingNearDuplicate,
+          )
+          if (near) {
+            visualIssues.push({
+              code: "near-duplicate-visual",
+              message: `Logo muy similar al de ${near.slug} (dHash)`,
+            })
+          }
+        }
+        dHashOwners.push({
+          slug: entity.slug,
+          domain: entity.domain,
+          dHash: analysis.dHash,
+          opaqueRatio: analysis.opaqueRatio,
+          id: entity.id,
+        })
+      }
+    }
+    const allIssues = [...issues, ...evaluated.issues, ...visualIssues]
 
     if (evaluated.metrics.sha256) {
       const list = sha256ToOwners.get(evaluated.metrics.sha256) ?? []
@@ -270,10 +326,11 @@ export async function checkEntityLogos(
   options: CheckCatalogOptions = {},
 ): Promise<LogoCheckResult[]> {
   const sha256ToOwners = new Map<string, HashOwner[]>()
+  const dHashOwners: DHashOwner[] = []
   const results: LogoCheckResult[] = []
 
   for (const entity of entities) {
-    const result = await checkEntityLogo(entity, sha256ToOwners, options)
+    const result = await checkEntityLogo(entity, sha256ToOwners, dHashOwners, options)
     results.push(result)
   }
 

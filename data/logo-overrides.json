@@ -32,8 +32,8 @@
     "logoSource": "site"
   },
   "bersa.com.ar": {
-    "logoUrl": "https://bersa.com.ar/wp-content/uploads/2024/10/B_Icon-300x300.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/banco-entre-rios-bersa.png",
+    "logoSource": "hosted"
   },
   "mercadopago.com.ar": {
     "logoUrl": "https://http2.mlstatic.com/storage/pog-cm-admin/calm-assets/MLA-LandingHome-Thumbnail-1x-20260925--1200x1200--bbdbdbdf.webp",
@@ -88,8 +88,8 @@
     "logoSource": "site"
   },
   "voii.com.ar": {
-    "logoUrl": "https://www.voii.com.ar/wp-content/uploads/2026/07/Grupo-Cocos-header.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/voii.png",
+    "logoSource": "hosted"
   },
   "decrypto.com.ar": {
     "logoUrl": "https://decrypto.com.ar/apple-touch-icon.png",
@@ -104,8 +104,8 @@
     "logoSource": "site"
   },
   "pagos360.com": {
-    "logoUrl": "https://www.pagos360.com/_assets/v11/c306442d0f2ebecaeec318819ed3bf7902e1a0da.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/pagos360.png",
+    "logoSource": "hosted"
   },
   "binance.com": {
     "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=binance.com&sz=256",
@@ -320,20 +320,20 @@
     "logoSource": "site"
   },
   "medicus.com.ar": {
-    "logoUrl": "https://cdn.prod.website-files.com/6841ec68b99280a8ee317172/688262f30969fe1f3e9ab9ed_PlanCard.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/medicus.png",
+    "logoSource": "hosted"
   },
   "sancorsalud.com.ar": {
     "logoUrl": "https://sancorsalud.com.ar/app-resources/favicons/apple-touch-icon.png",
     "logoSource": "site"
   },
   "www.accordsalud.com.ar": {
-    "logoUrl": "https://www.accordsalud.com.ar/iconAccordSalud.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/accord-salud.png",
+    "logoSource": "hosted"
   },
   "www.hospitalitaliano.org.ar": {
-    "logoUrl": "https://www.hospitalitaliano.org.ar/multimedia/archivos/noticias_archivos/11/Banners/11_61813_1.jpg",
-    "logoSource": "site"
+    "logoUrl": "/logos/hospital-italiano-de-buenos-aires.png",
+    "logoSource": "hosted"
   },
   "www.hospitalaleman.org.ar": {
     "logoUrl": "/logos/hospital-aleman.png",
@@ -376,8 +376,8 @@
     "logoSource": "google"
   },
   "www.megatone.net": {
-    "logoUrl": "https://www.megatone.net/images/iconos/AppleIcon.png?version=35",
-    "logoSource": "site"
+    "logoUrl": "/logos/megatone.png",
+    "logoSource": "hosted"
   },
   "prune.com.ar": {
     "logoUrl": "/logos/prune.png",
@@ -468,8 +468,8 @@
     "logoSource": "google"
   },
   "www.starlink.com": {
-    "logoUrl": "https://starlink.com/assets-new/images/landing/field/v4_night_sky.webp",
-    "logoSource": "site"
+    "logoUrl": "/logos/starlink.png",
+    "logoSource": "hosted"
   },
   "chevrolet.com.ar": {
     "logoUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/favicon/chevrolet-favicon-180.svg",
@@ -524,8 +524,8 @@
     "logoSource": "site"
   },
   "www.iveco.com": {
-    "logoUrl": "https://www.iveco.com/global/-/media/IVECOdotcom/global/range_m.jpg?h=700&iar=0&w=700&rev=-1",
-    "logoSource": "site"
+    "logoUrl": "/logos/iveco.png",
+    "logoSource": "hosted"
   },
   "quilmes.com.ar": {
     "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=quilmes.com.ar&sz=256",
@@ -672,8 +672,8 @@
     "logoSource": "site"
   },
   "www.openpay.mx": {
-    "logoUrl": "https://www.openpay.mx/openpay-logo.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/openpay-argentina.png",
+    "logoSource": "hosted"
   },
   "nexo.com": {
     "logoUrl": "https://nexo.com/favicon.ico?favicon.2fmiwiu-hp6gc.ico",
@@ -732,24 +732,24 @@
     "logoSource": "hosted"
   },
   "www.osecac.org.ar": {
-    "logoUrl": "https://www.osecac.org.ar/Image/logo-osecac.gif",
-    "logoSource": "site"
+    "logoUrl": "/logos/osecac.png",
+    "logoSource": "hosted"
   },
   "www.osuthgra.org.ar": {
-    "logoUrl": "https://osuthgra.org.ar/wp-content/uploads/2022/09/logoosu-328x56.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/osuthgra.png",
+    "logoSource": "hosted"
   },
   "makro.com.ar": {
     "logoUrl": "https://makro-com-ar.b-cdn.net/wp-content/uploads/botones-marcas-propias.webp",
     "logoSource": "site"
   },
   "www.sodimac.com.ar": {
-    "logoUrl": "https://images.sodimac.com/v3/assets/blt81efde09fd00e46f/blt41a6b9e997ae3296/675c35674f07d36e3af33e40/logo-desktop.webp?format=jpg",
-    "logoSource": "site"
+    "logoUrl": "/logos/sodimac.png",
+    "logoSource": "hosted"
   },
   "opensports.com.ar": {
-    "logoUrl": "https://www.opensports.com.ar/media/logo/stores/1/logo-open.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/open-sports.png",
+    "logoSource": "hosted"
   },
   "honda.com.ar": {
     "logoUrl": "https://honda.com.ar/img/honda_logo.jpg",
@@ -989,6 +989,26 @@
   },
   "bondterminal.com": {
     "logoUrl": "/logos/bond-terminal.png",
+    "logoSource": "hosted"
+  },
+  "www.premier.com.ar": {
+    "logoUrl": "/logos/premier.png",
+    "logoSource": "hosted"
+  },
+  "ioio.com.ar": {
+    "logoUrl": "/logos/ioio.png",
+    "logoSource": "hosted"
+  },
+  "www.renaper.gob.ar": {
+    "logoUrl": "/logos/renaper.png",
+    "logoSource": "hosted"
+  },
+  "prismamediosdepago.com": {
+    "logoUrl": "/logos/prisma-medios-de-pago.png",
+    "logoSource": "hosted"
+  },
+  "www.anmat.gob.ar": {
+    "logoUrl": "/logos/anmat.png",
     "logoSource": "hosted"
   }
 }

@@ -1,10 +1,23 @@
 import { createHash } from "node:crypto"
+import { readFile } from "node:fs/promises"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
 import assert from "node:assert/strict"
 import test from "node:test"
-import { evaluateLogoBytes, checkEntityLogo } from "../lib/logo-quality/check.ts"
+import sharp from "sharp"
+import { evaluateLogoBytes, checkEntityLogo, checkEntityLogos } from "../lib/logo-quality/check.ts"
 import { measureImage } from "../lib/logo-quality/image-metrics.ts"
 import { domainsEquivalent, normalizeHostname } from "../lib/logo-quality/domain.ts"
 import { GENERIC_FAVICON_SHA256, MIN_LOGO_BYTES } from "../lib/logo-quality/constants.ts"
+import {
+  analyzeLogoVisual,
+  computeDHash,
+  evaluateVisualAnalysis,
+  hammingDistance,
+} from "../lib/logo-quality/visual-analysis.ts"
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const fixturesDir = path.join(__dirname, "../lib/logo-quality/fixtures")
 
 function pngBuffer(width: number, height: number, fill = 0xff): Uint8Array {
   const rowSize = width * 3 + 1
@@ -109,8 +122,10 @@ test("checkEntityLogo uses local public file", async () => {
       logoUrl: "/logos/test-hosted.png",
     },
     new Map(),
+    [],
     {
       skipRedirectCheck: true,
+      skipVisualCheck: true,
       readFileImpl: async () => Buffer.from(big),
       fetchImpl: async () => {
         throw new Error("should not fetch")
@@ -118,4 +133,69 @@ test("checkEntityLogo uses local public file", async () => {
     },
   )
   assert.equal(result.ok, true)
+})
+
+test("visual analysis flags mostly transparent logo as blank", async () => {
+  const blank = await sharp({
+    create: {
+      width: 128,
+      height: 128,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    },
+  })
+    .png()
+    .toBuffer()
+  const analysis = await analyzeLogoVisual(new Uint8Array(blank))
+  assert.ok(analysis)
+  const issues = evaluateVisualAnalysis(analysis!)
+  assert.ok(issues.some((issue) => issue.code === "blank-or-faint"))
+})
+
+test("visual analysis flags wide photo-like asset", () => {
+  const issues = evaluateVisualAnalysis({
+    width: 800,
+    height: 280,
+    contentWidth: 800,
+    contentHeight: 280,
+    aspectRatio: 2.86,
+    opaqueRatio: 0.92,
+    variance: 2400,
+    uniqueColors: 220,
+    dHash: 0n,
+  })
+  assert.ok(issues.some((issue) => issue.code === "photo-or-screenshot"))
+})
+
+test("dHash is stable across minor resize (perceptual match)", async () => {
+  const sample = await readFile(path.join(fixturesDir, "sample-wordmark.png"))
+  const resized = await sharp(sample).resize(200, 200).png().toBuffer()
+  const a = await computeDHash(new Uint8Array(sample))
+  const b = await computeDHash(new Uint8Array(resized))
+  assert.ok(hammingDistance(a, b) <= 5)
+})
+
+test("checkEntityLogos flags near-duplicate perceptual hash across brands", async () => {
+  const shield = await readFile(path.join(fixturesDir, "gov-shield-senasa.png"))
+  const entity = (slug: string, domain: string, id: number) => ({
+    id,
+    name: slug,
+    domain,
+    slug,
+    logoUrl: "/fixtures/shield.png",
+    logoSource: "hosted" as const,
+  })
+  const results = await checkEntityLogos(
+    [entity("senasa", "senasa.gob.ar", 500), entity("renaper", "renaper.gob.ar", 501)],
+    {
+      skipRedirectCheck: true,
+      publicDir: path.join(__dirname, "../public"),
+      readFileImpl: async () => Buffer.from(shield),
+    },
+  )
+  const duplicateIssues = results[1]?.issues.map((issue) => issue.code) ?? []
+  assert.ok(
+    duplicateIssues.includes("near-duplicate-visual") ||
+      duplicateIssues.includes("duplicate-hash"),
+  )
 })
