@@ -8,3 +8,6 @@ export const GENERIC_FAVICON_SHA256 = new Set<string>([
 ])
 
 export const REDIRECT_BRAND_MISMATCH: Record<string, string> = {}
+
+/** Hostnames seen when a site bot-wall blocks GitHub Actions (not a real brand redirect). */
+export const REDIRECT_BOT_WALL_HOST_FRAGMENTS = ["perfdrive.com", "incapsula.com"]

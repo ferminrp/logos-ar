@@ -8,6 +8,7 @@ import {
   GOOGLE_FAVICON_CHECK_SIZE,
   MIN_LOGO_BYTES,
   MIN_LOGO_PX,
+  REDIRECT_BOT_WALL_HOST_FRAGMENTS,
   REDIRECT_BRAND_MISMATCH,
 } from "./constants.ts"
 import {
@@ -177,7 +178,10 @@ export async function checkEntityLogo(
         const sharedPortal =
           site.finalHost.endsWith("argentina.gob.ar") &&
           (entity.domain.includes("gob.ar") || entity.domain.includes("argentina.gob.ar"))
-        if (!sharedPortal) {
+        const botWall = REDIRECT_BOT_WALL_HOST_FRAGMENTS.some((fragment) =>
+          site.finalHost.includes(fragment),
+        )
+        if (!sharedPortal && !botWall) {
           issues.push({
             code: "redirect-mismatch",
             message: `Dominio redirige a ${site.finalHost} (esperado ${expectedHost})`,

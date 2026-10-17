@@ -986,5 +986,9 @@
   "donsatur.com.ar": {
     "logoUrl": "/logos/don-satur.png",
     "logoSource": "hosted"
+  },
+  "bondterminal.com": {
+    "logoUrl": "/logos/bond-terminal.png",
+    "logoSource": "hosted"
   }
 }
