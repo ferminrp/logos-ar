@@ -72,6 +72,85 @@ function embedMimeType(
     : contentTypeForFormat(detectedFormat)
 }
 
+function extractLargestIcoImage(bytes: Uint8Array): Uint8Array | null {
+  if (bytes.length < 6 || bytes[0] !== 0 || bytes[1] !== 0) {
+    return null
+  }
+
+  const count = bytes[4]! | (bytes[5]! << 8)
+  if (count === 0 || count > 256) {
+    return null
+  }
+
+  let best: { pixels: number; offset: number; length: number } | null = null
+
+  for (let i = 0; i < count; i++) {
+    const entryOffset = 6 + i * 16
+    if (entryOffset + 16 > bytes.length) {
+      return null
+    }
+
+    const width = bytes[entryOffset]! === 0 ? 256 : bytes[entryOffset]!
+    const height = bytes[entryOffset + 1]! === 0 ? 256 : bytes[entryOffset + 1]!
+    const imageLength =
+      bytes[entryOffset + 8]! |
+      (bytes[entryOffset + 9]! << 8) |
+      (bytes[entryOffset + 10]! << 16) |
+      (bytes[entryOffset + 11]! << 24)
+    const imageOffset =
+      bytes[entryOffset + 12]! |
+      (bytes[entryOffset + 13]! << 8) |
+      (bytes[entryOffset + 14]! << 16) |
+      (bytes[entryOffset + 15]! << 24)
+
+    if (
+      imageLength <= 0 ||
+      imageOffset < 0 ||
+      imageOffset + imageLength > bytes.length
+    ) {
+      continue
+    }
+
+    const pixels = width * height
+    if (!best || pixels > best.pixels) {
+      best = { pixels, offset: imageOffset, length: imageLength }
+    }
+  }
+
+  if (!best) {
+    return null
+  }
+
+  return bytes.slice(best.offset, best.offset + best.length)
+}
+
+function getPngConversionSource(
+  logoBuffer: ArrayBuffer,
+  bytes: Uint8Array,
+  imageMetrics: ImageMetrics,
+): { source: ArrayBuffer; format: ImageMetrics["format"] } {
+  if (imageMetrics.format !== "ico") {
+    return { source: logoBuffer, format: imageMetrics.format }
+  }
+
+  const extracted = extractLargestIcoImage(bytes)
+  if (!extracted) {
+    return { source: logoBuffer, format: "ico" }
+  }
+
+  const extractedMetrics = measureImage(extracted)
+  const format =
+    extractedMetrics.format === "unknown" ? "png" : extractedMetrics.format
+
+  return {
+    source: extracted.buffer.slice(
+      extracted.byteOffset,
+      extracted.byteOffset + extracted.byteLength,
+    ),
+    format,
+  }
+}
+
 async function convertToPng(
   source: ArrayBuffer,
   size: number,
@@ -147,13 +226,27 @@ export async function GET(request: Request) {
   if (format === "png") {
     let pngBody: ArrayBuffer | Buffer = logoBuffer
     if (imageMetrics.format !== "png") {
-      try {
-        pngBody = await convertToPng(logoBuffer, size, imageMetrics.format)
-      } catch {
-        return NextResponse.json(
-          { error: "No se pudo convertir el logo" },
-          { status: 502 },
-        )
+      const { source, format: sourceFormat } = getPngConversionSource(
+        logoBuffer,
+        bytes,
+        imageMetrics,
+      )
+
+      if (sourceFormat === "ico") {
+        pngBody = logoBuffer
+      } else {
+        try {
+          pngBody = await convertToPng(source, size, sourceFormat)
+        } catch {
+          if (imageMetrics.format === "ico") {
+            pngBody = logoBuffer
+          } else {
+            return NextResponse.json(
+              { error: "No se pudo convertir el logo" },
+              { status: 502 },
+            )
+          }
+        }
       }
     }
 
