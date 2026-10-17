@@ -356,8 +356,8 @@
     "logoSource": "site"
   },
   "fravega.com": {
-    "logoUrl": "https://www.fravega.com/static/manifest/icons/icon-192x192.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/fravega.png",
+    "logoSource": "hosted"
   },
   "coto.com.ar": {
     "logoUrl": "/logos/coto.png",
@@ -728,8 +728,8 @@
     "logoSource": "site"
   },
   "avalian.com": {
-    "logoUrl": "https://avalian.com/assets/images/logo-avalian-nav.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/avalian.png",
+    "logoSource": "hosted"
   },
   "www.osecac.org.ar": {
     "logoUrl": "https://www.osecac.org.ar/Image/logo-osecac.gif",
@@ -917,6 +917,14 @@
   },
   "www.arba.gob.ar": {
     "logoUrl": "/logos/arba.png",
+    "logoSource": "hosted"
+  },
+  "www.avalian.com": {
+    "logoUrl": "/logos/avalian.png",
+    "logoSource": "hosted"
+  },
+  "www.fravega.com": {
+    "logoUrl": "/logos/fravega.png",
     "logoSource": "hosted"
   }
 }
