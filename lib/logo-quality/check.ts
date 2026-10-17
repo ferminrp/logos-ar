@@ -22,7 +22,6 @@ import {
   analyzeLogoVisual,
   evaluateVisualAnalysis,
   hammingDistance,
-  type VisualAnalysis,
 } from "./visual-analysis.ts"
 
 export type LogoCheckCode =
