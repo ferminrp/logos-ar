@@ -33,6 +33,7 @@ export const categoryIcons: Record<string, LucideIcon> = {
   acciones: CandlestickChart,
   "entes-estatales": Landmark,
   prepagas: HeartPulse,
+  sanatorios: HeartPulse,
   "obras-sociales": HeartHandshake,
   retail: Store,
   medios: Newspaper,

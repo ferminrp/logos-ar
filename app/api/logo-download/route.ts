@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { getAllEntities } from "@/lib/entity-index"
+import { getEntityLogoUrl } from "@/lib/entity-logo"
 import { getGoogleFaviconUrl } from "@/lib/favicon-urls"
 
 const KNOWN_DOMAINS = new Set(
@@ -58,7 +59,12 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Formato inválido" }, { status: 400 })
   }
 
-  const faviconUrl = getGoogleFaviconUrl(domain, size)
+  const entity = getAllEntities().find(
+    (item) => item.domain.toLowerCase() === domain,
+  )
+  const faviconUrl = entity
+    ? getEntityLogoUrl(entity, size)
+    : getGoogleFaviconUrl(domain, size)
   const upstream = await fetch(faviconUrl, {
     headers: {
       "User-Agent": "LogosArgentina/1.0",

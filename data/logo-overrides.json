@@ -1,0 +1,922 @@
+{
+  "bna.com.ar": {
+    "logoUrl": "https://bna.com.ar/Images/ico/apple-touch-icon-144.png",
+    "logoSource": "site"
+  },
+  "santander.com.ar": {
+    "logoUrl": "https://www.santander.com.ar/api/images/logo_santander_share_bb0fc78bf9.png",
+    "logoSource": "site"
+  },
+  "bbva.com.ar": {
+    "logoUrl": "https://www.bbva.com.ar/content/dam/library/favicons/favicon.ico",
+    "logoSource": "site"
+  },
+  "bancociudad.com.ar": {
+    "logoUrl": "https://www.bancociudad.com.ar/institucional/resources/img/logobcba.jpg",
+    "logoSource": "site"
+  },
+  "hipotecario.com.ar": {
+    "logoUrl": "https://www.hipotecario.com.ar/wp-content/uploads/2025/10/Banco-Hipotecario-Logo-Banco-del-Hogar.png",
+    "logoSource": "site"
+  },
+  "bancor.com.ar": {
+    "logoUrl": "https://www.bancor.com.ar/assets-e2/uploads/Logo_Bancor_1200x630_verde_OG_c3679f31a7.png",
+    "logoSource": "site"
+  },
+  "naranjax.com": {
+    "logoUrl": "/logos/naranja-x.png",
+    "logoSource": "hosted"
+  },
+  "brubank.com": {
+    "logoUrl": "https://cdn.prod.website-files.com/63091bbd808ef433808b70cd/633336b1beaf6e8c27e2da15_Favicon%20(2).png",
+    "logoSource": "site"
+  },
+  "bersa.com.ar": {
+    "logoUrl": "https://bersa.com.ar/wp-content/uploads/2024/10/B_Icon-300x300.png",
+    "logoSource": "site"
+  },
+  "mercadopago.com.ar": {
+    "logoUrl": "https://http2.mlstatic.com/storage/pog-cm-admin/calm-assets/MLA-LandingHome-Thumbnail-1x-20260925--1200x1200--bbdbdbdf.webp",
+    "logoSource": "site"
+  },
+  "belo.app": {
+    "logoUrl": "https://framerusercontent.com/assets/GWEv1euBxyMCWTgSAawz3tsb7Y.png",
+    "logoSource": "site"
+  },
+  "prex.com.ar": {
+    "logoUrl": "https://www.prexcard.com.ar/ogImages/prex-logo.png",
+    "logoSource": "site"
+  },
+  "www.arqfinance.com": {
+    "logoUrl": "https://www.arqfinance.com/og-image-en.png",
+    "logoSource": "site"
+  },
+  "ripio.com": {
+    "logoUrl": "https://cdn.prod.website-files.com/5f17344acf2c6d3c3a1d6238/66990a61cea90bd5bee9caec_256x256.webp",
+    "logoSource": "site"
+  },
+  "claropay.com.ar": {
+    "logoUrl": "https://claropay.com.ar/p/claropay/images/favicon.ico",
+    "logoSource": "site"
+  },
+  "astropay.com": {
+    "logoUrl": "https://cdn.prod.website-files.com/65ef241dc05b3b7d9f05e09a/675857c70e66d24419e17167_App%20Icon%40webclip.png",
+    "logoSource": "site"
+  },
+  "www.modo.com.ar": {
+    "logoUrl": "https://a.storyblok.com/f/244835/6862x2514/6e4bd3660b/logotipo-modo.png",
+    "logoSource": "site"
+  },
+  "roxom.com": {
+    "logoUrl": "https://roxom.com/favicons/android-chrome-512x512.png",
+    "logoSource": "site"
+  },
+  "wise.com": {
+    "logoUrl": "https://wise.com/public-resources/assets/icons/wise-personal/share_landscape.png",
+    "logoSource": "site"
+  },
+  "tapi.la": {
+    "logoUrl": "https://tapi.la/wp-content/uploads/2024/07/cropped-tapi-Logo-databot-512x512-1-192x192.png",
+    "logoSource": "site"
+  },
+  "pagomiscuentas.com": {
+    "logoUrl": "https://pagomiscuentas.com/sites/default/files/favicon.ico",
+    "logoSource": "site"
+  },
+  "redlink.com.ar": {
+    "logoUrl": "https://redlink.com.ar/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "voii.com.ar": {
+    "logoUrl": "https://www.voii.com.ar/wp-content/uploads/2026/07/Grupo-Cocos-header.png",
+    "logoSource": "site"
+  },
+  "decrypto.com.ar": {
+    "logoUrl": "https://decrypto.com.ar/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "lbfinanzas.com": {
+    "logoUrl": "https://cdn.prod.website-files.com/62292d20539d2621a575044e/68f624fb2fac5aeef8c5a7f5_Logo_app_256.jpg",
+    "logoSource": "site"
+  },
+  "tiendadolar.com.ar": {
+    "logoUrl": "https://tiendadolar.com.ar/assets/images/logo-tienda-dolar.png",
+    "logoSource": "site"
+  },
+  "pagos360.com": {
+    "logoUrl": "https://www.pagos360.com/_assets/v11/c306442d0f2ebecaeec318819ed3bf7902e1a0da.png",
+    "logoSource": "site"
+  },
+  "binance.com": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=binance.com&sz=256",
+    "logoSource": "google"
+  },
+  "okx.com": {
+    "logoUrl": "https://www.okx.com/cdn/assets/imgs/244/84D446EF6A65AF94.jpeg",
+    "logoSource": "site"
+  },
+  "kraken.com": {
+    "logoUrl": "https://www.kraken.com/_assets/icons/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "minipay.to": {
+    "logoUrl": "https://cdn.prod.website-files.com/67a18fbe6a1b30b8c753f370/67a1bd60c7d1943095626be4_Webclip.png",
+    "logoSource": "site"
+  },
+  "peanut.me": {
+    "logoUrl": "https://peanut.me/metadata-img.png",
+    "logoSource": "site"
+  },
+  "jumper.xyz": {
+    "logoUrl": "https://jumper.xyz/apple-touch-icon-180x180.png",
+    "logoSource": "site"
+  },
+  "aave.com": {
+    "logoUrl": "https://aave.com/og/default.png",
+    "logoSource": "site"
+  },
+  "bybit.com": {
+    "logoUrl": "https://fh-static.bycsi.com/images/home/official-image.png",
+    "logoSource": "site"
+  },
+  "bitget.com": {
+    "logoUrl": "https://img.bgstatic.com/video/open_graph_new.png",
+    "logoSource": "site"
+  },
+  "bitkey.world": {
+    "logoUrl": "https://cdn.sanity.io/images/ozrlz7k9/production/8721583f032c6dc65c828e7a3f97f91318a877e1-2400x1200.jpg?rect=57,0,2286,1200&amp;w=1200&amp;h=630&amp;fit=crop&amp;auto=format",
+    "logoSource": "site"
+  },
+  "exactly.app": {
+    "logoUrl": "https://framerusercontent.com/images/L0qi0ihPa1qGeNZq9Mpa9o0YvM.png",
+    "logoSource": "site"
+  },
+  "www.fluidkey.com": {
+    "logoUrl": "https://www.fluidkey.com/icon.png?388464dc684c9fe8",
+    "logoSource": "site"
+  },
+  "phantom.app": {
+    "logoUrl": "https://phantom.com/_web_platform_assets/images/og-image.jpg",
+    "logoSource": "site"
+  },
+  "rainbow.me": {
+    "logoUrl": "https://rainbow.me/assets/og.png",
+    "logoSource": "site"
+  },
+  "www.ledger.com": {
+    "logoUrl": "https://ledger-wp-website-s3-prd.ledger.com/uploads/2026/10/og_home_atom.webp",
+    "logoSource": "site"
+  },
+  "safe.global": {
+    "logoUrl": "/logos/safe.png",
+    "logoSource": "hosted"
+  },
+  "hyperliquid.xyz": {
+    "logoUrl": "https://hyperliquid.xyz/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "solana.com": {
+    "logoUrl": "https://solana.com/_next/static/media/apple-touch-icon.e9b82e54.png",
+    "logoSource": "site"
+  },
+  "www.base.org": {
+    "logoUrl": "https://base.org/images/base-open-graph-v2.png",
+    "logoSource": "site"
+  },
+  "chain.link": {
+    "logoUrl": "https://cdn.prod.website-files.com/5f6b7190899f41fb70882d08/66570856a4d306e3381b870f_webclip.png",
+    "logoSource": "site"
+  },
+  "www.kucoin.com": {
+    "logoUrl": "https://assets.staticimg.com/@kudos/runtime/0.6.20/assets/og-ea52b6f9440e857c.jpg",
+    "logoSource": "site"
+  },
+  "bitso.com": {
+    "logoUrl": "https://assets.bitso.com/favicons/apple-icon-180x180.png",
+    "logoSource": "site"
+  },
+  "nextjs.org": {
+    "logoUrl": "/logos/next-js.png",
+    "logoSource": "hosted"
+  },
+  "vuejs.org": {
+    "logoUrl": "https://vuejs.org/images/logo.png",
+    "logoSource": "site"
+  },
+  "nuxt.com": {
+    "logoUrl": "https://nuxt.com/new-social.jpg",
+    "logoSource": "site"
+  },
+  "vite.dev": {
+    "logoUrl": "https://vite.dev/og-image.jpg",
+    "logoSource": "site"
+  },
+  "tailwindcss.com": {
+    "logoUrl": "https://tailwindcss.com/favicons/apple-touch-icon.png?v=4",
+    "logoSource": "site"
+  },
+  "www.typescriptlang.org": {
+    "logoUrl": "https://www.typescriptlang.org/icons/icon-512x512.png?v=8944a05a8b601855de116c8a56d3b3ae",
+    "logoSource": "site"
+  },
+  "nodejs.org": {
+    "logoUrl": "https://nodejs.org/en/next-data/og/announcement/Node.js%20%E2%80%94%20Run%20JavaScript%20Everywhere",
+    "logoSource": "site"
+  },
+  "deno.com": {
+    "logoUrl": "https://deno.com/og/image.jpg",
+    "logoSource": "site"
+  },
+  "vercel.com": {
+    "logoUrl": "https://lishhsx6kmthaacj.public.blob.vercel-storage.com/og-home-not-x.png",
+    "logoSource": "site"
+  },
+  "www.netlify.com": {
+    "logoUrl": "https://www.netlify.com/images/og-image-default.png",
+    "logoSource": "site"
+  },
+  "www.postgresql.org": {
+    "logoUrl": "https://www.postgresql.org/media/img/about/press/elephant.png",
+    "logoSource": "site"
+  },
+  "www.prisma.io": {
+    "logoUrl": "https://www.prisma.io/apple-icon.png?apple-icon.2fqk5558kkh79.png",
+    "logoSource": "site"
+  },
+  "supabase.com": {
+    "logoUrl": "https://supabase.com/favicon/apple-icon-180x180.png",
+    "logoSource": "site"
+  },
+  "neon.com": {
+    "logoUrl": "https://neon.com/images/social-previews/index.jpg?updated=2026-05-27",
+    "logoSource": "site"
+  },
+  "www.docker.com": {
+    "logoUrl": "https://www.docker.com/app/uploads/2024/02/cropped-docker-logo-favicon-192x192.png",
+    "logoSource": "site"
+  },
+  "clerk.com": {
+    "logoUrl": "https://clerk.com/opengraph-image.jpg?opengraph-image.17r31whircaqh.jpg",
+    "logoSource": "site"
+  },
+  "github.com": {
+    "logoUrl": "https://images.ctfassets.net/8aevphvgewt8/4pe4eOtUJ0ARpZRE4fNekf/f52b1f9c52f059a33170229883731ed0/GH-Homepage-Universe-img.png",
+    "logoSource": "site"
+  },
+  "balanz.com": {
+    "logoUrl": "https://balanz.com/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "allaria.com.ar": {
+    "logoUrl": "https://allaria.com.ar/og-image.jpg",
+    "logoSource": "site"
+  },
+  "bullmarketbrokers.com": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=bullmarketbrokers.com&sz=256",
+    "logoSource": "google"
+  },
+  "www.portfoliopersonal.com": {
+    "logoUrl": "/logos/ppi.png",
+    "logoSource": "hosted"
+  },
+  "www.iebmas.com.ar": {
+    "logoUrl": "https://www.iebmas.com.ar/wp-content/uploads/2026/02/FAVICON-2-300x300.png",
+    "logoSource": "site"
+  },
+  "vetacap.com.ar": {
+    "logoUrl": "https://vetacap.com.ar/wp-content/uploads/2025/12/cropped-Favicon-1-192x192.png",
+    "logoSource": "site"
+  },
+  "www.aluar.com.ar": {
+    "logoUrl": "https://www.aluar.com.ar/apple-icon.png",
+    "logoSource": "site"
+  },
+  "www.cresud.com.ar": {
+    "logoUrl": "https://www.cresud.com.ar/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "metrogas.com.ar": {
+    "logoUrl": "https://www.metrogas.com.ar/assets/themes/metrogas/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "a3mercados.com.ar": {
+    "logoUrl": "https://a3mercados.com.ar/apple-icon.png?apple-icon.1mvdidbr0psw-.png",
+    "logoSource": "site"
+  },
+  "mi.argentina.gob.ar": {
+    "logoUrl": "/logos/mi-argentina.png",
+    "logoSource": "hosted"
+  },
+  "www.enargas.gob.ar": {
+    "logoUrl": "/logos/enargas.png",
+    "logoSource": "hosted"
+  },
+  "www.incaa.gob.ar": {
+    "logoUrl": "/logos/incaa.png",
+    "logoSource": "hosted"
+  },
+  "www.osde.com.ar": {
+    "logoUrl": "https://www.osde.com.ar/hubfs/Favicon/android-chrome-512x512.png",
+    "logoSource": "site"
+  },
+  "medicus.com.ar": {
+    "logoUrl": "https://cdn.prod.website-files.com/6841ec68b99280a8ee317172/688262f30969fe1f3e9ab9ed_PlanCard.png",
+    "logoSource": "site"
+  },
+  "sancorsalud.com.ar": {
+    "logoUrl": "https://sancorsalud.com.ar/app-resources/favicons/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "www.accordsalud.com.ar": {
+    "logoUrl": "https://www.accordsalud.com.ar/iconAccordSalud.png",
+    "logoSource": "site"
+  },
+  "www.hospitalitaliano.org.ar": {
+    "logoUrl": "https://www.hospitalitaliano.org.ar/multimedia/archivos/noticias_archivos/11/Banners/11_61813_1.jpg",
+    "logoSource": "site"
+  },
+  "www.hospitalaleman.org.ar": {
+    "logoUrl": "/logos/hospital-aleman.png",
+    "logoSource": "hosted"
+  },
+  "www.suizoargentina.com.ar": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=www.suizoargentina.com.ar&sz=256",
+    "logoSource": "google"
+  },
+  "www.iosfa.gob.ar": {
+    "logoUrl": "https://www.iosfa.gob.ar/og.jpeg",
+    "logoSource": "site"
+  },
+  "www.osseg.org.ar": {
+    "logoUrl": "https://www.osseg.org.ar/favicon.ico",
+    "logoSource": "site"
+  },
+  "www.osprera.org.ar": {
+    "logoUrl": "https://www.osprera.org.ar/images/apple-icon-180x180.png",
+    "logoSource": "site"
+  },
+  "fravega.com": {
+    "logoUrl": "https://www.fravega.com/static/manifest/icons/icon-192x192.png",
+    "logoSource": "site"
+  },
+  "coto.com.ar": {
+    "logoUrl": "/logos/coto.png",
+    "logoSource": "hosted"
+  },
+  "laanonima.com.ar": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=laanonima.com.ar&sz=256",
+    "logoSource": "google"
+  },
+  "farmacity.com.ar": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=farmacity.com.ar&sz=256",
+    "logoSource": "google"
+  },
+  "changomas.com.ar": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=changomas.com.ar&sz=256",
+    "logoSource": "google"
+  },
+  "www.megatone.net": {
+    "logoUrl": "https://www.megatone.net/images/iconos/AppleIcon.png?version=35",
+    "logoSource": "site"
+  },
+  "prune.com.ar": {
+    "logoUrl": "/logos/prune.png",
+    "logoSource": "hosted"
+  },
+  "www.kevingston.com": {
+    "logoUrl": "https://images.kevingston.com/imagenes/varios/fav-eshop-24-apple-180x180-touch-icon.png",
+    "logoSource": "site"
+  },
+  "www.casadelaudio.com": {
+    "logoUrl": "https://casadelaudio.com/media/logo/stores/1/logo.png",
+    "logoSource": "site"
+  },
+  "www.naldo.com.ar": {
+    "logoUrl": "https://www.naldo.com.ar/arquivos/Favicon-naldo.png",
+    "logoSource": "site"
+  },
+  "www.topper.com.ar": {
+    "logoUrl": "/logos/topper.png",
+    "logoSource": "hosted"
+  },
+  "infobae.com": {
+    "logoUrl": "https://www.infobae.com/pf/resources/favicon/android-chrome-512x512.png?d=4541",
+    "logoSource": "site"
+  },
+  "lanacion.com.ar": {
+    "logoUrl": "https://www.lanacion.com.ar/pf/resources/images/favicon-512.png?d=2067",
+    "logoSource": "site"
+  },
+  "tn.com.ar": {
+    "logoUrl": "https://tn.com.ar/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "clarin.com": {
+    "logoUrl": "https://www.clarin.com/apple-icon-180x180.png",
+    "logoSource": "site"
+  },
+  "www.eldestapeweb.com": {
+    "logoUrl": "https://static.eldestapeweb.com/img/favicons/apple-icon-180x180.png",
+    "logoSource": "site"
+  },
+  "lavoz.com.ar": {
+    "logoUrl": "https://www.lavoz.com.ar/img/logo-lavoz.png",
+    "logoSource": "site"
+  },
+  "c5n.com": {
+    "logoUrl": "https://www.c5n.com/favicons/apple-touch-icon-precomposed.png",
+    "logoSource": "site"
+  },
+  "a24.com": {
+    "logoUrl": "https://www.a24.com/css-custom/296/favicons/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "americatv.com.ar": {
+    "logoUrl": "https://www.americatv.com.ar/css-custom/354/favicons/android-chrome-512x512.png",
+    "logoSource": "site"
+  },
+  "laprensa.com.ar": {
+    "logoUrl": "https://www.laprensa.com.ar/assets/imgs/apple-touch-icon-114x114.png",
+    "logoSource": "site"
+  },
+  "eldia.com": {
+    "logoUrl": "https://static.eldia.com/img/favicons/apple-icon-180x180.png",
+    "logoSource": "site"
+  },
+  "rionegro.com.ar": {
+    "logoUrl": "https://www.rionegro.com.ar/wp-content/uploads/2021/11/cropped-apple-icon-152x152-1.png?w=192",
+    "logoSource": "site"
+  },
+  "slatv.live": {
+    "logoUrl": "https://slatv.live/og-editorial-v2.png",
+    "logoSource": "site"
+  },
+  "www.movistar.com.ar": {
+    "logoUrl": "https://www.movistar.com.ar/documents/10180/94725104/apple-touch-icon-180x180.png",
+    "logoSource": "site"
+  },
+  "www.telecentro.com.ar": {
+    "logoUrl": "https://telecentro.com.ar/img/meta-image.jpg",
+    "logoSource": "site"
+  },
+  "www.directv.com.ar": {
+    "logoUrl": "https://dtv-cms-prd.s3.amazonaws.com/HISPAN_(Images)/logo-dtv.png",
+    "logoSource": "site"
+  },
+  "www.antina.com.ar": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=www.antina.com.ar&sz=256",
+    "logoSource": "google"
+  },
+  "www.starlink.com": {
+    "logoUrl": "https://starlink.com/assets-new/images/landing/field/v4_night_sky.webp",
+    "logoSource": "site"
+  },
+  "chevrolet.com.ar": {
+    "logoUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/favicon/chevrolet-favicon-180.svg",
+    "logoSource": "site"
+  },
+  "citroen.com.ar": {
+    "logoUrl": "https://www.citroen.com.ar/content/dam/citroen/open-graph/openGraph-citroen-generico.jpg",
+    "logoSource": "site"
+  },
+  "chery.com.ar": {
+    "logoUrl": "https://chery.com.ar/wp-content/uploads/2026/01/T4.png",
+    "logoSource": "site"
+  },
+  "www.byd.com": {
+    "logoUrl": "https://www.byd.com/us",
+    "logoSource": "site"
+  },
+  "suzuki.com.ar": {
+    "logoUrl": "https://www.suzuki.com.ar//media/dhojy3dn/suzuki_5d_imagenes_web_nov-01-copy.jpg",
+    "logoSource": "site"
+  },
+  "www.ram.com.ar": {
+    "logoUrl": "https://www.ram.com.ar/content/dam/ram/open-graph/Open-graph-home-ram.webp",
+    "logoSource": "site"
+  },
+  "subaru.com.ar": {
+    "logoUrl": "https://www.subaru.com.ar/subaru/site/artic/20190503/imag/foto_0000000120190503133300/logo.jpg",
+    "logoSource": "site"
+  },
+  "changan.com.ar": {
+    "logoUrl": "https://changan.com.ar/favicon.ico?favicon.0m1n394f_b0~c.ico",
+    "logoSource": "site"
+  },
+  "www.volvocars.com": {
+    "logoUrl": "https://www.volvocars.com/static/shared/images/favicons/apple-touch-icon-precomposed-180x180.v2.png",
+    "logoSource": "site"
+  },
+  "www.mini.com.ar": {
+    "logoUrl": "https://www.mini.com.ar/etc.clientlibs/settings/wcm/designs/minidigital-white/images/favicon/resources/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "www.bajaj.com.ar": {
+    "logoUrl": "https://bajaj.com.ar/wp-content/uploads/2025/07/logo-fav-300x300.png",
+    "logoSource": "site"
+  },
+  "www.ktm.com.ar": {
+    "logoUrl": "https://www.ktm.com/icon-192x192.png",
+    "logoSource": "site"
+  },
+  "www.mitsubishi-motors.com.ar": {
+    "logoUrl": "https://www.mitsubishi-motors.com.ar/favicon.ico?favicon.0k910vz.7nm~y.ico",
+    "logoSource": "site"
+  },
+  "www.iveco.com": {
+    "logoUrl": "https://www.iveco.com/global/-/media/IVECOdotcom/global/range_m.jpg?h=700&amp;iar=0&amp;w=700&amp;rev=-1",
+    "logoSource": "site"
+  },
+  "quilmes.com.ar": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=quilmes.com.ar&sz=256",
+    "logoSource": "google"
+  },
+  "www.cervezapatagonia.com.ar": {
+    "logoUrl": "/logos/cerveceria-patagonia.png",
+    "logoSource": "hosted"
+  },
+  "familiabeaudroit.com.ar": {
+    "logoUrl": "https://www.familiabeaudroit.com.ar/web/image/website/1/logo",
+    "logoSource": "site"
+  },
+  "www.lasegunda.com.ar": {
+    "logoUrl": "http://wwwlasegundal2prodnj.azurewebsites.net/assets/img/logo-fb.jpg",
+    "logoSource": "site"
+  },
+  "mapfre.com.ar": {
+    "logoUrl": "https://www.mapfre.com.ar/media/favicon.png",
+    "logoSource": "site"
+  },
+  "provinciaseguros.com.ar": {
+    "logoUrl": "https://www.provinciaseguros.com.ar/ps_logo_media.jpg",
+    "logoSource": "site"
+  },
+  "rapsodia.com.ar": {
+    "logoUrl": "https://rapsodia-ar.grupo-alas.com.ar/media/favicon/websites/5/favicon_1.png",
+    "logoSource": "site"
+  },
+  "cheeky.com.ar": {
+    "logoUrl": "https://www.cheeky.com.ar/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "mimo.com.ar": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=mimo.com.ar&sz=256",
+    "logoSource": "google"
+  },
+  "zara.com": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=zara.com&sz=256",
+    "logoSource": "google"
+  },
+  "adidas.com.ar": {
+    "logoUrl": "/logos/adidas.png",
+    "logoSource": "hosted"
+  },
+  "puma.com": {
+    "logoUrl": "https://us.puma.com/assets/android-chrome-512x512.png",
+    "logoSource": "site"
+  },
+  "lacoste.com": {
+    "logoUrl": "https://static1.lacoste.com/static/on/demandware.static/Sites-FlagShip-Site/-/default/dwf04328ef/img/pwa/ios/icon-512x512.png",
+    "logoSource": "site"
+  },
+  "pedidosya.com.ar": {
+    "logoUrl": "/logos/pedidosya.png",
+    "logoSource": "hosted"
+  },
+  "rappi.com.ar": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=rappi.com.ar&sz=256",
+    "logoSource": "google"
+  },
+  "www.mostazaweb.com.ar": {
+    "logoUrl": "https://www.mostazaweb.com.ar/wp-content/uploads/2022/04/cropped-Web-png-192x192.png",
+    "logoSource": "site"
+  },
+  "www.burgerking.com.ar": {
+    "logoUrl": "https://static.burgerkingencasa.es/bkhomewebsite/images/header/logoBK.svg",
+    "logoSource": "site"
+  },
+  "aerolineas.com.ar": {
+    "logoUrl": "/logos/aerolineas-argentinas.png",
+    "logoSource": "hosted"
+  },
+  "flybondi.com": {
+    "logoUrl": "/logos/flybondi.png",
+    "logoSource": "hosted"
+  },
+  "latam.com": {
+    "logoUrl": "https://s.latamairlines.com/images/seo/logo_latam.jpg",
+    "logoSource": "site"
+  },
+  "despegar.com.ar": {
+    "logoUrl": "/logos/despegar.png",
+    "logoSource": "hosted"
+  },
+  "booking.com": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=booking.com&sz=256",
+    "logoSource": "google"
+  },
+  "all.accor.com": {
+    "logoUrl": "https://static-p46175-e229011.adobeaemcloud.com/bdc628edbcb46ac553fd4d8e093da0f899b8cb9b6e0e77e05ca5f028c5edc60e/resources/images/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "avis.com.ar": {
+    "logoUrl": "https://avisbudgetgroup.com.ar/icon/avis/apple-icon-180x180.png",
+    "logoSource": "site"
+  },
+  "hyatt.com": {
+    "logoUrl": "/logos/hyatt.png",
+    "logoSource": "hosted"
+  },
+  "ihg.com": {
+    "logoUrl": "https://digital.ihg.com/is/image/ihg/app-web-chiclet-ihg?fmt=png-alpha",
+    "logoSource": "site"
+  },
+  "radisson.com.ar": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=radisson.com.ar&sz=256",
+    "logoSource": "google"
+  },
+  "melia.com": {
+    "logoUrl": "https://www.melia.com/favicon.ico",
+    "logoSource": "site"
+  },
+  "expedia.com.ar": {
+    "logoUrl": "/logos/expedia.png",
+    "logoSource": "hosted"
+  },
+  "camuzzigas.com": {
+    "logoUrl": "https://www.camuzzigas.com/wp-content/uploads/2022/11/cropped-favicon-192x192.png",
+    "logoSource": "site"
+  },
+  "infleta.com.ar": {
+    "logoUrl": "https://infleta.com.ar/static/apple-touch-icon.png",
+    "logoSource": "site"
+  },
+  "www.impuestito.org": {
+    "logoUrl": "https://impuestito.org/og_image.png",
+    "logoSource": "site"
+  },
+  "finanzasargy.com": {
+    "logoUrl": "https://finanzasargy.com/icon-512x512.png",
+    "logoSource": "site"
+  },
+  "gasti.pro": {
+    "logoUrl": "https://gasti.pro/face.png",
+    "logoSource": "site"
+  },
+  "bullmarket.com.ar": {
+    "logoUrl": "https://bullmarket.com.ar/wp-content/uploads/2025/10/cropped-Isologo-toro-Color-primario-192x192.png",
+    "logoSource": "site"
+  },
+  "uala.com.ar": {
+    "logoUrl": "https://www.uala.com.ar/_next/static/media/LogoOpenGraph.ac4c4af1.png",
+    "logoSource": "site"
+  },
+  "www.openpay.mx": {
+    "logoUrl": "https://www.openpay.mx/openpay-logo.png",
+    "logoSource": "site"
+  },
+  "nexo.com": {
+    "logoUrl": "https://nexo.com/favicon.ico?favicon.2fmiwiu-hp6gc.ico",
+    "logoSource": "site"
+  },
+  "phantom.com": {
+    "logoUrl": "https://phantom.com/_web_platform_assets/images/og-image.jpg",
+    "logoSource": "site"
+  },
+  "www.argentina.gob.ar": {
+    "logoUrl": "https://www.argentina.gob.ar/sites/default/files/icon/icon-180x180.png",
+    "logoSource": "site"
+  },
+  "pampaenergia.com": {
+    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=pampaenergia.com&sz=256",
+    "logoSource": "google"
+  },
+  "www.bancopiano.com.ar": {
+    "logoUrl": "https://www.bancopiano.com.ar/dist/img/logo-banco-piano-neg.png",
+    "logoSource": "site"
+  },
+  "bancodelapampa.com.ar": {
+    "logoUrl": "https://bancodelapampa.com.ar/img/LogoHeadBlp.png",
+    "logoSource": "site"
+  },
+  "www.bancojulio.com.ar": {
+    "logoUrl": "https://www.bancojulio.com.ar/wp-content/themes/bancoJulio_theme/images/bancojulio-logo.jpg",
+    "logoSource": "site"
+  },
+  "macro.com.ar": {
+    "logoUrl": "https://www.macro.com.ar/imagen/macrologoheader2025/logo_macro_2025.png",
+    "logoSource": "site"
+  },
+  "www.lomanegra.com": {
+    "logoUrl": "https://www.lomanegra.com/wp-content/uploads/2026/04/100anios-loma-negra-logo.svg",
+    "logoSource": "site"
+  },
+  "www.transener.com.ar": {
+    "logoUrl": "http://www.transener.com.ar/wp-content/uploads/2018/06/Transener-logo-1.png",
+    "logoSource": "site"
+  },
+  "bancopatagonia.com.ar": {
+    "logoUrl": "https://bancopatagonia.com.ar/empresas/images/logo-patagonia-movil.svg",
+    "logoSource": "site"
+  },
+  "www.conicet.gov.ar": {
+    "logoUrl": "https://www.conicet.gov.ar/wp-content/uploads/logo-CONICET_opt.png",
+    "logoSource": "site"
+  },
+  "medife.com.ar": {
+    "logoUrl": "https://medife.com.ar/themes/custom/medifetema/images/logo-nh.svg",
+    "logoSource": "site"
+  },
+  "avalian.com": {
+    "logoUrl": "https://avalian.com/assets/images/logo-avalian-nav.png",
+    "logoSource": "site"
+  },
+  "www.osecac.org.ar": {
+    "logoUrl": "https://www.osecac.org.ar/Image/logo-osecac.gif",
+    "logoSource": "site"
+  },
+  "www.osuthgra.org.ar": {
+    "logoUrl": "https://osuthgra.org.ar/wp-content/uploads/2022/09/logoosu-328x56.png",
+    "logoSource": "site"
+  },
+  "makro.com.ar": {
+    "logoUrl": "https://makro-com-ar.b-cdn.net/wp-content/uploads/botones-marcas-propias.webp",
+    "logoSource": "site"
+  },
+  "www.sodimac.com.ar": {
+    "logoUrl": "https://images.sodimac.com/v3/assets/blt81efde09fd00e46f/blt41a6b9e997ae3296/675c35674f07d36e3af33e40/logo-desktop.webp?format=jpg",
+    "logoSource": "site"
+  },
+  "opensports.com.ar": {
+    "logoUrl": "https://www.opensports.com.ar/media/logo/stores/1/logo-open.png",
+    "logoSource": "site"
+  },
+  "honda.com.ar": {
+    "logoUrl": "https://honda.com.ar/img/honda_logo.jpg",
+    "logoSource": "site"
+  },
+  "www.dodge.com.ar": {
+    "logoUrl": "https://www.dodge.com.ar/assets/img/logo.png",
+    "logoSource": "site"
+  },
+  "www.bimbo.com.ar": {
+    "logoUrl": "https://www.bimbo.com.ar/sites/all/themes/custom/bimbo/img/mainlogo.png",
+    "logoSource": "site"
+  },
+  "molinocanuelas.com": {
+    "logoUrl": "https://molinocanuelas.com/sites/all/themes/molca/logo.png",
+    "logoSource": "site"
+  },
+  "ypf.com": {
+    "logoUrl": "https://lacompania.ypf.com/images/la-compania/logo-infinia-nafta-turboclean.webp",
+    "logoSource": "site"
+  },
+  "sancorseguros.com.ar": {
+    "logoUrl": "https://corporate-site-content.gruposancorseguros.com/SSA/Content/marca-GSS.svg",
+    "logoSource": "site"
+  },
+  "markova.com": {
+    "logoUrl": "https://markova.com/assets/markova/main-logo-cc0fb635113dd43be76dec3660355778cbd47500e15f5b0142726a0527198a88.svg",
+    "logoSource": "site"
+  },
+  "ar.tommy.com": {
+    "logoUrl": "https://tommyargentina.vtexassets.com/arquivos/TH_Logo.svg",
+    "logoSource": "site"
+  },
+  "wyndhamhotels.com": {
+    "logoUrl": "https://www.wyndhamhotels.com/content/dam/images/global/logos/whr_logo_rev.svg",
+    "logoSource": "site"
+  },
+  "www.bancodecorrientes.com.ar": {
+    "logoUrl": "/logos/banco-de-corrientes.png",
+    "logoSource": "hosted"
+  },
+  "www.bmros.com.ar": {
+    "logoUrl": "/logos/banco-municipal-de-rosario.png",
+    "logoSource": "hosted"
+  },
+  "sqlite.org": {
+    "logoUrl": "/logos/sqlite.png",
+    "logoSource": "hosted"
+  },
+  "cohen.com.ar": {
+    "logoUrl": "/logos/cohen-aliados.png",
+    "logoSource": "hosted"
+  },
+  "www.celulosaargentina.com.ar": {
+    "logoUrl": "/logos/celulosa-argentina.png",
+    "logoSource": "hosted"
+  },
+  "www.agip.gob.ar": {
+    "logoUrl": "/logos/agip.png",
+    "logoSource": "hosted"
+  },
+  "www.omint.com.ar": {
+    "logoUrl": "/logos/omint.png",
+    "logoSource": "hosted"
+  },
+  "www.osdepym.com.ar": {
+    "logoUrl": "/logos/osdepym.png",
+    "logoSource": "hosted"
+  },
+  "supermercadosdia.com.ar": {
+    "logoUrl": "/logos/supermercados-dia.png",
+    "logoSource": "hosted"
+  },
+  "todomoda.com": {
+    "logoUrl": "/logos/todomoda.png",
+    "logoSource": "hosted"
+  },
+  "eltrece.com": {
+    "logoUrl": "/logos/el-trece.png",
+    "logoSource": "hosted"
+  },
+  "ford.com.ar": {
+    "logoUrl": "/logos/ford.png",
+    "logoSource": "hosted"
+  },
+  "jeep.com.ar": {
+    "logoUrl": "/logos/jeep.png",
+    "logoSource": "hosted"
+  },
+  "www.kia.com.ar": {
+    "logoUrl": "/logos/kia.png",
+    "logoSource": "hosted"
+  },
+  "audi.com.ar": {
+    "logoUrl": "/logos/audi.png",
+    "logoSource": "hosted"
+  },
+  "www.mgmotor.com.ar": {
+    "logoUrl": "/logos/mg-motor.png",
+    "logoSource": "hosted"
+  },
+  "gwm.com.ar": {
+    "logoUrl": "/logos/gwm-great-wall.png",
+    "logoSource": "hosted"
+  },
+  "laserenisima.com.ar": {
+    "logoUrl": "/logos/la-serenisima-mastellone.png",
+    "logoSource": "hosted"
+  },
+  "grimoldi.com": {
+    "logoUrl": "/logos/grimoldi.png",
+    "logoSource": "hosted"
+  },
+  "www.mcdonalds.com.ar": {
+    "logoUrl": "/logos/mcdonald-s.png",
+    "logoSource": "hosted"
+  },
+  "almundo.com.ar": {
+    "logoUrl": "/logos/almundo.png",
+    "logoSource": "hosted"
+  },
+  "marriott.com.ar": {
+    "logoUrl": "/logos/marriott.png",
+    "logoSource": "hosted"
+  },
+  "voegol.com.br": {
+    "logoUrl": "/logos/gol-linhas-aereas.png",
+    "logoSource": "hosted"
+  },
+  "www.farmacity.com": {
+    "logoUrl": "/logos/farmacity.png",
+    "logoSource": "hosted"
+  },
+  "www.directvla.com": {
+    "logoUrl": "/logos/directv.png",
+    "logoSource": "hosted"
+  },
+  "www.ktm.com": {
+    "logoUrl": "/logos/ktm.png",
+    "logoSource": "hosted"
+  },
+  "www.latamairlines.com": {
+    "logoUrl": "/logos/latam.png",
+    "logoSource": "hosted"
+  },
+  "www.toyota.com": {
+    "logoUrl": "/logos/toyota.png",
+    "logoSource": "hosted"
+  },
+  "www.swissmedical.com.ar": {
+    "logoUrl": "/logos/swiss-medical.png",
+    "logoSource": "hosted"
+  },
+  "www.senasa.gob.ar": {
+    "logoUrl": "/logos/senasa.png",
+    "logoSource": "hosted"
+  },
+  "bancoprovincia.com.ar": {
+    "logoUrl": "/logos/banco-provincia.png",
+    "logoSource": "hosted"
+  },
+  "www.bpn.com.ar": {
+    "logoUrl": "/logos/bpn-banco-provincia-de-neuquen.png",
+    "logoSource": "hosted"
+  },
+  "www.arba.gob.ar": {
+    "logoUrl": "/logos/arba.png",
+    "logoSource": "hosted"
+  }
+}

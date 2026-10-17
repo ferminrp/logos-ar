@@ -11,7 +11,10 @@
     "lint": "eslint .",
     "indexnow:submit-all": "node --experimental-strip-types scripts/indexnow-submit-all.mts",
     "indexnow:ping-changed": "node --experimental-strip-types scripts/indexnow-ping-changed.mts",
-    "verify:loguitos": "node --experimental-strip-types .cursor/skills/verify-loguitos/scripts/verify-loguitos.mts"
+    "verify:loguitos": "node --experimental-strip-types .cursor/skills/verify-loguitos/scripts/verify-loguitos.mts",
+    "check:logos": "node --experimental-strip-types scripts/check-logos.mts",
+    "sync:logo-overrides": "node --experimental-strip-types scripts/sync-logo-overrides.mts",
+    "test:logos": "node --experimental-strip-types --test scripts/check-logos.test.mts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -70,10 +73,11 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "playwright": "^1.55.1",
     "postcss": "^8.5",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.2.0",
     "tw-animate-css": "1.3.3",
-    "playwright": "^1.55.1",
     "typescript": "5.7.3"
   }
 }
