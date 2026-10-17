@@ -552,8 +552,8 @@
     "logoSource": "site"
   },
   "rapsodia.com.ar": {
-    "logoUrl": "https://rapsodia-ar.grupo-alas.com.ar/media/favicon/websites/5/favicon_1.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/rapsodia.png",
+    "logoSource": "hosted"
   },
   "cheeky.com.ar": {
     "logoUrl": "https://www.cheeky.com.ar/apple-touch-icon.png",
@@ -720,8 +720,8 @@
     "logoSource": "site"
   },
   "www.conicet.gov.ar": {
-    "logoUrl": "https://www.conicet.gov.ar/wp-content/uploads/logo-CONICET_opt.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/conicet.png",
+    "logoSource": "hosted"
   },
   "medife.com.ar": {
     "logoUrl": "https://medife.com.ar/themes/custom/medifetema/images/logo-nh.svg",
@@ -899,6 +899,10 @@
     "logoUrl": "/logos/toyota.png",
     "logoSource": "hosted"
   },
+  "toyota.com.ar": {
+    "logoUrl": "/logos/toyota.png",
+    "logoSource": "hosted"
+  },
   "www.swissmedical.com.ar": {
     "logoUrl": "/logos/swiss-medical.png",
     "logoSource": "hosted"
@@ -925,6 +929,62 @@
   },
   "oncity.com": {
     "logoUrl": "/logos/on-city.png",
+    "logoSource": "hosted"
+  },
+  "cabify.com": {
+    "logoUrl": "/logos/cabify.png",
+    "logoSource": "hosted"
+  },
+  "www.tenaris.com": {
+    "logoUrl": "/logos/tenaris.png",
+    "logoSource": "hosted"
+  },
+  "www.loginter.com.ar": {
+    "logoUrl": "/logos/loginter.png",
+    "logoSource": "hosted"
+  },
+  "www.noblex.com.ar": {
+    "logoUrl": "/logos/noblex.png",
+    "logoSource": "hosted"
+  },
+  "vital.com.ar": {
+    "logoUrl": "/logos/vital.png",
+    "logoSource": "hosted"
+  },
+  "cencosud.com": {
+    "logoUrl": "/logos/cencosud.png",
+    "logoSource": "hosted"
+  },
+  "www.andreani.com": {
+    "logoUrl": "/logos/andreani.png",
+    "logoSource": "hosted"
+  },
+  "argentina.gridohelado.com": {
+    "logoUrl": "/logos/grido.png",
+    "logoSource": "hosted"
+  },
+  "trapiche.com.ar": {
+    "logoUrl": "/logos/trapiche.png",
+    "logoSource": "hosted"
+  },
+  "experta.com.ar": {
+    "logoUrl": "/logos/experta-seguros.png",
+    "logoSource": "hosted"
+  },
+  "lamartina.com": {
+    "logoUrl": "/logos/la-martina.png",
+    "logoSource": "hosted"
+  },
+  "natura.com.ar": {
+    "logoUrl": "/logos/natura.png",
+    "logoSource": "hosted"
+  },
+  "www.samsung.com.ar": {
+    "logoUrl": "/logos/samsung.png",
+    "logoSource": "hosted"
+  },
+  "donsatur.com.ar": {
+    "logoUrl": "/logos/don-satur.png",
     "logoSource": "hosted"
   }
 }

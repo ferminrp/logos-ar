@@ -96,7 +96,6 @@ export const categories: Category[] = [
       { id: 29, name: "ARQ", domain: "www.arqfinance.com" },
       { id: 30, name: "Fiwind", domain: "fiwind.io" },
       { id: 31, name: "Ripio", domain: "ripio.com" },
-      { id: 32, name: "Buenbit (Nexo)", domain: "nexo.com" },
       { id: 34, name: "Carrefour Banco", domain: "www.bancodeserviciosfinancieros.com.ar" },
       { id: 38, name: "Claro Pay", domain: "claropay.com.ar" },
       { id: 39, name: "Astropay", domain: "astropay.com" },
@@ -129,6 +128,9 @@ export const categories: Category[] = [
       },
       { id: 480, name: "Payway", domain: "www.payway.com.ar" },
       { id: 481, name: "Pagos360", domain: "pagos360.com" },
+      { id: 578, name: "Cabify", domain: "cabify.com" },
+      { id: 587, name: "Ioio", domain: "ioio.com.ar" },
+      { id: 594, name: "MoneyGram", domain: "www.moneygram.com" },
     ],
   },
   {
@@ -140,7 +142,12 @@ export const categories: Category[] = [
       "Logos de exchanges, protocolos DeFi y wallets cripto en PNG y SVG. MetaMask, Uniswap, Binance, Ethereum, Coinbase, Aave, Phantom y 31 entidades más. Descarga gratis los logos de las principales plataformas crypto-native.",
     entities: [
       { id: 64, name: "Binance", domain: "binance.com" },
-      { id: 66, name: "Nexo", domain: "nexo.com" },
+      {
+        id: 66,
+        name: "Nexo",
+        domain: "nexo.com",
+        seoAliases: ["Buenbit", "Nexo Argentina"],
+      },
       { id: 67, name: "OKX", domain: "okx.com" },
       { id: 68, name: "Kraken", domain: "kraken.com" },
       { id: 69, name: "Coinbase", domain: "coinbase.com" },
@@ -264,6 +271,10 @@ export const categories: Category[] = [
       { id: 379, name: "A3 Mercados", domain: "a3mercados.com.ar" },
       { id: 380, name: "Banco Patagonia", domain: "bancopatagonia.com.ar" },
       { id: 381, name: "Celulosa Argentina", domain: "www.celulosaargentina.com.ar" },
+      { id: 581, name: "Adecoagro", domain: "www.adecoagro.com" },
+      { id: 582, name: "Genomma Lab", domain: "www.genommalab.com" },
+      { id: 589, name: "Tenaris", domain: "www.tenaris.com" },
+      { id: 593, name: "Loginter", domain: "www.loginter.com.ar" },
     ],
   },
   {
@@ -386,11 +397,15 @@ export const categories: Category[] = [
       { id: 533, name: "Open Sports", domain: "opensports.com.ar" },
       { id: 534, name: "Todomoda", domain: "todomoda.com" },
       { id: 536, name: "Prüne", domain: "prune.com.ar" },
-      { id: 573, name: "Kevingston", domain: "www.kevingston.com" },
       { id: 540, name: "Casa del Audio", domain: "www.casadelaudio.com" },
       { id: 541, name: "Naldo", domain: "www.naldo.com.ar" },
       { id: 542, name: "Topper", domain: "www.topper.com.ar" },
       { id: 544, name: "Sherman", domain: "sherman.ar" },
+      { id: 580, name: "Noblex", domain: "www.noblex.com.ar" },
+      { id: 585, name: "Vital", domain: "vital.com.ar" },
+      { id: 586, name: "Cencosud", domain: "cencosud.com" },
+      { id: 596, name: "Cetrogar", domain: "www.cetrogar.com.ar" },
+      { id: 598, name: "Andreani", domain: "www.andreani.com" },
     ],
   },
   {
@@ -460,7 +475,7 @@ export const categories: Category[] = [
     seoIntro:
       "Logos de marcas automotrices en Argentina en PNG y SVG transparente. Toyota, Volkswagen, Ford, Chevrolet, Renault, Fiat y 12 marcas más. Descarga gratis los logos de las principales marcas de autos con presencia en Argentina.",
     entities: [
-      { id: 121, name: "Toyota", domain: "www.toyota.com" },
+      { id: 121, name: "Toyota", domain: "toyota.com.ar" },
       { id: 122, name: "Volkswagen", domain: "volkswagen.com.ar" },
       { id: 123, name: "Fiat", domain: "fiat.com.ar" },
       { id: 124, name: "Renault", domain: "renault.com.ar" },
@@ -532,6 +547,10 @@ export const categories: Category[] = [
       { id: 319, name: "Paladini", domain: "www.paladini.com" },
       { id: 361, name: "Tregar", domain: "www.tregar.com.ar" },
       { id: 362, name: "Beaudroit", domain: "familiabeaudroit.com.ar" },
+      { id: 579, name: "Grido", domain: "argentina.gridohelado.com" },
+      { id: 584, name: "Trapiche", domain: "trapiche.com.ar" },
+      { id: 588, name: "Norton", domain: "norton.com.ar" },
+      { id: 591, name: "Don Satur", domain: "donsatur.com.ar" },
     ],
   },
   {
@@ -567,6 +586,7 @@ export const categories: Category[] = [
       { id: 176, name: "Mapfre", domain: "mapfre.com.ar" },
       { id: 177, name: "Allianz", domain: "www.allianz.com.ar" },
       { id: 178, name: "Provincia Seguros", domain: "provinciaseguros.com.ar" },
+      { id: 592, name: "Experta Seguros", domain: "experta.com.ar" },
     ],
   },
   {
@@ -589,6 +609,9 @@ export const categories: Category[] = [
       { id: 333, name: "Puma", domain: "puma.com" },
       { id: 334, name: "Lacoste", domain: "lacoste.com" },
       { id: 335, name: "Tommy Hilfiger", domain: "ar.tommy.com" },
+      { id: 583, name: "La Martina", domain: "lamartina.com" },
+      { id: 590, name: "Natura", domain: "natura.com.ar" },
+      { id: 597, name: "Samsung", domain: "www.samsung.com.ar" },
     ],
   },
   {
@@ -667,6 +690,7 @@ export const categories: Category[] = [
       { id: 213, name: "Camuzzi Gas", domain: "camuzzigas.com" },
       { id: 214, name: "Metrogas", domain: "metrogas.com.ar" },
       { id: 215, name: "Pampa Energía", domain: "pampa.com" },
+      { id: 595, name: "TGS", domain: "www.tgs.com.ar" },
     ],
   },
   {
