@@ -484,8 +484,8 @@
     "logoSource": "site"
   },
   "www.byd.com": {
-    "logoUrl": "https://www.byd.com/static_material/byd/overseas/images/public/favicon.ico",
-    "logoSource": "site"
+    "logoUrl": "/logos/byd.png",
+    "logoSource": "hosted"
   },
   "suzuki.com.ar": {
     "logoUrl": "https://www.suzuki.com.ar//media/dhojy3dn/suzuki_5d_imagenes_web_nov-01-copy.jpg",
@@ -919,12 +919,12 @@
     "logoUrl": "/logos/arba.png",
     "logoSource": "hosted"
   },
-  "www.avalian.com": {
-    "logoUrl": "/logos/avalian.png",
-    "logoSource": "hosted"
-  },
   "www.fravega.com": {
     "logoUrl": "/logos/fravega.png",
+    "logoSource": "hosted"
+  },
+  "oncity.com": {
+    "logoUrl": "/logos/on-city.png",
     "logoSource": "hosted"
   }
 }

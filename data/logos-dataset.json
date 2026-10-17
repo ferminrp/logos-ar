@@ -1,6 +1,6 @@
 {
-  "version": "fbd63a268cf0",
-  "totalItems": 381,
+  "version": "b3d491889591",
+  "totalItems": 380,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -164,10 +164,10 @@
     },
     {
       "name": "Uilo Bank (ex Wilobank)",
-      "domain": "uilo.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=uilo.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/uilo.com.ar.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=uilo.com.ar&sz=128",
+      "domain": "uala.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=uala.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/uala.com.ar.ico",
+      "catalog_logo_url": "https://www.uala.com.ar/_next/static/media/LogoOpenGraph.ac4c4af1.png",
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos"
@@ -364,10 +364,10 @@
     },
     {
       "name": "Buenbit (Nexo)",
-      "domain": "buenbit.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=buenbit.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/buenbit.com.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=buenbit.com&sz=128",
+      "domain": "nexo.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nexo.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/nexo.com.ico",
+      "catalog_logo_url": "https://nexo.com/favicon.ico?favicon.2fmiwiu-hp6gc.ico",
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs"
@@ -1644,10 +1644,10 @@
     },
     {
       "name": "ANMAT",
-      "domain": "www.anmat.gob.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.anmat.gob.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.anmat.gob.ar.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=www.anmat.gob.ar&sz=128",
+      "domain": "www.argentina.gob.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.argentina.gob.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/www.argentina.gob.ar.ico",
+      "catalog_logo_url": "https://www.argentina.gob.ar/sites/default/files/icon/icon-180x180.png",
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales"
@@ -1747,7 +1747,7 @@
       "domain": "avalian.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=avalian.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/avalian.com.ico",
-      "catalog_logo_url": "https://avalian.com/assets/images/logo-avalian-nav.png",
+      "catalog_logo_url": "/logos/avalian.png",
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas"
@@ -1917,7 +1917,7 @@
       "domain": "fravega.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=fravega.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/fravega.com.ico",
-      "catalog_logo_url": "https://www.fravega.com/static/manifest/icons/icon-192x192.png",
+      "catalog_logo_url": "/logos/fravega.png",
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail"
@@ -2057,7 +2057,7 @@
       "domain": "oncity.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=oncity.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/oncity.com.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=oncity.com&sz=128",
+      "catalog_logo_url": "/logos/on-city.png",
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail"
@@ -2623,21 +2623,11 @@
       "categoryName": "Automotrices"
     },
     {
-      "name": "Changan",
-      "domain": "changan.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=changan.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/changan.com.ar.ico",
-      "catalog_logo_url": "https://changan.com.ar/favicon.ico?favicon.0m1n394f_b0~c.ico",
-      "logo_source": "google",
-      "categoryId": "automotrices",
-      "categoryName": "Automotrices"
-    },
-    {
       "name": "BYD",
       "domain": "www.byd.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.byd.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.byd.com.ico",
-      "catalog_logo_url": "https://www.byd.com/static_material/byd/overseas/images/public/favicon.ico",
+      "catalog_logo_url": "/logos/byd.png",
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices"
@@ -3094,10 +3084,10 @@
     },
     {
       "name": "AXION energy",
-      "domain": "axionenergy.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=axionenergy.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/axionenergy.com.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=axionenergy.com&sz=128",
+      "domain": "shell.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=shell.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/shell.com.ar.ico",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=shell.com.ar&sz=128",
       "logo_source": "google",
       "categoryId": "combustibles",
       "categoryName": "Combustibles"
@@ -3714,10 +3704,10 @@
     },
     {
       "name": "Pampa Energía",
-      "domain": "pampaenergia.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pampaenergia.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/pampaenergia.com.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=pampaenergia.com&sz=256",
+      "domain": "pampa.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pampa.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pampa.com.ico",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=pampa.com&sz=128",
       "logo_source": "google",
       "categoryId": "energia",
       "categoryName": "Energía"
