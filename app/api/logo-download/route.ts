@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import sharp from "sharp"
 import { getAllEntities } from "@/lib/entity-index"
 import { getEntityLogoUrl, resolveEntityLogoUrl } from "@/lib/entity-logo"
 import { getGoogleFaviconUrl } from "@/lib/favicon-urls"
@@ -59,6 +60,35 @@ function contentTypeForFormat(format: ImageMetrics["format"]): string {
   }
 }
 
+function embedMimeType(
+  upstreamContentType: string | null,
+  detectedFormat: ImageMetrics["format"],
+): string {
+  const upstreamMime = upstreamContentType?.split(";")[0]?.trim()
+  const candidate =
+    upstreamMime || contentTypeForFormat(detectedFormat)
+  return candidate.startsWith("image/")
+    ? candidate
+    : contentTypeForFormat(detectedFormat)
+}
+
+async function convertToPng(
+  source: ArrayBuffer,
+  size: number,
+  detectedFormat: ImageMetrics["format"],
+): Promise<Buffer> {
+  return sharp(Buffer.from(source), {
+    density: detectedFormat === "svg" ? 300 : undefined,
+    failOn: "none",
+  })
+    .resize(size, size, {
+      fit: "contain",
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    })
+    .png()
+    .toBuffer()
+}
+
 function buildSvgFromRaster(
   rasterBuffer: ArrayBuffer,
   size: number,
@@ -112,21 +142,24 @@ export async function GET(request: Request) {
   const bytes = new Uint8Array(logoBuffer)
   const imageMetrics = measureImage(bytes)
   const upstreamContentType = upstream.headers.get("content-type")
-  const rasterMime =
-    upstreamContentType?.split(";")[0]?.trim() ||
-    contentTypeForFormat(imageMetrics.format)
+  const rasterMime = embedMimeType(upstreamContentType, imageMetrics.format)
 
   if (format === "png") {
-    const pngContentType =
-      imageMetrics.format === "svg"
-        ? "image/svg+xml"
-        : rasterMime.startsWith("image/")
-          ? rasterMime
-          : contentTypeForFormat(imageMetrics.format)
+    let pngBody: ArrayBuffer | Buffer = logoBuffer
+    if (imageMetrics.format !== "png") {
+      try {
+        pngBody = await convertToPng(logoBuffer, size, imageMetrics.format)
+      } catch {
+        return NextResponse.json(
+          { error: "No se pudo convertir el logo" },
+          { status: 502 },
+        )
+      }
+    }
 
-    return new NextResponse(logoBuffer, {
+    return new NextResponse(pngBody, {
       headers: {
-        "Content-Type": pngContentType,
+        "Content-Type": "image/png",
         "Content-Disposition": `attachment; filename="${filename}"`,
         "Cache-Control": CACHE_CONTROL,
       },
