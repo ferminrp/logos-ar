@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server"
 import { getAllEntities } from "@/lib/entity-index"
-import { getEntityLogoUrl } from "@/lib/entity-logo"
+import { getEntityLogoUrl, resolveEntityLogoUrl } from "@/lib/entity-logo"
 import { getGoogleFaviconUrl } from "@/lib/favicon-urls"
+import {
+  measureImage,
+  type ImageMetrics,
+} from "@/lib/logo-quality/image-metrics"
 
 const KNOWN_DOMAINS = new Set(
   getAllEntities().map((entity) => entity.domain.toLowerCase()),
@@ -36,12 +40,35 @@ function getFilename(domain: string, format: LogoFormat): string {
   return `${domain.replace(/\./g, "_")}_logo.${format}`
 }
 
-function buildSvgFromPng(pngBuffer: ArrayBuffer, size: number): string {
-  const base64 = Buffer.from(pngBuffer).toString("base64")
+function contentTypeForFormat(format: ImageMetrics["format"]): string {
+  switch (format) {
+    case "png":
+      return "image/png"
+    case "jpeg":
+      return "image/jpeg"
+    case "gif":
+      return "image/gif"
+    case "webp":
+      return "image/webp"
+    case "svg":
+      return "image/svg+xml"
+    case "ico":
+      return "image/x-icon"
+    default:
+      return "application/octet-stream"
+  }
+}
+
+function buildSvgFromRaster(
+  rasterBuffer: ArrayBuffer,
+  size: number,
+  mimeType: string,
+): string {
+  const base64 = Buffer.from(rasterBuffer).toString("base64")
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
-  <image width="${size}" height="${size}" xlink:href="data:image/png;base64,${base64}" />
+  <image width="${size}" height="${size}" xlink:href="data:${mimeType};base64,${base64}" />
 </svg>`
 }
 
@@ -62,9 +89,10 @@ export async function GET(request: Request) {
   const entity = getAllEntities().find(
     (item) => item.domain.toLowerCase() === domain,
   )
-  const faviconUrl = entity
+  const logoUrl = entity
     ? getEntityLogoUrl(entity, size)
     : getGoogleFaviconUrl(domain, size)
+  const faviconUrl = resolveEntityLogoUrl(logoUrl, request.url)
   const upstream = await fetch(faviconUrl, {
     headers: {
       "User-Agent": "LogosArgentina/1.0",
@@ -79,20 +107,44 @@ export async function GET(request: Request) {
     )
   }
 
-  const pngBuffer = await upstream.arrayBuffer()
+  const logoBuffer = await upstream.arrayBuffer()
   const filename = getFilename(domain, format)
+  const bytes = new Uint8Array(logoBuffer)
+  const imageMetrics = measureImage(bytes)
+  const upstreamContentType = upstream.headers.get("content-type")
+  const rasterMime =
+    upstreamContentType?.split(";")[0]?.trim() ||
+    contentTypeForFormat(imageMetrics.format)
 
   if (format === "png") {
-    return new NextResponse(pngBuffer, {
+    const pngContentType =
+      imageMetrics.format === "svg"
+        ? "image/svg+xml"
+        : rasterMime.startsWith("image/")
+          ? rasterMime
+          : contentTypeForFormat(imageMetrics.format)
+
+    return new NextResponse(logoBuffer, {
       headers: {
-        "Content-Type": "image/png",
+        "Content-Type": pngContentType,
         "Content-Disposition": `attachment; filename="${filename}"`,
         "Cache-Control": CACHE_CONTROL,
       },
     })
   }
 
-  const svg = buildSvgFromPng(pngBuffer, size)
+  if (imageMetrics.format === "svg") {
+    const svgText = new TextDecoder("utf-8").decode(bytes)
+    return new NextResponse(svgText, {
+      headers: {
+        "Content-Type": "image/svg+xml",
+        "Content-Disposition": `attachment; filename="${filename}"`,
+        "Cache-Control": CACHE_CONTROL,
+      },
+    })
+  }
+
+  const svg = buildSvgFromRaster(logoBuffer, size, rasterMime)
 
   return new NextResponse(svg, {
     headers: {

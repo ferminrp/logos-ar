@@ -5,7 +5,11 @@ import { EntityPreviewCard } from "@/components/entity-preview-card"
 import { LogoDownloadButtons } from "@/components/logo-download-buttons"
 import type { EntityRecord } from "@/lib/entity-index"
 import { buildEntityImageAlt } from "@/lib/entity-seo"
-import { getEntityLogoUrl } from "@/lib/entity-logo"
+import {
+  getAbsoluteEntityLogoUrl,
+  getEntityLogoSource,
+  getEntityLogoUrl,
+} from "@/lib/entity-logo"
 import {
   defaultCurlConfig,
   getDuckDuckGoCurl,
@@ -23,10 +27,12 @@ interface EntityDetailProps {
 
 export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
   const googleUrl = getEntityLogoUrl(entity)
+  const catalogLogoUrl = getAbsoluteEntityLogoUrl(entity)
+  const logoSource = getEntityLogoSource(entity)
   const duckUrl = getDuckDuckGoFaviconUrl(entity.domain)
   const googleCurl = getGoogleCurl(entity.domain, defaultCurlConfig)
   const duckCurl = getDuckDuckGoCurl(entity.domain, defaultCurlConfig)
-  const sheetsFormula = getSheetsImageFormula(googleUrl)
+  const sheetsFormula = getSheetsImageFormula(catalogLogoUrl)
 
   const imageAlt = buildEntityImageAlt(entity)
 
@@ -94,15 +100,19 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
         <div className="space-y-3">
           <div>
             <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              {entity.logoUrl ? "Logo en catálogo" : "Google (128px)"}
+              {logoSource === "google" ? "Google (128px)" : "Logo en catálogo"}
             </p>
             <div className="flex items-center gap-2">
               <code className="flex-1 break-all rounded bg-secondary px-2 py-1.5 font-mono text-xs text-foreground">
-                {googleUrl}
+                {catalogLogoUrl}
               </code>
               <CopyButton
-                value={googleUrl}
-                label={entity.logoUrl ? "Copiar URL del logo" : "Copiar URL de Google"}
+                value={catalogLogoUrl}
+                label={
+                  logoSource === "google"
+                    ? "Copiar URL de Google"
+                    : "Copiar URL del logo"
+                }
               />
             </div>
           </div>

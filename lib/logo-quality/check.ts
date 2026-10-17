@@ -96,7 +96,7 @@ export function evaluateLogoBytes(
   domain: string,
 ): { issues: LogoCheckIssue[]; metrics: LogoMetrics } {
   const sha256 = createHash("sha256").update(bytes).digest("hex")
-  const { width, height } = measureImage(bytes)
+  const { width, height, format } = measureImage(bytes)
   const metrics: LogoMetrics = {
     bytes: bytes.length,
     width,
@@ -115,7 +115,17 @@ export function evaluateLogoBytes(
   }
 
   const maxDim = Math.max(width, height)
-  if (maxDim > 0 && maxDim < MIN_LOGO_PX) {
+  if (format === "unknown" && bytes.length >= MIN_LOGO_BYTES) {
+    const preview = new TextDecoder("utf-8", { fatal: false })
+      .decode(bytes.slice(0, 256))
+      .trimStart()
+    if (preview.startsWith("<")) {
+      issues.push({
+        code: "too-small-dimensions",
+        message: "La URL del logo no devuelve una imagen válida",
+      })
+    }
+  } else if (maxDim > 0 && maxDim < MIN_LOGO_PX) {
     issues.push({
       code: "too-small-dimensions",
       message: `Logo ${width}×${height}px (mínimo ${MIN_LOGO_PX}px)`,
@@ -183,6 +193,21 @@ export async function checkEntityLogo(
       issues.push({
         code: "fetch-failed",
         message: `Logo HTTP ${status} en ${logoUrl}`,
+      })
+      return {
+        slug: entity.slug,
+        name: entity.name,
+        domain: entity.domain,
+        logoUrl,
+        ok: false,
+        issues,
+      }
+    }
+
+    if (contentType?.toLowerCase().includes("text/html")) {
+      issues.push({
+        code: "fetch-failed",
+        message: `Logo HTTP responde HTML en ${logoUrl}`,
       })
       return {
         slug: entity.slug,
