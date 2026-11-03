@@ -11,7 +11,7 @@ import {
 } from "@/lib/entity-index"
 import {
   buildEntityMetaDescription,
-  buildEntityPageTitle,
+  getEntityPageTitle,
 } from "@/lib/entity-seo"
 
 interface LogoPageProps {
@@ -32,7 +32,7 @@ export async function generateMetadata({
     return { title: "Logo no encontrado" }
   }
 
-  const title = buildEntityPageTitle(entity)
+  const title = getEntityPageTitle(entity)
   const description = buildEntityMetaDescription(entity)
 
   return {
@@ -47,6 +47,10 @@ export async function generateMetadata({
       url: `/logo/${slug}`,
       type: "website",
       locale: "es_AR",
+    },
+    twitter: {
+      title,
+      description,
     },
   }
 }

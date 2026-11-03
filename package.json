@@ -14,7 +14,8 @@
     "verify:loguitos": "node --experimental-strip-types .cursor/skills/verify-loguitos/scripts/verify-loguitos.mts",
     "check:logos": "node --experimental-strip-types scripts/check-logos.mts",
     "sync:logo-overrides": "node --experimental-strip-types scripts/sync-logo-overrides.mts",
-    "test:logos": "node --experimental-strip-types --test scripts/check-logos.test.mts"
+    "test:logos": "node --experimental-strip-types --test scripts/check-logos.test.mts",
+    "test:entity-seo": "node --experimental-strip-types --test lib/entity-seo.test.mts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
