@@ -80,6 +80,18 @@ export function collectChangedSlugsFromPatch(
     slugs.add(match[1]!)
   }
 
+  let currentOverrideDomain: string | null = null
+  for (const line of patch.split("\n")) {
+    const domainBlock = line.match(/^(?:[+-\s]).*"([^"]+)":\s*\{/)
+    if (domainBlock) {
+      currentOverrideDomain = domainBlock[1]!.toLowerCase()
+    }
+    if (/^[-+]/.test(line) && /logoUrl/.test(line) && currentOverrideDomain) {
+      const entity = byDomain.get(currentOverrideDomain)
+      if (entity) slugs.add(entity.slug)
+    }
+  }
+
   return slugs
 }
 

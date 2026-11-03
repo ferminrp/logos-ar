@@ -44,7 +44,7 @@ jobs:
       - run: pnpm test:logos
       - name: Fetch PR base for scoped logo check
         if: github.event_name == 'pull_request'
-        run: git fetch origin "${{ github.base_ref }}" --depth=1
+        run: git fetch origin "${{ github.base_ref }}"
       - name: Check logos (PR scope)
         if: github.event_name == 'pull_request'
         env:

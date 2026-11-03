@@ -68,11 +68,13 @@ export async function fetchWithRetry(
   let lastError: unknown = null
   let lastResponse: Response | null = null
 
+  const { signal: _callerSignal, ...restInit } = init
+
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
     try {
       const response = await fetchImpl(url, {
-        ...init,
-        signal: init.signal ?? AbortSignal.timeout(timeoutMs),
+        ...restInit,
+        signal: AbortSignal.timeout(timeoutMs),
       })
       lastResponse = response
       if (!isTransientHttpStatus(response.status)) {
