@@ -111,8 +111,9 @@ async function main() {
       continue
     }
     let prepared = raw
-    if (
-      slug === "enargas" ||
+    if (slug === "enargas") {
+      prepared = await sharp(raw, { density: 320, failOn: "none" }).png().toBuffer()
+    } else if (
       slug === "hospital-italiano-de-buenos-aires" ||
       slug === "natura-cosmeticos" ||
       slug === "cencosud"
@@ -121,6 +122,20 @@ async function main() {
         .flatten({ background: "#ffffff" })
         .png()
         .toBuffer()
+    }
+    if (slug === "renaper") {
+      const trimmed = await sharp(raw, { failOn: "none" })
+        .trim()
+        .toBuffer({ resolveWithObject: true })
+      const tw = trimmed.info.width ?? 0
+      const th = trimmed.info.height ?? 0
+      if (tw > 0 && th > 0) {
+        const side = th
+        prepared = await sharp(trimmed.data, { failOn: "none" })
+          .extract({ left: 0, top: 0, width: Math.min(side, tw), height: th })
+          .png()
+          .toBuffer()
+      }
     }
     if (slug === "trapiche") {
       const burgundy = { r: 114, g: 47, b: 55 }
@@ -149,7 +164,10 @@ async function main() {
     }
     let png: Buffer
     try {
-      png = await normalizeLogoForTile(prepared)
+      png = await normalizeLogoForTile(
+        prepared,
+        slug === "enargas" ? { minContentFill: 0.76 } : undefined,
+      )
     } catch {
       png = await sharp(raw, { density: 200, failOn: "none" })
         .resize(256, 256, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
