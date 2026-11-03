@@ -71,11 +71,18 @@ async function readServerRecord(): Promise<ServerRecord | null> {
 
 async function writeServerRecord(record: ServerRecord): Promise<void> {
   const dir = path.dirname(latestRunFile())
-  await mkdir(dir, { recursive: true })
-  await writeFile(latestRunFile(), JSON.stringify(record, null, 2))
   const runDir = runsDir(record.runId)
-  await mkdir(runDir, { recursive: true })
-  await writeFile(path.join(runDir, "server.json"), JSON.stringify(record, null, 2))
+  const payload = JSON.stringify(record, null, 2)
+  await Promise.all([
+    (async () => {
+      await mkdir(dir, { recursive: true })
+      await writeFile(latestRunFile(), payload)
+    })(),
+    (async () => {
+      await mkdir(runDir, { recursive: true })
+      await writeFile(path.join(runDir, "server.json"), payload)
+    })(),
+  ])
 }
 
 function runCommand(
@@ -210,68 +217,34 @@ async function resolveBaseUrl(): Promise<string> {
 
 async function doctor(): Promise<DoctorCheck[]> {
   const baseUrl = await resolveBaseUrl()
-  const checks: DoctorCheck[] = []
 
   async function check(
     name: string,
     url: string,
     assertFn?: (res: Response, body: string) => void
-  ): Promise<void> {
+  ): Promise<DoctorCheck> {
     try {
       const res = await fetch(url)
       const body = await res.text()
       if (!res.ok) {
-        checks.push({ name, ok: false, detail: `HTTP ${res.status}` })
-        return
+        return { name, ok: false, detail: `HTTP ${res.status}` }
       }
       assertFn?.(res, body)
-      checks.push({ name, ok: true, detail: `HTTP ${res.status}` })
+      return { name, ok: true, detail: `HTTP ${res.status}` }
     } catch (error) {
-      checks.push({
+      return {
         name,
         ok: false,
         detail: error instanceof Error ? error.message : String(error),
-      })
+      }
     }
   }
-
-  await check("home", `${baseUrl}/`, (_res, body) => {
-    if (!body.includes("Logos Argentina")) {
-      throw new Error('missing "Logos Argentina" in HTML')
-    }
-  })
-
-  await check("docs", `${baseUrl}/docs`, (_res, body) => {
-    if (!body.includes("API de logos")) {
-      throw new Error('missing "API de logos"')
-    }
-  })
-
-  await check("robots", `${baseUrl}/robots.txt`)
-
-  await check("category-bancos-seo", `${baseUrl}/categoria/bancos`, (_res, body) => {
-    if (!body.includes("Logos de bancos argentinos")) {
-      throw new Error('missing category SEO h1 "Logos de bancos argentinos"')
-    }
-    if (!body.includes("Directorio de logos de bancos tradicionales")) {
-      throw new Error("missing bancos introLead from lib/category-seo.ts")
-    }
-  })
-
-  await check("logo-banco-provincia-meta", `${baseUrl}/logo/banco-provincia`, (_res, body) => {
-    if (!body.includes("Descargá el logo de Banco Provincia")) {
-      throw new Error("missing entity meta description from lib/entity-seo.ts")
-    }
-    if (!body.includes("| Loguitos")) {
-      throw new Error("missing Loguitos suffix in document title")
-    }
-  })
 
   async function checkPermanentRedirect(
     name: string,
     sourcePath: string,
     destinationPath: string
-  ): Promise<void> {
+  ): Promise<DoctorCheck> {
     try {
       const res = await fetch(`${baseUrl}${sourcePath}`, { redirect: "manual" })
       const location = res.headers.get("location") ?? ""
@@ -280,50 +253,37 @@ async function doctor(): Promise<DoctorCheck[]> {
         location === destinationPath ||
         location.endsWith(destinationPath)
       if (!okStatus || !okLocation) {
-        checks.push({
+        return {
           name,
           ok: false,
           detail: `HTTP ${res.status} location=${location || "(none)"}`,
-        })
-        return
+        }
       }
-      checks.push({
+      return {
         name,
         ok: true,
         detail: `HTTP ${res.status} → ${destinationPath}`,
-      })
+      }
     } catch (error) {
-      checks.push({
+      return {
         name,
         ok: false,
         detail: error instanceof Error ? error.message : String(error),
-      })
+      }
     }
   }
 
-  await checkPermanentRedirect(
-    "redirect-categoria-delivery",
-    "/categoria/delivery",
-    "/categoria/gastronomia"
-  )
-  await checkPermanentRedirect(
-    "redirect-logo-banco-provincia-alias",
-    "/logo/banco-provincia-bs-as",
-    "/logo/banco-provincia"
-  )
-  await checkPermanentRedirect(
-    "redirect-logo-tn-alias",
-    "/logo/tn-todo-noticias",
-    "/logo/tn"
-  )
-
-  try {
-    const apiUrl = `${baseUrl}/api/logos?q=galicia&limit=5`
-    const res = await fetch(apiUrl)
-    if (!res.ok) {
-      checks.push({ name: "api-galicia", ok: false, detail: `HTTP ${res.status}` })
-    } else {
-      const json = (await res.json()) as { items?: Array<{ name?: string; domain?: string }> }
+  async function checkApiGalicia(): Promise<DoctorCheck> {
+    const name = "api-galicia"
+    try {
+      const apiUrl = `${baseUrl}/api/logos?q=galicia&limit=5`
+      const res = await fetch(apiUrl)
+      if (!res.ok) {
+        return { name, ok: false, detail: `HTTP ${res.status}` }
+      }
+      const json = (await res.json()) as {
+        items?: Array<{ name?: string; domain?: string }>
+      }
       const items = json.items ?? []
       const match = items.some(
         (item) =>
@@ -331,18 +291,63 @@ async function doctor(): Promise<DoctorCheck[]> {
           item.domain?.toLowerCase().includes("galicia")
       )
       if (!match) {
-        checks.push({ name: "api-galicia", ok: false, detail: "no galicia match in items" })
-      } else {
-        checks.push({ name: "api-galicia", ok: true, detail: `HTTP ${res.status}` })
+        return { name, ok: false, detail: "no galicia match in items" }
+      }
+      return { name, ok: true, detail: `HTTP ${res.status}` }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
       }
     }
-  } catch (error) {
-    checks.push({
-      name: "api-galicia",
-      ok: false,
-      detail: error instanceof Error ? error.message : String(error),
-    })
   }
+
+  const checks = await Promise.all([
+    check("home", `${baseUrl}/`, (_res, body) => {
+      if (!body.includes("Logos Argentina")) {
+        throw new Error('missing "Logos Argentina" in HTML')
+      }
+    }),
+    check("docs", `${baseUrl}/docs`, (_res, body) => {
+      if (!body.includes("API de logos")) {
+        throw new Error('missing "API de logos"')
+      }
+    }),
+    check("robots", `${baseUrl}/robots.txt`),
+    check("category-bancos-seo", `${baseUrl}/categoria/bancos`, (_res, body) => {
+      if (!body.includes("Logos de bancos argentinos")) {
+        throw new Error('missing category SEO h1 "Logos de bancos argentinos"')
+      }
+      if (!body.includes("Directorio de logos de bancos tradicionales")) {
+        throw new Error("missing bancos introLead from lib/category-seo.ts")
+      }
+    }),
+    check("logo-banco-provincia-meta", `${baseUrl}/logo/banco-provincia`, (_res, body) => {
+      if (!body.includes("Descargá el logo de Banco Provincia")) {
+        throw new Error("missing entity meta description from lib/entity-seo.ts")
+      }
+      if (!body.includes("| Loguitos")) {
+        throw new Error("missing Loguitos suffix in document title")
+      }
+    }),
+    checkPermanentRedirect(
+      "redirect-categoria-delivery",
+      "/categoria/delivery",
+      "/categoria/gastronomia"
+    ),
+    checkPermanentRedirect(
+      "redirect-logo-banco-provincia-alias",
+      "/logo/banco-provincia-bs-as",
+      "/logo/banco-provincia"
+    ),
+    checkPermanentRedirect(
+      "redirect-logo-tn-alias",
+      "/logo/tn-todo-noticias",
+      "/logo/tn"
+    ),
+    checkApiGalicia(),
+  ])
 
   const run = await resolveArtifactRunId()
   const outDir = artifactsDir(run)
