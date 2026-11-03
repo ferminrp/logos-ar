@@ -1,5 +1,5 @@
 {
-  "version": "75a852a35867",
+  "version": "432a647de73b",
   "totalItems": 398,
   "items": [
     {
@@ -774,10 +774,10 @@
     },
     {
       "name": "MetaMask",
-      "domain": "metamask.io",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=metamask.io&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/metamask.io.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=metamask.io&sz=128",
+      "domain": "metamask.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=metamask.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/metamask.com.ico",
+      "catalog_logo_url": "/logos/metamask.png",
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto"
@@ -887,7 +887,7 @@
       "domain": "solana.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=solana.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/solana.com.ico",
-      "catalog_logo_url": "https://solana.com/_next/static/media/apple-touch-icon.e9b82e54.png",
+      "catalog_logo_url": "/logos/solana.png",
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto"
@@ -1907,7 +1907,7 @@
       "domain": "www.iosfa.gob.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.iosfa.gob.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.iosfa.gob.ar.ico",
-      "catalog_logo_url": "https://www.iosfa.gob.ar/og.jpeg",
+      "catalog_logo_url": "/logos/iosfa.png",
       "logo_source": "google",
       "categoryId": "obras-sociales",
       "categoryName": "Obras sociales"
@@ -2577,7 +2577,7 @@
       "domain": "www.antina.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.antina.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.antina.com.ar.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=www.antina.com.ar&sz=256",
+      "catalog_logo_url": "/logos/antina.png",
       "logo_source": "google",
       "categoryId": "telecomunicaciones",
       "categoryName": "Telecomunicaciones"

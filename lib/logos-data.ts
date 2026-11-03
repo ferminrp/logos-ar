@@ -157,7 +157,7 @@ export const categories: Category[] = [
       { id: 392, name: "Bitkey", domain: "bitkey.world" },
       { id: 393, name: "Exactly", domain: "exactly.app" },
       { id: 394, name: "Fluidkey", domain: "www.fluidkey.com" },
-      { id: 395, name: "MetaMask", domain: "metamask.io" },
+      { id: 395, name: "MetaMask", domain: "metamask.com" },
       { id: 396, name: "Phantom", domain: "phantom.com" },
       { id: 397, name: "Rainbow", domain: "rainbow.me" },
       { id: 398, name: "Ledger", domain: "www.ledger.com" },
