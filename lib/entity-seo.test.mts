@@ -33,9 +33,8 @@ test("entity page titles are unique across slugs", () => {
   for (const entity of entities) {
     const title = titles.get(entity.slug)!
     const prior = seen.get(title)
-    assert.notEqual(
-      prior,
-      title,
+    assert.ok(
+      prior === undefined,
       `duplicate title "${title}" for ${prior} and ${entity.slug}`,
     )
     seen.set(title, entity.slug)

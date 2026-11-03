@@ -17,17 +17,24 @@ function composeEntityTitle(displayName: string, middle: string): string {
   return `Logo ${displayName}${middle}${SITE_SUFFIX}`
 }
 
+function splitDisambiguationSuffix(name: string): { core: string; suffix: string } {
+  const match = name.match(/^(.*)\s(\([^)]+\))$/)
+  if (!match) return { core: name, suffix: "" }
+  return { core: match[1].trim(), suffix: ` ${match[2]}` }
+}
+
 function shortenNameAtWordBoundary(name: string, middle: string): string | null {
-  const words = name.split(/\s+/).filter(Boolean)
+  const { core, suffix } = splitDisambiguationSuffix(name)
+  const words = core.split(/\s+/).filter(Boolean)
   while (words.length > 1) {
     words.pop()
-    const candidate = words.join(" ")
+    const candidate = words.join(" ") + suffix
     if (composeEntityTitle(candidate, middle).length <= MAX_ENTITY_TITLE_LENGTH) {
       return candidate
     }
   }
   if (words.length === 1) {
-    const single = words[0]
+    const single = words[0] + suffix
     if (composeEntityTitle(single, middle).length <= MAX_ENTITY_TITLE_LENGTH) {
       return single
     }
@@ -48,7 +55,9 @@ function buildTitleForDisplayName(displayName: string): string {
     }
   }
 
-  const fallbackName = displayName.split(/\s+/)[0] ?? displayName
+  const { core, suffix } = splitDisambiguationSuffix(displayName)
+  const fallbackCore = core.split(/\s+/)[0] ?? core
+  const fallbackName = suffix ? `${fallbackCore}${suffix}` : fallbackCore
   return composeEntityTitle(fallbackName, "")
 }
 
