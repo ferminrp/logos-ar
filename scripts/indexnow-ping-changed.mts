@@ -63,10 +63,16 @@ async function main() {
   const currentPath = resolveCurrentPath()
 
   let currentXml: string
+  let previous: Awaited<ReturnType<typeof loadSitemap>>
+
   if (process.env.INDEXNOW_FETCH_CURRENT === "1") {
     console.log("IndexNow: loading current sitemap from production ...")
-    currentXml = await fetchProductionSitemap()
+    ;[currentXml, previous] = await Promise.all([
+      fetchProductionSitemap(),
+      loadSitemap("previous", previousPath),
+    ])
   } else {
+    const previousPromise = loadSitemap("previous", previousPath)
     try {
       currentXml = await readFile(currentPath, "utf8")
     } catch {
@@ -75,10 +81,10 @@ async function main() {
       )
       currentXml = await fetchProductionSitemap()
     }
+    previous = await previousPromise
   }
 
   const current = parseSitemapXml(currentXml)
-  const previous = await loadSitemap("previous", previousPath)
 
   if (!previous || previous.size === 0) {
     console.log(
