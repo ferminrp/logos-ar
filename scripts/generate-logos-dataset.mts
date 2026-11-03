@@ -3,6 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { categories } from "../lib/logos-data.ts"
+import { getEntityLogoUrl } from "../lib/entity-logo.ts"
 import {
   getDuckDuckGoFaviconUrl,
   getGoogleFaviconUrl,
@@ -13,6 +14,8 @@ type LogoItem = {
   domain: string
   google_domain: string
   duck_domain: string
+  catalog_logo_url?: string
+  logo_source?: string
   categoryId: string
   categoryName: string
 }
@@ -35,6 +38,8 @@ async function main() {
       domain: entity.domain,
       google_domain: getGoogleFaviconUrl(entity.domain),
       duck_domain: getDuckDuckGoFaviconUrl(entity.domain),
+      catalog_logo_url: getEntityLogoUrl(entity),
+      logo_source: entity.logoSource ?? (entity.logoUrl ? "hosted" : "google"),
       categoryId: category.id,
       categoryName: category.name,
     })),

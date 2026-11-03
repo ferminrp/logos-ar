@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
-import { getGoogleFaviconUrl } from "@/lib/favicon-urls"
+import { getEntityLogoUrl } from "@/lib/entity-logo"
 import type { EntityRecord } from "@/lib/entity-index"
 
 interface EntityPreviewCardProps {
@@ -8,7 +8,7 @@ interface EntityPreviewCardProps {
 }
 
 export function EntityPreviewCard({ entity }: EntityPreviewCardProps) {
-  const googleUrl = getGoogleFaviconUrl(entity.domain)
+  const googleUrl = getEntityLogoUrl(entity)
 
   return (
     <Link

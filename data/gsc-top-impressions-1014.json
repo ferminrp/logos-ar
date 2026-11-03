@@ -1,0 +1,690 @@
+{
+  "summary": {
+    "totalQueries": 85,
+    "covered": 85,
+    "missing": 0,
+    "batch1014Note": "All top-85 GSC queries already had catalog pages before batch-1014. This batch adds 100 net-new brands (telcos, obras sociales, regional banks, etc.) outside that demand set."
+  },
+  "queries": [
+    {
+      "query": "logo arca",
+      "impressions": 294,
+      "catalogStatus": "covered",
+      "entityName": "ARCA (ex AFIP)",
+      "entityId": 61,
+      "domain": "www.afip.gob.ar"
+    },
+    {
+      "query": "bondterminal",
+      "impressions": 228,
+      "catalogStatus": "covered",
+      "entityName": "Bond Terminal",
+      "entityId": 306,
+      "domain": "bondterminal.com"
+    },
+    {
+      "query": "logo swiss medical",
+      "impressions": 201,
+      "catalogStatus": "covered",
+      "entityName": "Swiss Medical",
+      "entityId": 453,
+      "domain": "www.swissmedical.com.ar"
+    },
+    {
+      "query": "logo modo",
+      "impressions": 186,
+      "catalogStatus": "covered",
+      "entityName": "MODO",
+      "entityId": 63,
+      "domain": "www.modo.com.ar"
+    },
+    {
+      "query": "logo audi png",
+      "impressions": 184,
+      "catalogStatus": "covered",
+      "entityName": "Casa del Audio",
+      "entityId": 540,
+      "domain": "www.casadelaudio.com"
+    },
+    {
+      "query": "tn logo",
+      "impressions": 159,
+      "catalogStatus": "covered",
+      "entityName": "TN (Todo Noticias)",
+      "entityId": 103,
+      "domain": "tn.com.ar"
+    },
+    {
+      "query": "logo naranja x",
+      "impressions": 150,
+      "catalogStatus": "covered",
+      "entityName": "Naranja X",
+      "entityId": 23,
+      "domain": "naranjax.com"
+    },
+    {
+      "query": "logo banco provincia",
+      "impressions": 139,
+      "catalogStatus": "covered",
+      "entityName": "Banco Provincia (Bs. As.)",
+      "entityId": 6,
+      "domain": "bancoprovincia.com.ar"
+    },
+    {
+      "query": "logo ternium",
+      "impressions": 111,
+      "catalogStatus": "covered",
+      "entityName": "Ternium",
+      "entityId": 377,
+      "domain": "ar.ternium.com"
+    },
+    {
+      "query": "logo coto",
+      "impressions": 109,
+      "catalogStatus": "covered",
+      "entityName": "Coto",
+      "entityId": 84,
+      "domain": "coto.com.ar"
+    },
+    {
+      "query": "uniswap logo",
+      "impressions": 107,
+      "catalogStatus": "covered",
+      "entityName": "Uniswap",
+      "entityId": 386,
+      "domain": "uniswap.org"
+    },
+    {
+      "query": "logo pami",
+      "impressions": 101,
+      "catalogStatus": "covered",
+      "entityName": "PAMI",
+      "entityId": 451,
+      "domain": "www.pami.org.ar"
+    },
+    {
+      "query": "logo axion",
+      "impressions": 100,
+      "catalogStatus": "covered",
+      "entityName": "AXION energy",
+      "entityId": 163,
+      "domain": "axionenergy.com"
+    },
+    {
+      "query": "logo de changan",
+      "impressions": 96,
+      "catalogStatus": "covered",
+      "entityName": "Changan",
+      "entityId": 358,
+      "domain": "changan.com.ar"
+    },
+    {
+      "query": "logo osde",
+      "impressions": 95,
+      "catalogStatus": "covered",
+      "entityName": "OSDE",
+      "entityId": 452,
+      "domain": "www.osde.com.ar"
+    },
+    {
+      "query": "logo bbva png",
+      "impressions": 92,
+      "catalogStatus": "covered",
+      "entityName": "BBVA Argentina",
+      "entityId": 3,
+      "domain": "bbva.com.ar"
+    },
+    {
+      "query": "fravega logo",
+      "impressions": 91,
+      "catalogStatus": "covered",
+      "entityName": "Frávega",
+      "entityId": 83,
+      "domain": "fravega.com"
+    },
+    {
+      "query": "personal pay logo",
+      "impressions": 91,
+      "catalogStatus": "covered",
+      "entityName": "Personal Pay",
+      "entityId": 27,
+      "domain": "www.personal.com.ar"
+    },
+    {
+      "query": "logo la segunda seguros",
+      "impressions": 85,
+      "catalogStatus": "covered",
+      "entityName": "La Segunda Seguros",
+      "entityId": 173,
+      "domain": "www.lasegunda.com.ar"
+    },
+    {
+      "query": "logo chango mas",
+      "impressions": 75,
+      "catalogStatus": "covered",
+      "entityName": "ChangoMas",
+      "entityId": 94,
+      "domain": "changomas.com.ar"
+    },
+    {
+      "query": "logo nestle png",
+      "impressions": 75,
+      "catalogStatus": "covered",
+      "entityName": "Nestlé",
+      "entityId": 146,
+      "domain": "nestle.com.ar"
+    },
+    {
+      "query": "medicus logo",
+      "impressions": 73,
+      "catalogStatus": "covered",
+      "entityName": "Medicus",
+      "entityId": 455,
+      "domain": "medicus.com.ar"
+    },
+    {
+      "query": "logo la serenisima",
+      "impressions": 72,
+      "catalogStatus": "covered",
+      "entityName": "La Serenísima (Mastellone)",
+      "entityId": 143,
+      "domain": "laserenisima.com.ar"
+    },
+    {
+      "query": "omint logo",
+      "impressions": 66,
+      "catalogStatus": "covered",
+      "entityName": "Omint",
+      "entityId": 456,
+      "domain": "www.omint.com.ar"
+    },
+    {
+      "query": "ram png",
+      "impressions": 61,
+      "catalogStatus": "covered",
+      "entityName": "Ram",
+      "entityId": 353,
+      "domain": "www.ram.com.ar"
+    },
+    {
+      "query": "logo chery png",
+      "impressions": 59,
+      "catalogStatus": "covered",
+      "entityName": "Chery",
+      "entityId": 134,
+      "domain": "chery.com.ar"
+    },
+    {
+      "query": "logo galeno",
+      "impressions": 59,
+      "catalogStatus": "covered",
+      "entityName": "Galeno",
+      "entityId": 454,
+      "domain": "www.galeno.com.ar"
+    },
+    {
+      "query": "logo banco hipotecario",
+      "impressions": 57,
+      "catalogStatus": "covered",
+      "entityName": "Banco Hipotecario",
+      "entityId": 9,
+      "domain": "hipotecario.com.ar"
+    },
+    {
+      "query": "brubank logo",
+      "impressions": 56,
+      "catalogStatus": "covered",
+      "entityName": "Brubank",
+      "entityId": 24,
+      "domain": "brubank.com"
+    },
+    {
+      "query": "logo la caja",
+      "impressions": 50,
+      "catalogStatus": "covered",
+      "entityName": "La Caja Seguros",
+      "entityId": 175,
+      "domain": "lacaja.com.ar"
+    },
+    {
+      "query": "lemon cash logo",
+      "impressions": 47,
+      "catalogStatus": "covered",
+      "entityName": "Lemon Cash",
+      "entityId": 26,
+      "domain": "lemon.me"
+    },
+    {
+      "query": "mi argentina logo",
+      "impressions": 46,
+      "catalogStatus": "covered",
+      "entityName": "Mi Argentina",
+      "entityId": 449,
+      "domain": "mi.argentina.gob.ar"
+    },
+    {
+      "query": "hyperliquid logo",
+      "impressions": 45,
+      "catalogStatus": "covered",
+      "entityName": "Hyperliquid",
+      "entityId": 401,
+      "domain": "hyperliquid.xyz"
+    },
+    {
+      "query": "logo de go",
+      "impressions": 45,
+      "catalogStatus": "covered",
+      "entityName": "Go",
+      "entityId": 430,
+      "domain": "go.dev"
+    },
+    {
+      "query": "logo nexo",
+      "impressions": 44,
+      "catalogStatus": "covered",
+      "entityName": "Nexo",
+      "entityId": 66,
+      "domain": "nexo.com"
+    },
+    {
+      "query": "c5n logo",
+      "impressions": 40,
+      "catalogStatus": "covered",
+      "entityName": "C5N",
+      "entityId": 336,
+      "domain": "c5n.com"
+    },
+    {
+      "query": "claro pay logo",
+      "impressions": 40,
+      "catalogStatus": "covered",
+      "entityName": "Claro Pay",
+      "entityId": 38,
+      "domain": "claropay.com.ar"
+    },
+    {
+      "query": "logo de copa airlines",
+      "impressions": 40,
+      "catalogStatus": "covered",
+      "entityName": "Copa Airlines",
+      "entityId": 329,
+      "domain": "copaair.com"
+    },
+    {
+      "query": "logo metrogas",
+      "impressions": 40,
+      "catalogStatus": "covered",
+      "entityName": "Metrogas",
+      "entityId": 373,
+      "domain": "metrogas.com.ar"
+    },
+    {
+      "query": "logo zara png",
+      "impressions": 39,
+      "catalogStatus": "covered",
+      "entityName": "Zara",
+      "entityId": 330,
+      "domain": "zara.com"
+    },
+    {
+      "query": "mercado libre png",
+      "impressions": 38,
+      "catalogStatus": "covered",
+      "entityName": "Mercado Libre",
+      "entityId": 81,
+      "domain": "mercadolibre.com.ar"
+    },
+    {
+      "query": "supabase logo",
+      "impressions": 37,
+      "catalogStatus": "covered",
+      "entityName": "Supabase",
+      "entityId": 442,
+      "domain": "supabase.com"
+    },
+    {
+      "query": "central puerto logo",
+      "impressions": 36,
+      "catalogStatus": "covered",
+      "entityName": "Central Puerto",
+      "entityId": 368,
+      "domain": "www.centralpuerto.com"
+    },
+    {
+      "query": "eltrece logo",
+      "impressions": 36,
+      "catalogStatus": "covered",
+      "entityName": "El Trece",
+      "entityId": 339,
+      "domain": "eltrece.com"
+    },
+    {
+      "query": "logo subaru png",
+      "impressions": 36,
+      "catalogStatus": "covered",
+      "entityName": "Subaru",
+      "entityId": 356,
+      "domain": "subaru.com.ar"
+    },
+    {
+      "query": "logo credicoop",
+      "impressions": 34,
+      "catalogStatus": "covered",
+      "entityName": "Banco Credicoop",
+      "entityId": 346,
+      "domain": "credicoop.coop"
+    },
+    {
+      "query": "logo tregar",
+      "impressions": 33,
+      "catalogStatus": "covered",
+      "entityName": "Tregar",
+      "entityId": 361,
+      "domain": "www.tregar.com.ar"
+    },
+    {
+      "query": "logo de anses",
+      "impressions": 32,
+      "catalogStatus": "covered",
+      "entityName": "ANSES",
+      "entityId": 448,
+      "domain": "anses.gob.ar"
+    },
+    {
+      "query": "logo edenor",
+      "impressions": 32,
+      "catalogStatus": "covered",
+      "entityName": "Edenor",
+      "entityId": 370,
+      "domain": "edenor.com"
+    },
+    {
+      "query": "canal 26 logo",
+      "impressions": 31,
+      "catalogStatus": "covered",
+      "entityName": "Canal 26",
+      "entityId": 341,
+      "domain": "canal26.com"
+    },
+    {
+      "query": "logo galicia png",
+      "impressions": 31,
+      "catalogStatus": "covered",
+      "entityName": "Banco Galicia",
+      "entityId": 4,
+      "domain": "www.galicia.ar"
+    },
+    {
+      "query": "logo rust",
+      "impressions": 31,
+      "catalogStatus": "covered",
+      "entityName": "Rust",
+      "entityId": 431,
+      "domain": "rust-lang.org"
+    },
+    {
+      "query": "macro logo",
+      "impressions": 31,
+      "catalogStatus": "covered",
+      "entityName": "Banco Macro",
+      "entityId": 5,
+      "domain": "macro.com.ar"
+    },
+    {
+      "query": "logo telefe png",
+      "impressions": 29,
+      "catalogStatus": "covered",
+      "entityName": "Telefe",
+      "entityId": 338,
+      "domain": "telefe.com"
+    },
+    {
+      "query": "arcor logo png",
+      "impressions": 29,
+      "catalogStatus": "covered",
+      "entityName": "Arcor",
+      "entityId": 141,
+      "domain": "arcor.com"
+    },
+    {
+      "query": "banco comafi logo",
+      "impressions": 28,
+      "catalogStatus": "covered",
+      "entityName": "Banco Comafi",
+      "entityId": 13,
+      "domain": "www.comafi.com.ar"
+    },
+    {
+      "query": "bpn logo",
+      "impressions": 28,
+      "catalogStatus": "covered",
+      "entityName": "BPN (Banco Provincia de Neuquén)",
+      "entityId": 18,
+      "domain": "www.bpn.com.ar"
+    },
+    {
+      "query": "logo intercontinental",
+      "impressions": 28,
+      "catalogStatus": "covered",
+      "entityName": "InterContinental (IHG)",
+      "entityId": 322,
+      "domain": "ihg.com"
+    },
+    {
+      "query": "logo bancor",
+      "impressions": 27,
+      "catalogStatus": "covered",
+      "entityName": "Banco de Córdoba (BANCOR)",
+      "entityId": 17,
+      "domain": "bancor.com.ar"
+    },
+    {
+      "query": "logo sancor seguros png",
+      "impressions": 27,
+      "catalogStatus": "covered",
+      "entityName": "Sancor Seguros",
+      "entityId": 172,
+      "domain": "sancorseguros.com.ar"
+    },
+    {
+      "query": "san cristobal logo",
+      "impressions": 26,
+      "catalogStatus": "covered",
+      "entityName": "San Cristóbal Seguros",
+      "entityId": 174,
+      "domain": "sancristobal.com.ar"
+    },
+    {
+      "query": "logo aluar",
+      "impressions": 25,
+      "catalogStatus": "covered",
+      "entityName": "Aluar",
+      "entityId": 363,
+      "domain": "www.aluar.com.ar"
+    },
+    {
+      "query": "logo arba",
+      "impressions": 25,
+      "catalogStatus": "covered",
+      "entityName": "ARBA",
+      "entityId": 450,
+      "domain": "web.arba.gov.ar"
+    },
+    {
+      "query": "logo cerveza corona",
+      "impressions": 24,
+      "catalogStatus": "covered",
+      "entityName": "Cerveza Corona",
+      "entityId": 314,
+      "domain": "www.cervezacorona.com.ar"
+    },
+    {
+      "query": "logo rio negro",
+      "impressions": 23,
+      "catalogStatus": "covered",
+      "entityName": "Río Negro",
+      "entityId": 344,
+      "domain": "rionegro.com.ar"
+    },
+    {
+      "query": "clarin logo png",
+      "impressions": 22,
+      "catalogStatus": "covered",
+      "entityName": "Clarín",
+      "entityId": 104,
+      "domain": "clarin.com"
+    },
+    {
+      "query": "logo banco de corrientes",
+      "impressions": 20,
+      "catalogStatus": "covered",
+      "entityName": "Banco de Corrientes",
+      "entityId": 349,
+      "domain": "www.bancodecorrientes.com.ar"
+    },
+    {
+      "query": "logo pampa",
+      "impressions": 20,
+      "catalogStatus": "covered",
+      "entityName": "Pampa Energía",
+      "entityId": 215,
+      "domain": "pampaenergia.com"
+    },
+    {
+      "query": "mcdonalds png",
+      "impressions": 20,
+      "catalogStatus": "covered",
+      "entityName": "McDonald's",
+      "entityId": 195,
+      "domain": "www.mcdonalds.com.ar"
+    },
+    {
+      "query": "react png",
+      "impressions": 20,
+      "catalogStatus": "covered",
+      "entityName": "React",
+      "entityId": 422,
+      "domain": "react.dev"
+    },
+    {
+      "query": "logo uala",
+      "impressions": 19,
+      "catalogStatus": "covered",
+      "entityName": "Ualá",
+      "entityId": 21,
+      "domain": "uala.com.ar"
+    },
+    {
+      "query": "logo transener",
+      "impressions": 19,
+      "catalogStatus": "covered",
+      "entityName": "Transener",
+      "entityId": 376,
+      "domain": "www.transener.com.ar"
+    },
+    {
+      "query": "logo loma negra",
+      "impressions": 18,
+      "catalogStatus": "covered",
+      "entityName": "Loma Negra",
+      "entityId": 372,
+      "domain": "www.lomanegra.com"
+    },
+    {
+      "query": "logo tommy hilfiger png",
+      "impressions": 18,
+      "catalogStatus": "covered",
+      "entityName": "Tommy Hilfiger",
+      "entityId": 335,
+      "domain": "ar.tommy.com"
+    },
+    {
+      "query": "todo noticias logo",
+      "impressions": 18,
+      "catalogStatus": "covered",
+      "entityName": "TN (Todo Noticias)",
+      "entityId": 103,
+      "domain": "tn.com.ar"
+    },
+    {
+      "query": "logo banco de la pampa",
+      "impressions": 17,
+      "catalogStatus": "covered",
+      "entityName": "Banco de La Pampa",
+      "entityId": 350,
+      "domain": "bancodelapampa.com.ar"
+    },
+    {
+      "query": "logo tripadvisor png",
+      "impressions": 17,
+      "catalogStatus": "covered",
+      "entityName": "TripAdvisor",
+      "entityId": 327,
+      "domain": "tripadvisor.com.ar"
+    },
+    {
+      "query": "polymarket logo",
+      "impressions": 17,
+      "catalogStatus": "covered",
+      "entityName": "Polymarket",
+      "entityId": 419,
+      "domain": "polymarket.com"
+    },
+    {
+      "query": "club de la milanesa logo",
+      "impressions": 16,
+      "catalogStatus": "covered",
+      "entityName": "El Club de la Milanesa",
+      "entityId": 198,
+      "domain": "elclubdelamilanesa.com"
+    },
+    {
+      "query": "logo byma",
+      "impressions": 16,
+      "catalogStatus": "covered",
+      "entityName": "BYMA",
+      "entityId": 367,
+      "domain": "www.byma.com.ar"
+    },
+    {
+      "query": "logo paladini png",
+      "impressions": 16,
+      "catalogStatus": "covered",
+      "entityName": "Paladini",
+      "entityId": 319,
+      "domain": "paladini.com.ar"
+    },
+    {
+      "query": "logo supervielle",
+      "impressions": 15,
+      "catalogStatus": "covered",
+      "entityName": "Banco Supervielle",
+      "entityId": 10,
+      "domain": "www.supervielle.com.ar"
+    },
+    {
+      "query": "infobae logo png",
+      "impressions": 14,
+      "catalogStatus": "covered",
+      "entityName": "Infobae",
+      "entityId": 101,
+      "domain": "infobae.com"
+    },
+    {
+      "query": "logo accor",
+      "impressions": 14,
+      "catalogStatus": "covered",
+      "entityName": "Accord Salud",
+      "entityId": 488,
+      "domain": "www.accordsalud.com.ar"
+    },
+    {
+      "query": "logo mapfre png",
+      "impressions": 14,
+      "catalogStatus": "covered",
+      "entityName": "Mapfre",
+      "entityId": 176,
+      "domain": "mapfre.com.ar"
+    }
+  ]
+}

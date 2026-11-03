@@ -1,0 +1,37 @@
+name: Logo quality
+
+on:
+  pull_request:
+    paths:
+      - "lib/logos-data.ts"
+      - "lib/logo-quality/**"
+      - "lib/entity-logo.ts"
+      - "public/logos/**"
+      - "scripts/check-logos.mts"
+      - "scripts/check-logos.test.mts"
+      - "data/logo-sources-*.json"
+  push:
+    branches:
+      - main
+    paths:
+      - "lib/logos-data.ts"
+      - "lib/logo-quality/**"
+      - "lib/entity-logo.ts"
+      - "public/logos/**"
+      - "scripts/check-logos.mts"
+
+jobs:
+  check-logos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test:logos
+      - run: pnpm check:logos

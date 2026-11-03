@@ -19,3 +19,4 @@ public/sitemap.xml
 .pnpm-store/
 .cache/
 .verify-loguitos/
+data/logo-check-report.json
