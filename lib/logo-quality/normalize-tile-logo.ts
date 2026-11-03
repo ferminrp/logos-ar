@@ -1,12 +1,21 @@
 import sharp from "sharp"
 
 const CANVAS = 256
-const MIN_CONTENT_FILL = 0.68
+const DEFAULT_MIN_CONTENT_FILL = 0.68
+
+export type NormalizeTileLogoOptions = {
+  /** Fraction of canvas edge used as the scaling target (default 0.68). */
+  minContentFill?: number
+}
 
 /**
  * Trim whitespace, scale so content fills ~60% of the square canvas, center on transparent PNG.
  */
-export async function normalizeLogoForTile(source: Buffer): Promise<Buffer> {
+export async function normalizeLogoForTile(
+  source: Buffer,
+  options: NormalizeTileLogoOptions = {},
+): Promise<Buffer> {
+  const minContentFill = options.minContentFill ?? DEFAULT_MIN_CONTENT_FILL
   const trimmed = await sharp(source, { failOn: "none", density: 200 })
     .trim()
     .png()
@@ -15,7 +24,7 @@ export async function normalizeLogoForTile(source: Buffer): Promise<Buffer> {
   const meta = await sharp(trimmed).metadata()
   const cw = meta.width ?? CANVAS
   const ch = meta.height ?? CANVAS
-  const target = CANVAS * MIN_CONTENT_FILL
+  const target = CANVAS * minContentFill
   const scale = Math.min(target / Math.max(cw, ch), 4)
   let nw = Math.max(1, Math.round(cw * scale))
   let nh = Math.max(1, Math.round(ch * scale))
