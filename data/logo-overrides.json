@@ -176,8 +176,8 @@
     "logoSource": "site"
   },
   "solana.com": {
-    "logoUrl": "https://solana.com/_next/static/media/apple-touch-icon.e9b82e54.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/solana.png",
+    "logoSource": "hosted"
   },
   "www.base.org": {
     "logoUrl": "https://base.org/images/base-open-graph-v2.png",
@@ -344,8 +344,8 @@
     "logoSource": "google"
   },
   "www.iosfa.gob.ar": {
-    "logoUrl": "https://www.iosfa.gob.ar/og.jpeg",
-    "logoSource": "site"
+    "logoUrl": "/logos/iosfa.png",
+    "logoSource": "hosted"
   },
   "www.osseg.org.ar": {
     "logoUrl": "https://www.osseg.org.ar/favicon.ico",
@@ -464,8 +464,8 @@
     "logoSource": "site"
   },
   "www.antina.com.ar": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=www.antina.com.ar&sz=256",
-    "logoSource": "google"
+    "logoUrl": "/logos/antina.png",
+    "logoSource": "hosted"
   },
   "www.starlink.com": {
     "logoUrl": "/logos/starlink.png",
@@ -1049,6 +1049,10 @@
   },
   "www.fiwind.io": {
     "logoUrl": "/logos/fiwind.png",
+    "logoSource": "hosted"
+  },
+  "metamask.com": {
+    "logoUrl": "/logos/metamask.png",
     "logoSource": "hosted"
   }
 }

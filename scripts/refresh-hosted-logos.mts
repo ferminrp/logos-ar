@@ -60,6 +60,10 @@ const SOURCES: Record<string, string> = {
   "don-satur":
     "https://www.donsatur.com.ar/wp-content/uploads/2020/11/logo-don-satur-RGB.png",
   ioio: "https://ioio.com.ar/wp-content/uploads/2023/04/logo-ioio-102.png",
+  metamask: "https://metamask.com/favicons/default/apple-touch-icon.png",
+  solana: "https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png",
+  iosfa: "https://cta.iosfa.gob.ar/assets/logo-iosfa.svg",
+  antina: "https://www.antina.com.ar/img/antina-logo.svg",
 }
 
 async function fetchBytes(url: string): Promise<Buffer | null> {
@@ -75,7 +79,19 @@ async function fetchBytes(url: string): Promise<Buffer | null> {
   }
 }
 
+function parseOnlySlugs(argv: string[]): Set<string> | null {
+  const flag = argv.find((arg) => arg.startsWith("--only="))
+  if (!flag) return null
+  const slugs = flag
+    .slice("--only=".length)
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+  return slugs.length > 0 ? new Set(slugs) : null
+}
+
 async function main() {
+  const only = parseOnlySlugs(process.argv.slice(2))
   const entities = getAllEntities()
   const overrides = JSON.parse(await readFile(overridesPath, "utf8")) as Record<
     string,
@@ -83,6 +99,7 @@ async function main() {
   >
 
   for (const [slug, url] of Object.entries(SOURCES)) {
+    if (only && !only.has(slug)) continue
     const entity = entities.find((e) => e.slug === slug)
     if (!entity) {
       console.warn("skip slug (not in catalog)", slug)
