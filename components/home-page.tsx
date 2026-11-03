@@ -11,6 +11,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { categories, type Category } from "@/lib/logos-data"
+import { entityMatchesSearchQuery } from "@/lib/entity-search"
 import { FLAGS_CATEGORY, flags } from "@/lib/flags-data"
 import { cn } from "@/lib/utils"
 
@@ -30,10 +31,8 @@ export function HomePage() {
   const filteredCategories: Category[] = categories
     .map((category) => ({
       ...category,
-      entities: category.entities.filter(
-        (entity) =>
-          entity.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          entity.domain.toLowerCase().includes(searchQuery.toLowerCase())
+      entities: category.entities.filter((entity) =>
+        entityMatchesSearchQuery(entity, searchQuery)
       ),
     }))
     .filter((category) => category.entities.length > 0)

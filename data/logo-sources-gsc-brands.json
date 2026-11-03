@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "changan",
+    "name": "Changan",
+    "categoryId": "automotores",
+    "domain": "changan.com.ar",
+    "sourceUrl": "https://changan.com.ar/changan-logo.webp",
+    "demandReason": "GSC: logo de changan"
+  },
+  {
+    "slug": "bpn-banco-provincia-de-neuquen",
+    "name": "BPN (Banco Provincia de Neuquén)",
+    "categoryId": "bancos",
+    "domain": "www.bpn.com.ar",
+    "sourceUrl": "https://www.bpn.com.ar/",
+    "demandReason": "GSC: bpn logo"
+  },
+  {
+    "slug": "stella-artois",
+    "name": "Stella Artois",
+    "categoryId": "alimentos",
+    "domain": "www.stellaartois.com",
+    "sourceUrl": "https://www.ab-inbev.com/our-brands",
+    "demandReason": "Marca AB InBev — activo en portfolio oficial Our Brands"
+  },
+  {
+    "slug": "brahma",
+    "name": "Brahma",
+    "categoryId": "alimentos",
+    "domain": "brahma.com.ar",
+    "sourceUrl": "https://www.ab-inbev.com/our-brands",
+    "demandReason": "Marca AB InBev — activo en portfolio oficial Our Brands"
+  },
+  {
+    "slug": "banco-de-cordoba-bancor",
+    "name": "Banco de Córdoba (BANCOR)",
+    "categoryId": "bancos",
+    "domain": "bancor.com.ar",
+    "sourceUrl": "https://www.bancor.com.ar/assets-e2/uploads/Logo_Bancor_1200x630_verde_OG_c3679f31a7.png",
+    "demandReason": "GSC: logo bancor"
+  },
+  {
+    "slug": "accor-ibis-novotel-etc",
+    "name": "Accor (Ibis, Novotel, etc.)",
+    "categoryId": "turismo",
+    "domain": "all.accor.com",
+    "sourceUrl": "https://static-p46175-e229011.adobeaemcloud.com/bdc628edbcb46ac553fd4d8e093da0f899b8cb9b6e0e77e05ca5f028c5edc60e/resources/images/apple-touch-icon.png",
+    "demandReason": "GSC: logo accor"
+  },
+  {
+    "slug": "intercontinental-ihg",
+    "name": "InterContinental (IHG)",
+    "categoryId": "turismo",
+    "domain": "ihg.com",
+    "sourceUrl": "https://digital.ihg.com/is/image/ihg/app-web-chiclet-ihg?fmt=png-alpha",
+    "demandReason": "Asset oficial IHG digital library"
+  },
+  {
+    "slug": "gol-linhas-aereas",
+    "name": "Gol Linhas Aéreas",
+    "categoryId": "turismo",
+    "domain": "voegol.com.br",
+    "sourceUrl": "https://www.voegol.com.br/",
+    "demandReason": "Sitio oficial GOL"
+  },
+  {
+    "slug": "coto",
+    "name": "Coto",
+    "categoryId": "retail",
+    "domain": "coto.com.ar",
+    "sourceUrl": "https://www.coto.com.ar/",
+    "demandReason": "Sitio oficial Coto"
+  }
+]

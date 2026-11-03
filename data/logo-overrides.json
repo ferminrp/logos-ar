@@ -20,8 +20,8 @@
     "logoSource": "site"
   },
   "bancor.com.ar": {
-    "logoUrl": "https://www.bancor.com.ar/assets-e2/uploads/Logo_Bancor_1200x630_verde_OG_c3679f31a7.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/banco-de-cordoba-bancor.png",
+    "logoSource": "hosted"
   },
   "naranjax.com": {
     "logoUrl": "/logos/naranja-x.png",
@@ -500,8 +500,8 @@
     "logoSource": "site"
   },
   "changan.com.ar": {
-    "logoUrl": "https://changan.com.ar/favicon.ico?favicon.0m1n394f_b0~c.ico",
-    "logoSource": "site"
+    "logoUrl": "/logos/changan.png",
+    "logoSource": "hosted"
   },
   "www.volvocars.com": {
     "logoUrl": "https://www.volvocars.com/static/shared/images/favicons/apple-touch-icon-precomposed-180x180.v2.png",
@@ -616,8 +616,8 @@
     "logoSource": "google"
   },
   "all.accor.com": {
-    "logoUrl": "https://static-p46175-e229011.adobeaemcloud.com/bdc628edbcb46ac553fd4d8e093da0f899b8cb9b6e0e77e05ca5f028c5edc60e/resources/images/apple-touch-icon.png",
-    "logoSource": "site"
+    "logoUrl": "/logos/accor-ibis-novotel-etc.png",
+    "logoSource": "hosted"
   },
   "avis.com.ar": {
     "logoUrl": "https://avisbudgetgroup.com.ar/icon/avis/apple-icon-180x180.png",
@@ -628,8 +628,8 @@
     "logoSource": "hosted"
   },
   "ihg.com": {
-    "logoUrl": "https://digital.ihg.com/is/image/ihg/app-web-chiclet-ihg?fmt=png-alpha",
-    "logoSource": "site"
+    "logoUrl": "/logos/intercontinental-ihg.png",
+    "logoSource": "hosted"
   },
   "radisson.com.ar": {
     "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=radisson.com.ar&sz=256",
@@ -1053,6 +1053,14 @@
   },
   "metamask.com": {
     "logoUrl": "/logos/metamask.png",
+    "logoSource": "hosted"
+  },
+  "www.stellaartois.com": {
+    "logoUrl": "/logos/stella-artois.png",
+    "logoSource": "hosted"
+  },
+  "brahma.com.ar": {
+    "logoUrl": "/logos/brahma.png",
     "logoSource": "hosted"
   }
 }
