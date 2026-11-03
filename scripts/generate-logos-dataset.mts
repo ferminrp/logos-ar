@@ -3,6 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { categories } from "../lib/logos-data.ts"
+import { getEntitySearchHaystack } from "../lib/entity-search.ts"
 import { getEntityLogoUrl } from "../lib/entity-logo.ts"
 import {
   getDuckDuckGoFaviconUrl,
@@ -18,6 +19,7 @@ type LogoItem = {
   logo_source?: string
   categoryId: string
   categoryName: string
+  searchText: string
 }
 
 type GeneratedDataset = {
@@ -42,6 +44,7 @@ async function main() {
       logo_source: entity.logoSource ?? (entity.logoUrl ? "hosted" : "google"),
       categoryId: category.id,
       categoryName: category.name,
+      searchText: getEntitySearchHaystack(entity),
     })),
   )
 

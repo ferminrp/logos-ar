@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import logosDataset from "@/data/logos-dataset.json"
 import flagsDataset from "@/data/flags-dataset.json"
+import { entityMatchesSearchQuery } from "@/lib/entity-search"
 
 type LogoItem = {
   name: string
@@ -9,6 +10,7 @@ type LogoItem = {
   duck_domain: string
   categoryId: string
   categoryName: string
+  searchText?: string
 }
 
 type FlagItem = {
@@ -56,10 +58,7 @@ function matchesQuery(item: CatalogItem, q: string): boolean {
     )
   }
 
-  return (
-    item.name.toLowerCase().includes(q) ||
-    item.domain.toLowerCase().includes(q)
-  )
+  return entityMatchesSearchQuery(item, q)
 }
 
 function matchesDomain(item: CatalogItem, domain: string): boolean {

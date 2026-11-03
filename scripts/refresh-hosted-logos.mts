@@ -60,6 +60,17 @@ const SOURCES: Record<string, string> = {
   "don-satur":
     "https://www.donsatur.com.ar/wp-content/uploads/2020/11/logo-don-satur-RGB.png",
   ioio: "https://ioio.com.ar/wp-content/uploads/2023/04/logo-ioio-102.png",
+  changan: "https://changan.com.ar/changan-logo.webp",
+  "stella-artois":
+    "https://cdn.builder.io/api/v1/image/assets%2F2e5c7fb020194c1a8ee80f743d0b923e%2F7ead61314a3646b38e50edfc51c2c372?width=675",
+  brahma:
+    "https://cdn.builder.io/api/v1/image/assets%2F2e5c7fb020194c1a8ee80f743d0b923e%2F2e12c8fe55af4067a62ab61a72fc813d?width=909",
+  "banco-de-cordoba-bancor":
+    "https://www.bancor.com.ar/assets-e2/uploads/Logo_Bancor_1200x630_verde_OG_c3679f31a7.png",
+  "accor-ibis-novotel-etc":
+    "https://static-p46175-e229011.adobeaemcloud.com/bdc628edbcb46ac553fd4d8e093da0f899b8cb9b6e0e77e05ca5f028c5edc60e/resources/images/apple-touch-icon.png",
+  "intercontinental-ihg":
+    "https://digital.ihg.com/is/image/ihg/app-web-chiclet-ihg?fmt=png-alpha",
   metamask: "https://metamask.com/favicons/default/apple-touch-icon.png",
   solana: "https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png",
   iosfa: "https://cta.iosfa.gob.ar/assets/logo-iosfa.svg",
@@ -158,6 +169,12 @@ async function main() {
     if (slug === "mobbex") {
       prepared = await sharp(raw, { density: 200, failOn: "none" })
         .resize(420, 420, { fit: "contain", background: { r: 255, g: 255, b: 255, alpha: 1 } })
+        .flatten({ background: "#ffffff" })
+        .png()
+        .toBuffer()
+    }
+    if (slug === "changan") {
+      prepared = await sharp(raw, { density: 240, failOn: "none" })
         .flatten({ background: "#ffffff" })
         .png()
         .toBuffer()
