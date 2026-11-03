@@ -16,10 +16,13 @@ export function getEntitySearchHaystack(
 }
 
 export function entityMatchesSearchQuery(
-  entity: Pick<Entity, "name" | "domain" | "seoAliases">,
+  entity: Pick<Entity, "name" | "domain" | "seoAliases"> & {
+    searchText?: string
+  },
   rawQuery: string,
 ): boolean {
   const query = normalizeSearchText(rawQuery)
   if (!query) return true
-  return getEntitySearchHaystack(entity).includes(query)
+  const haystack = entity.searchText ?? getEntitySearchHaystack(entity)
+  return haystack.includes(query)
 }

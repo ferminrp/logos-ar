@@ -58,11 +58,7 @@ function matchesQuery(item: CatalogItem, q: string): boolean {
     )
   }
 
-  return (
-    (item.searchText?.includes(q) ?? false) ||
-    item.name.toLowerCase().includes(q) ||
-    item.domain.toLowerCase().includes(q)
-  )
+  return entityMatchesSearchQuery(item, q)
 }
 
 function matchesDomain(item: CatalogItem, domain: string): boolean {
