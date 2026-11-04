@@ -1,10 +1,17 @@
 import type { Category } from "./logos-data.ts"
 
+export interface CategoryFeaturedLogoLink {
+  slug: string
+  heading: string
+  description: string
+}
+
 export interface CategorySeoCopy {
   h1: string
   title: string
   metaDescription: string
   introLead?: string
+  featuredLogoLink?: CategoryFeaturedLogoLink
 }
 
 const CATEGORY_SEO: Partial<Record<string, CategorySeoCopy>> = {
@@ -15,6 +22,12 @@ const CATEGORY_SEO: Partial<Record<string, CategorySeoCopy>> = {
       "Logos de bancos argentinos en PNG y SVG con fondo transparente. Galicia, Nación, BBVA, Santander, Macro, Provincia y más. Descarga gratis.",
     introLead:
       "Directorio de logos de bancos tradicionales, públicos y digitales de Argentina.",
+    featuredLogoLink: {
+      slug: "banco-de-la-nacion-argentina",
+      heading: "Logo Banco Nación (BNA)",
+      description:
+        "PNG y SVG con fondo transparente y descarga gratis. Página dedicada al BNA para búsquedas como logo banco nación png.",
+    },
   },
   prepagas: {
     h1: "Logos de prepagas y obras sociales en Argentina",

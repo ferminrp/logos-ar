@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { getAllEntitySlugs } from "./entity-index.ts"
+import { GONE_LOGO_SLUGS } from "./gone-logo-slugs.ts"
 import { getAllGuideSlugs } from "./guide-data.ts"
 import { categories } from "./logos-data.ts"
 import { getSiteUrl } from "./site-url.ts"
@@ -48,7 +49,9 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
     },
   ]
 
-  const entityPages: MetadataRoute.Sitemap = getAllEntitySlugs().map(
+  const entityPages: MetadataRoute.Sitemap = getAllEntitySlugs()
+    .filter((slug) => !GONE_LOGO_SLUGS.has(slug))
+    .map(
     (slug) => ({
       url: `${siteUrl}/logo/${slug}`,
       lastModified: now,

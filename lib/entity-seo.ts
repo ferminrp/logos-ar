@@ -3,6 +3,11 @@ import { getAllEntities, type EntityRecord } from "./entity-index.ts"
 export const SITE_SUFFIX = " | Loguitos"
 export const MAX_ENTITY_TITLE_LENGTH = 60
 
+/** Shorter display names for `<title>` when the catalog name is too long for CTR keywords. */
+const ENTITY_TITLE_DISPLAY_NAMES: Partial<Record<string, string>> = {
+  "banco-de-la-nacion-argentina": "BNA Banco Nación",
+}
+
 const TITLE_MIDDLE_VARIANTS = [
   " PNG y SVG gratis",
   " PNG y SVG",
@@ -62,7 +67,8 @@ function buildTitleForDisplayName(displayName: string): string {
 }
 
 export function buildEntityPageTitle(entity: EntityRecord): string {
-  const displayName = stripTrailingParens(entity.name)
+  const displayName =
+    ENTITY_TITLE_DISPLAY_NAMES[entity.slug] ?? stripTrailingParens(entity.name)
   return buildTitleForDisplayName(displayName)
 }
 
