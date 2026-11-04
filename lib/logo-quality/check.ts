@@ -25,6 +25,10 @@ import {
   evaluateInvisibleOnLightBackground,
   hammingDistance,
 } from "./visual-analysis.ts"
+import {
+  type FetchRetryOptions,
+  wrapFetchWithRetry,
+} from "./fetch-retry.ts"
 
 export type LogoCheckCode =
   | "fetch-failed"
@@ -72,6 +76,8 @@ export type CheckCatalogOptions = {
   skipRedirectCheck?: boolean
   skipVisualCheck?: boolean
   concurrency?: number
+  skipFetchRetry?: boolean
+  fetchRetry?: FetchRetryOptions
 }
 
 type DHashOwner = {
@@ -184,6 +190,10 @@ export async function checkEntityLogo(
   dHashOwners: DHashOwner[],
   options: CheckCatalogOptions = {},
 ): Promise<LogoCheckResult> {
+  const resolvedOptions: CheckCatalogOptions = {
+    ...options,
+    fetchImpl: resolveFetchImpl(options),
+  }
   const logoUrl = getEntityLogoUrl(entity, GOOGLE_FAVICON_CHECK_SIZE)
   const issues: LogoCheckIssue[] = []
 
@@ -196,7 +206,7 @@ export async function checkEntityLogo(
         message: `Dominio redirige a otra marca (${mismatchTarget})`,
       })
     } else {
-      const site = await resolveSiteHostname(entity.domain, options.fetchImpl)
+      const site = await resolveSiteHostname(entity.domain, resolvedOptions.fetchImpl)
       if (!("error" in site) && !domainsEquivalent(site.finalHost, expectedHost)) {
         const sharedPortal =
           site.finalHost.endsWith("argentina.gob.ar") &&
@@ -215,7 +225,7 @@ export async function checkEntityLogo(
   }
 
   try {
-    const { bytes, status, contentType } = await loadLogoBytes(logoUrl, options)
+    const { bytes, status, contentType } = await loadLogoBytes(logoUrl, resolvedOptions)
     if (status !== 200) {
       issues.push({
         code: "fetch-failed",
@@ -337,6 +347,14 @@ export async function checkEntityLogo(
       issues,
     }
   }
+}
+
+function resolveFetchImpl(options: CheckCatalogOptions): typeof fetch {
+  const baseFetch = options.fetchImpl ?? fetch
+  if (options.skipFetchRetry) {
+    return baseFetch
+  }
+  return wrapFetchWithRetry(baseFetch, options.fetchRetry)
 }
 
 export async function checkEntityLogos(

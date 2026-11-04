@@ -15,6 +15,18 @@ import {
   evaluateVisualAnalysis,
   hammingDistance,
 } from "../lib/logo-quality/visual-analysis.ts"
+import {
+  collectChangedSlugsFromPatch,
+  isBlockingFailure,
+  slugFromHostedLogoPath,
+} from "../lib/logo-quality/changed-entities.ts"
+import {
+  computeRetryDelayMs,
+  fetchWithRetry,
+  isTransientFetchFailure,
+  isTransientHttpStatus,
+} from "../lib/logo-quality/fetch-retry.ts"
+import { getAllEntities } from "../lib/entity-index.ts"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const fixturesDir = path.join(__dirname, "../lib/logo-quality/fixtures")
@@ -218,4 +230,157 @@ test("checkEntityLogos flags near-duplicate perceptual hash across brands", asyn
     duplicateIssues.includes("near-duplicate-visual") ||
       duplicateIssues.includes("duplicate-hash"),
   )
+})
+
+test("isTransientHttpStatus treats 429 and 5xx as transient", () => {
+  assert.equal(isTransientHttpStatus(429), true)
+  assert.equal(isTransientHttpStatus(503), true)
+  assert.equal(isTransientHttpStatus(404), false)
+})
+
+test("isTransientFetchFailure skips consistent 404", () => {
+  assert.equal(isTransientFetchFailure(404, null), false)
+  assert.equal(isTransientFetchFailure(503, null), true)
+  assert.equal(isTransientFetchFailure(null, new TypeError("fetch failed")), true)
+})
+
+test("computeRetryDelayMs stays within bounds with fixed random", () => {
+  const delay = computeRetryDelayMs(2, {
+    baseDelayMs: 100,
+    maxDelayMs: 500,
+    random: () => 0,
+  })
+  assert.equal(delay, 200)
+})
+
+test("fetchWithRetry retries transient 503 then succeeds", async () => {
+  let calls = 0
+  const fetchImpl = async () => {
+    calls++
+    if (calls < 3) {
+      return new Response("error", { status: 503 })
+    }
+    return new Response(new Uint8Array([1, 2, 3]), { status: 200 })
+  }
+  const response = await fetchWithRetry(fetchImpl as typeof fetch, "https://example.com/x", {}, {
+    sleep: async () => {},
+    random: () => 0,
+  })
+  assert.equal(response.status, 200)
+  assert.equal(calls, 3)
+})
+
+test("fetchWithRetry does not retry 404", async () => {
+  let calls = 0
+  const fetchImpl = async () => {
+    calls++
+    return new Response("missing", { status: 404 })
+  }
+  const response = await fetchWithRetry(fetchImpl as typeof fetch, "https://example.com/x", {}, {
+    sleep: async () => {
+      throw new Error("should not sleep")
+    },
+  })
+  assert.equal(response.status, 404)
+  assert.equal(calls, 1)
+})
+
+test("slugFromHostedLogoPath extracts slug", () => {
+  assert.equal(slugFromHostedLogoPath("public/logos/mercado-pago.png"), "mercado-pago")
+  assert.equal(slugFromHostedLogoPath("lib/logos-data.ts"), null)
+})
+
+test("collectChangedSlugsFromPatch maps ids, domains, and hosted paths", () => {
+  const entities = getAllEntities()
+  const galicia = entities.find((entity) => entity.id === 4)
+  assert.ok(galicia)
+  const patch = [
+    `+      { id: ${galicia!.id}, name: "Banco Galicia", domain: "www.galicia.ar" },`,
+    `+    "naranjax.com": {`,
+    `+      "logoUrl": "/logos/naranja-x.png",`,
+  ].join("\n")
+  const slugs = collectChangedSlugsFromPatch(patch, entities)
+  assert.ok(slugs.has(galicia!.slug))
+  assert.ok(slugs.has("naranja-x"))
+})
+
+test("collectChangedSlugsFromPatch maps in-place logoUrl override edits", () => {
+  const entities = getAllEntities()
+  const naranja = entities.find((entity) => entity.domain === "naranjax.com")
+  assert.ok(naranja)
+  const patch = [
+    '   "naranjax.com": {',
+    '-    "logoUrl": "https://old.example/logo.png",',
+    '+    "logoUrl": "https://new.example/logo.png",',
+  ].join("\n")
+  const slugs = collectChangedSlugsFromPatch(patch, entities)
+  assert.ok(slugs.has(naranja!.slug))
+})
+
+test("fetchWithRetry applies a fresh timeout signal on each attempt", async () => {
+  let calls = 0
+  const fetchImpl = async (_url: string, init?: RequestInit) => {
+    calls++
+    assert.equal(init?.signal?.aborted, false)
+    if (calls === 1) {
+      throw new DOMException("The operation was aborted.", "TimeoutError")
+    }
+    return new Response("ok", { status: 200 })
+  }
+  const response = await fetchWithRetry(
+    fetchImpl as typeof fetch,
+    "https://example.com/x",
+    { signal: AbortSignal.timeout(1) },
+    { sleep: async () => {} },
+  )
+  assert.equal(response.status, 200)
+  assert.equal(calls, 2)
+})
+
+test("isBlockingFailure respects PR-scoped slug set", () => {
+  const blocking = new Set(["mercado-pago"])
+  assert.equal(isBlockingFailure("mercado-pago", blocking), true)
+  assert.equal(isBlockingFailure("la-caja-seguros", blocking), false)
+  assert.equal(isBlockingFailure("la-caja-seguros", null), true)
+})
+
+test("checkEntityLogos uses retrying fetch on transient network errors", async () => {
+  let calls = 0
+  const pngBytes = await sharp({
+    create: { width: 512, height: 512, channels: 3, background: "#336699" },
+  })
+    .png()
+    .toBuffer()
+  assert.ok(pngBytes.length >= MIN_LOGO_BYTES)
+
+  const fetchImpl = async () => {
+    calls++
+    if (calls === 1) {
+      throw new TypeError("fetch failed")
+    }
+    return new Response(pngBytes, {
+      status: 200,
+      headers: { "content-type": "image/png" },
+    })
+  }
+
+  const result = await checkEntityLogo(
+    {
+      id: 9001,
+      name: "Retry Test",
+      domain: "retry-test.example",
+      slug: "retry-test",
+      logoUrl: "https://retry-test.example/logo.png",
+    },
+    new Map(),
+    [],
+    {
+      skipRedirectCheck: true,
+      skipVisualCheck: true,
+      fetchImpl: fetchImpl as typeof fetch,
+      fetchRetry: { sleep: async () => {} },
+    },
+  )
+  assert.equal(calls, 2)
+  assert.equal(result.ok, true)
 })

@@ -9,6 +9,7 @@ on:
       - "public/logos/**"
       - "scripts/check-logos.mts"
       - "scripts/check-logos.test.mts"
+      - "data/logo-overrides.json"
       - "data/logo-sources-*.json"
   push:
     branches:
@@ -19,12 +20,19 @@ on:
       - "lib/entity-logo.ts"
       - "public/logos/**"
       - "scripts/check-logos.mts"
+      - "data/logo-overrides.json"
+      - "data/logo-sources-*.json"
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
 
 jobs:
   check-logos:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: pnpm/action-setup@v4
         with:
           version: 9
@@ -34,4 +42,15 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm test:logos
-      - run: pnpm check:logos
+      - name: Fetch PR base for scoped logo check
+        if: github.event_name == 'pull_request'
+        run: git fetch origin "${{ github.base_ref }}"
+      - name: Check logos (PR scope)
+        if: github.event_name == 'pull_request'
+        env:
+          LOGO_CHECK_SCOPE: pr
+          LOGO_CHECK_BASE_REF: origin/${{ github.base_ref }}
+        run: pnpm check:logos
+      - name: Check logos (full catalog)
+        if: github.event_name != 'pull_request'
+        run: pnpm check:logos
