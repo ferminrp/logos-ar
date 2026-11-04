@@ -86,7 +86,8 @@ export function LogoDownloadButtons({
 
   const showPng = true
   const showSvg = true
-  const pngVariant = layout === "hero" ? "default" : "outline"
+  const pngVariant =
+    layout === "hero" ? ("logo-download-png" as const) : ("outline" as const)
 
   return (
     <div className="space-y-2">

@@ -16,6 +16,7 @@ export type LogoDetailA11yEntry = {
   downloadSvgHeight: number
   copyMinHeight: number
   pngContrast: number
+  pngContrastHover: number
 }
 
 export type LogoDetailA11yReport = {
@@ -25,8 +26,13 @@ export type LogoDetailA11yReport = {
     minPngContrast: number
   }
   beforeReference: {
-    primaryToken: string
+    backgroundToken: "--primary",
     pngContrast: number
+    pngContrastHover?: number
+  }
+  afterTokens: {
+    background: string
+    backgroundHover: string
   }
   slugs: Record<string, Record<string, LogoDetailA11yEntry>>
 }
@@ -85,8 +91,12 @@ export async function runLogoDetailA11ySmoke(
       minPngContrast: MIN_PNG_BUTTON_CONTRAST,
     },
     beforeReference: {
-      primaryToken: "oklch(0.62 0.07 240)",
+      backgroundToken: "--primary",
       pngContrast: 3.51,
+    },
+    afterTokens: {
+      background: "--logo-download-png",
+      backgroundHover: "--logo-download-png-hover",
     },
     slugs: {},
   }
@@ -132,12 +142,16 @@ export async function runLogoDetailA11ySmoke(
         }
       })
 
+      const pngButton = page.getByRole("button", { name: "Descargar PNG" })
       const pngContrast = await measurePngButtonContrast(page)
+      await pngButton.hover()
+      const pngContrastHover = await measurePngButtonContrast(page)
       await page.close()
 
       report.slugs[slug][viewport.name] = {
         ...metrics,
         pngContrast: Number(pngContrast.toFixed(2)),
+        pngContrastHover: Number(pngContrastHover.toFixed(2)),
       }
     }
   }
@@ -173,6 +187,11 @@ export function assertLogoDetailA11y(report: LogoDetailA11yReport): void {
       if (entry.pngContrast < MIN_PNG_BUTTON_CONTRAST) {
         failures.push(
           `${slug}/${viewport}: PNG contrast ${entry.pngContrast}:1 < ${MIN_PNG_BUTTON_CONTRAST}:1`,
+        )
+      }
+      if (entry.pngContrastHover < MIN_PNG_BUTTON_CONTRAST) {
+        failures.push(
+          `${slug}/${viewport}: PNG hover contrast ${entry.pngContrastHover}:1 < ${MIN_PNG_BUTTON_CONTRAST}:1`,
         )
       }
     }
