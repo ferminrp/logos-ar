@@ -304,6 +304,39 @@ test("collectChangedSlugsFromPatch maps ids, domains, and hosted paths", () => {
   assert.ok(slugs.has("naranja-x"))
 })
 
+test("collectChangedSlugsFromPatch maps in-place logoUrl override edits", () => {
+  const entities = getAllEntities()
+  const naranja = entities.find((entity) => entity.domain === "naranjax.com")
+  assert.ok(naranja)
+  const patch = [
+    '   "naranjax.com": {',
+    '-    "logoUrl": "https://old.example/logo.png",',
+    '+    "logoUrl": "https://new.example/logo.png",',
+  ].join("\n")
+  const slugs = collectChangedSlugsFromPatch(patch, entities)
+  assert.ok(slugs.has(naranja!.slug))
+})
+
+test("fetchWithRetry applies a fresh timeout signal on each attempt", async () => {
+  let calls = 0
+  const fetchImpl = async (_url: string, init?: RequestInit) => {
+    calls++
+    assert.equal(init?.signal?.aborted, false)
+    if (calls === 1) {
+      throw new DOMException("The operation was aborted.", "TimeoutError")
+    }
+    return new Response("ok", { status: 200 })
+  }
+  const response = await fetchWithRetry(
+    fetchImpl as typeof fetch,
+    "https://example.com/x",
+    { signal: AbortSignal.timeout(1) },
+    { sleep: async () => {} },
+  )
+  assert.equal(response.status, 200)
+  assert.equal(calls, 2)
+})
+
 test("isBlockingFailure respects PR-scoped slug set", () => {
   const blocking = new Set(["mercado-pago"])
   assert.equal(isBlockingFailure("mercado-pago", blocking), true)
