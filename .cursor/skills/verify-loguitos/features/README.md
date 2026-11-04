@@ -9,6 +9,7 @@ Maintained recipes for user-visible behavior. Read this index before driving the
 - Or attach to dev: `VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:3000` with `pnpm dev` already up
 - Run `pnpm verify:loguitos doctor` before browser steps
 - Chromium for screenshots: `pnpm exec playwright install chromium`
+- Logo asset regression gate (separate from this harness): `pnpm check:logos` after changing hosted PNGs or overrides
 - Do not drive a shared port another developer is using without setting an explicit base URL and port
 
 ## Driving conventions

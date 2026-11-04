@@ -5,7 +5,8 @@ Category landing copy, entity page metadata, legacy slug recovery, and permanent
 ## Sub-features
 
 - `category-seo-landings` — curated H1, intro lead, and meta for selected categories (`bancos`, `prepagas`, `automotrices`, `retail`, `gastronomia`)
-- `entity-metadata` — data-driven `<title>`, meta description, and preview image `alt` on `/logo/[slug]`
+- `entity-metadata` — data-driven `<title>`, meta description, and preview image `alt` on `/logo/[slug]` (compact titles via `MAX_ENTITY_TITLE_LENGTH` and word-boundary shortening in `lib/entity-seo.ts`)
+- `gsc-brands` — high-impression brands and typo aliases from Search Console (for example Changan, Stella Artois, `seoAliases` / `searchText` variants such as Meli, Porche, Superville)
 - `permanent-redirects` — 301/308 recovery for renamed entity slugs and `/categoria/delivery` → `/categoria/gastronomia`
 
 ## How to get to it (user POV)
@@ -22,13 +23,15 @@ Preconditions:
 - Production build (`launch` or `all`) so `next.config.mjs` redirects are active
 
 - **Category landing.** `GET /categoria/bancos` includes visible H1 `Logos de bancos argentinos` and intro lead mentioning bancos tradicionales, públicos y digitales.
-- **Entity metadata.** `GET /logo/banco-provincia` HTML includes meta description starting with `Descargá el logo de Banco Provincia` and document title suffix `| Loguitos`.
+- **Entity metadata.** `GET /logo/banco-provincia` HTML includes meta description starting with `Descargá el logo de Banco Provincia` and a compact document title ending with `| Loguitos` (≤ 60 characters, no ellipsis).
+- **GSC brand.** `GET /logo/changan` returns 200 with Changan in the body (batch-1014 / GSC demand set).
+- **Search alias.** `GET /api/logos?q=meli&limit=5` returns Mercado Libre in `items` (alias baked into dataset `searchText`).
 - **Redirects (manual redirect).** `GET /categoria/delivery` with `redirect: manual` → 301 or 308 with `Location` ending in `/categoria/gastronomia`. Same pattern for `/logo/banco-provincia-bs-as` → `/logo/banco-provincia` and `/logo/tn-todo-noticias` → `/logo/tn` per `data/permanent-redirects.json`.
 - **Automated.** `pnpm verify:loguitos drive` writes `category-bancos-seo-desktop.png` after the logo detail shot.
-- **Proof.** `doctor.json` lists `category-bancos-seo`, `logo-banco-provincia-meta`, and the three `redirect-*` checks; screenshot shows the bancos H1.
+- **Proof.** `doctor.json` lists `category-bancos-seo`, `logo-banco-provincia-meta`, `entity-title-compact`, `logo-changan`, `api-gsc-alias-meli`, and the three `redirect-*` checks; screenshot shows the bancos H1.
 
 ## Gotchas
 
 - Redirect rules exist only in the production server (`next start` / `pnpm build`); `pnpm dev` may not mirror every permanent redirect
 - Categories without overrides still use the generic template from `getCategorySeoCopy` — only the five curated ids have custom H1/title copy
-- Entity visible H1 stays `Logo {name}`; SEO title aliases live in `<title>` / Open Graph, not the on-page heading
+- Entity visible H1 stays `Logo {name}`; SEO title aliases and GSC typo variants live in `<title>`, meta description, and indexed `searchText`, not the on-page heading

@@ -20,11 +20,12 @@ Preconditions:
 - Server running and doctor pass
 
 - **Search.** `GET /api/logos?q=galicia&limit=5` returns 200, JSON with `items` length ≥ 1, and `total` ≥ 1.
+- **GSC alias.** `GET /api/logos?q=meli&limit=5` matches Mercado Libre via dataset `searchText` (also covers typo-style queries such as `porche` → Porsche when present in `searchText`).
 - **Category.** `GET /api/logos?category=bancos&limit=3` returns only `categoryId` bancos when category is valid.
 - **Automated.** Included in `pnpm verify:loguitos doctor` (galicia search assertion).
 - **Proof.** `doctor.json` stores status codes and parsed checks.
 
 ## Gotchas
 
-- Unknown `category` values are ignored for filtering (see route implementation); use ids from docs: `bancos`, `fintechs`, `crypto`, `tecnologias`, `prepagas`, `banderas`
+- Unknown `category` values are ignored for filtering (see route implementation); use ids from docs, including batch-1014 additions such as `telecomunicaciones`, `obras-sociales`, `sanatorios`, `alimentos`, `combustibles`, `seguros`, `indumentaria`, `turismo`, `energia`, and `indie-projects`, plus `bancos`, `fintechs`, `crypto`, `tecnologias`, `prepagas`, `banderas`, `retail`, `medios`, `automotrices`, `gastronomia`, `alycs`, `acciones`, `entes-estatales`
 - `datasetVersion` changes when datasets regenerate on build

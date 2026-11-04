@@ -14,6 +14,27 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const REPO_ROOT = path.resolve(__dirname, "../../../..")
 
+const MAX_ENTITY_TITLE_LENGTH = 60
+
+function extractDocumentTitle(html: string): string | null {
+  const match = html.match(/<title[^>]*>([^<]*)<\/title>/i)
+  return match ? match[1].trim() : null
+}
+
+function assertCompactEntityTitle(title: string, slug: string): void {
+  if (!title.includes("| Loguitos")) {
+    throw new Error(`missing Loguitos suffix in document title for ${slug}`)
+  }
+  if (title.includes("…")) {
+    throw new Error(`title for ${slug} contains ellipsis`)
+  }
+  if (title.length > MAX_ENTITY_TITLE_LENGTH) {
+    throw new Error(
+      `title for ${slug} exceeds ${MAX_ENTITY_TITLE_LENGTH}: ${title.length} (${title})`,
+    )
+  }
+}
+
 type DoctorCheck = {
   name: string
   ok: boolean
@@ -303,6 +324,36 @@ async function doctor(): Promise<DoctorCheck[]> {
     }
   }
 
+  async function checkApiGscAliasMeli(): Promise<DoctorCheck> {
+    const name = "api-gsc-alias-meli"
+    try {
+      const apiUrl = `${baseUrl}/api/logos?q=meli&limit=5`
+      const res = await fetch(apiUrl)
+      if (!res.ok) {
+        return { name, ok: false, detail: `HTTP ${res.status}` }
+      }
+      const json = (await res.json()) as {
+        items?: Array<{ name?: string; domain?: string }>
+      }
+      const items = json.items ?? []
+      const match = items.some(
+        (item) =>
+          item.name?.toLowerCase().includes("mercado libre") ||
+          item.domain?.toLowerCase().includes("mercadolibre"),
+      )
+      if (!match) {
+        return { name, ok: false, detail: "no Mercado Libre match for q=meli" }
+      }
+      return { name, ok: true, detail: `HTTP ${res.status}` }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
   const checks = await Promise.all([
     check("home", `${baseUrl}/`, (_res, body) => {
       if (!body.includes("Logos Argentina")) {
@@ -327,8 +378,22 @@ async function doctor(): Promise<DoctorCheck[]> {
       if (!body.includes("Descargá el logo de Banco Provincia")) {
         throw new Error("missing entity meta description from lib/entity-seo.ts")
       }
-      if (!body.includes("| Loguitos")) {
-        throw new Error("missing Loguitos suffix in document title")
+      const title = extractDocumentTitle(body)
+      if (!title) {
+        throw new Error("missing document title")
+      }
+      assertCompactEntityTitle(title, "banco-provincia")
+    }),
+    check("entity-title-compact", `${baseUrl}/logo/banco-de-la-nacion-argentina`, (_res, body) => {
+      const title = extractDocumentTitle(body)
+      if (!title) {
+        throw new Error("missing document title")
+      }
+      assertCompactEntityTitle(title, "banco-de-la-nacion-argentina")
+    }),
+    check("logo-changan", `${baseUrl}/logo/changan`, (_res, body) => {
+      if (!body.includes("Changan")) {
+        throw new Error('missing "Changan" on GSC brand page')
       }
     }),
     checkPermanentRedirect(
@@ -347,6 +412,7 @@ async function doctor(): Promise<DoctorCheck[]> {
       "/logo/tn"
     ),
     checkApiGalicia(),
+    checkApiGscAliasMeli(),
   ])
 
   const run = await resolveArtifactRunId()

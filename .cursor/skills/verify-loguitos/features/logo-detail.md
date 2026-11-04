@@ -21,7 +21,8 @@ Preconditions:
 - Slug `banco-galicia` exists in the dataset (Banco Galicia)
 
 - **Direct route.** Navigate to `/logo/banco-galicia`. Heading contains `Logo Banco Galicia` and domain `www.galicia.ar`.
-- **Metadata.** View source or doctor check on `/logo/banco-provincia`: `<title>` ends with `| Loguitos` and meta description is built by `lib/entity-seo.ts` (aliases such as Bapro when present in data).
+- **Metadata.** View source or doctor check on `/logo/banco-provincia`: `<title>` from `lib/entity-seo.ts` ends with `| Loguitos`, stays within `MAX_ENTITY_TITLE_LENGTH` (60), and never uses `…` mid-word. Meta description includes alias clause when `seoAliases` exist (for example Bapro on Banco Provincia).
+- **Long name budget.** Doctor also loads `/logo/banco-de-la-nacion-argentina` to guard title shortening at word boundaries for very long entity names.
 - **Automated.** `pnpm verify:loguitos drive` writes `logo-detail-desktop.png`.
 - **Proof.** Screenshot shows entity name and domain link; doctor `logo-banco-provincia-meta` covers head metadata without a separate browser step.
 
