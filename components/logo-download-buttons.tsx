@@ -95,6 +95,7 @@ export function LogoDownloadButtons({
           <Button
             type="button"
             variant={pngVariant}
+            size="touch"
             disabled={downloadingFormat !== null}
             onClick={() => void handleDownload("png")}
           >
@@ -106,6 +107,7 @@ export function LogoDownloadButtons({
           <Button
             type="button"
             variant="outline"
+            size="touch"
             disabled={downloadingFormat !== null}
             onClick={() => void handleDownload("svg")}
           >

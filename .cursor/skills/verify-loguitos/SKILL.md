@@ -98,6 +98,9 @@ Default artifact directory: `.verify-loguitos/artifacts/<run-id>/` (also symlink
 | `home-desktop.png` | Home catalog renders (1280×800) |
 | `home-search-mobile.png` | Mobile search results for `galicia` (390×844) |
 | `logo-detail-desktop.png` | Entity detail for Banco Galicia |
+| `logo-detail-a11y.json` | Touch heights (≥44px) and Descargar PNG contrast (≥4.5:1) on 3 slugs × 390/1440 |
+| `logo-detail-a11y-mobile390.png` | Logo detail controls at 390px width (post-fix evidence) |
+| `logo-detail-a11y-desktop1440.png` | Logo detail controls at 1440px width (post-fix evidence) |
 | `category-bancos-seo-desktop.png` | Category SEO landing for bancos (feature: seo-ctr) |
 | `brand-verify-{slug}-{390\|1440}-{light\|dark}.png` | Brand verify aside on `uala` and `banco-de-la-nacion-argentina` (feature: brand-verify-slot) |
 | `brand-verify-{slug}-{390\|1440}-{light\|dark}-focus.png` | Same aside with CTA `:focus-visible` ring |

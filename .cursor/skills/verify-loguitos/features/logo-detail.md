@@ -23,7 +23,7 @@ Preconditions:
 - **Direct route.** Navigate to `/logo/banco-galicia`. Heading contains `Logo Banco Galicia` and domain `www.galicia.ar`.
 - **Metadata.** View source or doctor check on `/logo/banco-provincia`: `<title>` from `lib/entity-seo.ts` ends with `| Loguitos`, stays within `MAX_ENTITY_TITLE_LENGTH` (60), and never uses `…` mid-word. Meta description includes alias clause when `seoAliases` exist (for example Bapro on Banco Provincia).
 - **Long name budget.** Doctor loads `/logo/banco-de-la-nacion-argentina` to guard word-boundary shortening and CTR copy in `<title>` (`BNA`, `Banco Nación`, `PNG y SVG`, `gratis` within 60 characters).
-- **Automated.** `pnpm verify:loguitos drive` writes `logo-detail-desktop.png`.
+- **Automated.** `pnpm verify:loguitos drive` writes `logo-detail-desktop.png`, runs brand-verify slot captures from main (#50), and runs the logo-detail a11y smoke (`logo-detail-a11y.json`: download/copy controls ≥44px tall; PNG/SVG contrast ≥4.5:1 default and hover in **light and dark** on four slugs at 390px and 1440px widths).
 - **Proof.** Screenshot shows entity name and domain link; doctor `logo-banco-provincia-meta` covers head metadata without a separate browser step.
 
 ## Gotchas
