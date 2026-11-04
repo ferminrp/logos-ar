@@ -48,9 +48,10 @@ Read-only checks before driving:
 - `GET /docs` → 200
 - `GET /api/logos?q=galicia&limit=5` → 200, JSON `items` array with at least one match whose `name` or `domain` mentions galicia (case-insensitive)
 - `GET /robots.txt` → 200
-- `GET /categoria/bancos` → 200, HTML contains SEO H1 `Logos de bancos argentinos`
+- `GET /categoria/bancos` → 200, HTML contains SEO H1 `Logos de bancos argentinos`, prominent link to `/logo/banco-de-la-nacion-argentina`, and heading `Logo Banco Nación (BNA)`
 - `GET /logo/banco-provincia` → 200, HTML contains entity meta description and a compact `<title>` from `lib/entity-seo.ts` (suffix `| Loguitos`, length ≤ 60, no mid-word ellipsis)
-- `GET /logo/banco-de-la-nacion-argentina` → 200, `<title>` fits the same compact budget (long-name regression guard)
+- `GET /logo/banco-de-la-nacion-argentina` → 200, `<title>` fits the same compact budget and includes `BNA`, `Banco Nación`, `PNG y SVG`, and `gratis`
+- `GET /logo/melia` → 404 Not Found (removed catalog entry; not in sitemap)
 - `GET /logo/changan` → 200, HTML mentions Changan (GSC batch brand)
 - `GET /api/logos?q=meli&limit=5` → 200, at least one item matches Mercado Libre / `mercadolibre` (GSC alias in search text)
 - `GET /categoria/delivery`, `/logo/banco-provincia-bs-as`, `/logo/tn-todo-noticias` with `redirect: manual` → 301 or 308 to the canonical paths in `data/permanent-redirects.json`

@@ -354,6 +354,71 @@ async function doctor(): Promise<DoctorCheck[]> {
     }
   }
 
+  async function checkHttpStatus(
+    name: string,
+    urlPath: string,
+    expectedStatus: number,
+  ): Promise<DoctorCheck> {
+    try {
+      const res = await fetch(`${baseUrl}${urlPath}`, { redirect: "manual" })
+      if (res.status !== expectedStatus) {
+        return {
+          name,
+          ok: false,
+          detail: `HTTP ${res.status}, expected ${expectedStatus}`,
+        }
+      }
+      return { name, ok: true, detail: `HTTP ${res.status}` }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
+  const gscPriorityLogoSlugs = [
+    "arca-ex-afip",
+    "mercado-libre",
+    "tn",
+    "modo",
+    "naranja-x",
+    "infobae",
+  ] as const
+
+  async function checkGscPriorityTitles(): Promise<DoctorCheck> {
+    const name = "gsc-priority-logo-titles"
+    try {
+      for (const slug of gscPriorityLogoSlugs) {
+        const res = await fetch(`${baseUrl}/logo/${slug}`)
+        if (!res.ok) {
+          return { name, ok: false, detail: `/logo/${slug} HTTP ${res.status}` }
+        }
+        const body = await res.text()
+        const title = extractDocumentTitle(body)
+        if (!title) {
+          return { name, ok: false, detail: `missing title for /logo/${slug}` }
+        }
+        assertCompactEntityTitle(title, slug)
+        if (!title.includes("PNG y SVG") || !title.toLowerCase().includes("gratis")) {
+          return {
+            name,
+            ok: false,
+            detail: `${slug} title missing PNG/SVG or gratis: ${title}`,
+          }
+        }
+      }
+      return { name, ok: true, detail: `${gscPriorityLogoSlugs.length} slugs OK` }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
   const checks = await Promise.all([
     check("home", `${baseUrl}/`, (_res, body) => {
       if (!body.includes("Logos Argentina")) {
@@ -373,6 +438,12 @@ async function doctor(): Promise<DoctorCheck[]> {
       if (!body.includes("Directorio de logos de bancos tradicionales")) {
         throw new Error("missing bancos introLead from lib/category-seo.ts")
       }
+      if (!body.includes('href="/logo/banco-de-la-nacion-argentina"')) {
+        throw new Error("missing prominent BNA internal link on /categoria/bancos")
+      }
+      if (!body.includes("Logo Banco Nación (BNA)")) {
+        throw new Error("missing BNA featured heading on /categoria/bancos")
+      }
     }),
     check("logo-banco-provincia-meta", `${baseUrl}/logo/banco-provincia`, (_res, body) => {
       if (!body.includes("Descargá el logo de Banco Provincia")) {
@@ -390,6 +461,12 @@ async function doctor(): Promise<DoctorCheck[]> {
         throw new Error("missing document title")
       }
       assertCompactEntityTitle(title, "banco-de-la-nacion-argentina")
+      if (!title.includes("BNA") || !title.includes("Banco Nación")) {
+        throw new Error(`BNA title missing CTR keywords: ${title}`)
+      }
+      if (!title.includes("PNG y SVG") || !title.toLowerCase().includes("gratis")) {
+        throw new Error(`BNA title missing PNG/SVG or gratis: ${title}`)
+      }
     }),
     check("logo-changan", `${baseUrl}/logo/changan`, (_res, body) => {
       if (!body.includes("Changan")) {
@@ -413,6 +490,8 @@ async function doctor(): Promise<DoctorCheck[]> {
     ),
     checkApiGalicia(),
     checkApiGscAliasMeli(),
+    checkHttpStatus("logo-melia-gone", "/logo/melia", 404),
+    checkGscPriorityTitles(),
   ])
 
   const run = await resolveArtifactRunId()

@@ -98,6 +98,31 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <p className="text-muted-foreground leading-relaxed">{category.seoIntro}</p>
       </section>
 
+      {seo.featuredLogoLink ? (
+        <section
+          className="mt-8 max-w-2xl"
+          aria-labelledby="category-featured-logo-heading"
+        >
+          <Link
+            href={`/logo/${seo.featuredLogoLink.slug}`}
+            className="group block rounded-2xl border-2 border-primary/30 bg-primary/5 px-5 py-4 shadow-sm transition-colors hover:border-primary/50 hover:bg-primary/10"
+          >
+            <h2
+              id="category-featured-logo-heading"
+              className="text-lg font-semibold text-foreground group-hover:text-primary"
+            >
+              {seo.featuredLogoLink.heading}
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {seo.featuredLogoLink.description}
+            </p>
+            <p className="mt-3 text-sm font-medium text-primary">
+              Ver logo BNA →
+            </p>
+          </Link>
+        </section>
+      ) : null}
+
       <section
         className="mt-8"
         aria-label={`Logos de ${category.name}`}

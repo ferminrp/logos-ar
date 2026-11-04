@@ -13,6 +13,7 @@ import {
   buildEntityMetaDescription,
   getEntityPageTitle,
 } from "@/lib/entity-seo"
+import { isGoneLogoSlug } from "@/lib/gone-logo-slugs"
 
 interface LogoPageProps {
   params: Promise<{ slug: string }>
@@ -26,6 +27,14 @@ export async function generateMetadata({
   params,
 }: LogoPageProps): Promise<Metadata> {
   const { slug } = await params
+
+  if (isGoneLogoSlug(slug)) {
+    return {
+      title: "Logo retirado",
+      robots: { index: false, follow: false },
+    }
+  }
+
   const entity = getEntityBySlug(slug)
 
   if (!entity) {
@@ -57,6 +66,11 @@ export async function generateMetadata({
 
 export default async function LogoPage({ params }: LogoPageProps) {
   const { slug } = await params
+
+  if (isGoneLogoSlug(slug)) {
+    notFound()
+  }
+
   const entity = getEntityBySlug(slug)
 
   if (!entity) {
