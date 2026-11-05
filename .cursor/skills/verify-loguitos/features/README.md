@@ -9,7 +9,7 @@ Maintained recipes for user-visible behavior. Read this index before driving the
 - Or attach to dev: `VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:3000` with `pnpm dev` already up
 - Run `pnpm verify:loguitos doctor` before browser steps
 - Chromium for screenshots: `pnpm exec playwright install chromium`
-- Logo asset regression gate (separate from this harness): `pnpm check:logos` after changing hosted PNGs or overrides
+- Logo asset regression gate (separate from this harness): `pnpm check:logos` after changing hosted PNGs or overrides. Fetches retry transient network errors; CI on PRs only blocks on entities touched in the diff (`LOGO_CHECK_SCOPE=pr`), while local runs and main still enforce the full catalog.
 - Do not drive a shared port another developer is using without setting an explicit base URL and port
 
 ## Driving conventions

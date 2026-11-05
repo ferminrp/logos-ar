@@ -51,7 +51,8 @@ Read-only checks before driving:
 - `GET /categoria/bancos` → 200, HTML contains SEO H1 `Logos de bancos argentinos`, prominent link to `/logo/banco-de-la-nacion-argentina`, and heading `Logo Banco Nación (BNA)`
 - `GET /logo/banco-provincia` → 200, HTML contains entity meta description and a compact `<title>` from `lib/entity-seo.ts` (suffix `| Loguitos`, length ≤ 60, no mid-word ellipsis)
 - `GET /logo/banco-de-la-nacion-argentina` → 200, `<title>` fits the same compact budget and includes `BNA`, `Banco Nación`, `PNG y SVG`, and `gratis`
-- `GET /logo/melia` → 404 Not Found (removed catalog entry; not in sitemap)
+- `GET /logo/melia` → 404 Not Found (`lib/gone-logo-slugs.ts`; removed catalog entry; not in sitemap)
+- GSC priority logo titles — for each slug in `arca-ex-afip`, `mercado-libre`, `tn`, `modo`, `naranja-x`, `infobae`: 200, compact `<title>` (≤ 60, `| Loguitos`, no `…`) with `PNG y SVG` and `gratis`
 - `GET /logo/changan` → 200, HTML mentions Changan (GSC batch brand)
 - `GET /api/logos?q=meli&limit=5` → 200, at least one item matches Mercado Libre / `mercadolibre` (GSC alias in search text)
 - `GET /categoria/delivery`, `/logo/banco-provincia-bs-as`, `/logo/tn-todo-noticias` with `redirect: manual` → 301 or 308 to the canonical paths in `data/permanent-redirects.json`
@@ -114,7 +115,7 @@ Stops the server recorded in `.verify-loguitos/runs/latest/server.json`. If no r
 | Script | Invocation |
 |--------|------------|
 | Main harness | `pnpm verify:loguitos <launch\|doctor\|drive\|cleanup\|all>` |
-| Hosted logo QA | `pnpm check:logos` (parallel fetch of every entity logo; writes `data/logo-check-report.json` on failure) |
+| Hosted logo QA | `pnpm check:logos` — fetches every entity logo with retry/backoff on transient network errors; writes `data/logo-check-report.json`. Local runs always use full-catalog blocking. CI on pull requests sets `LOGO_CHECK_SCOPE=pr` so only entities touched in the diff block the job; other failures are warnings. Main, schedule, and manual runs keep the full gate. |
 | Sitemap (postbuild) | `node --experimental-strip-types scripts/verify-sitemap.mts` (runs automatically on `pnpm build` via `postbuild`) |
 
 Playwright is a devDependency; first browser run needs `pnpm exec playwright install chromium`.
