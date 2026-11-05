@@ -499,6 +499,9 @@ async function doctor(): Promise<DoctorCheck[]> {
       if (!body.includes("min-h-[132px]") || !body.includes("sm:min-h-[72px]")) {
         throw new Error("missing reserved min-height classes on brand verify slot")
       }
+      if (!body.includes("border-slot-border")) {
+        throw new Error("slot must use border-slot-border token, not global --border")
+      }
       if (!body.includes("Pedí tu logo verificado")) {
         throw new Error("missing brand verify CTA copy")
       }
@@ -520,6 +523,7 @@ async function doctor(): Promise<DoctorCheck[]> {
       }
     }),
     checkBrandVerifySlotModule(),
+    checkBrandVerifySlotBorderContrast(),
   ])
 
   const run = await resolveArtifactRunId()
@@ -537,6 +541,65 @@ async function doctor(): Promise<DoctorCheck[]> {
   return checks
 }
 
+async function readBrandVerifyCssTokens(): Promise<{
+  light: { background: string; border: string }
+  dark: { background: string; border: string }
+}> {
+  const css = await readFile(path.join(REPO_ROOT, "app/globals.css"), "utf8")
+  const pick = (block: string, name: string): string => {
+    const re = new RegExp(`${name}:\\s*(oklch\\([^)]+\\))`)
+    const match = block.match(re)
+    if (!match) {
+      throw new Error(`missing ${name} in globals.css`)
+    }
+    return match[1]
+  }
+  const rootBlock = css.match(/:root\s*\{([\s\S]*?)\n\}/)?.[1] ?? ""
+  const darkBlock = css.match(/\.dark\s*\{([\s\S]*?)\n\}/)?.[1] ?? ""
+  return {
+    light: {
+      background: pick(rootBlock, "--background"),
+      border: pick(rootBlock, "--slot-border"),
+    },
+    dark: {
+      background: pick(darkBlock, "--background"),
+      border: pick(darkBlock, "--slot-border"),
+    },
+  }
+}
+
+async function checkBrandVerifySlotBorderContrast(): Promise<DoctorCheck> {
+  const name = "brand-verify-slot-border-contrast"
+  try {
+    const contrastModUrl = pathToFileURL(
+      path.join(REPO_ROOT, "lib/wcag-oklch-contrast.ts"),
+    ).href
+    const { contrastRatioOklch, MIN_SLOT_BORDER_CONTRAST } = (await import(
+      contrastModUrl
+    )) as typeof import("../../../../lib/wcag-oklch-contrast.ts")
+    const tokens = await readBrandVerifyCssTokens()
+    const lightRatio = contrastRatioOklch(tokens.light.border, tokens.light.background)
+    const darkRatio = contrastRatioOklch(tokens.dark.border, tokens.dark.background)
+    if (lightRatio < MIN_SLOT_BORDER_CONTRAST) {
+      throw new Error(`light slot-border contrast ${lightRatio.toFixed(2)} < ${MIN_SLOT_BORDER_CONTRAST}`)
+    }
+    if (darkRatio < MIN_SLOT_BORDER_CONTRAST) {
+      throw new Error(`dark slot-border contrast ${darkRatio.toFixed(2)} < ${MIN_SLOT_BORDER_CONTRAST}`)
+    }
+    return {
+      name,
+      ok: true,
+      detail: `light ${lightRatio.toFixed(2)}:1, dark ${darkRatio.toFixed(2)}:1 (min ${MIN_SLOT_BORDER_CONTRAST}:1)`,
+    }
+  } catch (error) {
+    return {
+      name,
+      ok: false,
+      detail: error instanceof Error ? error.message : String(error),
+    }
+  }
+}
+
 async function checkBrandVerifySlotModule(): Promise<DoctorCheck> {
   const name = "brand-verify-slot-module"
   try {
@@ -551,6 +614,12 @@ async function checkBrandVerifySlotModule(): Promise<DoctorCheck> {
     if (!mod.brandVerifySlotShellClassName.includes("min-h-[132px]")) {
       throw new Error("shell missing mobile min-height")
     }
+    if (!mod.brandVerifySlotShellClassName.includes("border-slot-border")) {
+      throw new Error("shell must use border-slot-border")
+    }
+    if (!mod.brandVerifyCtaClassName.includes("focus-visible:ring-2")) {
+      throw new Error("CTA must use focus-visible ring, not outline")
+    }
     return { name, ok: true, detail: "mailto encoding and shell classes OK" }
   } catch (error) {
     return {
@@ -559,6 +628,52 @@ async function checkBrandVerifySlotModule(): Promise<DoctorCheck> {
       detail: error instanceof Error ? error.message : String(error),
     }
   }
+}
+
+async function focusBrandVerifyCtaForVisibleRing(
+  cta: import("playwright").Locator,
+): Promise<void> {
+  await cta.evaluate((el) => {
+    ;(el as HTMLElement).focus({ focusVisible: true })
+  })
+}
+
+async function assertBrandVerifyCtaFocusRing(
+  page: import("playwright").Page,
+  theme: "light" | "dark",
+): Promise<void> {
+  await page.evaluate((mode) => {
+    document.documentElement.classList.toggle("dark", mode === "dark")
+  }, theme)
+  const cta = page.getByRole("link", { name: "Pedí tu logo verificado" })
+  await cta.scrollIntoViewIfNeeded()
+  await focusBrandVerifyCtaForVisibleRing(cta)
+  const ringVisible = await cta.evaluate((el) => {
+    const styles = getComputedStyle(el)
+    const shadow = styles.boxShadow
+    if (shadow && shadow !== "none") {
+      return /0px\s+0px\s+0px\s+[2-9]px/.test(shadow)
+    }
+    const width = Number.parseFloat(styles.outlineWidth)
+    return width >= 2 && styles.outlineStyle !== "none"
+  })
+  if (!ringVisible) {
+    throw new Error(`CTA focus ring not visible (${theme})`)
+  }
+}
+
+async function measureBrandVerifyBorderContrastFromTokens(
+  theme: "light" | "dark",
+): Promise<number> {
+  const contrastModUrl = pathToFileURL(
+    path.join(REPO_ROOT, "lib/wcag-oklch-contrast.ts"),
+  ).href
+  const { contrastRatioOklch } = (await import(contrastModUrl)) as typeof import(
+    "../../../../lib/wcag-oklch-contrast.ts"
+  )
+  const tokens = await readBrandVerifyCssTokens()
+  const pair = theme === "light" ? tokens.light : tokens.dark
+  return contrastRatioOklch(pair.border, pair.background)
 }
 
 async function captureBrandVerifySlotScreenshots(
@@ -572,6 +687,8 @@ async function captureBrandVerifySlotScreenshots(
     { width: 390, height: 844, suffix: "390" },
     { width: 1440, height: 900, suffix: "1440" },
   ] as const
+
+  const contrastMetrics: Record<string, number> = {}
 
   for (const slug of slugs) {
     for (const theme of ["light", "dark"] as const) {
@@ -590,12 +707,57 @@ async function captureBrandVerifySlotScreenshots(
           const file = `brand-verify-${slug}-${vp.suffix}-${theme}.png`
           await aside.screenshot({ path: path.join(outDir, file) })
           lines.push(`${file} captured (feature: brand-verify-slot)`)
+
+          await assertBrandVerifyCtaFocusRing(page, theme)
+          const focusFile = `brand-verify-${slug}-${vp.suffix}-${theme}-focus.png`
+          await aside.screenshot({ path: path.join(outDir, focusFile) })
+          lines.push(`${focusFile} captured (CTA :focus-visible)`)
+
+          if (slug === "uala" && vp.suffix === "390") {
+            contrastMetrics[theme] = await measureBrandVerifyBorderContrastFromTokens(theme)
+            lines.push(
+              `slot-border contrast ${theme}: ${contrastMetrics[theme].toFixed(2)}:1`,
+            )
+          }
         } finally {
           await page.close()
         }
       }
     }
   }
+
+  if (contrastMetrics.light === undefined || contrastMetrics.dark === undefined) {
+    throw new Error("missing slot-border contrast measurements")
+  }
+  const contrastModUrl = pathToFileURL(
+    path.join(REPO_ROOT, "lib/wcag-oklch-contrast.ts"),
+  ).href
+  const { MIN_SLOT_BORDER_CONTRAST } = (await import(contrastModUrl)) as typeof import(
+    "../../../../lib/wcag-oklch-contrast.ts"
+  )
+  if (contrastMetrics.light < MIN_SLOT_BORDER_CONTRAST) {
+    throw new Error(`light slot-border contrast ${contrastMetrics.light.toFixed(2)} < ${MIN_SLOT_BORDER_CONTRAST}`)
+  }
+  if (contrastMetrics.dark < MIN_SLOT_BORDER_CONTRAST) {
+    throw new Error(`dark slot-border contrast ${contrastMetrics.dark.toFixed(2)} < ${MIN_SLOT_BORDER_CONTRAST}`)
+  }
+
+  await writeFile(
+    path.join(outDir, "brand-verify-metrics.json"),
+    JSON.stringify(
+      {
+        slotBorderContrast: {
+          light: Number(contrastMetrics.light.toFixed(2)),
+          dark: Number(contrastMetrics.dark.toFixed(2)),
+          minimumRequired: MIN_SLOT_BORDER_CONTRAST,
+        },
+        focusRing: "verified on all brand-verify captures via focus({ focusVisible: true }) + box-shadow ring",
+      },
+      null,
+      2,
+    ),
+  )
+  lines.push("brand-verify-metrics.json written")
 }
 
 async function drive(): Promise<void> {
@@ -610,7 +772,7 @@ async function drive(): Promise<void> {
 
   try {
     const desktop = await browser.newPage({ viewport: { width: 1280, height: 800 } })
-    await desktop.goto(`${baseUrl}/`, { waitUntil: "networkidle" })
+    await desktop.goto(`${baseUrl}/`, { waitUntil: "domcontentloaded" })
     await desktop.screenshot({ path: path.join(outDir, "home-desktop.png"), fullPage: false })
     lines.push("home-desktop.png captured")
 

@@ -39,6 +39,7 @@
   --sidebar-border: oklch(0.90 0.008 85);
   --sidebar-ring: oklch(0.62 0.07 240);
   --slot-muted: oklch(0.42 0.018 55);
+  --slot-border: oklch(0.78 0.010 85);
 }
 
 .dark {
@@ -75,6 +76,7 @@
   --sidebar-border: oklch(0.32 0.012 55);
   --sidebar-ring: oklch(0.72 0.07 240);
   --slot-muted: oklch(0.72 0.015 70);
+  --slot-border: oklch(0.70 0.012 55);
 }
 
 @theme inline {
@@ -120,6 +122,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-slot-muted: var(--slot-muted);
+  --color-slot-border: var(--slot-border);
 }
 
 @layer base {

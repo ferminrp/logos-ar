@@ -100,6 +100,8 @@ Default artifact directory: `.verify-loguitos/artifacts/<run-id>/` (also symlink
 | `logo-detail-desktop.png` | Entity detail for Banco Galicia |
 | `category-bancos-seo-desktop.png` | Category SEO landing for bancos (feature: seo-ctr) |
 | `brand-verify-{slug}-{390\|1440}-{light\|dark}.png` | Brand verify aside on `uala` and `banco-de-la-nacion-argentina` (feature: brand-verify-slot) |
+| `brand-verify-{slug}-{390\|1440}-{light\|dark}-focus.png` | Same aside with CTA `:focus-visible` ring |
+| `brand-verify-metrics.json` | Measured `--slot-border` vs `--background` contrast (light/dark) |
 | `drive-summary.txt` | Human-readable pass/fail log |
 
 Proof standards: use real routes and the public API, not test-only hooks. Capture the action (navigation or search) and the resulting UI or JSON, not only a generic 200. Cleanup must not remove these files.

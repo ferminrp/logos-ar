@@ -23,8 +23,8 @@ Preconditions:
 - `NEXT_PUBLIC_SLOT_VERIFY` is not `off` (default enabled)
 
 - **Direct route.** `/logo/uala` shows “¿Trabajás en Ualá?” and CTA “Pedí tu logo verificado”.
-- **Automated doctor.** Checks BNA placement/min-height and Ualá mailto encoding (`brand-verify-slot-*` checks).
-- **Automated drive.** Eight aside screenshots: `brand-verify-{slug}-{390|1440}-{light|dark}.png` for slugs `uala` and `banco-de-la-nacion-argentina`.
+- **Automated doctor.** Checks BNA placement/min-height, `border-slot-border`, Ualá mailto encoding, and `--slot-border` contrast ≥3:1 (light/dark) via `lib/wcag-oklch-contrast.ts`.
+- **Automated drive.** Sixteen aside screenshots (8 default + 8 CTA focused) plus `brand-verify-metrics.json` with measured contrast.
 
 ## Gotchas
 
