@@ -8,7 +8,7 @@ import {
 } from "node:fs/promises"
 import { createWriteStream } from "node:fs"
 import path from "node:path"
-import { fileURLToPath } from "node:url"
+import { fileURLToPath, pathToFileURL } from "node:url"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -492,6 +492,34 @@ async function doctor(): Promise<DoctorCheck[]> {
     checkApiGscAliasMeli(),
     checkHttpStatus("logo-melia-gone", "/logo/melia", 404),
     checkGscPriorityTitles(),
+    check("brand-verify-slot-bna", `${baseUrl}/logo/banco-de-la-nacion-argentina`, (_res, body) => {
+      if (!body.includes('aria-label="Para equipos de marca"')) {
+        throw new Error("missing brand verify aside aria-label")
+      }
+      if (!body.includes("min-h-[132px]") || !body.includes("sm:min-h-[72px]")) {
+        throw new Error("missing reserved min-height classes on brand verify slot")
+      }
+      if (!body.includes("Pedí tu logo verificado")) {
+        throw new Error("missing brand verify CTA copy")
+      }
+      if (
+        !body.includes("Los favicons se obtienen") ||
+        body.indexOf('aria-label="Para equipos de marca"') >
+          body.indexOf("Los favicons se obtienen")
+      ) {
+        throw new Error("brand verify slot must appear before disclaimer")
+      }
+    }),
+    check("brand-verify-slot-uala-mailto", `${baseUrl}/logo/uala`, (_res, body) => {
+      if (!body.includes("Trabajás en") || !body.includes("Ualá")) {
+        throw new Error("missing dynamic brand name in verify slot")
+      }
+      const expected = "mailto:marcas@loguitos.app?subject=Logo%20verificado%20-%20Ual%C3%A1"
+      if (!body.includes(expected)) {
+        throw new Error(`missing encoded mailto for Ualá (expected ${expected})`)
+      }
+    }),
+    checkBrandVerifySlotModule(),
   ])
 
   const run = await resolveArtifactRunId()
@@ -507,6 +535,67 @@ async function doctor(): Promise<DoctorCheck[]> {
     throw new Error(`Doctor failed (${failed.length} checks)`)
   }
   return checks
+}
+
+async function checkBrandVerifySlotModule(): Promise<DoctorCheck> {
+  const name = "brand-verify-slot-module"
+  try {
+    const modUrl = pathToFileURL(
+      path.join(REPO_ROOT, "lib/brand-verify-slot.ts"),
+    ).href
+    const mod = (await import(modUrl)) as typeof import("../../../../lib/brand-verify-slot.ts")
+    const href = mod.buildBrandVerifyMailtoHref("Ualá")
+    if (href !== "mailto:marcas@loguitos.app?subject=Logo%20verificado%20-%20Ual%C3%A1") {
+      throw new Error(`unexpected mailto: ${href}`)
+    }
+    if (!mod.brandVerifySlotShellClassName.includes("min-h-[132px]")) {
+      throw new Error("shell missing mobile min-height")
+    }
+    return { name, ok: true, detail: "mailto encoding and shell classes OK" }
+  } catch (error) {
+    return {
+      name,
+      ok: false,
+      detail: error instanceof Error ? error.message : String(error),
+    }
+  }
+}
+
+async function captureBrandVerifySlotScreenshots(
+  baseUrl: string,
+  outDir: string,
+  browser: Awaited<ReturnType<(typeof import("playwright"))["chromium"]["launch"]>>,
+  lines: string[],
+): Promise<void> {
+  const slugs = ["banco-de-la-nacion-argentina", "uala"] as const
+  const viewports = [
+    { width: 390, height: 844, suffix: "390" },
+    { width: 1440, height: 900, suffix: "1440" },
+  ] as const
+
+  for (const slug of slugs) {
+    for (const theme of ["light", "dark"] as const) {
+      for (const vp of viewports) {
+        const page = await browser.newPage({
+          viewport: { width: vp.width, height: vp.height },
+        })
+        try {
+          await page.goto(`${baseUrl}/logo/${slug}`, { waitUntil: "domcontentloaded" })
+          await page.evaluate((mode) => {
+            document.documentElement.classList.toggle("dark", mode === "dark")
+          }, theme)
+          const aside = page.getByRole("complementary", { name: "Para equipos de marca" })
+          await aside.waitFor({ timeout: 15000 })
+          await aside.scrollIntoViewIfNeeded()
+          const file = `brand-verify-${slug}-${vp.suffix}-${theme}.png`
+          await aside.screenshot({ path: path.join(outDir, file) })
+          lines.push(`${file} captured (feature: brand-verify-slot)`)
+        } finally {
+          await page.close()
+        }
+      }
+    }
+  }
 }
 
 async function drive(): Promise<void> {
@@ -545,6 +634,8 @@ async function drive(): Promise<void> {
       fullPage: false,
     })
     lines.push("category-bancos-seo-desktop.png captured (feature: seo-ctr)")
+
+    await captureBrandVerifySlotScreenshots(baseUrl, outDir, browser, lines)
   } finally {
     await browser.close()
   }

@@ -50,7 +50,8 @@ Read-only checks before driving:
 - `GET /robots.txt` → 200
 - `GET /categoria/bancos` → 200, HTML contains SEO H1 `Logos de bancos argentinos`, prominent link to `/logo/banco-de-la-nacion-argentina`, and heading `Logo Banco Nación (BNA)`
 - `GET /logo/banco-provincia` → 200, HTML contains entity meta description and a compact `<title>` from `lib/entity-seo.ts` (suffix `| Loguitos`, length ≤ 60, no mid-word ellipsis)
-- `GET /logo/banco-de-la-nacion-argentina` → 200, `<title>` fits the same compact budget and includes `BNA`, `Banco Nación`, `PNG y SVG`, and `gratis`
+- `GET /logo/banco-de-la-nacion-argentina` → 200, `<title>` fits the same compact budget and includes `BNA`, `Banco Nación`, `PNG y SVG`, and `gratis`; HTML includes brand verify `<aside aria-label="Para equipos de marca">` before the disclaimer
+- `GET /logo/uala` → 200, verify slot CTA uses `mailto:marcas@loguitos.app?subject=Logo%20verificado%20-%20Ual%C3%A1`
 - `GET /logo/melia` → 404 Not Found (`lib/gone-logo-slugs.ts`; removed catalog entry; not in sitemap)
 - GSC priority logo titles — for each slug in `arca-ex-afip`, `mercado-libre`, `tn`, `modo`, `naranja-x`, `infobae`: 200, compact `<title>` (≤ 60, `| Loguitos`, no `…`) with `PNG y SVG` and `gratis`
 - `GET /logo/changan` → 200, HTML mentions Changan (GSC batch brand)
@@ -98,6 +99,7 @@ Default artifact directory: `.verify-loguitos/artifacts/<run-id>/` (also symlink
 | `home-search-mobile.png` | Mobile search results for `galicia` (390×844) |
 | `logo-detail-desktop.png` | Entity detail for Banco Galicia |
 | `category-bancos-seo-desktop.png` | Category SEO landing for bancos (feature: seo-ctr) |
+| `brand-verify-{slug}-{390\|1440}-{light\|dark}.png` | Brand verify aside on `uala` and `banco-de-la-nacion-argentina` (feature: brand-verify-slot) |
 | `drive-summary.txt` | Human-readable pass/fail log |
 
 Proof standards: use real routes and the public API, not test-only hooks. Capture the action (navigation or search) and the resulting UI or JSON, not only a generic 200. Cleanup must not remove these files.
