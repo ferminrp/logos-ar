@@ -6,6 +6,7 @@ Browse entities grouped by category (for example all banks).
 
 - `hub-list` — category page lists entities for that category
 - `hub-nav` — category chips on home link to `/categoria/<id>`
+- `hub-featured-logo` — on `/categoria/bancos`, a prominent card links to BNA before the entity grid (`featuredLogoLink` in `lib/category-seo.ts`)
 
 ## How to get to it (user POV)
 
@@ -18,7 +19,7 @@ Preconditions:
 
 - Doctor pass
 
-- **Bancos hub.** `GET /categoria/bancos` returns 200 with H1 `Logos de bancos argentinos` (see `lib/category-seo.ts`) and entity cards such as `Banco Galicia` in the grid.
+- **Bancos hub.** `GET /categoria/bancos` returns 200 with H1 `Logos de bancos argentinos` (see `lib/category-seo.ts`), featured BNA link (`href="/logo/banco-de-la-nacion-argentina"`, heading `Logo Banco Nación (BNA)`), and entity cards such as `Banco Galicia` in the grid.
 - **Proof.** HTTP 200 plus SEO H1 and a known entity name (manual curl or `category-bancos-seo-desktop.png` from `drive`).
 
 ## Gotchas
