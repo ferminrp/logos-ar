@@ -1,8 +1,4 @@
-import {
-  brandVerifyCtaClassName,
-  brandVerifySlotShellClassName,
-  buildBrandVerifyMailtoHref,
-} from "@/lib/brand-verify-slot"
+import { buildBrandVerifyMailtoHref } from "@/lib/brand-verify-slot"
 
 export interface BrandVerifySlotProps {
   brandName: string
@@ -18,7 +14,7 @@ export function BrandVerifySlot({
 
   return (
     <aside
-      className={brandVerifySlotShellClassName}
+      className="flex min-h-[132px] w-full flex-col gap-3 rounded-2xl border border-dashed border-slot-border bg-transparent px-4 py-3 sm:min-h-[72px] sm:flex-row sm:items-center sm:justify-between sm:gap-4"
       aria-label="Para equipos de marca"
     >
       {showHouseAd ? (
@@ -35,7 +31,10 @@ export function BrandVerifySlot({
               , con link a tu brand kit.
             </p>
           </div>
-          <a href={mailtoHref} className={brandVerifyCtaClassName}>
+          <a
+            href={mailtoHref}
+            className="brand-verify-slot__cta inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-[14px] border border-slot-border bg-background px-4 py-2.5 text-center text-sm font-medium text-foreground transition-colors hover:bg-muted sm:w-auto sm:min-w-11"
+          >
             Pedí tu logo verificado
           </a>
         </>

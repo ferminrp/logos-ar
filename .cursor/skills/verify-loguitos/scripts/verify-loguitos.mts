@@ -617,9 +617,6 @@ async function checkBrandVerifySlotModule(): Promise<DoctorCheck> {
     if (!mod.brandVerifySlotShellClassName.includes("border-slot-border")) {
       throw new Error("shell must use border-slot-border")
     }
-    if (!mod.brandVerifyCtaClassName.includes("focus-visible:ring-2")) {
-      throw new Error("CTA must use focus-visible ring, not outline")
-    }
     return { name, ok: true, detail: "mailto encoding and shell classes OK" }
   } catch (error) {
     return {
@@ -650,12 +647,15 @@ async function assertBrandVerifyCtaFocusRing(
   await focusBrandVerifyCtaForVisibleRing(cta)
   const ringVisible = await cta.evaluate((el) => {
     const styles = getComputedStyle(el)
+    const width = Number.parseFloat(styles.outlineWidth)
+    if (width >= 2 && styles.outlineStyle !== "none") {
+      return true
+    }
     const shadow = styles.boxShadow
     if (shadow && shadow !== "none") {
       return /0px\s+0px\s+0px\s+[2-9]px/.test(shadow)
     }
-    const width = Number.parseFloat(styles.outlineWidth)
-    return width >= 2 && styles.outlineStyle !== "none"
+    return false
   })
   if (!ringVisible) {
     throw new Error(`CTA focus ring not visible (${theme})`)
@@ -697,7 +697,7 @@ async function captureBrandVerifySlotScreenshots(
           viewport: { width: vp.width, height: vp.height },
         })
         try {
-          await page.goto(`${baseUrl}/logo/${slug}`, { waitUntil: "domcontentloaded" })
+          await page.goto(`${baseUrl}/logo/${slug}`, { waitUntil: "load" })
           await page.evaluate((mode) => {
             document.documentElement.classList.toggle("dark", mode === "dark")
           }, theme)
@@ -751,7 +751,7 @@ async function captureBrandVerifySlotScreenshots(
           dark: Number(contrastMetrics.dark.toFixed(2)),
           minimumRequired: MIN_SLOT_BORDER_CONTRAST,
         },
-        focusRing: "verified on all brand-verify captures via focus({ focusVisible: true }) + box-shadow ring",
+        focusRing: "verified on all brand-verify captures (2px outline via .brand-verify-slot__cta:focus-visible)",
       },
       null,
       2,
