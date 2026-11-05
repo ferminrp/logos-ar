@@ -32,6 +32,7 @@ Each feature file has four H2 sections in order: `Sub-features`, `How to get to 
 
 - [Home search](./home-search.md) — filter entities and flags from the home page via `?q=`
 - [Logo entity detail](./logo-detail.md) — per-entity page with downloads and favicon URLs
+- [Brand verify slot](./brand-verify-slot.md) — Opción B house ad before disclaimer on `/logo/<slug>`
 - [Logos API](./api-logos.md) — JSON catalog at `/api/logos`
 - [API docs](./docs-page.md) — static documentation at `/docs`
 - [Category hub](./category-hub.md) — browse a category such as bancos

@@ -15,7 +15,8 @@
     "check:logos": "node --experimental-strip-types scripts/check-logos.mts",
     "sync:logo-overrides": "node --experimental-strip-types scripts/sync-logo-overrides.mts",
     "test:logos": "node --experimental-strip-types --test scripts/check-logos.test.mts",
-    "test:entity-seo": "node --experimental-strip-types --test lib/entity-seo.test.mts"
+    "test:entity-seo": "node --experimental-strip-types --test lib/entity-seo.test.mts",
+    "test:wcag-contrast": "node --experimental-strip-types --test lib/wcag-oklch-contrast.test.mts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

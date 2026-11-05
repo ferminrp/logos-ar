@@ -2,7 +2,9 @@ import Link from "next/link"
 import { ExternalLink } from "lucide-react"
 import { CopyButton } from "@/components/copy-button"
 import { EntityPreviewCard } from "@/components/entity-preview-card"
+import { BrandVerifySlot } from "@/components/brand-verify-slot"
 import { LogoDownloadButtons } from "@/components/logo-download-buttons"
+import { isBrandVerifySlotEnabled } from "@/lib/brand-verify-slot"
 import type { EntityRecord } from "@/lib/entity-index"
 import { buildEntityImageAlt } from "@/lib/entity-seo"
 import {
@@ -184,6 +186,10 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
           .
         </p>
       </section>
+
+      {isBrandVerifySlotEnabled() ? (
+        <BrandVerifySlot brandName={entity.name} />
+      ) : null}
 
       <p className="text-sm text-muted-foreground">
         Los favicons se obtienen de servicios públicos según el dominio de la entidad.

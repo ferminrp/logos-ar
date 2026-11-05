@@ -8,7 +8,7 @@ import {
 } from "node:fs/promises"
 import { createWriteStream } from "node:fs"
 import path from "node:path"
-import { fileURLToPath } from "node:url"
+import { fileURLToPath, pathToFileURL } from "node:url"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -492,6 +492,38 @@ async function doctor(): Promise<DoctorCheck[]> {
     checkApiGscAliasMeli(),
     checkHttpStatus("logo-melia-gone", "/logo/melia", 404),
     checkGscPriorityTitles(),
+    check("brand-verify-slot-bna", `${baseUrl}/logo/banco-de-la-nacion-argentina`, (_res, body) => {
+      if (!body.includes('aria-label="Para equipos de marca"')) {
+        throw new Error("missing brand verify aside aria-label")
+      }
+      if (!body.includes("min-h-[132px]") || !body.includes("sm:min-h-[72px]")) {
+        throw new Error("missing reserved min-height classes on brand verify slot")
+      }
+      if (!body.includes("border-slot-border")) {
+        throw new Error("slot must use border-slot-border token, not global --border")
+      }
+      if (!body.includes("Pedí tu logo verificado")) {
+        throw new Error("missing brand verify CTA copy")
+      }
+      if (
+        !body.includes("Los favicons se obtienen") ||
+        body.indexOf('aria-label="Para equipos de marca"') >
+          body.indexOf("Los favicons se obtienen")
+      ) {
+        throw new Error("brand verify slot must appear before disclaimer")
+      }
+    }),
+    check("brand-verify-slot-uala-mailto", `${baseUrl}/logo/uala`, (_res, body) => {
+      if (!body.includes("Trabajás en") || !body.includes("Ualá")) {
+        throw new Error("missing dynamic brand name in verify slot")
+      }
+      const expected = "mailto:marcas@loguitos.app?subject=Logo%20verificado%20-%20Ual%C3%A1"
+      if (!body.includes(expected)) {
+        throw new Error(`missing encoded mailto for Ualá (expected ${expected})`)
+      }
+    }),
+    checkBrandVerifySlotModule(),
+    checkBrandVerifySlotBorderContrast(),
   ])
 
   const run = await resolveArtifactRunId()
@@ -509,6 +541,225 @@ async function doctor(): Promise<DoctorCheck[]> {
   return checks
 }
 
+async function readBrandVerifyCssTokens(): Promise<{
+  light: { background: string; border: string }
+  dark: { background: string; border: string }
+}> {
+  const css = await readFile(path.join(REPO_ROOT, "app/globals.css"), "utf8")
+  const pick = (block: string, name: string): string => {
+    const re = new RegExp(`${name}:\\s*(oklch\\([^)]+\\))`)
+    const match = block.match(re)
+    if (!match) {
+      throw new Error(`missing ${name} in globals.css`)
+    }
+    return match[1]
+  }
+  const rootBlock = css.match(/:root\s*\{([\s\S]*?)\n\}/)?.[1] ?? ""
+  const darkBlock = css.match(/\.dark\s*\{([\s\S]*?)\n\}/)?.[1] ?? ""
+  return {
+    light: {
+      background: pick(rootBlock, "--background"),
+      border: pick(rootBlock, "--slot-border"),
+    },
+    dark: {
+      background: pick(darkBlock, "--background"),
+      border: pick(darkBlock, "--slot-border"),
+    },
+  }
+}
+
+async function checkBrandVerifySlotBorderContrast(): Promise<DoctorCheck> {
+  const name = "brand-verify-slot-border-contrast"
+  try {
+    const contrastModUrl = pathToFileURL(
+      path.join(REPO_ROOT, "lib/wcag-oklch-contrast.ts"),
+    ).href
+    const { contrastRatioOklch, MIN_SLOT_BORDER_CONTRAST } = (await import(
+      contrastModUrl
+    )) as typeof import("../../../../lib/wcag-oklch-contrast.ts")
+    const tokens = await readBrandVerifyCssTokens()
+    const lightRatio = contrastRatioOklch(tokens.light.border, tokens.light.background)
+    const darkRatio = contrastRatioOklch(tokens.dark.border, tokens.dark.background)
+    if (lightRatio < MIN_SLOT_BORDER_CONTRAST) {
+      throw new Error(`light slot-border contrast ${lightRatio.toFixed(2)} < ${MIN_SLOT_BORDER_CONTRAST}`)
+    }
+    if (darkRatio < MIN_SLOT_BORDER_CONTRAST) {
+      throw new Error(`dark slot-border contrast ${darkRatio.toFixed(2)} < ${MIN_SLOT_BORDER_CONTRAST}`)
+    }
+    return {
+      name,
+      ok: true,
+      detail: `light ${lightRatio.toFixed(2)}:1, dark ${darkRatio.toFixed(2)}:1 (min ${MIN_SLOT_BORDER_CONTRAST}:1)`,
+    }
+  } catch (error) {
+    return {
+      name,
+      ok: false,
+      detail: error instanceof Error ? error.message : String(error),
+    }
+  }
+}
+
+async function checkBrandVerifySlotModule(): Promise<DoctorCheck> {
+  const name = "brand-verify-slot-module"
+  try {
+    const modUrl = pathToFileURL(
+      path.join(REPO_ROOT, "lib/brand-verify-slot.ts"),
+    ).href
+    const mod = (await import(modUrl)) as typeof import("../../../../lib/brand-verify-slot.ts")
+    const href = mod.buildBrandVerifyMailtoHref("Ualá")
+    if (href !== "mailto:marcas@loguitos.app?subject=Logo%20verificado%20-%20Ual%C3%A1") {
+      throw new Error(`unexpected mailto: ${href}`)
+    }
+    if (!mod.brandVerifySlotShellClassName.includes("min-h-[132px]")) {
+      throw new Error("shell missing mobile min-height")
+    }
+    if (!mod.brandVerifySlotShellClassName.includes("border-slot-border")) {
+      throw new Error("shell must use border-slot-border")
+    }
+    return { name, ok: true, detail: "mailto encoding and shell classes OK" }
+  } catch (error) {
+    return {
+      name,
+      ok: false,
+      detail: error instanceof Error ? error.message : String(error),
+    }
+  }
+}
+
+async function focusBrandVerifyCtaForVisibleRing(
+  cta: import("playwright").Locator,
+): Promise<void> {
+  await cta.evaluate((el) => {
+    ;(el as HTMLElement).focus({ focusVisible: true })
+  })
+}
+
+async function assertBrandVerifyCtaFocusRing(
+  page: import("playwright").Page,
+  theme: "light" | "dark",
+): Promise<void> {
+  await page.evaluate((mode) => {
+    document.documentElement.classList.toggle("dark", mode === "dark")
+  }, theme)
+  const cta = page.getByRole("link", { name: "Pedí tu logo verificado" })
+  await cta.scrollIntoViewIfNeeded()
+  await focusBrandVerifyCtaForVisibleRing(cta)
+  const ringVisible = await cta.evaluate((el) => {
+    const styles = getComputedStyle(el)
+    const width = Number.parseFloat(styles.outlineWidth)
+    if (width >= 2 && styles.outlineStyle !== "none") {
+      return true
+    }
+    const shadow = styles.boxShadow
+    if (shadow && shadow !== "none") {
+      return /0px\s+0px\s+0px\s+[2-9]px/.test(shadow)
+    }
+    return false
+  })
+  if (!ringVisible) {
+    throw new Error(`CTA focus ring not visible (${theme})`)
+  }
+}
+
+async function measureBrandVerifyBorderContrastFromTokens(
+  theme: "light" | "dark",
+): Promise<number> {
+  const contrastModUrl = pathToFileURL(
+    path.join(REPO_ROOT, "lib/wcag-oklch-contrast.ts"),
+  ).href
+  const { contrastRatioOklch } = (await import(contrastModUrl)) as typeof import(
+    "../../../../lib/wcag-oklch-contrast.ts"
+  )
+  const tokens = await readBrandVerifyCssTokens()
+  const pair = theme === "light" ? tokens.light : tokens.dark
+  return contrastRatioOklch(pair.border, pair.background)
+}
+
+async function captureBrandVerifySlotScreenshots(
+  baseUrl: string,
+  outDir: string,
+  browser: Awaited<ReturnType<(typeof import("playwright"))["chromium"]["launch"]>>,
+  lines: string[],
+): Promise<void> {
+  const slugs = ["banco-de-la-nacion-argentina", "uala"] as const
+  const viewports = [
+    { width: 390, height: 844, suffix: "390" },
+    { width: 1440, height: 900, suffix: "1440" },
+  ] as const
+
+  const contrastMetrics: Record<string, number> = {}
+
+  for (const slug of slugs) {
+    for (const theme of ["light", "dark"] as const) {
+      for (const vp of viewports) {
+        const page = await browser.newPage({
+          viewport: { width: vp.width, height: vp.height },
+        })
+        try {
+          await page.goto(`${baseUrl}/logo/${slug}`, { waitUntil: "load" })
+          await page.evaluate((mode) => {
+            document.documentElement.classList.toggle("dark", mode === "dark")
+          }, theme)
+          const aside = page.getByRole("complementary", { name: "Para equipos de marca" })
+          await aside.waitFor({ timeout: 15000 })
+          await aside.scrollIntoViewIfNeeded()
+          const file = `brand-verify-${slug}-${vp.suffix}-${theme}.png`
+          await aside.screenshot({ path: path.join(outDir, file) })
+          lines.push(`${file} captured (feature: brand-verify-slot)`)
+
+          await assertBrandVerifyCtaFocusRing(page, theme)
+          const focusFile = `brand-verify-${slug}-${vp.suffix}-${theme}-focus.png`
+          await aside.screenshot({ path: path.join(outDir, focusFile) })
+          lines.push(`${focusFile} captured (CTA :focus-visible)`)
+
+          if (slug === "uala" && vp.suffix === "390") {
+            contrastMetrics[theme] = await measureBrandVerifyBorderContrastFromTokens(theme)
+            lines.push(
+              `slot-border contrast ${theme}: ${contrastMetrics[theme].toFixed(2)}:1`,
+            )
+          }
+        } finally {
+          await page.close()
+        }
+      }
+    }
+  }
+
+  if (contrastMetrics.light === undefined || contrastMetrics.dark === undefined) {
+    throw new Error("missing slot-border contrast measurements")
+  }
+  const contrastModUrl = pathToFileURL(
+    path.join(REPO_ROOT, "lib/wcag-oklch-contrast.ts"),
+  ).href
+  const { MIN_SLOT_BORDER_CONTRAST } = (await import(contrastModUrl)) as typeof import(
+    "../../../../lib/wcag-oklch-contrast.ts"
+  )
+  if (contrastMetrics.light < MIN_SLOT_BORDER_CONTRAST) {
+    throw new Error(`light slot-border contrast ${contrastMetrics.light.toFixed(2)} < ${MIN_SLOT_BORDER_CONTRAST}`)
+  }
+  if (contrastMetrics.dark < MIN_SLOT_BORDER_CONTRAST) {
+    throw new Error(`dark slot-border contrast ${contrastMetrics.dark.toFixed(2)} < ${MIN_SLOT_BORDER_CONTRAST}`)
+  }
+
+  await writeFile(
+    path.join(outDir, "brand-verify-metrics.json"),
+    JSON.stringify(
+      {
+        slotBorderContrast: {
+          light: Number(contrastMetrics.light.toFixed(2)),
+          dark: Number(contrastMetrics.dark.toFixed(2)),
+          minimumRequired: MIN_SLOT_BORDER_CONTRAST,
+        },
+        focusRing: "verified on all brand-verify captures (2px outline via .brand-verify-slot__cta:focus-visible)",
+      },
+      null,
+      2,
+    ),
+  )
+  lines.push("brand-verify-metrics.json written")
+}
+
 async function drive(): Promise<void> {
   const baseUrl = await resolveBaseUrl()
   const run = await resolveArtifactRunId()
@@ -521,7 +772,7 @@ async function drive(): Promise<void> {
 
   try {
     const desktop = await browser.newPage({ viewport: { width: 1280, height: 800 } })
-    await desktop.goto(`${baseUrl}/`, { waitUntil: "networkidle" })
+    await desktop.goto(`${baseUrl}/`, { waitUntil: "domcontentloaded" })
     await desktop.screenshot({ path: path.join(outDir, "home-desktop.png"), fullPage: false })
     lines.push("home-desktop.png captured")
 
@@ -545,6 +796,8 @@ async function drive(): Promise<void> {
       fullPage: false,
     })
     lines.push("category-bancos-seo-desktop.png captured (feature: seo-ctr)")
+
+    await captureBrandVerifySlotScreenshots(baseUrl, outDir, browser, lines)
   } finally {
     await browser.close()
   }
