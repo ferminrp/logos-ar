@@ -86,7 +86,8 @@ export function LogoDownloadButtons({
 
   const showPng = true
   const showSvg = true
-  const pngVariant = layout === "hero" ? "default" : "outline"
+  const pngVariant =
+    layout === "hero" ? ("logo-download-png" as const) : ("outline" as const)
 
   return (
     <div className="space-y-2">
@@ -95,6 +96,7 @@ export function LogoDownloadButtons({
           <Button
             type="button"
             variant={pngVariant}
+            size="touch"
             disabled={downloadingFormat !== null}
             onClick={() => void handleDownload("png")}
           >
@@ -106,6 +108,7 @@ export function LogoDownloadButtons({
           <Button
             type="button"
             variant="outline"
+            size="touch"
             disabled={downloadingFormat !== null}
             onClick={() => void handleDownload("svg")}
           >

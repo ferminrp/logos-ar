@@ -30,6 +30,9 @@
   --chart-4: oklch(0.78 0.06 70);
   --chart-5: oklch(0.65 0.08 30);
   --radius: 1rem;
+  --logo-download-png: oklch(0.48 0.07 240);
+  --logo-download-png-hover: oklch(0.44 0.07 240);
+  --logo-download-png-foreground: oklch(0.99 0.002 95);
   --sidebar: oklch(0.98 0.004 95);
   --sidebar-foreground: oklch(0.22 0.012 55);
   --sidebar-primary: oklch(0.62 0.07 240);
@@ -75,6 +78,9 @@
   --sidebar-accent-foreground: oklch(0.95 0.006 85);
   --sidebar-border: oklch(0.32 0.012 55);
   --sidebar-ring: oklch(0.72 0.07 240);
+  --logo-download-png: oklch(0.48 0.07 240);
+  --logo-download-png-hover: oklch(0.44 0.07 240);
+  --logo-download-png-foreground: oklch(0.99 0.002 95);
   --slot-muted: oklch(0.72 0.015 70);
   --slot-border: oklch(0.70 0.012 55);
 }
@@ -109,6 +115,9 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-logo-download-png: var(--logo-download-png);
+  --color-logo-download-png-hover: var(--logo-download-png-hover);
+  --color-logo-download-png-foreground: var(--logo-download-png-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
