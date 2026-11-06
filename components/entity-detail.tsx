@@ -4,6 +4,7 @@ import { CopyButton } from "@/components/copy-button"
 import { EntityPreviewCard } from "@/components/entity-preview-card"
 import { BrandVerifySlot } from "@/components/brand-verify-slot"
 import { LogoDownloadButtons } from "@/components/logo-download-buttons"
+import { SponsorSlot } from "@/components/sponsor-slot"
 import { isBrandVerifySlotEnabled } from "@/lib/brand-verify-slot"
 import type { EntityRecord } from "@/lib/entity-index"
 import { buildEntityImageAlt } from "@/lib/entity-seo"
@@ -61,6 +62,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
           </Link>
           .
         </p>
+        <SponsorSlot slug={slug} categoryId={entity.categoryId} />
       </div>
 
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">

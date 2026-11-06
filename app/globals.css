@@ -139,4 +139,116 @@
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
+
+  /* Fase 2 sponsor (Opción A) — SSR min-heights for CLS; tokens mirror slot system */
+  .lg-slot {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--slot-border);
+    background: var(--card);
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--foreground);
+  }
+
+  @media (min-width: 640px) {
+    .lg-slot {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .lg-slot--empty {
+    border-style: dashed;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .lg-slot__mark {
+    flex: none;
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border-radius: 0.625rem;
+    background: var(--secondary);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+
+  .lg-slot__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .lg-slot__body--house {
+    padding-top: 0.125rem;
+  }
+
+  .lg-slot__tag {
+    margin: 0 0 0.125rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--slot-muted);
+  }
+
+  .lg-slot__title {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+
+  .lg-slot__subline {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--slot-muted);
+  }
+
+  .lg-slot__cta {
+    flex: none;
+    display: inline-flex;
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 0.875rem;
+    border: 1px solid var(--slot-border);
+    background: var(--background);
+    padding: 0 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .lg-slot__cta:hover {
+    background: var(--muted);
+  }
+
+  .lg-slot__cta:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 639px) {
+    .lg-slot:not(.lg-slot--empty) {
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+    .lg-slot__cta {
+      width: 100%;
+    }
+  }
 }
