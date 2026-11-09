@@ -5,7 +5,12 @@ import { fileURLToPath } from "node:url"
 import assert from "node:assert/strict"
 import test from "node:test"
 import sharp from "sharp"
-import { evaluateLogoBytes, checkEntityLogo, checkEntityLogos } from "../lib/logo-quality/check.ts"
+import {
+  type HashOwner,
+  evaluateLogoBytes,
+  checkEntityLogo,
+  checkEntityLogos,
+} from "../lib/logo-quality/check.ts"
 import { measureImage } from "../lib/logo-quality/image-metrics.ts"
 import { domainsEquivalent, normalizeHostname } from "../lib/logo-quality/domain.ts"
 import { GENERIC_FAVICON_SHA256, MIN_LOGO_BYTES } from "../lib/logo-quality/constants.ts"
@@ -97,7 +102,9 @@ test("evaluateLogoBytes flags small payloads", () => {
 
 test("evaluateLogoBytes flags duplicate hash", () => {
   const bytes = new Uint8Array(MIN_LOGO_BYTES + 10).fill(7)
-  const map = new Map<string, string[]>([["deadbeef".repeat(4), ["other-brand"]]])
+  const map = new Map<string, HashOwner[]>([
+    ["deadbeef".repeat(4), [{ slug: "other-brand", domain: "other.com" }]],
+  ])
   const sha = evaluateLogoBytes(bytes, map, "brand-a", "a.com")
   const hash = sha.metrics.sha256
   map.set(hash, [{ slug: "other-brand", domain: "other.com" }])

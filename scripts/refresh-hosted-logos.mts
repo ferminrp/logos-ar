@@ -196,7 +196,7 @@ async function main() {
       continue
     }
     const analysis = await analyzeLogoVisual(new Uint8Array(png))
-    const issues = analysis ? evaluateVisualAnalysis(analysis) : [{ code: "blank-or-faint" }]
+    const issues = analysis ? evaluateVisualAnalysis(analysis) : [{ code: "blank-or-faint", message: "sin análisis visual" }]
     const fileName = `${slug}.png`
     await writeFile(path.join(logosDir, fileName), png)
     overrides[entity.domain.toLowerCase()] = {

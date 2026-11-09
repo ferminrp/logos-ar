@@ -21,9 +21,6 @@ const nextConfig = {
   async redirects() {
     return permanentRedirects
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
     unoptimized: true,
   },

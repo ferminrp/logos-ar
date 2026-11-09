@@ -736,9 +736,9 @@ export const categories: Category[] = [
     seoIntro:
       "Logos de distribuidoras y empresas de energía en Argentina en PNG y SVG. Edenor, Camuzzi, Metrogas, Pampa Energía. Descarga gratis los logos de las principales empresas del sector energético.",
     entities: [
-      { id: 211, name: "Edenor", domain: "edenor.com" },
-      { id: 213, name: "Camuzzi Gas", domain: "camuzzigas.com" },
-      { id: 214, name: "Metrogas", domain: "metrogas.com.ar" },
+      { id: 601, name: "Edenor", domain: "edenor.com", slug: "edenor-211" },
+      { id: 602, name: "Camuzzi Gas", domain: "camuzzigas.com" },
+      { id: 603, name: "Metrogas", domain: "metrogas.com.ar", slug: "metrogas-214" },
       { id: 215, name: "Pampa Energía", domain: "pampa.com" },
       { id: 595, name: "TGS", domain: "www.tgs.com.ar" },
     ],
