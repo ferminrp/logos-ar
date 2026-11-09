@@ -54,3 +54,10 @@ jobs:
       - name: Check logos (full catalog)
         if: github.event_name != 'pull_request'
         run: pnpm check:logos
+      - name: Upload logo check report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logo-check-report
+          path: data/logo-check-report.json
+          if-no-files-found: ignore

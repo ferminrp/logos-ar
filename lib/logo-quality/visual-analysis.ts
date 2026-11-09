@@ -1,4 +1,4 @@
-import sharp from "sharp"
+import sharp, { type Channels } from "sharp"
 
 export type VisualAnalysis = {
   width: number
@@ -124,7 +124,7 @@ export async function analyzeLogoVisual(bytes: Uint8Array): Promise<VisualAnalys
         raw: {
           width: tw,
           height: th,
-          channels: trimmed.info.channels as sharp.Channels,
+          channels: trimmed.info.channels as Channels,
         },
       })
         .ensureAlpha()

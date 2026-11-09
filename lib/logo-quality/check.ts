@@ -27,6 +27,7 @@ import {
 } from "./visual-analysis.ts"
 import {
   type FetchRetryOptions,
+  isTransientHttpStatus,
   wrapFetchWithRetry,
 } from "./fetch-retry.ts"
 
@@ -45,6 +46,13 @@ export type LogoCheckCode =
 export type LogoCheckIssue = {
   code: LogoCheckCode
   message: string
+  /**
+   * True when the failure comes from an external service being unavailable
+   * (network error, timeout, 429/5xx, or Google's favicon proxy answering 404
+   * because it could not reach the brand's site at that moment). These say
+   * nothing about the logo itself and rotate between entities day to day.
+   */
+  transient?: boolean
 }
 
 export type LogoMetrics = {
@@ -69,15 +77,51 @@ export type LogoCheckResult = {
   metrics?: LogoMetrics
 }
 
+export type ReadFileBytes = (filePath: string) => Promise<Uint8Array>
+
 export type CheckCatalogOptions = {
   fetchImpl?: typeof fetch
-  readFileImpl?: typeof readFile
+  readFileImpl?: ReadFileBytes
   publicDir?: string
   skipRedirectCheck?: boolean
   skipVisualCheck?: boolean
   concurrency?: number
   skipFetchRetry?: boolean
   fetchRetry?: FetchRetryOptions
+  /**
+   * After the first pass, re-check entities whose only issues are transient,
+   * waiting this many ms first. Omit (or set to undefined) to skip the second pass.
+   */
+  transientRecheckDelayMs?: number
+  sleep?: (ms: number) => Promise<void>
+}
+
+const GOOGLE_FAVICON_HOST = "s2.googleusercontent.com"
+
+export function isGoogleFaviconUrl(url: string): boolean {
+  try {
+    return new URL(url).hostname === GOOGLE_FAVICON_HOST
+  } catch {
+    return false
+  }
+}
+
+/**
+ * Google's favicon proxy returns 404 (with a placeholder globe) whenever it
+ * cannot fetch the origin's favicon, which is usually a temporary outage on the
+ * brand's site. A 404 on a direct (hotlinked) logo URL is real link rot.
+ */
+export function isTransientLogoHttpStatus(status: number, logoUrl: string): boolean {
+  if (isTransientHttpStatus(status)) return true
+  return status === 404 && isGoogleFaviconUrl(logoUrl)
+}
+
+export function isTransientOnlyFailure(result: LogoCheckResult): boolean {
+  return (
+    !result.ok &&
+    result.issues.length > 0 &&
+    result.issues.every((issue) => issue.transient === true)
+  )
 }
 
 type DHashOwner = {
@@ -95,7 +139,7 @@ async function loadLogoBytes(
   options: CheckCatalogOptions,
 ): Promise<{ bytes: Uint8Array; contentType: string | null; status: number }> {
   const fetchImpl = options.fetchImpl ?? fetch
-  const readFileImpl = options.readFileImpl ?? readFile
+  const readFileImpl: ReadFileBytes = options.readFileImpl ?? ((filePath) => readFile(filePath))
 
   if (logoUrl.startsWith("/")) {
     const publicDir = options.publicDir ?? path.join(process.cwd(), "public")
@@ -116,7 +160,7 @@ async function loadLogoBytes(
   }
 }
 
-type HashOwner = { slug: string; domain: string }
+export type HashOwner = { slug: string; domain: string }
 
 export function evaluateLogoBytes(
   bytes: Uint8Array,
@@ -224,12 +268,34 @@ export async function checkEntityLogo(
     }
   }
 
+  let loaded: Awaited<ReturnType<typeof loadLogoBytes>>
   try {
-    const { bytes, status, contentType } = await loadLogoBytes(logoUrl, resolvedOptions)
+    loaded = await loadLogoBytes(logoUrl, resolvedOptions)
+  } catch (error) {
+    // Local files (/logos/...) failing to read is a repo problem, never transient.
+    const isRemote = !logoUrl.startsWith("/")
+    issues.push({
+      code: "fetch-failed",
+      message: error instanceof Error ? error.message : String(error),
+      ...(isRemote ? { transient: true } : {}),
+    })
+    return {
+      slug: entity.slug,
+      name: entity.name,
+      domain: entity.domain,
+      logoUrl,
+      ok: false,
+      issues,
+    }
+  }
+
+  try {
+    const { bytes, status, contentType } = loaded
     if (status !== 200) {
       issues.push({
         code: "fetch-failed",
         message: `Logo HTTP ${status} en ${logoUrl}`,
+        ...(isTransientLogoHttpStatus(status, logoUrl) ? { transient: true } : {}),
       })
       return {
         slug: entity.slug,
@@ -336,7 +402,7 @@ export async function checkEntityLogo(
   } catch (error) {
     issues.push({
       code: "fetch-failed",
-      message: error instanceof Error ? error.message : String(error),
+      message: `No se pudo procesar el logo: ${error instanceof Error ? error.message : String(error)}`,
     })
     return {
       slug: entity.slug,
@@ -368,6 +434,30 @@ export async function checkEntityLogos(
   for (const entity of entities) {
     const result = await checkEntityLogo(entity, sha256ToOwners, dHashOwners, options)
     results.push(result)
+  }
+
+  if (options.transientRecheckDelayMs === undefined) {
+    return results
+  }
+
+  const transientIndexes = results
+    .map((result, index) => (isTransientOnlyFailure(result) ? index : -1))
+    .filter((index) => index >= 0)
+  if (transientIndexes.length === 0) {
+    return results
+  }
+
+  const sleep = options.sleep ?? ((ms: number) => new Promise((r) => setTimeout(r, ms)))
+  await sleep(options.transientRecheckDelayMs)
+
+  const byIndex = new Map(entities.map((entity, index) => [index, entity]))
+  for (const index of transientIndexes) {
+    const entity = byIndex.get(index)!
+    // Redirect check already passed (or was not the problem) in the first pass.
+    results[index] = await checkEntityLogo(entity, sha256ToOwners, dHashOwners, {
+      ...options,
+      skipRedirectCheck: true,
+    })
   }
 
   return results
