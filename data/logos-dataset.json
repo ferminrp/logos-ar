@@ -1,5 +1,5 @@
 {
-  "version": "6155495f71bf",
+  "version": "dbf425b83f1a",
   "totalItems": 400,
   "items": [
     {
@@ -1657,7 +1657,7 @@
       "domain": "www.transener.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.transener.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.transener.com.ar.ico",
-      "catalog_logo_url": "http://www.transener.com.ar/wp-content/uploads/2018/06/Transener-logo-1.png",
+      "catalog_logo_url": "https://www.transener.com.ar/wp-content/uploads/2018/06/Transener-logo-1.png",
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
@@ -3648,7 +3648,7 @@
       "domain": "www.lasegunda.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.lasegunda.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.lasegunda.com.ar.ico",
-      "catalog_logo_url": "http://wwwlasegundal2prodnj.azurewebsites.net/assets/img/logo-fb.jpg",
+      "catalog_logo_url": "https://wwwlasegundal2prodnj.azurewebsites.net/assets/img/logo-fb.jpg",
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",

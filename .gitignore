@@ -20,3 +20,4 @@ public/sitemap.xml
 .cache/
 .verify-loguitos/
 data/logo-check-report.json
+*.tsbuildinfo

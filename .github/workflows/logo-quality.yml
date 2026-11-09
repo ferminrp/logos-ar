@@ -25,6 +25,15 @@ on:
   schedule:
     - cron: "0 9 * * *"
   workflow_dispatch:
+    inputs:
+      strict_availability:
+        description: "Fallar también si un logo externo no responde (404, timeout)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   check-logos:
@@ -51,6 +60,35 @@ jobs:
           LOGO_CHECK_SCOPE: pr
           LOGO_CHECK_BASE_REF: origin/${{ github.base_ref }}
         run: pnpm check:logos
+      # Full catalog: logo quality problems (size, generic icon, duplicates,
+      # redirects, missing hosted files) fail the job. External URLs that do
+      # not answer (Google favicon 404s, sites down) are third-party link rot:
+      # they are tracked in an issue instead of turning main red every day.
       - name: Check logos (full catalog)
         if: github.event_name != 'pull_request'
+        env:
+          LOGO_CHECK_UNAVAILABLE_ISSUE_PATH: ${{ runner.temp }}/logo-unavailable.md
+          LOGO_CHECK_STRICT_AVAILABILITY: ${{ inputs.strict_availability && '1' || '0' }}
         run: pnpm check:logos
+      - name: Sync "logos externos sin respuesta" issue
+        if: always() && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BODY_PATH: ${{ runner.temp }}/logo-unavailable.md
+          TITLE: "Logos externos sin respuesta (chequeo diario)"
+        run: |
+          if [ ! -f "$BODY_PATH" ]; then
+            echo "No hay reporte de disponibilidad (el chequeo no llegó a correr o hubo caída de red); no toco el issue."
+            exit 0
+          fi
+          number=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title \
+            --jq "map(select(.title == env.TITLE)) | .[0].number // empty")
+          if [ -s "$BODY_PATH" ]; then
+            if [ -n "$number" ]; then
+              gh issue edit "$number" --body-file "$BODY_PATH"
+            else
+              gh issue create --title "$TITLE" --body-file "$BODY_PATH"
+            fi
+          elif [ -n "$number" ]; then
+            gh issue close "$number" --comment "Todos los logos externos vuelven a responder. Cerrado automáticamente por el chequeo diario."
+          fi

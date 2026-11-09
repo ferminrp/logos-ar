@@ -119,7 +119,7 @@ Stops the server recorded in `.verify-loguitos/runs/latest/server.json`. If no r
 | Script | Invocation |
 |--------|------------|
 | Main harness | `pnpm verify:loguitos <launch\|doctor\|drive\|cleanup\|all>` |
-| Hosted logo QA | `pnpm check:logos` — fetches every entity logo with retry/backoff on transient network errors; writes `data/logo-check-report.json`. Local runs always use full-catalog blocking. CI on pull requests sets `LOGO_CHECK_SCOPE=pr` so only entities touched in the diff block the job; other failures are warnings. Main, schedule, and manual runs keep the full gate. |
+| Hosted logo QA | `pnpm check:logos` — fetches every entity logo with retry/backoff on transient network errors; writes `data/logo-check-report.json`. Local runs always use full-catalog blocking. CI on pull requests sets `LOGO_CHECK_SCOPE=pr` so only entities touched in the diff block the job; other failures are warnings. Main, schedule, and manual runs gate the full catalog on logo *quality* (size, generic icon, duplicates, redirects, missing hosted files); external URLs that do not answer (Google favicon 404s, sites down) are warnings tracked in an auto-managed GitHub issue, unless >25% fail (runner network outage → fail) or `LOGO_CHECK_STRICT_AVAILABILITY=1`. |
 | Sitemap (postbuild) | `node --experimental-strip-types scripts/verify-sitemap.mts` (runs automatically on `pnpm build` via `postbuild`) |
 
 Playwright is a devDependency; first browser run needs `pnpm exec playwright install chromium`.

@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Unit tests (offline)
+        run: pnpm test
+      - name: Build
+        run: pnpm build
+      - name: Generated files are committed
+        run: |
+          if ! git diff --exit-code -- data/logos-dataset.json data/flags-dataset.json data/permanent-redirects.json; then
+            echo "::error::Los datasets generados no están actualizados. Corré 'pnpm build' (o scripts/run-prebuild.mts) y commiteá los cambios."
+            exit 1
+          fi

@@ -540,7 +540,7 @@
     "logoSource": "site"
   },
   "www.lasegunda.com.ar": {
-    "logoUrl": "http://wwwlasegundal2prodnj.azurewebsites.net/assets/img/logo-fb.jpg",
+    "logoUrl": "https://wwwlasegundal2prodnj.azurewebsites.net/assets/img/logo-fb.jpg",
     "logoSource": "site"
   },
   "mapfre.com.ar": {
@@ -708,7 +708,7 @@
     "logoSource": "site"
   },
   "www.transener.com.ar": {
-    "logoUrl": "http://www.transener.com.ar/wp-content/uploads/2018/06/Transener-logo-1.png",
+    "logoUrl": "https://www.transener.com.ar/wp-content/uploads/2018/06/Transener-logo-1.png",
     "logoSource": "site"
   },
   "bancopatagonia.com.ar": {

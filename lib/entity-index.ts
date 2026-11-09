@@ -17,6 +17,10 @@ export function slugify(name: string): string {
     .replace(/^-+|-+$/g, "")
 }
 
+// Source entity object -> record. Entity ids are not unique across categories
+// (e.g. 211 is both Wyndham and Edenor), so lookups must not go by id alone.
+const recordBySourceEntity = new WeakMap<Entity, EntityRecord>()
+
 function buildEntityIndex(): EntityRecord[] {
   const slugCounts = new Map<string, number>()
   const records: EntityRecord[] = []
@@ -55,14 +59,16 @@ function buildEntityIndex(): EntityRecord[] {
         }
       }
 
-      records.push({
+      const record: EntityRecord = {
         ...entity,
         slug,
         slugAliases: entity.slugAliases,
         seoAliases: entity.seoAliases,
         categoryId: category.id,
         categoryName: category.name,
-      })
+      }
+      recordBySourceEntity.set(entity, record)
+      records.push(record)
     }
   }
 
@@ -85,7 +91,16 @@ export function getEntityBySlug(slug: string): EntityRecord | null {
 }
 
 export function getEntitySlug(entity: Entity): string {
-  const record = entityIndex.find((item) => item.id === entity.id)
+  if ("slug" in entity && typeof entity.slug === "string" && entityBySlug.has(entity.slug)) {
+    const record = entityBySlug.get(entity.slug)!
+    if (record.id === entity.id && record.name === entity.name) return record.slug
+  }
+  const record =
+    recordBySourceEntity.get(entity) ??
+    entityIndex.find(
+      (item) =>
+        item.id === entity.id && item.name === entity.name && item.domain === entity.domain,
+    )
   return record?.slug ?? slugify(entity.name)
 }
 

@@ -15,7 +15,9 @@ See `README.md` for full details. Quick reference:
 | Install deps | `pnpm install` |
 | Dev server | `pnpm dev` |
 | Lint | `pnpm lint` |
-| Build | `pnpm build` |
+| Build | `pnpm build` (type errors fail the build) |
+| Typecheck | `pnpm typecheck` |
+| Tests (offline) | `pnpm test` |
 
 ### Known issues / gotchas
 

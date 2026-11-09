@@ -143,10 +143,8 @@ function getPngConversionSource(
     extractedMetrics.format === "unknown" ? "png" : extractedMetrics.format
 
   return {
-    source: extracted.buffer.slice(
-      extracted.byteOffset,
-      extracted.byteOffset + extracted.byteLength,
-    ),
+    // slice() copies into a fresh ArrayBuffer (never a SharedArrayBuffer)
+    source: extracted.slice().buffer,
     format,
   }
 }
@@ -155,8 +153,8 @@ async function convertToPng(
   source: ArrayBuffer,
   size: number,
   detectedFormat: ImageMetrics["format"],
-): Promise<Buffer> {
-  return sharp(Buffer.from(source), {
+): Promise<Uint8Array<ArrayBuffer>> {
+  const png = await sharp(Buffer.from(source), {
     density: detectedFormat === "svg" ? 300 : undefined,
     failOn: "none",
   })
@@ -166,6 +164,7 @@ async function convertToPng(
     })
     .png()
     .toBuffer()
+  return new Uint8Array(png)
 }
 
 function buildSvgFromRaster(
@@ -224,7 +223,7 @@ export async function GET(request: Request) {
   const rasterMime = embedMimeType(upstreamContentType, imageMetrics.format)
 
   if (format === "png") {
-    let pngBody: ArrayBuffer | Buffer = logoBuffer
+    let pngBody: ArrayBuffer | Uint8Array<ArrayBuffer> = logoBuffer
     if (imageMetrics.format !== "png") {
       const { source, format: sourceFormat } = getPngConversionSource(
         logoBuffer,
