@@ -38,11 +38,19 @@ export function useSearchParams(): URLSearchParams {
 
 export function useRouter() {
   const navigate = useCallback((url: string, replace = false) => {
-    if (replace) {
-      window.history.replaceState({}, '', url)
-    } else {
-      window.history.pushState({}, '', url)
+    const target = new URL(url, window.location.origin)
+    const current = `${window.location.pathname}${window.location.search}`
+    const next = `${target.pathname}${target.search}`
+
+    if (next !== current) {
+      if (replace) {
+        window.location.replace(next)
+      } else {
+        window.location.assign(next)
+      }
+      return
     }
+
     window.dispatchEvent(new Event('loguitos:navigation'))
   }, [])
 

@@ -1,0 +1,75 @@
+diff --git a/dist/renderer.d.ts b/dist/renderer.d.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..cb0254b4e411f2e77462424574a3df9f76c60459
+--- /dev/null
++++ b/dist/renderer.d.ts
+@@ -0,0 +1,17 @@
++interface OptimizeDeps {
++  include?: string[]
++  exclude?: string[]
++}
++
++interface RendererModuleIds {
++  clientEntrypoint?: string | URL
++  serverEntrypoint: string | URL
++  optimizeDeps?: { client?: OptimizeDeps; server?: OptimizeDeps }
++  noExternal?: string[] | ((context: { root: URL }) => string[] | Promise<string[]>)
++}
++
++export function reexportRenderer<T extends RendererModuleIds>(
++  renderer: T,
++  rendererPackage: string,
++  integrationPackage: string,
++): T
+diff --git a/dist/renderer.js b/dist/renderer.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..c1739c7ccb1c22c38b4b57f6f457a0e24765b8bc
+--- /dev/null
++++ b/dist/renderer.js
+@@ -0,0 +1,32 @@
++export function reexportRenderer(renderer, rendererPackage, integrationPackage) {
++  const toIntegration = (id) => {
++    if (id.startsWith(`${rendererPackage}/`))
++      return integrationPackage + id.slice(rendererPackage.length)
++    if (id.startsWith(`${rendererPackage} > `))
++      return `${integrationPackage} > ${id}`
++    return id
++  }
++  const toIntegrationDeps = (deps) =>
++    deps && {
++      ...(deps.include && { include: deps.include.map(toIntegration) }),
++      ...(deps.exclude && {
++        exclude: [...new Set([...deps.exclude.map(toIntegration), ...deps.exclude])],
++      }),
++    }
++  const { clientEntrypoint, serverEntrypoint, optimizeDeps, noExternal } = renderer
++  return {
++    ...renderer,
++    clientEntrypoint:
++      typeof clientEntrypoint === 'string' ? toIntegration(clientEntrypoint) : clientEntrypoint,
++    serverEntrypoint:
++      typeof serverEntrypoint === 'string' ? toIntegration(serverEntrypoint) : serverEntrypoint,
++    ...(optimizeDeps && {
++      optimizeDeps: {
++        client: toIntegrationDeps(optimizeDeps.client),
++        server: toIntegrationDeps(optimizeDeps.server),
++      },
++    }),
++    ...(Array.isArray(noExternal) &&
++      noExternal.includes(rendererPackage) && { noExternal: [integrationPackage, ...noExternal] }),
++  }
++}
+diff --git a/package.json b/package.json
+index 54c8e3e9b1ae9d937f269941cebf705c419b1aba..8e33c33bd9c97f5eca7bd6384c0f4678cf3f3db7 100644
+--- a/package.json
++++ b/package.json
+@@ -25,7 +25,8 @@
+     "./shiki": "./dist/shiki.js",
+     "./timings": "./dist/timings.js",
+     "./yaml": "./dist/yaml.js",
+-    "./yaml-error": "./dist/yaml-error.js"
++    "./yaml-error": "./dist/yaml-error.js",
++    "./renderer": "./dist/renderer.js"
+   },
+   "imports": {
+     "#shiki-engine": {

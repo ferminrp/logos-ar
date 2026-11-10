@@ -1,6 +1,7 @@
 import { defineMiddleware } from 'astro:middleware'
 import permanentRedirects from '../data/permanent-redirects.json'
 import { prefersMarkdown } from '@/lib/accept'
+import { GONE_LOGO_SLUGS } from '@/lib/gone-logo-slugs'
 import { getMarkdownForPath } from '@/lib/site-markdown'
 import { getSiteUrl } from '@/lib/site-url'
 
@@ -15,6 +16,12 @@ const redirectMap = new Map(
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const { pathname } = context.url
+
+  const goneLogoMatch = /^\/logo\/([^/]+)\/?$/.exec(pathname)
+  if (goneLogoMatch?.[1] && GONE_LOGO_SLUGS.has(goneLogoMatch[1])) {
+    return new Response('Not Found', { status: 404 })
+  }
+
   const destination = redirectMap.get(pathname)
 
   if (destination) {

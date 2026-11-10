@@ -13,20 +13,11 @@ import { getEntityBySlug } from '@/lib/entity-index'
 import NotFoundPage from '../../../views/not-found-page'
 
 export function getStaticPaths() {
-  const slugs = getAllEntitySlugs()
-  const gone = [...GONE_LOGO_SLUGS]
-  return [
-    ...slugs.map((slug) => ({ params: { slug } })),
-    ...gone.map((slug) => ({ params: { slug }, props: { gone: true } })),
-  ]
-}
-
-interface Props {
-  gone?: boolean
+  return getAllEntitySlugs().map((slug) => ({ params: { slug } }))
 }
 
 const { slug } = Astro.params
-const gone = (Astro.props as Props).gone === true
+const gone = slug ? GONE_LOGO_SLUGS.has(slug) : false
 
 if (gone) {
   Astro.response.status = 404
@@ -58,8 +49,9 @@ if (gone) {
       title={title}
       description={description}
       canonical={`/logo/${slug}`}
+      twitterTitle={title}
     >
-      <LogoPageView slug={slug!} />
+      <LogoPageView client:load slug={slug!} />
     </BaseLayout>
   )
 }

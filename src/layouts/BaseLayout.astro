@@ -12,6 +12,7 @@ export interface Props {
   ogType?: string
   ogImage?: string
   twitterCard?: string
+  twitterTitle?: string
 }
 
 const {
@@ -22,14 +23,17 @@ const {
   ogType = 'website',
   ogImage = '/og-image.jpg',
   twitterCard = 'summary_large_image',
+  twitterTitle = 'Logos Argentina - Directorio de Favicons',
 } = Astro.props
 
 const siteUrl = getSiteUrl().replace(/\/$/, '')
 const canonicalUrl = canonical
   ? canonical.startsWith('http')
     ? canonical
-    : `${siteUrl}${canonical.startsWith('/') ? canonical : `/${canonical}`}`
-  : `${siteUrl}${Astro.url.pathname}`
+    : canonical === '/'
+      ? siteUrl
+      : `${siteUrl}${canonical.startsWith('/') ? canonical : `/${canonical}`}`
+  : `${siteUrl}${Astro.url.pathname.replace(/\/$/, '') || ''}`
 
 const gaMeasurementId = 'G-GZLZ092Z7S'
 ---
@@ -52,14 +56,14 @@ const gaMeasurementId = 'G-GZLZ092Z7S'
     <>
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={twitterTitle} />
       {description ? <meta name="twitter:description" content={description} /> : null}
       <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
     </>
   ) : (
     <>
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={twitterTitle} />
       {description ? <meta name="twitter:description" content={description} /> : null}
     </>
   )}

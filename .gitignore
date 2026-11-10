@@ -13,6 +13,8 @@ next.user-config.*
 # Common ignores
 node_modules
 dist/
+.astro/
+.wrangler/
 public/sitemap.xml
 .DS_Store
 .vercel

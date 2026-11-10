@@ -1,11 +1,12 @@
 
-import { getAllEntities } from "@/lib/entity-index"
-import { getEntityLogoUrl, resolveEntityLogoUrl } from "@/lib/entity-logo"
-import { getGoogleFaviconUrl } from "@/lib/favicon-urls"
+import { getAllEntities } from "./entity-index.ts"
+import { getEntityLogoUrl, resolveEntityLogoUrl } from "./entity-logo.ts"
+import { getGoogleFaviconUrl } from "./favicon-urls.ts"
+import { convertRasterToPng } from "./logo-download-png.ts"
 import {
   measureImage,
   type ImageMetrics,
-} from "@/lib/logo-quality/image-metrics"
+} from "./logo-quality/image-metrics.ts"
 
 const KNOWN_DOMAINS = new Set(
   getAllEntities().map((entity) => entity.domain.toLowerCase()),
@@ -210,20 +211,28 @@ export async function handleLogoDownloadGet(request: Request) {
 
   if (format === "png") {
     let pngBody: ArrayBuffer | Uint8Array<ArrayBuffer> = logoBuffer
-    if (imageMetrics.format !== "png") {
-      const { format: sourceFormat } = getPngConversionSource(
+    if (imageMetrics.format !== 'png') {
+      const { source, format: sourceFormat } = getPngConversionSource(
         logoBuffer,
         bytes,
         imageMetrics,
       )
 
-      if (sourceFormat === 'ico' || sourceFormat === 'jpeg' || sourceFormat === 'webp' || sourceFormat === 'gif') {
+      if (sourceFormat === 'ico') {
         pngBody = logoBuffer
       } else {
-        return Response.json(
-          { error: 'No se pudo convertir el logo' },
-          { status: 502 },
-        )
+        try {
+          pngBody = await convertRasterToPng(source, size, sourceFormat)
+        } catch {
+          if (imageMetrics.format === 'ico') {
+            pngBody = logoBuffer
+          } else {
+            return Response.json(
+              { error: 'No se pudo convertir el logo' },
+              { status: 502 },
+            )
+          }
+        }
       }
     }
 

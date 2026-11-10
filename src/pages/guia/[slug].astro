@@ -24,7 +24,7 @@ const description = guide?.description
 {
   guide ? (
     <BaseLayout title={title} description={description} canonical={`/guia/${slug}`} ogType="article">
-      <GuidePageView slug={slug!} />
+      <GuidePageView client:load slug={slug!} />
     </BaseLayout>
   ) : (
     <BaseLayout title={title} canonical={`/guia/${slug}`}>
