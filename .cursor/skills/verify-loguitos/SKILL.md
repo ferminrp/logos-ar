@@ -27,6 +27,17 @@ export VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:3000
 
 Two instances can run side by side if each uses its own `VERIFY_LOGUITOS_PORT` and run directory. Do not attach verification to a server you did not start unless `VERIFY_LOGUITOS_BASE_URL` is set intentionally.
 
+### Offline preflight (CI parity)
+
+On dataset, routing, or tooling changes, run these before `launch` / `all` (same as `.github/workflows/ci.yml` on every PR and push to main):
+
+```bash
+pnpm typecheck
+pnpm test
+```
+
+`pnpm build` inside `launch` also fails on TypeScript errors (`ignoreBuildErrors` is off in `next.config.mjs`).
+
 Teardown:
 
 ```bash
@@ -119,7 +130,7 @@ Stops the server recorded in `.verify-loguitos/runs/latest/server.json`. If no r
 | Script | Invocation |
 |--------|------------|
 | Main harness | `pnpm verify:loguitos <launch\|doctor\|drive\|cleanup\|all>` |
-| Hosted logo QA | `pnpm check:logos` — fetches every entity logo with retry/backoff on transient network errors; writes `data/logo-check-report.json`. Local runs always use full-catalog blocking. CI on pull requests sets `LOGO_CHECK_SCOPE=pr` so only entities touched in the diff block the job; other failures are warnings. Main, schedule, and manual runs keep the full gate. |
+| Hosted logo QA | `pnpm check:logos` — full catalog fetch with one 30s recheck for entities that failed only on transient external errors (network, timeout, 429/5xx, Google favicon-proxy 404). Writes `data/logo-check-report.json`. **Full-catalog runs** (local default, push to main, nightly): real quality problems block; transient-only failures are warnings unless more than `max(10, 5%)` of entities are transient (then treated as a broken checker/runner). **PR runs** (`LOGO_CHECK_SCOPE=pr`, set in CI): entities touched in the diff block on any failure; others are out of scope. Logo-quality workflow uploads the JSON report and prints a step summary. |
 | Sitemap (postbuild) | `node --experimental-strip-types scripts/verify-sitemap.mts` (runs automatically on `pnpm build` via `postbuild`) |
 
 Playwright is a devDependency; first browser run needs `pnpm exec playwright install chromium`.
