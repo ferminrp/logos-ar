@@ -10,9 +10,13 @@ import {
 } from "./logo-download-upstream.ts"
 import { convertRasterToPng } from "./logo-download-png.ts"
 import {
+  exceedsWorkerWasmDecodeBudget,
+} from "./logo-download-worker-budget.ts"
+import {
   measureImage,
   type ImageMetrics,
 } from "./logo-quality/image-metrics.ts"
+import { isCloudflareWorkersRuntime } from "./worker-runtime.ts"
 
 const KNOWN_DOMAINS = new Set(
   getAllEntities().map((entity) => entity.domain.toLowerCase()),
@@ -198,15 +202,22 @@ export async function handleLogoDownloadGet(
   const logoUrl = entity
     ? getEntityLogoUrl(entity, size)
     : getGoogleFaviconUrl(domain, size)
+  const workerDecodeBudget = isCloudflareWorkersRuntime()
+    ? { targetPngSize: size }
+    : undefined
+
   const { response: upstream, attempts } = await fetchLogoUpstream(
     logoUrl,
     faviconDomain,
     size,
     ctx,
+    workerDecodeBudget ? { decodeBudget: workerDecodeBudget } : undefined,
   )
 
   if (!upstream.ok) {
     const reason = formatLogoUpstreamFailureReason(attempts)
+    const primaryStatus =
+      attempts.find((attempt) => attempt.role === 'primary')?.status ?? upstream.status
     console.error(
       JSON.stringify({
         event: 'logo_download_upstream_failed',
@@ -220,15 +231,44 @@ export async function handleLogoDownloadGet(
     )
     return Response.json(
       { error: "No se pudo obtener el logo", reason },
-      { status: upstream.status === 404 ? 404 : 502 },
+      { status: primaryStatus === 404 || upstream.status === 404 ? 404 : 502 },
     )
   }
 
-  const logoBuffer = await upstream.arrayBuffer()
+  let logoBuffer = await upstream.arrayBuffer()
   const filename = getFilename(domain, format)
-  const bytes = new Uint8Array(logoBuffer)
-  const imageMetrics = measureImage(bytes)
-  const upstreamContentType = upstream.headers.get("content-type")
+  let bytes = new Uint8Array(logoBuffer)
+  let imageMetrics = measureImage(bytes)
+  let upstreamContentType = upstream.headers.get("content-type")
+
+  if (
+    format === "png" &&
+    workerDecodeBudget &&
+    exceedsWorkerWasmDecodeBudget(bytes.byteLength, imageMetrics, size)
+  ) {
+    const { response: light, attempts: lightAttempts } = await fetchLogoUpstream(
+      getGoogleFaviconUrl(faviconDomain, size),
+      faviconDomain,
+      size,
+      ctx,
+      { decodeBudget: workerDecodeBudget },
+    )
+    if (!light.ok) {
+      const reason = formatLogoUpstreamFailureReason([
+        ...attempts,
+        ...lightAttempts,
+      ])
+      return Response.json(
+        { error: "No se pudo obtener el logo", reason },
+        { status: 502 },
+      )
+    }
+    logoBuffer = await light.arrayBuffer()
+    bytes = new Uint8Array(logoBuffer)
+    imageMetrics = measureImage(bytes)
+    upstreamContentType = light.headers.get("content-type")
+  }
+
   const rasterMime = embedMimeType(upstreamContentType, imageMetrics.format)
 
   if (format === "png") {

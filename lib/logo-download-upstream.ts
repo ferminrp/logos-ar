@@ -3,6 +3,7 @@ import {
   getDuckDuckGoFaviconUrl,
   getGoogleFaviconUrl,
 } from './favicon-urls.ts'
+import { describeWorkerWasmDecodeRisk } from './logo-download-worker-budget.ts'
 import { measureImage } from './logo-quality/image-metrics.ts'
 
 const UPSTREAM_HEADERS: HeadersInit = {
@@ -104,8 +105,13 @@ export function formatLogoUpstreamFailureReason(
     .join('; ')
 }
 
+export type LogoUpstreamDecodeBudget = {
+  targetPngSize: number
+}
+
 async function responseAsLogo(
   res: Response,
+  decodeBudget?: LogoUpstreamDecodeBudget,
 ): Promise<
   | { ok: true; response: Response }
   | { ok: false; detail: string }
@@ -117,6 +123,18 @@ async function responseAsLogo(
   )
   if (unusable) {
     return { ok: false, detail: unusable }
+  }
+
+  if (decodeBudget) {
+    const metrics = measureImage(bytes)
+    const wasmRisk = describeWorkerWasmDecodeRisk(
+      bytes.byteLength,
+      metrics,
+      decodeBudget.targetPngSize,
+    )
+    if (wasmRisk) {
+      return { ok: false, detail: wasmRisk }
+    }
   }
 
   return {
@@ -195,7 +213,9 @@ export async function fetchLogoUpstream(
   faviconDomain: string,
   size: number,
   ctx: LogoDownloadContext,
+  options?: { decodeBudget?: LogoUpstreamDecodeBudget },
 ): Promise<LogoUpstreamFetchResult> {
+  const decodeBudget = options?.decodeBudget
   const plan = buildLogoSourcePlan(primaryLogoUrl, faviconDomain, size, ctx)
   const tried = new Set<string>()
   const attempts: LogoUpstreamAttempt[] = []
@@ -211,7 +231,7 @@ export async function fetchLogoUpstream(
   tried.add(plan.primaryUrl)
 
   if (primaryRes.ok) {
-    const parsed = await responseAsLogo(primaryRes)
+    const parsed = await responseAsLogo(primaryRes, decodeBudget)
     if (parsed.ok) {
       attempts.push({
         role: 'primary',
@@ -251,7 +271,7 @@ export async function fetchLogoUpstream(
     const fallbackRes = await fetchAbsoluteUrl(fallbackUrl, ctx)
 
     if (fallbackRes.ok) {
-      const parsed = await responseAsLogo(fallbackRes)
+      const parsed = await responseAsLogo(fallbackRes, decodeBudget)
       if (parsed.ok) {
         attempts.push({
           role: 'fallback',
@@ -275,8 +295,13 @@ export async function fetchLogoUpstream(
     }
   }
 
+  const primaryHttpStatus = attempts[0]?.status ?? 502
+  const exhaustedStatus = primaryHttpStatus === 404 ? 404 : 502
+
   return {
-    response: new Response('No se pudo obtener el logo', { status: 502 }),
+    response: new Response('No se pudo obtener el logo', {
+      status: exhaustedStatus,
+    }),
     attempts,
   }
 }

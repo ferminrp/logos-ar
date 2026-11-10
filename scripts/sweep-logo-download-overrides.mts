@@ -170,6 +170,18 @@ async function main(): Promise<void> {
   if (process.env.LOGO_DOWNLOAD_SWEEP_STRICT === '1' && failed.length > 0) {
     throw new Error(`PR sweep: ${failed.length}/${domains.length} not HTTP 200 PNG`)
   }
+
+  if (process.env.LOGO_DOWNLOAD_SWEEP_WASM_AUDIT === '1') {
+    const { spawnSync } = await import('node:child_process')
+    const audit = spawnSync(
+      'node',
+      ['--experimental-strip-types', 'scripts/audit-override-wasm-raster.mts'],
+      { cwd: REPO_ROOT, stdio: 'inherit', env: process.env },
+    )
+    if (audit.status !== 0) {
+      throw new Error('wasm raster audit failed')
+    }
+  }
 }
 
 await main()

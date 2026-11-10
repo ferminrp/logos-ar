@@ -144,6 +144,55 @@ describe('logo-download-upstream', () => {
       assert.ok(calls.some((u) => u.includes('googleusercontent.com')))
     })
 
+    it('returns 404 when primary was 404 and fallbacks exhausted', async () => {
+      globalThis.fetch = async (input: RequestInfo | URL) => {
+        const url = String(input)
+        calls.push(url)
+        if (url.includes('missing.example/logo')) {
+          return new Response('missing', { status: 404 })
+        }
+        return new Response('missing', { status: 404 })
+      }
+      const { response: res } = await fetchLogoUpstream(
+        'https://missing.example/logo.png',
+        'missing.example',
+        128,
+        ctx,
+      )
+      assert.equal(res.status, 404)
+    })
+
+    it('falls back when primary JPEG exceeds Workers wasm budget', async () => {
+      globalThis.fetch = async (input: RequestInfo | URL) => {
+        const url = String(input)
+        calls.push(url)
+        if (url.includes('subaru.com.ar/subaru/site')) {
+          const jpeg = new Uint8Array([
+            0xff, 0xd8, 0xff, 0xe0, 0x00, 0x10, 0x4a, 0x46, 0x49, 0x46, 0x00, 0x01,
+            0x01, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0xff, 0xc0, 0x00, 0x0b,
+            0x08, 0x0b, 0xb8, 0x0b, 0xb8, 0x01, 0x01, 0x11, 0x00, 0xff, 0xd9,
+          ])
+          return new Response(jpeg, {
+            status: 200,
+            headers: { 'Content-Type': 'image/jpeg' },
+          })
+        }
+        if (url.includes('googleusercontent.com')) {
+          return pngResponse()
+        }
+        return new Response('missing', { status: 404 })
+      }
+      const { response: res } = await fetchLogoUpstream(
+        'https://www.subaru.com.ar/subaru/site/artic/logo.jpg',
+        'subaru.com.ar',
+        128,
+        ctx,
+        { decodeBudget: { targetPngSize: 128 } },
+      )
+      assert.equal(res.status, 200)
+      assert.ok(calls.some((u) => u.includes('googleusercontent.com')))
+    })
+
     it('falls back when primary returns 200 HTML instead of an image', async () => {
       globalThis.fetch = async (input: RequestInfo | URL) => {
         const url = String(input)
