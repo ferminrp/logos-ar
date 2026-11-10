@@ -87,6 +87,12 @@ describe('logo-download API in workerd (wrangler dev)', () => {
     )
   })
 
+  it('subaru.com.ar returns PNG (5xx site URL → favicon fallback)', async () => {
+    await expectPngOk(
+      `${BASE}/api/logo-download?domain=subaru.com.ar&format=png&size=128`,
+    )
+  })
+
   it('www.galicia.ar returns PNG', async () => {
     await expectPngOk(
       `${BASE}/api/logo-download?domain=www.galicia.ar&format=png&size=128`,

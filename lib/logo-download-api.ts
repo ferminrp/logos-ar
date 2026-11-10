@@ -4,6 +4,7 @@ import { getEntityLogoUrl } from "./entity-logo.ts"
 import { getGoogleFaviconUrl } from "./favicon-urls.ts"
 import {
   fetchLogoUpstream,
+  formatLogoUpstreamFailureReason,
   requestOrigin,
   type LogoDownloadContext,
 } from "./logo-download-upstream.ts"
@@ -197,10 +198,15 @@ export async function handleLogoDownloadGet(
   const logoUrl = entity
     ? getEntityLogoUrl(entity, size)
     : getGoogleFaviconUrl(domain, size)
-  const upstream = await fetchLogoUpstream(logoUrl, faviconDomain, size, ctx)
+  const { response: upstream, attempts } = await fetchLogoUpstream(
+    logoUrl,
+    faviconDomain,
+    size,
+    ctx,
+  )
 
   if (!upstream.ok) {
-    const reason = `upstream HTTP ${upstream.status}`
+    const reason = formatLogoUpstreamFailureReason(attempts)
     console.error(
       JSON.stringify({
         event: 'logo_download_upstream_failed',
@@ -208,6 +214,8 @@ export async function handleLogoDownloadGet(
         faviconDomain,
         primaryLogoUrl: logoUrl,
         status: upstream.status,
+        attempts,
+        reason,
       }),
     )
     return Response.json(

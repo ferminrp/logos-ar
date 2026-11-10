@@ -3,6 +3,7 @@ import {
   getDuckDuckGoFaviconUrl,
   getGoogleFaviconUrl,
 } from './favicon-urls.ts'
+import { measureImage } from './logo-quality/image-metrics.ts'
 
 const UPSTREAM_HEADERS: HeadersInit = {
   Accept: 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8',
@@ -44,7 +45,88 @@ export function shouldFallbackToPublicFavicon(
   if (status === 404) {
     return true
   }
-  return status === 403 || status === 429 || status >= 502
+  if (status === 403 || status === 429) {
+    return true
+  }
+  return status >= 500 && status < 600
+}
+
+const NON_IMAGE_CONTENT_TYPE =
+  /^(text\/|application\/json|application\/xml|application\/javascript)/i
+
+/** Human-readable detail when HTTP succeeded but the body is not a logo. */
+export function describeUnusableLogoBody(
+  bytes: Uint8Array,
+  contentType: string | null,
+): string | null {
+  if (bytes.byteLength === 0) {
+    return 'empty body'
+  }
+
+  const mime = contentType?.split(';')[0]?.trim() ?? ''
+  if (mime && NON_IMAGE_CONTENT_TYPE.test(mime)) {
+    return `content-type ${mime}`
+  }
+
+  const metrics = measureImage(bytes)
+  if (metrics.format === 'unknown') {
+    return 'unrecognized image bytes'
+  }
+
+  return null
+}
+
+export type LogoUpstreamAttempt = {
+  role: 'primary' | 'fallback'
+  url: string
+  status: number
+  detail?: string
+}
+
+export type LogoUpstreamFetchResult = {
+  response: Response
+  attempts: LogoUpstreamAttempt[]
+}
+
+export function formatLogoUpstreamFailureReason(
+  attempts: LogoUpstreamAttempt[],
+): string {
+  if (attempts.length === 0) {
+    return 'upstream failed'
+  }
+
+  return attempts
+    .map((attempt) => {
+      const label = attempt.role === 'primary' ? 'primary' : 'fallback'
+      const detail = attempt.detail ? ` (${attempt.detail})` : ''
+      return `${label} HTTP ${attempt.status}${detail}`
+    })
+    .join('; ')
+}
+
+async function responseAsLogo(
+  res: Response,
+): Promise<
+  | { ok: true; response: Response }
+  | { ok: false; detail: string }
+> {
+  const bytes = new Uint8Array(await res.arrayBuffer())
+  const unusable = describeUnusableLogoBody(
+    bytes,
+    res.headers.get('content-type'),
+  )
+  if (unusable) {
+    return { ok: false, detail: unusable }
+  }
+
+  return {
+    ok: true,
+    response: new Response(bytes, {
+      status: res.status,
+      statusText: res.statusText,
+      headers: res.headers,
+    }),
+  }
 }
 
 async function fetchAbsoluteUrl(
@@ -113,9 +195,10 @@ export async function fetchLogoUpstream(
   faviconDomain: string,
   size: number,
   ctx: LogoDownloadContext,
-): Promise<Response> {
+): Promise<LogoUpstreamFetchResult> {
   const plan = buildLogoSourcePlan(primaryLogoUrl, faviconDomain, size, ctx)
   const tried = new Set<string>()
+  const attempts: LogoUpstreamAttempt[] = []
 
   const attempt = async (url: string): Promise<Response> => {
     if (primaryLogoUrl.startsWith('/') && url === plan.primaryUrl) {
@@ -124,25 +207,76 @@ export async function fetchLogoUpstream(
     return fetchAbsoluteUrl(url, ctx)
   }
 
-  let primaryRes = await attempt(plan.primaryUrl)
+  const primaryRes = await attempt(plan.primaryUrl)
   tried.add(plan.primaryUrl)
 
   if (primaryRes.ok) {
-    return primaryRes
+    const parsed = await responseAsLogo(primaryRes)
+    if (parsed.ok) {
+      attempts.push({
+        role: 'primary',
+        url: plan.primaryUrl,
+        status: primaryRes.status,
+      })
+      return { response: parsed.response, attempts }
+    }
+    attempts.push({
+      role: 'primary',
+      url: plan.primaryUrl,
+      status: primaryRes.status,
+      detail: parsed.detail,
+    })
+  } else {
+    attempts.push({
+      role: 'primary',
+      url: plan.primaryUrl,
+      status: primaryRes.status,
+    })
   }
 
-  if (!shouldFallbackToPublicFavicon(plan.primaryUrl, primaryRes.status)) {
-    return primaryRes
+  const primaryAttempt = attempts[0]!
+  const primaryStatus = primaryAttempt.status
+  const primaryUnusable = Boolean(primaryAttempt.detail)
+
+  if (
+    !primaryUnusable &&
+    !shouldFallbackToPublicFavicon(plan.primaryUrl, primaryStatus)
+  ) {
+    return { response: primaryRes, attempts }
   }
 
   for (const fallbackUrl of plan.fallbackUrls) {
     if (tried.has(fallbackUrl)) continue
     tried.add(fallbackUrl)
     const fallbackRes = await fetchAbsoluteUrl(fallbackUrl, ctx)
+
     if (fallbackRes.ok) {
-      return fallbackRes
+      const parsed = await responseAsLogo(fallbackRes)
+      if (parsed.ok) {
+        attempts.push({
+          role: 'fallback',
+          url: fallbackUrl,
+          status: fallbackRes.status,
+        })
+        return { response: parsed.response, attempts }
+      }
+      attempts.push({
+        role: 'fallback',
+        url: fallbackUrl,
+        status: fallbackRes.status,
+        detail: parsed.detail,
+      })
+    } else {
+      attempts.push({
+        role: 'fallback',
+        url: fallbackUrl,
+        status: fallbackRes.status,
+      })
     }
   }
 
-  return primaryRes
+  return {
+    response: new Response('No se pudo obtener el logo', { status: 502 }),
+    attempts,
+  }
 }

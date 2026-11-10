@@ -8,8 +8,36 @@ import {
 
 const originalFetch = globalThis.fetch
 const ctx = { origin: 'https://loguitos.test' }
+const TINY_PNG = Uint8Array.from(
+  atob(
+    'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==',
+  ),
+  (c) => c.charCodeAt(0),
+)
+
+function pngResponse(): Response {
+  return new Response(TINY_PNG, {
+    status: 200,
+    headers: { 'Content-Type': 'image/png' },
+  })
+}
 
 describe('logo-download-upstream', () => {
+  it('shouldFallbackToPublicFavicon on 5xx including 500 and 501', () => {
+    assert.equal(
+      shouldFallbackToPublicFavicon('https://www.subaru.com.ar/logo.jpg', 500),
+      true,
+    )
+    assert.equal(
+      shouldFallbackToPublicFavicon('https://www.subaru.com.ar/logo.jpg', 501),
+      true,
+    )
+    assert.equal(
+      shouldFallbackToPublicFavicon('https://www.subaru.com.ar/logo.jpg', 503),
+      true,
+    )
+  })
+
   it('shouldFallbackToPublicFavicon on 403', () => {
     assert.equal(
       shouldFallbackToPublicFavicon('https://www.bbva.com.ar/favicon.ico', 403),
@@ -48,10 +76,7 @@ describe('logo-download-upstream', () => {
           return new Response('forbidden', { status: 403 })
         }
         if (url.includes('googleusercontent.com/s2/favicons')) {
-          return new Response(new Uint8Array([0x89, 0x50, 0x4e, 0x47]), {
-            status: 200,
-            headers: { 'Content-Type': 'image/png' },
-          })
+          return pngResponse()
         }
         return new Response('missing', { status: 404 })
       }
@@ -70,14 +95,11 @@ describe('logo-download-upstream', () => {
           throw new Error('TLS handshake failed')
         }
         if (url.includes('googleusercontent.com')) {
-          return new Response(new Uint8Array([0x89, 0x50, 0x4e, 0x47]), {
-            status: 200,
-            headers: { 'Content-Type': 'image/png' },
-          })
+          return pngResponse()
         }
         return new Response('missing', { status: 404 })
       }
-      const res = await fetchLogoUpstream(
+      const { response: res } = await fetchLogoUpstream(
         'https://www.bancopiano.com.ar/dist/img/logo.png',
         'www.bancopiano.com.ar',
         128,
@@ -88,7 +110,7 @@ describe('logo-download-upstream', () => {
     })
 
     it('falls back to Google favicon when primary returns 403', async () => {
-      const res = await fetchLogoUpstream(
+      const { response: res } = await fetchLogoUpstream(
         'https://www.bbva.com.ar/content/dam/library/favicons/favicon.ico',
         'bbva.com.ar',
         128,
@@ -96,6 +118,54 @@ describe('logo-download-upstream', () => {
       )
       assert.equal(res.status, 200)
       assert.ok(calls.some((u) => u.includes('bbva.com.ar/content/dam')))
+      assert.ok(calls.some((u) => u.includes('googleusercontent.com')))
+    })
+
+    it('falls back to Google when primary returns HTTP 503 (subaru)', async () => {
+      globalThis.fetch = async (input: RequestInfo | URL) => {
+        const url = String(input)
+        calls.push(url)
+        if (url.includes('subaru.com.ar/subaru/site')) {
+          return new Response('unavailable', { status: 503 })
+        }
+        if (url.includes('googleusercontent.com/s2/favicons')) {
+          return pngResponse()
+        }
+        return new Response('missing', { status: 404 })
+      }
+      const { response: res } = await fetchLogoUpstream(
+        'https://www.subaru.com.ar/subaru/site/artic/20190503/imag/foto_0000000120190503133300/logo.jpg',
+        'subaru.com.ar',
+        128,
+        ctx,
+      )
+      assert.equal(res.status, 200)
+      assert.ok(calls.some((u) => u.includes('subaru.com.ar')))
+      assert.ok(calls.some((u) => u.includes('googleusercontent.com')))
+    })
+
+    it('falls back when primary returns 200 HTML instead of an image', async () => {
+      globalThis.fetch = async (input: RequestInfo | URL) => {
+        const url = String(input)
+        calls.push(url)
+        if (url.includes('example.com/logo')) {
+          return new Response('<html></html>', {
+            status: 200,
+            headers: { 'Content-Type': 'text/html' },
+          })
+        }
+        if (url.includes('googleusercontent.com')) {
+          return pngResponse()
+        }
+        return new Response('missing', { status: 404 })
+      }
+      const { response: res } = await fetchLogoUpstream(
+        'https://example.com/logo',
+        'example.com',
+        128,
+        ctx,
+      )
+      assert.equal(res.status, 200)
       assert.ok(calls.some((u) => u.includes('googleusercontent.com')))
     })
   })
