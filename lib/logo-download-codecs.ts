@@ -1,13 +1,26 @@
 let ready: Promise<void> | null = null
 
 async function initLogoDownloadCodecsBundled(): Promise<void> {
-  const pngWasm = (await import('@jsquash/png/codec/pkg/squoosh_png_bg.wasm')).default
-  const jpegBytes = (await import('@jsquash/jpeg/codec/dec/mozjpeg_dec.wasm')).default
-  const webpBytes = (await import('@jsquash/webp/codec/dec/webp_dec.wasm')).default
+  const pngWasm = (
+    (await import('@jsquash/png/codec/pkg/squoosh_png_bg.wasm')) as unknown as {
+      default: ArrayBuffer
+    }
+  ).default
+  const jpegBytes = (
+    (await import('@jsquash/jpeg/codec/dec/mozjpeg_dec.wasm')) as {
+      default: ArrayBuffer
+    }
+  ).default
+  const webpBytes = (
+    (await import('@jsquash/webp/codec/dec/webp_dec.wasm')) as { default: ArrayBuffer }
+  ).default
   const jpegWasm = new WebAssembly.Module(jpegBytes)
   const webpWasm = new WebAssembly.Module(webpBytes)
-  const resizeWasm = (await import('@jsquash/resize/lib/resize/pkg/squoosh_resize_bg.wasm'))
-    .default
+  const resizeWasm = (
+    (await import('@jsquash/resize/lib/resize/pkg/squoosh_resize_bg.wasm')) as unknown as {
+      default: ArrayBuffer
+    }
+  ).default
 
   const pngDecode = await import('@jsquash/png/decode.js')
   const pngEncode = await import('@jsquash/png/encode.js')
@@ -22,7 +35,9 @@ async function initLogoDownloadCodecsBundled(): Promise<void> {
   await initResize(resizeWasm)
 
   const { initWasm } = await import('@resvg/resvg-wasm')
-  const resvgWasm = (await import('@resvg/resvg-wasm/index_bg.wasm')).default
+  const resvgWasm = (
+    (await import('@resvg/resvg-wasm/index_bg.wasm')) as { default: ArrayBuffer }
+  ).default
   await initWasm(resvgWasm)
 }
 

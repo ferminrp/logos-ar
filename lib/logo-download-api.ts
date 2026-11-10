@@ -210,7 +210,7 @@ export async function handleLogoDownloadGet(request: Request) {
   const rasterMime = embedMimeType(upstreamContentType, imageMetrics.format)
 
   if (format === "png") {
-    let pngBody: ArrayBuffer | Uint8Array<ArrayBuffer> = logoBuffer
+    let pngBody: ArrayBuffer | Uint8Array = logoBuffer
     if (imageMetrics.format !== 'png') {
       const { source, format: sourceFormat } = getPngConversionSource(
         logoBuffer,
@@ -236,7 +236,11 @@ export async function handleLogoDownloadGet(request: Request) {
       }
     }
 
-    return new Response(pngBody, {
+    const responseBody =
+      pngBody instanceof Uint8Array
+        ? pngBody
+        : new Uint8Array(pngBody as ArrayBuffer)
+    return new Response(responseBody as BodyInit, {
       headers: {
         "Content-Type": "image/png",
         "Content-Disposition": `attachment; filename="${filename}"`,

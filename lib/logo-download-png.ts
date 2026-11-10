@@ -6,6 +6,16 @@ import decodePng from '@jsquash/png/decode.js'
 import encodePng from '@jsquash/png/encode.js'
 import resizeImage from '@jsquash/resize'
 
+function rasterArrayBuffer(input: ArrayBuffer | Uint8Array<ArrayBufferLike>): ArrayBuffer {
+  if (input instanceof ArrayBuffer) {
+    return input
+  }
+  return input.buffer.slice(
+    input.byteOffset,
+    input.byteOffset + input.byteLength,
+  ) as ArrayBuffer
+}
+
 async function svgToPngBytes(source: ArrayBuffer): Promise<Uint8Array> {
   await ensureLogoDownloadCodecs()
   const { Resvg } = await import('@resvg/resvg-wasm')
@@ -20,7 +30,7 @@ async function rasterBytesToImageData(
 ): Promise<ImageData> {
   if (format === 'svg') {
     const pngBytes = await svgToPngBytes(source)
-    return decodePng(pngBytes)
+    return decodePng(rasterArrayBuffer(pngBytes))
   }
 
   if (format === 'jpeg') {
@@ -39,7 +49,7 @@ async function rasterBytesToImageData(
   const inputImage = PhotonImage.new_from_byteslice(new Uint8Array(source))
   try {
     const pngBytes = inputImage.get_bytes()
-    return decodePng(pngBytes)
+    return decodePng(rasterArrayBuffer(pngBytes))
   } finally {
     inputImage.free()
   }
