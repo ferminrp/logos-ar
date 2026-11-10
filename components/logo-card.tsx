@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
+import { AppLink as Link } from "@/components/app-link"
 import { Check, Copy, ExternalLink } from "lucide-react"
 import { getEntitySlug } from "@/lib/entity-index"
 import { Button } from "@/components/ui/button"

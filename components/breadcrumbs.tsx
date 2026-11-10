@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { AppLink as Link } from "@/components/app-link"
 import { ChevronRight } from "lucide-react"
 import type { BreadcrumbItem } from "@/components/breadcrumb-json-ld"
 

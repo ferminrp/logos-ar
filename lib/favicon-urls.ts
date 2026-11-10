@@ -18,6 +18,38 @@ export function getDuckDuckGoFaviconUrl(domain: string): string {
   return `https://icons.duckduckgo.com/ip3/${domain}.ico`
 }
 
+/** Domains to try for public favicon proxies (www strip + logo URL host). */
+export function collectFaviconDomainCandidates(
+  faviconDomain: string,
+  primaryLogoUrl: string,
+): string[] {
+  const ordered: string[] = []
+  const seen = new Set<string>()
+  const push = (domain: string) => {
+    const normalized = domain.trim().toLowerCase()
+    if (!normalized || seen.has(normalized)) return
+    seen.add(normalized)
+    ordered.push(normalized)
+  }
+
+  push(faviconDomain)
+  if (faviconDomain.toLowerCase().startsWith('www.')) {
+    push(faviconDomain.slice(4))
+  }
+
+  try {
+    const host = new URL(primaryLogoUrl).hostname.toLowerCase()
+    push(host)
+    if (host.startsWith('www.')) {
+      push(host.slice(4))
+    }
+  } catch {
+    // ignore relative / invalid URLs
+  }
+
+  return ordered
+}
+
 export function getGoogleCurl(
   domain: string,
   config: CurlConfig = defaultCurlConfig

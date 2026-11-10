@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { resolveLogoDownloadFilename } from "@/lib/logo-download-attachment"
 
 type LogoFormat = "png" | "svg"
 
@@ -38,13 +39,14 @@ function getFilename(domain: string, format: LogoFormat): string {
   return `${base}_logo.${format}`
 }
 
-async function triggerDownload(url: string, filename: string) {
+async function triggerDownload(url: string, fallbackFilename: string) {
   const response = await fetch(url)
 
   if (!response.ok) {
     throw new Error("download_failed")
   }
 
+  const filename = resolveLogoDownloadFilename(response, fallbackFilename)
   const blob = await response.blob()
   const objectUrl = URL.createObjectURL(blob)
   const anchor = document.createElement("a")

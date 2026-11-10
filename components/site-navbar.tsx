@@ -1,8 +1,9 @@
 "use client"
 
-import Link from "next/link"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { FormEvent, useEffect, useState } from "react"
+import { AppLink as Link } from "@/components/app-link"
+import { usePathname, useRouter, useSearchParams } from "@/lib/client-navigation"
+import { useEffect, useState } from "react"
+import type { FormEvent } from "react"
 import { ChevronDown, Github, Menu, Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"

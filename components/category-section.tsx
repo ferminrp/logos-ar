@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { AppLink as Link } from "@/components/app-link"
 import { EntityPreviewCard } from "./entity-preview-card"
 import { getEntitySlug } from "@/lib/entity-index"
 import type { EntityRecord } from "@/lib/entity-index"

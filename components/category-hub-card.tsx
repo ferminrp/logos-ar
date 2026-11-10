@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { AppLink as Link } from "@/components/app-link"
 import { getCategoryIcon } from "@/lib/category-icons"
 import type { Category } from "@/lib/logos-data"
 

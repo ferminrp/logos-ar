@@ -1,0 +1,14 @@
+---
+export const prerender = true
+
+import BaseLayout from '../layouts/BaseLayout.astro'
+import CategoriasPage from '../../views/categorias-page'
+
+const title = 'Categorías de logos en Argentina'
+const description =
+  'Explorá logos y favicons por rubro: bancos, fintechs, ALyCs, retail, medios y más. URLs listas para copiar en tu web o spreadsheet.'
+---
+
+<BaseLayout title={title} description={description} canonical="/categorias">
+  <CategoriasPage />
+</BaseLayout>

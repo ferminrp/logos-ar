@@ -1,0 +1,16 @@
+---
+export const prerender = true
+
+import BaseLayout from '../layouts/BaseLayout.astro'
+import DocsPage from '../../views/docs-page'
+import { SiteFooter } from '@/components/site-footer'
+
+const title = 'API de logos — Logos Argentina'
+const description =
+  'Documentación del endpoint GET /api/logos: filtros por nombre, dominio y categoría, paginación y ejemplos.'
+---
+
+<BaseLayout title={title} description={description} canonical="/docs">
+  <DocsPage client:load />
+  <SiteFooter />
+</BaseLayout>

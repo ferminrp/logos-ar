@@ -1,0 +1,34 @@
+---
+export const prerender = true
+
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { GuidePageView } from '../../../views/guide-page'
+import { getAllGuideSlugs, getGuideBySlug } from '@/lib/guide-data'
+import NotFoundPage from '../../../views/not-found-page'
+
+export function getStaticPaths() {
+  return getAllGuideSlugs().map((slug) => ({ params: { slug } }))
+}
+
+const { slug } = Astro.params
+const guide = slug ? getGuideBySlug(slug) : null
+
+if (!guide) {
+  Astro.response.status = 404
+}
+
+const title = guide?.title ?? 'Guía no encontrada'
+const description = guide?.description
+---
+
+{
+  guide ? (
+    <BaseLayout title={title} description={description} canonical={`/guia/${slug}`} ogType="article">
+      <GuidePageView client:load slug={slug!} />
+    </BaseLayout>
+  ) : (
+    <BaseLayout title={title} canonical={`/guia/${slug}`}>
+      <NotFoundPage />
+    </BaseLayout>
+  )
+}

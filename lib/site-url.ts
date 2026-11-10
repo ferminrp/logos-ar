@@ -1,14 +1,24 @@
 const DEFAULT_SITE_URL = 'https://loguitos.app'
 
-export function getSiteUrl(): string {
-  const fromEnv =
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    process.env.NEXT_PUBLIC_APP_URL ??
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? process.env.VERCEL_PROJECT_PRODUCTION_URL.startsWith('http')
-        ? process.env.VERCEL_PROJECT_PRODUCTION_URL
-        : `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : null)
+function envSiteUrl(): string | null {
+  const fromImportMeta =
+    typeof import.meta !== 'undefined' &&
+    typeof import.meta.env?.PUBLIC_SITE_URL === 'string' &&
+    import.meta.env.PUBLIC_SITE_URL.trim()
+      ? import.meta.env.PUBLIC_SITE_URL.trim()
+      : null
 
-  return fromEnv ?? DEFAULT_SITE_URL
+  const fromNode =
+    typeof process !== 'undefined'
+      ? (process.env.PUBLIC_SITE_URL ??
+        process.env.NEXT_PUBLIC_SITE_URL ??
+        process.env.NEXT_PUBLIC_APP_URL ??
+        null)
+      : null
+
+  return fromImportMeta ?? fromNode
+}
+
+export function getSiteUrl(): string {
+  return envSiteUrl() ?? DEFAULT_SITE_URL
 }

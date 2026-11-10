@@ -1,11 +1,11 @@
 ---
 name: verify-loguitos
-description: End-to-end verification for Logos Argentina (Loguitos) — static Next.js catalog on port 3000 by default. Use after UI, API, dataset, or routing changes to build, launch a disposable instance, smoke HTTP and browser flows, and capture proof artifacts.
+description: End-to-end verification for Logos Argentina (Loguitos) — Astro on Cloudflare Workers (`wrangler dev`, default verify port 3100). Use after UI, API, dataset, or routing changes to build, launch a disposable instance, smoke HTTP and browser flows, and capture proof artifacts.
 ---
 
 # Verify Loguitos (Logos Argentina)
 
-Loguitos is a client-side Next.js 16 app: home search, category hubs, per-entity logo pages, `/docs`, and JSON at `/api/logos`. No database or required env vars for local runs.
+Loguitos is an Astro + Cloudflare Workers app: home search, category hubs, per-entity logo pages, `/docs`, and JSON at `/api/logos`. No database or required env vars for local runs.
 
 ## Launch
 
@@ -15,11 +15,11 @@ From the repo root, with dependencies installed (`pnpm install`):
 pnpm verify:loguitos launch
 ```
 
-This runs `pnpm build` (generates datasets, sitemap, and production `.next`), then starts `next start` on a disposable port (default **3100**, override with `VERIFY_LOGUITOS_PORT`). State and PID live under `.verify-loguitos/runs/<run-id>/`.
+This runs `pnpm build` (prebuild datasets, Astro build, postbuild sitemap), then starts `wrangler dev` on a disposable port (default **3100**, override with `VERIFY_LOGUITOS_PORT`). State and PID live under `.verify-loguitos/runs/<run-id>/`.
 
 Ready when `curl -sf "http://127.0.0.1:$VERIFY_LOGUITOS_PORT/"` returns HTML containing `Logos Argentina`.
 
-To reuse an already-running server (for example `pnpm dev` on 3000), skip launch and set:
+To reuse an already-running server (for example `pnpm dev` on 4321 after `pnpm build`), skip launch and set:
 
 ```bash
 export VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:3000
@@ -36,7 +36,7 @@ pnpm typecheck
 pnpm test
 ```
 
-`pnpm build` inside `launch` also fails on TypeScript errors (`ignoreBuildErrors` is off in `next.config.mjs`).
+`pnpm build` inside `launch` also fails on TypeScript errors (`astro check` / build).
 
 Teardown:
 
@@ -131,6 +131,7 @@ Stops the server recorded in `.verify-loguitos/runs/latest/server.json`. If no r
 |--------|------------|
 | Main harness | `pnpm verify:loguitos <launch\|doctor\|drive\|cleanup\|all>` |
 | Hosted logo QA | `pnpm check:logos` — full catalog fetch with one 30s recheck for entities that failed only on transient external errors (network, timeout, 429/5xx, Google favicon-proxy 404). Writes `data/logo-check-report.json`. **Full-catalog runs** (local default, push to main, nightly): real quality problems block; transient-only failures are warnings unless more than `max(10, 5%)` of entities are transient (then treated as a broken checker/runner). **PR runs** (`LOGO_CHECK_SCOPE=pr`, set in CI): entities touched in the diff block on any failure; others are out of scope. Logo-quality workflow uploads the JSON report and prints a step summary. |
+| Override logo-download sweep | `pnpm verify:loguitos sweep-logo-download` — hits `/api/logo-download` for every key in `data/logo-overrides.json` (default `LOGO_DOWNLOAD_SWEEP_FORMATS=png`, set `png,svg` for both). Set `LOGO_DOWNLOAD_SWEEP_SIZE` (128/512). Set `LOGO_DOWNLOAD_MAIN_BASE` (e.g. Next on `next start`) to write `main-vs-pr.json` under `.verify-loguitos/artifacts/logo-download-sweep/`. Optional domain list: `LOGO_DOWNLOAD_DOMAIN_LIST=/path/to/domains.txt`. With `LOGO_DOWNLOAD_SWEEP_WASM_AUDIT=1`, also writes `wasm-raster-risks.json`. PNG sweeps accept `image/png` or wasm-budget passthrough (`image/jpeg` / `image/webp`). |
 | Sitemap (postbuild) | `node --experimental-strip-types scripts/verify-sitemap.mts` (runs automatically on `pnpm build` via `postbuild`) |
 
 Playwright is a devDependency; first browser run needs `pnpm exec playwright install chromium`.

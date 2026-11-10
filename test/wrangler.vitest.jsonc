@@ -1,0 +1,6 @@
+{
+  "name": "loguitos-runtime-vitest",
+  "compatibility_date": "2025-11-10",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./workers/runtime-only.ts"
+}

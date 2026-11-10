@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { AppLink as Link } from "@/components/app-link"
 import { ArrowUpRight } from "lucide-react"
 import { getEntityLogoUrl } from "@/lib/entity-logo"
 import type { EntityRecord } from "@/lib/entity-index"

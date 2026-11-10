@@ -1,0 +1,115 @@
+---
+import '@/src/styles/globals.css'
+import { SiteNavbar } from '@/components/site-navbar'
+import { ThemeProvider } from '@/components/theme-provider'
+import { getSiteUrl } from '@/lib/site-url'
+
+export interface Props {
+  title: string
+  description?: string
+  canonical?: string
+  robots?: string
+  ogType?: string
+  ogImage?: string
+  twitterCard?: string
+  twitterTitle?: string
+}
+
+const {
+  title,
+  description = 'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.',
+  canonical,
+  robots = 'index, follow',
+  ogType = 'website',
+  ogImage = '/og-image.jpg',
+  twitterCard = 'summary_large_image',
+  twitterTitle = 'Logos Argentina - Directorio de Favicons',
+} = Astro.props
+
+const siteUrl = getSiteUrl().replace(/\/$/, '')
+const canonicalUrl = canonical
+  ? canonical.startsWith('http')
+    ? canonical
+    : canonical === '/'
+      ? siteUrl
+      : `${siteUrl}${canonical.startsWith('/') ? canonical : `/${canonical}`}`
+  : `${siteUrl}${Astro.url.pathname.replace(/\/$/, '') || ''}`
+
+const gaMeasurementId = 'G-GZLZ092Z7S'
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description ? <meta name="description" content={description} /> : null}
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    {description ? <meta property="og:description" content={description} /> : null}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content={canonicalUrl} />
+  {ogImage ? (
+    <>
+      <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+      <meta name="twitter:card" content={twitterCard} />
+      <meta name="twitter:title" content={twitterTitle} />
+      {description ? <meta name="twitter:description" content={description} /> : null}
+      <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+    </>
+  ) : (
+    <>
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={twitterTitle} />
+      {description ? <meta name="twitter:description" content={description} /> : null}
+    </>
+  )}
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="shortcut icon" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist+Mono:wght@100..900&family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      :root {
+        --font-dm-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+        --font-newsreader: 'Newsreader', ui-serif, Georgia, serif;
+        --font-geist-mono: 'Geist Mono', ui-monospace, monospace;
+      }
+      body {
+        font-family: var(--font-dm-sans);
+      }
+      .font-serif {
+        font-family: var(--font-newsreader);
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased">
+    <ThemeProvider
+      client:load
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <SiteNavbar client:load />
+      <slot />
+    </ThemeProvider>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+    <script is:inline define:vars={{ gaMeasurementId }}>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', gaMeasurementId)
+    </script>
+    <script async src="https://analytics.ahrefs.com/analytics.js" data-key="wl/5EowQBWcULMyxUNjhlA"></script>
+  </body>
+</html>
