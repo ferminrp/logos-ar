@@ -14,8 +14,9 @@
     "start": "wrangler dev",
     "lint": "eslint .",
     "typecheck": "astro check",
-    "test": "node --experimental-strip-types --test \"lib/**/*.test.mts\" \"scripts/**/*.test.mts\" && pnpm test:logo-download",
-    "test:logo-download": "node --experimental-strip-types --test lib/logo-download-png.test.mts lib/logo-download-api.test.mts",
+    "test": "node --experimental-strip-types --test \"lib/**/*.test.mts\" \"scripts/**/*.test.mts\" && pnpm test:logo-download && pnpm test:logo-download:worker",
+    "test:logo-download": "node --experimental-strip-types --test lib/logo-download-png.test.mts lib/logo-download-api.test.mts lib/worker-runtime.test.mts",
+    "test:logo-download:worker": "pnpm build && vitest run --config vitest.config.workerd.mts && node --experimental-strip-types scripts/logo-download-workerd.integration.mts",
     "indexnow:submit-all": "node --experimental-strip-types scripts/indexnow-submit-all.mts",
     "indexnow:ping-changed": "node --experimental-strip-types scripts/indexnow-ping-changed.mts",
     "verify:loguitos": "node --experimental-strip-types .cursor/skills/verify-loguitos/scripts/verify-loguitos.mts",
@@ -86,6 +87,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.12.5",
     "@eslint/js": "^9.39.1",
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/vite": "^4.3.3",
@@ -103,6 +105,7 @@
     "typescript": "5.9.3",
     "typescript-eslint": "^8.49.0",
     "vite-plugin-wasm": "^3.6.0",
+    "vitest": "3.2.4",
     "wrangler": "^4.51.0"
   },
   "pnpm": {

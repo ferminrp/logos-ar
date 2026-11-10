@@ -223,12 +223,27 @@ export async function handleLogoDownloadGet(request: Request) {
       } else {
         try {
           pngBody = await convertRasterToPng(source, size, sourceFormat)
-        } catch {
+        } catch (conversionError) {
+          const reason =
+            conversionError instanceof Error
+              ? conversionError.message
+              : String(conversionError)
+          console.error(
+            JSON.stringify({
+              event: 'logo_download_png_conversion_failed',
+              domain,
+              detectedFormat: imageMetrics.format,
+              sourceFormat,
+              size,
+              upstreamContentType,
+              reason,
+            }),
+          )
           if (imageMetrics.format === 'ico') {
             pngBody = logoBuffer
           } else {
             return Response.json(
-              { error: 'No se pudo convertir el logo' },
+              { error: 'No se pudo convertir el logo', reason },
               { status: 502 },
             )
           }

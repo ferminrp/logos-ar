@@ -354,6 +354,44 @@ async function doctor(): Promise<DoctorCheck[]> {
     }
   }
 
+  async function checkLogoDownloadPng(
+    name: string,
+    domain: string,
+    size: number,
+  ): Promise<DoctorCheck> {
+    try {
+      const url = `${baseUrl}/api/logo-download?domain=${encodeURIComponent(domain)}&format=png&size=${size}`
+      const res = await fetch(url)
+      if (!res.ok) {
+        let detail = `HTTP ${res.status}`
+        if (res.status === 502) {
+          try {
+            const json = (await res.json()) as { reason?: string }
+            if (json.reason) detail += ` reason=${json.reason}`
+          } catch {
+            /* ignore */
+          }
+        }
+        return { name, ok: false, detail }
+      }
+      const contentType = res.headers.get("content-type")?.split(";")[0]
+      if (contentType !== "image/png") {
+        return { name, ok: false, detail: `content-type ${contentType ?? "(none)"}` }
+      }
+      const bytes = new Uint8Array(await res.arrayBuffer())
+      if (bytes[0] !== 0x89 || bytes[1] !== 0x50) {
+        return { name, ok: false, detail: "response is not PNG" }
+      }
+      return { name, ok: true, detail: `HTTP ${res.status}` }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
   async function checkHttpStatus(
     name: string,
     urlPath: string,
@@ -490,6 +528,9 @@ async function doctor(): Promise<DoctorCheck[]> {
     ),
     checkApiGalicia(),
     checkApiGscAliasMeli(),
+    checkLogoDownloadPng("logo-download-galicia", "www.galicia.ar", 128),
+    checkLogoDownloadPng("logo-download-ripio-512", "ripio.com", 512),
+    checkLogoDownloadPng("logo-download-mercadolibre", "mercadolibre.com.ar", 256),
     checkHttpStatus("logo-melia-gone", "/logo/melia", 404),
     checkGscPriorityTitles(),
     check("brand-verify-slot-bna", `${baseUrl}/logo/banco-de-la-nacion-argentina`, (_res, body) => {

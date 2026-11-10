@@ -24,6 +24,16 @@ async function svgToPngBytes(source: ArrayBuffer): Promise<Uint8Array> {
   return resvg.render().asPng()
 }
 
+function decodeRasterWithPhoton(source: ArrayBuffer): Promise<ImageData> {
+  const inputImage = PhotonImage.new_from_byteslice(new Uint8Array(source))
+  try {
+    const pngBytes = inputImage.get_bytes()
+    return decodePng(rasterArrayBuffer(pngBytes))
+  } finally {
+    inputImage.free()
+  }
+}
+
 async function rasterBytesToImageData(
   source: ArrayBuffer,
   format: ImageMetrics['format'],
@@ -38,6 +48,9 @@ async function rasterBytesToImageData(
   }
 
   if (format === 'webp') {
+    if (typeof navigator !== 'undefined') {
+      return decodeRasterWithPhoton(source)
+    }
     const decodeWebp = (await import('@jsquash/webp/decode.js')).default
     return decodeWebp(source)
   }
@@ -46,13 +59,7 @@ async function rasterBytesToImageData(
     return decodePng(source)
   }
 
-  const inputImage = PhotonImage.new_from_byteslice(new Uint8Array(source))
-  try {
-    const pngBytes = inputImage.get_bytes()
-    return decodePng(rasterArrayBuffer(pngBytes))
-  } finally {
-    inputImage.free()
-  }
+  return decodeRasterWithPhoton(source)
 }
 
 export async function convertRasterToPng(
@@ -65,7 +72,10 @@ export async function convertRasterToPng(
   }
 
   await ensureLogoDownloadCodecs()
-  const imageData = await rasterBytesToImageData(source, format)
+  const imageData = await rasterBytesToImageData(source, format).catch((error) => {
+    const reason = error instanceof Error ? error.message : String(error)
+    throw new Error(`decode:${format}: ${reason}`)
+  })
   const resized = await resizeImage(imageData, {
     width: size,
     height: size,
@@ -73,8 +83,14 @@ export async function convertRasterToPng(
     fitMethod: 'contain',
     premultiply: true,
     linearRGB: true,
+  }).catch((error) => {
+    const reason = error instanceof Error ? error.message : String(error)
+    throw new Error(`resize:${reason}`)
   })
-  const pngBytes = await encodePng(resized)
+  const pngBytes = await encodePng(resized).catch((error) => {
+    const reason = error instanceof Error ? error.message : String(error)
+    throw new Error(`png.encode:${reason}`)
+  })
   return pngBytes instanceof Uint8Array
     ? pngBytes
     : new Uint8Array(pngBytes as ArrayBuffer)
