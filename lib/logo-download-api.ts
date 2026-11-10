@@ -51,6 +51,27 @@ function getFilename(domain: string, format: LogoFormat): string {
   return `${domain.replace(/\./g, "_")}_logo.${format}`
 }
 
+function rasterDownloadFilename(
+  domain: string,
+  rasterFormat: ImageMetrics["format"],
+): string {
+  const base = domain.replace(/\./g, "_")
+  switch (rasterFormat) {
+    case "jpeg":
+      return `${base}_logo.jpg`
+    case "webp":
+      return `${base}_logo.webp`
+    case "gif":
+      return `${base}_logo.gif`
+    case "png":
+      return `${base}_logo.png`
+    case "ico":
+      return `${base}_logo.ico`
+    default:
+      return `${base}_logo.bin`
+  }
+}
+
 function contentTypeForFormat(format: ImageMetrics["format"]): string {
   switch (format) {
     case "png":
@@ -202,11 +223,13 @@ export async function handleLogoDownloadGet(
   const logoUrl = entity
     ? getEntityLogoUrl(entity, size)
     : getGoogleFaviconUrl(domain, size)
-  const workerDecodeBudget = isCloudflareWorkersRuntime()
-    ? { targetPngSize: size }
-    : undefined
+  const workerDecodeBudget =
+    format === "png" && isCloudflareWorkersRuntime()
+      ? { targetPngSize: size }
+      : undefined
 
-  const { response: upstream, attempts } = await fetchLogoUpstream(
+  const { response: upstream, attempts, deliverOriginalRaster } =
+    await fetchLogoUpstream(
     logoUrl,
     faviconDomain,
     size,
@@ -240,6 +263,19 @@ export async function handleLogoDownloadGet(
   let bytes = new Uint8Array(logoBuffer)
   let imageMetrics = measureImage(bytes)
   let upstreamContentType = upstream.headers.get("content-type")
+
+  if (format === "png" && deliverOriginalRaster) {
+    const attachmentName = rasterDownloadFilename(domain, imageMetrics.format)
+    const mime = embedMimeType(upstreamContentType, imageMetrics.format)
+    return new Response(bytes, {
+      headers: {
+        "Content-Type": mime,
+        "Content-Disposition": `attachment; filename="${attachmentName}"`,
+        "Cache-Control": CACHE_CONTROL,
+        "X-Loguitos-Raster-Passthrough": "workers-wasm-budget",
+      },
+    })
+  }
 
   if (
     format === "png" &&

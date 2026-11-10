@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 import {
   exceedsWorkerWasmDecodeBudget,
+  requiresWasmRasterPipeline,
   WORKER_WASM_DECODE_MAX_PIXELS,
   describeWorkerWasmDecodeRisk,
 } from './logo-download-worker-budget.ts'
@@ -43,6 +44,13 @@ describe('logo-download-worker-budget', () => {
         { width: edge, height: edge, format: 'jpeg' },
         128,
       ),
+      false,
+    )
+  })
+
+  it('SVG does not require wasm raster pipeline (svg download path)', () => {
+    assert.equal(
+      requiresWasmRasterPipeline({ width: 2400, height: 1200, format: 'svg' }, 128),
       false,
     )
   })

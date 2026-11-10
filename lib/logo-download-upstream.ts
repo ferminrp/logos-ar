@@ -1,5 +1,6 @@
 import { resolveEntityLogoUrl } from './entity-logo.ts'
 import {
+  collectFaviconDomainCandidates,
   getDuckDuckGoFaviconUrl,
   getGoogleFaviconUrl,
 } from './favicon-urls.ts'
@@ -87,6 +88,8 @@ export type LogoUpstreamAttempt = {
 export type LogoUpstreamFetchResult = {
   response: Response
   attempts: LogoUpstreamAttempt[]
+  /** Primary raster exceeded WASM budget; fallbacks failed; bytes are valid image. */
+  deliverOriginalRaster?: boolean
 }
 
 export function formatLogoUpstreamFailureReason(
@@ -114,13 +117,16 @@ async function responseAsLogo(
   decodeBudget?: LogoUpstreamDecodeBudget,
 ): Promise<
   | { ok: true; response: Response }
-  | { ok: false; detail: string }
+  | {
+      ok: false
+      detail: string
+      overBudgetRaster?: Uint8Array
+      contentType?: string | null
+    }
 > {
   const bytes = new Uint8Array(await res.arrayBuffer())
-  const unusable = describeUnusableLogoBody(
-    bytes,
-    res.headers.get('content-type'),
-  )
+  const contentType = res.headers.get('content-type')
+  const unusable = describeUnusableLogoBody(bytes, contentType)
   if (unusable) {
     return { ok: false, detail: unusable }
   }
@@ -133,7 +139,12 @@ async function responseAsLogo(
       decodeBudget.targetPngSize,
     )
     if (wasmRisk) {
-      return { ok: false, detail: wasmRisk }
+      return {
+        ok: false,
+        detail: wasmRisk,
+        overBudgetRaster: bytes,
+        contentType,
+      }
     }
   }
 
@@ -196,13 +207,18 @@ export function buildLogoSourcePlan(
   const primaryUrl = resolveEntityLogoUrl(primaryLogoUrl, `${ctx.origin}/`)
 
   const fallbackUrls: string[] = []
-  const googleUrl = getGoogleFaviconUrl(faviconDomain, size)
-  if (primaryUrl !== googleUrl) {
-    fallbackUrls.push(googleUrl)
-  }
-  const ddgUrl = getDuckDuckGoFaviconUrl(faviconDomain)
-  if (!fallbackUrls.includes(ddgUrl) && primaryUrl !== ddgUrl) {
-    fallbackUrls.push(ddgUrl)
+  for (const domain of collectFaviconDomainCandidates(
+    faviconDomain,
+    primaryLogoUrl,
+  )) {
+    const googleUrl = getGoogleFaviconUrl(domain, size)
+    if (primaryUrl !== googleUrl && !fallbackUrls.includes(googleUrl)) {
+      fallbackUrls.push(googleUrl)
+    }
+    const ddgUrl = getDuckDuckGoFaviconUrl(domain)
+    if (primaryUrl !== ddgUrl && !fallbackUrls.includes(ddgUrl)) {
+      fallbackUrls.push(ddgUrl)
+    }
   }
 
   return { primaryUrl, fallbackUrls }
@@ -229,6 +245,8 @@ export async function fetchLogoUpstream(
 
   const primaryRes = await attempt(plan.primaryUrl)
   tried.add(plan.primaryUrl)
+  let primaryOverBudgetRaster: Uint8Array | null = null
+  let primaryOverBudgetContentType: string | null = null
 
   if (primaryRes.ok) {
     const parsed = await responseAsLogo(primaryRes, decodeBudget)
@@ -239,6 +257,10 @@ export async function fetchLogoUpstream(
         status: primaryRes.status,
       })
       return { response: parsed.response, attempts }
+    }
+    if (parsed.overBudgetRaster) {
+      primaryOverBudgetRaster = parsed.overBudgetRaster
+      primaryOverBudgetContentType = parsed.contentType ?? null
     }
     attempts.push({
       role: 'primary',
@@ -292,6 +314,19 @@ export async function fetchLogoUpstream(
         url: fallbackUrl,
         status: fallbackRes.status,
       })
+    }
+  }
+
+  if (primaryOverBudgetRaster && primaryStatus === 200) {
+    return {
+      response: new Response(primaryOverBudgetRaster as BodyInit, {
+        status: 200,
+        headers: primaryOverBudgetContentType
+          ? { 'Content-Type': primaryOverBudgetContentType }
+          : undefined,
+      }),
+      attempts,
+      deliverOriginalRaster: true,
     }
   }
 

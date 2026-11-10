@@ -19,6 +19,11 @@ import type { ImageMetrics } from './logo-quality/image-metrics.ts'
  * workerd/Workers is often slower than Node for the same WASM path (preview 1102 on a ~9Mpx
  * Subaru JPEG). We cap decoded raster work at **102,400 pixels (~320×320)** and **120 KiB**
  * when dimensions are unknown — leaving headroom under the 10 ms Free tier.
+ *
+ * **Passthrough:** when PNG was requested but Google/DuckDuckGo fallbacks also fail, we return
+ * the upstream raster bytes unchanged (`image/jpeg`, etc.) instead of HTTP 502 — same bytes main
+ * served after Sharp conversion, without WASM on Workers Free (`format=svg` embeds rasters via
+ * base64 and never hits this path).
  */
 export const WORKERS_FREE_CPU_MS = 10
 export const WORKER_WASM_DECODE_MAX_PIXELS = 102_400
@@ -37,9 +42,6 @@ export function requiresWasmRasterPipeline(
   if (metrics.format === 'png') {
     const maxEdge = Math.max(metrics.width, metrics.height)
     return maxEdge > targetPngSize
-  }
-  if (metrics.format === 'svg') {
-    return true
   }
   return WASM_RASTER_FORMATS.has(metrics.format)
 }

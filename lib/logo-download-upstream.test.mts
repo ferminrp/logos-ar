@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { afterEach, beforeEach, describe, it } from 'node:test'
+import { collectFaviconDomainCandidates } from './favicon-urls.ts'
 import {
   buildLogoSourcePlan,
   fetchLogoUpstream,
@@ -49,6 +50,33 @@ describe('logo-download-upstream', () => {
         403,
       ),
       false,
+    )
+  })
+
+  it('collectFaviconDomainCandidates strips www and adds logo URL host', () => {
+    const domains = collectFaviconDomainCandidates(
+      'www.telecentro.com.ar',
+      'https://telecentro.com.ar/img/meta-image.jpg',
+    )
+    assert.deepEqual(domains, [
+      'www.telecentro.com.ar',
+      'telecentro.com.ar',
+    ])
+    const plan = buildLogoSourcePlan(
+      'https://telecentro.com.ar/img/meta-image.jpg',
+      'www.telecentro.com.ar',
+      128,
+      ctx,
+    )
+    assert.ok(
+      plan.fallbackUrls.some((u) =>
+        u.includes('domain=telecentro.com.ar'),
+      ),
+    )
+    assert.ok(
+      plan.fallbackUrls.some((u) =>
+        u.includes('ip3/telecentro.com.ar.ico'),
+      ),
     )
   })
 
@@ -160,6 +188,71 @@ describe('logo-download-upstream', () => {
         ctx,
       )
       assert.equal(res.status, 404)
+    })
+
+    it('falls back to bare domain favicon when www.google returns 404 (telecentro)', async () => {
+      globalThis.fetch = async (input: RequestInfo | URL) => {
+        const url = String(input)
+        calls.push(url)
+        if (url.includes('telecentro.com.ar/img/meta-image')) {
+          const jpeg = new Uint8Array([
+            0xff, 0xd8, 0xff, 0xe0, 0x00, 0x10, 0x4a, 0x46, 0x49, 0x46, 0x00, 0x01,
+            0x01, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0xff, 0xc0, 0x00, 0x0b,
+            0x08, 0x04, 0x38, 0x04, 0x38, 0x01, 0x01, 0x11, 0x00, 0xff, 0xd9,
+          ])
+          return new Response(jpeg, {
+            status: 200,
+            headers: { 'Content-Type': 'image/jpeg' },
+          })
+        }
+        if (url.includes('domain=www.telecentro.com.ar')) {
+          return new Response('missing', { status: 404 })
+        }
+        if (url.includes('www.telecentro.com.ar.ico')) {
+          return new Response('missing', { status: 404 })
+        }
+        if (url.includes('domain=telecentro.com.ar')) {
+          return pngResponse()
+        }
+        return new Response('missing', { status: 404 })
+      }
+      const { response: res } = await fetchLogoUpstream(
+        'https://telecentro.com.ar/img/meta-image.jpg',
+        'www.telecentro.com.ar',
+        128,
+        ctx,
+        { decodeBudget: { targetPngSize: 128 } },
+      )
+      assert.equal(res.status, 200)
+      assert.ok(calls.some((u) => u.includes('domain=telecentro.com.ar')))
+    })
+
+    it('delivers original raster when fallbacks fail but primary over wasm budget', async () => {
+      globalThis.fetch = async (input: RequestInfo | URL) => {
+        const url = String(input)
+        if (url.includes('big.example/hero.jpg')) {
+          const jpeg = new Uint8Array([
+            0xff, 0xd8, 0xff, 0xe0, 0x00, 0x10, 0x4a, 0x46, 0x49, 0x46, 0x00, 0x01,
+            0x01, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0xff, 0xc0, 0x00, 0x0b,
+            0x08, 0x04, 0x38, 0x04, 0x38, 0x01, 0x01, 0x11, 0x00, 0xff, 0xd9,
+          ])
+          return new Response(jpeg, {
+            status: 200,
+            headers: { 'Content-Type': 'image/jpeg' },
+          })
+        }
+        return new Response('missing', { status: 404 })
+      }
+      const { response: res, deliverOriginalRaster } = await fetchLogoUpstream(
+        'https://big.example/hero.jpg',
+        'big.example',
+        128,
+        ctx,
+        { decodeBudget: { targetPngSize: 128 } },
+      )
+      assert.equal(res.status, 200)
+      assert.equal(deliverOriginalRaster, true)
+      assert.match(res.headers.get('content-type') ?? '', /jpeg/)
     })
 
     it('falls back when primary JPEG exceeds Workers wasm budget', async () => {

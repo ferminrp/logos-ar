@@ -31,16 +31,24 @@ async function sweepBase(
   baseUrl: string,
   domains: string[],
   size = 128,
+  format: 'png' | 'svg' = 'png',
 ): Promise<SweepRow[]> {
   const base = baseUrl.replace(/\/$/, '')
   const rows: SweepRow[] = []
 
   for (const domain of domains) {
-    const url = `${base}/api/logo-download?domain=${encodeURIComponent(domain)}&format=png&size=${size}`
+    const url = `${base}/api/logo-download?domain=${encodeURIComponent(domain)}&format=${format}&size=${size}`
     try {
       const res = await fetch(url)
       const ct = res.headers.get('content-type')
-      if (res.ok && ct?.includes('image/png')) {
+      const okImage =
+        format === 'png'
+          ? res.ok && (ct?.includes('image/png') || ct?.includes('image/jpeg') || ct?.includes('image/webp'))
+          : res.ok &&
+            (ct?.includes('image/svg') ||
+              ct?.includes('image/png') ||
+              ct?.includes('image/jpeg'))
+      if (okImage) {
         rows.push({
           domain,
           status: res.status,
@@ -112,6 +120,10 @@ async function main(): Promise<void> {
     process.env.LOGO_DOWNLOAD_DOMAIN_LIST ?? null,
   )
   const size = Number.parseInt(process.env.LOGO_DOWNLOAD_SWEEP_SIZE ?? '128', 10)
+  const formats = (process.env.LOGO_DOWNLOAD_SWEEP_FORMATS ?? 'png')
+    .split(',')
+    .map((f) => f.trim())
+    .filter((f): f is 'png' | 'svg' => f === 'png' || f === 'svg')
   const mainBase = process.env.LOGO_DOWNLOAD_MAIN_BASE?.replace(/\/$/, '')
   const prBase =
     process.env.LOGO_DOWNLOAD_PR_BASE?.replace(/\/$/, '') ??
@@ -126,16 +138,33 @@ async function main(): Promise<void> {
   const outDir = path.join(REPO_ROOT, '.verify-loguitos', 'artifacts', 'logo-download-sweep')
   await mkdir(outDir, { recursive: true })
 
-  const prRows = await sweepBase(prBase, domains, size)
-  await writeFile(
-    path.join(outDir, 'pr-sweep.json'),
-    JSON.stringify({ baseUrl: prBase, summary: summarize(prRows), rows: prRows }, null, 2),
-  )
-
-  console.log(`PR sweep ${prBase}: ${JSON.stringify(summarize(prRows))}`)
-
+  let prRows: SweepRow[] = []
+  for (const format of formats.length > 0 ? formats : (['png'] as const)) {
+    const formatRows = await sweepBase(prBase, domains, size, format)
+    if (format === 'png') {
+      prRows = formatRows
+    }
+    const suffix = format === 'png' ? '' : `-${format}`
+    await writeFile(
+      path.join(outDir, `pr-sweep${suffix}.json`),
+      JSON.stringify(
+        {
+          baseUrl: prBase,
+          format,
+          size,
+          summary: summarize(formatRows),
+          rows: formatRows,
+        },
+        null,
+        2,
+      ),
+    )
+    console.log(
+      `PR sweep ${prBase} format=${format} size=${size}: ${JSON.stringify(summarize(formatRows))}`,
+    )
+  }
   if (mainBase) {
-    const mainRows = await sweepBase(mainBase, domains, size)
+    const mainRows = await sweepBase(mainBase, domains, size, 'png')
     const comparison = compareRows(mainRows, prRows)
     const regressions = comparison.filter((r) => r.regression)
     await writeFile(

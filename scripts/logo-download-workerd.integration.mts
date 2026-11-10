@@ -93,6 +93,17 @@ describe('logo-download API in workerd (wrangler dev)', () => {
     )
   })
 
+  it('www.telecentro.com.ar returns an image (favicon or passthrough)', async () => {
+    const res = await fetch(
+      `${BASE}/api/logo-download?domain=www.telecentro.com.ar&format=png&size=128`,
+    )
+    assert.equal(res.status, 200, 'telecentro png download')
+    assert.ok(
+      res.headers.get('content-type')?.startsWith('image/'),
+      'image content-type',
+    )
+  })
+
   it('www.galicia.ar returns PNG', async () => {
     await expectPngOk(
       `${BASE}/api/logo-download?domain=www.galicia.ar&format=png&size=128`,
