@@ -51,7 +51,7 @@ function getFilename(domain: string, format: LogoFormat): string {
   return `${domain.replace(/\./g, "_")}_logo.${format}`
 }
 
-function rasterDownloadFilename(
+export function rasterDownloadFilename(
   domain: string,
   rasterFormat: ImageMetrics["format"],
 ): string {

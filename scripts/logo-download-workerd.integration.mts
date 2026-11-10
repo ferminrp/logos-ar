@@ -104,6 +104,19 @@ describe('logo-download API in workerd (wrangler dev)', () => {
     )
   })
 
+  it('passthrough uses non-png Content-Disposition filename when body is jpeg', async () => {
+    const res = await fetch(
+      `${BASE}/api/logo-download?domain=www.telecentro.com.ar&format=png&size=512`,
+    )
+    assert.equal(res.status, 200)
+    const contentType = res.headers.get('content-type')?.split(';')[0]
+  if (contentType === 'image/jpeg') {
+      const disposition = res.headers.get('content-disposition') ?? ''
+      assert.match(disposition, /filename="[^"]+\.jpg"/)
+      assert.doesNotMatch(disposition, /\.png"/)
+    }
+  })
+
   it('www.galicia.ar returns PNG', async () => {
     await expectPngOk(
       `${BASE}/api/logo-download?domain=www.galicia.ar&format=png&size=128`,
