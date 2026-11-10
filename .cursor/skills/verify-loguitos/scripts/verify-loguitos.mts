@@ -531,6 +531,8 @@ async function doctor(): Promise<DoctorCheck[]> {
     checkLogoDownloadPng("logo-download-galicia", "www.galicia.ar", 128),
     checkLogoDownloadPng("logo-download-ripio-512", "ripio.com", 512),
     checkLogoDownloadPng("logo-download-mercadolibre", "mercadolibre.com.ar", 256),
+    checkLogoDownloadPng("logo-download-naranjax-hosted", "naranjax.com", 128),
+    checkLogoDownloadPng("logo-download-bbva-fallback", "bbva.com.ar", 128),
     checkHttpStatus("logo-melia-gone", "/logo/melia", 404),
     checkGscPriorityTitles(),
     check("brand-verify-slot-bna", `${baseUrl}/logo/banco-de-la-nacion-argentina`, (_res, body) => {
@@ -915,6 +917,22 @@ async function main(): Promise<void> {
       break
     case "doctor":
       await doctor()
+      break
+    case "sweep-logo-download":
+      await runCommand(
+        "node",
+        ["--experimental-strip-types", "scripts/sweep-logo-download-overrides.mts"],
+        {
+          cwd: REPO_ROOT,
+          env: {
+            ...process.env,
+            LOGO_DOWNLOAD_PR_BASE:
+              process.env.LOGO_DOWNLOAD_PR_BASE ??
+              process.env.VERIFY_LOGUITOS_BASE_URL ??
+              (await resolveBaseUrl()),
+          },
+        },
+      )
       break
     case "drive":
       await drive()

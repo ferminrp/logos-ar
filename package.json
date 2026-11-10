@@ -15,7 +15,7 @@
     "lint": "eslint .",
     "typecheck": "astro check",
     "test": "node --experimental-strip-types --test \"lib/**/*.test.mts\" \"scripts/**/*.test.mts\" && pnpm test:logo-download && pnpm test:logo-download:worker",
-    "test:logo-download": "node --experimental-strip-types --test lib/logo-download-png.test.mts lib/logo-download-api.test.mts lib/worker-runtime.test.mts",
+    "test:logo-download": "node --experimental-strip-types --test lib/logo-download-png.test.mts lib/logo-download-api.test.mts lib/logo-download-upstream.test.mts lib/worker-runtime.test.mts",
     "test:logo-download:worker": "pnpm build && vitest run --config vitest.config.workerd.mts && node --experimental-strip-types scripts/logo-download-workerd.integration.mts",
     "indexnow:submit-all": "node --experimental-strip-types scripts/indexnow-submit-all.mts",
     "indexnow:ping-changed": "node --experimental-strip-types scripts/indexnow-ping-changed.mts",

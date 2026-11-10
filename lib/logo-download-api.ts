@@ -1,7 +1,12 @@
 
 import { getAllEntities } from "./entity-index.ts"
-import { getEntityLogoUrl, resolveEntityLogoUrl } from "./entity-logo.ts"
+import { getEntityLogoUrl } from "./entity-logo.ts"
 import { getGoogleFaviconUrl } from "./favicon-urls.ts"
+import {
+  fetchLogoUpstream,
+  requestOrigin,
+  type LogoDownloadContext,
+} from "./logo-download-upstream.ts"
 import { convertRasterToPng } from "./logo-download-png.ts"
 import {
   measureImage,
@@ -167,7 +172,11 @@ function buildSvgFromRaster(
 </svg>`
 }
 
-export async function handleLogoDownloadGet(request: Request) {
+export async function handleLogoDownloadGet(
+  request: Request,
+  context: LogoDownloadContext | null = null,
+) {
+  const ctx: LogoDownloadContext = context ?? { origin: requestOrigin(request) }
   const { searchParams } = new URL(request.url)
   const domain = normalizeDomain(searchParams.get("domain"))
   const format = searchParams.get("format")?.toLowerCase()
@@ -184,20 +193,25 @@ export async function handleLogoDownloadGet(request: Request) {
   const entity = getAllEntities().find(
     (item) => item.domain.toLowerCase() === domain,
   )
+  const faviconDomain = entity?.domain ?? domain
   const logoUrl = entity
     ? getEntityLogoUrl(entity, size)
     : getGoogleFaviconUrl(domain, size)
-  const faviconUrl = resolveEntityLogoUrl(logoUrl, request.url)
-  const upstream = await fetch(faviconUrl, {
-    headers: {
-      "User-Agent": "LogosArgentina/1.0",
-    },
-    
-  })
+  const upstream = await fetchLogoUpstream(logoUrl, faviconDomain, size, ctx)
 
   if (!upstream.ok) {
+    const reason = `upstream HTTP ${upstream.status}`
+    console.error(
+      JSON.stringify({
+        event: 'logo_download_upstream_failed',
+        domain,
+        faviconDomain,
+        primaryLogoUrl: logoUrl,
+        status: upstream.status,
+      }),
+    )
     return Response.json(
-      { error: "No se pudo obtener el logo" },
+      { error: "No se pudo obtener el logo", reason },
       { status: upstream.status === 404 ? 404 : 502 },
     )
   }

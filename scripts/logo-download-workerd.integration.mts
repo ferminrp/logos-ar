@@ -58,7 +58,9 @@ describe('logo-download API in workerd (wrangler dev)', () => {
       ],
       { cwd: REPO_ROOT, stdio: 'ignore', env: process.env },
     )
-    await waitForServer(`${BASE}/`)
+    await waitForServer(
+      `${BASE}/api/logo-download?domain=ripio.com&format=png&size=64`,
+    )
   })
 
   after(() => {
@@ -72,6 +74,18 @@ describe('logo-download API in workerd (wrangler dev)', () => {
       )
     })
   }
+
+  it('naranjax.com hosted override returns PNG', async () => {
+    await expectPngOk(
+      `${BASE}/api/logo-download?domain=naranjax.com&format=png&size=128`,
+    )
+  })
+
+  it('bbva.com.ar returns PNG (Google favicon fallback)', async () => {
+    await expectPngOk(
+      `${BASE}/api/logo-download?domain=bbva.com.ar&format=png&size=128`,
+    )
+  })
 
   it('www.galicia.ar returns PNG', async () => {
     await expectPngOk(
