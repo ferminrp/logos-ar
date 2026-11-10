@@ -1,8 +1,9 @@
 "use client"
 
-import Link from "next/link"
-import { FormEvent, useEffect, useState } from "react"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { AppLink as Link } from "@/components/app-link"
+import { useEffect, useState } from "react"
+import type { FormEvent } from "react"
+import { usePathname, useRouter, useSearchParams } from "@/lib/client-navigation"
 import { Search } from "lucide-react"
 import { CategorySection } from "@/components/category-section"
 import { FaqSection } from "@/components/faq-section"

@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { AppLink as Link } from "@/components/app-link"
 import type { Flag } from "@/lib/flags-data"
 import { getFlagSvgUrl } from "@/lib/flag-urls"
 

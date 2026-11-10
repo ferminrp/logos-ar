@@ -1,4 +1,17 @@
-import type { MetadataRoute } from "next"
+export type SitemapEntry = {
+  url: string
+  lastModified?: Date
+  changeFrequency?:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never"
+  priority?: number
+}
+
 import { getAllEntitySlugs } from "./entity-index.ts"
 import { GONE_LOGO_SLUGS } from "./gone-logo-slugs.ts"
 import { getAllGuideSlugs } from "./guide-data.ts"
@@ -9,11 +22,11 @@ function normalizeSiteUrl(url: string): string {
   return url.replace(/\/$/, "")
 }
 
-export function getSitemapEntries(): MetadataRoute.Sitemap {
+export function getSitemapEntries(): SitemapEntry[] {
   const siteUrl = normalizeSiteUrl(getSiteUrl())
   const now = new Date()
 
-  const staticPages: MetadataRoute.Sitemap = [
+  const staticPages: SitemapEntry[] = [
     {
       url: `${siteUrl}/`,
       lastModified: now,
@@ -34,7 +47,7 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
     },
   ]
 
-  const categoryPages: MetadataRoute.Sitemap = [
+  const categoryPages: SitemapEntry[] = [
     ...categories.map((category) => ({
       url: `${siteUrl}/categoria/${category.id}`,
       lastModified: now,
@@ -49,7 +62,7 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
     },
   ]
 
-  const entityPages: MetadataRoute.Sitemap = getAllEntitySlugs()
+  const entityPages: SitemapEntry[] = getAllEntitySlugs()
     .filter((slug) => !GONE_LOGO_SLUGS.has(slug))
     .map(
     (slug) => ({
@@ -60,7 +73,7 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
     })
   )
 
-  const guidePages: MetadataRoute.Sitemap = getAllGuideSlugs().map((slug) => ({
+  const guidePages: SitemapEntry[] = getAllGuideSlugs().map((slug) => ({
     url: `${siteUrl}/guia/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

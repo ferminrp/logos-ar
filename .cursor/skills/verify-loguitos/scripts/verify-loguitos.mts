@@ -190,11 +190,11 @@ async function launch(): Promise<ServerRecord> {
   console.log("Running pnpm build…")
   await runCommand("pnpm", ["build"], { cwd: REPO_ROOT })
 
-  console.log(`Starting next start on port ${port}…`)
+  console.log(`Starting wrangler dev on port ${port}…`)
   const logStream = createWriteStream(logPath)
   launchedChild = spawn(
     "pnpm",
-    ["exec", "next", "start", "-p", String(port)],
+    ["exec", "wrangler", "dev", "--port", String(port), "--ip", "127.0.0.1"],
     {
       cwd: REPO_ROOT,
       env: process.env,
@@ -205,7 +205,7 @@ async function launch(): Promise<ServerRecord> {
   launchedChild.stderr?.pipe(logStream)
 
   if (!launchedChild.pid) {
-    throw new Error("Failed to start next server")
+    throw new Error("Failed to start wrangler dev server")
   }
 
   const record: ServerRecord = {

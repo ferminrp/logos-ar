@@ -1,11 +1,11 @@
 ---
 name: verify-loguitos
-description: End-to-end verification for Logos Argentina (Loguitos) — static Next.js catalog on port 3000 by default. Use after UI, API, dataset, or routing changes to build, launch a disposable instance, smoke HTTP and browser flows, and capture proof artifacts.
+description: End-to-end verification for Logos Argentina (Loguitos) — Astro on Cloudflare Workers (`wrangler dev`, default verify port 3100). Use after UI, API, dataset, or routing changes to build, launch a disposable instance, smoke HTTP and browser flows, and capture proof artifacts.
 ---
 
 # Verify Loguitos (Logos Argentina)
 
-Loguitos is a client-side Next.js 16 app: home search, category hubs, per-entity logo pages, `/docs`, and JSON at `/api/logos`. No database or required env vars for local runs.
+Loguitos is an Astro + Cloudflare Workers app: home search, category hubs, per-entity logo pages, `/docs`, and JSON at `/api/logos`. No database or required env vars for local runs.
 
 ## Launch
 
@@ -15,11 +15,11 @@ From the repo root, with dependencies installed (`pnpm install`):
 pnpm verify:loguitos launch
 ```
 
-This runs `pnpm build` (generates datasets, sitemap, and production `.next`), then starts `next start` on a disposable port (default **3100**, override with `VERIFY_LOGUITOS_PORT`). State and PID live under `.verify-loguitos/runs/<run-id>/`.
+This runs `pnpm build` (prebuild datasets, Astro build, postbuild sitemap), then starts `wrangler dev` on a disposable port (default **3100**, override with `VERIFY_LOGUITOS_PORT`). State and PID live under `.verify-loguitos/runs/<run-id>/`.
 
 Ready when `curl -sf "http://127.0.0.1:$VERIFY_LOGUITOS_PORT/"` returns HTML containing `Logos Argentina`.
 
-To reuse an already-running server (for example `pnpm dev` on 3000), skip launch and set:
+To reuse an already-running server (for example `pnpm dev` on 4321 after `pnpm build`), skip launch and set:
 
 ```bash
 export VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:3000
@@ -36,7 +36,7 @@ pnpm typecheck
 pnpm test
 ```
 
-`pnpm build` inside `launch` also fails on TypeScript errors (`ignoreBuildErrors` is off in `next.config.mjs`).
+`pnpm build` inside `launch` also fails on TypeScript errors (`astro check` / build).
 
 Teardown:
 

@@ -1,13 +1,13 @@
 name: IndexNow (post-deploy)
 
 on:
-  deployment_status:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   ping-changed:
-    if: >-
-      github.event.deployment_status.state == 'success' &&
-      github.event.deployment.environment == 'Production'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,6 +26,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Build (sitemap for IndexNow)
+        run: pnpm build
 
       - name: Restore previous sitemap
         uses: actions/cache/restore@v4

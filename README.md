@@ -13,9 +13,9 @@ Documentación de API disponible en [`/docs`](http://localhost:3000/docs) al cor
 
 ## Stack
 
-- Next.js 16 (App Router)
-- React 19 + TypeScript
-- Tailwind CSS
+- Astro 5 + `@astrojs/cloudflare` (Cloudflare Workers)
+- React 19 islands + TypeScript
+- Tailwind CSS 4
 - pnpm
 
 ## Requisitos
@@ -30,14 +30,15 @@ pnpm install
 pnpm dev
 ```
 
-Abrí [http://localhost:3000](http://localhost:3000).
+Abrí [http://localhost:4321](http://localhost:4321).
 
 ## Scripts disponibles
 
 - `pnpm dev`: entorno de desarrollo
 - `pnpm lint`: lint del proyecto
 - `pnpm build`: build de producción
-- `pnpm start`: correr build en modo producción
+- `pnpm preview`: vista previa del build Astro
+- `pnpm start`: Worker local con Wrangler (después de `pnpm build`)
 - `pnpm indexnow:submit-all`: notificar todas las URLs del sitemap a IndexNow
 - `pnpm indexnow:ping-changed`: notificar solo URLs con `<lastmod>` cambiado
 
@@ -45,12 +46,12 @@ Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse lo
 
 ### URL canónica (SEO)
 
-Para override en otros entornos, definí `NEXT_PUBLIC_SITE_URL`. Sin esa variable, metadata, sitemap y `robots.txt` usan `https://loguitos.app` por defecto.
+Para override en otros entornos, definí `PUBLIC_SITE_URL` (build y runtime). Sin esa variable, metadata, sitemap y `robots.txt` usan `https://loguitos.app` por defecto.
 
-En producción (Vercel), conviene fijar explícitamente:
+En Cloudflare Workers, conviene fijar explícitamente en el dashboard (Variable / secret):
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://loguitos.app
+PUBLIC_SITE_URL=https://loguitos.app
 ```
 
 ### Sitemap y Google Search Console

@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { AppLink as Link } from "@/components/app-link"
 import { Flag } from "lucide-react"
 import { FLAGS_CATEGORY, flagsTotalCount } from "@/lib/flags-data"
 

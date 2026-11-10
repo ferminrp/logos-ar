@@ -1,0 +1,48 @@
+import { AppLink as Link } from '@/components/app-link'
+import { BanderasHubCard } from '@/components/banderas-hub-card'
+import { BreadcrumbJsonLd } from '@/components/breadcrumb-json-ld'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { CategoryHubCard } from '@/components/category-hub-card'
+import { categories } from '@/lib/logos-data'
+
+const breadcrumbItems = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Categorías', href: '/categorias' },
+]
+
+export default function CategoriasPage() {
+  return (
+    <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <h1 className="font-serif text-3xl font-medium tracking-tight text-foreground">
+        Categorías de logos en Argentina
+      </h1>
+      <p className="mt-3 max-w-2xl text-muted-foreground">
+        Directorio de favicons organizado por rubro. Elegí una categoría para ver
+        entidades, dominios y URLs de Google o DuckDuckGo listas para copiar en tu
+        app, sitio o hoja de cálculo.
+      </p>
+
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {categories.map((category) => (
+          <CategoryHubCard key={category.id} category={category} />
+        ))}
+        <BanderasHubCard />
+      </div>
+
+      <p className="mt-10 text-sm text-muted-foreground">
+        ¿Buscás una entidad puntual?{' '}
+        <Link href="/" className="text-primary hover:underline">
+          Volvé al directorio completo
+        </Link>{' '}
+        o consultá la{' '}
+        <Link href="/docs" className="text-primary hover:underline">
+          documentación de la API
+        </Link>
+        .
+      </p>
+    </main>
+  )
+}

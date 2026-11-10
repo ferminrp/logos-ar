@@ -1,0 +1,27 @@
+---
+export const prerender = true
+
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { CategoryPageView } from '../../../views/category-page'
+import { categories } from '@/lib/logos-data'
+import { getCategoryById } from '@/lib/entity-index'
+import { getCategorySeoCopy } from '@/lib/category-seo'
+export function getStaticPaths() {
+  return categories.map((category) => ({ params: { slug: category.id } }))
+}
+
+const { slug } = Astro.params
+const category = slug ? getCategoryById(slug) : null
+
+if (!category) {
+  throw new Error(`Missing category for slug ${slug}`)
+}
+
+const seo = getCategorySeoCopy(category)
+const title = seo.title
+const description = seo.metaDescription
+---
+
+<BaseLayout title={title} description={description} canonical={`/categoria/${slug}`}>
+  <CategoryPageView slug={slug!} />
+</BaseLayout>

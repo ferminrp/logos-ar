@@ -1,0 +1,19 @@
+---
+export const prerender = true
+
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { FaqJsonLd } from '@/components/faq-json-ld'
+import { SiteJsonLd } from '@/components/site-json-ld'
+import { HomePage } from '@/components/home-page'
+
+const title = 'Logos Argentina - Directorio de Favicons'
+const description =
+  'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.'
+---
+
+<BaseLayout title={title} description={description} canonical="/">
+  <h1 class="sr-only">Logos Argentina - Directorio de Favicons</h1>
+  <SiteJsonLd />
+  <FaqJsonLd />
+  <HomePage client:load />
+</BaseLayout>

@@ -1,0 +1,5 @@
+/*
+ * Theme tokens live in app/globals.css (see components.json).
+ * Do not duplicate Tailwind entrypoints here — importing this file alongside
+ * app/globals.css would process @tailwind twice.
+ */

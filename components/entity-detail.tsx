@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { AppLink as Link } from "@/components/app-link"
 import { ExternalLink } from "lucide-react"
 import { CopyButton } from "@/components/copy-button"
 import { EntityPreviewCard } from "@/components/entity-preview-card"

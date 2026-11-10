@@ -1,0 +1,65 @@
+---
+export const prerender = true
+
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { LogoPageView } from '../../../views/logo-page'
+import { getAllEntitySlugs } from '@/lib/entity-index'
+import { GONE_LOGO_SLUGS } from '@/lib/gone-logo-slugs'
+import {
+  buildEntityMetaDescription,
+  getEntityPageTitle,
+} from '@/lib/entity-seo'
+import { getEntityBySlug } from '@/lib/entity-index'
+import NotFoundPage from '../../../views/not-found-page'
+
+export function getStaticPaths() {
+  const slugs = getAllEntitySlugs()
+  const gone = [...GONE_LOGO_SLUGS]
+  return [
+    ...slugs.map((slug) => ({ params: { slug } })),
+    ...gone.map((slug) => ({ params: { slug }, props: { gone: true } })),
+  ]
+}
+
+interface Props {
+  gone?: boolean
+}
+
+const { slug } = Astro.params
+const gone = (Astro.props as Props).gone === true
+
+if (gone) {
+  Astro.response.status = 404
+}
+
+const entity = slug && !gone ? getEntityBySlug(slug) : null
+
+let title = 'Logo no encontrado'
+let description = undefined
+let robots = gone ? 'noindex, nofollow' : 'index, follow'
+
+if (gone) {
+  title = 'Logo retirado'
+} else if (entity) {
+  title = getEntityPageTitle(entity)
+  description = buildEntityMetaDescription(entity)
+} else if (slug) {
+  Astro.response.status = 404
+}
+---
+
+{
+  gone || !entity ? (
+    <BaseLayout title={title} description={description} robots={robots} canonical={`/logo/${slug}`}>
+      <NotFoundPage />
+    </BaseLayout>
+  ) : (
+    <BaseLayout
+      title={title}
+      description={description}
+      canonical={`/logo/${slug}`}
+    >
+      <LogoPageView slug={slug!} />
+    </BaseLayout>
+  )
+}

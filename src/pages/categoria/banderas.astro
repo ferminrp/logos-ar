@@ -1,0 +1,14 @@
+---
+export const prerender = true
+
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import BanderasPage from '../../../views/banderas-page'
+import { FLAGS_CATEGORY, flagsTotalCount } from '@/lib/flags-data'
+
+const title = `Banderas de países y regiones (SVG 3:2) | ${FLAGS_CATEGORY.seoTopEntities[0]}`
+const description = `${FLAGS_CATEGORY.seoIntro} ${flagsTotalCount} banderas con URL SVG lista para copiar.`
+---
+
+<BaseLayout title={title} description={description} canonical="/categoria/banderas">
+  <BanderasPage />
+</BaseLayout>
