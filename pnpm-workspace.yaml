@@ -1,2 +1,0 @@
-patchedDependencies:
-  '@astrojs/internal-helpers@0.13.1': patches/@astrojs__internal-helpers@0.13.1.patch
