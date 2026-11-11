@@ -482,6 +482,21 @@ async function doctor(): Promise<DoctorCheck[]> {
       }
     }),
     check("robots", `${baseUrl}/robots.txt`),
+    check("home-link-header", `${baseUrl}/`, (res) => {
+      const link = res.headers.get("link") ?? ""
+      if (!link.includes('rel="api-catalog"') || !link.includes("/.well-known/api-catalog")) {
+        throw new Error(`missing api-catalog Link header: ${link}`)
+      }
+      if (!link.includes('rel="item"') || !link.includes("/api/logos")) {
+        throw new Error(`missing api/logos Link header: ${link}`)
+      }
+    }),
+    check("sitemap-cache-control", `${baseUrl}/sitemap.xml`, (res) => {
+      const cc = res.headers.get("cache-control") ?? ""
+      if (!cc.includes("max-age=86400") || !cc.includes("s-maxage=86400")) {
+        throw new Error(`unexpected sitemap Cache-Control: ${cc}`)
+      }
+    }),
     check("category-bancos-seo", `${baseUrl}/categoria/bancos`, (_res, body) => {
       if (!body.includes("Logos de bancos argentinos")) {
         throw new Error('missing category SEO h1 "Logos de bancos argentinos"')
