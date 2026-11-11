@@ -854,6 +854,43 @@ async function drive(): Promise<void> {
     lines.push("category-bancos-seo-desktop.png captured (feature: seo-ctr)")
 
     await captureBrandVerifySlotScreenshots(baseUrl, outDir, browser, lines)
+
+    const {
+      assertLogoDetailA11y,
+      runLogoDetailA11ySmoke,
+      setPageColorScheme,
+      writeLogoDetailA11yArtifact,
+    } = await import(
+      pathToFileURL(path.join(REPO_ROOT, "scripts/logo-detail-a11y-smoke.mts")).href
+    )
+    const a11yReport = await runLogoDetailA11ySmoke(browser, baseUrl)
+    await writeLogoDetailA11yArtifact(a11yReport, outDir)
+    assertLogoDetailA11y(a11yReport)
+    lines.push(
+      "logo-detail-a11y.json passed (touch ≥44px, PNG/SVG contrast ≥4.5:1 light+dark, default + hover)",
+    )
+
+    for (const [viewportName, width] of [
+      ["mobile390", 390],
+      ["desktop1440", 1440],
+    ] as const) {
+      for (const theme of ["light", "dark"] as const) {
+        const shotPage = await browser.newPage({
+          viewport: { width, height: 900 },
+        })
+        await shotPage.goto(`${baseUrl}/logo/banco-galicia`, {
+          waitUntil: "domcontentloaded",
+        })
+        await setPageColorScheme(shotPage, theme)
+        await shotPage.getByRole("button", { name: "Descargar PNG" }).waitFor({ timeout: 15000 })
+        await shotPage.screenshot({
+          path: path.join(outDir, `logo-detail-a11y-${viewportName}-${theme}.png`),
+          fullPage: false,
+        })
+        await shotPage.close()
+        lines.push(`logo-detail-a11y-${viewportName}-${theme}.png captured`)
+      }
+    }
   } finally {
     await browser.close()
   }

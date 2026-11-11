@@ -8,7 +8,7 @@ interface CopyButtonProps {
   value: string
   label?: string
   variant?: "ghost" | "outline"
-  size?: "sm" | "default"
+  size?: "sm" | "default" | "touch"
   className?: string
 }
 
