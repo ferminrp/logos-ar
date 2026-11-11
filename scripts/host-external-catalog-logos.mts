@@ -1,6 +1,7 @@
 /**
  * Download third-party catalog logo URLs into public/logos and point overrides at /logos/{slug}.png.
  */
+import { createHash } from 'node:crypto'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -9,7 +10,7 @@ import { listThirdPartyCatalogLogos } from '../lib/catalog-logo-hosting.ts'
 import { getAllEntities } from '../lib/entity-index.ts'
 import { getEntityLogoUrl } from '../lib/entity-logo.ts'
 import { getGoogleFaviconUrl, getDuckDuckGoFaviconUrl } from '../lib/favicon-urls.ts'
-import { MIN_LOGO_BYTES } from '../lib/logo-quality/constants.ts'
+import { GENERIC_FAVICON_SHA256, MIN_LOGO_BYTES } from '../lib/logo-quality/constants.ts'
 import { discoverSiteLogoUrls } from '../lib/logo-quality/site-logo.ts'
 import { normalizeLogoForTile } from '../lib/logo-quality/normalize-tile-logo.ts'
 import { analyzeLogoVisual, evaluateVisualAnalysis } from '../lib/logo-quality/visual-analysis.ts'
@@ -125,11 +126,16 @@ async function main() {
       continue
     }
 
+    const sha256 = createHash('sha256').update(png).digest('hex')
+    if (GENERIC_FAVICON_SHA256.has(sha256)) {
+      failed.push({ slug: target.slug, reason: 'quality: generic-icon' })
+      continue
+    }
+
     const analysis = await analyzeLogoVisual(new Uint8Array(png))
     const visualIssues = analysis ? evaluateVisualAnalysis(analysis) : []
-    const blockingVisual = visualIssues.filter((i) => i.code === 'generic-favicon')
-    if (blockingVisual.length > 0) {
-      failed.push({ slug: target.slug, reason: `quality: ${blockingVisual.map((i) => i.code).join(',')}` })
+    if (visualIssues.length > 0) {
+      failed.push({ slug: target.slug, reason: `quality: ${visualIssues.map((i) => i.code).join(',')}` })
       continue
     }
 
