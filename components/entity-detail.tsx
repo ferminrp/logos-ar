@@ -110,6 +110,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
               </code>
               <CopyButton
                 value={catalogLogoUrl}
+                size="touch"
                 label={
                   logoSource === "google"
                     ? "Copiar URL de Google"
@@ -127,7 +128,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
               <code className="flex-1 break-all rounded bg-secondary px-2 py-1.5 font-mono text-xs text-foreground">
                 {duckUrl}
               </code>
-              <CopyButton value={duckUrl} label="Copiar URL de DuckDuckGo" />
+              <CopyButton value={duckUrl} size="touch" label="Copiar URL de DuckDuckGo" />
             </div>
           </div>
         </div>
@@ -146,6 +147,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
                 value={googleCurl}
                 label="Copiar curl de Google"
                 variant="outline"
+                size="touch"
               />
             </div>
           </div>
@@ -161,6 +163,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
                 value={duckCurl}
                 label="Copiar curl de DuckDuckGo"
                 variant="outline"
+                size="touch"
               />
             </div>
           </div>
@@ -176,7 +179,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
           <code className="flex-1 break-all rounded bg-secondary px-2 py-1.5 font-mono text-sm text-foreground">
             {sheetsFormula}
           </code>
-          <CopyButton value={sheetsFormula} label="Copiar fórmula IMAGE" />
+          <CopyButton value={sheetsFormula} size="touch" label="Copiar fórmula IMAGE" />
         </div>
         <p className="text-sm text-muted-foreground">
           Más ejemplos en la{" "}
