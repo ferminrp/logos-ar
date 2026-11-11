@@ -22,4 +22,6 @@ public/sitemap.xml
 .cache/
 .verify-loguitos/
 data/logo-check-report.json
+data/catalog-third-party-logos.json
+data/logo-host-migration-report.json
 tsconfig.tsbuildinfo

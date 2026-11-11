@@ -21,6 +21,7 @@
     "indexnow:ping-changed": "node --experimental-strip-types scripts/indexnow-ping-changed.mts",
     "verify:loguitos": "node --experimental-strip-types .cursor/skills/verify-loguitos/scripts/verify-loguitos.mts",
     "check:logos": "node --experimental-strip-types scripts/check-logos.mts",
+    "check:catalog-hosting": "node --experimental-strip-types scripts/check-catalog-self-hosted.mts",
     "sync:logo-overrides": "node --experimental-strip-types scripts/sync-logo-overrides.mts",
     "test:logos": "node --experimental-strip-types --test scripts/check-logos.test.mts",
     "test:entity-seo": "node --experimental-strip-types --test lib/entity-seo.test.mts",
