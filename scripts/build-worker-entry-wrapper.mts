@@ -1,8 +1,30 @@
-import { spawnSync } from 'node:child_process'
 import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { HOME_DOCUMENT_CACHE_CONTROL } from '../lib/home-document-headers.ts'
+
+/** Worker-local bundle of `buildHomeLinkHeader` (no esbuild; must stay in sync with lib/). */
+export function buildHomeLinkHeaderWorkerModuleSource(): string {
+  return `const DEFAULT_SITE_URL = 'https://loguitos.app';
+function getSiteUrl() {
+  const fromNode =
+    typeof process !== 'undefined'
+      ? (process.env.PUBLIC_SITE_URL ??
+        process.env.NEXT_PUBLIC_SITE_URL ??
+        process.env.NEXT_PUBLIC_APP_URL ??
+        null)
+      : null;
+  return fromNode ?? DEFAULT_SITE_URL;
+}
+export function buildHomeLinkHeader(siteUrl) {
+  const base = (siteUrl ?? getSiteUrl()).replace(/\\/$/, '');
+  return [
+    \`<\${base}/.well-known/api-catalog>; rel="api-catalog"\`,
+    \`<\${base}/api/logos>; rel="item"; type="application/json"\`,
+  ].join(', ');
+}
+`
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(__dirname, '..')
@@ -36,31 +58,9 @@ export default {
 `
 }
 
-function bundleHomeLinkHeader(outfile: string): void {
-  const entry = path.join(repoRoot, 'lib/home-discovery-link.ts')
-  const result = spawnSync(
-    'pnpm',
-    [
-      'exec',
-      'esbuild',
-      entry,
-      '--bundle',
-      '--format=esm',
-      '--platform=neutral',
-      '--outfile=' + outfile,
-    ],
-    { cwd: repoRoot, encoding: 'utf8' },
-  )
-  if (result.status !== 0) {
-    throw new Error(
-      `esbuild bundle failed: ${result.stderr || result.stdout || result.status}`,
-    )
-  }
-}
-
 export async function buildWorkerEntryWrapper(serverRoot = serverDir): Promise<void> {
   const homeLinkBundle = path.join(serverRoot, 'home-link-header.mjs')
-  bundleHomeLinkHeader(homeLinkBundle)
+  await writeFile(homeLinkBundle, buildHomeLinkHeaderWorkerModuleSource(), 'utf8')
 
   await writeFile(path.join(serverRoot, WORKER_WRAPPER_MAIN), buildWrapperSource(), 'utf8')
 
