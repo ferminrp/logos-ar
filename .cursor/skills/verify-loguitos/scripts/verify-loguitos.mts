@@ -374,15 +374,28 @@ async function doctor(): Promise<DoctorCheck[]> {
         }
         return { name, ok: false, detail }
       }
-      const contentType = res.headers.get("content-type")?.split(";")[0]
-      if (contentType !== "image/png") {
+      const contentType = res.headers.get("content-type")?.split(";")[0]?.trim()
+      const allowed = new Set(["image/png", "image/jpeg", "image/webp"])
+      if (!contentType || !allowed.has(contentType)) {
         return { name, ok: false, detail: `content-type ${contentType ?? "(none)"}` }
       }
       const bytes = new Uint8Array(await res.arrayBuffer())
-      if (bytes[0] !== 0x89 || bytes[1] !== 0x50) {
-        return { name, ok: false, detail: "response is not PNG" }
+      const isPng = bytes[0] === 0x89 && bytes[1] === 0x50
+      const isJpeg = bytes[0] === 0xff && bytes[1] === 0xd8
+      const isWebp =
+        bytes.length >= 12 &&
+        bytes[0] === 0x52 &&
+        bytes[1] === 0x49 &&
+        bytes[2] === 0x46 &&
+        bytes[3] === 0x46
+      const formatOk =
+        (contentType === "image/png" && isPng) ||
+        (contentType === "image/jpeg" && isJpeg) ||
+        (contentType === "image/webp" && isWebp)
+      if (!formatOk) {
+        return { name, ok: false, detail: `body does not match ${contentType}` }
       }
-      return { name, ok: true, detail: `HTTP ${res.status}` }
+      return { name, ok: true, detail: `HTTP ${res.status} ${contentType}` }
     } catch (error) {
       return {
         name,
@@ -588,7 +601,7 @@ async function readBrandVerifyCssTokens(): Promise<{
   light: { background: string; border: string }
   dark: { background: string; border: string }
 }> {
-  const css = await readFile(path.join(REPO_ROOT, "app/globals.css"), "utf8")
+  const css = await readFile(path.join(REPO_ROOT, "src/styles/globals.css"), "utf8")
   const pick = (block: string, name: string): string => {
     const re = new RegExp(`${name}:\\s*(oklch\\([^)]+\\))`)
     const match = block.match(re)

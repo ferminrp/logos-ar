@@ -5,7 +5,7 @@ description: End-to-end verification for Logos Argentina (Loguitos) — Astro on
 
 # Verify Loguitos (Logos Argentina)
 
-Loguitos is an Astro + Cloudflare Workers app: home search, category hubs, per-entity logo pages, `/docs`, and JSON at `/api/logos`. No database or required env vars for local runs.
+Loguitos is an **Astro 7** + Cloudflare Workers app: home search, category hubs, per-entity logo pages, `/docs`, JSON at `/api/logos`, and raster/SVG logo download at `/api/logo-download`. No database or required env vars for local runs.
 
 ## Launch
 
@@ -19,10 +19,10 @@ This runs `pnpm build` (prebuild datasets, Astro build, postbuild sitemap), then
 
 Ready when `curl -sf "http://127.0.0.1:$VERIFY_LOGUITOS_PORT/"` returns HTML containing `Logos Argentina`.
 
-To reuse an already-running server (for example `pnpm dev` on 4321 after `pnpm build`), skip launch and set:
+To reuse an already-running server (for example `pnpm dev` on **4321** or `pnpm start` after `pnpm build`), skip launch and set:
 
 ```bash
-export VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:3000
+export VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:4321
 ```
 
 Two instances can run side by side if each uses its own `VERIFY_LOGUITOS_PORT` and run directory. Do not attach verification to a server you did not start unless `VERIFY_LOGUITOS_BASE_URL` is set intentionally.
@@ -67,6 +67,7 @@ Read-only checks before driving:
 - GSC priority logo titles — for each slug in `arca-ex-afip`, `mercado-libre`, `tn`, `modo`, `naranja-x`, `infobae`: 200, compact `<title>` (≤ 60, `| Loguitos`, no `…`) with `PNG y SVG` and `gratis`
 - `GET /logo/changan` → 200, HTML mentions Changan (GSC batch brand)
 - `GET /api/logos?q=meli&limit=5` → 200, at least one item matches Mercado Libre / `mercadolibre` (GSC alias in search text)
+- `GET /api/logo-download?domain=www.galicia.ar&format=png&size=128` (and `ripio.com` 512, `mercadolibre.com.ar` 256, hosted `naranjax.com`, fallback `bbva.com.ar`) → 200 with `image/png`, or wasm-budget passthrough `image/jpeg` / `image/webp`
 - `GET /categoria/delivery`, `/logo/banco-provincia-bs-as`, `/logo/tn-todo-noticias` with `redirect: manual` → 301 or 308 to the canonical paths in `data/permanent-redirects.json`
 
 Exit code non-zero on any failure. HTTP checks run concurrently (`Promise.all`). Run doctor whenever a drive step fails before retrying browser actions.
@@ -131,7 +132,7 @@ Stops the server recorded in `.verify-loguitos/runs/latest/server.json`. If no r
 |--------|------------|
 | Main harness | `pnpm verify:loguitos <launch\|doctor\|drive\|cleanup\|all>` |
 | Hosted logo QA | `pnpm check:logos` — full catalog fetch with one 30s recheck for entities that failed only on transient external errors (network, timeout, 429/5xx, Google favicon-proxy 404). Writes `data/logo-check-report.json`. **Full-catalog runs** (local default, push to main, nightly): real quality problems block; transient-only failures are warnings unless more than `max(10, 5%)` of entities are transient (then treated as a broken checker/runner). **PR runs** (`LOGO_CHECK_SCOPE=pr`, set in CI): entities touched in the diff block on any failure; others are out of scope. Logo-quality workflow uploads the JSON report and prints a step summary. |
-| Override logo-download sweep | `pnpm verify:loguitos sweep-logo-download` — hits `/api/logo-download` for every key in `data/logo-overrides.json` (default `LOGO_DOWNLOAD_SWEEP_FORMATS=png`, set `png,svg` for both). Set `LOGO_DOWNLOAD_SWEEP_SIZE` (128/512). Set `LOGO_DOWNLOAD_MAIN_BASE` (e.g. Next on `next start`) to write `main-vs-pr.json` under `.verify-loguitos/artifacts/logo-download-sweep/`. Optional domain list: `LOGO_DOWNLOAD_DOMAIN_LIST=/path/to/domains.txt`. With `LOGO_DOWNLOAD_SWEEP_WASM_AUDIT=1`, also writes `wasm-raster-risks.json`. PNG sweeps accept `image/png` or wasm-budget passthrough (`image/jpeg` / `image/webp`). |
+| Override logo-download sweep | `pnpm verify:loguitos sweep-logo-download` — hits `/api/logo-download` for every key in `data/logo-overrides.json` (default `LOGO_DOWNLOAD_SWEEP_FORMATS=png`, set `png,svg` for both). Set `LOGO_DOWNLOAD_SWEEP_SIZE` (128/512). Set `LOGO_DOWNLOAD_MAIN_BASE` to a second running instance when comparing regressions across deploys; writes `main-vs-pr.json` under `.verify-loguitos/artifacts/logo-download-sweep/`. Optional domain list: `LOGO_DOWNLOAD_DOMAIN_LIST=/path/to/domains.txt`. With `LOGO_DOWNLOAD_SWEEP_WASM_AUDIT=1`, also writes `wasm-raster-risks.json`. PNG sweeps accept `image/png` or wasm-budget passthrough (`image/jpeg` / `image/webp`). |
 | Sitemap (postbuild) | `node --experimental-strip-types scripts/verify-sitemap.mts` (runs automatically on `pnpm build` via `postbuild`) |
 
 Playwright is a devDependency; first browser run needs `pnpm exec playwright install chromium`.
