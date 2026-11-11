@@ -578,8 +578,57 @@ async function doctor(): Promise<DoctorCheck[]> {
         throw new Error(`missing encoded mailto for Ualá (expected ${expected})`)
       }
     }),
+    check("sponsor-slot-structure", `${baseUrl}/logo/nubi`, (_res, body) => {
+      if (!body.includes('aria-label="Contenido patrocinado"')) {
+        throw new Error("missing sponsor aside aria-label")
+      }
+      if (!body.includes("min-h-[148px]") || !body.includes("sm:min-h-[88px]")) {
+        throw new Error("missing sponsor SSR min-height classes")
+      }
+      if (!body.includes("PATROCINADO") && !body.includes("Patrocinado")) {
+        throw new Error("missing PATROCINADO label (case may vary)")
+      }
+      if (!body.includes('rel="sponsored noopener"')) {
+        throw new Error("sponsor CTA must use rel sponsored noopener")
+      }
+      if (!body.includes('target="_blank"')) {
+        throw new Error("sponsor CTA must target _blank")
+      }
+      const sponsoredIdx = body.indexOf('aria-label="Contenido patrocinado"')
+      const entityCardIdx = body.indexOf("flex h-24 w-24 shrink-0")
+      if (sponsoredIdx < 0 || entityCardIdx < 0 || sponsoredIdx > entityCardIdx) {
+        throw new Error("sponsor slot must appear before entity preview card")
+      }
+    }),
+    check("sponsor-slot-no-lemon-on-uala", `${baseUrl}/logo/uala`, (_res, body) => {
+      if (body.includes("Abrí tu cuenta en Lemon")) {
+        throw new Error("Lemon campaign must not render on competitor slug uala")
+      }
+      if (!body.includes('aria-label="Contenido patrocinado"')) {
+        throw new Error("sponsor slot aside missing on uala (house expected)")
+      }
+    }),
+    check("sponsor-slot-no-lemon-on-mercado-pago", `${baseUrl}/logo/mercado-pago`, (_res, body) => {
+      if (body.includes("Abrí tu cuenta en Lemon")) {
+        throw new Error("Lemon campaign must not render on competitor slug mercado-pago")
+      }
+    }),
+    check("sponsor-slot-bna-house", `${baseUrl}/logo/banco-de-la-nacion-argentina`, (_res, body) => {
+      if (body.includes("Abrí tu cuenta en Lemon")) {
+        throw new Error("Lemon campaign must not render on banco slug (house ad expected)")
+      }
+      if (!body.includes('aria-label="Contenido patrocinado"')) {
+        throw new Error("sponsor aside missing on BNA")
+      }
+      const sponsoredIdx = body.indexOf('aria-label="Contenido patrocinado"')
+      const entityCardIdx = body.indexOf("flex h-24 w-24 shrink-0")
+      if (sponsoredIdx < 0 || entityCardIdx < 0 || sponsoredIdx > entityCardIdx) {
+        throw new Error("sponsor slot must appear before entity preview card on BNA")
+      }
+    }),
     checkBrandVerifySlotModule(),
     checkBrandVerifySlotBorderContrast(),
+    checkSponsorSlotModule(),
   ])
 
   const run = await resolveArtifactRunId()
@@ -732,6 +781,139 @@ async function measureBrandVerifyBorderContrastFromTokens(
   return contrastRatioOklch(pair.border, pair.background)
 }
 
+async function checkSponsorSlotModule(): Promise<DoctorCheck> {
+  const name = "sponsor-slot-module"
+  try {
+    const modUrl = pathToFileURL(path.join(REPO_ROOT, "lib/sponsor-slot.ts")).href
+    const mod = (await import(modUrl)) as typeof import("../../../../lib/sponsor-slot.ts")
+    if (mod.resolveSponsorSlotContent({ categoryId: "fintechs", slug: "uala" }).kind !== "house") {
+      throw new Error("competitor uala must resolve to house, not lemon")
+    }
+    if (mod.resolveSponsorSlotContent({ categoryId: "fintechs", slug: "nubi" }).kind !== "lemon") {
+      throw new Error("non-excluded fintech nubi must resolve to lemon campaign")
+    }
+    if (
+      mod.resolveSponsorSlotContent({
+        categoryId: "bancos",
+        slug: "banco-de-la-nacion-argentina",
+      }).kind !== "house"
+    ) {
+      throw new Error("banco BNA must resolve to house ad")
+    }
+    return { name, ok: true, detail: "sponsor targeting rules OK" }
+  } catch (error) {
+    return {
+      name,
+      ok: false,
+      detail: error instanceof Error ? error.message : String(error),
+    }
+  }
+}
+
+async function measurePageCls(
+  page: import("playwright").Page,
+  settleMs = 2000,
+): Promise<number> {
+  return page.evaluate((ms) => {
+    return new Promise<number>((resolve) => {
+      let cls = 0
+      const po = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          const ls = entry as unknown as { hadRecentInput?: boolean; value?: number }
+          if (!ls.hadRecentInput) cls += ls.value ?? 0
+        }
+      })
+      try {
+        po.observe({ type: "layout-shift", buffered: true })
+      } catch {
+        resolve(0)
+        return
+      }
+      setTimeout(() => {
+        po.disconnect()
+        resolve(cls)
+      }, ms)
+    })
+  }, settleMs)
+}
+
+async function captureSponsorSlotScreenshots(
+  baseUrl: string,
+  outDir: string,
+  browser: Awaited<ReturnType<(typeof import("playwright"))["chromium"]["launch"]>>,
+  lines: string[],
+): Promise<void> {
+  const slugs = ["uala", "mercado-pago", "banco-de-la-nacion-argentina"] as const
+  const viewports = [
+    { width: 390, height: 844, suffix: "390" },
+    { width: 1440, height: 900, suffix: "1440" },
+  ] as const
+  const clsByRoute: Record<string, number> = {}
+
+  for (const slug of slugs) {
+    for (const theme of ["light", "dark"] as const) {
+      for (const vp of viewports) {
+        const page = await browser.newPage({
+          viewport: { width: vp.width, height: vp.height },
+        })
+        try {
+          await page.goto(`${baseUrl}/logo/${slug}`, { waitUntil: "load" })
+          await page.evaluate((mode) => {
+            document.documentElement.classList.toggle("dark", mode === "dark")
+          }, theme)
+
+          const routeKey = `${slug}-${vp.suffix}-${theme}`
+          const cls = await measurePageCls(page)
+          clsByRoute[routeKey] = cls
+          lines.push(`CLS ${routeKey}: ${cls.toFixed(4)}`)
+
+          const aside = page.getByRole("complementary", {
+            name: "Contenido patrocinado",
+          })
+          await aside.waitFor({ timeout: 15000 })
+          await aside.scrollIntoViewIfNeeded()
+          const file = `sponsor-slot-${slug}-${vp.suffix}-${theme}.png`
+          await aside.screenshot({ path: path.join(outDir, file) })
+          lines.push(`${file} captured (feature: sponsor-slot)`)
+
+          const promoCta = page.getByRole("link", { name: /Ver promo/ })
+          const apiCta = page.getByRole("link", { name: /Ver API/ })
+          const cta =
+            (await promoCta.count()) > 0 ? promoCta.first() : apiCta.first()
+          await cta.scrollIntoViewIfNeeded()
+          await focusBrandVerifyCtaForVisibleRing(cta)
+          const focusFile = `sponsor-slot-${slug}-${vp.suffix}-${theme}-focus.png`
+          await aside.screenshot({ path: path.join(outDir, focusFile) })
+          lines.push(`${focusFile} captured (CTA :focus-visible)`)
+        } finally {
+          await page.close()
+        }
+      }
+    }
+  }
+
+  const values = Object.values(clsByRoute)
+  const maxCls = Math.max(...values, 0)
+  if (maxCls >= 0.1) {
+    throw new Error(`sponsor slot CLS max ${maxCls.toFixed(4)} >= 0.1`)
+  }
+
+  await writeFile(
+    path.join(outDir, "sponsor-slot-metrics.json"),
+    JSON.stringify(
+      {
+        clsByRoute,
+        maxCls: Number(maxCls.toFixed(4)),
+        focusRing:
+          "verified on sponsor-slot captures (2px outline via .lg-slot__cta:focus-visible)",
+      },
+      null,
+      2,
+    ),
+  )
+  lines.push("sponsor-slot-metrics.json written")
+}
+
 async function captureBrandVerifySlotScreenshots(
   baseUrl: string,
   outDir: string,
@@ -854,6 +1036,7 @@ async function drive(): Promise<void> {
     lines.push("category-bancos-seo-desktop.png captured (feature: seo-ctr)")
 
     await captureBrandVerifySlotScreenshots(baseUrl, outDir, browser, lines)
+    await captureSponsorSlotScreenshots(baseUrl, outDir, browser, lines)
   } finally {
     await browser.close()
   }
