@@ -1,7 +1,7 @@
-import { spawnSync } from 'node:child_process'
 import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import * as esbuild from 'esbuild'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(__dirname, '..')
@@ -27,22 +27,20 @@ export default {
 `
 }
 
-function bundleHomeDiscovery(outfile: string): void {
+async function bundleHomeDiscovery(outfile: string): Promise<void> {
   const entry = path.join(repoRoot, 'lib/worker-home-discovery-entry.ts')
-  const result = spawnSync(
-    'pnpm',
-  ['exec', 'esbuild', entry, '--bundle', '--format=esm', '--platform=neutral', `--outfile=${outfile}`],
-    { cwd: repoRoot, encoding: 'utf8' },
-  )
-  if (result.status !== 0) {
-    throw new Error(
-      `esbuild bundle failed: ${result.stderr || result.stdout || result.status}`,
-    )
-  }
+  await esbuild.build({
+    entryPoints: [entry],
+    bundle: true,
+    format: 'esm',
+    platform: 'neutral',
+    outfile,
+    logLevel: 'silent',
+  })
 }
 
 export async function buildWorkerEntryWrapper(serverRoot = serverDir): Promise<void> {
-  bundleHomeDiscovery(path.join(serverRoot, HOME_DISCOVERY_BUNDLE))
+  await bundleHomeDiscovery(path.join(serverRoot, HOME_DISCOVERY_BUNDLE))
 
   await writeFile(path.join(serverRoot, WORKER_WRAPPER_MAIN), buildWrapperSource(), 'utf8')
 
