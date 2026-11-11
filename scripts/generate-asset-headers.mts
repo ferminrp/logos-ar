@@ -1,9 +1,12 @@
-import { readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const distHeadersPath = path.resolve(__dirname, '../dist/client/_headers')
+
+export function defaultDistClientHeadersPath(): string {
+  return path.resolve(__dirname, '../dist/client/_headers')
+}
 
 export const SITEMAP_CACHE_CONTROL =
   'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800'
@@ -46,19 +49,36 @@ export function mergeDistClientHeaders(existingContent: string | null): string {
   return base ? `${base}\n\n${block}\n` : `${block}\n`
 }
 
-async function main() {
-  let existing: string | null = null
-  try {
-    existing = await readFile(distHeadersPath, 'utf8')
-  } catch {
-    existing = null
+export async function writeDistClientHeaders(
+  distHeadersPath = defaultDistClientHeadersPath(),
+  existingContent?: string | null,
+): Promise<string> {
+  let existing = existingContent ?? null
+  if (existingContent === undefined) {
+    try {
+      existing = await readFile(distHeadersPath, 'utf8')
+    } catch {
+      existing = null
+    }
   }
   const body = mergeDistClientHeaders(existing)
+  await mkdir(path.dirname(distHeadersPath), { recursive: true })
   await writeFile(distHeadersPath, body, 'utf8')
-  console.log(`Wrote ${distHeadersPath}`)
+  return distHeadersPath
 }
 
-main().catch((error) => {
-  console.error('Failed to generate asset headers:', error)
-  process.exitCode = 1
-})
+async function main() {
+  const written = await writeDistClientHeaders()
+  console.log(`Wrote ${written}`)
+}
+
+const isCli =
+  process.argv[1] &&
+  path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))
+
+if (isCli) {
+  main().catch((error) => {
+    console.error('Failed to generate asset headers:', error)
+    process.exitCode = 1
+  })
+}

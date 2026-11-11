@@ -3,6 +3,7 @@ import permanentRedirects from '../data/permanent-redirects.json'
 import { prefersMarkdown } from '@/lib/accept'
 import { GONE_LOGO_SLUGS } from '@/lib/gone-logo-slugs'
 import { getMarkdownForPath } from '@/lib/site-markdown'
+import { HOME_DOCUMENT_CACHE_CONTROL } from '@/lib/home-document-headers'
 import { buildHomeLinkHeader } from '@/lib/home-discovery-link'
 
 const NEGOTIABLE_PATHS = new Set(['/', '/categorias'])
@@ -68,9 +69,13 @@ export const onRequest = defineMiddleware(async (context, next) => {
   let response = await next()
 
   if (pathname === '/' && response.ok) {
-    response = withResponseHeaders(response, {
+    const extra: Record<string, string> = {
       Link: buildHomeLinkHeader(),
-    })
+    }
+    if (!response.headers.has('cache-control')) {
+      extra['Cache-Control'] = HOME_DOCUMENT_CACHE_CONTROL
+    }
+    response = withResponseHeaders(response, extra)
   }
 
   if (pathname === '/sitemap.xml') {

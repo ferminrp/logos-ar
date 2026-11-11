@@ -4,6 +4,7 @@ import { spawn, type ChildProcess } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { after, before, describe, it } from 'node:test'
+import { HOME_DOCUMENT_CACHE_CONTROL } from '../lib/home-document-headers.ts'
 import { SITEMAP_CACHE_CONTROL } from './generate-asset-headers.mts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -60,13 +61,17 @@ describe('SEO headers on clean build (wrangler dev)', () => {
     child?.kill('SIGTERM')
   })
 
-  it('GET / includes Link discovery header from middleware', async () => {
+  it('GET / includes Link discovery header and HTML document cache', async () => {
     const res = await fetch(`${BASE}/`, { redirect: 'follow' })
     assert.equal(res.status, 200)
     const link = res.headers.get('link') ?? ''
     assert.match(link, /api-catalog/)
     assert.match(link, /\.well-known\/api-catalog/)
     assert.match(link, /\/api\/logos/)
+    const cc = res.headers.get('cache-control') ?? ''
+    assert.match(cc, /must-revalidate/)
+    assert.match(cc, /max-age=0/)
+    assert.equal(cc, HOME_DOCUMENT_CACHE_CONTROL)
   })
 
   it('GET /sitemap.xml has long-lived cache-control', async () => {

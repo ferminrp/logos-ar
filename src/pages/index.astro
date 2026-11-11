@@ -1,7 +1,5 @@
 ---
-// SSR so Astro middleware can attach the home `Link` discovery header (prerendered
-// `/` is served via ASSETS fallback and skips middleware on Cloudflare Workers).
-export const prerender = false
+export const prerender = true
 
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { FaqJsonLd } from '@/components/faq-json-ld'
