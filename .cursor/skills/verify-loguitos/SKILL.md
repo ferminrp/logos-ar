@@ -114,6 +114,8 @@ Default artifact directory: `.verify-loguitos/artifacts/<run-id>/` (also symlink
 | `brand-verify-{slug}-{390\|1440}-{light\|dark}.png` | Brand verify aside on `uala` and `banco-de-la-nacion-argentina` (feature: brand-verify-slot) |
 | `brand-verify-{slug}-{390\|1440}-{light\|dark}-focus.png` | Same aside with CTA `:focus-visible` ring |
 | `brand-verify-metrics.json` | Measured `--slot-border` vs `--background` contrast (light/dark) |
+| `sponsor-slot-{slug}-{390\|1440}-{light\|dark}.png` | Fase 2 sponsor `<aside aria-label="Contenido patrocinado">` on `uala`, `mercado-pago`, `banco-de-la-nacion-argentina` |
+| `sponsor-slot-metrics.json` | Cumulative layout shift (CLS) per route/theme/viewport; max must stay below 0.1 |
 | `drive-summary.txt` | Human-readable pass/fail log |
 
 Proof standards: use real routes and the public API, not test-only hooks. Capture the action (navigation or search) and the resulting UI or JSON, not only a generic 200. Cleanup must not remove these files.

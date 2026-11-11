@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react"
 import { CopyButton } from "@/components/copy-button"
 import { EntityPreviewCard } from "@/components/entity-preview-card"
 import { BrandVerifySlot } from "@/components/brand-verify-slot"
+import { SponsorSlot } from "@/components/sponsor-slot"
 import { LogoDownloadButtons } from "@/components/logo-download-buttons"
 import { isBrandVerifySlotEnabled } from "@/lib/brand-verify-slot"
 import type { EntityRecord } from "@/lib/entity-index"
@@ -62,6 +63,8 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
           .
         </p>
       </div>
+
+      <SponsorSlot slug={slug} categoryId={entity.categoryId} />
 
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary">
