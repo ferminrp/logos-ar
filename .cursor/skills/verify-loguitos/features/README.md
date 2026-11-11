@@ -7,7 +7,7 @@ Maintained recipes for user-visible behavior. Read this index before driving the
 - Dependencies installed: `pnpm install`
 - Offline gate (CI parity): `pnpm typecheck` and `pnpm test` before browser verification when you changed catalog data, routes, or shared libs
 - For a disposable production instance: `pnpm verify:loguitos launch` (or `all`)
-- Or attach to dev: `VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:3000` with `pnpm dev` already up
+- Or attach to dev: `VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:4321` with `pnpm dev` already up (Astro default port)
 - Run `pnpm verify:loguitos doctor` before browser steps
 - Chromium for screenshots: `pnpm exec playwright install chromium`
 - Logo asset regression gate (separate from this harness): `pnpm check:logos` after changing hosted PNGs or overrides. Transient third-party failures get a 30s recheck; on full-catalog runs they warn unless over `max(10, 5%)` of entities (then block). PR CI sets `LOGO_CHECK_SCOPE=pr` so only touched slugs block on any failure.
