@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## Skills de UI y motion
+
+Skills de UI y motion (emilkowalski/skills, en `.cursor/skills/`): usá emil-design-eng y animate/choreograph/gestures cuando construyas o cambies UI o animaciones; break-ui y review-animations antes de abrir un PR con cambios visuales.
+
 ## Cursor Cloud specific instructions
 
 **Product**: Logos Argentina — a static catalog of Argentine financial entity logos/favicons, served with **Astro 5** on **Cloudflare Workers** (`@astrojs/cloudflare`). No database. Optional env: `PUBLIC_SITE_URL` (canonical host for SEO; defaults to `https://loguitos.app`).
