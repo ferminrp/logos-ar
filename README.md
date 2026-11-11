@@ -38,11 +38,15 @@ Abrí [http://localhost:4321](http://localhost:4321).
 - `pnpm lint`: lint del proyecto
 - `pnpm build`: build de producción
 - `pnpm preview`: vista previa del build Astro
-- `pnpm start`: Worker local con Wrangler (después de `pnpm build`)
+- `pnpm start`: Worker local con Wrangler (`dist/server/wrangler.json`, incluye el wrapper post-build; corré `pnpm build` antes)
 - `pnpm indexnow:submit-all`: notificar todas las URLs del sitemap a IndexNow
 - `pnpm indexnow:ping-changed`: notificar solo URLs con `<lastmod>` cambiado
 
 Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse localmente.
+
+### Worker entry (deploy / previews)
+
+`wrangler.jsonc` en la raíz no define `main`: el bundle real vive en `dist/server/` después de `pnpm build`. Post-build se genera `dist/server/wrapper.mjs` (headers `Link` + cache en `/` para HTML estático). Wrangler deploy y `wrangler versions upload` desde la raíz siguen el redirect en `.wrangler/deploy/config.json` → `dist/server/wrangler.json` (`main: wrapper.mjs`), que es lo que usan previews como `pr-58-loguitos…`.
 
 ### URL canónica (SEO)
 

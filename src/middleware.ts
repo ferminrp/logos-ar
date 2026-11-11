@@ -3,6 +3,7 @@ import permanentRedirects from '../data/permanent-redirects.json'
 import { prefersMarkdown } from '@/lib/accept'
 import { GONE_LOGO_SLUGS } from '@/lib/gone-logo-slugs'
 import { getMarkdownForPath } from '@/lib/site-markdown'
+import { applyHomeDiscoveryHeaders } from '@/lib/apply-home-discovery-headers'
 import { getSiteUrl } from '@/lib/site-url'
 
 const NEGOTIABLE_PATHS = new Set(['/', '/categorias'])
@@ -13,6 +14,26 @@ const redirectMap = new Map(
     entry.destination,
   ]),
 )
+
+const SITEMAP_CACHE_CONTROL =
+  'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800'
+
+const ROBOTS_CACHE_CONTROL = SITEMAP_CACHE_CONTROL
+
+function withResponseHeaders(
+  response: Response,
+  extra: Record<string, string>,
+): Response {
+  const headers = new Headers(response.headers)
+  for (const [name, value] of Object.entries(extra)) {
+    headers.set(name, value)
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  })
+}
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const { pathname } = context.url
@@ -45,29 +66,25 @@ export const onRequest = defineMiddleware(async (context, next) => {
     }
   }
 
-  const response = await next()
+  let response = await next()
 
-  if (pathname === '/' && response.ok) {
-    const siteUrl = getSiteUrl().replace(/\/$/, '')
-    const linkHeader = [
-      `<${siteUrl}/.well-known/api-catalog>; rel="api-catalog"`,
-      `<${siteUrl}/api/logos>; rel="item"; type="application/json"`,
-    ].join(', ')
-    response.headers.set('Link', linkHeader)
+  if (pathname === '/') {
+    response = applyHomeDiscoveryHeaders(response, {
+      pathname,
+      siteUrl: getSiteUrl(),
+    })
   }
 
   if (pathname === '/sitemap.xml') {
-    response.headers.set(
-      'Cache-Control',
-      'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800',
-    )
+    response = withResponseHeaders(response, {
+      'Cache-Control': SITEMAP_CACHE_CONTROL,
+    })
   }
 
   if (pathname === '/robots.txt') {
-    response.headers.set(
-      'Cache-Control',
-      'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800',
-    )
+    response = withResponseHeaders(response, {
+      'Cache-Control': ROBOTS_CACHE_CONTROL,
+    })
   }
 
   return response
