@@ -1,17 +1,32 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { buildAssetHeadersFile } from './generate-asset-headers.mts'
+import {
+  buildSitemapHeadersBlock,
+  mergeDistClientHeaders,
+  SITEMAP_CACHE_CONTROL,
+} from './generate-asset-headers.mts'
 
-test('buildAssetHeadersFile includes sitemap cache parity with former next.config', () => {
-  const body = buildAssetHeadersFile('https://loguitos.app')
-  assert.match(
-    body,
-    /\/sitemap\.xml[\s\S]*max-age=86400, s-maxage=86400, stale-while-revalidate=604800/,
-  )
+test('buildSitemapHeadersBlock includes next.config parity cache', () => {
+  const block = buildSitemapHeadersBlock()
+  assert.match(block, /\/sitemap\.xml/)
+  assert.match(block, new RegExp(SITEMAP_CACHE_CONTROL.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
 })
 
-test('buildAssetHeadersFile includes home Link discovery headers', () => {
-  const body = buildAssetHeadersFile('https://example.test')
-  assert.match(body, /api-catalog/)
-  assert.match(body, /\/api\/logos/)
+test('mergeDistClientHeaders preserves Astro _astro rules', () => {
+  const input = `/_astro/*
+  Cache-Control: public, max-age=31536000, immutable`
+  const merged = mergeDistClientHeaders(input)
+  assert.match(merged, /\/_astro\/\*/)
+  assert.match(merged, /\/sitemap\.xml/)
+})
+
+test('mergeDistClientHeaders replaces stale sitemap block', () => {
+  const input = `/_astro/*
+  Cache-Control: immutable
+
+/sitemap.xml
+  Cache-Control: public, max-age=0`
+  const merged = mergeDistClientHeaders(input)
+  assert.doesNotMatch(merged, /max-age=0/)
+  assert.match(merged, /max-age=86400/)
 })

@@ -16,7 +16,6 @@ dist/
 .astro/
 .wrangler/
 public/sitemap.xml
-public/_headers
 .DS_Store
 .vercel
 .pnpm-store/
