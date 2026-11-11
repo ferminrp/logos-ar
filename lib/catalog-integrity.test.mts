@@ -13,6 +13,7 @@ import manualFixesJson from "../data/logo-manual-fixes.json" with { type: "json"
 import { categories } from "./logos-data.ts"
 import { getAllEntities, getEntitySlugRedirects } from "./entity-index.ts"
 import { getEntityLogoUrl } from "./entity-logo.ts"
+import { listThirdPartyCatalogLogos } from "./catalog-logo-hosting.ts"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const publicDir = path.join(__dirname, "../public")
@@ -65,6 +66,14 @@ test("hosted logos referenced by entities exist in public/", () => {
     .filter(({ url }) => !existsSync(path.join(publicDir, url)))
     .map(({ slug, url }) => `${slug}: ${url}`)
   assert.deepEqual(missing, [])
+})
+
+test("catalog tiles do not hotlink disallowed third-party logo hosts", () => {
+  const thirdParty = listThirdPartyCatalogLogos(getAllEntities())
+  assert.deepEqual(
+    thirdParty.map((row) => `${row.slug}: ${row.logoUrl}`),
+    [],
+  )
 })
 
 test("hosted logos referenced by overrides exist in public/", () => {
