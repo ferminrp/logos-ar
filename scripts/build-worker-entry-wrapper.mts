@@ -1,66 +1,48 @@
+import { spawnSync } from 'node:child_process'
 import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { HOME_DOCUMENT_CACHE_CONTROL } from '../lib/home-document-headers.ts'
-
-/** Worker-local bundle of `buildHomeLinkHeader` (no esbuild; must stay in sync with lib/). */
-export function buildHomeLinkHeaderWorkerModuleSource(): string {
-  return `const DEFAULT_SITE_URL = 'https://loguitos.app';
-function getSiteUrl() {
-  const fromNode =
-    typeof process !== 'undefined'
-      ? (process.env.PUBLIC_SITE_URL ??
-        process.env.NEXT_PUBLIC_SITE_URL ??
-        process.env.NEXT_PUBLIC_APP_URL ??
-        null)
-      : null;
-  return fromNode ?? DEFAULT_SITE_URL;
-}
-export function buildHomeLinkHeader(siteUrl) {
-  const base = (siteUrl ?? getSiteUrl()).replace(/\\/$/, '');
-  return [
-    \`<\${base}/.well-known/api-catalog>; rel="api-catalog"\`,
-    \`<\${base}/api/logos>; rel="item"; type="application/json"\`,
-  ].join(', ');
-}
-`
-}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(__dirname, '..')
 const serverDir = path.join(repoRoot, 'dist/server')
 
 export const WORKER_WRAPPER_MAIN = 'wrapper.mjs'
+export const HOME_DISCOVERY_BUNDLE = 'home-discovery-bundle.mjs'
 
 export function buildWrapperSource(): string {
   return `import astro from './entry.mjs';
-import { buildHomeLinkHeader } from './home-link-header.mjs';
-
-const HOME_CACHE = ${JSON.stringify(HOME_DOCUMENT_CACHE_CONTROL)};
+import { applyHomeDiscoveryHeaders, resolveWorkerSiteUrl } from './${HOME_DISCOVERY_BUNDLE}';
 
 export default {
   async fetch(request, env, ctx) {
     const response = await astro.fetch(request, env, ctx);
-    const url = new URL(request.url);
-    if (url.pathname !== '/' || !response.ok) return response;
-    const headers = new Headers(response.headers);
-    headers.set('Link', buildHomeLinkHeader());
-    if (!headers.has('Cache-Control')) {
-      headers.set('Cache-Control', HOME_CACHE);
-    }
-    return new Response(response.body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers,
+  const url = new URL(request.url);
+    return applyHomeDiscoveryHeaders(response, {
+      pathname: url.pathname,
+      siteUrl: resolveWorkerSiteUrl(request, env),
     });
   },
 };
 `
 }
 
+function bundleHomeDiscovery(outfile: string): void {
+  const entry = path.join(repoRoot, 'lib/worker-home-discovery-entry.ts')
+  const result = spawnSync(
+    'pnpm',
+  ['exec', 'esbuild', entry, '--bundle', '--format=esm', '--platform=neutral', `--outfile=${outfile}`],
+    { cwd: repoRoot, encoding: 'utf8' },
+  )
+  if (result.status !== 0) {
+    throw new Error(
+      `esbuild bundle failed: ${result.stderr || result.stdout || result.status}`,
+    )
+  }
+}
+
 export async function buildWorkerEntryWrapper(serverRoot = serverDir): Promise<void> {
-  const homeLinkBundle = path.join(serverRoot, 'home-link-header.mjs')
-  await writeFile(homeLinkBundle, buildHomeLinkHeaderWorkerModuleSource(), 'utf8')
+  bundleHomeDiscovery(path.join(serverRoot, HOME_DISCOVERY_BUNDLE))
 
   await writeFile(path.join(serverRoot, WORKER_WRAPPER_MAIN), buildWrapperSource(), 'utf8')
 
