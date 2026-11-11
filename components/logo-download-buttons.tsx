@@ -15,12 +15,14 @@ interface LogoDownloadButtonsProps {
 }
 
 function trackLogoDownload(slug: string, name: string, format: LogoFormat) {
-  if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag("event", "logo_download", {
-      logo_slug: slug,
-      logo_name: name,
-      format,
-    })
+  if (typeof window === "undefined") return
+  const params = { logo_slug: slug, logo_name: name, format }
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "logo_download", params)
+    return
+  }
+  if (Array.isArray(window.dataLayer)) {
+    window.dataLayer.push(["event", "logo_download", params])
   }
 }
 

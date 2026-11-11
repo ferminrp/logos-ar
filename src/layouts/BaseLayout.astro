@@ -104,11 +104,11 @@ const gaMeasurementId = 'G-GZLZ092Z7S'
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
     <script is:inline define:vars={{ gaMeasurementId }}>
       window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments)
       }
-      gtag('js', new Date())
-      gtag('config', gaMeasurementId)
+      window.gtag('js', new Date())
+      window.gtag('config', gaMeasurementId)
     </script>
     <script async src="https://analytics.ahrefs.com/analytics.js" data-key="wl/5EowQBWcULMyxUNjhlA"></script>
   </body>
