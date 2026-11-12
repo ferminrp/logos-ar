@@ -9,6 +9,7 @@ Category landing copy, entity page metadata, legacy slug recovery, and permanent
 - `entity-metadata` — data-driven `<title>`, meta description, and preview image `alt` on `/logo/<slug>` (compact titles via `MAX_ENTITY_TITLE_LENGTH` and word-boundary shortening in `lib/entity-seo.ts`)
 - `gsc-brands` — high-impression brands and typo aliases from Search Console (for example Changan, Stella Artois, `seoAliases` / `searchText` variants such as Meli, Porche, Superville)
 - `permanent-redirects` — 301/308 recovery for renamed entity slugs and `/categoria/delivery` → `/categoria/gastronomia`
+- `worker-discovery-headers` — `GET /` returns `Link` discovery headers for the API catalog and `/api/logos`; `GET /sitemap.xml` ships long-lived `Cache-Control` from `dist/client/_headers` (merged postbuild by `scripts/generate-asset-headers.mts`, asserted in `pnpm test:seo-headers`)
 
 ## How to get to it (user POV)
 
@@ -31,7 +32,8 @@ Preconditions:
 - **Search alias.** `GET /api/logos?q=meli&limit=5` returns Mercado Libre in `items` (alias baked into dataset `searchText`).
 - **Redirects (manual redirect).** `GET /categoria/delivery` with `redirect: manual` → 301 or 308 with `Location` ending in `/categoria/gastronomia`. Same pattern for `/logo/banco-provincia-bs-as` → `/logo/banco-provincia` and `/logo/tn-todo-noticias` → `/logo/tn` per `data/permanent-redirects.json`.
 - **Automated.** `pnpm verify:loguitos drive` writes `category-bancos-seo-desktop.png` after the logo detail shot.
-- **Proof.** `doctor.json` lists `category-bancos-seo`, `logo-banco-provincia-meta`, `entity-title-compact`, `logo-melia-gone`, `gsc-priority-logo-titles`, `logo-changan`, `api-gsc-alias-meli`, and the three `redirect-*` checks; screenshot shows the bancos H1.
+- **Discovery headers.** Doctor `home-link-header` on `GET /` and `sitemap-cache-control` on `GET /sitemap.xml` (see `scripts/seo-headers-workerd.integration.mts` for full Worker parity including home document `Cache-Control`).
+- **Proof.** `doctor.json` lists `category-bancos-seo`, `logo-banco-provincia-meta`, `entity-title-compact`, `logo-melia-gone`, `gsc-priority-logo-titles`, `logo-changan`, `api-gsc-alias-meli`, `home-link-header`, `sitemap-cache-control`, and the three `redirect-*` checks; screenshot shows the bancos H1.
 
 ## Gotchas
 

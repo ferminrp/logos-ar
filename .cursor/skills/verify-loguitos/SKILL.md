@@ -34,9 +34,10 @@ On dataset, routing, or tooling changes, run these before `launch` / `all` (same
 ```bash
 pnpm typecheck
 pnpm test
+pnpm check:catalog-hosting
 ```
 
-`pnpm build` inside `launch` also fails on TypeScript errors (`astro check` / build).
+`pnpm build` inside `launch` also fails on TypeScript errors (`astro check` / build). `pnpm test` covers Worker SEO headers (`test:seo-headers`), catalog self-hosting (`lib/catalog-logo-hosting.test.mts`), and logo-detail a11y contrast (`test:wcag-contrast`). `pnpm check:catalog-hosting` fails if any entity still hotlinks a disallowed third-party catalog logo (`lib/catalog-logo-hosting.ts`).
 
 Teardown:
 
@@ -54,8 +55,10 @@ pnpm verify:loguitos doctor
 
 Read-only checks before driving:
 
+- Dataset catalog hosting — no entity uses a disallowed third-party `logoUrl` (`catalog-hosting-dataset`; same rule as `pnpm check:catalog-hosting`)
 - TCP reachability of the base URL
-- `GET /` → 200 and HTML
+- `GET /` → 200 and HTML; response `Link` header advertises `rel="api-catalog"` → `/.well-known/api-catalog` and `rel="item"` → `/api/logos` (`lib/home-discovery-link.ts`, Worker entry in production)
+- `GET /sitemap.xml` → 200; `Cache-Control` includes `max-age=86400` and `s-maxage=86400` (`dist/client/_headers` via `scripts/generate-asset-headers.mts`)
 - `GET /docs` → 200
 - `GET /api/logos?q=galicia&limit=5` → 200, JSON `items` array with at least one match whose `name` or `domain` mentions galicia (case-insensitive)
 - `GET /robots.txt` → 200
@@ -110,6 +113,7 @@ Default artifact directory: `.verify-loguitos/artifacts/<run-id>/` (also symlink
 | `home-desktop.png` | Home catalog renders (1280×800) |
 | `home-search-mobile.png` | Mobile search results for `galicia` (390×844) |
 | `logo-detail-desktop.png` | Entity detail for Banco Galicia |
+| `logo-download-analytics.json` | `window.gtag` callable and `logo_download` event params after clicking Descargar PNG on `/logo/mercado-pago` |
 | `logo-detail-a11y.json` | Touch heights (≥44px) and PNG/SVG contrast (≥4.5:1, light+dark, default+hover) on 4 slugs × 390/1440 |
 | `logo-detail-a11y-mobile390-light.png` | Logo detail controls at 390px, light theme |
 | `logo-detail-a11y-mobile390-dark.png` | Logo detail controls at 390px, dark theme |
@@ -136,6 +140,8 @@ Stops the server recorded in `.verify-loguitos/runs/latest/server.json`. If no r
 | Script | Invocation |
 |--------|------------|
 | Main harness | `pnpm verify:loguitos <launch\|doctor\|drive\|cleanup\|all>` |
+| Catalog hosting (offline) | `pnpm check:catalog-hosting` — fails when `listThirdPartyCatalogLogos` is non-empty; writes `data/catalog-third-party-logos.json` on failure |
+| GA4 download debug | `node --experimental-strip-types scripts/diagnose-ga-logo-download.mts [slug] [baseUrl]` — Playwright probe against a deployed host when `logo_download` collect beacons are missing (default slug `mercado-pago`) |
 | Hosted logo QA | `pnpm check:logos` — full catalog fetch with one 30s recheck for entities that failed only on transient external errors (network, timeout, 429/5xx, Google favicon-proxy 404). Writes `data/logo-check-report.json`. **Full-catalog runs** (local default, push to main, nightly): real quality problems block; transient-only failures are warnings unless more than `max(10, 5%)` of entities are transient (then treated as a broken checker/runner). **PR runs** (`LOGO_CHECK_SCOPE=pr`, set in CI): entities touched in the diff block on any failure; others are out of scope. Logo-quality workflow uploads the JSON report and prints a step summary. |
 | Override logo-download sweep | `pnpm verify:loguitos sweep-logo-download` — hits `/api/logo-download` for every key in `data/logo-overrides.json` (default `LOGO_DOWNLOAD_SWEEP_FORMATS=png`, set `png,svg` for both). Set `LOGO_DOWNLOAD_SWEEP_SIZE` (128/512). Set `LOGO_DOWNLOAD_MAIN_BASE` to a second running instance when comparing regressions across deploys; writes `main-vs-pr.json` under `.verify-loguitos/artifacts/logo-download-sweep/`. Optional domain list: `LOGO_DOWNLOAD_DOMAIN_LIST=/path/to/domains.txt`. With `LOGO_DOWNLOAD_SWEEP_WASM_AUDIT=1`, also writes `wasm-raster-risks.json`. PNG sweeps accept `image/png` or wasm-budget passthrough (`image/jpeg` / `image/webp`). |
 | Sitemap (postbuild) | `node --experimental-strip-types scripts/verify-sitemap.mts` (runs automatically on `pnpm build` via `postbuild`) |

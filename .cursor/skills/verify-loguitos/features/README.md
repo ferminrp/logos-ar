@@ -5,7 +5,7 @@ Maintained recipes for user-visible behavior. Read this index before driving the
 ## Baseline preconditions
 
 - Dependencies installed: `pnpm install`
-- Offline gate (CI parity): `pnpm typecheck` and `pnpm test` before browser verification when you changed catalog data, routes, or shared libs
+- Offline gate (CI parity): `pnpm typecheck`, `pnpm test`, and `pnpm check:catalog-hosting` before browser verification when you changed catalog data, routes, or shared libs (`pnpm test` already asserts zero disallowed third-party catalog URLs)
 - For a disposable production instance: `pnpm verify:loguitos launch` (or `all`)
 - Or attach to dev: `VERIFY_LOGUITOS_BASE_URL=http://127.0.0.1:4321` with `pnpm dev` already up (Astro default port)
 - Run `pnpm verify:loguitos doctor` before browser steps
