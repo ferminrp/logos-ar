@@ -438,6 +438,37 @@ async function doctor(): Promise<DoctorCheck[]> {
     "infobae",
   ] as const
 
+  async function checkCatalogHostingDataset(): Promise<DoctorCheck> {
+    const name = "catalog-hosting-dataset"
+    try {
+      const hostingMod = (await import(
+        pathToFileURL(path.join(REPO_ROOT, "lib/catalog-logo-hosting.ts")).href
+      )) as typeof import("../../../../lib/catalog-logo-hosting.ts")
+      const indexMod = (await import(
+        pathToFileURL(path.join(REPO_ROOT, "lib/entity-index.ts")).href
+      )) as typeof import("../../../../lib/entity-index.ts")
+      const thirdParty = hostingMod.listThirdPartyCatalogLogos(indexMod.getAllEntities())
+      if (thirdParty.length > 0) {
+        const sample = thirdParty
+          .slice(0, 3)
+          .map((row) => row.slug)
+          .join(", ")
+        return {
+          name,
+          ok: false,
+          detail: `${thirdParty.length} disallowed catalog logo URL(s); examples: ${sample}`,
+        }
+      }
+      return { name, ok: true, detail: "all self-hosted or allowed favicon proxies" }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
   async function checkGscPriorityTitles(): Promise<DoctorCheck> {
     const name = "gsc-priority-logo-titles"
     try {
@@ -471,6 +502,7 @@ async function doctor(): Promise<DoctorCheck[]> {
   }
 
   const checks = await Promise.all([
+    checkCatalogHostingDataset(),
     check("home", `${baseUrl}/`, (_res, body) => {
       if (!body.includes("Logos Argentina")) {
         throw new Error('missing "Logos Argentina" in HTML')
@@ -831,6 +863,72 @@ async function captureBrandVerifySlotScreenshots(
   lines.push("brand-verify-metrics.json written")
 }
 
+async function assertLogoDownloadGtag(
+  browser: import("playwright").Browser,
+  baseUrl: string,
+  outDir: string,
+  lines: string[],
+): Promise<void> {
+  const slug = "mercado-pago"
+  const page = await browser.newPage()
+  try {
+    await page.goto(`${baseUrl}/logo/${slug}`, {
+      waitUntil: "domcontentloaded",
+    })
+    await page.waitForFunction(
+      () => typeof (window as Window & { gtag?: unknown }).gtag === "function",
+      { timeout: 20000 },
+    )
+    const wrapResult = await page.evaluate(() => {
+      const w = window as Window & {
+        gtag?: (...args: unknown[]) => void
+        __logoDownloadEvents?: Array<Record<string, unknown>>
+      }
+      const orig = w.gtag
+      if (typeof orig !== "function") {
+        return { ok: false as const, reason: "gtag not a function" }
+      }
+      w.__logoDownloadEvents = []
+      w.gtag = (...args: unknown[]) => {
+        if (args[0] === "event" && args[1] === "logo_download") {
+          const params = args[2]
+          if (params && typeof params === "object") {
+            w.__logoDownloadEvents?.push(params as Record<string, unknown>)
+          }
+        }
+        return orig.apply(window, args)
+      }
+      return { ok: true as const }
+    })
+    if (!wrapResult.ok) {
+      throw new Error(`gtag instrumentation failed: ${wrapResult.reason}`)
+    }
+    await page.getByRole("button", { name: "Descargar PNG" }).click()
+    await page.waitForFunction(
+      () =>
+        ((window as Window & { __logoDownloadEvents?: unknown[] }).__logoDownloadEvents
+          ?.length ?? 0) > 0,
+      { timeout: 10000 },
+    )
+    const events = await page.evaluate(
+      () =>
+        (window as Window & { __logoDownloadEvents?: unknown[] }).__logoDownloadEvents ?? [],
+    )
+    const payload = { slug, events }
+    await writeFile(
+      path.join(outDir, "logo-download-analytics.json"),
+      `${JSON.stringify(payload, null, 2)}\n`,
+    )
+    const first = events[0] as { logo_slug?: string; format?: string } | undefined
+    if (first?.logo_slug !== slug || first?.format !== "png") {
+      throw new Error(`unexpected logo_download params: ${JSON.stringify(first)}`)
+    }
+    lines.push("logo-download-analytics.json passed (gtag logo_download)")
+  } finally {
+    await page.close()
+  }
+}
+
 async function drive(): Promise<void> {
   const baseUrl = await resolveBaseUrl()
   const run = await resolveArtifactRunId()
@@ -844,6 +942,8 @@ async function drive(): Promise<void> {
   try {
     const desktop = await browser.newPage({ viewport: { width: 1280, height: 800 } })
     await desktop.goto(`${baseUrl}/`, { waitUntil: "domcontentloaded" })
+    await desktop.waitForSelector('img[src^="/logos/"]', { timeout: 20000 })
+    lines.push("home catalog tiles use self-hosted /logos/ assets")
     await desktop.screenshot({ path: path.join(outDir, "home-desktop.png"), fullPage: false })
     lines.push("home-desktop.png captured")
 
@@ -869,6 +969,8 @@ async function drive(): Promise<void> {
     lines.push("category-bancos-seo-desktop.png captured (feature: seo-ctr)")
 
     await captureBrandVerifySlotScreenshots(baseUrl, outDir, browser, lines)
+
+    await assertLogoDownloadGtag(browser, baseUrl, outDir, lines)
 
     const {
       assertLogoDetailA11y,

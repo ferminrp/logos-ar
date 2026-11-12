@@ -8,6 +8,7 @@ Users filter the catalog from the home page by name, domain, or flag code. Resul
 - `search-desktop` — submit search from the navbar form on large screens
 - `search-url` — load `/?q=<term>` directly
 - `search-empty` — query with no matches shows an empty state
+- `catalog-self-hosted-tiles` — home grid logo thumbnails load from `/logos/*.png` (or allowed favicon proxies), not arbitrary third-party hotlinks (`lib/catalog-logo-hosting.ts`, PR self-host batch under `public/logos/`)
 
 ## How to get to it (user POV)
 
@@ -24,8 +25,9 @@ Preconditions:
 
 - **URL entry.** Open `/?q=galicia`. Expect copy `Resultados para "galicia"` and at least one card mentioning Galicia.
 - **Mobile results.** Viewport 390×844, open `/?q=galicia` (or submit from the `main` search form; the navbar duplicates the placeholder on small viewports). Expect `Resultados para "galicia"`.
-- **Automated.** `pnpm verify:loguitos drive` loads `/?q=galicia` on mobile and captures `home-search-mobile.png` plus desktop home shots.
-- **Proof.** `home-search-mobile.png` shows the query and results; `doctor.json` includes API corroboration for `galicia`.
+- **Automated.** `pnpm verify:loguitos drive` loads `/?q=galicia` on mobile and captures `home-search-mobile.png` plus desktop home shots. On the desktop home visit, Playwright waits for `img[src^="/logos/"]` so client-rendered tiles prove self-hosted catalog assets.
+- **Offline dataset.** `pnpm check:catalog-hosting` or doctor row `catalog-hosting-dataset` before HTTP checks.
+- **Proof.** `home-search-mobile.png` shows the query and results; `doctor.json` includes API corroboration for `galicia` and catalog hosting; `home-desktop.png` shows at least one `/logos/` thumbnail.
 
 ## Gotchas
 
