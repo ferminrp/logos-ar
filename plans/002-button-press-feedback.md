@@ -1,6 +1,6 @@
 # 002 — Button: press feedback and scoped transition
 
-- **Status**: TODO
+- **Status**: DONE
 - **Commit**: 4b97e8b
 - **Severity**: HIGH
 - **Category**: Physicality & origin (press feedback) / Performance (`transition: all`)
