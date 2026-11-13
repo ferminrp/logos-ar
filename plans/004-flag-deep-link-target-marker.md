@@ -1,6 +1,6 @@
 # 004 — Banderas: mark the deep-linked flag card
 
-- **Status**: TODO
+- **Status**: DONE
 - **Commit**: 4b97e8b
 - **Severity**: MEDIUM
 - **Category**: Missed opportunities (spatial consistency)
@@ -50,10 +50,6 @@ Two layers, CSS only, driven by `:target`:
 
 ```css
 /* src/styles/globals.css — target, added inside the existing @layer components block */
-  .flag-target:target > div {
-    border-color: color-mix(in oklch, var(--primary) 50%, transparent);
-  }
-
   .flag-target:target > div::after {
     content: '';
     position: absolute;
@@ -74,6 +70,25 @@ Two layers, CSS only, driven by `:target`:
     }
   }
 ```
+
+```css
+/* src/styles/globals.css — target, UNLAYERED, placed right after the closing } of @layer components */
+/*
+ * Unlayered on purpose: the flag card's `border-border` utility lives in
+ * @layer utilities, which beats any @layer components rule regardless of
+ * specificity. Outside every layer, this persistent :target border wins.
+ */
+.flag-target:target > div {
+  border-color: color-mix(in oklch, var(--primary) 50%, transparent);
+}
+```
+
+> **Amended (after first execution):** the persistent border rule was
+> originally specified inside `@layer components`. There it lost to the card's
+> `border-border` utility (`@layer utilities` always beats `@layer components`,
+> whatever the specificity), so the tinted border never showed. Only that rule
+> moved out of the layer; `!important` was deliberately not used. The ring and
+> keyframes stay in `@layer components`.
 
 ```css
 /* src/styles/globals.css — target, added inside the @media (prefers-reduced-motion: reduce) block from plan 001 */
@@ -111,9 +126,11 @@ Notes on the values:
    line. If not, STOP — do plan 001 first.
 2. `views/banderas-page.tsx:70` — change `className="min-w-0"` to
    `className="flag-target min-w-0"`. Nothing else on the line changes.
-3. `src/styles/globals.css` — inside `@layer components { … }`, append the two
-   `.flag-target:target` rules and the `@keyframes flag-target-ring` block from
-   Target.
+3. `src/styles/globals.css` — inside `@layer components { … }`, append the
+   `.flag-target:target > div::after` rule and the `@keyframes flag-target-ring`
+   block from Target. Then, directly after the closing `}` of
+   `@layer components` (outside any layer), add the commented unlayered
+   `.flag-target:target > div { border-color: … }` rule (see Amended note).
 4. Same file — inside the `@media (prefers-reduced-motion: reduce) { … }` block,
    append the `.flag-target:target > div::after { animation: none; }` rule.
 

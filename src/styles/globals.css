@@ -178,6 +178,35 @@
       translate: 0 -4px;
     }
   }
+
+  .flag-target:target > div::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--ring);
+    pointer-events: none;
+    opacity: 0;
+    animation: flag-target-ring 1000ms var(--motion-ease-out) 200ms backwards;
+  }
+
+  @keyframes flag-target-ring {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+/*
+ * Unlayered on purpose: the flag card's `border-border` utility lives in
+ * @layer utilities, which beats any @layer components rule regardless of
+ * specificity. Outside every layer, this persistent :target border wins.
+ */
+.flag-target:target > div {
+  border-color: color-mix(in oklch, var(--primary) 50%, transparent);
 }
 
 /*
@@ -219,5 +248,9 @@
       opacity: 0;
       translate: 0 0;
     }
+  }
+
+  .flag-target:target > div::after {
+    animation: none;
   }
 }
