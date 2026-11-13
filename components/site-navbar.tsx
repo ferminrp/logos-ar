@@ -142,7 +142,7 @@ export function SiteNavbar() {
                       Categorías
                       <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-data-[state=open]:rotate-180" />
                     </CollapsibleTrigger>
-                    <CollapsibleContent className="space-y-1 pl-1">
+                    <CollapsibleContent className="space-y-1 overflow-hidden pl-1 duration-[var(--motion-duration-normal)] ease-[var(--motion-ease-out)] data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down motion-reduce:data-[state=open]:animate-none motion-reduce:data-[state=closed]:animate-none">
                       {categoryNavItems.map((category) => (
                         <Link
                           key={category.id}

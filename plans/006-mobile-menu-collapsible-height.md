@@ -1,6 +1,6 @@
 # 006 — Mobile menu: animate the Categorías collapsible
 
-- **Status**: TODO
+- **Status**: DONE
 - **Commit**: 4b97e8b
 - **Severity**: LOW
 - **Category**: Missed opportunities (state indication)
@@ -32,8 +32,17 @@ Mirror what the FAQ accordion already does, using the collapsible utilities that
 
 ```tsx
 // components/site-navbar.tsx:145 — target
-                    <CollapsibleContent className="space-y-1 overflow-hidden pl-1 duration-[var(--motion-duration-normal)] ease-[var(--motion-ease-out)] data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down motion-reduce:animate-none">
+                    <CollapsibleContent className="space-y-1 overflow-hidden pl-1 duration-[var(--motion-duration-normal)] ease-[var(--motion-ease-out)] data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down motion-reduce:data-[state=open]:animate-none motion-reduce:data-[state=closed]:animate-none">
 ```
+
+> **Amended (after first execution):** the original target used a bare
+> `motion-reduce:animate-none`. It compiles to `.motion-reduce\:animate-none`
+> (specificity 0,1,0), which loses to
+> `.data-\[state\=closed\]\:animate-collapsible-up[data-state=closed]` (0,2,0),
+> so the height kept animating under reduced motion. The state-scoped variants
+> above compile to (0,2,0) selectors inside the media query and win; verified in
+> the browser with reduced motion emulated. No CSS fallback in `globals.css` was
+> needed.
 
 Resolved values: height `0 ↔ var(--radix-collapsible-content-height)`, 200ms,
 `cubic-bezier(0.23, 1, 0.32, 1)`. Measured height is the documented exception to
