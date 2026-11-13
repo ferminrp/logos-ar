@@ -43,6 +43,14 @@
   --logo-download-png: oklch(0.48 0.07 240);
   --logo-download-png-hover: oklch(0.44 0.07 240);
   --logo-download-png-foreground: oklch(0.99 0.002 95);
+  /* Motion tokens (plain custom properties; deliberately NOT in @theme so
+     Tailwind's built-in ease-* utilities keep their default values) */
+  --motion-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --motion-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --motion-duration-fast: 150ms;
+  --motion-duration-press: 160ms;
+  --motion-duration-normal: 200ms;
 }
 
 .dark {
@@ -147,5 +155,29 @@
   .brand-verify-slot__cta:focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
+  }
+}
+
+/*
+ * Reduced motion policy: fewer and gentler, not zero.
+ * Keep opacity and colour feedback; drop travel (translate, large scale, height).
+ * - tw-animate-css enter/exit keyframes read the --tw-enter-* / --tw-exit-* vars
+ *   below, so zeroing them turns slides and zooms into plain fades.
+ * - Press feedback (active:scale-[0.97]) is kept: it is 3% and is feedback, not travel.
+ * - Any NEW movement added to this repo must ship its own reduced-motion branch
+ *   (a `motion-reduce:` class or a rule inside this media query).
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    --tw-enter-translate-x: 0 !important;
+    --tw-enter-translate-y: 0 !important;
+    --tw-exit-translate-x: 0 !important;
+    --tw-exit-translate-y: 0 !important;
+    --tw-enter-scale: 1 !important;
+    --tw-exit-scale: 1 !important;
+    --tw-enter-rotate: 0 !important;
+    --tw-exit-rotate: 0 !important;
   }
 }

@@ -1,6 +1,6 @@
 # 001 — Add motion tokens and a reduced-motion policy
 
-- **Status**: TODO
+- **Status**: DONE
 - **Commit**: 4b97e8b
 - **Severity**: MEDIUM
 - **Category**: Cohesion & tokens / Accessibility
