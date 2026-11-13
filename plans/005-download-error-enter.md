@@ -1,6 +1,6 @@
 # 005 — Logo download: ease the error message in
 
-- **Status**: TODO
+- **Status**: DONE
 - **Commit**: 4b97e8b
 - **Severity**: LOW
 - **Category**: Missed opportunities (preventing a jarring change)

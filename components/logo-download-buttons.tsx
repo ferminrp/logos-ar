@@ -122,7 +122,7 @@ export function LogoDownloadButtons({
         ) : null}
       </div>
       {error ? (
-        <p className="text-sm text-destructive" role="alert">
+        <p className="alert-enter text-sm text-destructive" role="alert">
           {error}
         </p>
       ) : null}

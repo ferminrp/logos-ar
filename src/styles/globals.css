@@ -167,6 +167,17 @@
       scale: 0.95;
     }
   }
+
+  .alert-enter {
+    transition:
+      opacity var(--motion-duration-normal) var(--motion-ease-out),
+      translate var(--motion-duration-normal) var(--motion-ease-out);
+
+    @starting-style {
+      opacity: 0;
+      translate: 0 -4px;
+    }
+  }
 }
 
 /*
@@ -198,6 +209,15 @@
     @starting-style {
       opacity: 0;
       scale: 1;
+    }
+  }
+
+  .alert-enter {
+    transition: opacity var(--motion-duration-normal) var(--motion-ease-out);
+
+    @starting-style {
+      opacity: 0;
+      translate: 0 0;
     }
   }
 }
