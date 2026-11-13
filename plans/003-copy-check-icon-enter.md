@@ -1,6 +1,6 @@
 # 003 — Copy buttons: ease the success check in
 
-- **Status**: TODO
+- **Status**: DONE
 - **Commit**: 4b97e8b
 - **Severity**: MEDIUM
 - **Category**: Missed opportunities (state indication)

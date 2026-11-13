@@ -26,7 +26,7 @@ any other agent. Feel was judged from code only — nothing was rendered.
 | --- | --- | --- | --- | --- |
 | [001](001-motion-tokens-and-reduced-motion.md) | Add motion tokens and a reduced-motion policy | MEDIUM | DONE | — |
 | [002](002-button-press-feedback.md) | Button: press feedback and scoped transition | HIGH | DONE | 001 |
-| [003](003-copy-check-icon-enter.md) | Copy buttons: ease the success check in | MEDIUM | TODO | 001 |
+| [003](003-copy-check-icon-enter.md) | Copy buttons: ease the success check in | MEDIUM | DONE | 001 |
 | [004](004-flag-deep-link-target-marker.md) | Banderas: mark the deep-linked flag card | MEDIUM | TODO | 001 |
 | [005](005-download-error-enter.md) | Logo download: ease the error message in | LOW | TODO | 001 |
 | [006](006-mobile-menu-collapsible-height.md) | Mobile menu: animate the Categorías collapsible | LOW | TODO | 001 |

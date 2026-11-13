@@ -59,7 +59,7 @@ export function FlagCard({ flag, ratio = "3x2" }: FlagCardProps) {
           onClick={() => copyToClipboard(svgUrl, "svg-url")}
         >
           {copiedField === "svg-url" ? (
-            <Check className="mr-1.5 h-3.5 w-3.5 shrink-0 text-primary" />
+            <Check className="icon-enter mr-1.5 h-3.5 w-3.5 shrink-0 text-primary" />
           ) : (
             <Copy className="mr-1.5 h-3.5 w-3.5 shrink-0" />
           )}
@@ -73,7 +73,7 @@ export function FlagCard({ flag, ratio = "3x2" }: FlagCardProps) {
           onClick={() => copyToClipboard(imgSnippet, "img-snippet")}
         >
           {copiedField === "img-snippet" ? (
-            <Check className="mr-1.5 h-3.5 w-3.5 shrink-0 text-primary" />
+            <Check className="icon-enter mr-1.5 h-3.5 w-3.5 shrink-0 text-primary" />
           ) : (
             <Copy className="mr-1.5 h-3.5 w-3.5 shrink-0" />
           )}

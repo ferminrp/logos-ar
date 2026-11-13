@@ -23,7 +23,7 @@ export function DocsCopyMarkdownButton() {
       onClick={handleCopy}
     >
       {copied ? (
-        <Check className="h-4 w-4 text-primary" />
+        <Check className="icon-enter h-4 w-4 text-primary" />
       ) : (
         <Copy className="h-4 w-4" />
       )}

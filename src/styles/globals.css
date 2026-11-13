@@ -156,6 +156,17 @@
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
+
+  .icon-enter {
+    transition:
+      opacity var(--motion-duration-fast) var(--motion-ease-out),
+      scale var(--motion-duration-fast) var(--motion-ease-out);
+
+    @starting-style {
+      opacity: 0;
+      scale: 0.95;
+    }
+  }
 }
 
 /*
@@ -179,5 +190,14 @@
     --tw-exit-scale: 1 !important;
     --tw-enter-rotate: 0 !important;
     --tw-exit-rotate: 0 !important;
+  }
+
+  .icon-enter {
+    transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
+
+    @starting-style {
+      opacity: 0;
+      scale: 1;
+    }
   }
 }
