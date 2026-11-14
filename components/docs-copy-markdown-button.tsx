@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Check, Copy } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { API_DOCS_MARKDOWN } from "@/lib/api-docs-markdown"
+import { cn } from "@/lib/utils"
 
 export function DocsCopyMarkdownButton() {
   const [copied, setCopied] = useState(false)
@@ -27,7 +28,21 @@ export function DocsCopyMarkdownButton() {
       ) : (
         <Copy className="h-4 w-4" />
       )}
-      {copied ? "Copiado" : "Copiar como Markdown"}
+      {/* Both labels share one grid cell so the button keeps the longer label's width. */}
+      <span className="grid">
+        <span
+          className={cn("col-start-1 row-start-1", copied && "invisible")}
+          aria-hidden={copied}
+        >
+          Copiar como Markdown
+        </span>
+        <span
+          className={cn("col-start-1 row-start-1", !copied && "invisible")}
+          aria-hidden={!copied}
+        >
+          Copiado
+        </span>
+      </span>
     </Button>
   )
 }
