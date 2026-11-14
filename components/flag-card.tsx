@@ -24,7 +24,7 @@ export function FlagCard({ flag, ratio = "3x2" }: FlagCardProps) {
   const imgSnippet = getFlagImgSnippet(flag.code, flag.name, ratio)
 
   return (
-    <div className="group relative min-w-0 rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/50 hover:bg-card/80">
+    <div className="group relative min-w-0 rounded-lg border border-border bg-card p-4 transition-[border-color,background-color] duration-[var(--motion-duration-fast)] ease-[var(--motion-ease-out)] hover:border-primary/50 hover:bg-card/80">
       <div className="flex items-start gap-3">
         <div
           className={`flex shrink-0 items-center justify-center overflow-hidden rounded-lg bg-secondary ${
