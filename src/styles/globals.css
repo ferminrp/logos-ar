@@ -51,6 +51,7 @@
   --motion-duration-fast: 150ms;
   --motion-duration-press: 160ms;
   --motion-duration-normal: 200ms;
+  --motion-duration-slow: 300ms;
 }
 
 .dark {
