@@ -1,7 +1,7 @@
 export const BRAND_VERIFY_MAIL = "marcas@loguitos.app"
 
 export function isBrandVerifySlotEnabled(): boolean {
-  return process.env.NEXT_PUBLIC_SLOT_VERIFY !== "off"
+  return import.meta.env.NEXT_PUBLIC_SLOT_VERIFY !== "off"
 }
 
 export function buildBrandVerifyMailtoHref(brandName: string): string {

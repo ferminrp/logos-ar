@@ -20,6 +20,8 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     plugins: [tailwindcss(), wasm()],
+    // Expose NEXT_PUBLIC_* (e.g. NEXT_PUBLIC_SLOT_VERIFY) to island code via import.meta.env.
+    envPrefix: ['PUBLIC_', 'NEXT_PUBLIC_'],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
