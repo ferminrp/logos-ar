@@ -34,3 +34,10 @@ test('maybeCanonicalRedirect skips preview hostnames', () => {
 test('maybeCanonicalRedirect no loop on canonical https apex', () => {
   assert.equal(maybeCanonicalRedirect(new Request('https://loguitos.app/')), null)
 })
+
+test('maybeCanonicalRedirect ignores protocol-relative paths', () => {
+  assert.equal(
+    maybeCanonicalRedirect(new Request('https://www.loguitos.app//evil.example/path')),
+    null,
+  )
+})

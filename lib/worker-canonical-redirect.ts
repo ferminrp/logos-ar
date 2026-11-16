@@ -46,7 +46,14 @@ export function maybeCanonicalRedirect(
     return null
   }
 
-  const target = new URL(requestUrl.pathname + requestUrl.search, canonical.origin)
+  const pathname = requestUrl.pathname
+  if (!pathname.startsWith('/') || pathname.startsWith('//')) {
+    return null
+  }
+
+  const target = new URL(canonical.origin)
+  target.pathname = pathname
+  target.search = requestUrl.search
 
   if (
     requestUrl.protocol === target.protocol &&
