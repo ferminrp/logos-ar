@@ -29,9 +29,9 @@
     "test:wcag-contrast": "node --experimental-strip-types --test lib/wcag-oklch-contrast.test.mts"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/cloudflare": "^14.4.6",
-    "@astrojs/react": "^7.1.6",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/cloudflare": "^14.4.8",
+    "@astrojs/react": "^7.1.9",
     "@cf-wasm/photon": "^0.4.0",
     "@hookform/resolvers": "^3.10.0",
     "@jsquash/jpeg": "1.6.0",
@@ -66,7 +66,7 @@
     "@radix-ui/react-toggle-group": "1.2.1",
     "@radix-ui/react-tooltip": "1.4.1",
     "@resvg/resvg-wasm": "^2.6.2",
-    "astro": "^7.4.9",
+    "astro": "^7.4.12",
     "autoprefixer": "^10.6.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -80,7 +80,7 @@
     "react": "^19.3.1",
     "react-day-picker": "9.14.0",
     "react-dom": "^19.3.1",
-    "react-hook-form": "^7.91.0",
+    "react-hook-form": "^7.92.0",
     "react-resizable-panels": "^2.1.9",
     "recharts": "2.15.4",
     "sonner": "^1.7.4",
@@ -90,30 +90,25 @@
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "0.12.5",
-    "@eslint/js": "^9.39.1",
-    "@tailwindcss/postcss": "^4.3.3",
-    "@tailwindcss/vite": "^4.3.3",
+    "@eslint/js": "^9.39.5",
+    "@tailwindcss/postcss": "^4.3.5",
+    "@tailwindcss/vite": "^4.3.5",
     "@types/node": "^22",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "esbuild": "0.28.2",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.5",
     "globals": "^16.5.0",
-    "oxc-transform-react": "^0.152.0",
-    "playwright": "^1.64.1",
-    "postcss": "^8.5.32",
+    "oxc-transform-react": "^0.156.0",
+    "playwright": "^1.65.1",
+    "postcss": "^8.5.33",
     "sharp": "^0.35.5",
-    "tailwindcss": "^4.3.3",
+    "tailwindcss": "^4.3.5",
     "tw-animate-css": "1.4.0",
     "typescript": "5.9.3",
-    "typescript-eslint": "^8.49.0",
+    "typescript-eslint": "^8.72.2",
     "vite-plugin-wasm": "^3.6.0",
-    "vitest": "3.2.4",
-    "wrangler": "^4.51.0"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "@astrojs/internal-helpers@0.13.1": "patches/@astrojs__internal-helpers@0.13.1.patch"
-    }
+    "vitest": "3.2.7",
+    "wrangler": "^4.162.0"
   }
 }
