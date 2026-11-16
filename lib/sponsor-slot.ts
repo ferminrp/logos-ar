@@ -3,29 +3,22 @@
  * See brief: uploads/BRIEF-FASE2-SWE.md
  */
 
-function readPublicEnv(name: string): string | undefined {
-  const fromImportMeta =
-    typeof import.meta !== 'undefined' &&
-    typeof (import.meta.env as Record<string, unknown> | undefined)?.[name] ===
-      'string' &&
-    String((import.meta.env as Record<string, string>)[name]).trim()
-      ? String((import.meta.env as Record<string, string>)[name]).trim()
-      : undefined
+const buildTimeSponsorFlag =
+  typeof import.meta !== 'undefined' && import.meta.env?.PUBLIC_SLOT_SPONSOR === 'on'
 
-  if (fromImportMeta) return fromImportMeta
-
-  if (typeof process !== 'undefined') {
-    const direct = process.env[name]
-    if (typeof direct === 'string' && direct.trim()) return direct.trim()
-    const legacy = process.env[name.replace(/^PUBLIC_/, 'NEXT_PUBLIC_')]
-    if (typeof legacy === 'string' && legacy.trim()) return legacy.trim()
-  }
-
-  return undefined
-}
+const buildTimeLemonHref =
+  typeof import.meta !== 'undefined' &&
+  typeof import.meta.env?.PUBLIC_SPONSOR_LEMON_HREF === 'string' &&
+  import.meta.env.PUBLIC_SPONSOR_LEMON_HREF.trim()
+    ? import.meta.env.PUBLIC_SPONSOR_LEMON_HREF.trim()
+    : undefined
 
 export function isSponsorSlotEnabled(): boolean {
-  return readPublicEnv('PUBLIC_SLOT_SPONSOR') === 'on'
+  if (buildTimeSponsorFlag) return true
+  if (typeof process !== 'undefined') {
+    return process.env.PUBLIC_SLOT_SPONSOR === 'on'
+  }
+  return false
 }
 
 /** Slugs where showing a Lemon fintech affiliate would conflict with another brand on that page. */
@@ -50,9 +43,7 @@ const lemonCampaign = {
   headline: 'Abrí tu cuenta en Lemon y llevate USD 5 en BTC',
   subline: 'Sin costo de apertura. Aplican términos.',
   /** Placeholder until final affiliate URL is configured. */
-  href:
-    readPublicEnv('PUBLIC_SPONSOR_LEMON_HREF') ??
-    'https://example.com/?ref=loguitos',
+  href: buildTimeLemonHref ?? 'https://example.com/?ref=loguitos',
 } as const
 
 export type SponsorSlotResolved =
