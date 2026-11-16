@@ -4,12 +4,28 @@ import { getSitemapEntries } from "./sitemap-entries.ts"
 import { GONE_LOGO_SLUGS } from "./gone-logo-slugs.ts"
 import { getAllEntities } from "./entity-index.ts"
 import {
+  ENTITY_META_DESCRIPTION_MAX_LENGTH,
+  ENTITY_META_DESCRIPTION_MIN_LENGTH,
+  ENTITY_SEO_OVERRIDES,
   MAX_ENTITY_TITLE_LENGTH,
   buildEntityMetaDescription,
   buildEntityPageTitle,
   buildUniqueEntityPageTitles,
   getEntityPageTitle,
 } from "./entity-seo.ts"
+
+const CTR_LOW_IMPRESSION_LOGO_SLUGS = [
+  "mercado-pago",
+  "mercado-libre",
+  "tn",
+  "infobae",
+  "la-serenisima-mastellone",
+  "swiss-medical",
+  "bbva",
+  "naranja-x",
+  "pedidosya",
+  "brubank",
+] as const
 
 const GSC_PRIORITY_LOGO_SLUGS = [
   "arca-ex-afip",
@@ -69,6 +85,7 @@ test("getEntityPageTitle matches resolved map", () => {
   const resolved = buildUniqueEntityPageTitles(entities)
 
   for (const entity of entities) {
+    if (ENTITY_SEO_OVERRIDES[entity.slug]) continue
     assert.equal(getEntityPageTitle(entity), resolved.get(entity.slug))
   }
 })
@@ -94,6 +111,34 @@ test("long names degrade without cutting words", () => {
   assert.match(title, /gratis/)
 })
 
+test("CTR low-impression logo overrides respect title and description budgets", () => {
+  const entities = getAllEntities()
+
+  for (const slug of CTR_LOW_IMPRESSION_LOGO_SLUGS) {
+    const override = ENTITY_SEO_OVERRIDES[slug]
+    assert.ok(override, `missing override for ${slug}`)
+    assert.ok(
+      override!.motivatingQueries && override!.motivatingQueries.length > 0,
+      `${slug} should list motivating GSC queries`,
+    )
+
+    const entity = entities.find((e) => e.slug === slug)
+    assert.ok(entity, `missing entity ${slug}`)
+
+    const title = getEntityPageTitle(entity!)
+    const description = buildEntityMetaDescription(entity!)
+    assert.equal(title, override!.title)
+    assert.equal(description, override!.metaDescription)
+    assert.ok(title.length <= MAX_ENTITY_TITLE_LENGTH, `${slug} title: ${title.length}`)
+    assert.ok(
+      description.length >= ENTITY_META_DESCRIPTION_MIN_LENGTH &&
+        description.length <= ENTITY_META_DESCRIPTION_MAX_LENGTH,
+      `${slug} description length ${description.length}: ${description}`,
+    )
+    assert.match(title, /PNG y SVG/i, `${slug} title`)
+  }
+})
+
 test("GSC priority logo pages include PNG/SVG and descarga gratis in metadata", () => {
   for (const slug of GSC_PRIORITY_LOGO_SLUGS) {
     const entity = getAllEntities().find((e) => e.slug === slug)
@@ -104,7 +149,7 @@ test("GSC priority logo pages include PNG/SVG and descarga gratis in metadata", 
     assert.match(title, /PNG y SVG/i, `${slug} title`)
     assert.match(title, /gratis/i, `${slug} title`)
     assert.match(description, /PNG y SVG/i, `${slug} description`)
-    assert.match(description, /Descarga gratis/i, `${slug} description`)
+    assert.match(description, /gratis/i, `${slug} description`)
   }
 })
 

@@ -1,7 +1,23 @@
 import { getAllEntities, type EntityRecord } from "./entity-index.ts"
+import entitySeoOverridesJson from "../data/entity-seo-overrides.json" with { type: "json" }
 
 export const SITE_SUFFIX = " | Loguitos"
 export const MAX_ENTITY_TITLE_LENGTH = 60
+export const ENTITY_META_DESCRIPTION_MIN_LENGTH = 148
+export const ENTITY_META_DESCRIPTION_MAX_LENGTH = 155
+
+export interface EntitySeoOverride {
+  title: string
+  metaDescription: string
+  motivatingQueries?: string[]
+}
+
+export const ENTITY_SEO_OVERRIDES: Partial<Record<string, EntitySeoOverride>> =
+  entitySeoOverridesJson
+
+function getEntitySeoOverride(slug: string): EntitySeoOverride | undefined {
+  return ENTITY_SEO_OVERRIDES[slug]
+}
 
 /** Shorter display names for `<title>` when the catalog name is too long for CTR keywords. */
 const ENTITY_TITLE_DISPLAY_NAMES: Partial<Record<string, string>> = {
@@ -67,6 +83,9 @@ function buildTitleForDisplayName(displayName: string): string {
 }
 
 export function buildEntityPageTitle(entity: EntityRecord): string {
+  const override = getEntitySeoOverride(entity.slug)
+  if (override) return override.title
+
   const displayName =
     ENTITY_TITLE_DISPLAY_NAMES[entity.slug] ?? stripTrailingParens(entity.name)
   return buildTitleForDisplayName(displayName)
@@ -131,6 +150,9 @@ export function buildUniqueEntityPageTitles(
 let cachedTitlesBySlug: Map<string, string> | null = null
 
 export function getEntityPageTitle(entity: EntityRecord): string {
+  const override = getEntitySeoOverride(entity.slug)
+  if (override) return override.title
+
   if (!cachedTitlesBySlug) {
     cachedTitlesBySlug = buildUniqueEntityPageTitles(getAllEntities())
   }
@@ -147,6 +169,9 @@ function formatAliasClause(aliases: string[] | undefined): string {
 }
 
 export function buildEntityMetaDescription(entity: EntityRecord): string {
+  const override = getEntitySeoOverride(entity.slug)
+  if (override) return override.metaDescription
+
   const aliasClause = formatAliasClause(entity.seoAliases)
   const aliasSentence = aliasClause
     ? ` También buscado como ${aliasClause}.`
