@@ -21,6 +21,17 @@ function extractDocumentTitle(html: string): string | null {
   return match ? match[1].trim() : null
 }
 
+function extractMetaDescription(html: string): string | null {
+  const match = html.match(
+    /<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i,
+  )
+  if (match) return match[1].trim()
+  const alt = html.match(
+    /<meta[^>]+content=["']([^"']*)["'][^>]+name=["']description["']/i,
+  )
+  return alt ? alt[1].trim() : null
+}
+
 function assertCompactEntityTitle(title: string, slug: string): void {
   if (!title.includes("| Loguitos")) {
     throw new Error(`missing Loguitos suffix in document title for ${slug}`)
@@ -188,7 +199,13 @@ async function launch(): Promise<ServerRecord> {
   await mkdir(runDir, { recursive: true })
 
   console.log("Running pnpm build…")
-  await runCommand("pnpm", ["build"], { cwd: REPO_ROOT })
+  await runCommand("pnpm", ["build"], {
+    cwd: REPO_ROOT,
+    env: {
+      ...process.env,
+      PUBLIC_SLOT_SPONSOR: process.env.PUBLIC_SLOT_SPONSOR ?? "on",
+    },
+  })
 
   console.log(`Starting wrangler dev on port ${port}…`)
   const logStream = createWriteStream(logPath)
@@ -469,6 +486,53 @@ async function doctor(): Promise<DoctorCheck[]> {
     }
   }
 
+  async function checkCtrEntitySeoOverrides(): Promise<DoctorCheck> {
+    const name = "ctr-entity-seo-overrides"
+    try {
+      const raw = await readFile(
+        path.join(REPO_ROOT, "data/entity-seo-overrides.json"),
+        "utf8",
+      )
+      const overrides = JSON.parse(raw) as Record<
+        string,
+        { title: string; metaDescription: string }
+      >
+      const slugs = Object.keys(overrides)
+      for (const slug of slugs) {
+        const override = overrides[slug]!
+        const res = await fetch(`${baseUrl}/logo/${slug}`)
+        if (!res.ok) {
+          return { name, ok: false, detail: `/logo/${slug} HTTP ${res.status}` }
+        }
+        const body = await res.text()
+        const title = extractDocumentTitle(body)
+        const description = extractMetaDescription(body)
+        if (!title || title !== override.title) {
+          return {
+            name,
+            ok: false,
+            detail: `${slug} title mismatch: got ${title ?? "(none)"} expected ${override.title}`,
+          }
+        }
+        if (!description || description !== override.metaDescription) {
+          return {
+            name,
+            ok: false,
+            detail: `${slug} meta description mismatch`,
+          }
+        }
+        assertCompactEntityTitle(title, slug)
+      }
+      return { name, ok: true, detail: `${slugs.length} CTR override slug(s) OK` }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
   async function checkGscPriorityTitles(): Promise<DoctorCheck> {
     const name = "gsc-priority-logo-titles"
     try {
@@ -676,6 +740,8 @@ async function doctor(): Promise<DoctorCheck[]> {
     checkBrandVerifySlotModule(),
     checkBrandVerifySlotBorderContrast(),
     checkSponsorSlotModule(),
+    checkCtrEntitySeoOverrides(),
+    checkWorkerCanonicalModule(),
   ])
 
   const run = await resolveArtifactRunId()
@@ -826,6 +892,58 @@ async function measureBrandVerifyBorderContrastFromTokens(
   const tokens = await readBrandVerifyCssTokens()
   const pair = theme === "light" ? tokens.light : tokens.dark
   return contrastRatioOklch(pair.border, pair.background)
+}
+
+async function checkWorkerCanonicalModule(): Promise<DoctorCheck> {
+  const name = "worker-canonical-module"
+  try {
+    const modUrl = pathToFileURL(
+      path.join(REPO_ROOT, "lib/worker-canonical-redirect.ts"),
+    ).href
+    const mod = (await import(modUrl)) as typeof import("../../../../lib/worker-canonical-redirect.ts")
+
+    const www = mod.maybeCanonicalRedirect(
+      new Request("https://www.loguitos.app/foo?bar=1"),
+    )
+    if (!www || www.status !== 301) {
+      throw new Error("www.loguitos.app must 301")
+    }
+    const wwwLoc = www.headers.get("location")
+    if (wwwLoc !== "https://loguitos.app/foo?bar=1") {
+      throw new Error(`unexpected www redirect location: ${wwwLoc}`)
+    }
+
+    const httpWww = mod.maybeCanonicalRedirect(
+      new Request("http://www.loguitos.app/path"),
+    )
+    if (!httpWww || httpWww.status !== 301) {
+      throw new Error("http www must 301 in one hop")
+    }
+    const httpWwwLoc = httpWww.headers.get("location")
+    if (httpWwwLoc !== "https://loguitos.app/path") {
+      throw new Error(`unexpected http www location: ${httpWwwLoc}`)
+    }
+
+    if (mod.maybeCanonicalRedirect(new Request("https://loguitos.app/")) !== null) {
+      throw new Error("canonical https apex must not redirect")
+    }
+
+    if (
+      mod.maybeCanonicalRedirect(
+        new Request("http://pr-58-loguitos.example.workers.dev/"),
+      ) !== null
+    ) {
+      throw new Error("preview hostnames must skip redirect")
+    }
+
+    return { name, ok: true, detail: "worker canonical redirect rules OK (offline)" }
+  } catch (error) {
+    return {
+      name,
+      ok: false,
+      detail: error instanceof Error ? error.message : String(error),
+    }
+  }
 }
 
 async function checkSponsorSlotModule(): Promise<DoctorCheck> {

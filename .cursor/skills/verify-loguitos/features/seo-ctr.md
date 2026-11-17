@@ -7,6 +7,8 @@ Category landing copy, entity page metadata, legacy slug recovery, and permanent
 - `category-seo-landings` — curated H1, intro lead, and meta for selected categories (`bancos`, `prepagas`, `automotrices`, `retail`, `gastronomia`); `bancos` adds a featured internal link to BNA (`featuredLogoLink` in `lib/category-seo.ts`)
 - `gone-logo-slugs` — removed catalog slugs that return 404 with no redirect (`lib/gone-logo-slugs.ts`, currently `melia`)
 - `entity-metadata` — data-driven `<title>`, meta description, and preview image `alt` on `/logo/<slug>` (compact titles via `MAX_ENTITY_TITLE_LENGTH` and word-boundary shortening in `lib/entity-seo.ts`)
+- `ctr-entity-seo-overrides` — per-slug title and meta copy in `data/entity-seo-overrides.json` for low-CTR GSC entities (10 slugs as of 2026-11-16); doctor asserts exact `<title>` and meta description on each `/logo/<slug>`
+- `worker-canonical-redirect` — production 301 from `www` and `http` to `https://loguitos.app` (`lib/worker-canonical-redirect.ts`, first hop in Worker wrapper). Verified offline in doctor (`worker-canonical-module`); live `www`/`http` probes need production hostnames, not `127.0.0.1`
 - `gsc-brands` — high-impression brands and typo aliases from Search Console (for example Changan, Stella Artois, `seoAliases` / `searchText` variants such as Meli, Porche, Superville)
 - `permanent-redirects` — 301/308 recovery for renamed entity slugs and `/categoria/delivery` → `/categoria/gastronomia`
 - `worker-discovery-headers` — `GET /` returns `Link` discovery headers for the API catalog and `/api/logos`; `GET /sitemap.xml` ships long-lived `Cache-Control` from `dist/client/_headers` (merged postbuild by `scripts/generate-asset-headers.mts`, asserted in `pnpm test:seo-headers`)
@@ -27,13 +29,15 @@ Preconditions:
 - **Category landing.** `GET /categoria/bancos` includes visible H1 `Logos de bancos argentinos`, intro lead mentioning bancos tradicionales, públicos y digitales, an internal link to `/logo/banco-de-la-nacion-argentina`, and featured heading `Logo Banco Nación (BNA)`.
 - **Gone slug.** `GET /logo/melia` with `redirect: manual` → 404 (slug listed in `GONE_LOGO_SLUGS`, excluded from sitemap).
 - **Entity metadata.** `GET /logo/banco-provincia` HTML includes meta description starting with `Descargá el logo de Banco Provincia` and a compact document title ending with `| Loguitos` (≤ 60 characters, no ellipsis). `GET /logo/banco-de-la-nacion-argentina` adds CTR keywords in `<title>` (`BNA`, `Banco Nación`, `PNG y SVG`, `gratis`) under the same length budget.
-- **GSC priority titles.** Doctor loads `/logo/{slug}` for `arca-ex-afip`, `mercado-libre`, `tn`, `modo`, `naranja-x`, `infobae` and asserts the compact title pattern with `PNG y SVG` and `gratis`.
+- **CTR overrides.** Doctor `ctr-entity-seo-overrides` loads every key in `data/entity-seo-overrides.json` and asserts the rendered `<title>` and meta description match the JSON budgets (≤60 title, 148–155 description).
+- **GSC priority titles.** Doctor loads `/logo/{slug}` for `arca-ex-afip`, `mercado-libre`, `tn`, `modo`, `naranja-x`, `infobae` and asserts the compact title pattern with `PNG y SVG` and `gratis` (slugs with JSON overrides are covered by the CTR check above).
+- **Worker canonical (offline).** `worker-canonical-module` exercises `maybeCanonicalRedirect` for www, http+www, apex loop guard, and preview hostname skip (same cases as `lib/worker-canonical-redirect.test.mts`).
 - **GSC brand.** `GET /logo/changan` returns 200 with Changan in the body (batch-1014 / GSC demand set).
 - **Search alias.** `GET /api/logos?q=meli&limit=5` returns Mercado Libre in `items` (alias baked into dataset `searchText`).
 - **Redirects (manual redirect).** `GET /categoria/delivery` with `redirect: manual` → 301 or 308 with `Location` ending in `/categoria/gastronomia`. Same pattern for `/logo/banco-provincia-bs-as` → `/logo/banco-provincia` and `/logo/tn-todo-noticias` → `/logo/tn` per `data/permanent-redirects.json`.
 - **Automated.** `pnpm verify:loguitos drive` writes `category-bancos-seo-desktop.png` after the logo detail shot.
 - **Discovery headers.** Doctor `home-link-header` on `GET /` and `sitemap-cache-control` on `GET /sitemap.xml` (see `scripts/seo-headers-workerd.integration.mts` for full Worker parity including home document `Cache-Control`).
-- **Proof.** `doctor.json` lists `category-bancos-seo`, `logo-banco-provincia-meta`, `entity-title-compact`, `logo-melia-gone`, `gsc-priority-logo-titles`, `logo-changan`, `api-gsc-alias-meli`, `home-link-header`, `sitemap-cache-control`, and the three `redirect-*` checks; screenshot shows the bancos H1.
+- **Proof.** `doctor.json` lists `category-bancos-seo`, `logo-banco-provincia-meta`, `entity-title-compact`, `logo-melia-gone`, `ctr-entity-seo-overrides`, `gsc-priority-logo-titles`, `worker-canonical-module`, `logo-changan`, `api-gsc-alias-meli`, `home-link-header`, `sitemap-cache-control`, and the three `redirect-*` checks; screenshot shows the bancos H1.
 
 ## Gotchas
 
