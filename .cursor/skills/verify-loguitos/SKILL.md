@@ -15,7 +15,7 @@ From the repo root, with dependencies installed (`pnpm install`):
 pnpm verify:loguitos launch
 ```
 
-This runs `pnpm build` (prebuild datasets, Astro build, postbuild sitemap), then starts `wrangler dev` on a disposable port (default **3100**, override with `VERIFY_LOGUITOS_PORT`). State and PID live under `.verify-loguitos/runs/<run-id>/`.
+This runs `pnpm build` (prebuild datasets, Astro build, postbuild sitemap) with **`PUBLIC_SLOT_SPONSOR=on`** unless you already set it, so Fase 2 sponsor asides match production verification. Then it starts `wrangler dev` on a disposable port (default **3100**, override with `VERIFY_LOGUITOS_PORT`). State and PID live under `.verify-loguitos/runs/<run-id>/`.
 
 Ready when `curl -sf "http://127.0.0.1:$VERIFY_LOGUITOS_PORT/"` returns HTML containing `Logos Argentina`.
 
@@ -67,7 +67,10 @@ Read-only checks before driving:
 - `GET /logo/banco-de-la-nacion-argentina` → 200, `<title>` fits the same compact budget and includes `BNA`, `Banco Nación`, `PNG y SVG`, and `gratis`; HTML includes brand verify `<aside aria-label="Para equipos de marca">` before the disclaimer
 - `GET /logo/uala` → 200, verify slot CTA uses `mailto:marcas@loguitos.app?subject=Logo%20verificado%20-%20Ual%C3%A1`
 - `GET /logo/melia` → 404 Not Found (`lib/gone-logo-slugs.ts`; removed catalog entry; not in sitemap)
+- Sponsor slot (Fase 2) — `GET /logo/nubi` shows Lemon structure and placement before the preview card; no Lemon copy on `/logo/uala` or `/logo/mercado-pago`; house ad on BNA; offline `sponsor-slot-module` (`lib/sponsor-slot.ts`)
+- CTR entity SEO overrides — for each slug in `data/entity-seo-overrides.json`, `GET /logo/<slug>` renders the exact override `<title>` and meta description (`ctr-entity-seo-overrides`)
 - GSC priority logo titles — for each slug in `arca-ex-afip`, `mercado-libre`, `tn`, `modo`, `naranja-x`, `infobae`: 200, compact `<title>` (≤ 60, `| Loguitos`, no `…`) with `PNG y SVG` and `gratis`
+- Worker canonical redirect — offline `worker-canonical-module` mirrors `lib/worker-canonical-redirect.test.mts` (www/http→https apex; skip preview hosts). Live www probes need `loguitos.app`, not localhost
 - `GET /logo/changan` → 200, HTML mentions Changan (GSC batch brand)
 - `GET /api/logos?q=meli&limit=5` → 200, at least one item matches Mercado Libre / `mercadolibre` (GSC alias in search text)
 - `GET /api/logo-download?domain=www.galicia.ar&format=png&size=128` (and `ripio.com` 512, `mercadolibre.com.ar` 256, hosted `naranjax.com`, fallback `bbva.com.ar`) → 200 with `image/png`, or wasm-budget passthrough `image/jpeg` / `image/webp`
@@ -101,7 +104,7 @@ Browser harness: Playwright Chromium against `VERIFY_LOGUITOS_BASE_URL` (or the 
 - Entity page: `GET /logo/banco-galicia` shows heading `Logo Banco Galicia`
 - Docs: `GET /docs` shows `API de logos`
 
-Feature recipes with more entry points live under [`features/`](./features/README.md). For a full pass, drive each feature file; for a quick PR check, `all` covers **home-search** (see `features/home-search.md`).
+Feature recipes with more entry points live under [`features/`](./features/README.md). For a full pass, drive each feature file; for a quick PR check, `all` covers **home-search** (see `features/home-search.md`) plus brand/sponsor slots and seo-ctr captures bundled in `drive`.
 
 ## Evidence
 
