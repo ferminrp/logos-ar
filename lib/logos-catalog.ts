@@ -89,15 +89,13 @@ function matchesDomain(item: CatalogItem, domain: string): boolean {
   return item.domain.toLowerCase().includes(domain)
 }
 
-export function queryLogosCatalog(input: LogosCatalogFilters): LogosCatalogResult {
+/** Full filtered list (no pagination). Used by MCP slug merge; GET /api/logos unchanged. */
+export function filterLogosCatalogItems(
+  input: Pick<LogosCatalogFilters, 'q' | 'domain' | 'category'>,
+): CatalogItem[] {
   const q = normalize(input.q)
   const domain = normalize(input.domain)
   const category = normalize(input.category)
-  const offset = parsePositiveInt(input.offset, 0)
-  const limit = Math.min(
-    parsePositiveInt(input.limit, DEFAULT_CATALOG_LIMIT),
-    MAX_CATALOG_LIMIT,
-  )
 
   const hasKnownCategory = category ? KNOWN_CATEGORIES.has(category) : false
   const includeLogos = !hasKnownCategory || category !== 'banderas'
@@ -108,7 +106,7 @@ export function queryLogosCatalog(input: LogosCatalogFilters): LogosCatalogResul
     ...(includeFlags ? flagsDataset.items : []),
   ]
 
-  const filteredItems = allItems.filter((item) => {
+  return allItems.filter((item) => {
     if (hasKnownCategory && item.categoryId.toLowerCase() !== category) {
       return false
     }
@@ -122,6 +120,25 @@ export function queryLogosCatalog(input: LogosCatalogFilters): LogosCatalogResul
     }
 
     return true
+  })
+}
+
+export function queryLogosCatalog(input: LogosCatalogFilters): LogosCatalogResult {
+  const q = normalize(input.q)
+  const domain = normalize(input.domain)
+  const category = normalize(input.category)
+  const offset = parsePositiveInt(input.offset, 0)
+  const limit = Math.min(
+    parsePositiveInt(input.limit, DEFAULT_CATALOG_LIMIT),
+    MAX_CATALOG_LIMIT,
+  )
+
+  const hasKnownCategory = category ? KNOWN_CATEGORIES.has(category) : false
+
+  const filteredItems = filterLogosCatalogItems({
+    q: input.q,
+    domain: input.domain,
+    category: input.category,
   })
 
   const pagedItems = filteredItems.slice(offset, offset + limit)

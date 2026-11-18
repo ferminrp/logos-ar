@@ -1,3 +1,4 @@
+import type { EntityRecord } from '../entity-index.ts'
 import { getAllEntities, getEntityBySlug } from '../entity-index.ts'
 import type { CatalogItem, FlagCatalogItem } from '../logos-catalog.ts'
 import { categories } from '../logos-data.ts'
