@@ -1,12 +1,9 @@
-import type { EntityRecord } from '../entity-index.ts'
 import { getAllEntities, getEntityBySlug } from '../entity-index.ts'
-import {
-  type CatalogItem,
-  type FlagCatalogItem,
-  queryLogosCatalog,
-} from '../logos-catalog.ts'
+import type { CatalogItem, FlagCatalogItem } from '../logos-catalog.ts'
 import { categories } from '../logos-data.ts'
+import flagsDataset from '../../data/flags-dataset.json' with { type: 'json' }
 import { FLAGS_CATEGORY, flagsTotalCount } from '../flags-data.ts'
+import { entityRecordForLogoItem } from './entity-for-catalog-item.ts'
 
 const DEFAULT_DOWNLOAD_SIZE = 256
 
@@ -71,7 +68,7 @@ export function catalogItemToMcpSummary(siteUrl: string, item: CatalogItem) {
     }
   }
 
-  const entity = getAllEntitiesByDomain().get(item.domain.toLowerCase())
+  const entity = entityRecordForLogoItem(item)
 
   const slug = entity?.slug
   const pageUrl = slug ? `${siteUrl}/logo/${slug}` : null
@@ -86,16 +83,6 @@ export function catalogItemToMcpSummary(siteUrl: string, item: CatalogItem) {
     pngUrl: absoluteLogoDownloadUrl(siteUrl, item.domain, 'png'),
     svgUrl: absoluteLogoDownloadUrl(siteUrl, item.domain, 'svg'),
   }
-}
-
-let domainIndex: Map<string, EntityRecord> | null = null
-
-function getAllEntitiesByDomain(): Map<string, EntityRecord> {
-  if (domainIndex) return domainIndex
-  domainIndex = new Map(
-    getAllEntities().map((entity) => [entity.domain.toLowerCase(), entity]),
-  )
-  return domainIndex
 }
 
 export function resolveLogoBySlugOrName(
@@ -125,17 +112,12 @@ export function resolveLogoBySlugOrName(
     return entityToMcpLogo(siteUrl, entity)
   }
 
-  const flagResult = queryLogosCatalog({
-    category: 'banderas',
-    q: trimmed,
-    limit: 5,
-  })
-  const flag = flagResult.items.find(
-    (item) =>
-      isFlagItem(item) &&
-      (item.code.toLowerCase() === normalized ||
-        item.name.toLowerCase() === normalized),
-  ) as FlagCatalogItem | undefined
+  const flag =
+    flagsDataset.items.find(
+      (row) =>
+        row.code.toLowerCase() === normalized ||
+        row.name.toLowerCase() === normalized,
+    ) ?? null
 
   if (flag) {
     return flagToMcpLogo(siteUrl, flag)

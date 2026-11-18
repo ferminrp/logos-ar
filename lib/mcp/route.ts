@@ -6,10 +6,10 @@ import {
   handleMcpOptions,
   handleMcpPost,
 } from '@/lib/mcp/http'
-import { resolveWorkerSiteUrl } from '@/lib/apply-home-discovery-headers'
+import { resolveMcpPublicSiteUrl } from '@/lib/mcp/public-site-url'
 
 function mcpSiteUrl(context: APIContext): string {
-  return resolveWorkerSiteUrl(
+  return resolveMcpPublicSiteUrl(
     context.request,
     env as unknown as Record<string, unknown>,
   )

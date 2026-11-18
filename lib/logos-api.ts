@@ -1,7 +1,7 @@
 import {
   queryLogosCatalog,
   type LogosCatalogResult,
-} from '@/lib/logos-catalog'
+} from './logos-catalog.ts'
 
 const CACHE_CONTROL_FILTERED =
   'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800'

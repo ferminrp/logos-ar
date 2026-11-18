@@ -9,6 +9,7 @@ import {
   listCategoryMeta,
   resolveLogoBySlugOrName,
 } from './logo-present.ts'
+import { queryMcpLogosCatalog } from './search-catalog.ts'
 import {
   INTERNAL_ERROR,
   INVALID_PARAMS,
@@ -157,7 +158,7 @@ function searchLogos(args: unknown, deps: McpDeps): ToolResult {
     return { ok: false, code: INVALID_PARAMS, message: limit.error }
   }
 
-  const result = queryLogosCatalog({ q: query, category, limit })
+  const result = queryMcpLogosCatalog({ q: query, category, limit })
   return {
     ok: true,
     payload: {

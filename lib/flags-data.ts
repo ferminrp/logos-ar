@@ -1,4 +1,4 @@
-import flagsDataset from "@/data/flags-dataset.json"
+import flagsDataset from "../data/flags-dataset.json" with { type: "json" }
 
 export interface Flag {
   code: string
