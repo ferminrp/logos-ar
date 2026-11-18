@@ -4,6 +4,7 @@ import { prefersMarkdown } from '@/lib/accept'
 import { GONE_LOGO_SLUGS } from '@/lib/gone-logo-slugs'
 import { getMarkdownForPath } from '@/lib/site-markdown'
 import { applyHomeDiscoveryHeaders } from '@/lib/apply-home-discovery-headers'
+import { prefersMcpDocsHtml } from '@/lib/mcp/accept'
 import { getSiteUrl } from '@/lib/site-url'
 
 const NEGOTIABLE_PATHS = new Set(['/', '/categorias'])
@@ -47,6 +48,14 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   if (destination) {
     return context.redirect(destination, 308)
+  }
+
+  if (
+    pathname === '/mcp' &&
+    context.request.method === 'GET' &&
+    prefersMcpDocsHtml(context.request.headers.get('accept'))
+  ) {
+    return context.redirect('/docs#mcp', 302)
   }
 
   if (NEGOTIABLE_PATHS.has(pathname)) {

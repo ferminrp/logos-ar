@@ -5,6 +5,13 @@ declare module 'cloudflare:workers' {
     ASSETS: {
       fetch: (request: Request | string | URL) => Promise<Response>
     }
+    GA4_API_SECRET?: string
+  }
+}
+
+declare namespace App {
+  interface Locals {
+    cfContext?: ExecutionContext
   }
 }
 

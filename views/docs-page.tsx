@@ -8,6 +8,14 @@ import {
   API_DOCS_RESPONSE_EXAMPLE,
   API_DOCS_RESPONSE_NOTE,
 } from "@/lib/api-docs-content"
+import {
+  MCP_CLIENT_STEPS,
+  MCP_DOCS_INTRO,
+  MCP_ENDPOINT_PATH,
+  MCP_GA4_NOTE,
+  getMcpEndpointUrl,
+} from "@/lib/mcp-docs-content"
+import { TOOL_DEFINITIONS } from "@/lib/mcp/tools"
 
 export default function DocsPage() {
   return (
@@ -63,6 +71,36 @@ export default function DocsPage() {
           <code>{API_DOCS_RESPONSE_NOTE.header}</code>
           {API_DOCS_RESPONSE_NOTE.after}
         </p>
+      </section>
+
+      <section id="mcp" className="mt-10 space-y-3 scroll-mt-24">
+        <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">MCP público</h2>
+        <p className="text-sm text-muted-foreground">{MCP_DOCS_INTRO}</p>
+        <p className="text-sm text-muted-foreground">
+          Endpoint: <code>{getMcpEndpointUrl()}</code> (alias <code>{MCP_ENDPOINT_PATH}</code> y{" "}
+          <code>/api/mcp</code>). Discovery: <code>/.well-known/mcp.json</code> y{" "}
+          <code>/.well-known/mcp</code>.
+        </p>
+        <ul className="list-disc space-y-2 pl-6 text-sm text-muted-foreground">
+          {TOOL_DEFINITIONS.map((tool) => (
+            <li key={tool.name}>
+              <code>{tool.name}</code>: {tool.description}
+            </li>
+          ))}
+        </ul>
+        <ul className="mt-4 list-disc space-y-4 pl-6 text-sm text-muted-foreground">
+          {MCP_CLIENT_STEPS.map((client) => (
+            <li key={client.name}>
+              <span className="font-medium text-foreground">{client.name}</span>
+              <ol className="mt-2 list-decimal space-y-1 pl-4">
+                {client.steps.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            </li>
+          ))}
+        </ul>
+        <p className="text-xs text-muted-foreground">{MCP_GA4_NOTE}</p>
       </section>
 
       <section className="mt-6 space-y-3">
