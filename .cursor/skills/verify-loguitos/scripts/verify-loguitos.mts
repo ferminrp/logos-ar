@@ -52,6 +52,13 @@ type DoctorCheck = {
   detail: string
 }
 
+type JsonRpcResponse = {
+  jsonrpc?: string
+  id?: string | number | null
+  result?: unknown
+  error?: { code: number; message: string }
+}
+
 type ServerRecord = {
   runId: string
   pid: number
@@ -255,6 +262,25 @@ async function resolveBaseUrl(): Promise<string> {
 
 async function doctor(): Promise<DoctorCheck[]> {
   const baseUrl = await resolveBaseUrl()
+
+  async function postMcp(
+    payload: Record<string, unknown>,
+  ): Promise<{ raw: string; json: JsonRpcResponse }> {
+    const res = await fetch(`${baseUrl}/mcp`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
+    const raw = await res.text()
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}: ${raw.slice(0, 240)}`)
+    }
+    const json = JSON.parse(raw) as JsonRpcResponse
+    if (json.error) {
+      throw new Error(`${json.error.code} ${json.error.message}`)
+    }
+    return { raw, json }
+  }
 
   async function check(
     name: string,
@@ -533,6 +559,92 @@ async function doctor(): Promise<DoctorCheck[]> {
     }
   }
 
+  async function checkMcpInitialize(): Promise<DoctorCheck> {
+    const name = "mcp-initialize"
+    try {
+      const { raw } = await postMcp({
+        jsonrpc: "2.0",
+        id: 1,
+        method: "initialize",
+        params: {
+          protocolVersion: "2025-03-26",
+          capabilities: {},
+          clientInfo: { name: "verify-loguitos", version: "1" },
+        },
+      })
+      if (!raw.includes("protocolVersion")) {
+        return { name, ok: false, detail: "initialize result missing protocolVersion" }
+      }
+      return { name, ok: true, detail: "initialize OK" }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
+  async function checkMcpToolsList(): Promise<DoctorCheck> {
+    const name = "mcp-tools-list"
+    const required = [
+      "search_logos",
+      "get_logo",
+      "list_categories",
+      "list_by_category",
+    ] as const
+    try {
+      const { raw } = await postMcp({
+        jsonrpc: "2.0",
+        id: 2,
+        method: "tools/list",
+        params: {},
+      })
+      for (const tool of required) {
+        if (!raw.includes(tool)) {
+          return { name, ok: false, detail: `tools/list missing ${tool}` }
+        }
+      }
+      return { name, ok: true, detail: `${required.length} tools listed` }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
+  async function checkMcpToolCall(
+    checkName: string,
+    toolName: string,
+    args: Record<string, unknown>,
+    bodyIncludes: string,
+  ): Promise<DoctorCheck> {
+    try {
+      const { raw } = await postMcp({
+        jsonrpc: "2.0",
+        id: toolName,
+        method: "tools/call",
+        params: { name: toolName, arguments: args },
+      })
+      if (!raw.toLowerCase().includes(bodyIncludes.toLowerCase())) {
+        return {
+          name: checkName,
+          ok: false,
+          detail: `tools/call ${toolName} missing "${bodyIncludes}"`,
+        }
+      }
+      return { name: checkName, ok: true, detail: `${toolName} OK` }
+    } catch (error) {
+      return {
+        name: checkName,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
   async function checkGscPriorityTitles(): Promise<DoctorCheck> {
     const name = "gsc-priority-logo-titles"
     try {
@@ -576,7 +688,34 @@ async function doctor(): Promise<DoctorCheck[]> {
       if (!body.includes("API de logos")) {
         throw new Error('missing "API de logos"')
       }
+      if (!body.includes("MCP público")) {
+        throw new Error('missing MCP público section on /docs')
+      }
+      if (!body.includes("search_logos")) {
+        throw new Error("missing search_logos in MCP docs")
+      }
     }),
+    check("llms-txt", `${baseUrl}/llms.txt`, (_res, body) => {
+      if (!body.includes("/mcp")) {
+        throw new Error("llms.txt missing /mcp link")
+      }
+      if (!body.includes("search_logos")) {
+        throw new Error("llms.txt missing search_logos tool name")
+      }
+    }),
+    check("mcp-well-known-json", `${baseUrl}/.well-known/mcp.json`),
+    check("mcp-well-known", `${baseUrl}/.well-known/mcp`),
+    checkMcpInitialize(),
+    checkMcpToolsList(),
+    checkMcpToolCall("mcp-search_logos", "search_logos", { query: "galicia", limit: 3 }, "galicia"),
+    checkMcpToolCall("mcp-get_logo", "get_logo", { slug: "banco-galicia" }, "/api/logo-download"),
+    checkMcpToolCall("mcp-list_categories", "list_categories", {}, "bancos"),
+    checkMcpToolCall(
+      "mcp-list_by_category",
+      "list_by_category",
+      { category: "bancos", limit: 3 },
+      "categoryId",
+    ),
     check("robots", `${baseUrl}/robots.txt`),
     check("home-link-header", `${baseUrl}/`, (res) => {
       const link = res.headers.get("link") ?? ""
