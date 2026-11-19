@@ -27,5 +27,6 @@ Preconditions:
 
 ## Gotchas
 
+- Filtering and pagination for REST and MCP share `lib/logos-catalog.ts`; MCP tool calls must stay aligned with `/api/logos` query semantics
 - Unknown `category` values are ignored for filtering (see route implementation); use ids from docs, including batch-1014 additions such as `telecomunicaciones`, `obras-sociales`, `sanatorios`, `alimentos`, `combustibles`, `seguros`, `indumentaria`, `turismo`, `energia`, and `indie-projects`, plus `bancos`, `fintechs`, `crypto`, `tecnologias`, `prepagas`, `banderas`, `retail`, `medios`, `automotrices`, `gastronomia`, `alycs`, `acciones`, `entes-estatales`
 - `datasetVersion` changes when datasets regenerate on build

@@ -5,7 +5,7 @@ description: End-to-end verification for Logos Argentina (Loguitos) — Astro on
 
 # Verify Loguitos (Logos Argentina)
 
-Loguitos is an **Astro 7** + Cloudflare Workers app: home search, category hubs, per-entity logo pages, `/docs`, JSON at `/api/logos`, and raster/SVG logo download at `/api/logo-download`. No database or required env vars for local runs.
+Loguitos is an **Astro 7** + Cloudflare Workers app: home search, category hubs, per-entity logo pages, `/docs`, JSON at `/api/logos`, public MCP JSON-RPC at `/mcp` (same catalog as the REST API), discovery at `/llms.txt` and `/.well-known/mcp.json`, and raster/SVG logo download at `/api/logo-download`. No database or required env vars for local runs.
 
 ## Launch
 
@@ -59,7 +59,10 @@ Read-only checks before driving:
 - TCP reachability of the base URL
 - `GET /` → 200 and HTML; response `Link` header advertises `rel="api-catalog"` → `/.well-known/api-catalog` and `rel="item"` → `/api/logos` (`lib/home-discovery-link.ts`, Worker entry in production)
 - `GET /sitemap.xml` → 200; `Cache-Control` includes `max-age=86400` and `s-maxage=86400` (`dist/client/_headers` via `scripts/generate-asset-headers.mts`)
-- `GET /docs` → 200
+- `GET /docs` → 200; HTML includes **MCP público**, tool name `search_logos`, and `GET /api/logos`
+- `GET /llms.txt` → 200; body links `/mcp` and lists MCP tools (e.g. `search_logos`)
+- `GET /.well-known/mcp.json` and `GET /.well-known/mcp` → 200 (MCP discovery)
+- MCP JSON-RPC on `POST /mcp` — `initialize` returns `protocolVersion`; `tools/list` exposes `search_logos`, `get_logo`, `list_categories`, `list_by_category`; `tools/call` smoke: `search_logos` with `query: galicia`, `get_logo` with `slug: banco-galicia` (download URLs under `/api/logo-download`), `list_categories` mentions `bancos`, `list_by_category` with `category: bancos` returns `categoryId` (`lib/mcp/`, shared filter `lib/logos-catalog.ts`)
 - `GET /api/logos?q=galicia&limit=5` → 200, JSON `items` array with at least one match whose `name` or `domain` mentions galicia (case-insensitive)
 - `GET /robots.txt` → 200
 - `GET /categoria/bancos` → 200, HTML contains SEO H1 `Logos de bancos argentinos`, prominent link to `/logo/banco-de-la-nacion-argentina`, and heading `Logo Banco Nación (BNA)`
@@ -145,6 +148,7 @@ Stops the server recorded in `.verify-loguitos/runs/latest/server.json`. If no r
 | Script | Invocation |
 |--------|------------|
 | Main harness | `pnpm verify:loguitos <launch\|doctor\|drive\|cleanup\|all>` |
+| MCP smoke (optional) | `bash scripts/smoke-mcp.sh [baseUrl]` — same JSON-RPC sequence as doctor MCP checks (default `http://127.0.0.1:4321`) |
 | Catalog hosting (offline) | `pnpm check:catalog-hosting` — fails when `listThirdPartyCatalogLogos` is non-empty; writes `data/catalog-third-party-logos.json` on failure |
 | GA4 download debug | `node --experimental-strip-types scripts/diagnose-ga-logo-download.mts [slug] [baseUrl]` — Playwright probe against a deployed host when `logo_download` collect beacons are missing (default slug `mercado-pago`) |
 | Hosted logo QA | `pnpm check:logos` — full catalog fetch with one 30s recheck for entities that failed only on transient external errors (network, timeout, 429/5xx, Google favicon-proxy 404). Writes `data/logo-check-report.json`. **Full-catalog runs** (local default, push to main, nightly): real quality problems block; transient-only failures are warnings unless more than `max(10, 5%)` of entities are transient (then treated as a broken checker/runner). **PR runs** (`LOGO_CHECK_SCOPE=pr`, set in CI): entities touched in the diff block on any failure; others are out of scope. Logo-quality workflow uploads the JSON report and prints a step summary. |

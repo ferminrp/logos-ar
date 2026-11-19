@@ -36,6 +36,7 @@ Each feature file has four H2 sections in order: `Sub-features`, `How to get to 
 - [Brand verify slot](./brand-verify-slot.md) — Opción B house ad before disclaimer on `/logo/<slug>`
 - [Sponsor slot](./sponsor-slot.md) — Fase 2 Opción A patrocinado above the preview card on `/logo/<slug>`
 - [Logos API](./api-logos.md) — JSON catalog at `/api/logos`
-- [API docs](./docs-page.md) — static documentation at `/docs`
+- [Public MCP](./mcp-catalog.md) — JSON-RPC catalog tools at `/mcp`
+- [API docs](./docs-page.md) — static documentation at `/docs` (includes MCP section)
 - [Category hub](./category-hub.md) — browse a category such as bancos
 - [SEO / CTR](./seo-ctr.md) — category landing copy, entity metadata, permanent slug redirects
