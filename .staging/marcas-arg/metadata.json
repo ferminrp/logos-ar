@@ -1,0 +1,189 @@
+{
+  "generated": "2026-11-19",
+  "timezone": "America/Mendoza",
+  "contact_sheet": "/workspace/loguitos-marcasarg-logos/contact-sheet.png",
+  "brands": [
+    {
+      "name": "Guaymallén",
+      "slug": "guaymallen",
+      "status": "OK",
+      "category": "alimentos",
+      "source": "https://www.alfajoresguaymallen.com.ar/assets/logo.svg",
+      "license": "Marca registrada. Sin licencia abierta publicada.",
+      "bytes": 43503,
+      "colors": [
+        "#C2A06B",
+        "#D51317",
+        "#DAC174",
+        "#FFFFFF"
+      ],
+      "svg": "/workspace/loguitos-marcasarg-logos/guaymallen.svg",
+      "previews": {
+        "combined": "/workspace/loguitos-marcasarg-logos/preview/guaymallen.png",
+        "light": "/workspace/loguitos-marcasarg-logos/preview/guaymallen-light.png",
+        "dark": "/workspace/loguitos-marcasarg-logos/preview/guaymallen-dark.png"
+      }
+    },
+    {
+      "name": "Freddo",
+      "slug": "freddo",
+      "status": "sin logo bueno",
+      "category": "alimentos",
+      "source": "https://ar.freddo.com/wp-content/uploads/2025/04/logo-header-web.png",
+      "license": "Marca registrada. Solo hay raster oficial.",
+      "bytes": null,
+      "colors": [
+        "#FFFFFF"
+      ],
+      "reason": "El sitio solo publica PNG del wordmark blanco actual. Wikimedia es un JPEG de 2010. Cadbury Freddo es otra marca.",
+      "reference_raster": "/workspace/loguitos-marcasarg-logos/sources/freddo-official-logo-header-web.png"
+    },
+    {
+      "name": "Rapanui",
+      "slug": "rapanui",
+      "status": "OK",
+      "category": "alimentos",
+      "source": "https://cdn.prod.website-files.com/6691754224c3508065500a46/68dac70d3b895229f0ec6f1a_logo_rapa%201.svg",
+      "license": "Marca registrada. Sin licencia abierta publicada.",
+      "bytes": 7777,
+      "colors": [
+        "#E8E5D1"
+      ],
+      "notes": "Wordmark crema oficial: bajo contraste en fondo claro. No se recolorizó. Se descartó un SVG del mismo CDN que embebe PNG.",
+      "svg": "/workspace/loguitos-marcasarg-logos/rapanui.svg",
+      "previews": {
+        "combined": "/workspace/loguitos-marcasarg-logos/preview/rapanui.png",
+        "light": "/workspace/loguitos-marcasarg-logos/preview/rapanui-light.png",
+        "dark": "/workspace/loguitos-marcasarg-logos/preview/rapanui-dark.png"
+      }
+    },
+    {
+      "name": "Baggio",
+      "slug": "baggio",
+      "status": "sin logo bueno",
+      "category": "alimentos",
+      "source": "https://www.baggio.com.ar/es/images/logo.png",
+      "license": "Marca registrada. Solo hay raster oficial.",
+      "bytes": null,
+      "colors": [
+        "#C02008",
+        "#FFFFFF"
+      ],
+      "reason": "El sitio solo publica PNG. Wikimedia es un PNG own work de 2023, no un SVG oficial.",
+      "reference_raster": "/workspace/loguitos-marcasarg-logos/sources/baggio-official-es-images-logo.png"
+    },
+    {
+      "name": "Tecpetrol",
+      "slug": "tecpetrol",
+      "status": "OK",
+      "category": "energia",
+      "source": "https://www.tecpetrol.com/media/kbtiukes/tecp_manual-de-marca_nov2022_v02.pdf",
+      "source_detail": "Manual de Marca edición 2.0, noviembre 2022, página 4, isologo preferido a 4 colores. Paths oficiales, sin cotas ni rótulos.",
+      "license": "Marca registrada Tecpetrol / Techint. Sin licencia abierta publicada.",
+      "bytes": 9677,
+      "colors": [
+        "#0072AE",
+        "#008752",
+        "#6DB33F",
+        "#696A6C"
+      ],
+      "svg": "/workspace/loguitos-marcasarg-logos/tecpetrol.svg",
+      "previews": {
+        "combined": "/workspace/loguitos-marcasarg-logos/preview/tecpetrol.png",
+        "light": "/workspace/loguitos-marcasarg-logos/preview/tecpetrol-light.png",
+        "dark": "/workspace/loguitos-marcasarg-logos/preview/tecpetrol-dark.png"
+      }
+    },
+    {
+      "name": "Tiendanube",
+      "slug": "tiendanube",
+      "status": "OK",
+      "category": "tecnologias",
+      "source": "https://www.tiendanube.com/",
+      "source_detail": "SVG inline del navbar oficial (2026). fill original currentColor, horneado a #0050C3 (primary nimbus blue del header).",
+      "license": "Marca registrada. Sin licencia abierta publicada. Se prefirió el SVG del sitio al de Wikimedia Commons (2021, #2C3356).",
+      "bytes": 9590,
+      "colors": [
+        "#0050C3"
+      ],
+      "svg": "/workspace/loguitos-marcasarg-logos/tiendanube.svg",
+      "previews": {
+        "combined": "/workspace/loguitos-marcasarg-logos/preview/tiendanube.png",
+        "light": "/workspace/loguitos-marcasarg-logos/preview/tiendanube-light.png",
+        "dark": "/workspace/loguitos-marcasarg-logos/preview/tiendanube-dark.png"
+      }
+    },
+    {
+      "name": "Lucciano's",
+      "slug": "luccianos",
+      "status": "sin logo bueno",
+      "category": "gastronomia",
+      "source": "https://images.squarespace-cdn.com/content/v1/68c82b63f87f3538a1b9aaa9/bb32551a-b455-47e9-b44a-ff8456c46df2/Primary+Logo+Almond.png",
+      "license": "Marca registrada. Solo hay raster oficial.",
+      "bytes": null,
+      "colors": [
+        "#E8E0D0"
+      ],
+      "reason": "El sitio oficial (www.luccianos.com) solo publica PNG. No hay SVG en el sitio ni en Wikimedia.",
+      "reference_raster": "/workspace/loguitos-marcasarg-logos/sources/luccianos-official-primary-logo-almond.png"
+    },
+    {
+      "name": "Piporé",
+      "slug": "pipore",
+      "status": "OK",
+      "category": "alimentos",
+      "source": "https://www.pipore.com.ar/wp-content/themes/pipore/img/logo.svg",
+      "license": "Marca registrada. Sin licencia abierta publicada.",
+      "bytes": 14985,
+      "colors": [
+        "#000000",
+        "#FFFFFF"
+      ],
+      "svg": "/workspace/loguitos-marcasarg-logos/pipore.svg",
+      "previews": {
+        "combined": "/workspace/loguitos-marcasarg-logos/preview/pipore.png",
+        "light": "/workspace/loguitos-marcasarg-logos/preview/pipore-light.png",
+        "dark": "/workspace/loguitos-marcasarg-logos/preview/pipore-dark.png"
+      }
+    },
+    {
+      "name": "Catena Zapata",
+      "slug": "catena-zapata",
+      "status": "OK",
+      "category": "alimentos",
+      "source": "https://catenazapata.com/wp-content/uploads/2025/04/logo-bcz-1.svg",
+      "license": "Marca registrada. Sin licencia abierta publicada.",
+      "bytes": 7538,
+      "colors": [
+        "#FFFFFF"
+      ],
+      "notes": "Wordmark blanco oficial (abr. 2025): bajo contraste en fondo claro. No se recolorizó. No hay SVG oscuro oficial.",
+      "svg": "/workspace/loguitos-marcasarg-logos/catena-zapata.svg",
+      "previews": {
+        "combined": "/workspace/loguitos-marcasarg-logos/preview/catena-zapata.png",
+        "light": "/workspace/loguitos-marcasarg-logos/preview/catena-zapata-light.png",
+        "dark": "/workspace/loguitos-marcasarg-logos/preview/catena-zapata-dark.png"
+      }
+    },
+    {
+      "name": "Cagnoli",
+      "slug": "cagnoli",
+      "status": "OK",
+      "category": "alimentos",
+      "source": "https://www.cagnoli.com/images/logo/logo.svg",
+      "license": "Marca registrada. Sin licencia abierta publicada.",
+      "bytes": 18195,
+      "colors": [
+        "#082240",
+        "#F58232",
+        "#FFFFFF"
+      ],
+      "svg": "/workspace/loguitos-marcasarg-logos/cagnoli.svg",
+      "previews": {
+        "combined": "/workspace/loguitos-marcasarg-logos/preview/cagnoli.png",
+        "light": "/workspace/loguitos-marcasarg-logos/preview/cagnoli-light.png",
+        "dark": "/workspace/loguitos-marcasarg-logos/preview/cagnoli-dark.png"
+      }
+    }
+  ]
+}
