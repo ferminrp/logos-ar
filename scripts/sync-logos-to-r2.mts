@@ -77,6 +77,7 @@ async function wranglerPutObject(
       'object',
       'put',
       `${BUCKET}/${objectKey}`,
+      '--remote',
       '--file',
       filePath,
       '--content-type',
