@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { afterEach, beforeEach, describe, it } from 'node:test'
 import sharp from 'sharp'
+import { LOGO_SVG_CONTENT_SECURITY_POLICY } from './logo-image-security-headers.ts'
 import {
   handleLogoDownloadGet,
   rasterDownloadFilename,
@@ -35,6 +36,21 @@ describe('handleLogoDownloadGet', () => {
     assert.equal(res.status, 200)
     assert.match(res.headers.get('Content-Type') ?? '', /^image\/png/)
     assert.match(res.headers.get('Content-Disposition') ?? '', /attachment/)
+    assert.equal(res.headers.get('X-Content-Type-Options'), 'nosniff')
+  })
+
+  it('returns SVG download with security headers', async () => {
+    const req = new Request(
+      'http://127.0.0.1/api/logo-download?domain=www.galicia.ar&format=svg&size=128',
+    )
+    const res = await handleLogoDownloadGet(req)
+    assert.equal(res.status, 200)
+    assert.match(res.headers.get('Content-Type') ?? '', /image\/svg\+xml/)
+    assert.equal(res.headers.get('X-Content-Type-Options'), 'nosniff')
+    assert.equal(
+      res.headers.get('Content-Security-Policy'),
+      LOGO_SVG_CONTENT_SECURITY_POLICY,
+    )
   })
 
   it('passthrough JPEG attachment must not use .png extension', () => {

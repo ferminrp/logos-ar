@@ -16,6 +16,10 @@ import {
   measureImage,
   type ImageMetrics,
 } from "./logo-quality/image-metrics.ts"
+import {
+  logoDownloadPngHeaders,
+  logoDownloadSvgHeaders,
+} from "./logo-image-security-headers.ts"
 import { isCloudflareWorkersRuntime } from "./worker-runtime.ts"
 
 const KNOWN_DOMAINS = new Set(
@@ -268,12 +272,12 @@ export async function handleLogoDownloadGet(
     const attachmentName = rasterDownloadFilename(domain, imageMetrics.format)
     const mime = embedMimeType(upstreamContentType, imageMetrics.format)
     return new Response(bytes, {
-      headers: {
+      headers: logoDownloadPngHeaders({
         "Content-Type": mime,
         "Content-Disposition": `attachment; filename="${attachmentName}"`,
         "Cache-Control": CACHE_CONTROL,
         "X-Loguitos-Raster-Passthrough": "workers-wasm-budget",
-      },
+      }),
     })
   }
 
@@ -354,32 +358,32 @@ export async function handleLogoDownloadGet(
         ? pngBody
         : new Uint8Array(pngBody as ArrayBuffer)
     return new Response(responseBody as BodyInit, {
-      headers: {
+      headers: logoDownloadPngHeaders({
         "Content-Type": "image/png",
         "Content-Disposition": `attachment; filename="${filename}"`,
         "Cache-Control": CACHE_CONTROL,
-      },
+      }),
     })
   }
 
   if (imageMetrics.format === "svg") {
     const svgText = new TextDecoder("utf-8").decode(bytes)
     return new Response(svgText, {
-      headers: {
+      headers: logoDownloadSvgHeaders({
         "Content-Type": "image/svg+xml",
         "Content-Disposition": `attachment; filename="${filename}"`,
         "Cache-Control": CACHE_CONTROL,
-      },
+      }),
     })
   }
 
   const svg = buildSvgFromRaster(logoBuffer, size, rasterMime)
 
   return new Response(svg, {
-    headers: {
+    headers: logoDownloadSvgHeaders({
       "Content-Type": "image/svg+xml",
       "Content-Disposition": `attachment; filename="${filename}"`,
       "Cache-Control": CACHE_CONTROL,
-    },
+    }),
   })
 }

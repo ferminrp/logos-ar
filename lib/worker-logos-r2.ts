@@ -1,3 +1,8 @@
+import {
+  applyLogoPngSecurityHeaders,
+  applyLogoSvgSecurityHeaders,
+} from './logo-image-security-headers.ts'
+
 /** Immutable cache for flat catalog assets at /logos/<slug>.{png,svg}. */
 export const HOSTED_LOGO_CACHE_CONTROL =
   'public, max-age=31536000, immutable'
@@ -77,12 +82,10 @@ function buildLogoResponseHeaders(
   if (etag) {
     headers.set('ETag', etag)
   }
-  if (ext === 'svg') {
-    headers.set('X-Content-Type-Options', 'nosniff')
-    headers.set(
-      'Content-Security-Policy',
-      "default-src 'none'; style-src 'unsafe-inline'",
-    )
+  if (ext === 'png') {
+    applyLogoPngSecurityHeaders(headers)
+  } else {
+    applyLogoSvgSecurityHeaders(headers)
   }
   return headers
 }
@@ -182,12 +185,10 @@ async function fallbackAssetsHostedLogo(
   headers.set('Cache-Control', HOSTED_LOGO_CACHE_CONTROL)
   const contentType = contentTypeForExtension(parsed.ext)
   headers.set('Content-Type', contentType)
-  if (parsed.ext === 'svg') {
-    headers.set('X-Content-Type-Options', 'nosniff')
-    headers.set(
-      'Content-Security-Policy',
-      "default-src 'none'; style-src 'unsafe-inline'",
-    )
+  if (parsed.ext === 'png') {
+    applyLogoPngSecurityHeaders(headers)
+  } else {
+    applyLogoSvgSecurityHeaders(headers)
   }
 
   if (request.method === 'HEAD') {
