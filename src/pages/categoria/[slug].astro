@@ -22,6 +22,6 @@ const title = seo.title
 const description = seo.metaDescription
 ---
 
-<BaseLayout title={title} description={description} canonical={`/categoria/${slug}`}>
+<BaseLayout title={title} description={description} canonical={`/categoria/${slug}`} markdownAlternate={`/categoria/${slug}.md`}>
   <CategoryPageView slug={slug!} />
 </BaseLayout>

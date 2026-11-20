@@ -246,7 +246,7 @@ async function launch(): Promise<ServerRecord> {
   const localUrl = `http://127.0.0.1:${port}`
   await waitForHttpOk(`${localUrl}/`, {
     child: launchedChild,
-    bodyIncludes: "Logos Argentina",
+    bodyIncludes: "Loguitos",
   })
   console.log(`Server ready at ${baseUrl} (pid ${record.pid})`)
   return record
@@ -680,8 +680,8 @@ async function doctor(): Promise<DoctorCheck[]> {
   const checks = await Promise.all([
     checkCatalogHostingDataset(),
     check("home", `${baseUrl}/`, (_res, body) => {
-      if (!body.includes("Logos Argentina")) {
-        throw new Error('missing "Logos Argentina" in HTML')
+      if (!body.includes("Loguitos")) {
+        throw new Error('missing "Loguitos" in HTML')
       }
     }),
     check("docs", `${baseUrl}/docs`, (_res, body) => {

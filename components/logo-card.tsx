@@ -47,6 +47,8 @@ export function LogoCard({ entity }: LogoCardProps) {
         <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-secondary">
           {!imageError ? (
             <img
+              loading="lazy"
+              decoding="async"
               src={googleUrl}
               alt={`Logo de ${entity.name}`}
               width={40}
@@ -57,6 +59,8 @@ export function LogoCard({ entity }: LogoCardProps) {
             />
           ) : (
             <img
+              loading="lazy"
+              decoding="async"
               src={duckUrl}
               alt={`Logo de ${entity.name}`}
               width={40}

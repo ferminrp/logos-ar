@@ -13,6 +13,7 @@ import {
 test('buildSitemapHeadersBlock includes next.config parity cache', () => {
   const block = buildSitemapHeadersBlock()
   assert.match(block, /\/sitemap\.xml/)
+  assert.match(block, /\/\*\.md\n {2}Content-Type: text\/markdown; charset=utf-8\n {2}X-Robots-Tag: noindex/)
   assert.match(block, new RegExp(SITEMAP_CACHE_CONTROL.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
 })
 

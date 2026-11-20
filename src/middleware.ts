@@ -7,8 +7,6 @@ import { applyHomeDiscoveryHeaders } from '@/lib/apply-home-discovery-headers'
 import { prefersMcpDocsHtml } from '@/lib/mcp/accept'
 import { getSiteUrl } from '@/lib/site-url'
 
-const NEGOTIABLE_PATHS = new Set(['/', '/categorias'])
-
 const redirectMap = new Map(
   permanentRedirects.map((entry: { source: string; destination: string }) => [
     entry.source,
@@ -58,10 +56,12 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return context.redirect('/docs#mcp', 302)
   }
 
-  if (NEGOTIABLE_PATHS.has(pathname)) {
+  // Dev / SSR path. In production prerendered pages bypass this middleware and the
+  // Worker wrapper negotiates instead (lib/markdown-negotiation.ts).
+  if (context.request.method === 'GET') {
     const accept = context.request.headers.get('accept')
     if (prefersMarkdown(accept)) {
-      const markdown = getMarkdownForPath(pathname)
+      const markdown = getMarkdownForPath(pathname.replace(/(.)\/$/, '$1'))
       if (markdown) {
         return new Response(markdown, {
           headers: {

@@ -21,7 +21,7 @@ export const guides: Guide[] = [
       {
         heading: "Paso 1: Obtener la URL del favicon",
         paragraphs: [
-          "En Logos Argentina, buscá la entidad (por ejemplo Banco Galicia o Mercado Pago) y copiá la URL de Google o DuckDuckGo desde la ficha de la entidad o desde el directorio.",
+          "En Loguitos, buscá la entidad (por ejemplo Banco Galicia o Mercado Pago) y copiá la URL de Google o DuckDuckGo desde la ficha de la entidad o desde el directorio.",
         ],
       },
       {
@@ -49,7 +49,7 @@ export const guides: Guide[] = [
       {
         heading: "Insertar imagen desde vínculo",
         paragraphs: [
-          "Copiá la URL del favicon desde Logos Argentina (pestaña de la entidad o tarjeta en el directorio). En Excel: Insertar > Imágenes > Insertar imagen desde vínculo (según tu versión de Office).",
+          "Copiá la URL del favicon desde Loguitos (pestaña de la entidad o tarjeta en el directorio). En Excel: Insertar > Imágenes > Insertar imagen desde vínculo (según tu versión de Office).",
           "Pegá la URL completa del servicio Google o DuckDuckGo.",
         ],
       },
@@ -95,7 +95,7 @@ GET /api/logos?domain=galicia.ar&limit=10`,
     slug: "google-vs-duckduckgo",
     title: "Google vs DuckDuckGo para favicons",
     description:
-      "Compará los servicios públicos de favicon que usa Logos Argentina: formato, tamaño y cuándo conviene cada uno.",
+      "Compará los servicios públicos de favicon que usa Loguitos: formato, tamaño y cuándo conviene cada uno.",
     sections: [
       {
         heading: "Google Favicon Service",
@@ -114,7 +114,7 @@ GET /api/logos?domain=galicia.ar&limit=10`,
       {
         heading: "Recomendación práctica",
         paragraphs: [
-          "Probá ambos en tu UI o hoja de cálculo y quedate con el que mejor renderice para cada dominio. En Logos Argentina mostramos ambas URLs y curls en cada ficha de entidad.",
+          "Probá ambos en tu UI o hoja de cálculo y quedate con el que mejor renderice para cada dominio. En Loguitos mostramos ambas URLs y curls en cada ficha de entidad.",
         ],
       },
     ],

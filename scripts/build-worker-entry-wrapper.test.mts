@@ -9,4 +9,5 @@ test('worker wrapper uses shared home-discovery bundle', () => {
   assert.match(src, /resolveWorkerSiteUrl/)
   assert.match(src, /maybeCanonicalRedirect/)
   assert.match(src, /maybeServeHostedLogo/)
+  assert.match(src, /maybeServeMarkdown/)
 })

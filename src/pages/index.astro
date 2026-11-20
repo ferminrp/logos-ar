@@ -5,14 +5,14 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import { FaqJsonLd } from '@/components/faq-json-ld'
 import { SiteJsonLd } from '@/components/site-json-ld'
 import { HomePage } from '@/components/home-page'
+import { HOME_DESCRIPTION, HOME_H1, HOME_TITLE } from '@/lib/site-brand'
 
-const title = 'Logos Argentina - Directorio de Favicons'
-const description =
-  'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.'
+const title = HOME_TITLE
+const description = HOME_DESCRIPTION
 ---
 
-<BaseLayout title={title} description={description} canonical="/">
-  <h1 class="sr-only">Logos Argentina - Directorio de Favicons</h1>
+<BaseLayout title={title} description={description} canonical="/" markdownAlternate="/index.md">
+  <h1 class="sr-only">{HOME_H1}</h1>
   <SiteJsonLd />
   <FaqJsonLd />
   <HomePage client:load />

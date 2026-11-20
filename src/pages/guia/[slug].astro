@@ -17,13 +17,13 @@ if (!guide) {
   Astro.response.status = 404
 }
 
-const title = guide?.title ?? 'Guía no encontrada'
+const title = guide ? `${guide.title} | Loguitos` : 'Guía no encontrada'
 const description = guide?.description
 ---
 
 {
   guide ? (
-    <BaseLayout title={title} description={description} canonical={`/guia/${slug}`} ogType="article">
+    <BaseLayout title={title} description={description} canonical={`/guia/${slug}`} ogType="article" markdownAlternate={`/guia/${slug}.md`}>
       <GuidePageView client:load slug={slug!} />
     </BaseLayout>
   ) : (

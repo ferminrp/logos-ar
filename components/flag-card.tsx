@@ -32,6 +32,8 @@ export function FlagCard({ flag, ratio = "3x2" }: FlagCardProps) {
           }`}
         >
           <img
+            loading="lazy"
+            decoding="async"
             src={svgUrl}
             alt={`Bandera de ${flag.name}`}
             width={ratio === "1x1" ? 40 : 48}

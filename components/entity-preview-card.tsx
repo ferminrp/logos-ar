@@ -16,6 +16,8 @@ export function EntityPreviewCard({ entity }: EntityPreviewCardProps) {
       className="group flex items-center gap-2"
     >
       <img
+        loading="lazy"
+        decoding="async"
         src={googleUrl}
         alt={`Logo de ${entity.name}`}
         width={20}

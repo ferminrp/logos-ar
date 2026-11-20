@@ -13,7 +13,7 @@ function assertValidXml(content: string): void {
   if (!content.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {
     throw new Error("Sitemap must start with XML declaration")
   }
-  if (!content.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')) {
+  if (!content.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')) {
     throw new Error("Sitemap must include urlset namespace")
   }
   if (content.includes("&") && !content.includes("&amp;")) {

@@ -33,6 +33,8 @@ function runNodeScript(relativePath: string): Promise<void> {
 
 async function main() {
   await Promise.all(generators.map((script) => runNodeScript(script)))
+  // Reads the datasets generated above, so it runs after them.
+  await runNodeScript("scripts/sync-sitemap-lastmod.mts")
 }
 
 main().catch((error) => {

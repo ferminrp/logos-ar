@@ -10,6 +10,7 @@ import {
   getEntityPageTitle,
 } from '@/lib/entity-seo'
 import { getEntityBySlug } from '@/lib/entity-index'
+import { getEntityLogoUrl } from '@/lib/entity-logo'
 import NotFoundPage from '../../../views/not-found-page'
 
 export function getStaticPaths() {
@@ -28,12 +29,18 @@ const entity = slug && !gone ? getEntityBySlug(slug) : null
 let title = 'Logo no encontrado'
 let description = undefined
 let robots = gone ? 'noindex, nofollow' : 'index, follow'
+// Self-hosted PNG logos double as the social preview; other pages keep the site default.
+let ogImage: string | undefined
 
 if (gone) {
   title = 'Logo retirado'
 } else if (entity) {
   title = getEntityPageTitle(entity)
   description = buildEntityMetaDescription(entity)
+  const logoUrl = getEntityLogoUrl(entity)
+  if (logoUrl.startsWith('/') && logoUrl.endsWith('.png')) {
+    ogImage = logoUrl
+  }
 } else if (slug) {
   Astro.response.status = 404
 }
@@ -50,6 +57,14 @@ if (gone) {
       description={description}
       canonical={`/logo/${slug}`}
       twitterTitle={title}
+      markdownAlternate={`/logo/${slug}.md`}
+      {...(ogImage
+        ? {
+            ogImage,
+            ogImageAlt: `Logo de ${entity.name}`,
+            twitterCard: 'summary',
+          }
+        : {})}
     >
       <LogoPageView client:load slug={slug!} />
     </BaseLayout>

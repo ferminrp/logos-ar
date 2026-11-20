@@ -2,6 +2,7 @@ import { AppLink as Link } from '@/components/app-link'
 import { BreadcrumbJsonLd } from '@/components/breadcrumb-json-ld'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { EntityDetail } from '@/components/entity-detail'
+import { LogoPageJsonLd } from '@/components/logo-page-json-ld'
 import { getEntityBySlug, getRelatedEntities } from '@/lib/entity-index'
 import { isGoneLogoSlug } from '@/lib/gone-logo-slugs'
 
@@ -26,6 +27,7 @@ export function LogoPageView({ slug }: { slug: string }) {
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <BreadcrumbJsonLd items={breadcrumbItems} />
+      <LogoPageJsonLd entity={entity} />
       <Breadcrumbs items={breadcrumbItems} />
       <EntityDetail entity={entity} related={related} slug={slug} />
 

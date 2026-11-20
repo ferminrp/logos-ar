@@ -1,4 +1,4 @@
-# Logos Argentina
+# Loguitos (Logos Argentina)
 
 Directorio de logos/favicons de entidades financieras argentinas para uso rápido en proyectos web.
 
@@ -75,6 +75,16 @@ Si Search Console muestra **Couldn't fetch** después de un deploy:
 2. En **Sitemaps**, eliminá el envío fallido y volvé a enviar la misma URL.
 3. Si el error persiste (caché de GSC), probá una URL alternativa para forzar un fetch nuevo, por ejemplo `https://loguitos.app/sitemap.xml?v=2`.
 4. En Vercel → **Security**, confirmá que no haya *Deployment Protection* ni reglas de firewall que bloqueen a Googlebot.
+
+### `lastmod` real e imágenes en el sitemap
+
+`data/sitemap-lastmod.json` guarda, por URL, un fingerprint del contenido (datos del catálogo, copy SEO, bytes del logo y versión del template) y la fecha en que cambió por última vez. `pnpm build` lo actualiza en `prebuild`; después de tocar el catálogo corré `pnpm sync:sitemap-lastmod` y commiteá el JSON (un test offline falla si quedó desactualizado). Si cambiás el template de una página, subí su número en `PAGE_TEMPLATE_VERSIONS` (`lib/sitemap-lastmod.ts`).
+
+Las páginas `/logo/<slug>` con logo alojado en el catálogo incluyen su imagen en el sitemap (`<image:image>`).
+
+### Markdown para agentes
+
+Cada página HTML tiene un gemelo Markdown prerenderizado: `/index.md`, `/categorias.md`, `/docs.md`, `/logo/<slug>.md`, `/categoria/<id>.md` y `/guia/<slug>.md` (servidos con `X-Robots-Tag: noindex`). La misma URL HTML devuelve Markdown si el request manda `Accept: text/markdown`; eso lo resuelve el wrapper del Worker (`lib/markdown-negotiation.ts`), porque las páginas prerenderizadas no pasan por el middleware de Astro. `llms.txt` enlaza a estas versiones.
 
 ### IndexNow
 
