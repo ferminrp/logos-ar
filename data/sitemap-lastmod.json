@@ -1,0 +1,1750 @@
+{
+  "/": {
+    "hash": "8c6908be1f0dbdfb",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/acciones": {
+    "hash": "f90c5db4313a9ea9",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/alimentos": {
+    "hash": "50690a249c0e9b98",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/alycs": {
+    "hash": "a6121289ce45c83c",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/automotrices": {
+    "hash": "51ec1f84da8ca2ce",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/bancos": {
+    "hash": "faa669194c713a86",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/banderas": {
+    "hash": "54bb46bc0fb73bbd",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/combustibles": {
+    "hash": "3fbbedf09e48f14c",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/crypto": {
+    "hash": "b2dc5b2020f22e3c",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/energia": {
+    "hash": "d2bd20478409e7c9",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/entes-estatales": {
+    "hash": "9db74e69965243b9",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/fintechs": {
+    "hash": "8ad02589dc728ad4",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/gastronomia": {
+    "hash": "619519c8967a83d3",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/indie-projects": {
+    "hash": "53eb5f4323872b39",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/indumentaria": {
+    "hash": "3337266875535c8b",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/medios": {
+    "hash": "3ecebd05d677bd79",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/obras-sociales": {
+    "hash": "00a6cb0c844b8418",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/prepagas": {
+    "hash": "6190f71f02870f0a",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/retail": {
+    "hash": "afcba852240897fb",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/sanatorios": {
+    "hash": "141482d46a9748cf",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/seguros": {
+    "hash": "2813474a40fd6278",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/tecnologias": {
+    "hash": "99b86220d0676317",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/telecomunicaciones": {
+    "hash": "f5ece1d5ad614a52",
+    "lastmod": "2026-11-20"
+  },
+  "/categoria/turismo": {
+    "hash": "2723b9db37c6edda",
+    "lastmod": "2026-11-20"
+  },
+  "/categorias": {
+    "hash": "a7292d6b6d363b8c",
+    "lastmod": "2026-11-20"
+  },
+  "/docs": {
+    "hash": "b24843cd3502eea8",
+    "lastmod": "2026-11-20"
+  },
+  "/guia/desarrolladores": {
+    "hash": "9fda410cf3a85051",
+    "lastmod": "2026-11-20"
+  },
+  "/guia/excel": {
+    "hash": "6db9cc4003752a23",
+    "lastmod": "2026-11-20"
+  },
+  "/guia/google-sheets": {
+    "hash": "c71631a5cd15280e",
+    "lastmod": "2026-11-20"
+  },
+  "/guia/google-vs-duckduckgo": {
+    "hash": "68ce73e332d8bc20",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/a24": {
+    "hash": "f3e2d7f309fdaa62",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/a3-mercados": {
+    "hash": "13455a005cab85bd",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/aave": {
+    "hash": "bdbfad0d5f458fd6",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/accor-ibis-novotel-etc": {
+    "hash": "e35771fcd2aa3ba3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/adecoagro": {
+    "hash": "f7cb2fc0d6ea924c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/adidas": {
+    "hash": "a77a2716aa22ac8b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/aerolineas-argentinas": {
+    "hash": "7f8f47d1344240dc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/agip": {
+    "hash": "4ae6c10138a3cee9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/airbnb": {
+    "hash": "47738d782ff5f8b7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/allaria": {
+    "hash": "5ce2fd262fe032f9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/allianz": {
+    "hash": "1e0fb4bd8a31108d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/almacen-de-pizzas": {
+    "hash": "c7a29d6d3be15164",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/almundo": {
+    "hash": "5d789583e6e60f9b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/aluar": {
+    "hash": "5ea4d903c6ffab34",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ambito-financiero": {
+    "hash": "8d62276fa70ecf65",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/america-tv": {
+    "hash": "85bd01302926dbe9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/andreani": {
+    "hash": "c49c20f3b2653540",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/anmat": {
+    "hash": "526d35d2d3fa47b4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/anses": {
+    "hash": "c7fd74899bdf6e70",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/antina": {
+    "hash": "53cacc5443ea4553",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/arba": {
+    "hash": "90b0a35e11acbe5c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/arbitrum": {
+    "hash": "18f7e905172a8c45",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/arca-ex-afip": {
+    "hash": "641a0b283e067527",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/arcor": {
+    "hash": "83847830a122ca94",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/arq": {
+    "hash": "f7b84d512bc608f6",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/astro": {
+    "hash": "8570c6d1fb2df3f9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/astropay": {
+    "hash": "7776d07aa297d29b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/audi": {
+    "hash": "b375f35a7ab4fc2b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/avalian": {
+    "hash": "cac3873da055dae2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/avis": {
+    "hash": "0564f5635269a6bf",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/awada": {
+    "hash": "7d388233b8257bd2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/axion-energy": {
+    "hash": "09c94431fc5fc71c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bajaj": {
+    "hash": "4c589b31eb6563de",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/balanz": {
+    "hash": "3ffcbb844275f385",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-ciudad": {
+    "hash": "93cfa37c0411675c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-comafi": {
+    "hash": "3685a5ef36a1d5ae",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-credicoop": {
+    "hash": "b61901d885b4f192",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-de-cordoba-bancor": {
+    "hash": "613c72c3aadb56d4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-de-corrientes": {
+    "hash": "fb76e8f4f1c231d0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-de-formosa": {
+    "hash": "ceca2ce72f9ff70d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-de-la-nacion-argentina": {
+    "hash": "ec314701273258f9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-de-la-pampa": {
+    "hash": "b8c8ac11919956d8",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-de-tierra-del-fuego": {
+    "hash": "af4ca40ff29ebd43",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-de-valores": {
+    "hash": "68abb290d8ea801a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-del-sol": {
+    "hash": "45ebee38cc980020",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-entre-rios-bersa": {
+    "hash": "d6304ba690fd19b7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-galicia": {
+    "hash": "4804c2d86bc20afd",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-hipotecario": {
+    "hash": "9174e9a32c0943f5",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-julio": {
+    "hash": "afa0641408284c29",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-macro": {
+    "hash": "9ae38f1a6d49d817",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-municipal-de-rosario": {
+    "hash": "5a933e3b13afdbd4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-patagonia": {
+    "hash": "826fd6e69d9a0e87",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-patagonia-380": {
+    "hash": "e286016428e35c8d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-piano": {
+    "hash": "522642f71df948a3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-provincia": {
+    "hash": "f3a40b0fe0be744b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-santander-rio": {
+    "hash": "7962498f6269aa04",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/banco-supervielle": {
+    "hash": "e7daa2fa525bbc9a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/base": {
+    "hash": "5354c17c81ee4a0b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bbva": {
+    "hash": "f7578d9d3fd1b69f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bbva-argentina": {
+    "hash": "88fdd282d943d38f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bcra": {
+    "hash": "e1d3b2ac2c38863f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/beaudroit": {
+    "hash": "34c183a8dae6427b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/belo": {
+    "hash": "d5b0c58519c93325",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/berry": {
+    "hash": "48c7bda1cf8f51b7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bice": {
+    "hash": "7f8c784e57da4007",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bimbo": {
+    "hash": "058df965161df065",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/binance": {
+    "hash": "ca1b9f1aff3c41ed",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bitget": {
+    "hash": "6b4a3f1bc0acb99f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bitkey": {
+    "hash": "7d97af2e7b558ea0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bitso": {
+    "hash": "f8acaacafe633d5b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bmw": {
+    "hash": "e849292bfd466887",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bond-terminal": {
+    "hash": "893030d417e9c7ff",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/booking-com": {
+    "hash": "dedc95b0efcab109",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bpn-banco-provincia-de-neuquen": {
+    "hash": "059dab0fd4e796d0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/brahma": {
+    "hash": "1a15b2c49f9c249d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/brubank": {
+    "hash": "25f7c1cbb33b3b58",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bull-market-brokers": {
+    "hash": "faaa855ebb19ac3c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bun": {
+    "hash": "8a8bda569c4ea9d1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/burger-king": {
+    "hash": "1f19880c5e0e0ec7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/bybit": {
+    "hash": "b1a7da757e29cfb2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/byd": {
+    "hash": "363ba3fc5e047a68",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/byma": {
+    "hash": "46909e80d3d46c7f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/c5n": {
+    "hash": "7ea6c957cdd8afb7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cabify": {
+    "hash": "2d6c960dbe0693b0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cafe-martinez": {
+    "hash": "df1d587a294dfa94",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cagnoli": {
+    "hash": "cc338a1321ede6b2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/camuzzi-gas": {
+    "hash": "eb5dc285b3613809",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/canal-26": {
+    "hash": "c4df95546caed008",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/carrefour": {
+    "hash": "df64ea4985132ea7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/carrefour-banco": {
+    "hash": "5a8c77d2657c62e6",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/casa-del-audio": {
+    "hash": "1c3e60e10765791b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/catena-zapata": {
+    "hash": "f8177d4b4016e0ab",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/celulosa-argentina": {
+    "hash": "763ecc26f5d79710",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cencosud": {
+    "hash": "3765b9ab0df9aecd",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/central-puerto": {
+    "hash": "f91a09e1f7e7f7d0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cerveceria-patagonia": {
+    "hash": "ab233ad22750db81",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cerveceria-quilmes": {
+    "hash": "dd3165d1d32147ad",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cerveza-corona": {
+    "hash": "516bb654c62b86e0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cetrogar": {
+    "hash": "9c4d99ea1ebe4a3b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/chainlink": {
+    "hash": "2ee991672d3ec88f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/changan": {
+    "hash": "b9662f140fb41103",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/changomas": {
+    "hash": "8067a03177fd52e7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cheeky": {
+    "hash": "3f07a567ac6979ee",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/chery": {
+    "hash": "113d3f995d525f77",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/chevrolet": {
+    "hash": "e5f6a2673a4b52cc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/circle": {
+    "hash": "88c7d0be6f41aed5",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/citroen": {
+    "hash": "06b3b8597241b87e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/clarin": {
+    "hash": "c0742c6dc568d335",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/claro-argentina": {
+    "hash": "68ffe8c9b7ec4dd1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/claro-pay": {
+    "hash": "576e69ffa9d53199",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/clerk": {
+    "hash": "afcb498255d9754e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/clinica-y-maternidad-suizo-argentina": {
+    "hash": "fc4110e7e72cf45a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cloudflare": {
+    "hash": "7f2edb49e92b119d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/coca-cola-femsa": {
+    "hash": "a6255d2e2bc1cf68",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cocos": {
+    "hash": "649bd21b0f08b5d1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cohen-aliados": {
+    "hash": "dbd6d2ff5f18887d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/coinbase": {
+    "hash": "212c8f173bb0bdf0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/comparatasas": {
+    "hash": "2f8b8c67ca157918",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/compumundo": {
+    "hash": "5ea7ea9e0542737d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/conicet": {
+    "hash": "078a249f94bfa88a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/copa-airlines": {
+    "hash": "de04670fe59464cc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/coto": {
+    "hash": "276425d5bf557989",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cresud": {
+    "hash": "85a5a3d1969ebdbc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/cronica": {
+    "hash": "5f1e264d65f9ae32",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/crypto-com": {
+    "hash": "31fcf06c4a5e11d7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/curve": {
+    "hash": "2f4ea351ab7219a7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/decrypto": {
+    "hash": "1076b034f1f91fa7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/deno": {
+    "hash": "c4fa74a65e373e4e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/despegar": {
+    "hash": "ad53c095a8c01335",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/dexter": {
+    "hash": "0dc6710a24e5ca0d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/diarco": {
+    "hash": "3f1f48b38a29c95a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/diario-uno": {
+    "hash": "c0e2eb3af91c53fd",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/disco": {
+    "hash": "8891aa9af13d0a7e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/docker": {
+    "hash": "6ab9ba877989f671",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/dodge": {
+    "hash": "55e85f7768aa7e04",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/dolarito": {
+    "hash": "7fadb3c2f8fe95cc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/dollar-rent-a-car": {
+    "hash": "a93563fbbc2644fd",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/don-satur": {
+    "hash": "64b720b61f6f8637",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ds-automobiles": {
+    "hash": "052730f9ac27420f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/easy": {
+    "hash": "b0b5a1d1cfbba43a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/edenor": {
+    "hash": "71203ddbee97bb3d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/edenor-211": {
+    "hash": "33a8441690013d78",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/el-club-de-la-milanesa": {
+    "hash": "336a0d05f06131a6",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/el-cronista": {
+    "hash": "ef5eb9c08b0947c1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/el-destape": {
+    "hash": "5c4e87cc86a43a66",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/el-dia-la-plata": {
+    "hash": "e477907ef34f25ef",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/el-trece": {
+    "hash": "89f4433629d63dd6",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/enargas": {
+    "hash": "96fbc66ec7adbd57",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/esso": {
+    "hash": "fc0e381a8cbb2a19",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ethena": {
+    "hash": "5c9afd0730e556fa",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ethereum": {
+    "hash": "f437f143467a3f3c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/exactly": {
+    "hash": "a242416812e05e22",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/expedia": {
+    "hash": "1172c183235892dc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/experta-seguros": {
+    "hash": "0ec22d4959b0cf8f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/farmacity": {
+    "hash": "8d39e1addf94f119",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/federacion-patronal-seguros": {
+    "hash": "15bf02671bed5fa9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/fiat": {
+    "hash": "5679fb898270ebba",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/finanzasargy": {
+    "hash": "2e4b48b09a002773",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/fiwind": {
+    "hash": "31cec49b19def626",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/fluidkey": {
+    "hash": "6b94ebf272d3c69e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/flybondi": {
+    "hash": "c4936d960b405ec4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ford": {
+    "hash": "f252405551445afc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/fravega": {
+    "hash": "5376add3e237bcca",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/galeno": {
+    "hash": "c3487b6ee29540d3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/galicia": {
+    "hash": "9f446794d6fd299c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/gasti": {
+    "hash": "3f04d5f63de119a7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/gemini": {
+    "hash": "18d5a48784130d33",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/genomma-lab": {
+    "hash": "52b31e07dcf1cab5",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/github": {
+    "hash": "26d669d1768a0aa6",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/go": {
+    "hash": "b62924a8f3b48d88",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/gol-linhas-aereas": {
+    "hash": "672a16b9f695f6ee",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/grido": {
+    "hash": "034b5deec632453d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/grimoldi": {
+    "hash": "8656077c6e8174cc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/guaymallen": {
+    "hash": "dbbf5fbc77a5744d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/gulf": {
+    "hash": "314e510f3badf49e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/gwm-great-wall": {
+    "hash": "b1663ae5874c34e0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/havanna": {
+    "hash": "2f2551a6df32fcb2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/heineken": {
+    "hash": "cdd65fa5aa2396a9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/heineken-313": {
+    "hash": "36c3c8b2f7c7118b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/hertz": {
+    "hash": "5537176fbcfe3594",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/hilton": {
+    "hash": "24309965ecfc03b8",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/honda": {
+    "hash": "9b06cb0ea7ab8be5",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/hospital-aleman": {
+    "hash": "e42a08c299d10841",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/hospital-italiano-de-buenos-aires": {
+    "hash": "d7f86acc2ccebad2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/hyatt": {
+    "hash": "b9fec5a8c506d4fb",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/hyperliquid": {
+    "hash": "0fe799e6c6069f99",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/hyundai": {
+    "hash": "15b103f79112aeb9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ieb-invertir-en-bolsa": {
+    "hash": "c8ff3cf0bb219aa4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/impuestito": {
+    "hash": "c7590d8e6fffabbf",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/incaa": {
+    "hash": "326497771ecf9219",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/indec": {
+    "hash": "3d2722603b6097ee",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/infleta": {
+    "hash": "7b985519c8b65f58",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/infobae": {
+    "hash": "5a0bacb028a0b577",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/intercontinental-ihg": {
+    "hash": "ddf06bade9975d7c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/invertir-online-iol": {
+    "hash": "fd9fcd8f4f83c5d4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ioio": {
+    "hash": "62554f1115620c0b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/iosfa": {
+    "hash": "e7a0606f9751c595",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/iplan": {
+    "hash": "b3d58a16471b4b8a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/isuzu": {
+    "hash": "37fd915aeeb63cd0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/iveco": {
+    "hash": "a113a0f810e899f3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/jeep": {
+    "hash": "4771faf83fa98f66",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/jerarquicos-salud": {
+    "hash": "5064bea79fd3806c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/jetsmart": {
+    "hash": "dcf7cf070fc5dce3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/jumbo": {
+    "hash": "0219a832bcca668e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/jumper": {
+    "hash": "200bf0c69c25548f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/jupiter": {
+    "hash": "c955521a7cbd35b2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/kayak": {
+    "hash": "afbb4bb7ace910f5",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/kia": {
+    "hash": "e10b25fc6adc79c1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/kosiuko": {
+    "hash": "701be98d7d78107e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/kraken": {
+    "hash": "e8d614f9e15977a3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ktm": {
+    "hash": "40695ce09ba19059",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/kucoin": {
+    "hash": "adaa4bd231c8c475",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/la-anonima": {
+    "hash": "8e1b6cf9eafe6836",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/la-caja-seguros": {
+    "hash": "dda1dbefa514667b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/la-capital": {
+    "hash": "ef6c8f1247e207f8",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/la-gaceta-tucuman": {
+    "hash": "9eab62f04490a1da",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/la-nacion": {
+    "hash": "1314810b4fff6ec2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/la-prensa": {
+    "hash": "7ce19c60713c7166",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/la-segunda-seguros": {
+    "hash": "a51010aad96cc57a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/la-serenisima-mastellone": {
+    "hash": "6750816b9ba25a1b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/la-voz-del-interior": {
+    "hash": "d8c087a057cb9066",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/lacoste": {
+    "hash": "28faff644922aa82",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/land-rover": {
+    "hash": "eb53c14d9974fc56",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/latam": {
+    "hash": "84bdc0676ece45fd",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ledesma": {
+    "hash": "b5bde7c674518322",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ledger": {
+    "hash": "2393c1cddd0339a0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/lemon-cash": {
+    "hash": "cb15129f13333c31",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/lido": {
+    "hash": "11ba1e5a19cadb4d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/loginter": {
+    "hash": "719c9395910ebf29",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/loma-negra": {
+    "hash": "1b580b7adb856589",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/los-andes-mendoza": {
+    "hash": "23105dee17c6e426",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/macro": {
+    "hash": "81db30e46da5acb7",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/makro": {
+    "hash": "2cd489efc9379f7e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mapfre": {
+    "hash": "4768b9e853e938cc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/maria-cher": {
+    "hash": "5b64fc9612f4a699",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/markova": {
+    "hash": "cddb84b9e4744e73",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/marriott": {
+    "hash": "0d9823b3365d2e60",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mcdonald-s": {
+    "hash": "788bdbe6fd67314f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/medicus": {
+    "hash": "1a3bae1ad7287c7e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/medife": {
+    "hash": "3b68b9388f29326b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/megatone": {
+    "hash": "d4bdc23e275bf179",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mercado-libre": {
+    "hash": "34ae27bd12e99642",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mercado-pago": {
+    "hash": "b041d0d562d2241b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mercedes-benz": {
+    "hash": "dbbde2548d90ee6c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/metamask": {
+    "hash": "1b16a5f24ea7244a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/metrogas": {
+    "hash": "51b5bbf23fc8a998",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/metrogas-214": {
+    "hash": "d64352ad92e9f7ec",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mg-motor": {
+    "hash": "8d1b2747ed682c88",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mi-argentina": {
+    "hash": "a943d97b9bd752eb",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mimo": {
+    "hash": "29f05f4a1cd1dc92",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mini": {
+    "hash": "1b1441fc733b2b4d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/minipay": {
+    "hash": "a2f96dea7f3a667f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mitsubishi-motors": {
+    "hash": "4136514ae67ead09",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mobbex": {
+    "hash": "1f75c6465932872c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/modo": {
+    "hash": "acbcbed611c66c8b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/molino-canuelas": {
+    "hash": "eab2b9b808864c20",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/molinos-rio-de-la-plata": {
+    "hash": "92c7b0dd64ba3aef",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mondelez": {
+    "hash": "6442ca13fb528045",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/moneygram": {
+    "hash": "a6543ebb0b51381f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/morfy": {
+    "hash": "ea5fc560c4b9ce91",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/morpho": {
+    "hash": "ec027eccb555975f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/mostaza": {
+    "hash": "4023200959919edc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/movistar-argentina": {
+    "hash": "0507d145cf1b2c49",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/naldo": {
+    "hash": "c7be68a57b9ec489",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/naranja-x": {
+    "hash": "6d3e706eaef0ce17",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/natura-cosmeticos": {
+    "hash": "9694aa42722c62d5",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/neon": {
+    "hash": "d3f468c429f105cc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/nestle": {
+    "hash": "71fba8e2f045e57c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/netlify": {
+    "hash": "ee3473ccab4478f4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/new-balance": {
+    "hash": "17d302a8f90c0665",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/nexo": {
+    "hash": "f8ae14917873462c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/next-js": {
+    "hash": "5a66a5305b1c5b00",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/nike": {
+    "hash": "04e973a383c8dc78",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/nissan": {
+    "hash": "2a9179a5c1c8b760",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/noblex": {
+    "hash": "a2738005b6693e83",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/node-js": {
+    "hash": "c77176321d904236",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/norton": {
+    "hash": "bd81fa4e01eb2ba3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/nubi": {
+    "hash": "91783011ce1b131b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/nuxt": {
+    "hash": "6fad7edad2707ca4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/oil-combustibles": {
+    "hash": "4552c2f7fdf62140",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/okx": {
+    "hash": "0fed321944a6c9bb",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/omint": {
+    "hash": "f626a63742d7c1b1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/on-city": {
+    "hash": "7b446374a060978b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/osde": {
+    "hash": "8e9907d774dcb3c1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/osdepym": {
+    "hash": "c89bcfc361e2b1fb",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/osecac": {
+    "hash": "317de965a5bdf087",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/osperyh": {
+    "hash": "0c00936615b76ba1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ospia": {
+    "hash": "ebce2ed69e6c1941",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/osprera": {
+    "hash": "e2dfbb57caa1e684",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/osuthgra": {
+    "hash": "8b4c4eddcc980adb",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pagina-12": {
+    "hash": "3c77d914331788b2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pagomiscuentas": {
+    "hash": "cef38af349cb4496",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pagos360": {
+    "hash": "48e994422ab45fa4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/paladini": {
+    "hash": "830d6dbd46242697",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pami": {
+    "hash": "e3f952be88d43aa3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pampa": {
+    "hash": "4a912b9f3c16f814",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pampa-energia": {
+    "hash": "d03b14d0460d9420",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/payoneer": {
+    "hash": "e52b0a5726d02be3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/payway": {
+    "hash": "0cec1619a9bb5abe",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/peanut": {
+    "hash": "318e09d4fedccbf1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pedidosya": {
+    "hash": "a1fe3aec2a986927",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pepsico": {
+    "hash": "0561442bece4802f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/perfil": {
+    "hash": "11ca5c9ded0a7403",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/personal-pay": {
+    "hash": "ba252535bb5382c4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/peugeot": {
+    "hash": "c987b6af58c5f77e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/phantom": {
+    "hash": "b9ad21d572853b77",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pipore": {
+    "hash": "789e264a0b658963",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/plasma": {
+    "hash": "76caab5dae33e792",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pluspagos": {
+    "hash": "beb006d06f625ba1",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/polymarket": {
+    "hash": "7c07770a77ae449a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/pomelo": {
+    "hash": "bc651a486a79e659",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/porsche": {
+    "hash": "e14782afafd0f9e5",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/postgres": {
+    "hash": "f5855aebcd42bd5c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ppi": {
+    "hash": "0194638a6681a30d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/prevencion-salud": {
+    "hash": "664f664183445e2f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/prex": {
+    "hash": "f5af1f941c43871c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/prisma": {
+    "hash": "7c698af081b7bbbc",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/prisma-medios-de-pago": {
+    "hash": "5b21c5bf9c2f45f2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/provincia-seguros": {
+    "hash": "e160312154fd44fa",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/puma": {
+    "hash": "b657444103e4e9d6",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/puma-energy": {
+    "hash": "79b64633e689c80e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/python": {
+    "hash": "763ee97d2036b0b2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/radisson": {
+    "hash": "f34024812a9bafb6",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/rainbow": {
+    "hash": "d50d22cce0fdef49",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ram": {
+    "hash": "171fc26e56c2320d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/rapanui": {
+    "hash": "8138ae3bd711c24d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/rappi": {
+    "hash": "152071ad9f9a604a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/rapsodia": {
+    "hash": "9858cae4198e26ab",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/react": {
+    "hash": "a25d0bb9c6a01282",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/red-link": {
+    "hash": "43d97905404d87c2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/redis": {
+    "hash": "22c0668af2ca5d76",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/renaper": {
+    "hash": "3dca75cb4a1a84d9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/renault": {
+    "hash": "2b30563fd8446dd8",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/rendimientos": {
+    "hash": "c57a739051c8387e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/rio-negro": {
+    "hash": "9efc3334ebf7e877",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ripio": {
+    "hash": "fc257f11d4c52b57",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/roxom": {
+    "hash": "c36cf8cc20888b66",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/rust": {
+    "hash": "d82185f5b59c6e2d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/safe": {
+    "hash": "12ff0efbeda0675a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/samsung": {
+    "hash": "b4f3f4db65e9f1a4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/san-cristobal-seguros": {
+    "hash": "5e1dc83e0abd8d4d",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/sancor-salud": {
+    "hash": "76a023e2258478c2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/sancor-seguros": {
+    "hash": "5c232735f4255890",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/satoshitango": {
+    "hash": "3837a205885cfe7b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/sbs-trading": {
+    "hash": "f2a4c211d7121e0e",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/senasa": {
+    "hash": "bda086135ef34c9c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/shell": {
+    "hash": "098e0922fe1f449b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/sherman": {
+    "hash": "89bae33f0aff2b4a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/sla": {
+    "hash": "3d6ca247cb760f0c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/sodimac": {
+    "hash": "564ec1bbbc25fdca",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/solana": {
+    "hash": "a638b534ceb7d968",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/sos-salud": {
+    "hash": "82e1425b1a507893",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/sqlite": {
+    "hash": "59a763c29c2f4929",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/starbucks": {
+    "hash": "ae87f4bc00f22bf4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/starlink": {
+    "hash": "72a0c0b2cc055164",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/steamcito": {
+    "hash": "a05a27642e275adf",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/stella-artois": {
+    "hash": "8ee73b8857cd67c5",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/stock-center": {
+    "hash": "3af72f78ae8c0964",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/subaru": {
+    "hash": "7bc5fbfb3ba68609",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/supabase": {
+    "hash": "de5f3bcf27819d6b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/supermercados-dia": {
+    "hash": "ee57e3802efab5e2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/supervielle": {
+    "hash": "8da2a2e61e507c04",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/suzuki": {
+    "hash": "d2dffc73e56aa184",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/svelte": {
+    "hash": "12f924779b61a662",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/swiss-medical": {
+    "hash": "e47738d3d3cca34a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tailwind": {
+    "hash": "1dfd5957b0d8b2d8",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tapi": {
+    "hash": "e89e46a398d4bf7b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tecpetrol": {
+    "hash": "ee2d36415ade9a1a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/telecentro": {
+    "hash": "246dd9466b6cfc49",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/telefe": {
+    "hash": "ef01e708880fa549",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tenaris": {
+    "hash": "e91606eb29dcdd3b",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ternium": {
+    "hash": "1666b96398ecf1ca",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tesla": {
+    "hash": "36cf845229622a50",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tgs": {
+    "hash": "cddbdc48071d387c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tienda-dolar": {
+    "hash": "14b91da5985653a5",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tiendanube": {
+    "hash": "78bb2eb091a5bd7f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tn": {
+    "hash": "2b1da455724aaaf4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/todomoda": {
+    "hash": "0447675644155852",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tommy-hilfiger": {
+    "hash": "3d8d6cd4d6a907c8",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/topper": {
+    "hash": "2accec2176c1c747",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/toyota": {
+    "hash": "efa1853f7ae9b6d3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/transener": {
+    "hash": "4fb34ff542b3fb50",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/trapiche": {
+    "hash": "8e1788078325f76c",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tregar": {
+    "hash": "ebc1aaec40a5378f",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tripadvisor": {
+    "hash": "f30ee3ccc697ad36",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/tuenti": {
+    "hash": "112f89e91c3c35ee",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/typescript": {
+    "hash": "f2d8647e54495f40",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/uala": {
+    "hash": "bf8297ee27f1f5f2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/uber-eats": {
+    "hash": "37c1487812c45107",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/uilo-bank-ex-wilobank": {
+    "hash": "2f755e90856c0f99",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/unilever": {
+    "hash": "1fe748ddca548176",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/uniswap": {
+    "hash": "0d52452ec5db202a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/upstash": {
+    "hash": "5f68ab068fb4fc46",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/vea": {
+    "hash": "c6cf642daebf68d9",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/vercel": {
+    "hash": "1c8231594f20c6d3",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/veta-capital": {
+    "hash": "f7a9d626c23ce640",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/vital": {
+    "hash": "ba6aff85427ac50a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/vite": {
+    "hash": "1d3014a58601ada4",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/volkswagen": {
+    "hash": "fc5833b7019911ab",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/volvo": {
+    "hash": "27f92378833713e0",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/vue": {
+    "hash": "60a070ba72ee314a",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/wise": {
+    "hash": "e76f512af74859d2",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/wyndham-howard-johnson": {
+    "hash": "3e9e070891488c28",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/yamaha": {
+    "hash": "2c47b2b04c80d787",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ypf": {
+    "hash": "d75da459531ddef8",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/ypf-161": {
+    "hash": "1aa890a95d54ab93",
+    "lastmod": "2026-11-20"
+  },
+  "/logo/zara": {
+    "hash": "96eb17fa0ec8ecdb",
+    "lastmod": "2026-11-20"
+  }
+}

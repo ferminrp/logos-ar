@@ -32,6 +32,8 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
   const googleUrl = getEntityLogoUrl(entity)
   const catalogLogoUrl = getAbsoluteEntityLogoUrl(entity)
   const logoSource = getEntityLogoSource(entity)
+  // Hosted logos are 256px assets; third-party favicons top out at 128px.
+  const isHostedLogo = googleUrl.startsWith("/")
   const duckUrl = getDuckDuckGoFaviconUrl(entity.domain)
   const googleCurl = getGoogleCurl(entity.domain, defaultCurlConfig)
   const duckCurl = getDuckDuckGoCurl(entity.domain, defaultCurlConfig)
@@ -67,13 +69,20 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
       <SponsorSlot slug={slug} categoryId={entity.categoryId} />
 
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-        <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary">
+        <div
+          className={
+            isHostedLogo
+              ? "flex h-64 w-64 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary p-4 sm:h-72 sm:w-72"
+              : "flex h-40 w-40 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary p-4"
+          }
+        >
           <img
             src={googleUrl}
             alt={imageAlt}
-            width={80}
-            height={80}
-            className="h-20 w-20 rounded-lg object-contain"
+            width={isHostedLogo ? 256 : 128}
+            height={isHostedLogo ? 256 : 128}
+            fetchPriority="high"
+            className="h-full w-full rounded-lg object-contain"
             referrerPolicy="no-referrer"
           />
         </div>

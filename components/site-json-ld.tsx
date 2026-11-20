@@ -1,4 +1,9 @@
 import { getSiteUrl } from '@/lib/site-url'
+import {
+  HOME_DESCRIPTION,
+  SITE_ALTERNATE_NAME,
+  SITE_NAME,
+} from '@/lib/site-brand'
 
 const siteUrl = getSiteUrl()
 
@@ -9,9 +14,10 @@ const siteSchema = {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
       url: siteUrl,
-      name: 'Logos Argentina',
-      description:
-        'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.',
+      name: SITE_NAME,
+      alternateName: SITE_ALTERNATE_NAME,
+      description: HOME_DESCRIPTION,
+      publisher: { '@id': `${siteUrl}/#organization` },
       inLanguage: 'es-AR',
       potentialAction: {
         '@type': 'SearchAction',
@@ -25,8 +31,10 @@ const siteSchema = {
     {
       '@type': 'Organization',
       '@id': `${siteUrl}/#organization`,
-      name: 'Logos Argentina',
+      name: SITE_NAME,
+      alternateName: SITE_ALTERNATE_NAME,
       url: siteUrl,
+      logo: `${siteUrl}/apple-icon.png`,
       sameAs: ['https://github.com/ferminrp/logos-ar'],
     },
   ],

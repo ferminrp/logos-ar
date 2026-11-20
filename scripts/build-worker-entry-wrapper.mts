@@ -11,12 +11,14 @@ export const WORKER_WRAPPER_MAIN = 'wrapper.mjs'
 export const HOME_DISCOVERY_BUNDLE = 'home-discovery-bundle.mjs'
 export const CANONICAL_REDIRECT_BUNDLE = 'canonical-redirect-bundle.mjs'
 export const HOSTED_LOGOS_BUNDLE = 'hosted-logos-bundle.mjs'
+export const MARKDOWN_NEGOTIATION_BUNDLE = 'markdown-negotiation-bundle.mjs'
 
 export function buildWrapperSource(): string {
   return `import astro from './entry.mjs';
 import { applyHomeDiscoveryHeaders, resolveWorkerSiteUrl } from './${HOME_DISCOVERY_BUNDLE}';
 import { maybeCanonicalRedirect } from './${CANONICAL_REDIRECT_BUNDLE}';
 import { maybeServeHostedLogo } from './${HOSTED_LOGOS_BUNDLE}';
+import { maybeServeMarkdown } from './${MARKDOWN_NEGOTIATION_BUNDLE}';
 
 export default {
   async fetch(request, env, ctx) {
@@ -24,6 +26,8 @@ export default {
     if (redirect) return redirect;
     const hostedLogo = await maybeServeHostedLogo(request, env);
     if (hostedLogo) return hostedLogo;
+    const markdown = await maybeServeMarkdown(request, env);
+    if (markdown) return markdown;
     const response = await astro.fetch(request, env, ctx);
     const url = new URL(request.url);
     return applyHomeDiscoveryHeaders(response, {
@@ -56,6 +60,10 @@ export async function buildWorkerEntryWrapper(serverRoot = serverDir): Promise<v
   await bundleWorkerModule(
     'lib/worker-logos-r2.ts',
     path.join(serverRoot, HOSTED_LOGOS_BUNDLE),
+  )
+  await bundleWorkerModule(
+    'lib/markdown-negotiation.ts',
+    path.join(serverRoot, MARKDOWN_NEGOTIATION_BUNDLE),
   )
 
   await writeFile(path.join(serverRoot, WORKER_WRAPPER_MAIN), buildWrapperSource(), 'utf8')

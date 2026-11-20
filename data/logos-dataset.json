@@ -1,5 +1,5 @@
 {
-  "version": "38f09f894055",
+  "version": "6622757b4b55",
   "totalItems": 407,
   "items": [
     {
@@ -183,7 +183,7 @@
       "domain": "uala.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=uala.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/uala.com.ar.ico",
-      "catalog_logo_url": "/logos/uilo-bank-ex-wilobank.png",
+      "catalog_logo_url": "/logos/uala.png",
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
@@ -304,7 +304,7 @@
       "domain": "uala.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=uala.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/uala.com.ar.ico",
-      "catalog_logo_url": "/logos/uilo-bank-ex-wilobank.png",
+      "catalog_logo_url": "/logos/uala.png",
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",

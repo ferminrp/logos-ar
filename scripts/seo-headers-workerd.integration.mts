@@ -74,6 +74,49 @@ describe('SEO headers on clean build (wrangler dev)', () => {
     assert.equal(cc, HOME_DOCUMENT_CACHE_CONTROL)
   })
 
+  it('negotiates Markdown for prerendered pages and keeps HTML as default', async () => {
+    for (const pathname of ['/', '/categorias', '/docs', '/logo/mercado-pago', '/categoria/bancos', '/guia/excel']) {
+      const markdown = await fetch(`${BASE}${pathname}`, {
+        headers: { Accept: 'text/markdown' },
+      })
+      assert.equal(markdown.status, 200, pathname)
+      assert.match(markdown.headers.get('content-type') ?? '', /^text\/markdown/, pathname)
+      assert.match(markdown.headers.get('vary') ?? '', /accept/i, pathname)
+      // Same URL as the HTML page: it must stay indexable.
+      assert.equal(markdown.headers.get('x-robots-tag'), null, pathname)
+      assert.match(await markdown.text(), /^# /, pathname)
+
+      const html = await fetch(`${BASE}${pathname}`, {
+        headers: { Accept: 'text/html,application/xhtml+xml,*/*;q=0.8' },
+      })
+      assert.equal(html.status, 200, pathname)
+      assert.match(html.headers.get('content-type') ?? '', /^text\/html/, pathname)
+    }
+  })
+
+  it('serves .md twins as noindex Markdown', async () => {
+    for (const pathname of ['/index.md', '/docs.md', '/logo/mercado-pago.md']) {
+      const res = await fetch(`${BASE}${pathname}`)
+      assert.equal(res.status, 200, pathname)
+      assert.match(res.headers.get('content-type') ?? '', /^text\/markdown/, pathname)
+      assert.equal(res.headers.get('x-robots-tag'), 'noindex', pathname)
+    }
+  })
+
+  it('logo page exposes its own og:image, ImageObject and Markdown alternate', async () => {
+    const html = await (await fetch(`${BASE}/logo/mercado-pago`)).text()
+    assert.match(html, /<meta property="og:image" content="[^"]*\/logos\/mercado-pago\.png"/)
+    assert.match(html, /"@type":"ImageObject"/)
+    assert.match(html, /<link rel="alternate" type="text\/markdown" href="[^"]*\/logo\/mercado-pago\.md"/)
+  })
+
+  it('sitemap has per-day lastmod and logo images', async () => {
+    const xml = await (await fetch(`${BASE}/sitemap.xml`)).text()
+    assert.match(xml, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/)
+    assert.doesNotMatch(xml, /<lastmod>[^<]*T[^<]*<\/lastmod>/)
+    assert.match(xml, /<image:loc>[^<]*\/logos\/mercado-pago\.png<\/image:loc>/)
+  })
+
   it('GET /sitemap.xml has long-lived cache-control', async () => {
     const res = await fetch(`${BASE}/sitemap.xml`)
     assert.equal(res.status, 200)

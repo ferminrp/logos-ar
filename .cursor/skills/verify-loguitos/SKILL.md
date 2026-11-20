@@ -17,7 +17,7 @@ pnpm verify:loguitos launch
 
 This runs `pnpm build` (prebuild datasets, Astro build, postbuild sitemap) with **`PUBLIC_SLOT_SPONSOR=on`** unless you already set it, so Fase 2 sponsor asides match production verification. Then it starts `wrangler dev` on a disposable port (default **3100**, override with `VERIFY_LOGUITOS_PORT`). State and PID live under `.verify-loguitos/runs/<run-id>/`.
 
-Ready when `curl -sf "http://127.0.0.1:$VERIFY_LOGUITOS_PORT/"` returns HTML containing `Logos Argentina`.
+Ready when `curl -sf "http://127.0.0.1:$VERIFY_LOGUITOS_PORT/"` returns HTML containing `Loguitos`.
 
 To reuse an already-running server (for example `pnpm dev` on **4321** or `pnpm start` after `pnpm build`), skip launch and set:
 

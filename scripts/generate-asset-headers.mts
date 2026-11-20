@@ -13,10 +13,17 @@ export const SITEMAP_CACHE_CONTROL =
 
 const GENERATED_MARKER = '# loguitos: sitemap cache (generate-asset-headers.mts)'
 
+/** Markdown twins of HTML pages: readable by agents, kept out of search indexes. */
+export const MARKDOWN_TWIN_ROBOTS = 'noindex'
+
 export function buildSitemapHeadersBlock(): string {
   return `${GENERATED_MARKER}
 /sitemap.xml
   Cache-Control: ${SITEMAP_CACHE_CONTROL}
+
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+  X-Robots-Tag: ${MARKDOWN_TWIN_ROBOTS}
 `
 }
 

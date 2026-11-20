@@ -3,6 +3,7 @@ import '@/src/styles/globals.css'
 import { SiteNavbar } from '@/components/site-navbar'
 import { ThemeProvider } from '@/components/theme-provider'
 import { getSiteUrl } from '@/lib/site-url'
+import { HOME_DESCRIPTION } from '@/lib/site-brand'
 
 export interface Props {
   title: string
@@ -11,19 +12,24 @@ export interface Props {
   robots?: string
   ogType?: string
   ogImage?: string
+  ogImageAlt?: string
   twitterCard?: string
   twitterTitle?: string
+  /** Path of the prerendered Markdown twin of this page (e.g. `/logo/uala.md`). */
+  markdownAlternate?: string
 }
 
 const {
   title,
-  description = 'Directorio de logos de bancos, fintechs y ALyCs de Argentina. Copiá los curls para usar en tu web.',
+  description = HOME_DESCRIPTION,
   canonical,
   robots = 'index, follow',
   ogType = 'website',
   ogImage = '/og-image.jpg',
+  ogImageAlt,
   twitterCard = 'summary_large_image',
-  twitterTitle = 'Logos Argentina - Directorio de Favicons',
+  twitterTitle = title,
+  markdownAlternate,
 } = Astro.props
 
 const siteUrl = getSiteUrl().replace(/\/$/, '')
@@ -47,14 +53,19 @@ const gaMeasurementId = 'G-GZLZ092Z7S'
     {description ? <meta name="description" content={description} /> : null}
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
+    {markdownAlternate ? (
+      <link rel="alternate" type="text/markdown" href={`${siteUrl}${markdownAlternate}`} />
+    ) : null}
     <meta property="og:title" content={title} />
     {description ? <meta property="og:description" content={description} /> : null}
     <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Loguitos" />
   {ogImage ? (
     <>
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+      {ogImageAlt ? <meta property="og:image:alt" content={ogImageAlt} /> : null}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={twitterTitle} />
       {description ? <meta name="twitter:description" content={description} /> : null}

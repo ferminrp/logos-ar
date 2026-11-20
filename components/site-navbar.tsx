@@ -101,7 +101,7 @@ export function SiteNavbar() {
             onClick={() => setMenuOpen(false)}
             className="font-serif shrink-0 text-xl font-medium leading-none tracking-tight text-foreground"
           >
-            L.A.
+            Loguitos
           </Link>
 
           <div className="flex min-w-0 items-center gap-2">

@@ -15,6 +15,8 @@ export function FlagPreviewCard({ flag }: FlagPreviewCardProps) {
       className="group flex items-center gap-2"
     >
       <img
+        loading="lazy"
+        decoding="async"
         src={svgUrl}
         alt={`Bandera de ${flag.name}`}
         width={24}
