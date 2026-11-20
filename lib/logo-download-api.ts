@@ -22,6 +22,7 @@ import {
 } from "./logo-image-security-headers.ts"
 import { isCloudflareWorkersRuntime } from "./worker-runtime.ts"
 import {
+  assetsFallbackPathForIsotipo,
   hasCatalogIsotipo,
   publicIsotipoSvgPath,
 } from "./isotipos-catalog.ts"
@@ -235,12 +236,15 @@ export async function handleLogoDownloadGet(
     if (!entity || !hasCatalogIsotipo(entity.slug)) {
       return Response.json({ error: "Isotipo no disponible" }, { status: 404 })
     }
-    const path = publicIsotipoSvgPath(entity.slug)
+    const path =
+      ctx.assets != null
+        ? assetsFallbackPathForIsotipo(entity.slug)
+        : publicIsotipoSvgPath(entity.slug)
     const target = new URL(path, ctx.origin)
-  const upstream =
-    ctx.assets != null
-      ? await ctx.assets.fetch(new Request(target, { method: "GET" }))
-      : await fetch(target.toString())
+    const upstream =
+      ctx.assets != null
+        ? await ctx.assets.fetch(new Request(target, { method: "GET" }))
+        : await fetch(target.toString())
 
     if (!upstream.ok) {
       return Response.json(
