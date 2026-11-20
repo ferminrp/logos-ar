@@ -10,11 +10,6 @@
     "permanent": true
   },
   {
-    "source": "/logos/bbva.svg",
-    "destination": "/logos/bbva-argentina.svg",
-    "permanent": true
-  },
-  {
     "source": "/logo/banco-provincia-bs-as",
     "destination": "/logo/banco-provincia",
     "permanent": true
@@ -22,11 +17,6 @@
   {
     "source": "/logos/banco-provincia-bs-as.png",
     "destination": "/logos/banco-provincia.png",
-    "permanent": true
-  },
-  {
-    "source": "/logos/banco-provincia-bs-as.svg",
-    "destination": "/logos/banco-provincia.svg",
     "permanent": true
   },
   {
@@ -42,11 +32,6 @@
   {
     "source": "/logos/banco-patagonia-380.png",
     "destination": "/logos/banco-patagonia.png",
-    "permanent": true
-  },
-  {
-    "source": "/logos/banco-patagonia-380.svg",
-    "destination": "/logos/banco-patagonia.svg",
     "permanent": true
   },
   {
@@ -70,11 +55,6 @@
     "permanent": true
   },
   {
-    "source": "/logos/tn-todo-noticias.svg",
-    "destination": "/logos/tn.svg",
-    "permanent": true
-  },
-  {
     "source": "/logos/tn-todo-noticias/isotipo.svg",
     "destination": "/logos/tn/isotipo.svg",
     "permanent": true
@@ -87,11 +67,6 @@
   {
     "source": "/logos/heineken-313.png",
     "destination": "/logos/heineken.png",
-    "permanent": true
-  },
-  {
-    "source": "/logos/heineken-313.svg",
-    "destination": "/logos/heineken.svg",
     "permanent": true
   },
   {
@@ -112,11 +87,6 @@
   {
     "source": "/logos/metrogas.png",
     "destination": "/logos/metrogas-214.png",
-    "permanent": true
-  },
-  {
-    "source": "/logos/metrogas.svg",
-    "destination": "/logos/metrogas-214.svg",
     "permanent": true
   },
   {

@@ -3,11 +3,11 @@ import { describe, it } from 'node:test'
 import {
   getAllEntities,
   getEntityBySlug,
-  getEntitySlugRedirects,
 } from './entity-index.ts'
+import { getPermanentRedirects } from './permanent-redirects.mts'
 
 describe('entity slug consolidation redirects', () => {
-  const redirects = getEntitySlugRedirects()
+  const redirects = getPermanentRedirects()
   const bySource = new Map(redirects.map((r) => [r.source, r.destination]))
 
   it('removes duplicate acciones slugs from the catalog', () => {
@@ -39,6 +39,8 @@ describe('entity slug consolidation redirects', () => {
     )
     assert.equal(bySource.get('/logo/bbva'), '/logo/bbva-argentina')
     assert.equal(bySource.get('/logos/bbva.png'), '/logos/bbva-argentina.png')
+    assert.equal(bySource.has('/logos/bbva.svg'), false)
+    assert.equal(bySource.has('/logos/metrogas.svg'), false)
     assert.equal(bySource.get('/logo/pampa'), '/logo/pampa-energia')
     assert.equal(bySource.get('/logo/supervielle'), '/logo/banco-supervielle')
   })

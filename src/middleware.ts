@@ -1,5 +1,6 @@
 import { defineMiddleware } from 'astro:middleware'
 import permanentRedirects from '../data/permanent-redirects.json'
+import { PERMANENT_REDIRECT_HTTP_STATUS } from '../lib/permanent-redirect-status.ts'
 import { prefersMarkdown } from '@/lib/accept'
 import { GONE_LOGO_SLUGS } from '@/lib/gone-logo-slugs'
 import { getMarkdownForPath } from '@/lib/site-markdown'
@@ -45,7 +46,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const destination = redirectMap.get(pathname)
 
   if (destination) {
-    return context.redirect(destination, 308)
+    return context.redirect(destination, PERMANENT_REDIRECT_HTTP_STATUS)
   }
 
   if (
