@@ -572,7 +572,12 @@ export const categories: Category[] = [
       { id: 157, name: "Cervecería Patagonia", domain: "www.cervezapatagonia.com.ar" },
       { id: 310, name: "Coca-Cola (Femsa)", domain: "coca-colafemsa.com" },
       { id: 311, name: "PepsiCo", domain: "www.pepsi.es" },
-      { id: 312, name: "Heineken", domain: "www.heineken.com" },
+      {
+        id: 312,
+        name: "Heineken",
+        domain: "www.heineken.com",
+        slugAliases: ["heineken-313"],
+      },
       { id: 314, name: "Cerveza Corona", domain: "www.cervezacorona.com.ar" },
       {
         id: 315,

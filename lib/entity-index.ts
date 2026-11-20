@@ -73,6 +73,14 @@ function buildEntityIndex(): EntityRecord[] {
 
 const entityIndex = buildEntityIndex()
 const entityBySlug = new Map(entityIndex.map((record) => [record.slug, record]))
+const entityBySlugAlias = new Map<string, EntityRecord>()
+for (const record of entityIndex) {
+  for (const alias of record.slugAliases ?? []) {
+    if (alias !== record.slug && !entityBySlugAlias.has(alias)) {
+      entityBySlugAlias.set(alias, record)
+    }
+  }
+}
 
 export function getAllEntities(): EntityRecord[] {
   return entityIndex
@@ -83,7 +91,7 @@ export function getAllEntitySlugs(): string[] {
 }
 
 export function getEntityBySlug(slug: string): EntityRecord | null {
-  return entityBySlug.get(slug) ?? null
+  return entityBySlug.get(slug) ?? entityBySlugAlias.get(slug) ?? null
 }
 
 export function getEntitySlug(entity: Entity): string {
