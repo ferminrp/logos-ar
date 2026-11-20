@@ -7,8 +7,15 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "run_worker_first": ["/", "/categorias", "/categoria/*", "/logo/*", "/guia/*", "/docs", "/banderas"]
+    "run_worker_first": ["/", "/categorias", "/categoria/*", "/logo/*", "/guia/*", "/docs", "/banderas", "/logos/*"]
   },
+  "r2_buckets": [
+    {
+      "binding": "LOGOS",
+      "bucket_name": "loguitos-assets",
+      "preview_bucket_name": "loguitos-assets"
+    }
+  ],
   "observability": {
     "enabled": true
   }

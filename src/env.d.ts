@@ -5,6 +5,10 @@ declare module 'cloudflare:workers' {
     ASSETS: {
       fetch: (request: Request | string | URL) => Promise<Response>
     }
+    LOGOS?: {
+      head: (key: string) => Promise<unknown>
+      get: (key: string) => Promise<unknown>
+    }
     GA4_API_SECRET?: string
   }
 }
