@@ -1168,16 +1168,6 @@
     "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
   },
   {
-    "slug": "metrogas",
-    "source_url": "https://www.metrogas.com.ar/assets/themes/metrogas/safari-pinned-tab.svg",
-    "source_type": "official-site",
-    "kind": "iso",
-    "colors": [
-      "#000000"
-    ],
-    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
-  },
-  {
     "slug": "metrogas-214",
     "source_url": "https://www.metrogas.com.ar/assets/themes/metrogas/safari-pinned-tab.svg",
     "source_type": "official-site",
@@ -1470,17 +1460,6 @@
     "colors": [
       "#0b2344",
       "#f5f5f5"
-    ],
-    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
-  },
-  {
-    "slug": "pampa",
-    "source_url": "https://pampa.com/wp-content/uploads/2023/12/pampa-favicon.svg",
-    "source_type": "official-site",
-    "kind": "iso",
-    "colors": [
-      "#00339f",
-      "#026bba"
     ],
     "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
   },
@@ -1909,18 +1888,6 @@
     ],
     "license_note": "Commons Public domain; marca registrada del titular",
     "verified_official": true
-  },
-  {
-    "slug": "supervielle",
-    "source_url": "https://www.supervielle.com.ar/sb/f/296085206817349/48x32/fe18ca3829/logo-supervielle-s-pink.svg",
-    "source_type": "official-site",
-    "kind": "iso",
-    "colors": [
-      "#920027",
-      "#ff94bb",
-      "#ed006c"
-    ],
-    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
   },
   {
     "slug": "suzuki",

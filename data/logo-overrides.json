@@ -39,6 +39,14 @@
     "logoUrl": "/logos/mercado-pago.png",
     "logoSource": "hosted"
   },
+  "axionenergy.com": {
+    "logoUrl": "/logos/axion-energy.png",
+    "logoSource": "site"
+  },
+  "www.cetrogar.com.ar": {
+    "logoUrl": "/logos/cetrogar.png",
+    "logoSource": "site"
+  },
   "belo.app": {
     "logoUrl": "/logos/belo.png",
     "logoSource": "hosted"
@@ -712,7 +720,7 @@
     "logoSource": "hosted"
   },
   "bancopatagonia.com.ar": {
-    "logoUrl": "/logos/banco-patagonia-380.png",
+    "logoUrl": "/logos/banco-patagonia.png",
     "logoSource": "hosted"
   },
   "www.conicet.gov.ar": {

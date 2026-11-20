@@ -1,4 +1,6 @@
+import isotiposMetadata from "../data/isotipos/metadata.json" with { type: "json" }
 import { categories, type Category, type Entity } from "./logos-data.ts"
+import { getEntityLogoUrl } from "./entity-logo.ts"
 
 export interface EntityRecord extends Entity {
   slug: string
@@ -93,6 +95,15 @@ export function getCategoryById(id: string): Category | null {
   return categories.find((category) => category.id === id) ?? null
 }
 
+const isotipoSlugSet = new Set(
+  (isotiposMetadata as { slug: string }[]).map((row) => row.slug),
+)
+
+function hostedLogoBasename(logoUrl: string): string | null {
+  const match = /^\/logos\/([^/]+)\.(png|svg)$/.exec(logoUrl)
+  return match?.[1] ?? null
+}
+
 export function getEntitySlugRedirects(): {
   source: string
   destination: string
@@ -105,6 +116,10 @@ export function getEntitySlugRedirects(): {
   }[] = []
 
   for (const record of entityIndex) {
+    const logoUrl = getEntityLogoUrl(record)
+    const hostedBase =
+      logoUrl.startsWith("/") ? hostedLogoBasename(logoUrl) : null
+
     for (const alias of record.slugAliases ?? []) {
       if (alias === record.slug) continue
       redirects.push({
@@ -112,6 +127,24 @@ export function getEntitySlugRedirects(): {
         destination: `/logo/${record.slug}`,
         permanent: true,
       })
+
+      if (hostedBase) {
+        for (const ext of ["png", "svg"] as const) {
+          redirects.push({
+            source: `/logos/${alias}.${ext}`,
+            destination: `/logos/${hostedBase}.${ext}`,
+            permanent: true,
+          })
+        }
+      }
+
+      if (isotipoSlugSet.has(record.slug)) {
+        redirects.push({
+          source: `/logos/${alias}/isotipo.svg`,
+          destination: `/logos/${record.slug}/isotipo.svg`,
+          permanent: true,
+        })
+      }
     }
   }
 

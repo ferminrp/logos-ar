@@ -1,12 +1,117 @@
 [
   {
+    "source": "/logo/bbva",
+    "destination": "/logo/bbva-argentina",
+    "permanent": true
+  },
+  {
+    "source": "/logos/bbva.png",
+    "destination": "/logos/bbva-argentina.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/bbva.svg",
+    "destination": "/logos/bbva-argentina.svg",
+    "permanent": true
+  },
+  {
     "source": "/logo/banco-provincia-bs-as",
     "destination": "/logo/banco-provincia",
     "permanent": true
   },
   {
+    "source": "/logos/banco-provincia-bs-as.png",
+    "destination": "/logos/banco-provincia.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/banco-provincia-bs-as.svg",
+    "destination": "/logos/banco-provincia.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logos/banco-provincia-bs-as/isotipo.svg",
+    "destination": "/logos/banco-provincia/isotipo.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logo/banco-patagonia-380",
+    "destination": "/logo/banco-patagonia",
+    "permanent": true
+  },
+  {
+    "source": "/logos/banco-patagonia-380.png",
+    "destination": "/logos/banco-patagonia.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/banco-patagonia-380.svg",
+    "destination": "/logos/banco-patagonia.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logo/supervielle",
+    "destination": "/logo/banco-supervielle",
+    "permanent": true
+  },
+  {
+    "source": "/logos/supervielle/isotipo.svg",
+    "destination": "/logos/banco-supervielle/isotipo.svg",
+    "permanent": true
+  },
+  {
     "source": "/logo/tn-todo-noticias",
     "destination": "/logo/tn",
+    "permanent": true
+  },
+  {
+    "source": "/logos/tn-todo-noticias.png",
+    "destination": "/logos/tn.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/tn-todo-noticias.svg",
+    "destination": "/logos/tn.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logos/tn-todo-noticias/isotipo.svg",
+    "destination": "/logos/tn/isotipo.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logo/edenor",
+    "destination": "/logo/edenor-211",
+    "permanent": true
+  },
+  {
+    "source": "/logo/metrogas",
+    "destination": "/logo/metrogas-214",
+    "permanent": true
+  },
+  {
+    "source": "/logos/metrogas.png",
+    "destination": "/logos/metrogas-214.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/metrogas.svg",
+    "destination": "/logos/metrogas-214.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logos/metrogas/isotipo.svg",
+    "destination": "/logos/metrogas-214/isotipo.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logo/pampa",
+    "destination": "/logo/pampa-energia",
+    "permanent": true
+  },
+  {
+    "source": "/logos/pampa/isotipo.svg",
+    "destination": "/logos/pampa-energia/isotipo.svg",
     "permanent": true
   },
   {

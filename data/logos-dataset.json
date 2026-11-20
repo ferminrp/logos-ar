@@ -1,6 +1,6 @@
 {
-  "version": "6622757b4b55",
-  "totalItems": 407,
+  "version": "ae47a81b3b84",
+  "totalItems": 400,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -84,7 +84,7 @@
       "domain": "bancopatagonia.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancopatagonia.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/bancopatagonia.com.ar.ico",
-      "catalog_logo_url": "/logos/banco-patagonia-380.png",
+      "catalog_logo_url": "/logos/banco-patagonia.png",
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
@@ -1543,17 +1543,6 @@
       "searchText": "ypf ypf.com ypf"
     },
     {
-      "name": "BBVA",
-      "domain": "bbva.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bbva.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/bbva.com.ar.ico",
-      "catalog_logo_url": "/logos/bbva-argentina.png",
-      "logo_source": "google",
-      "categoryId": "acciones",
-      "categoryName": "Acciones",
-      "searchText": "bbva bbva.com.ar bbva"
-    },
-    {
       "name": "Macro",
       "domain": "macro.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=macro.com.ar&sz=128",
@@ -1598,17 +1587,6 @@
       "searchText": "cresud www.cresud.com.ar cresud"
     },
     {
-      "name": "Edenor",
-      "domain": "edenor.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=edenor.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/edenor.com.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=edenor.com&sz=128",
-      "logo_source": "google",
-      "categoryId": "acciones",
-      "categoryName": "Acciones",
-      "searchText": "edenor edenor.com edenor"
-    },
-    {
       "name": "Galicia",
       "domain": "www.galicia.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.galicia.ar&sz=128",
@@ -1629,39 +1607,6 @@
       "categoryId": "acciones",
       "categoryName": "Acciones",
       "searchText": "loma negra www.lomanegra.com loma-negra"
-    },
-    {
-      "name": "Metrogas",
-      "domain": "metrogas.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=metrogas.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/metrogas.com.ar.ico",
-      "catalog_logo_url": "/logos/metrogas-214.png",
-      "logo_source": "google",
-      "categoryId": "acciones",
-      "categoryName": "Acciones",
-      "searchText": "metrogas metrogas.com.ar metrogas"
-    },
-    {
-      "name": "Pampa",
-      "domain": "pampa.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pampa.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/pampa.com.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=pampa.com&sz=128",
-      "logo_source": "google",
-      "categoryId": "acciones",
-      "categoryName": "Acciones",
-      "searchText": "pampa pampa.com pampa"
-    },
-    {
-      "name": "Supervielle",
-      "domain": "www.supervielle.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.supervielle.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.supervielle.com.ar.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=www.supervielle.com.ar&sz=128",
-      "logo_source": "google",
-      "categoryId": "acciones",
-      "categoryName": "Acciones",
-      "searchText": "supervielle www.supervielle.com.ar supervielle"
     },
     {
       "name": "Transener",
@@ -1706,17 +1651,6 @@
       "categoryId": "acciones",
       "categoryName": "Acciones",
       "searchText": "a3 mercados a3mercados.com.ar a3-mercados"
-    },
-    {
-      "name": "Banco Patagonia",
-      "domain": "bancopatagonia.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancopatagonia.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/bancopatagonia.com.ar.ico",
-      "catalog_logo_url": "/logos/banco-patagonia-380.png",
-      "logo_source": "google",
-      "categoryId": "acciones",
-      "categoryName": "Acciones",
-      "searchText": "banco patagonia bancopatagonia.com.ar banco-patagonia"
     },
     {
       "name": "Celulosa Argentina",
@@ -2493,7 +2427,7 @@
       "domain": "www.cetrogar.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.cetrogar.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.cetrogar.com.ar.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=www.cetrogar.com.ar&sz=128",
+      "catalog_logo_url": "/logos/cetrogar.png",
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
@@ -3435,17 +3369,6 @@
       "searchText": "heineken www.heineken.com heineken"
     },
     {
-      "name": "Heineken",
-      "domain": "www.heineken.com",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.heineken.com&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/www.heineken.com.ico",
-      "catalog_logo_url": "/logos/heineken.png",
-      "logo_source": "google",
-      "categoryId": "alimentos",
-      "categoryName": "Alimentos y bebidas",
-      "searchText": "heineken www.heineken.com heineken"
-    },
-    {
       "name": "Cerveza Corona",
       "domain": "www.cervezacorona.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.cervezacorona.com.ar&sz=128",
@@ -3633,15 +3556,15 @@
       "searchText": "shell shell.com.ar shell"
     },
     {
-      "name": "AXION energy",
-      "domain": "shell.com.ar",
-      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=shell.com.ar&sz=128",
-      "duck_domain": "https://icons.duckduckgo.com/ip3/shell.com.ar.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=shell.com.ar&sz=128",
-      "logo_source": "google",
+      "name": "Axion Energy",
+      "domain": "axionenergy.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=axionenergy.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/axionenergy.com.ico",
+      "catalog_logo_url": "/logos/axion-energy.png",
+      "logo_source": "hosted",
       "categoryId": "combustibles",
       "categoryName": "Combustibles",
-      "searchText": "axion energy shell.com.ar axion-energy"
+      "searchText": "axion energy axionenergy.com axion-energy"
     },
     {
       "name": "Esso",
