@@ -1,6 +1,6 @@
 {
-  "version": "c9e0899507d2",
-  "totalItems": 400,
+  "version": "38f09f894055",
+  "totalItems": 407,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -11,7 +11,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco de la nacion argentina bna.com.ar"
+      "searchText": "banco de la nacion argentina bna.com.ar banco-de-la-nacion-argentina"
     },
     {
       "name": "Banco Santander Río",
@@ -22,7 +22,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco santander rio santander.com.ar"
+      "searchText": "banco santander rio santander.com.ar banco-santander-rio"
     },
     {
       "name": "BBVA Argentina",
@@ -33,7 +33,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "bbva argentina bbva.com.ar"
+      "searchText": "bbva argentina bbva.com.ar bbva-argentina"
     },
     {
       "name": "Banco Galicia",
@@ -44,7 +44,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco galicia www.galicia.ar"
+      "searchText": "banco galicia www.galicia.ar banco-galicia"
     },
     {
       "name": "Banco Macro",
@@ -55,7 +55,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco macro macro.com.ar"
+      "searchText": "banco macro macro.com.ar banco-macro"
     },
     {
       "name": "Banco Provincia (Bs. As.)",
@@ -66,7 +66,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco provincia (bs. as.) bancoprovincia.com.ar banco provincia buenos aires bapro"
+      "searchText": "banco provincia (bs. as.) bancoprovincia.com.ar banco-provincia banco provincia buenos aires bapro"
     },
     {
       "name": "Banco Ciudad",
@@ -77,7 +77,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco ciudad bancociudad.com.ar"
+      "searchText": "banco ciudad bancociudad.com.ar banco-ciudad"
     },
     {
       "name": "Banco Patagonia",
@@ -88,7 +88,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco patagonia bancopatagonia.com.ar"
+      "searchText": "banco patagonia bancopatagonia.com.ar banco-patagonia"
     },
     {
       "name": "Banco Hipotecario",
@@ -99,7 +99,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco hipotecario hipotecario.com.ar"
+      "searchText": "banco hipotecario hipotecario.com.ar banco-hipotecario"
     },
     {
       "name": "Banco Supervielle",
@@ -110,7 +110,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco supervielle www.supervielle.com.ar supervielle superville"
+      "searchText": "banco supervielle www.supervielle.com.ar banco-supervielle supervielle superville"
     },
     {
       "name": "Banco Comafi",
@@ -121,7 +121,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco comafi www.comafi.com.ar"
+      "searchText": "banco comafi www.comafi.com.ar banco-comafi"
     },
     {
       "name": "Banco Piano",
@@ -132,7 +132,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco piano www.bancopiano.com.ar"
+      "searchText": "banco piano www.bancopiano.com.ar banco-piano"
     },
     {
       "name": "Banco de Córdoba (BANCOR)",
@@ -143,7 +143,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco de cordoba (bancor) bancor.com.ar bancor banco de cordoba"
+      "searchText": "banco de cordoba (bancor) bancor.com.ar banco-de-cordoba-bancor bancor banco de cordoba"
     },
     {
       "name": "BPN (Banco Provincia de Neuquén)",
@@ -154,7 +154,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "bpn (banco provincia de neuquen) www.bpn.com.ar bpn banco provincia del neuquen"
+      "searchText": "bpn (banco provincia de neuquen) www.bpn.com.ar bpn-banco-provincia-de-neuquen bpn banco provincia del neuquen"
     },
     {
       "name": "Naranja X",
@@ -165,7 +165,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "naranja x naranjax.com naranja tarjeta naranja"
+      "searchText": "naranja x naranjax.com naranja-x naranja tarjeta naranja"
     },
     {
       "name": "Brubank",
@@ -176,7 +176,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "brubank brubank.com"
+      "searchText": "brubank brubank.com brubank"
     },
     {
       "name": "Uilo Bank (ex Wilobank)",
@@ -187,7 +187,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "uilo bank (ex wilobank) uala.com.ar"
+      "searchText": "uilo bank (ex wilobank) uala.com.ar uilo-bank-ex-wilobank"
     },
     {
       "name": "Banco Credicoop",
@@ -198,7 +198,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco credicoop credicoop.coop"
+      "searchText": "banco credicoop credicoop.coop banco-credicoop"
     },
     {
       "name": "Banco de Corrientes",
@@ -209,7 +209,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco de corrientes www.bancodecorrientes.com.ar"
+      "searchText": "banco de corrientes www.bancodecorrientes.com.ar banco-de-corrientes"
     },
     {
       "name": "Banco de La Pampa",
@@ -220,7 +220,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco de la pampa bancodelapampa.com.ar"
+      "searchText": "banco de la pampa bancodelapampa.com.ar banco-de-la-pampa"
     },
     {
       "name": "Banco del Sol",
@@ -231,7 +231,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco del sol bancodelsol.com"
+      "searchText": "banco del sol bancodelsol.com banco-del-sol"
     },
     {
       "name": "Banco Entre Ríos (BERSA)",
@@ -242,7 +242,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco entre rios (bersa) bersa.com.ar"
+      "searchText": "banco entre rios (bersa) bersa.com.ar banco-entre-rios-bersa"
     },
     {
       "name": "Banco Julio",
@@ -253,7 +253,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco julio www.bancojulio.com.ar"
+      "searchText": "banco julio www.bancojulio.com.ar banco-julio"
     },
     {
       "name": "Banco de Tierra del Fuego",
@@ -264,7 +264,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco de tierra del fuego www.btf.com.ar"
+      "searchText": "banco de tierra del fuego www.btf.com.ar banco-de-tierra-del-fuego"
     },
     {
       "name": "Banco de Formosa",
@@ -275,7 +275,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco de formosa www.bancoformosa.com.ar"
+      "searchText": "banco de formosa www.bancoformosa.com.ar banco-de-formosa"
     },
     {
       "name": "Banco Municipal de Rosario",
@@ -286,7 +286,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco municipal de rosario www.bmros.com.ar"
+      "searchText": "banco municipal de rosario www.bmros.com.ar banco-municipal-de-rosario"
     },
     {
       "name": "BICE",
@@ -297,7 +297,7 @@
       "logo_source": "google",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "bice www.bice.com.ar banco de inversion y comercio exterior"
+      "searchText": "bice www.bice.com.ar bice banco de inversion y comercio exterior"
     },
     {
       "name": "Ualá",
@@ -308,7 +308,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "uala uala.com.ar"
+      "searchText": "uala uala.com.ar uala"
     },
     {
       "name": "Mercado Pago",
@@ -319,7 +319,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "mercado pago mercadopago.com.ar"
+      "searchText": "mercado pago mercadopago.com.ar mercado-pago"
     },
     {
       "name": "Belo",
@@ -330,7 +330,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "belo belo.app"
+      "searchText": "belo belo.app belo"
     },
     {
       "name": "Lemon Cash",
@@ -341,7 +341,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "lemon cash lemon.me"
+      "searchText": "lemon cash lemon.me lemon-cash"
     },
     {
       "name": "Personal Pay",
@@ -352,7 +352,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "personal pay www.personal.com.ar"
+      "searchText": "personal pay www.personal.com.ar personal-pay"
     },
     {
       "name": "Prex",
@@ -363,7 +363,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "prex www.prexcard.com.ar"
+      "searchText": "prex www.prexcard.com.ar prex"
     },
     {
       "name": "ARQ",
@@ -374,7 +374,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "arq www.arqfinance.com"
+      "searchText": "arq www.arqfinance.com arq"
     },
     {
       "name": "Fiwind",
@@ -385,7 +385,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "fiwind fiwind.io"
+      "searchText": "fiwind fiwind.io fiwind"
     },
     {
       "name": "Ripio",
@@ -396,7 +396,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "ripio ripio.com"
+      "searchText": "ripio ripio.com ripio"
     },
     {
       "name": "Carrefour Banco",
@@ -407,7 +407,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "carrefour banco www.bancodeserviciosfinancieros.com.ar"
+      "searchText": "carrefour banco www.bancodeserviciosfinancieros.com.ar carrefour-banco"
     },
     {
       "name": "Claro Pay",
@@ -418,7 +418,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "claro pay claropay.com.ar"
+      "searchText": "claro pay claropay.com.ar claro-pay"
     },
     {
       "name": "Astropay",
@@ -429,7 +429,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "astropay astropay.com"
+      "searchText": "astropay astropay.com astropay"
     },
     {
       "name": "MODO",
@@ -440,7 +440,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "modo www.modo.com.ar app modo modo pagos"
+      "searchText": "modo www.modo.com.ar modo app modo modo pagos"
     },
     {
       "name": "Roxom",
@@ -451,7 +451,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "roxom roxom.com"
+      "searchText": "roxom roxom.com roxom"
     },
     {
       "name": "Berry",
@@ -462,7 +462,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "berry berry.app"
+      "searchText": "berry berry.app berry"
     },
     {
       "name": "Wise",
@@ -473,7 +473,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "wise wise.com"
+      "searchText": "wise wise.com wise"
     },
     {
       "name": "Payoneer",
@@ -484,7 +484,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "payoneer payoneer.com"
+      "searchText": "payoneer payoneer.com payoneer"
     },
     {
       "name": "Pomelo",
@@ -495,7 +495,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "pomelo pomelo.la"
+      "searchText": "pomelo pomelo.la pomelo"
     },
     {
       "name": "Tapi",
@@ -506,7 +506,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "tapi tapi.la"
+      "searchText": "tapi tapi.la tapi"
     },
     {
       "name": "Nubi",
@@ -517,7 +517,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "nubi nubi.com.ar"
+      "searchText": "nubi nubi.com.ar nubi"
     },
     {
       "name": "PagoMisCuentas",
@@ -528,7 +528,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "pagomiscuentas pagomiscuentas.com"
+      "searchText": "pagomiscuentas pagomiscuentas.com pagomiscuentas"
     },
     {
       "name": "Red Link",
@@ -539,7 +539,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "red link redlink.com.ar"
+      "searchText": "red link redlink.com.ar red-link"
     },
     {
       "name": "Prisma Medios de Pago",
@@ -550,7 +550,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "prisma medios de pago prismamediosdepago.com"
+      "searchText": "prisma medios de pago prismamediosdepago.com prisma-medios-de-pago"
     },
     {
       "name": "PlusPagos",
@@ -561,7 +561,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "pluspagos www.pluspagos.com"
+      "searchText": "pluspagos www.pluspagos.com pluspagos"
     },
     {
       "name": "Decrypto",
@@ -572,7 +572,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "decrypto decrypto.com.ar"
+      "searchText": "decrypto decrypto.com.ar decrypto"
     },
     {
       "name": "SatoshiTango",
@@ -583,7 +583,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "satoshitango satoshitango.com"
+      "searchText": "satoshitango satoshitango.com satoshitango"
     },
     {
       "name": "Tienda Dólar",
@@ -594,7 +594,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "tienda dolar tiendadolar.com.ar"
+      "searchText": "tienda dolar tiendadolar.com.ar tienda-dolar"
     },
     {
       "name": "Mobbex",
@@ -605,7 +605,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "mobbex www.mobbex.com"
+      "searchText": "mobbex www.mobbex.com mobbex"
     },
     {
       "name": "Payway",
@@ -616,7 +616,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "payway www.payway.com.ar"
+      "searchText": "payway www.payway.com.ar payway"
     },
     {
       "name": "Pagos360",
@@ -627,7 +627,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "pagos360 pagos360.com"
+      "searchText": "pagos360 pagos360.com pagos360"
     },
     {
       "name": "Cabify",
@@ -638,7 +638,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "cabify cabify.com"
+      "searchText": "cabify cabify.com cabify"
     },
     {
       "name": "Ioio",
@@ -649,7 +649,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "ioio ioio.com.ar"
+      "searchText": "ioio ioio.com.ar ioio"
     },
     {
       "name": "MoneyGram",
@@ -660,7 +660,7 @@
       "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
-      "searchText": "moneygram www.moneygram.com"
+      "searchText": "moneygram www.moneygram.com moneygram"
     },
     {
       "name": "Binance",
@@ -671,7 +671,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "binance binance.com"
+      "searchText": "binance binance.com binance"
     },
     {
       "name": "Nexo",
@@ -682,7 +682,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "nexo nexo.com buenbit nexo argentina"
+      "searchText": "nexo nexo.com nexo buenbit nexo argentina"
     },
     {
       "name": "OKX",
@@ -693,7 +693,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "okx okx.com"
+      "searchText": "okx okx.com okx"
     },
     {
       "name": "Kraken",
@@ -704,7 +704,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "kraken kraken.com"
+      "searchText": "kraken kraken.com kraken"
     },
     {
       "name": "Coinbase",
@@ -715,7 +715,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "coinbase coinbase.com"
+      "searchText": "coinbase coinbase.com coinbase"
     },
     {
       "name": "MiniPay",
@@ -726,7 +726,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "minipay minipay.to"
+      "searchText": "minipay minipay.to minipay"
     },
     {
       "name": "Plasma",
@@ -737,7 +737,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "plasma www.plasma.org"
+      "searchText": "plasma www.plasma.org plasma"
     },
     {
       "name": "Peanut",
@@ -748,7 +748,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "peanut peanut.me"
+      "searchText": "peanut peanut.me peanut"
     },
     {
       "name": "Uniswap",
@@ -759,7 +759,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "uniswap uniswap.org"
+      "searchText": "uniswap uniswap.org uniswap"
     },
     {
       "name": "Morpho",
@@ -770,7 +770,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "morpho morpho.org"
+      "searchText": "morpho morpho.org morpho"
     },
     {
       "name": "Jumper",
@@ -781,7 +781,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "jumper jumper.xyz"
+      "searchText": "jumper jumper.xyz jumper"
     },
     {
       "name": "Aave",
@@ -792,7 +792,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "aave aave.com"
+      "searchText": "aave aave.com aave"
     },
     {
       "name": "Bybit",
@@ -803,7 +803,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "bybit bybit.com"
+      "searchText": "bybit bybit.com bybit"
     },
     {
       "name": "Bitget",
@@ -814,7 +814,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "bitget bitget.com"
+      "searchText": "bitget bitget.com bitget"
     },
     {
       "name": "Bitkey",
@@ -825,7 +825,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "bitkey bitkey.world"
+      "searchText": "bitkey bitkey.world bitkey"
     },
     {
       "name": "Exactly",
@@ -836,7 +836,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "exactly exactly.app"
+      "searchText": "exactly exactly.app exactly"
     },
     {
       "name": "Fluidkey",
@@ -847,7 +847,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "fluidkey www.fluidkey.com"
+      "searchText": "fluidkey www.fluidkey.com fluidkey"
     },
     {
       "name": "MetaMask",
@@ -858,7 +858,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "metamask metamask.com"
+      "searchText": "metamask metamask.com metamask"
     },
     {
       "name": "Phantom",
@@ -869,7 +869,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "phantom phantom.com"
+      "searchText": "phantom phantom.com phantom"
     },
     {
       "name": "Rainbow",
@@ -880,7 +880,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "rainbow rainbow.me"
+      "searchText": "rainbow rainbow.me rainbow"
     },
     {
       "name": "Ledger",
@@ -891,7 +891,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "ledger www.ledger.com"
+      "searchText": "ledger www.ledger.com ledger"
     },
     {
       "name": "Safe",
@@ -902,7 +902,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "safe safe.global"
+      "searchText": "safe safe.global safe"
     },
     {
       "name": "Lido",
@@ -913,7 +913,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "lido lido.fi"
+      "searchText": "lido lido.fi lido"
     },
     {
       "name": "Hyperliquid",
@@ -924,7 +924,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "hyperliquid hyperliquid.xyz"
+      "searchText": "hyperliquid hyperliquid.xyz hyperliquid"
     },
     {
       "name": "Curve",
@@ -935,7 +935,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "curve curve.finance"
+      "searchText": "curve curve.finance curve"
     },
     {
       "name": "Ethena",
@@ -946,7 +946,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "ethena ethena.fi"
+      "searchText": "ethena ethena.fi ethena"
     },
     {
       "name": "Jupiter",
@@ -957,7 +957,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "jupiter jup.ag"
+      "searchText": "jupiter jup.ag jupiter"
     },
     {
       "name": "Ethereum",
@@ -968,7 +968,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "ethereum ethereum.org"
+      "searchText": "ethereum ethereum.org ethereum"
     },
     {
       "name": "Solana",
@@ -979,7 +979,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "solana solana.com"
+      "searchText": "solana solana.com solana"
     },
     {
       "name": "Base",
@@ -990,7 +990,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "base www.base.org"
+      "searchText": "base www.base.org base"
     },
     {
       "name": "Arbitrum",
@@ -1001,7 +1001,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "arbitrum arbitrum.io"
+      "searchText": "arbitrum arbitrum.io arbitrum"
     },
     {
       "name": "Chainlink",
@@ -1012,7 +1012,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "chainlink chain.link"
+      "searchText": "chainlink chain.link chainlink"
     },
     {
       "name": "Circle",
@@ -1023,7 +1023,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "circle www.circle.com"
+      "searchText": "circle www.circle.com circle"
     },
     {
       "name": "Crypto.com",
@@ -1034,7 +1034,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "crypto.com crypto.com"
+      "searchText": "crypto.com crypto.com crypto-com"
     },
     {
       "name": "KuCoin",
@@ -1045,7 +1045,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "kucoin www.kucoin.com"
+      "searchText": "kucoin www.kucoin.com kucoin"
     },
     {
       "name": "Bitso",
@@ -1056,7 +1056,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "bitso bitso.com"
+      "searchText": "bitso bitso.com bitso"
     },
     {
       "name": "Gemini",
@@ -1067,7 +1067,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "gemini www.gemini.com"
+      "searchText": "gemini www.gemini.com gemini"
     },
     {
       "name": "Polymarket",
@@ -1078,7 +1078,7 @@
       "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
-      "searchText": "polymarket polymarket.com"
+      "searchText": "polymarket polymarket.com polymarket"
     },
     {
       "name": "Next.js",
@@ -1089,7 +1089,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "next.js nextjs.org"
+      "searchText": "next.js nextjs.org next-js"
     },
     {
       "name": "Astro",
@@ -1100,7 +1100,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "astro astro.build"
+      "searchText": "astro astro.build astro"
     },
     {
       "name": "React",
@@ -1111,7 +1111,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "react react.dev"
+      "searchText": "react react.dev react"
     },
     {
       "name": "Vue",
@@ -1122,7 +1122,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "vue vuejs.org"
+      "searchText": "vue vuejs.org vue"
     },
     {
       "name": "Svelte",
@@ -1133,7 +1133,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "svelte svelte.dev"
+      "searchText": "svelte svelte.dev svelte"
     },
     {
       "name": "Nuxt",
@@ -1144,7 +1144,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "nuxt nuxt.com"
+      "searchText": "nuxt nuxt.com nuxt"
     },
     {
       "name": "Vite",
@@ -1155,7 +1155,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "vite vite.dev"
+      "searchText": "vite vite.dev vite"
     },
     {
       "name": "Tailwind",
@@ -1166,7 +1166,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "tailwind tailwindcss.com"
+      "searchText": "tailwind tailwindcss.com tailwind"
     },
     {
       "name": "TypeScript",
@@ -1177,7 +1177,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "typescript www.typescriptlang.org"
+      "searchText": "typescript www.typescriptlang.org typescript"
     },
     {
       "name": "Python",
@@ -1188,7 +1188,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "python www.python.org"
+      "searchText": "python www.python.org python"
     },
     {
       "name": "Go",
@@ -1199,7 +1199,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "go go.dev"
+      "searchText": "go go.dev go"
     },
     {
       "name": "Rust",
@@ -1210,7 +1210,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "rust rust-lang.org"
+      "searchText": "rust rust-lang.org rust"
     },
     {
       "name": "Node.js",
@@ -1221,7 +1221,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "node.js nodejs.org"
+      "searchText": "node.js nodejs.org node-js"
     },
     {
       "name": "Deno",
@@ -1232,7 +1232,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "deno deno.com"
+      "searchText": "deno deno.com deno"
     },
     {
       "name": "Bun",
@@ -1243,7 +1243,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "bun bun.sh"
+      "searchText": "bun bun.sh bun"
     },
     {
       "name": "Vercel",
@@ -1254,7 +1254,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "vercel vercel.com"
+      "searchText": "vercel vercel.com vercel"
     },
     {
       "name": "Cloudflare",
@@ -1265,7 +1265,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "cloudflare www.cloudflare.com"
+      "searchText": "cloudflare www.cloudflare.com cloudflare"
     },
     {
       "name": "Netlify",
@@ -1276,7 +1276,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "netlify www.netlify.com"
+      "searchText": "netlify www.netlify.com netlify"
     },
     {
       "name": "Redis",
@@ -1287,7 +1287,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "redis redis.io"
+      "searchText": "redis redis.io redis"
     },
     {
       "name": "Samsung",
@@ -1298,7 +1298,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "samsung www.samsung.com.ar"
+      "searchText": "samsung www.samsung.com.ar samsung"
     },
     {
       "name": "Postgres",
@@ -1309,7 +1309,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "postgres www.postgresql.org"
+      "searchText": "postgres www.postgresql.org postgres"
     },
     {
       "name": "SQLite",
@@ -1320,7 +1320,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "sqlite sqlite.org"
+      "searchText": "sqlite sqlite.org sqlite"
     },
     {
       "name": "Prisma",
@@ -1331,7 +1331,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "prisma www.prisma.io"
+      "searchText": "prisma www.prisma.io prisma"
     },
     {
       "name": "Supabase",
@@ -1342,7 +1342,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "supabase supabase.com"
+      "searchText": "supabase supabase.com supabase"
     },
     {
       "name": "Upstash",
@@ -1353,7 +1353,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "upstash upstash.com"
+      "searchText": "upstash upstash.com upstash"
     },
     {
       "name": "Neon",
@@ -1364,7 +1364,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "neon neon.com"
+      "searchText": "neon neon.com neon"
     },
     {
       "name": "Docker",
@@ -1375,7 +1375,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "docker www.docker.com"
+      "searchText": "docker www.docker.com docker"
     },
     {
       "name": "Clerk",
@@ -1386,7 +1386,7 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "clerk clerk.com"
+      "searchText": "clerk clerk.com clerk"
     },
     {
       "name": "GitHub",
@@ -1397,7 +1397,18 @@
       "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
-      "searchText": "github github.com"
+      "searchText": "github github.com github"
+    },
+    {
+      "name": "Tiendanube",
+      "domain": "tiendanube.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tiendanube.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/tiendanube.com.ico",
+      "catalog_logo_url": "/logos/tiendanube.png",
+      "logo_source": "google",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías",
+      "searchText": "tiendanube tiendanube.com tiendanube"
     },
     {
       "name": "Invertir Online (IOL)",
@@ -1408,7 +1419,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "invertir online (iol) invertironline.com"
+      "searchText": "invertir online (iol) invertironline.com invertir-online-iol"
     },
     {
       "name": "Balanz",
@@ -1419,7 +1430,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "balanz balanz.com"
+      "searchText": "balanz balanz.com balanz"
     },
     {
       "name": "Allaria",
@@ -1430,7 +1441,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "allaria allaria.com.ar"
+      "searchText": "allaria allaria.com.ar allaria"
     },
     {
       "name": "Bull Market Brokers",
@@ -1441,7 +1452,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "bull market brokers bullmarket.com.ar"
+      "searchText": "bull market brokers bullmarket.com.ar bull-market-brokers"
     },
     {
       "name": "PPI",
@@ -1452,7 +1463,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "ppi www.portfoliopersonal.com"
+      "searchText": "ppi www.portfoliopersonal.com ppi"
     },
     {
       "name": "IEB (Invertir en Bolsa)",
@@ -1463,7 +1474,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "ieb (invertir en bolsa) www.iebmas.com.ar"
+      "searchText": "ieb (invertir en bolsa) www.iebmas.com.ar ieb-invertir-en-bolsa"
     },
     {
       "name": "Cohen Aliados",
@@ -1474,7 +1485,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "cohen aliados cohen.com.ar"
+      "searchText": "cohen aliados cohen.com.ar cohen-aliados"
     },
     {
       "name": "SBS Trading",
@@ -1485,7 +1496,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "sbs trading www.gruposbs.com"
+      "searchText": "sbs trading www.gruposbs.com sbs-trading"
     },
     {
       "name": "Cocos",
@@ -1496,7 +1507,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "cocos cocos.capital"
+      "searchText": "cocos cocos.capital cocos"
     },
     {
       "name": "Veta Capital",
@@ -1507,7 +1518,7 @@
       "logo_source": "google",
       "categoryId": "alycs",
       "categoryName": "ALyCs",
-      "searchText": "veta capital vetacap.com.ar"
+      "searchText": "veta capital vetacap.com.ar veta-capital"
     },
     {
       "name": "Aluar",
@@ -1518,7 +1529,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "aluar www.aluar.com.ar"
+      "searchText": "aluar www.aluar.com.ar aluar"
     },
     {
       "name": "YPF",
@@ -1529,7 +1540,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "ypf ypf.com"
+      "searchText": "ypf ypf.com ypf"
     },
     {
       "name": "BBVA",
@@ -1540,7 +1551,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "bbva bbva.com.ar"
+      "searchText": "bbva bbva.com.ar bbva"
     },
     {
       "name": "Macro",
@@ -1551,7 +1562,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "macro macro.com.ar"
+      "searchText": "macro macro.com.ar macro"
     },
     {
       "name": "BYMA",
@@ -1562,7 +1573,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "byma www.byma.com.ar"
+      "searchText": "byma www.byma.com.ar byma"
     },
     {
       "name": "Central Puerto",
@@ -1573,7 +1584,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "central puerto www.centralpuerto.com"
+      "searchText": "central puerto www.centralpuerto.com central-puerto"
     },
     {
       "name": "Cresud",
@@ -1584,7 +1595,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "cresud www.cresud.com.ar"
+      "searchText": "cresud www.cresud.com.ar cresud"
     },
     {
       "name": "Edenor",
@@ -1595,7 +1606,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "edenor edenor.com"
+      "searchText": "edenor edenor.com edenor"
     },
     {
       "name": "Galicia",
@@ -1606,7 +1617,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "galicia www.galicia.ar"
+      "searchText": "galicia www.galicia.ar galicia"
     },
     {
       "name": "Loma Negra",
@@ -1617,7 +1628,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "loma negra www.lomanegra.com"
+      "searchText": "loma negra www.lomanegra.com loma-negra"
     },
     {
       "name": "Metrogas",
@@ -1628,7 +1639,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "metrogas metrogas.com.ar"
+      "searchText": "metrogas metrogas.com.ar metrogas"
     },
     {
       "name": "Pampa",
@@ -1639,7 +1650,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "pampa pampa.com"
+      "searchText": "pampa pampa.com pampa"
     },
     {
       "name": "Supervielle",
@@ -1650,7 +1661,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "supervielle www.supervielle.com.ar"
+      "searchText": "supervielle www.supervielle.com.ar supervielle"
     },
     {
       "name": "Transener",
@@ -1661,7 +1672,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "transener www.transener.com.ar"
+      "searchText": "transener www.transener.com.ar transener"
     },
     {
       "name": "Ternium",
@@ -1672,7 +1683,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "ternium ar.ternium.com"
+      "searchText": "ternium ar.ternium.com ternium"
     },
     {
       "name": "Banco de Valores",
@@ -1683,7 +1694,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "banco de valores valo.ar"
+      "searchText": "banco de valores valo.ar banco-de-valores"
     },
     {
       "name": "A3 Mercados",
@@ -1694,7 +1705,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "a3 mercados a3mercados.com.ar"
+      "searchText": "a3 mercados a3mercados.com.ar a3-mercados"
     },
     {
       "name": "Banco Patagonia",
@@ -1705,7 +1716,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "banco patagonia bancopatagonia.com.ar"
+      "searchText": "banco patagonia bancopatagonia.com.ar banco-patagonia"
     },
     {
       "name": "Celulosa Argentina",
@@ -1716,7 +1727,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "celulosa argentina www.celulosaargentina.com.ar"
+      "searchText": "celulosa argentina www.celulosaargentina.com.ar celulosa-argentina"
     },
     {
       "name": "Adecoagro",
@@ -1727,7 +1738,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "adecoagro www.adecoagro.com"
+      "searchText": "adecoagro www.adecoagro.com adecoagro"
     },
     {
       "name": "Genomma Lab",
@@ -1738,7 +1749,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "genomma lab www.genommalab.com"
+      "searchText": "genomma lab www.genommalab.com genomma-lab"
     },
     {
       "name": "Tenaris",
@@ -1749,7 +1760,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "tenaris www.tenaris.com"
+      "searchText": "tenaris www.tenaris.com tenaris"
     },
     {
       "name": "Loginter",
@@ -1760,7 +1771,7 @@
       "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
-      "searchText": "loginter www.loginter.com.ar"
+      "searchText": "loginter www.loginter.com.ar loginter"
     },
     {
       "name": "ARCA (ex AFIP)",
@@ -1771,7 +1782,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "arca (ex afip) www.afip.gob.ar ex afip nuevo logo afip"
+      "searchText": "arca (ex afip) www.afip.gob.ar arca-ex-afip ex afip nuevo logo afip"
     },
     {
       "name": "AGIP",
@@ -1782,7 +1793,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "agip www.agip.gob.ar"
+      "searchText": "agip www.agip.gob.ar agip"
     },
     {
       "name": "BCRA",
@@ -1793,7 +1804,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "bcra bcra.gob.ar"
+      "searchText": "bcra bcra.gob.ar bcra"
     },
     {
       "name": "ANSES",
@@ -1804,7 +1815,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "anses anses.gob.ar"
+      "searchText": "anses anses.gob.ar anses"
     },
     {
       "name": "Mi Argentina",
@@ -1815,7 +1826,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "mi argentina mi.argentina.gob.ar"
+      "searchText": "mi argentina mi.argentina.gob.ar mi-argentina"
     },
     {
       "name": "ARBA",
@@ -1826,7 +1837,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "arba www.arba.gob.ar"
+      "searchText": "arba www.arba.gob.ar arba"
     },
     {
       "name": "PAMI",
@@ -1837,7 +1848,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "pami www.pami.org.ar"
+      "searchText": "pami www.pami.org.ar pami"
     },
     {
       "name": "INDEC",
@@ -1848,7 +1859,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "indec www.indec.gob.ar"
+      "searchText": "indec www.indec.gob.ar indec"
     },
     {
       "name": "RENAPER",
@@ -1859,7 +1870,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "renaper www.renaper.gob.ar"
+      "searchText": "renaper www.renaper.gob.ar renaper"
     },
     {
       "name": "Senasa",
@@ -1870,7 +1881,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "senasa www.senasa.gob.ar"
+      "searchText": "senasa www.senasa.gob.ar senasa"
     },
     {
       "name": "ANMAT",
@@ -1881,7 +1892,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "anmat www.anmat.gob.ar"
+      "searchText": "anmat www.anmat.gob.ar anmat"
     },
     {
       "name": "ENARGAS",
@@ -1892,7 +1903,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "enargas www.enargas.gob.ar"
+      "searchText": "enargas www.enargas.gob.ar enargas"
     },
     {
       "name": "CONICET",
@@ -1903,7 +1914,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "conicet www.conicet.gov.ar"
+      "searchText": "conicet www.conicet.gov.ar conicet"
     },
     {
       "name": "INCAA",
@@ -1914,7 +1925,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "incaa www.incaa.gob.ar"
+      "searchText": "incaa www.incaa.gob.ar incaa"
     },
     {
       "name": "OSDE",
@@ -1925,7 +1936,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "osde www.osde.com.ar"
+      "searchText": "osde www.osde.com.ar osde"
     },
     {
       "name": "Swiss Medical",
@@ -1936,7 +1947,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "swiss medical www.swissmedical.com.ar swiss medical prepaga obra social swiss"
+      "searchText": "swiss medical www.swissmedical.com.ar swiss-medical swiss medical prepaga obra social swiss"
     },
     {
       "name": "Galeno",
@@ -1947,7 +1958,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "galeno www.galeno.com.ar"
+      "searchText": "galeno www.galeno.com.ar galeno"
     },
     {
       "name": "Medicus",
@@ -1958,7 +1969,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "medicus medicus.com.ar"
+      "searchText": "medicus medicus.com.ar medicus"
     },
     {
       "name": "Omint",
@@ -1969,7 +1980,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "omint www.omint.com.ar"
+      "searchText": "omint www.omint.com.ar omint"
     },
     {
       "name": "Medifé",
@@ -1980,7 +1991,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "medife medife.com.ar"
+      "searchText": "medife medife.com.ar medife"
     },
     {
       "name": "Avalian",
@@ -1991,7 +2002,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "avalian avalian.com"
+      "searchText": "avalian avalian.com avalian"
     },
     {
       "name": "Sancor Salud",
@@ -2002,7 +2013,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "sancor salud sancorsalud.com.ar"
+      "searchText": "sancor salud sancorsalud.com.ar sancor-salud"
     },
     {
       "name": "Prevención Salud",
@@ -2013,7 +2024,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "prevencion salud www.prevencionsalud.com.ar"
+      "searchText": "prevencion salud www.prevencionsalud.com.ar prevencion-salud"
     },
     {
       "name": "SOS Salud",
@@ -2024,7 +2035,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "sos salud www.sossalud.com.ar"
+      "searchText": "sos salud www.sossalud.com.ar sos-salud"
     },
     {
       "name": "Jerárquicos Salud",
@@ -2035,7 +2046,7 @@
       "logo_source": "google",
       "categoryId": "prepagas",
       "categoryName": "Prepagas",
-      "searchText": "jerarquicos salud www.jerarquicos.com"
+      "searchText": "jerarquicos salud www.jerarquicos.com jerarquicos-salud"
     },
     {
       "name": "Hospital Italiano de Buenos Aires",
@@ -2046,7 +2057,7 @@
       "logo_source": "google",
       "categoryId": "sanatorios",
       "categoryName": "Sanatorios",
-      "searchText": "hospital italiano de buenos aires www.hospitalitaliano.org.ar"
+      "searchText": "hospital italiano de buenos aires www.hospitalitaliano.org.ar hospital-italiano-de-buenos-aires"
     },
     {
       "name": "Hospital Alemán",
@@ -2057,7 +2068,7 @@
       "logo_source": "google",
       "categoryId": "sanatorios",
       "categoryName": "Sanatorios",
-      "searchText": "hospital aleman www.hospitalaleman.org.ar"
+      "searchText": "hospital aleman www.hospitalaleman.org.ar hospital-aleman"
     },
     {
       "name": "Clínica y Maternidad Suizo Argentina",
@@ -2068,7 +2079,7 @@
       "logo_source": "google",
       "categoryId": "sanatorios",
       "categoryName": "Sanatorios",
-      "searchText": "clinica y maternidad suizo argentina www.suizoargentina.com.ar"
+      "searchText": "clinica y maternidad suizo argentina www.suizoargentina.com.ar clinica-y-maternidad-suizo-argentina"
     },
     {
       "name": "OSECAC",
@@ -2079,7 +2090,7 @@
       "logo_source": "google",
       "categoryId": "obras-sociales",
       "categoryName": "Obras sociales",
-      "searchText": "osecac www.osecac.org.ar"
+      "searchText": "osecac www.osecac.org.ar osecac"
     },
     {
       "name": "OSUTHGRA",
@@ -2090,7 +2101,7 @@
       "logo_source": "google",
       "categoryId": "obras-sociales",
       "categoryName": "Obras sociales",
-      "searchText": "osuthgra www.osuthgra.org.ar"
+      "searchText": "osuthgra www.osuthgra.org.ar osuthgra"
     },
     {
       "name": "IOSFA",
@@ -2101,7 +2112,7 @@
       "logo_source": "google",
       "categoryId": "obras-sociales",
       "categoryName": "Obras sociales",
-      "searchText": "iosfa www.iosfa.gob.ar"
+      "searchText": "iosfa www.iosfa.gob.ar iosfa"
     },
     {
       "name": "OSPIA",
@@ -2112,7 +2123,7 @@
       "logo_source": "google",
       "categoryId": "obras-sociales",
       "categoryName": "Obras sociales",
-      "searchText": "ospia www.ospia.org.ar"
+      "searchText": "ospia www.ospia.org.ar ospia"
     },
     {
       "name": "OSPERYH",
@@ -2123,7 +2134,7 @@
       "logo_source": "google",
       "categoryId": "obras-sociales",
       "categoryName": "Obras sociales",
-      "searchText": "osperyh www.osperyh.org.ar"
+      "searchText": "osperyh www.osperyh.org.ar osperyh"
     },
     {
       "name": "OSDEPYM",
@@ -2134,7 +2145,7 @@
       "logo_source": "google",
       "categoryId": "obras-sociales",
       "categoryName": "Obras sociales",
-      "searchText": "osdepym www.osdepym.com.ar"
+      "searchText": "osdepym www.osdepym.com.ar osdepym"
     },
     {
       "name": "OSPRERA",
@@ -2145,7 +2156,7 @@
       "logo_source": "google",
       "categoryId": "obras-sociales",
       "categoryName": "Obras sociales",
-      "searchText": "osprera www.osprera.org.ar"
+      "searchText": "osprera www.osprera.org.ar osprera"
     },
     {
       "name": "Mercado Libre",
@@ -2156,7 +2167,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "mercado libre mercadolibre.com.ar meli mercadolibre"
+      "searchText": "mercado libre mercadolibre.com.ar mercado-libre meli mercadolibre"
     },
     {
       "name": "Carrefour",
@@ -2167,7 +2178,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "carrefour carrefour.com.ar"
+      "searchText": "carrefour carrefour.com.ar carrefour"
     },
     {
       "name": "Frávega",
@@ -2178,7 +2189,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "fravega fravega.com"
+      "searchText": "fravega fravega.com fravega"
     },
     {
       "name": "Coto",
@@ -2189,7 +2200,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "coto coto.com.ar coto digital supermercados coto"
+      "searchText": "coto coto.com.ar coto coto digital supermercados coto"
     },
     {
       "name": "Jumbo",
@@ -2200,7 +2211,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "jumbo jumbo.com.ar"
+      "searchText": "jumbo jumbo.com.ar jumbo"
     },
     {
       "name": "Disco",
@@ -2211,7 +2222,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "disco disco.com.ar"
+      "searchText": "disco disco.com.ar disco"
     },
     {
       "name": "Vea",
@@ -2222,7 +2233,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "vea vea.com.ar"
+      "searchText": "vea vea.com.ar vea"
     },
     {
       "name": "La Anónima",
@@ -2233,7 +2244,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "la anonima laanonima.com.ar"
+      "searchText": "la anonima laanonima.com.ar la-anonima"
     },
     {
       "name": "Supermercados DIA",
@@ -2244,7 +2255,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "supermercados dia supermercadosdia.com.ar"
+      "searchText": "supermercados dia supermercadosdia.com.ar supermercados-dia"
     },
     {
       "name": "Makro",
@@ -2255,7 +2266,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "makro makro.com.ar"
+      "searchText": "makro makro.com.ar makro"
     },
     {
       "name": "Farmacity",
@@ -2266,7 +2277,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "farmacity www.farmacity.com"
+      "searchText": "farmacity www.farmacity.com farmacity"
     },
     {
       "name": "Easy",
@@ -2277,7 +2288,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "easy easy.com.ar"
+      "searchText": "easy easy.com.ar easy"
     },
     {
       "name": "ChangoMas",
@@ -2288,7 +2299,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "changomas changomas.com.ar"
+      "searchText": "changomas changomas.com.ar changomas"
     },
     {
       "name": "Sodimac",
@@ -2299,7 +2310,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "sodimac www.sodimac.com.ar"
+      "searchText": "sodimac www.sodimac.com.ar sodimac"
     },
     {
       "name": "Compumundo",
@@ -2310,7 +2321,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "compumundo compumundo.com.ar"
+      "searchText": "compumundo compumundo.com.ar compumundo"
     },
     {
       "name": "Megatone",
@@ -2321,7 +2332,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "megatone www.megatone.net"
+      "searchText": "megatone www.megatone.net megatone"
     },
     {
       "name": "On City",
@@ -2332,7 +2343,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "on city oncity.com"
+      "searchText": "on city oncity.com on-city"
     },
     {
       "name": "Diarco",
@@ -2343,7 +2354,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "diarco diarco.com.ar"
+      "searchText": "diarco diarco.com.ar diarco"
     },
     {
       "name": "Dexter",
@@ -2354,7 +2365,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "dexter dexter.com.ar"
+      "searchText": "dexter dexter.com.ar dexter"
     },
     {
       "name": "Stock Center",
@@ -2365,7 +2376,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "stock center stockcenter.com.ar"
+      "searchText": "stock center stockcenter.com.ar stock-center"
     },
     {
       "name": "New Balance",
@@ -2376,7 +2387,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "new balance www.newbalance.com.ar"
+      "searchText": "new balance www.newbalance.com.ar new-balance"
     },
     {
       "name": "Todomoda",
@@ -2387,7 +2398,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "todomoda todomoda.com"
+      "searchText": "todomoda todomoda.com todomoda"
     },
     {
       "name": "Kosiuko",
@@ -2398,7 +2409,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "kosiuko www.kosiuko.com"
+      "searchText": "kosiuko www.kosiuko.com kosiuko"
     },
     {
       "name": "Casa del Audio",
@@ -2409,7 +2420,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "casa del audio www.casadelaudio.com"
+      "searchText": "casa del audio www.casadelaudio.com casa-del-audio"
     },
     {
       "name": "Naldo",
@@ -2420,7 +2431,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "naldo www.naldo.com.ar"
+      "searchText": "naldo www.naldo.com.ar naldo"
     },
     {
       "name": "Topper",
@@ -2431,7 +2442,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "topper www.topper.com.ar"
+      "searchText": "topper www.topper.com.ar topper"
     },
     {
       "name": "Sherman",
@@ -2442,7 +2453,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "sherman sherman.ar"
+      "searchText": "sherman sherman.ar sherman"
     },
     {
       "name": "Noblex",
@@ -2453,7 +2464,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "noblex www.noblex.com.ar"
+      "searchText": "noblex www.noblex.com.ar noblex"
     },
     {
       "name": "Vital",
@@ -2464,7 +2475,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "vital vital.com.ar"
+      "searchText": "vital vital.com.ar vital"
     },
     {
       "name": "Cencosud",
@@ -2475,7 +2486,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "cencosud cencosud.com"
+      "searchText": "cencosud cencosud.com cencosud"
     },
     {
       "name": "Cetrogar",
@@ -2486,7 +2497,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "cetrogar www.cetrogar.com.ar"
+      "searchText": "cetrogar www.cetrogar.com.ar cetrogar"
     },
     {
       "name": "Andreani",
@@ -2497,7 +2508,7 @@
       "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "andreani www.andreani.com"
+      "searchText": "andreani www.andreani.com andreani"
     },
     {
       "name": "Infobae",
@@ -2508,7 +2519,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "infobae infobae.com"
+      "searchText": "infobae infobae.com infobae"
     },
     {
       "name": "La Nación",
@@ -2519,7 +2530,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "la nacion lanacion.com.ar"
+      "searchText": "la nacion lanacion.com.ar la-nacion"
     },
     {
       "name": "TN (Todo Noticias)",
@@ -2530,7 +2541,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "tn (todo noticias) tn.com.ar todo noticias logo tn"
+      "searchText": "tn (todo noticias) tn.com.ar tn todo noticias logo tn"
     },
     {
       "name": "Clarín",
@@ -2541,7 +2552,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "clarin clarin.com"
+      "searchText": "clarin clarin.com clarin"
     },
     {
       "name": "El Cronista",
@@ -2552,7 +2563,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "el cronista cronista.com"
+      "searchText": "el cronista cronista.com el-cronista"
     },
     {
       "name": "Página/12",
@@ -2563,7 +2574,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "pagina/12 pagina12.com.ar"
+      "searchText": "pagina/12 pagina12.com.ar pagina-12"
     },
     {
       "name": "Perfil",
@@ -2574,7 +2585,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "perfil perfil.com"
+      "searchText": "perfil perfil.com perfil"
     },
     {
       "name": "Ámbito Financiero",
@@ -2585,7 +2596,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "ambito financiero ambito.com"
+      "searchText": "ambito financiero ambito.com ambito-financiero"
     },
     {
       "name": "El Destape",
@@ -2596,7 +2607,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "el destape www.eldestapeweb.com"
+      "searchText": "el destape www.eldestapeweb.com el-destape"
     },
     {
       "name": "La Voz del Interior",
@@ -2607,7 +2618,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "la voz del interior lavoz.com.ar"
+      "searchText": "la voz del interior lavoz.com.ar la-voz-del-interior"
     },
     {
       "name": "La Gaceta (Tucumán)",
@@ -2618,7 +2629,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "la gaceta (tucuman) lagaceta.com.ar"
+      "searchText": "la gaceta (tucuman) lagaceta.com.ar la-gaceta-tucuman"
     },
     {
       "name": "Diario UNO",
@@ -2629,7 +2640,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "diario uno diariouno.com.ar"
+      "searchText": "diario uno diariouno.com.ar diario-uno"
     },
     {
       "name": "Crónica",
@@ -2640,7 +2651,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "cronica cronica.com.ar"
+      "searchText": "cronica cronica.com.ar cronica"
     },
     {
       "name": "Los Andes (Mendoza)",
@@ -2651,7 +2662,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "los andes (mendoza) losandes.com.ar"
+      "searchText": "los andes (mendoza) losandes.com.ar los-andes-mendoza"
     },
     {
       "name": "La Capital",
@@ -2662,7 +2673,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "la capital www.lacapital.com.ar"
+      "searchText": "la capital www.lacapital.com.ar la-capital"
     },
     {
       "name": "C5N",
@@ -2673,7 +2684,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "c5n c5n.com"
+      "searchText": "c5n c5n.com c5n"
     },
     {
       "name": "A24",
@@ -2684,7 +2695,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "a24 a24.com"
+      "searchText": "a24 a24.com a24"
     },
     {
       "name": "Telefe",
@@ -2695,7 +2706,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "telefe mitelefe.com"
+      "searchText": "telefe mitelefe.com telefe"
     },
     {
       "name": "El Trece",
@@ -2706,7 +2717,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "el trece eltrece.com"
+      "searchText": "el trece eltrece.com el-trece"
     },
     {
       "name": "América TV",
@@ -2717,7 +2728,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "america tv americatv.com.ar"
+      "searchText": "america tv americatv.com.ar america-tv"
     },
     {
       "name": "Canal 26",
@@ -2728,7 +2739,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "canal 26 canal26.com"
+      "searchText": "canal 26 canal26.com canal-26"
     },
     {
       "name": "La Prensa",
@@ -2739,7 +2750,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "la prensa laprensa.com.ar"
+      "searchText": "la prensa laprensa.com.ar la-prensa"
     },
     {
       "name": "El Día (La Plata)",
@@ -2750,7 +2761,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "el dia (la plata) eldia.com"
+      "searchText": "el dia (la plata) eldia.com el-dia-la-plata"
     },
     {
       "name": "Río Negro",
@@ -2761,7 +2772,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "rio negro rionegro.com.ar"
+      "searchText": "rio negro rionegro.com.ar rio-negro"
     },
     {
       "name": "SLA",
@@ -2772,7 +2783,7 @@
       "logo_source": "google",
       "categoryId": "medios",
       "categoryName": "Medios",
-      "searchText": "sla slatv.live"
+      "searchText": "sla slatv.live sla"
     },
     {
       "name": "Claro Argentina",
@@ -2783,7 +2794,7 @@
       "logo_source": "google",
       "categoryId": "telecomunicaciones",
       "categoryName": "Telecomunicaciones",
-      "searchText": "claro argentina www.claro.com.ar"
+      "searchText": "claro argentina www.claro.com.ar claro-argentina"
     },
     {
       "name": "Movistar Argentina",
@@ -2794,7 +2805,7 @@
       "logo_source": "google",
       "categoryId": "telecomunicaciones",
       "categoryName": "Telecomunicaciones",
-      "searchText": "movistar argentina www.movistar.com.ar"
+      "searchText": "movistar argentina www.movistar.com.ar movistar-argentina"
     },
     {
       "name": "Telecentro",
@@ -2805,7 +2816,7 @@
       "logo_source": "google",
       "categoryId": "telecomunicaciones",
       "categoryName": "Telecomunicaciones",
-      "searchText": "telecentro www.telecentro.com.ar"
+      "searchText": "telecentro www.telecentro.com.ar telecentro"
     },
     {
       "name": "IPLAN",
@@ -2816,7 +2827,7 @@
       "logo_source": "google",
       "categoryId": "telecomunicaciones",
       "categoryName": "Telecomunicaciones",
-      "searchText": "iplan www.iplan.com.ar"
+      "searchText": "iplan www.iplan.com.ar iplan"
     },
     {
       "name": "Tuenti",
@@ -2827,7 +2838,7 @@
       "logo_source": "google",
       "categoryId": "telecomunicaciones",
       "categoryName": "Telecomunicaciones",
-      "searchText": "tuenti www.tuenti.com.ar"
+      "searchText": "tuenti www.tuenti.com.ar tuenti"
     },
     {
       "name": "Antina",
@@ -2838,7 +2849,7 @@
       "logo_source": "google",
       "categoryId": "telecomunicaciones",
       "categoryName": "Telecomunicaciones",
-      "searchText": "antina www.antina.com.ar"
+      "searchText": "antina www.antina.com.ar antina"
     },
     {
       "name": "Starlink",
@@ -2849,7 +2860,7 @@
       "logo_source": "google",
       "categoryId": "telecomunicaciones",
       "categoryName": "Telecomunicaciones",
-      "searchText": "starlink www.starlink.com"
+      "searchText": "starlink www.starlink.com starlink"
     },
     {
       "name": "Toyota",
@@ -2860,7 +2871,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "toyota toyota.com.ar"
+      "searchText": "toyota toyota.com.ar toyota"
     },
     {
       "name": "Volkswagen",
@@ -2871,7 +2882,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "volkswagen volkswagen.com.ar"
+      "searchText": "volkswagen volkswagen.com.ar volkswagen"
     },
     {
       "name": "Fiat",
@@ -2882,7 +2893,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "fiat fiat.com.ar"
+      "searchText": "fiat fiat.com.ar fiat"
     },
     {
       "name": "Renault",
@@ -2893,7 +2904,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "renault renault.com.ar"
+      "searchText": "renault renault.com.ar renault"
     },
     {
       "name": "Peugeot",
@@ -2904,7 +2915,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "peugeot peugeot.com.ar"
+      "searchText": "peugeot peugeot.com.ar peugeot"
     },
     {
       "name": "Ford",
@@ -2915,7 +2926,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "ford ford.com.ar"
+      "searchText": "ford ford.com.ar ford"
     },
     {
       "name": "Chevrolet",
@@ -2926,7 +2937,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "chevrolet chevrolet.com.ar"
+      "searchText": "chevrolet chevrolet.com.ar chevrolet"
     },
     {
       "name": "Citroën",
@@ -2937,7 +2948,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "citroen citroen.com.ar"
+      "searchText": "citroen citroen.com.ar citroen"
     },
     {
       "name": "Jeep",
@@ -2948,7 +2959,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "jeep jeep.com.ar"
+      "searchText": "jeep jeep.com.ar jeep"
     },
     {
       "name": "Nissan",
@@ -2959,7 +2970,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "nissan nissan.com.ar"
+      "searchText": "nissan nissan.com.ar nissan"
     },
     {
       "name": "Hyundai",
@@ -2970,7 +2981,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "hyundai hyundai.com.ar"
+      "searchText": "hyundai hyundai.com.ar hyundai"
     },
     {
       "name": "Kia",
@@ -2981,7 +2992,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "kia www.kia.com.ar"
+      "searchText": "kia www.kia.com.ar kia"
     },
     {
       "name": "Chery",
@@ -2992,7 +3003,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "chery chery.com.ar"
+      "searchText": "chery chery.com.ar chery"
     },
     {
       "name": "BYD",
@@ -3003,7 +3014,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "byd www.byd.com"
+      "searchText": "byd www.byd.com byd"
     },
     {
       "name": "Suzuki",
@@ -3014,7 +3025,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "suzuki suzuki.com.ar"
+      "searchText": "suzuki suzuki.com.ar suzuki"
     },
     {
       "name": "Yamaha",
@@ -3025,7 +3036,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "yamaha www.yamaha-motor.com.ar"
+      "searchText": "yamaha www.yamaha-motor.com.ar yamaha"
     },
     {
       "name": "Mercedes-Benz",
@@ -3036,7 +3047,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "mercedes-benz mercedes-benz.com.ar"
+      "searchText": "mercedes-benz mercedes-benz.com.ar mercedes-benz"
     },
     {
       "name": "BMW",
@@ -3047,7 +3058,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "bmw bmw.com.ar"
+      "searchText": "bmw bmw.com.ar bmw"
     },
     {
       "name": "Audi",
@@ -3058,7 +3069,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "audi audi.com.ar audi argentina logo audi png"
+      "searchText": "audi audi.com.ar audi audi argentina logo audi png"
     },
     {
       "name": "Honda",
@@ -3069,7 +3080,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "honda honda.com.ar"
+      "searchText": "honda honda.com.ar honda"
     },
     {
       "name": "Porsche",
@@ -3080,7 +3091,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "porsche porsche.com porche"
+      "searchText": "porsche porsche.com porsche porche"
     },
     {
       "name": "Changan",
@@ -3091,7 +3102,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "changan changan.com.ar"
+      "searchText": "changan changan.com.ar changan"
     },
     {
       "name": "Ram",
@@ -3102,7 +3113,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "ram www.ram.com.ar"
+      "searchText": "ram www.ram.com.ar ram"
     },
     {
       "name": "Land Rover",
@@ -3113,7 +3124,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "land rover www.landroverargentina.com"
+      "searchText": "land rover www.landroverargentina.com land-rover"
     },
     {
       "name": "Dodge",
@@ -3124,7 +3135,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "dodge www.dodge.com.ar"
+      "searchText": "dodge www.dodge.com.ar dodge"
     },
     {
       "name": "Subaru",
@@ -3135,7 +3146,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "subaru subaru.com.ar"
+      "searchText": "subaru subaru.com.ar subaru"
     },
     {
       "name": "Volvo",
@@ -3146,7 +3157,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "volvo www.volvocars.com"
+      "searchText": "volvo www.volvocars.com volvo"
     },
     {
       "name": "Tesla",
@@ -3157,7 +3168,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "tesla www.tesla.com"
+      "searchText": "tesla www.tesla.com tesla"
     },
     {
       "name": "MG Motor",
@@ -3168,7 +3179,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "mg motor www.mgmotor.com.ar"
+      "searchText": "mg motor www.mgmotor.com.ar mg-motor"
     },
     {
       "name": "GWM (Great Wall)",
@@ -3179,7 +3190,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "gwm (great wall) gwm.com.ar"
+      "searchText": "gwm (great wall) gwm.com.ar gwm-great-wall"
     },
     {
       "name": "MINI",
@@ -3190,7 +3201,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "mini www.mini.com.ar"
+      "searchText": "mini www.mini.com.ar mini"
     },
     {
       "name": "DS Automobiles",
@@ -3201,7 +3212,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "ds automobiles www.dsautomobiles.com.ar"
+      "searchText": "ds automobiles www.dsautomobiles.com.ar ds-automobiles"
     },
     {
       "name": "Bajaj",
@@ -3212,7 +3223,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "bajaj www.bajaj.com.ar"
+      "searchText": "bajaj www.bajaj.com.ar bajaj"
     },
     {
       "name": "KTM",
@@ -3223,7 +3234,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "ktm www.ktm.com"
+      "searchText": "ktm www.ktm.com ktm"
     },
     {
       "name": "Mitsubishi Motors",
@@ -3234,7 +3245,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "mitsubishi motors www.mitsubishi-motors.com.ar"
+      "searchText": "mitsubishi motors www.mitsubishi-motors.com.ar mitsubishi-motors"
     },
     {
       "name": "Isuzu",
@@ -3245,7 +3256,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "isuzu www.isuzu.com.ar"
+      "searchText": "isuzu www.isuzu.com.ar isuzu"
     },
     {
       "name": "Iveco",
@@ -3256,7 +3267,7 @@
       "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
-      "searchText": "iveco www.iveco.com"
+      "searchText": "iveco www.iveco.com iveco"
     },
     {
       "name": "Arcor",
@@ -3267,7 +3278,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "arcor arcor.com"
+      "searchText": "arcor arcor.com arcor"
     },
     {
       "name": "Molinos Río de la Plata",
@@ -3278,7 +3289,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "molinos rio de la plata molinos.com.ar"
+      "searchText": "molinos rio de la plata molinos.com.ar molinos-rio-de-la-plata"
     },
     {
       "name": "La Serenísima (Mastellone)",
@@ -3289,7 +3300,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "la serenisima (mastellone) laserenisima.com.ar"
+      "searchText": "la serenisima (mastellone) laserenisima.com.ar la-serenisima-mastellone"
     },
     {
       "name": "Nestlé",
@@ -3300,7 +3311,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "nestle nestle.com.ar"
+      "searchText": "nestle nestle.com.ar nestle"
     },
     {
       "name": "Unilever",
@@ -3311,7 +3322,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "unilever unilever.com.ar"
+      "searchText": "unilever unilever.com.ar unilever"
     },
     {
       "name": "Mondelez",
@@ -3322,7 +3333,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "mondelez mondelezinternational.com"
+      "searchText": "mondelez mondelezinternational.com mondelez"
     },
     {
       "name": "Bimbo",
@@ -3333,7 +3344,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "bimbo www.bimbo.com.ar"
+      "searchText": "bimbo www.bimbo.com.ar bimbo"
     },
     {
       "name": "Cervecería Quilmes",
@@ -3344,7 +3355,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "cerveceria quilmes quilmes.com.ar"
+      "searchText": "cerveceria quilmes quilmes.com.ar cerveceria-quilmes"
     },
     {
       "name": "Havanna",
@@ -3355,7 +3366,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "havanna www.tienda.havanna.com.ar"
+      "searchText": "havanna www.tienda.havanna.com.ar havanna"
     },
     {
       "name": "Molino Cañuelas",
@@ -3366,7 +3377,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "molino canuelas molinocanuelas.com"
+      "searchText": "molino canuelas molinocanuelas.com molino-canuelas"
     },
     {
       "name": "Ledesma",
@@ -3377,7 +3388,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "ledesma ledesma.com.ar"
+      "searchText": "ledesma ledesma.com.ar ledesma"
     },
     {
       "name": "Cervecería Patagonia",
@@ -3388,7 +3399,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "cerveceria patagonia www.cervezapatagonia.com.ar"
+      "searchText": "cerveceria patagonia www.cervezapatagonia.com.ar cerveceria-patagonia"
     },
     {
       "name": "Coca-Cola (Femsa)",
@@ -3399,7 +3410,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "coca-cola (femsa) coca-colafemsa.com"
+      "searchText": "coca-cola (femsa) coca-colafemsa.com coca-cola-femsa"
     },
     {
       "name": "PepsiCo",
@@ -3410,7 +3421,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "pepsico www.pepsi.es"
+      "searchText": "pepsico www.pepsi.es pepsico"
     },
     {
       "name": "Heineken",
@@ -3421,7 +3432,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "heineken www.heineken.com"
+      "searchText": "heineken www.heineken.com heineken"
     },
     {
       "name": "Heineken",
@@ -3432,7 +3443,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "heineken www.heineken.com"
+      "searchText": "heineken www.heineken.com heineken"
     },
     {
       "name": "Cerveza Corona",
@@ -3443,7 +3454,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "cerveza corona www.cervezacorona.com.ar"
+      "searchText": "cerveza corona www.cervezacorona.com.ar cerveza-corona"
     },
     {
       "name": "Brahma",
@@ -3454,7 +3465,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "brahma brahma.com.ar cerveza brahma"
+      "searchText": "brahma brahma.com.ar brahma cerveza brahma"
     },
     {
       "name": "Stella Artois",
@@ -3465,7 +3476,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "stella artois www.stellaartois.com"
+      "searchText": "stella artois www.stellaartois.com stella-artois"
     },
     {
       "name": "Paladini",
@@ -3476,7 +3487,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "paladini www.paladini.com"
+      "searchText": "paladini www.paladini.com paladini"
     },
     {
       "name": "Tregar",
@@ -3487,7 +3498,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "tregar www.tregar.com.ar"
+      "searchText": "tregar www.tregar.com.ar tregar"
     },
     {
       "name": "Beaudroit",
@@ -3498,7 +3509,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "beaudroit familiabeaudroit.com.ar"
+      "searchText": "beaudroit familiabeaudroit.com.ar beaudroit"
     },
     {
       "name": "Grido",
@@ -3509,7 +3520,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "grido argentina.gridohelado.com"
+      "searchText": "grido argentina.gridohelado.com grido"
     },
     {
       "name": "Trapiche",
@@ -3520,7 +3531,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "trapiche trapiche.com.ar"
+      "searchText": "trapiche trapiche.com.ar trapiche"
     },
     {
       "name": "Norton",
@@ -3531,7 +3542,7 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "norton norton.com.ar"
+      "searchText": "norton norton.com.ar norton"
     },
     {
       "name": "Don Satur",
@@ -3542,7 +3553,62 @@
       "logo_source": "google",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "don satur donsatur.com.ar"
+      "searchText": "don satur donsatur.com.ar don-satur"
+    },
+    {
+      "name": "Guaymallén",
+      "domain": "alfajoresguaymallen.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=alfajoresguaymallen.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/alfajoresguaymallen.com.ar.ico",
+      "catalog_logo_url": "/logos/guaymallen.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "guaymallen alfajoresguaymallen.com.ar guaymallen"
+    },
+    {
+      "name": "Rapanui",
+      "domain": "rapanui.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rapanui.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/rapanui.com.ar.ico",
+      "catalog_logo_url": "/logos/rapanui.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "rapanui rapanui.com.ar rapanui"
+    },
+    {
+      "name": "Piporé",
+      "domain": "pipore.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pipore.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pipore.com.ar.ico",
+      "catalog_logo_url": "/logos/pipore.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "pipore pipore.com.ar pipore"
+    },
+    {
+      "name": "Catena Zapata",
+      "domain": "catenazapata.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=catenazapata.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/catenazapata.com.ico",
+      "catalog_logo_url": "/logos/catena-zapata.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "catena zapata catenazapata.com catena-zapata"
+    },
+    {
+      "name": "Cagnoli",
+      "domain": "cagnoli.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cagnoli.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cagnoli.com.ico",
+      "catalog_logo_url": "/logos/cagnoli.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "cagnoli cagnoli.com cagnoli"
     },
     {
       "name": "YPF",
@@ -3553,7 +3619,7 @@
       "logo_source": "google",
       "categoryId": "combustibles",
       "categoryName": "Combustibles",
-      "searchText": "ypf ypf.com"
+      "searchText": "ypf ypf.com ypf"
     },
     {
       "name": "Shell",
@@ -3564,7 +3630,7 @@
       "logo_source": "google",
       "categoryId": "combustibles",
       "categoryName": "Combustibles",
-      "searchText": "shell shell.com.ar"
+      "searchText": "shell shell.com.ar shell"
     },
     {
       "name": "AXION energy",
@@ -3575,7 +3641,7 @@
       "logo_source": "google",
       "categoryId": "combustibles",
       "categoryName": "Combustibles",
-      "searchText": "axion energy shell.com.ar"
+      "searchText": "axion energy shell.com.ar axion-energy"
     },
     {
       "name": "Esso",
@@ -3586,7 +3652,7 @@
       "logo_source": "google",
       "categoryId": "combustibles",
       "categoryName": "Combustibles",
-      "searchText": "esso esso.com"
+      "searchText": "esso esso.com esso"
     },
     {
       "name": "Gulf",
@@ -3597,7 +3663,7 @@
       "logo_source": "google",
       "categoryId": "combustibles",
       "categoryName": "Combustibles",
-      "searchText": "gulf gulfcombustibles.com"
+      "searchText": "gulf gulfcombustibles.com gulf"
     },
     {
       "name": "Puma Energy",
@@ -3608,7 +3674,7 @@
       "logo_source": "google",
       "categoryId": "combustibles",
       "categoryName": "Combustibles",
-      "searchText": "puma energy pumaenergyarg.com.ar"
+      "searchText": "puma energy pumaenergyarg.com.ar puma-energy"
     },
     {
       "name": "Oil Combustibles",
@@ -3619,7 +3685,7 @@
       "logo_source": "google",
       "categoryId": "combustibles",
       "categoryName": "Combustibles",
-      "searchText": "oil combustibles oilcombustibles.com"
+      "searchText": "oil combustibles oilcombustibles.com oil-combustibles"
     },
     {
       "name": "Federación Patronal Seguros",
@@ -3630,7 +3696,7 @@
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",
-      "searchText": "federacion patronal seguros fedpat.com.ar"
+      "searchText": "federacion patronal seguros fedpat.com.ar federacion-patronal-seguros"
     },
     {
       "name": "Sancor Seguros",
@@ -3641,7 +3707,7 @@
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",
-      "searchText": "sancor seguros sancorseguros.com.ar"
+      "searchText": "sancor seguros sancorseguros.com.ar sancor-seguros"
     },
     {
       "name": "La Segunda Seguros",
@@ -3652,7 +3718,7 @@
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",
-      "searchText": "la segunda seguros www.lasegunda.com.ar"
+      "searchText": "la segunda seguros www.lasegunda.com.ar la-segunda-seguros"
     },
     {
       "name": "San Cristóbal Seguros",
@@ -3663,7 +3729,7 @@
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",
-      "searchText": "san cristobal seguros sancristobal.com.ar"
+      "searchText": "san cristobal seguros sancristobal.com.ar san-cristobal-seguros"
     },
     {
       "name": "La Caja Seguros",
@@ -3674,7 +3740,7 @@
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",
-      "searchText": "la caja seguros lacaja.com.ar"
+      "searchText": "la caja seguros lacaja.com.ar la-caja-seguros"
     },
     {
       "name": "Mapfre",
@@ -3685,7 +3751,7 @@
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",
-      "searchText": "mapfre mapfre.com.ar"
+      "searchText": "mapfre mapfre.com.ar mapfre"
     },
     {
       "name": "Allianz",
@@ -3696,7 +3762,7 @@
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",
-      "searchText": "allianz www.allianz.com.ar"
+      "searchText": "allianz www.allianz.com.ar allianz"
     },
     {
       "name": "Provincia Seguros",
@@ -3707,7 +3773,7 @@
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",
-      "searchText": "provincia seguros provinciaseguros.com.ar"
+      "searchText": "provincia seguros provinciaseguros.com.ar provincia-seguros"
     },
     {
       "name": "Experta Seguros",
@@ -3718,7 +3784,7 @@
       "logo_source": "google",
       "categoryId": "seguros",
       "categoryName": "Seguros",
-      "searchText": "experta seguros experta.com.ar"
+      "searchText": "experta seguros experta.com.ar experta-seguros"
     },
     {
       "name": "Rapsodia",
@@ -3729,7 +3795,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "rapsodia rapsodia.com.ar"
+      "searchText": "rapsodia rapsodia.com.ar rapsodia"
     },
     {
       "name": "Grimoldi",
@@ -3740,7 +3806,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "grimoldi grimoldi.com"
+      "searchText": "grimoldi grimoldi.com grimoldi"
     },
     {
       "name": "Cheeky",
@@ -3751,7 +3817,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "cheeky cheeky.com.ar"
+      "searchText": "cheeky cheeky.com.ar cheeky"
     },
     {
       "name": "Mimo",
@@ -3762,7 +3828,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "mimo mimo.com.ar"
+      "searchText": "mimo mimo.com.ar mimo"
     },
     {
       "name": "Markova",
@@ -3773,7 +3839,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "markova markova.com"
+      "searchText": "markova markova.com markova"
     },
     {
       "name": "Maria Cher",
@@ -3784,7 +3850,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "maria cher maria-cher.com.ar"
+      "searchText": "maria cher maria-cher.com.ar maria-cher"
     },
     {
       "name": "Zara",
@@ -3795,7 +3861,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "zara zara.com"
+      "searchText": "zara zara.com zara"
     },
     {
       "name": "Nike",
@@ -3806,7 +3872,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "nike nike.com.ar"
+      "searchText": "nike nike.com.ar nike"
     },
     {
       "name": "Adidas",
@@ -3817,7 +3883,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "adidas adidas.com.ar"
+      "searchText": "adidas adidas.com.ar adidas"
     },
     {
       "name": "Puma",
@@ -3828,7 +3894,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "puma puma.com"
+      "searchText": "puma puma.com puma"
     },
     {
       "name": "Lacoste",
@@ -3839,7 +3905,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "lacoste lacoste.com"
+      "searchText": "lacoste lacoste.com lacoste"
     },
     {
       "name": "Tommy Hilfiger",
@@ -3850,7 +3916,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "tommy hilfiger ar.tommy.com"
+      "searchText": "tommy hilfiger ar.tommy.com tommy-hilfiger"
     },
     {
       "name": "Awada",
@@ -3861,7 +3927,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "awada www.awada.com.ar"
+      "searchText": "awada www.awada.com.ar awada"
     },
     {
       "name": "Natura Cosméticos",
@@ -3872,7 +3938,7 @@
       "logo_source": "google",
       "categoryId": "indumentaria",
       "categoryName": "Indumentaria",
-      "searchText": "natura cosmeticos www.natura.com.br"
+      "searchText": "natura cosmeticos www.natura.com.br natura-cosmeticos"
     },
     {
       "name": "PedidosYa",
@@ -3883,7 +3949,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "pedidosya pedidosya.com.ar pedidos ya logo pedidosya png delivery"
+      "searchText": "pedidosya pedidosya.com.ar pedidosya pedidos ya logo pedidosya png delivery"
     },
     {
       "name": "Rappi",
@@ -3894,7 +3960,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "rappi rappi.com.ar rappi argentina logo rappi png delivery"
+      "searchText": "rappi rappi.com.ar rappi rappi argentina logo rappi png delivery"
     },
     {
       "name": "Uber Eats",
@@ -3905,7 +3971,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "uber eats ubereats.com"
+      "searchText": "uber eats ubereats.com uber-eats"
     },
     {
       "name": "Morfy",
@@ -3916,7 +3982,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "morfy www.morfy.app"
+      "searchText": "morfy www.morfy.app morfy"
     },
     {
       "name": "McDonald's",
@@ -3927,7 +3993,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "mcdonald's www.mcdonalds.com.ar"
+      "searchText": "mcdonald's www.mcdonalds.com.ar mcdonald-s"
     },
     {
       "name": "Mostaza",
@@ -3938,7 +4004,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "mostaza www.mostazaweb.com.ar"
+      "searchText": "mostaza www.mostazaweb.com.ar mostaza"
     },
     {
       "name": "Burger King",
@@ -3949,7 +4015,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "burger king www.burgerking.com.ar"
+      "searchText": "burger king www.burgerking.com.ar burger-king"
     },
     {
       "name": "El Club de la Milanesa",
@@ -3960,7 +4026,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "el club de la milanesa elclubdelamilanesa.com"
+      "searchText": "el club de la milanesa elclubdelamilanesa.com el-club-de-la-milanesa"
     },
     {
       "name": "Almacén de Pizzas",
@@ -3971,7 +4037,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "almacen de pizzas almacendepizzas.com"
+      "searchText": "almacen de pizzas almacendepizzas.com almacen-de-pizzas"
     },
     {
       "name": "Starbucks",
@@ -3982,7 +4048,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "starbucks www.starbucks.com.ar"
+      "searchText": "starbucks www.starbucks.com.ar starbucks"
     },
     {
       "name": "Café Martínez",
@@ -3993,7 +4059,7 @@
       "logo_source": "google",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "cafe martinez www.cafemartinez.com"
+      "searchText": "cafe martinez www.cafemartinez.com cafe-martinez"
     },
     {
       "name": "Aerolíneas Argentinas",
@@ -4004,7 +4070,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "aerolineas argentinas aerolineas.com.ar"
+      "searchText": "aerolineas argentinas aerolineas.com.ar aerolineas-argentinas"
     },
     {
       "name": "Flybondi",
@@ -4015,7 +4081,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "flybondi flybondi.com"
+      "searchText": "flybondi flybondi.com flybondi"
     },
     {
       "name": "JetSMART",
@@ -4026,7 +4092,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "jetsmart jetsmart.com"
+      "searchText": "jetsmart jetsmart.com jetsmart"
     },
     {
       "name": "LATAM",
@@ -4037,7 +4103,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "latam www.latamairlines.com"
+      "searchText": "latam www.latamairlines.com latam"
     },
     {
       "name": "Despegar",
@@ -4048,7 +4114,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "despegar despegar.com.ar"
+      "searchText": "despegar despegar.com.ar despegar"
     },
     {
       "name": "Almundo",
@@ -4059,7 +4125,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "almundo almundo.com.ar"
+      "searchText": "almundo almundo.com.ar almundo"
     },
     {
       "name": "Booking.com",
@@ -4070,7 +4136,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "booking.com booking.com"
+      "searchText": "booking.com booking.com booking-com"
     },
     {
       "name": "Airbnb",
@@ -4081,7 +4147,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "airbnb airbnb.com.ar"
+      "searchText": "airbnb airbnb.com.ar airbnb"
     },
     {
       "name": "Hilton",
@@ -4092,7 +4158,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "hilton hilton.com"
+      "searchText": "hilton hilton.com hilton"
     },
     {
       "name": "Accor (Ibis, Novotel, etc.)",
@@ -4103,7 +4169,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "accor (ibis, novotel, etc.) all.accor.com accor hotels accor"
+      "searchText": "accor (ibis, novotel, etc.) all.accor.com accor-ibis-novotel-etc accor hotels accor"
     },
     {
       "name": "Wyndham / Howard Johnson",
@@ -4114,7 +4180,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "wyndham / howard johnson wyndhamhotels.com"
+      "searchText": "wyndham / howard johnson wyndhamhotels.com wyndham-howard-johnson"
     },
     {
       "name": "Hertz",
@@ -4125,7 +4191,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "hertz hertz.com.ar"
+      "searchText": "hertz hertz.com.ar hertz"
     },
     {
       "name": "Avis",
@@ -4136,7 +4202,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "avis avis.com.ar"
+      "searchText": "avis avis.com.ar avis"
     },
     {
       "name": "Dollar Rent a Car",
@@ -4147,7 +4213,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "dollar rent a car dollar.com"
+      "searchText": "dollar rent a car dollar.com dollar-rent-a-car"
     },
     {
       "name": "Marriott",
@@ -4158,7 +4224,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "marriott marriott.com.ar"
+      "searchText": "marriott marriott.com.ar marriott"
     },
     {
       "name": "Hyatt",
@@ -4169,7 +4235,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "hyatt hyatt.com"
+      "searchText": "hyatt hyatt.com hyatt"
     },
     {
       "name": "InterContinental (IHG)",
@@ -4180,7 +4246,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "intercontinental (ihg) ihg.com ihg intercontinental hotels"
+      "searchText": "intercontinental (ihg) ihg.com intercontinental-ihg ihg intercontinental hotels"
     },
     {
       "name": "Radisson",
@@ -4191,7 +4257,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "radisson radisson.com.ar"
+      "searchText": "radisson radisson.com.ar radisson"
     },
     {
       "name": "Expedia",
@@ -4202,7 +4268,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "expedia expedia.com.ar"
+      "searchText": "expedia expedia.com.ar expedia"
     },
     {
       "name": "Kayak",
@@ -4213,7 +4279,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "kayak kayak.com.ar"
+      "searchText": "kayak kayak.com.ar kayak"
     },
     {
       "name": "TripAdvisor",
@@ -4224,7 +4290,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "tripadvisor tripadvisor.com.ar"
+      "searchText": "tripadvisor tripadvisor.com.ar tripadvisor"
     },
     {
       "name": "Gol Linhas Aéreas",
@@ -4235,7 +4301,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "gol linhas aereas voegol.com.br gol gol airlines"
+      "searchText": "gol linhas aereas voegol.com.br gol-linhas-aereas gol gol airlines"
     },
     {
       "name": "Copa Airlines",
@@ -4246,7 +4312,7 @@
       "logo_source": "google",
       "categoryId": "turismo",
       "categoryName": "Turismo",
-      "searchText": "copa airlines copaair.com"
+      "searchText": "copa airlines copaair.com copa-airlines"
     },
     {
       "name": "Edenor",
@@ -4257,7 +4323,7 @@
       "logo_source": "google",
       "categoryId": "energia",
       "categoryName": "Energía",
-      "searchText": "edenor edenor.com"
+      "searchText": "edenor edenor.com edenor-211"
     },
     {
       "name": "Camuzzi Gas",
@@ -4268,7 +4334,7 @@
       "logo_source": "google",
       "categoryId": "energia",
       "categoryName": "Energía",
-      "searchText": "camuzzi gas camuzzigas.com"
+      "searchText": "camuzzi gas camuzzigas.com camuzzi-gas"
     },
     {
       "name": "Metrogas",
@@ -4279,7 +4345,7 @@
       "logo_source": "google",
       "categoryId": "energia",
       "categoryName": "Energía",
-      "searchText": "metrogas metrogas.com.ar"
+      "searchText": "metrogas metrogas.com.ar metrogas-214"
     },
     {
       "name": "Pampa Energía",
@@ -4290,7 +4356,7 @@
       "logo_source": "google",
       "categoryId": "energia",
       "categoryName": "Energía",
-      "searchText": "pampa energia pampa.com"
+      "searchText": "pampa energia pampa.com pampa-energia"
     },
     {
       "name": "TGS",
@@ -4301,7 +4367,18 @@
       "logo_source": "google",
       "categoryId": "energia",
       "categoryName": "Energía",
-      "searchText": "tgs www.tgs.com.ar"
+      "searchText": "tgs www.tgs.com.ar tgs"
+    },
+    {
+      "name": "Tecpetrol",
+      "domain": "tecpetrol.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tecpetrol.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/tecpetrol.com.ico",
+      "catalog_logo_url": "/logos/tecpetrol.png",
+      "logo_source": "google",
+      "categoryId": "energia",
+      "categoryName": "Energía",
+      "searchText": "tecpetrol tecpetrol.com tecpetrol"
     },
     {
       "name": "ComparaTasas",
@@ -4312,7 +4389,7 @@
       "logo_source": "google",
       "categoryId": "indie-projects",
       "categoryName": "Indie Projects",
-      "searchText": "comparatasas comparatasas.ar"
+      "searchText": "comparatasas comparatasas.ar comparatasas"
     },
     {
       "name": "Rendimientos",
@@ -4323,7 +4400,7 @@
       "logo_source": "google",
       "categoryId": "indie-projects",
       "categoryName": "Indie Projects",
-      "searchText": "rendimientos rendimientos.co"
+      "searchText": "rendimientos rendimientos.co rendimientos"
     },
     {
       "name": "Dolarito",
@@ -4334,7 +4411,7 @@
       "logo_source": "google",
       "categoryId": "indie-projects",
       "categoryName": "Indie Projects",
-      "searchText": "dolarito www.dolarito.ar"
+      "searchText": "dolarito www.dolarito.ar dolarito"
     },
     {
       "name": "Infleta",
@@ -4345,7 +4422,7 @@
       "logo_source": "google",
       "categoryId": "indie-projects",
       "categoryName": "Indie Projects",
-      "searchText": "infleta infleta.com.ar"
+      "searchText": "infleta infleta.com.ar infleta"
     },
     {
       "name": "Impuestito",
@@ -4356,7 +4433,7 @@
       "logo_source": "google",
       "categoryId": "indie-projects",
       "categoryName": "Indie Projects",
-      "searchText": "impuestito www.impuestito.org"
+      "searchText": "impuestito www.impuestito.org impuestito"
     },
     {
       "name": "Bond Terminal",
@@ -4367,7 +4444,7 @@
       "logo_source": "google",
       "categoryId": "indie-projects",
       "categoryName": "Indie Projects",
-      "searchText": "bond terminal bondterminal.com"
+      "searchText": "bond terminal bondterminal.com bond-terminal"
     },
     {
       "name": "FinanzasArgy",
@@ -4378,7 +4455,7 @@
       "logo_source": "google",
       "categoryId": "indie-projects",
       "categoryName": "Indie Projects",
-      "searchText": "finanzasargy finanzasargy.com"
+      "searchText": "finanzasargy finanzasargy.com finanzasargy"
     },
     {
       "name": "Steamcito",
@@ -4389,7 +4466,7 @@
       "logo_source": "google",
       "categoryId": "indie-projects",
       "categoryName": "Indie Projects",
-      "searchText": "steamcito steamcito.com.ar"
+      "searchText": "steamcito steamcito.com.ar steamcito"
     },
     {
       "name": "Gasti",
@@ -4400,7 +4477,7 @@
       "logo_source": "google",
       "categoryId": "indie-projects",
       "categoryName": "Indie Projects",
-      "searchText": "gasti gasti.pro"
+      "searchText": "gasti gasti.pro gasti"
     }
   ]
 }

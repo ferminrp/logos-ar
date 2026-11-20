@@ -47,15 +47,14 @@ describe('search-catalog', () => {
     )
   })
 
-  it('slug search finds entity in MCP without changing GET /api/logos', () => {
+  it('slug in searchText lets GET /api/logos and MCP find entities by slug', () => {
     const slug = 'banco-galicia'
     const catalogOnly = queryLogosCatalog({ q: slug, limit: 10 })
     const mcpSearch = queryMcpLogosCatalog({ q: slug, limit: 10 })
 
-    assert.equal(
+    assert.ok(
       catalogOnly.items.some((item) => item.name.includes('Galicia')),
-      false,
-      'plain catalog search by slug alone should not match (API unchanged)',
+      'GET /api/logos should match hosted slug in searchText',
     )
 
     assert.ok(
@@ -63,6 +62,12 @@ describe('search-catalog', () => {
         item.name.toLowerCase().includes('galicia'),
       ),
       'MCP slug search should match Banco Galicia',
+    )
+
+    const hyphenBrand = queryLogosCatalog({ q: 'catena-zapata', limit: 5 })
+    assert.ok(
+      hyphenBrand.items.some((item) => item.name === 'Catena Zapata'),
+      'hyphenated slug query should resolve Catena Zapata',
     )
   })
 })

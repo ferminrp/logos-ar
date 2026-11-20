@@ -1,4 +1,5 @@
 import type { Entity } from "./logos-data.ts"
+import { slugify } from "./entity-index.ts"
 
 function normalizeSearchText(value: string): string {
   return value
@@ -9,9 +10,10 @@ function normalizeSearchText(value: string): string {
 }
 
 export function getEntitySearchHaystack(
-  entity: Pick<Entity, "name" | "domain" | "seoAliases">,
+  entity: Pick<Entity, "name" | "domain" | "seoAliases" | "slug">,
 ): string {
-  const parts = [entity.name, entity.domain, ...(entity.seoAliases ?? [])]
+  const slug = entity.slug?.trim() || slugify(entity.name)
+  const parts = [entity.name, entity.domain, slug, ...(entity.seoAliases ?? [])]
   return normalizeSearchText(parts.join(" "))
 }
 

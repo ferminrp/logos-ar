@@ -1062,5 +1062,33 @@
   "www.prexcard.com.ar": {
     "logoUrl": "/logos/prex.png",
     "logoSource": "hosted"
+  },
+  "alfajoresguaymallen.com.ar": {
+    "logoUrl": "/logos/guaymallen.png",
+    "logoSource": "hosted"
+  },
+  "rapanui.com.ar": {
+    "logoUrl": "/logos/rapanui.png",
+    "logoSource": "hosted"
+  },
+  "tecpetrol.com": {
+    "logoUrl": "/logos/tecpetrol.png",
+    "logoSource": "hosted"
+  },
+  "tiendanube.com": {
+    "logoUrl": "/logos/tiendanube.png",
+    "logoSource": "hosted"
+  },
+  "pipore.com.ar": {
+    "logoUrl": "/logos/pipore.png",
+    "logoSource": "hosted"
+  },
+  "catenazapata.com": {
+    "logoUrl": "/logos/catena-zapata.png",
+    "logoSource": "hosted"
+  },
+  "cagnoli.com": {
+    "logoUrl": "/logos/cagnoli.png",
+    "logoSource": "hosted"
   }
 }

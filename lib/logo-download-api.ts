@@ -224,9 +224,29 @@ export async function handleLogoDownloadGet(
     (item) => item.domain.toLowerCase() === domain,
   )
   const faviconDomain = entity?.domain ?? domain
-  const logoUrl = entity
+  let logoUrl = entity
     ? getEntityLogoUrl(entity, size)
     : getGoogleFaviconUrl(domain, size)
+
+  if (format === "svg" && entity) {
+    const hostedVectorPath = `/logos/${entity.slug}.svg`
+    const vectorProbe = await fetchLogoUpstream(
+      hostedVectorPath,
+      faviconDomain,
+      size,
+      ctx,
+    )
+    const primaryAttempt = vectorProbe.attempts.find(
+      (attempt) => attempt.role === "primary",
+    )
+    if (
+      vectorProbe.response.ok &&
+      primaryAttempt?.status === 200 &&
+      !primaryAttempt.detail
+    ) {
+      logoUrl = hostedVectorPath
+    }
+  }
   const workerDecodeBudget =
     format === "png" && isCloudflareWorkersRuntime()
       ? { targetPngSize: size }
