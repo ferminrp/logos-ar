@@ -42,6 +42,7 @@ Abrí [http://localhost:4321](http://localhost:4321).
 - `pnpm indexnow:submit-all`: notificar todas las URLs del sitemap a IndexNow
 - `pnpm indexnow:ping-changed`: notificar solo URLs con `<lastmod>` cambiado
 - `pnpm sync:logos-r2`: subir `public/logos/*` al bucket R2 `loguitos-assets` (salta objetos ya idénticos por MD5/etag; requiere `wrangler login` o `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` con lectura R2 para el listado rápido)
+- `pnpm sync:isotipos-r2`: subir `data/isotipos/<slug>.svg` (199 isotipos) a `loguitos.app/logos/<slug>/isotipo.svg` (idempotente; `--dry-run`; requiere `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` con escritura R2 y metadata `source_url` / `source_type` / `synced_at` / `verified_official` cuando aplique; slugs validados contra `data/logos-dataset.json`)
 
 Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse localmente.
 
@@ -52,6 +53,8 @@ Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse lo
 ### Logos en R2
 
 Las URLs públicas siguen siendo `/logos/<slug>.png` (o `.svg`). En producción el Worker resuelve primero el binding R2 `LOGOS` (`loguitos-assets`, claves `loguitos.app/logos/<slug>/logo.png`) y, si no hay objeto, sirve el PNG de `public/logos/` vía `ASSETS`. Para cargar o actualizar el bucket: `pnpm sync:logos-r2`.
+
+Los **isotipos** SVG viven en `/logos/<slug>/isotipo.svg` (misma política de cache, ETag/HEAD y headers de seguridad SVG que los logos planos). Fallback local: `public/isotipos/<slug>.svg` (generado en `prebuild`). Sync: `pnpm sync:isotipos-r2` (opcionalmente `--dry-run`).
 
 ### URL canónica (SEO)
 

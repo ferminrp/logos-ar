@@ -10,6 +10,7 @@ const generators = [
   "scripts/generate-logos-dataset.mts",
   "scripts/generate-flags-dataset.mts",
   "scripts/generate-permanent-redirects.mts",
+  "scripts/stage-isotipo-fallback-assets.mts",
 ]
 
 function runNodeScript(relativePath: string): Promise<void> {

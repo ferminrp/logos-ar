@@ -1,0 +1,2196 @@
+[
+  {
+    "slug": "a3-mercados",
+    "source_url": "https://a3mercados.com.ar/icon.svg?icon.1nlmucmrhcj8o.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#0078ff",
+      "#001645"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "aave",
+    "source_url": "https://aave.com/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "adecoagro",
+    "source_url": "https://adecoagro.com/wp-content/uploads/2026/05/logo-appearence.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#0c0e0a",
+      "#005333"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "adidas",
+    "source_url": "https://www.adidas.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "airbnb",
+    "source_url": "https://www.airbnb.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#ff5a5f"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "allaria",
+    "source_url": "https://allaria.com.ar/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#8b734b",
+      "#003366"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "almacen-de-pizzas",
+    "source_url": "https://framerusercontent.com/images/pg2jAt0lRw362XlQeDIBjOwU.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ebe8ef",
+      "#a02621"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "aluar",
+    "source_url": "https://www.aluar.com.ar/footer/aluar-logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#b2b2b2"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "america-tv",
+    "source_url": "https://www.americatv.com.ar/css-custom/354/images/main-logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#4467f1",
+      "#448ff1",
+      "#fcea39",
+      "#fcf46b",
+      "#fa004b",
+      "#fa325f"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "arbitrum",
+    "source_url": "https://arbitrum.io/assets/arbitrum/logo_color.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#213147",
+      "#12aaff",
+      "#9dcced",
+      "#ffffff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "arcor",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arcor_logo.svg",
+    "source_type": "wikimedia(official-sourced)",
+    "kind": "iso",
+    "colors": [
+      "#ffffff",
+      "#cccec8",
+      "#e3e8eb",
+      "#d5dfe5",
+      "#fdb827",
+      "#00529c"
+    ],
+    "license_note": "Commons Public domain; marca registrada del titular",
+    "verified_official": true
+  },
+  {
+    "slug": "astro",
+    "source_url": "https://astro.build/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#d83333",
+      "#f041ff",
+      "#000",
+      "#fff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "audi",
+    "source_url": "https://www.audi.com/ci/en/intro/basics/rings.html",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#bb0a30"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "balanz",
+    "source_url": "https://balanz.com/safari-pinned-tab.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "banco-ciudad",
+    "source_url": "https://bancociudad.com.ar/institucional/resources/img/logo_nuevo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#005baa",
+      "#00aeef"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "banco-comafi",
+    "source_url": "https://www.comafi.com.ar/icon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#005458",
+      "#01866c"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "banco-de-formosa",
+    "source_url": "https://www.bancoformosa.com.ar/assets/images/layout/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#003a70",
+      "#80bc00",
+      "#487629",
+      "#00b2e3",
+      "#236092",
+      "#4c9c2e"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "banco-de-la-nacion-argentina",
+    "source_url": "https://www.bna.com.ar/Images/Logo___BNA.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#fff"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "banco-de-valores",
+    "source_url": "https://www.valo.ar/wp-content/uploads/2023/12/logo-header21.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ce202f",
+      "#737174"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "banco-galicia",
+    "source_url": "https://onlinebanking.bancogalicia.com.ar/images/default/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ffffff",
+      "#fa6400"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "banco-hipotecario",
+    "source_url": "https://www.hipotecario.com.ar/wp-content/uploads/2019/07/logo-hipotecario.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#6d6e70",
+      "#f1801f",
+      "#fff"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "banco-municipal-de-rosario",
+    "source_url": "https://www.bmros.com.ar/img/bmr.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#e40a18"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "banco-provincia",
+    "source_url": "https://bancoprovincia.com.ar/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#25b4bd",
+      "#279d2e",
+      "#3c3c3b"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "banco-santander-rio",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Banco_Santander_Logotipo.svg",
+    "source_type": "wikimedia(official-sourced)",
+    "kind": "iso",
+    "colors": [
+      "#ffffff",
+      "#666666",
+      "#ea1d25"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "banco-supervielle",
+    "source_url": "https://www.supervielle.com.ar/sb/f/296085206817349/48x32/fe18ca3829/logo-supervielle-s-pink.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#920027",
+      "#ff94bb",
+      "#ed006c"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "base",
+    "source_url": "https://www.base.org/images/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#e3e7e9"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "berry",
+    "source_url": "https://berry.app/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "binance",
+    "source_url": "https://binance.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#f0b90b"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "bitget",
+    "source_url": "https://bitget.com/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "bitkey",
+    "source_url": "https://bitkey.world/favicon-dark.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "bitso",
+    "source_url": "https://assets-prod.bitso.com/public-pages-next/279ab2d49/_next/static/media/logo-coindesk.2ujs3xj6nuge4.svg?dpl=279ab2d49",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#181716"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "bmw",
+    "source_url": "https://bmw.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#0066b1"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "bond-terminal",
+    "source_url": "https://bondterminal.com/favicon.svg?v=20260627",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#07090f",
+      "#22c55e",
+      "#d97706"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "booking-com",
+    "source_url": "https://www.bookingholdings.com/media-room",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#003a9a"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "bpn-banco-provincia-de-neuquen",
+    "source_url": "https://www.bpn.com.ar/img/icon_bpnInstitucional.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ffffff",
+      "#008ec6",
+      "#9d9995"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "bun",
+    "source_url": "https://bun.sh/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#febbd0",
+      "#fbf0df",
+      "#f6dece",
+      "#fffefc",
+      "#ccbea7",
+      "#b71422"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "burger-king",
+    "source_url": "https://www.bk.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#d62300"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "byma",
+    "source_url": "https://cdn.prod.website-files.com/6697a441a50c6b926e1972e0/682f4f060a306e6d3804523d_BYMA-isologo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#00b6b8",
+      "#00baba",
+      "#8dd906",
+      "#0183d9",
+      "#00a8f2",
+      "#00a1df"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "c5n",
+    "source_url": "https://www.c5n.com/css-custom/326/images/logo-c5n-light.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#2b242a",
+      "#d02028"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "cabify",
+    "source_url": "https://design-assets.cabifil.es/logos/cabify/svg/cabify_favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#7145d6"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "canal-26",
+    "source_url": "https://www.canal26.com:443/pf/resources/favicon/canal26/favicon.svg?d=417&mxId=00000000",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#eb1e23",
+      "#ffffff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "carrefour",
+    "source_url": "https://en.wikipedia.org/wiki/File:Carrefour_logo_no_tag.svg",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#004e9f"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "central-puerto",
+    "source_url": "https://www.centralpuerto.com/wp-content/themes/bootscore-main/bootscore-main/img/logo/logo-footer.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#80c3e7",
+      "#225"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "chainlink",
+    "source_url": "https://chain.link/brand-assets",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#375bd2"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "chevrolet",
+    "source_url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/favicon/chevrolet-favicon-180.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#b1b1b1",
+      "#76777a",
+      "#d9d8d6",
+      "#f4d78f",
+      "#e1b63d",
+      "#d2a12a"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "circle",
+    "source_url": "https://cdn.prod.website-files.com/668c08d1b8a9330bd1d786ad/669a20df8ac2810a6dd50e67_favicon-256.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#b090f5",
+      "#5fbfff",
+      "#68d7fa",
+      "#7ef1b3"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "citroen",
+    "source_url": "https://www.stellantis.com/en/brands/citroen",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#da291c"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "clerk",
+    "source_url": "https://clerk.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#6c47ff"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "cloudflare",
+    "source_url": "https://www.cloudflare.com/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#faae40",
+      "#f38020"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "cocos",
+    "source_url": "https://cocos.capital/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "cohen-aliados",
+    "source_url": "https://cohenmediamanager.prod.ingecloud.com/Handlers/BaseStreamer.ashx?id=i17687",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#646569",
+      "#922249"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "coinbase",
+    "source_url": "https://static-assets.coinbase.com/ui-infra/illustration/v1/pictogram/svg/light/coinbaseLogoNavigation-4.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#0052ff"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "copa-airlines",
+    "source_url": "https://www.copaair.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#0032a0"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "cresud",
+    "source_url": "https://www.cresud.com.ar/assets/img/cresud.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#010101"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "crypto-com",
+    "source_url": "https://mkt-static.crypto.com/cdc_icon_mainapp.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#3c62d1",
+      "#1e379d",
+      "#041c73",
+      "#010348"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "decrypto",
+    "source_url": "https://decrypto.com.ar/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#64d8f6"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "deno",
+    "source_url": "https://deno.com/logo.svg?__frsh_c=2c7be834343e725c25fa21f2d98d4350fa3b3f96",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "docker",
+    "source_url": "https://www.docker.com/company/newsroom/media-resources",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#2496ed"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "dolarito",
+    "source_url": "https://www.dolarito.ar/static/logos/logo_circular.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#c1bd94",
+      "#2e4032",
+      "#647253",
+      "#2c3d30",
+      "#2f4133",
+      "#c1be94"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "ds-automobiles",
+    "source_url": "https://www.stellantis.com/en/brands/ds",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#1d1717"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "ethena",
+    "source_url": "https://ethena.fi/shared/ethena-logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#040404",
+      "#3d475a"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "ethereum",
+    "source_url": "https://ethereum.org/images/assets/manifest-app-icon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#f0cdc2",
+      "#c9b3f5",
+      "#222222",
+      "#88aaf1",
+      "#b8faf6",
+      "#1616b4"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "expedia",
+    "source_url": "https://brandfolder.com/portals/brand-expedia",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#191e3b"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "farmacity",
+    "source_url": "https://farmacityarqa.vtexassets.com/arquivos/Logo-Farmacity.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#00b941"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "fiat",
+    "source_url": "https://www.fcaci.com/x/FIATv15",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#941711"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "fiwind",
+    "source_url": "https://cdn.prod.website-files.com/63b47fb7e18bb8aa4aaa05b9/63b5c545b690723cf28a6fc1_Fiwind%20Isologo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#efb41d"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "fluidkey",
+    "source_url": "https://www.fluidkey.com/_next/static/media/logo-s.5dea92d2.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "ford",
+    "source_url": "https://secure.ford.com/brochures/",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#00274e"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "fravega",
+    "source_url": "https://www.fravega.com/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#409",
+      "#b01886"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "galicia",
+    "source_url": "https://onlinebanking.bancogalicia.com.ar/images/default/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ffffff",
+      "#fa6400"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "gemini",
+    "source_url": "https://www.gemini.com/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "genomma-lab",
+    "source_url": "https://www.genommalab.com/hubfs/genommalab-logo_mx-01.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#fcfdfd",
+      "#817872",
+      "#a49e97",
+      "#d5d3cb",
+      "#deddd7",
+      "#f1f1ef"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "github",
+    "source_url": "https://github.githubassets.com/favicons/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#24292e"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "gwm-great-wall",
+    "source_url": "https://gwm.com.ar/logo-GWM-footer.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#fff"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "heineken",
+    "source_url": "https://www.heineken.com/media/zmnkoinc/heineken-logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#e3000f",
+      "#ffffff"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "honda",
+    "source_url": "https://www.honda.ie",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#e40521"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "hospital-aleman",
+    "source_url": "https://ha.cdn.marketica.com/wp-content/uploads/2024/12/HA-Logo-Nuevo-2025.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#221d20"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "hyperliquid",
+    "source_url": "https://app.hyperliquid.xyz/coins/HYPE.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#97fce4"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "hyundai",
+    "source_url": "https://www.hyundai.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#002c5e"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "ieb-invertir-en-bolsa",
+    "source_url": "https://www.iebmas.com.ar/icon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#8633ff",
+      "#4a2580",
+      "#33155c",
+      "#fff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "impuestito",
+    "source_url": "https://impuestito.org/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#12c77a"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "indec",
+    "source_url": "https://www.indec.gob.ar/Images_WEBINDEC/favicon-2026.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#54abdd",
+      "#00e9dd",
+      "#3b556e"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "infleta",
+    "source_url": "https://infleta.com.ar/static/safari-pinned-tab.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "invertir-online-iol",
+    "source_url": "https://iolwebsite.cdn.prismic.io/iolwebsite/Zy0i7K8jQArT0jBt_IOLinvertironline_logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ffffff",
+      "#00ffb3",
+      "#6439ff",
+      "#d2fff2",
+      "#9bffe1",
+      "#6cffd3"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "iosfa",
+    "source_url": "https://cta.iosfa.gob.ar/assets/logo-iosfa.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#434041",
+      "#29c3ec",
+      "#0094b2",
+      "#49c0b6"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "jerarquicos-salud",
+    "source_url": "https://jerarquicos.com/wp-content/uploads/2024/01/jerarquicos-logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#586eed"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "jumbo",
+    "source_url": "https://jumboargentinaio.vtexassets.com/assets/vtex/assets-builder/jumboargentinaio.store-theme/8.0.27/img/logos/logo-jumbo___298a91c7745ef5319749159e7332eec5.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#2dc850",
+      "#fff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "jumper",
+    "source_url": "https://jumper.xyz/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ffffff",
+      "#f6f0ff",
+      "#8700b8",
+      "#31007a"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "jupiter",
+    "source_url": "https://jup.ag/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#acf47d",
+      "#00bef0",
+      "#fff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "kayak",
+    "source_url": "https://www.kayak.com.ar/icon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ff690f",
+      "#fff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "kraken",
+    "source_url": "https://assets-cms.kraken.com/images/51n36hrp/facade/ee9507855699894eeabab829aef8e2bc5cc37d4a-120x120.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#f7d2fe",
+      "#7132f5",
+      "#f4aaff",
+      "#f000fb"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "kucoin",
+    "source_url": "https://www.kucoin.com/news/en-kucoin-media-kit",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#01bc8d"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "la-anonima",
+    "source_url": "https://www.laanonima.com.ar/imagenes/2025/svg/iso-la.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#034d8e"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "la-segunda-seguros",
+    "source_url": "https://storage.googleapis.com/l2-designsystem-prod/logos-brand/SVG/l2-logo-hor-rbg-pos.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#e20039"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "latam",
+    "source_url": "https://s.latamairlines.com/images/boreal/collections/v1/logos/latam/DescriptivePositive.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#1b0088",
+      "#ed1650"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "ledesma",
+    "source_url": "https://www.ledesma.com.ar/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#3599cb"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "lido",
+    "source_url": "https://lido.fi/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#00a3ff",
+      "#fff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "marriott",
+    "source_url": "https://marriott-hotels.marriott.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#a70023"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "mcdonald-s",
+    "source_url": "https://www.mcdonalds.com/gb/en-gb/newsroom.html",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#fbc817"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "megatone",
+    "source_url": "https://www.megatone.net/next/files/images/footer/iconos/megatone.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#fefefe",
+      "#e53308"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "mercado-libre",
+    "source_url": "https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.21.22/mercadolibre/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#2d3277",
+      "#fff",
+      "#ffd100"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "mercado-pago",
+    "source_url": "https://http2.mlstatic.com/frontend-assets/mp-web-navigation/ui-navigation/7.8.6/mercadopago/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#fff",
+      "#00bcff",
+      "#0a0080"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "metamask",
+    "source_url": "https://metamask.com/favicons/default/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#e7ebf6",
+      "#ff5c16",
+      "#ff8d5d",
+      "#661800"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "metrogas",
+    "source_url": "https://www.metrogas.com.ar/assets/themes/metrogas/safari-pinned-tab.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "metrogas-214",
+    "source_url": "https://www.metrogas.com.ar/assets/themes/metrogas/safari-pinned-tab.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "mg-motor",
+    "source_url": "https://www.mg.co.uk/themes/custom/mg/assets/images/svg/mg-logo-desktop.svg",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#ff0000"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño; monocromo con hex de marca"
+  },
+  {
+    "slug": "mini",
+    "source_url": "https://mini.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "minipay",
+    "source_url": "https://minipay.to/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#07955f"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "mitsubishi-motors",
+    "source_url": "https://www.mitsubishi-motors.com.ar/Mitsubishi_motors_new_logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#e60013"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "mobbex",
+    "source_url": "https://www.mobbex.com/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#7000ff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "modo",
+    "source_url": "https://www.modo.com.ar/static/images/favicons/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#008859",
+      "#fff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "moneygram",
+    "source_url": "https://images.ctfassets.net/toryt1tt0roy/4aB0enlewq5jCf8lvwg8Bi/84c92b9b8bbf2701a2d97265b934430b/logo_mobile.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ed0000"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "morpho",
+    "source_url": "https://morpho.org/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#004ec3",
+      "#5792ff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "movistar-argentina",
+    "source_url": "https://www.movistar.com.ar/documents/10180/98804812/LogoMovistar.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#0066ff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "naldo",
+    "source_url": "https://www.naldo.com.ar/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#f1000f"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "naranja-x",
+    "source_url": "https://commons.wikimedia.org/wiki/File:NaranjaX-logo.svg",
+    "source_type": "wikimedia(official-sourced)",
+    "kind": "iso",
+    "colors": [
+      "#50007f",
+      "#ffffff",
+      "#000000",
+      "#d1d1d1",
+      "#f75000"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "neon",
+    "source_url": "https://neon.com/favicon/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#37c38f",
+      "#34d59a"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "netlify",
+    "source_url": "https://www.netlify.com/favicon/v2/icon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#131619",
+      "#ffffff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "new-balance",
+    "source_url": "https://www.newbalance.com.ar/on/demandware.static/Sites-NewBalance-Site/-/default/dw3f403ee5/images/logo-small.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#e31937"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "nexo",
+    "source_url": "https://nexo.com/icon.svg?icon.3fafebnc_zqra.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#0a0d11",
+      "#e1d8c7"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "next-js",
+    "source_url": "https://nextjs.org/_next/static/immutable/media/logo-next-light.0fb0_52g-wvaa.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "nike",
+    "source_url": "https://www.nike.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#111111"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "nissan",
+    "source_url": "https://www.nissan.ie",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#c3002f"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "node-js",
+    "source_url": "https://nodejs.org/en/about/branding",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#5fa04e"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "norton",
+    "source_url": "https://www.norton.com.ar/wp-content/uploads/2022/11/isoD.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#8c734b"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "nubi",
+    "source_url": "https://cdn.prod.website-files.com/5f1f3f11752ec26ac01fb26d/66b534ea47f3991054fcf3a6_logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#1928a3"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "nuxt",
+    "source_url": "https://nuxt.com/design-kit",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#00dc82"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "okx",
+    "source_url": "https://commons.wikimedia.org/wiki/File:OKX_logo.svg",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "omint",
+    "source_url": "https://images.ctfassets.net/xp55tek00mj4/6hCaB8vTHX4ApExhJoIxvD/d13510d35cbe61035ebef01e5dc3f757/Logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#8980c0",
+      "#001d85"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "ospia",
+    "source_url": "https://www.ospia.org.ar/favicons/favicon-november.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#a200a5",
+      "#561766"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "paladini",
+    "source_url": "https://paladini.com/assets/images/logo-paladini-nZMplrz.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ef3f42",
+      "#02a1b4"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "pami",
+    "source_url": "https://www.pami.org.ar/imagenes/favicon/favicon.svg?v=1.5759",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#0b2344",
+      "#f5f5f5"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "pampa",
+    "source_url": "https://pampa.com/wp-content/uploads/2023/12/pampa-favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#00339f",
+      "#026bba"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "pampa-energia",
+    "source_url": "https://pampa.com/wp-content/uploads/2023/12/pampa-favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#00339f",
+      "#026bba"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "payoneer",
+    "source_url": "https://www.payoneer.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#ff4800"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "payway",
+    "source_url": "https://static.prismamp.com/orbita/assets/images/brand/pwBrandNew.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#013aff",
+      "#fff"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "peanut",
+    "source_url": "https://peanut.me/_next/static/media/logo.42644c28.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ffc900",
+      "#fff"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "pedidosya",
+    "source_url": "https://commons.wikimedia.org/wiki/File:PedidosYa_logo.svg",
+    "source_type": "wikimedia(official-sourced)",
+    "kind": "iso",
+    "colors": [
+      "#fa0050"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "peugeot",
+    "source_url": "https://www.peugeot.co.uk",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "phantom",
+    "source_url": "https://phantom.com/_web_platform_assets/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ab9ff2"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "plasma",
+    "source_url": "https://www.plasma.org/icon.svg?icon.3saomr_e5kyu3.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#fefcf9",
+      "#251d1d"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "pluspagos",
+    "source_url": "https://pluspagos.com/wp-content/themes/pluspagos/components/atoms/logo/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#002c86"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "polymarket",
+    "source_url": "https://polymarket.com/icons/safari-pinned-tab.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "pomelo",
+    "source_url": "https://pomelo.la/icon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#e8357c",
+      "#ce1a55",
+      "#ed71a7",
+      "#b91649",
+      "#e94587",
+      "#e61e66"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "porsche",
+    "source_url": "https://www.porsche.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#b12b28"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "postgres",
+    "source_url": "https://wiki.postgresql.org/wiki/Logo",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#4169e1"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "prisma",
+    "source_url": "https://github.com/prisma/presskit/tree/4bcb64181f266723439d955d60afa1c55fefa715",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#2d3748"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "prisma-medios-de-pago",
+    "source_url": "https://prismamediosdepago.com/sites/default/files/2024-12/logo-footer-svg.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#2fb2b4",
+      "#003c7a",
+      "#f6b700",
+      "#fdda00",
+      "#e43557"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "puma",
+    "source_url": "https://us.puma.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#242b2f"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "python",
+    "source_url": "https://www.python.org/community/logos/",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#3776ab"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "ram",
+    "source_url": "https://www.fcaci.com/x/RAMv15",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "react",
+    "source_url": "https://github.com/facebook/create-react-app/blob/282c03f9525fdf8061ffa1ec50dce89296d916bd/test/fixtures/relative-paths/src/logo.svg",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#61dafb"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "red-link",
+    "source_url": "https://redlink.com.ar/images/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#89fba2",
+      "#4d4d4d"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "redis",
+    "source_url": "https://redis.io/brand-guidelines",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#ff4438"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "renault",
+    "source_url": "https://media.renaultgroup.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#ffcc33"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "roxom",
+    "source_url": "https://roxom.com/_next/static/media/roxom-symbol.0312-yn0o63qv.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "rust",
+    "source_url": "https://rust-lang.org/static/images/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ffffff",
+      "#000000"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "safe",
+    "source_url": "https://safe.global/images/common/safe-logo-wallet.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#1a1a1a"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "san-cristobal-seguros",
+    "source_url": "https://webinstitucional.blob.core.windows.net/master/2022/10/Logo-SCS.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#171669"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "sancor-salud",
+    "source_url": "https://sancorsalud.com.ar/app-resources/favicons/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#263d83"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "sancor-seguros",
+    "source_url": "https://www.sancorseguros.com.ar/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#b00064"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "satoshitango",
+    "source_url": "https://www.satoshitango.com/img/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#225",
+      "#1d43fb",
+      "#001db4",
+      "#51ebc0"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "sbs-trading",
+    "source_url": "https://www.gruposbs.com/img/sbs-logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#011521",
+      "#ac7e39",
+      "#f9df9a"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "shell",
+    "source_url": "https://www.shell.com.ar/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#fff",
+      "#fbce07",
+      "#dd1d21"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "solana",
+    "source_url": "https://solana.com/branding",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#9945ff"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "sos-salud",
+    "source_url": "https://sossalud.com.ar/wp-content/uploads/2024/11/sos-salud-logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#44e099",
+      "#1a005d",
+      "#2e3192",
+      "#235099",
+      "#147da5",
+      "#099ead"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "sqlite",
+    "source_url": "https://github.com/sqlite/sqlite/blob/43e862723ec680542ca6f608f9963c0993dd7324/art/sqlite370.eps",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#003b57"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "starbucks",
+    "source_url": "https://starbucks.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#006241"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "steamcito",
+    "source_url": "https://steamcito.com.ar/storage/platforms/logo-fanatical-1789540883.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ff9800"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "subaru",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Subaru_logo.svg",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#013c74"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "supabase",
+    "source_url": "https://github.com/supabase/supabase/blob/4031a7549f5d46da7bc79c01d56be4177dc7c114/packages/common/assets/images/supabase-logo-wordmark--light.svg",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#3fcf8e"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "supermercados-dia",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dia_2019.svg",
+    "source_type": "wikimedia(official-sourced)",
+    "kind": "iso",
+    "colors": [
+      "#ffffff",
+      "#e30613"
+    ],
+    "license_note": "Commons Public domain; marca registrada del titular",
+    "verified_official": true
+  },
+  {
+    "slug": "supervielle",
+    "source_url": "https://www.supervielle.com.ar/sb/f/296085206817349/48x32/fe18ca3829/logo-supervielle-s-pink.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#920027",
+      "#ff94bb",
+      "#ed006c"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "suzuki",
+    "source_url": "https://www.suzuki.ie",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#e30613"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "svelte",
+    "source_url": "https://github.com/sveltejs/branding/blob/c4dfca6743572087a6aef0e109ffe3d95596e86a/svelte-logo.svg",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#ff3e00"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "swiss-medical",
+    "source_url": "https://www.swissmedical.com.ar/prepagaclientes/assets/images/logo-smmp-color-new.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#d50032"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "tailwind",
+    "source_url": "https://tailwindcss.com/brand",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#06b6d4"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "tapi",
+    "source_url": "https://tapi.la/wp-content/uploads/2025/06/logo_black.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#09d334"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "telecentro",
+    "source_url": "https://www.telecentro.com.ar/img/logo_isotipo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#fff",
+      "#00bcf1"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "tenaris",
+    "source_url": "https://www.tenaris.com/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#00a84f",
+      "#0066b0",
+      "#a9218e"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "ternium",
+    "source_url": "https://ar.ternium.com/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ff3300",
+      "#ff9900"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "tesla",
+    "source_url": "https://www.tesla.com/tesla-gallery",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#cc0000"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "tienda-dolar",
+    "source_url": "https://tiendadolar.com.ar/assets/images/td-logo-green.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#05c28e"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "tn",
+    "source_url": "https://tn.com.ar/favicon.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#128bef",
+      "#ff3939"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "toyota",
+    "source_url": "https://www.toyota.com/brandguidelines/logo/",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#eb0a1e"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "tripadvisor",
+    "source_url": "https://static.tacdn.com/img2/brand_refresh_2025/logos/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#002b11"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "tuenti",
+    "source_url": "https://www.tuenti.com.ar/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "typescript",
+    "source_url": "https://www.typescriptlang.org/branding",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#3178c6"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "unilever",
+    "source_url": "https://www.unilever.com/our-company/the-logo",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#1f36c7"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "uniswap",
+    "source_url": "https://uniswap.org/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ff37c7"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "upstash",
+    "source_url": "https://upstash.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#00e9a3"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "vercel",
+    "source_url": "https://vercel.com/geist/brands",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#000000"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "vite",
+    "source_url": "https://github.com/voidzero-dev/community-design-resources/blob/55902097229cf01cf2a4ceb376f992f5cf306756/brand-assets/vite/vite-icon-color-bracketless.svg",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#9135ff"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "volkswagen",
+    "source_url": "https://www.vw.com",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#151f5d"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "volvo",
+    "source_url": "https://www.media.volvocars.com/global/en-gb/logos",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#003057"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "vue",
+    "source_url": "https://vuejs.org/logo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#42b883",
+      "#35495e"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "wise",
+    "source_url": "https://wise.design/foundations/logo",
+    "source_type": "simple-icons",
+    "kind": "iso",
+    "colors": [
+      "#9fe870"
+    ],
+    "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
+  },
+  {
+    "slug": "wyndham-howard-johnson",
+    "source_url": "https://www.wyndhamhotels.com/content/dam/wyndham/brand-icons/whr.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#002d72"
+    ],
+    "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "yamaha",
+    "source_url": "https://www.yamaha-motor.com.ar/bundles/frontend/img/Logo_nuevo2025_alternativo-01.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#ec2226"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  }
+]

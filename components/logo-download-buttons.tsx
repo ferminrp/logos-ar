@@ -3,15 +3,17 @@
 import { useState } from "react"
 import { Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { CopyButton } from "@/components/copy-button"
 import { resolveLogoDownloadFilename } from "@/lib/logo-download-attachment"
 
-type LogoFormat = "png" | "svg"
+type LogoFormat = "png" | "svg" | "isotipo"
 
 interface LogoDownloadButtonsProps {
   slug: string
   name: string
   domain: string
   layout?: "hero" | "full"
+  isotipoSvgUrl?: string
 }
 
 function trackLogoDownload(slug: string, name: string, format: LogoFormat) {
@@ -38,6 +40,9 @@ function getDownloadUrl(domain: string, format: LogoFormat): string {
 
 function getFilename(domain: string, format: LogoFormat): string {
   const base = domain.replace(/\./g, "_")
+  if (format === "isotipo") {
+    return `${base}_isotipo.svg`
+  }
   return `${base}_logo.${format}`
 }
 
@@ -65,6 +70,7 @@ export function LogoDownloadButtons({
   name,
   domain,
   layout = "full",
+  isotipoSvgUrl,
 }: LogoDownloadButtonsProps) {
   const [downloadingFormat, setDownloadingFormat] = useState<LogoFormat | null>(
     null,
@@ -90,6 +96,7 @@ export function LogoDownloadButtons({
 
   const showPng = true
   const showSvg = true
+  const showIsotipo = Boolean(isotipoSvgUrl)
   const pngVariant =
     layout === "hero" ? ("logo-download-png" as const) : ("outline" as const)
 
@@ -120,7 +127,33 @@ export function LogoDownloadButtons({
             {downloadingFormat === "svg" ? "Descargando..." : "Descargar SVG"}
           </Button>
         ) : null}
+        {showIsotipo ? (
+          <Button
+            type="button"
+            variant="outline"
+            size="touch"
+            disabled={downloadingFormat !== null}
+            onClick={() => void handleDownload("isotipo")}
+          >
+            <Download className="h-4 w-4" />
+            {downloadingFormat === "isotipo"
+              ? "Descargando..."
+              : "Descargar isotipo SVG"}
+          </Button>
+        ) : null}
       </div>
+      {showIsotipo && isotipoSvgUrl ? (
+        <div className="flex flex-wrap items-center gap-2">
+          <code className="max-w-full flex-1 break-all rounded bg-secondary px-2 py-1.5 font-mono text-xs text-foreground">
+            {isotipoSvgUrl}
+          </code>
+          <CopyButton
+            value={isotipoSvgUrl}
+            size="touch"
+            label="Copiar URL del isotipo SVG"
+          />
+        </div>
+      ) : null}
       {error ? (
         <p className="text-sm text-destructive" role="alert">
           {error}

@@ -6,10 +6,12 @@ import {
   isValidHostedLogoSlug,
   maybeServeHostedLogo,
   parseHostedLogoPathname,
+  parseIsotipoPathname,
   r2ObjectKeyForHostedLogo,
   type HostedLogoWorkerEnv,
   type LogosR2Bucket,
 } from './worker-logos-r2.ts'
+import { hasCatalogIsotipo, r2ObjectKeyForIsotipo } from './isotipos-catalog.ts'
 
 describe('worker-logos-r2 parsing', () => {
   it('parses flat hosted logo paths', () => {
@@ -29,6 +31,14 @@ describe('worker-logos-r2 parsing', () => {
     assert.equal(parseHostedLogoPathname('/logos/UPPER.png'), null)
     assert.equal(isValidHostedLogoSlug('ok-slug-1'), true)
     assert.equal(isValidHostedLogoSlug('bad_slug'), false)
+  })
+
+  it('parses isotipo hosted paths', () => {
+    assert.deepEqual(parseIsotipoPathname('/logos/mercado-pago/isotipo.svg'), {
+      slug: 'mercado-pago',
+    })
+    assert.equal(parseIsotipoPathname('/logos/mercado-pago.svg'), null)
+    assert.equal(parseIsotipoPathname('/logos/a/b/isotipo.svg'), null)
   })
 
   it('builds canonical R2 keys', () => {
@@ -184,6 +194,64 @@ describe('maybeServeHostedLogo', () => {
       res?.headers.get('content-security-policy'),
       LOGO_SVG_CONTENT_SECURITY_POLICY,
     )
+  })
+
+  it('serves isotipo from R2 with SVG security headers', async () => {
+    if (!hasCatalogIsotipo('mercado-pago')) {
+      return
+    }
+    const svg = new TextEncoder().encode('<svg xmlns="http://www.w3.org/2000/svg"/>')
+    const key = r2ObjectKeyForIsotipo('mercado-pago')
+    const r2 = mockR2(new Map([[key, { body: svg, etag: 'iso1' }]]))
+    const res = await maybeServeHostedLogo(
+      new Request('https://loguitos.app/logos/mercado-pago/isotipo.svg'),
+      env(r2, async () => new Response('missing', { status: 404 })),
+    )
+    assert.equal(res?.status, 200)
+    assert.equal(res?.headers.get('content-type'), 'image/svg+xml')
+    assert.equal(
+      res?.headers.get('content-security-policy'),
+      LOGO_SVG_CONTENT_SECURITY_POLICY,
+    )
+  })
+
+  it('falls back isotipo to ASSETS under /isotipos/', async () => {
+    if (!hasCatalogIsotipo('mercado-pago')) {
+      return
+    }
+    const svg = new TextEncoder().encode('<svg xmlns="http://www.w3.org/2000/svg"/>')
+    const res = await maybeServeHostedLogo(
+      new Request('https://loguitos.app/logos/mercado-pago/isotipo.svg'),
+      env(
+        undefined,
+        async (input) => {
+          const href =
+            typeof input === 'string'
+              ? input
+              : input instanceof URL
+                ? input.href
+                : input.url
+          const url = new URL(href)
+          if (url.pathname === '/isotipos/mercado-pago.svg') {
+            return new Response(svg, {
+              status: 200,
+              headers: { 'Content-Type': 'image/svg+xml' },
+            })
+          }
+          return new Response('missing', { status: 404 })
+        },
+      ),
+    )
+    assert.equal(res?.status, 200)
+    assert.equal(res?.headers.get('x-content-type-options'), 'nosniff')
+  })
+
+  it('404 isotipo for catalog slug without isotipo', async () => {
+    const res = await maybeServeHostedLogo(
+      new Request('https://loguitos.app/logos/zzz-not-an-isotipo/isotipo.svg'),
+      env(undefined, async () => new Response('missing', { status: 404 })),
+    )
+    assert.equal(res?.status, 404)
   })
 
   it('returns null for unrelated paths', async () => {

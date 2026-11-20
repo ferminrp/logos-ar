@@ -21,6 +21,11 @@ import {
   logoDownloadSvgHeaders,
 } from "./logo-image-security-headers.ts"
 import { isCloudflareWorkersRuntime } from "./worker-runtime.ts"
+import {
+  assetsFallbackPathForIsotipo,
+  hasCatalogIsotipo,
+  publicIsotipoSvgPath,
+} from "./isotipos-catalog.ts"
 
 const KNOWN_DOMAINS = new Set(
   getAllEntities().map((entity) => entity.domain.toLowerCase()),
@@ -31,7 +36,7 @@ const DEFAULT_SIZE = 256
 const MAX_SIZE = 512
 const CACHE_CONTROL = "public, max-age=86400, s-maxage=604800, stale-while-revalidate=604800"
 
-type LogoFormat = "png" | "svg"
+type LogoFormat = "png" | "svg" | "isotipo"
 
 function parseSize(value: string | null): number {
   if (!value) return DEFAULT_SIZE
@@ -52,6 +57,9 @@ function normalizeDomain(value: string | null): string | null {
 }
 
 function getFilename(domain: string, format: LogoFormat): string {
+  if (format === "isotipo") {
+    return `${domain.replace(/\./g, "_")}_isotipo.svg`
+  }
   return `${domain.replace(/\./g, "_")}_logo.${format}`
 }
 
@@ -216,13 +224,45 @@ export async function handleLogoDownloadGet(
     return Response.json({ error: "Dominio inválido" }, { status: 400 })
   }
 
-  if (format !== "png" && format !== "svg") {
+  if (format !== "png" && format !== "svg" && format !== "isotipo") {
     return Response.json({ error: "Formato inválido" }, { status: 400 })
   }
 
   const entity = getAllEntities().find(
     (item) => item.domain.toLowerCase() === domain,
   )
+
+  if (format === "isotipo") {
+    if (!entity || !hasCatalogIsotipo(entity.slug)) {
+      return Response.json({ error: "Isotipo no disponible" }, { status: 404 })
+    }
+    const path =
+      ctx.assets != null
+        ? assetsFallbackPathForIsotipo(entity.slug)
+        : publicIsotipoSvgPath(entity.slug)
+    const target = new URL(path, ctx.origin)
+    const upstream =
+      ctx.assets != null
+        ? await ctx.assets.fetch(new Request(target, { method: "GET" }))
+        : await fetch(target.toString())
+
+    if (!upstream.ok) {
+      return Response.json(
+        { error: "No se pudo obtener el isotipo" },
+        { status: upstream.status === 404 ? 404 : 502 },
+      )
+    }
+
+    const svgText = await upstream.text()
+    const filename = getFilename(domain, format)
+    return new Response(svgText, {
+      headers: logoDownloadSvgHeaders({
+        "Content-Type": "image/svg+xml",
+        "Content-Disposition": `attachment; filename="${filename}"`,
+        "Cache-Control": CACHE_CONTROL,
+      }),
+    })
+  }
   const faviconDomain = entity?.domain ?? domain
   let logoUrl = entity
     ? getEntityLogoUrl(entity, size)
