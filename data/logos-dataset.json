@@ -1,6 +1,6 @@
 {
-  "version": "c9e0899507d2",
-  "totalItems": 400,
+  "version": "873130756f45",
+  "totalItems": 407,
   "items": [
     {
       "name": "Banco de la Nación Argentina",
@@ -1398,6 +1398,17 @@
       "categoryId": "tecnologias",
       "categoryName": "Tecnologías",
       "searchText": "github github.com"
+    },
+    {
+      "name": "Tiendanube",
+      "domain": "tiendanube.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tiendanube.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/tiendanube.com.ico",
+      "catalog_logo_url": "/logos/tiendanube.png",
+      "logo_source": "google",
+      "categoryId": "tecnologias",
+      "categoryName": "Tecnologías",
+      "searchText": "tiendanube tiendanube.com"
     },
     {
       "name": "Invertir Online (IOL)",
@@ -3545,6 +3556,61 @@
       "searchText": "don satur donsatur.com.ar"
     },
     {
+      "name": "Guaymallén",
+      "domain": "alfajoresguaymallen.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=alfajoresguaymallen.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/alfajoresguaymallen.com.ar.ico",
+      "catalog_logo_url": "/logos/guaymallen.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "guaymallen alfajoresguaymallen.com.ar"
+    },
+    {
+      "name": "Rapanui",
+      "domain": "rapanui.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rapanui.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/rapanui.com.ar.ico",
+      "catalog_logo_url": "/logos/rapanui.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "rapanui rapanui.com.ar"
+    },
+    {
+      "name": "Piporé",
+      "domain": "pipore.com.ar",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pipore.com.ar&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/pipore.com.ar.ico",
+      "catalog_logo_url": "/logos/pipore.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "pipore pipore.com.ar"
+    },
+    {
+      "name": "Catena Zapata",
+      "domain": "catenazapata.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=catenazapata.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/catenazapata.com.ico",
+      "catalog_logo_url": "/logos/catena-zapata.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "catena zapata catenazapata.com"
+    },
+    {
+      "name": "Cagnoli",
+      "domain": "cagnoli.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cagnoli.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/cagnoli.com.ico",
+      "catalog_logo_url": "/logos/cagnoli.png",
+      "logo_source": "google",
+      "categoryId": "alimentos",
+      "categoryName": "Alimentos y bebidas",
+      "searchText": "cagnoli cagnoli.com"
+    },
+    {
       "name": "YPF",
       "domain": "ypf.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ypf.com&sz=128",
@@ -4302,6 +4368,17 @@
       "categoryId": "energia",
       "categoryName": "Energía",
       "searchText": "tgs www.tgs.com.ar"
+    },
+    {
+      "name": "Tecpetrol",
+      "domain": "tecpetrol.com",
+      "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tecpetrol.com&sz=128",
+      "duck_domain": "https://icons.duckduckgo.com/ip3/tecpetrol.com.ico",
+      "catalog_logo_url": "/logos/tecpetrol.png",
+      "logo_source": "google",
+      "categoryId": "energia",
+      "categoryName": "Energía",
+      "searchText": "tecpetrol tecpetrol.com"
     },
     {
       "name": "ComparaTasas",

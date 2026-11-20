@@ -232,6 +232,7 @@ export const categories: Category[] = [
       { id: 445, name: "Docker", domain: "www.docker.com" },
       { id: 446, name: "Clerk", domain: "clerk.com" },
       { id: 447, name: "GitHub", domain: "github.com" },
+      { id: 607, name: "Tiendanube", domain: "tiendanube.com", slug: "tiendanube" },
     ],
   },
   {
@@ -587,6 +588,16 @@ export const categories: Category[] = [
       { id: 584, name: "Trapiche", domain: "trapiche.com.ar" },
       { id: 588, name: "Norton", domain: "norton.com.ar" },
       { id: 591, name: "Don Satur", domain: "donsatur.com.ar" },
+      { id: 604, name: "Guaymallén", domain: "alfajoresguaymallen.com.ar", slug: "guaymallen" },
+      { id: 605, name: "Rapanui", domain: "rapanui.com.ar", slug: "rapanui" },
+      { id: 608, name: "Piporé", domain: "pipore.com.ar", slug: "pipore" },
+      {
+        id: 609,
+        name: "Catena Zapata",
+        domain: "catenazapata.com",
+        slug: "catena-zapata",
+      },
+      { id: 610, name: "Cagnoli", domain: "cagnoli.com", slug: "cagnoli" },
     ],
   },
   {
@@ -741,6 +752,7 @@ export const categories: Category[] = [
       { id: 603, name: "Metrogas", domain: "metrogas.com.ar", slug: "metrogas-214" },
       { id: 215, name: "Pampa Energía", domain: "pampa.com" },
       { id: 595, name: "TGS", domain: "www.tgs.com.ar" },
+      { id: 606, name: "Tecpetrol", domain: "tecpetrol.com", slug: "tecpetrol" },
     ],
   },
   {

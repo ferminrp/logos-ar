@@ -220,9 +220,22 @@ export async function handleLogoDownloadGet(
     (item) => item.domain.toLowerCase() === domain,
   )
   const faviconDomain = entity?.domain ?? domain
-  const logoUrl = entity
+  let logoUrl = entity
     ? getEntityLogoUrl(entity, size)
     : getGoogleFaviconUrl(domain, size)
+
+  if (format === "svg" && entity) {
+    const hostedVectorPath = `/logos/${entity.slug}.svg`
+    const vectorProbe = await fetchLogoUpstream(
+      hostedVectorPath,
+      faviconDomain,
+      size,
+      ctx,
+    )
+    if (vectorProbe.response.ok) {
+      logoUrl = hostedVectorPath
+    }
+  }
   const workerDecodeBudget =
     format === "png" && isCloudflareWorkersRuntime()
       ? { targetPngSize: size }
