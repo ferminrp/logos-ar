@@ -21,6 +21,15 @@ test("entityMatchesSearchQuery is accent- and case-insensitive and uses aliases"
   assert.equal(entityMatchesSearchQuery(entity, "   "), true)
 })
 
+test("entityMatchesSearchQuery matches explicit slug with hyphens", () => {
+  const entity = {
+    name: "Catena Zapata",
+    domain: "catenazapata.com",
+    slug: "catena-zapata",
+  }
+  assert.equal(entityMatchesSearchQuery(entity, "catena-zapata"), true)
+})
+
 test("prefersMarkdown follows Accept quality values", () => {
   assert.equal(prefersMarkdown(null), false)
   assert.equal(prefersMarkdown("text/html"), false)
