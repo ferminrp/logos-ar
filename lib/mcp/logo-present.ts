@@ -5,6 +5,11 @@ import { categories } from '../logos-data.ts'
 import flagsDataset from '../../data/flags-dataset.json' with { type: 'json' }
 import { FLAGS_CATEGORY, flagsTotalCount } from '../flags-data.ts'
 import { entityRecordForLogoItem } from './entity-for-catalog-item.ts'
+import { resolveEntityLogoUrl } from '../entity-logo.ts'
+import {
+  hasCatalogIsotipo,
+  publicIsotipoSvgPath,
+} from '../isotipos-catalog.ts'
 
 const DEFAULT_DOWNLOAD_SIZE = 256
 
@@ -12,10 +17,14 @@ function isFlagItem(item: CatalogItem): item is FlagCatalogItem {
   return 'code' in item
 }
 
+export function absoluteIsotipoSvgUrl(siteUrl: string, slug: string): string {
+  return resolveEntityLogoUrl(publicIsotipoSvgPath(slug), siteUrl)
+}
+
 export function absoluteLogoDownloadUrl(
   siteUrl: string,
   domain: string,
-  format: 'png' | 'svg',
+  format: 'png' | 'svg' | 'isotipo',
 ): string {
   const params = new URLSearchParams({
     domain,
@@ -36,6 +45,9 @@ export function entityToMcpLogo(siteUrl: string, entity: EntityRecord) {
     pageUrl: `${siteUrl}/logo/${entity.slug}`,
     pngUrl: absoluteLogoDownloadUrl(siteUrl, entity.domain, 'png'),
     svgUrl: absoluteLogoDownloadUrl(siteUrl, entity.domain, 'svg'),
+    ...(hasCatalogIsotipo(entity.slug)
+      ? { isotipoSvgUrl: absoluteIsotipoSvgUrl(siteUrl, entity.slug) }
+      : {}),
     ui: siteUrl,
   }
 }
@@ -83,6 +95,9 @@ export function catalogItemToMcpSummary(siteUrl: string, item: CatalogItem) {
     pageUrl,
     pngUrl: absoluteLogoDownloadUrl(siteUrl, item.domain, 'png'),
     svgUrl: absoluteLogoDownloadUrl(siteUrl, item.domain, 'svg'),
+    ...(slug && hasCatalogIsotipo(slug)
+      ? { isotipoSvgUrl: absoluteIsotipoSvgUrl(siteUrl, slug) }
+      : {}),
   }
 }
 

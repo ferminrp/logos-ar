@@ -2,16 +2,28 @@ import {
   applyLogoPngSecurityHeaders,
   applyLogoSvgSecurityHeaders,
 } from './logo-image-security-headers.ts'
+import {
+  assetsFallbackPathForIsotipo,
+  hasCatalogIsotipo,
+  r2ObjectKeyForIsotipo,
+} from './isotipos-catalog.ts'
+import {
+  HOSTED_LOGO_CACHE_CONTROL,
+  parseHostedLogoPathname,
+  parseIsotipoPathname,
+  r2ObjectKeyForHostedLogo,
+  type HostedLogoExtension,
+} from './hosted-logos-path.ts'
 
-/** Immutable cache for flat catalog assets at /logos/<slug>.{png,svg}. */
-export const HOSTED_LOGO_CACHE_CONTROL =
-  'public, max-age=31536000, immutable'
-
-export const R2_LOGOS_PREFIX = 'loguitos.app/logos/'
-
-const SLUG_PATTERN = /^[a-z0-9-]+$/
-
-export type HostedLogoExtension = 'png' | 'svg'
+export {
+  HOSTED_LOGO_CACHE_CONTROL,
+  R2_LOGOS_PREFIX,
+  isValidHostedLogoSlug,
+  parseHostedLogoPathname,
+  parseIsotipoPathname,
+  r2ObjectKeyForHostedLogo,
+  type HostedLogoExtension,
+} from './hosted-logos-path.ts'
 
 export type ParsedHostedLogoPath = {
   slug: string
@@ -40,34 +52,6 @@ export type HostedLogoWorkerEnv = {
   }
 }
 
-export function isValidHostedLogoSlug(slug: string): boolean {
-  return slug.length > 0 && SLUG_PATTERN.test(slug)
-}
-
-export function r2ObjectKeyForHostedLogo(
-  slug: string,
-  ext: HostedLogoExtension,
-): string {
-  const file = ext === 'png' ? 'logo.png' : 'logo.svg'
-  return `${R2_LOGOS_PREFIX}${slug}/${file}`
-}
-
-/** Maps public URL `/logos/<slug>.<ext>` to slug + canonical R2 filename. */
-export function parseHostedLogoPathname(
-  pathname: string,
-): ParsedHostedLogoPath | null {
-  const match = /^\/logos\/([^/]+)\.(png|svg)$/.exec(pathname)
-  if (!match?.[1] || !match[2]) {
-    return null
-  }
-  const ext = match[2] as HostedLogoExtension
-  const slug = match[1]
-  if (!isValidHostedLogoSlug(slug)) {
-    return null
-  }
-  return { slug, ext }
-}
-
 function contentTypeForExtension(ext: HostedLogoExtension): string {
   return ext === 'png' ? 'image/png' : 'image/svg+xml'
 }
@@ -90,6 +74,17 @@ function buildLogoResponseHeaders(
   return headers
 }
 
+function buildIsotipoSvgResponseHeaders(etag: string | null): Headers {
+  const headers = new Headers()
+  headers.set('Content-Type', 'image/svg+xml')
+  headers.set('Cache-Control', HOSTED_LOGO_CACHE_CONTROL)
+  if (etag) {
+    headers.set('ETag', etag)
+  }
+  applyLogoSvgSecurityHeaders(headers)
+  return headers
+}
+
 function etagMatches(ifNoneMatch: string | null, etag: string | null): boolean {
   if (!ifNoneMatch || !etag) {
     return false
@@ -106,8 +101,7 @@ function etagMatches(ifNoneMatch: string | null, etag: string | null): boolean {
 }
 
 function notModifiedHeaders(ext: HostedLogoExtension, etag: string | null): Headers {
-  const headers = buildLogoResponseHeaders(ext, etag)
-  return headers
+  return buildLogoResponseHeaders(ext, etag)
 }
 
 async function responseFromR2(
@@ -124,6 +118,34 @@ async function responseFromR2(
   }
 
   const headers = buildLogoResponseHeaders(ext, etag)
+  if (request.method === 'HEAD') {
+    const len = 'size' in object && object.size != null ? String(object.size) : null
+    if (len) {
+      headers.set('Content-Length', len)
+    }
+    return new Response(null, { status: 200, headers })
+  }
+
+  if ('body' in object && object.body != null) {
+    return new Response(object.body as BodyInit, { status: 200, headers })
+  }
+
+  return new Response(null, { status: 404 })
+}
+
+async function responseFromR2Isotipo(
+  request: Request,
+  object: HostedR2Head | HostedR2Body,
+): Promise<Response> {
+  const etag = object.httpEtag ?? object.etag ?? null
+  if (etagMatches(request.headers.get('If-None-Match'), etag)) {
+    return new Response(null, {
+      status: 304,
+      headers: buildIsotipoSvgResponseHeaders(etag),
+    })
+  }
+
+  const headers = buildIsotipoSvgResponseHeaders(etag)
   if (request.method === 'HEAD') {
     const len = 'size' in object && object.size != null ? String(object.size) : null
     if (len) {
@@ -167,6 +189,34 @@ async function tryR2HostedLogo(
   return responseFromR2(request, body, parsed.ext)
 }
 
+async function tryR2Isotipo(
+  request: Request,
+  env: HostedLogoWorkerEnv,
+  slug: string,
+): Promise<Response | null> {
+  const bucket = env.LOGOS
+  if (!bucket) {
+    return null
+  }
+
+  const key = r2ObjectKeyForIsotipo(slug)
+  const head = await bucket.head(key)
+  if (!head) {
+    return null
+  }
+
+  if (request.method === 'HEAD') {
+    return responseFromR2Isotipo(request, head)
+  }
+
+  const body = await bucket.get(key)
+  if (!body) {
+    return null
+  }
+
+  return responseFromR2Isotipo(request, body)
+}
+
 async function fallbackAssetsHostedLogo(
   request: Request,
   env: HostedLogoWorkerEnv,
@@ -206,14 +256,92 @@ async function fallbackAssetsHostedLogo(
   })
 }
 
+async function fallbackAssetsIsotipo(
+  request: Request,
+  env: HostedLogoWorkerEnv,
+  slug: string,
+): Promise<Response> {
+  const fallbackPath = assetsFallbackPathForIsotipo(slug)
+  const fallbackUrl = new URL(fallbackPath, request.url)
+  const fallbackRequest = new Request(fallbackUrl, {
+    method: request.method,
+    headers: request.headers,
+  })
+  const assetsResponse = await env.ASSETS.fetch(fallbackRequest)
+  if (assetsResponse.status === 404) {
+    return new Response('Not Found', { status: 404 })
+  }
+
+  const headers = new Headers(assetsResponse.headers)
+  headers.set('Cache-Control', HOSTED_LOGO_CACHE_CONTROL)
+  headers.set('Content-Type', 'image/svg+xml')
+  applyLogoSvgSecurityHeaders(headers)
+
+  const etag = assetsResponse.headers.get('ETag')
+  if (etagMatches(request.headers.get('If-None-Match'), etag)) {
+    return new Response(null, {
+      status: 304,
+      headers: buildIsotipoSvgResponseHeaders(etag),
+    })
+  }
+
+  if (request.method === 'HEAD') {
+    return new Response(null, {
+      status: assetsResponse.status,
+      statusText: assetsResponse.statusText,
+      headers,
+    })
+  }
+
+  return new Response(assetsResponse.body, {
+    status: assetsResponse.status,
+    statusText: assetsResponse.statusText,
+    headers,
+  })
+}
+
+async function maybeServeHostedIsotipo(
+  request: Request,
+  env: HostedLogoWorkerEnv,
+): Promise<Response | null> {
+  const { pathname } = new URL(request.url)
+  if (!/^\/logos\/[^/]+\/isotipo\.svg$/.test(pathname)) {
+    return null
+  }
+
+  const parsed = parseIsotipoPathname(pathname)
+  if (!parsed || !hasCatalogIsotipo(parsed.slug)) {
+    return new Response('Not Found', { status: 404 })
+  }
+
+  if (request.method !== 'GET' && request.method !== 'HEAD') {
+    return new Response('Method Not Allowed', {
+      status: 405,
+      headers: { Allow: 'GET, HEAD' },
+    })
+  }
+
+  const fromR2 = await tryR2Isotipo(request, env, parsed.slug)
+  if (fromR2) {
+    return fromR2
+  }
+
+  return fallbackAssetsIsotipo(request, env, parsed.slug)
+}
+
 /**
- * Serve `/logos/<slug>.png|svg` from R2 with static asset fallback.
- * Returns null when the path is not a hosted flat logo URL (delegate to Astro).
+ * Serve `/logos/<slug>.png|svg` and `/logos/<slug>/isotipo.svg` from R2 with static fallback.
+ * Returns null when the path is not a hosted logo URL (delegate to Astro).
  */
 export async function maybeServeHostedLogo(
   request: Request,
   env: HostedLogoWorkerEnv,
 ): Promise<Response | null> {
+  const isotipo = await maybeServeHostedIsotipo(request, env)
+  if (isotipo) {
+    return isotipo
+  }
+
   const { pathname } = new URL(request.url)
   const parsed = parseHostedLogoPathname(pathname)
   if (!parsed) {

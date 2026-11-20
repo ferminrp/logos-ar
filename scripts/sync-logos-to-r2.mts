@@ -8,7 +8,6 @@
  * with R2 read on the bucket. Otherwise falls back to `wrangler r2 object get -p`
  * per key (works with `wrangler login`, slower).
  */
-import { createHash } from 'node:crypto'
 import { readdir, readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -19,12 +18,13 @@ import {
   resolveCloudflareApiCredentials,
   shouldSkipLogoUpload,
 } from '../lib/sync-logos-r2-remote.ts'
+import { md5Hex } from '../lib/sync-r2-digest.ts'
 import {
   HOSTED_LOGO_CACHE_CONTROL,
   R2_LOGOS_PREFIX,
   r2ObjectKeyForHostedLogo,
   type HostedLogoExtension,
-} from '../lib/worker-logos-r2.ts'
+} from '../lib/hosted-logos-path.ts'
 
 const execFile = promisify(execFileCb)
 
@@ -33,9 +33,7 @@ const REPO_ROOT = path.resolve(__dirname, '..')
 const LOGOS_DIR = path.join(REPO_ROOT, 'public/logos')
 const BUCKET = 'loguitos-assets'
 
-export function md5Hex(bytes: Uint8Array): string {
-  return createHash('md5').update(bytes).digest('hex')
-}
+export { md5Hex } from '../lib/sync-r2-digest.ts'
 
 export function slugFromPublicLogoFile(fileName: string): string | null {
   const match = /^([a-z0-9-]+)\.(png|svg)$/i.exec(fileName)
@@ -131,7 +129,6 @@ async function wranglerPutObject(
       contentType,
       '--cache-control',
       HOSTED_LOGO_CACHE_CONTROL,
-      '--remote',
     ],
     { cwd: REPO_ROOT },
   )

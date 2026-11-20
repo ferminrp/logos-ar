@@ -1,6 +1,11 @@
 import logosDataset from '../data/logos-dataset.json' with { type: 'json' }
 import flagsDataset from '../data/flags-dataset.json' with { type: 'json' }
 import { entityMatchesSearchQuery } from './entity-search.ts'
+import { entityRecordForLogoItem } from './mcp/entity-for-catalog-item.ts'
+import {
+  hasCatalogIsotipo,
+  publicIsotipoSvgPath,
+} from './isotipos-catalog.ts'
 
 export type LogoCatalogItem = {
   name: string
@@ -10,6 +15,8 @@ export type LogoCatalogItem = {
   categoryId: string
   categoryName: string
   searchText?: string
+  /** Present only when this brand has a hosted isotipo SVG at `/logos/<slug>/isotipo.svg`. */
+  isotipoSvgUrl?: string
 }
 
 export type FlagCatalogItem = {
@@ -55,6 +62,17 @@ export type LogosCatalogResult = {
 
 function isFlagItem(item: CatalogItem): item is FlagCatalogItem {
   return 'code' in item
+}
+
+function withOptionalIsotipoUrl(item: CatalogItem): CatalogItem {
+  if (isFlagItem(item)) {
+    return item
+  }
+  const entity = entityRecordForLogoItem(item)
+  if (!entity || !hasCatalogIsotipo(entity.slug)) {
+    return item
+  }
+  return { ...item, isotipoSvgUrl: publicIsotipoSvgPath(entity.slug) }
 }
 
 function parsePositiveInt(value: number | undefined, fallback: number): number {
@@ -141,7 +159,9 @@ export function queryLogosCatalog(input: LogosCatalogFilters): LogosCatalogResul
     category: input.category,
   })
 
-  const pagedItems = filteredItems.slice(offset, offset + limit)
+  const pagedItems = filteredItems
+    .slice(offset, offset + limit)
+    .map((item) => withOptionalIsotipoUrl(item))
   const hasMore = offset + pagedItems.length < filteredItems.length
   const datasetVersion = `${logosDataset.version}:${flagsDataset.version}`
   const hasSearchFilters = Boolean(q || domain || (category && hasKnownCategory))

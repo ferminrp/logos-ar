@@ -1,4 +1,4 @@
-import { R2_LOGOS_PREFIX } from './worker-logos-r2.ts'
+import { R2_LOGOS_PREFIX } from './hosted-logos-path.ts'
 
 /** R2 list/get JSON etags are raw 32-char hex MD5 for single-part uploads. */
 export function normalizeR2ObjectEtag(etag: string | undefined): string | null {

@@ -23,6 +23,19 @@ describe('logo-present', () => {
     assert.match(ualaSummary.pageUrl ?? '', /\/logo\/uala$/)
   })
 
+  it('includes isotipoSvgUrl when the brand has an isotipo', () => {
+    const mp = logosDataset.items.find((item) => item.domain === 'mercadopago.com.ar')
+    assert.ok(mp)
+    const summary = catalogItemToMcpSummary(SITE, mp)
+    if (!('code' in summary) && summary.slug === 'mercado-pago') {
+      assert.match(summary.isotipoSvgUrl ?? '', /\/logos\/mercado-pago\/isotipo\.svg$/)
+    }
+    const resolved = resolveLogoBySlugOrName(SITE, 'mercado-pago')
+    if (resolved.found && 'domain' in resolved) {
+      assert.match(resolved.isotipoSvgUrl ?? '', /\/logos\/mercado-pago\/isotipo\.svg$/)
+    }
+  })
+
   it('get_logo resolves short ISO flag codes over the full flag set', () => {
     const ar = resolveLogoBySlugOrName(SITE, 'AR')
     assert.equal(ar.found, true)

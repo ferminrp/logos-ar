@@ -17,6 +17,7 @@
     "test": "node --experimental-strip-types --test \"lib/**/*.test.mts\" \"scripts/**/*.test.mts\" && pnpm test:logo-download && pnpm test:logo-download:worker && pnpm test:logos-r2:worker && pnpm test:seo-headers",
     "test:logos-r2:worker": "vitest run --config vitest.config.logos-workerd.mts",
     "sync:logos-r2": "node --experimental-strip-types scripts/sync-logos-to-r2.mts",
+    "sync:isotipos-r2": "node --experimental-strip-types scripts/sync-isotipos-to-r2.mts",
     "test:logo-download": "node --experimental-strip-types --test lib/logo-download-png.test.mts lib/logo-download-api.test.mts lib/logo-download-upstream.test.mts lib/worker-runtime.test.mts",
     "test:logo-download:worker": "pnpm build && vitest run --config vitest.config.workerd.mts && node --experimental-strip-types scripts/logo-download-workerd.integration.mts",
     "test:seo-headers": "node --experimental-strip-types scripts/seo-headers-workerd.integration.mts",

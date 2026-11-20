@@ -12,7 +12,12 @@ import {
   getAbsoluteEntityLogoUrl,
   getEntityLogoSource,
   getEntityLogoUrl,
+  resolveEntityLogoUrl,
 } from "@/lib/entity-logo"
+import {
+  hasCatalogIsotipo,
+  publicIsotipoSvgPath,
+} from "@/lib/isotipos-catalog"
 import {
   defaultCurlConfig,
   getDuckDuckGoCurl,
@@ -38,6 +43,12 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
   const sheetsFormula = getSheetsImageFormula(catalogLogoUrl)
 
   const imageAlt = buildEntityImageAlt(entity)
+  const isotipoRelative = hasCatalogIsotipo(slug)
+    ? publicIsotipoSvgPath(slug)
+    : undefined
+  const isotipoSvgUrl = isotipoRelative
+    ? resolveEntityLogoUrl(isotipoRelative)
+    : undefined
 
   return (
     <div className="space-y-8">
@@ -50,6 +61,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
           name={entity.name}
           domain={entity.domain}
           layout="hero"
+          isotipoSvgUrl={isotipoSvgUrl}
         />
         <p className="text-sm text-muted-foreground">
           Logo de {entity.name} en PNG transparente y SVG. Descarga gratis para

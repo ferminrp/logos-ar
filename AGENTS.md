@@ -25,6 +25,7 @@ See `README.md` for full details. Quick reference:
 | Tests (offline) | `pnpm test` |
 | Logo quality (network) | `pnpm check:logos` |
 | Sync logos → R2 | `pnpm sync:logos-r2` |
+| Sync isotipos → R2 | `pnpm sync:isotipos-r2` (`--dry-run`; API token required for metadata) |
 | E2E verify | `pnpm verify:loguitos all` |
 
 ### Known issues / gotchas
@@ -34,4 +35,4 @@ See `README.md` for full details. Quick reference:
 - **TypeScript**: `astro check` on every PR with `pnpm test`.
 - **Logo quality gate**: unchanged from Next era — see README / workflow `logo-quality.yml`.
 - **Deploy**: `wrangler deploy` uses `wrangler.jsonc` (`workers_dev: true` until DNS cutover). No custom routes in wrangler yet.
-- **Hosted logos**: public URLs stay `/logos/<slug>.png` (and `.svg`). The Worker serves them from R2 binding `LOGOS` → bucket `loguitos-assets` at keys `loguitos.app/logos/<slug>/logo.png|svg`, with `ASSETS` fallback from `public/logos/`. Upload with `pnpm sync:logos-r2` (idempotent via MD5 vs R2 etag; `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` for API list, else per-key `wrangler r2 object get`).
+- **Hosted logos**: public URLs stay `/logos/<slug>.png` (and `.svg`). Isotipos: `/logos/<slug>/isotipo.svg` (R2 key `…/isotipo.svg`, fallback `public/isotipos/`). The Worker serves from R2 binding `LOGOS` → bucket `loguitos-assets`, with `ASSETS` fallback. Upload logos: `pnpm sync:logos-r2`; isotipos: `pnpm sync:isotipos-r2` (idempotent; dataset slug guard; metadata via Cloudflare API PUT).
