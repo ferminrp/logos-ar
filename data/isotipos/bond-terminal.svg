@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>BondTerminal</title>
+  <desc>BondTerminal favicon - the [ &#8226; ] mark (design v2, candidate C). Glow retires to the animated live favicon.</desc>
+  <rect width="64" height="64" fill="#07090f"/>
+  <path d="M22 18 L12 18 L12 46 L22 46 M42 18 L52 18 L52 46 L42 46" stroke="#22c55e" stroke-width="6.5" stroke-linecap="square" fill="none"/>
+  <circle cx="32" cy="32" r="7" fill="#d97706"/>
+</svg>
