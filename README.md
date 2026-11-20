@@ -41,7 +41,7 @@ Abrí [http://localhost:4321](http://localhost:4321).
 - `pnpm start`: Worker local con Wrangler (`dist/server/wrangler.json`, incluye el wrapper post-build; corré `pnpm build` antes)
 - `pnpm indexnow:submit-all`: notificar todas las URLs del sitemap a IndexNow
 - `pnpm indexnow:ping-changed`: notificar solo URLs con `<lastmod>` cambiado
-- `pnpm sync:logos-r2`: subir `public/logos/*` al bucket R2 `loguitos-assets` (salta objetos ya idénticos; requiere `wrangler` autenticado)
+- `pnpm sync:logos-r2`: subir `public/logos/*` al bucket R2 `loguitos-assets` (salta objetos ya idénticos por MD5/etag; requiere `wrangler login` o `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` con lectura R2 para el listado rápido)
 
 Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse localmente.
 

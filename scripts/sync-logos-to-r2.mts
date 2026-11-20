@@ -4,7 +4,9 @@
  * Keys: loguitos.app/logos/<slug>/logo.png|.svg
  * Skips objects whose MD5 already matches the remote etag (idempotent).
  *
- * Requires wrangler auth with access to bucket `loguitos-assets`.
+ * Prefers Cloudflare API list (fast): set CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN
+ * with R2 read on the bucket. Otherwise falls back to `wrangler r2 object get -p`
+ * per key (works with `wrangler login`, slower).
  */
 import { createHash } from 'node:crypto'
 import { readdir, readFile } from 'node:fs/promises'
@@ -13,7 +15,13 @@ import { fileURLToPath } from 'node:url'
 import { execFile as execFileCb } from 'node:child_process'
 import { promisify } from 'node:util'
 import {
+  listR2ObjectEtags,
+  resolveCloudflareApiCredentials,
+  shouldSkipLogoUpload,
+} from '../lib/sync-logos-r2-remote.ts'
+import {
   HOSTED_LOGO_CACHE_CONTROL,
+  R2_LOGOS_PREFIX,
   r2ObjectKeyForHostedLogo,
   type HostedLogoExtension,
 } from '../lib/worker-logos-r2.ts'
@@ -41,7 +49,44 @@ export function localExtension(fileName: string): HostedLogoExtension | null {
   return null
 }
 
-async function wranglerHeadObject(objectKey: string): Promise<string | null> {
+export type SyncLogosDeps = {
+  loadRemoteEtags: () => Promise<Map<string, string>>
+  remoteMd5ForKey: (objectKey: string) => Promise<string | null>
+  putObject: (
+    objectKey: string,
+    filePath: string,
+    contentType: string,
+  ) => Promise<void>
+}
+
+async function loadRemoteEtagsDefault(): Promise<Map<string, string>> {
+  const creds = resolveCloudflareApiCredentials()
+  if (!creds) {
+    console.warn(
+      'sync-logos-to-r2: CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN not set; using per-object wrangler get (slower).',
+    )
+    return new Map()
+  }
+
+  try {
+    const map = await listR2ObjectEtags({
+      accountId: creds.accountId,
+      apiToken: creds.apiToken,
+      bucket: BUCKET,
+      prefix: R2_LOGOS_PREFIX,
+    })
+    console.log(`sync-logos-to-r2: listed ${map.size} remote object etag(s) via API`)
+    return map
+  } catch (error) {
+    console.warn(
+      'sync-logos-to-r2: R2 list API failed; falling back to per-object wrangler get.',
+      error,
+    )
+    return new Map()
+  }
+}
+
+async function remoteMd5ViaWranglerGet(objectKey: string): Promise<string | null> {
   try {
     const { stdout } = await execFile(
       'pnpm',
@@ -52,12 +97,14 @@ async function wranglerHeadObject(objectKey: string): Promise<string | null> {
         'object',
         'get',
         `${BUCKET}/${objectKey}`,
+        '-p',
         '--remote',
-        '--pipe',
       ],
-      { cwd: REPO_ROOT, encoding: 'buffer', maxBuffer: 16 * 1024 * 1024 },
+      { cwd: REPO_ROOT, encoding: 'buffer', maxBuffer: 32 * 1024 * 1024 },
     )
-    return md5Hex(new Uint8Array(stdout))
+    const buf = Buffer.isBuffer(stdout) ? stdout : Buffer.from(stdout)
+    if (buf.length === 0) return null
+    return md5Hex(new Uint8Array(buf))
   } catch {
     return null
   }
@@ -84,9 +131,16 @@ async function wranglerPutObject(
       contentType,
       '--cache-control',
       HOSTED_LOGO_CACHE_CONTROL,
+      '--remote',
     ],
     { cwd: REPO_ROOT },
   )
+}
+
+export const defaultSyncLogosDeps: SyncLogosDeps = {
+  loadRemoteEtags: loadRemoteEtagsDefault,
+  remoteMd5ForKey: remoteMd5ViaWranglerGet,
+  putObject: wranglerPutObject,
 }
 
 export type SyncLogosResult = {
@@ -95,7 +149,12 @@ export type SyncLogosResult = {
   errors: number
 }
 
-export async function syncLogosToR2(logosDir = LOGOS_DIR): Promise<SyncLogosResult> {
+export async function syncLogosToR2WithDeps(
+  deps: SyncLogosDeps,
+  logosDir = LOGOS_DIR,
+): Promise<SyncLogosResult> {
+  const remoteByKey = await deps.loadRemoteEtags()
+
   const names = await readdir(logosDir)
   let uploaded = 0
   let skipped = 0
@@ -117,15 +176,23 @@ export async function syncLogosToR2(logosDir = LOGOS_DIR): Promise<SyncLogosResu
 
     const digest = md5Hex(bytes)
     const key = r2ObjectKeyForHostedLogo(slug, ext)
-    const remoteEtag = await wranglerHeadObject(key)
-    if (remoteEtag && remoteEtag === digest) {
+
+    let remoteEtag = remoteByKey.get(key) ?? null
+    if (!shouldSkipLogoUpload(digest, remoteEtag)) {
+      const remoteMd5 = await deps.remoteMd5ForKey(key)
+      if (remoteMd5 && shouldSkipLogoUpload(digest, remoteMd5)) {
+        remoteEtag = remoteMd5
+      }
+    }
+
+    if (shouldSkipLogoUpload(digest, remoteEtag)) {
       skipped += 1
       continue
     }
 
     const contentType = ext === 'png' ? 'image/png' : 'image/svg+xml'
     try {
-      await wranglerPutObject(key, filePath, contentType)
+      await deps.putObject(key, filePath, contentType)
       uploaded += 1
       console.log(`uploaded ${key}`)
     } catch (error) {
@@ -135,6 +202,10 @@ export async function syncLogosToR2(logosDir = LOGOS_DIR): Promise<SyncLogosResu
   }
 
   return { uploaded, skipped, errors }
+}
+
+export async function syncLogosToR2(logosDir = LOGOS_DIR): Promise<SyncLogosResult> {
+  return syncLogosToR2WithDeps(defaultSyncLogosDeps, logosDir)
 }
 
 async function main() {
