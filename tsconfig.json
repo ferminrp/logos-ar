@@ -32,5 +32,11 @@
     "**/*.mts",
     "**/*.astro"
   ],
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test/**/*.workerd.test.ts",
+    "test/**/*.r2-vitest.test.ts",
+    "test/workers"
+  ]
 }

@@ -41,12 +41,17 @@ Abrí [http://localhost:4321](http://localhost:4321).
 - `pnpm start`: Worker local con Wrangler (`dist/server/wrangler.json`, incluye el wrapper post-build; corré `pnpm build` antes)
 - `pnpm indexnow:submit-all`: notificar todas las URLs del sitemap a IndexNow
 - `pnpm indexnow:ping-changed`: notificar solo URLs con `<lastmod>` cambiado
+- `pnpm sync:logos-r2`: subir `public/logos/*` al bucket R2 `loguitos-assets` (salta objetos ya idénticos por MD5/etag; requiere `wrangler login` o `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` con lectura R2 para el listado rápido)
 
 Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse localmente.
 
 ### Worker entry (deploy / previews)
 
-`wrangler.jsonc` en la raíz no define `main`: el bundle real vive en `dist/server/` después de `pnpm build`. Post-build se genera `dist/server/wrapper.mjs` (headers `Link` + cache en `/` para HTML estático). Wrangler deploy y `wrangler versions upload` desde la raíz siguen el redirect en `.wrangler/deploy/config.json` → `dist/server/wrangler.json` (`main: wrapper.mjs`), que es lo que usan previews como `pr-58-loguitos…`.
+`wrangler.jsonc` en la raíz no define `main`: el bundle real vive en `dist/server/` después de `pnpm build`. Post-build se genera `dist/server/wrapper.mjs` (headers `Link` + cache en `/`, y serving de `/logos/*` desde R2 con fallback a assets estáticos). Wrangler deploy y `wrangler versions upload` desde la raíz siguen el redirect en `.wrangler/deploy/config.json` → `dist/server/wrangler.json` (`main: wrapper.mjs`), que es lo que usan previews como `pr-58-loguitos…`.
+
+### Logos en R2
+
+Las URLs públicas siguen siendo `/logos/<slug>.png` (o `.svg`). En producción el Worker resuelve primero el binding R2 `LOGOS` (`loguitos-assets`, claves `loguitos.app/logos/<slug>/logo.png`) y, si no hay objeto, sirve el PNG de `public/logos/` vía `ASSETS`. Para cargar o actualizar el bucket: `pnpm sync:logos-r2`.
 
 ### URL canónica (SEO)
 

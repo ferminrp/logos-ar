@@ -1,0 +1,17 @@
+{
+  "name": "loguitos-logos-vitest",
+  "compatibility_date": "2025-11-10",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./workers/hosted-logos.ts",
+  "r2_buckets": [
+    {
+      "binding": "LOGOS",
+      "bucket_name": "loguitos-assets-test",
+      "preview_bucket_name": "loguitos-assets-test"
+    }
+  ],
+  "assets": {
+    "directory": "./fixtures/assets",
+    "binding": "ASSETS"
+  }
+}
