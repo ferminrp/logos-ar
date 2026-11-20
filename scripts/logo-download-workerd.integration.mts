@@ -3,6 +3,7 @@ import { spawn, type ChildProcess } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { after, before, describe, it } from 'node:test'
+import { LOGO_SVG_CONTENT_SECURITY_POLICY } from '../lib/logo-image-security-headers.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT = path.resolve(__dirname, '..')
@@ -120,6 +121,22 @@ describe('logo-download API in workerd (wrangler dev)', () => {
   it('www.galicia.ar returns PNG', async () => {
     await expectPngOk(
       `${BASE}/api/logo-download?domain=www.galicia.ar&format=png&size=128`,
+    )
+  })
+
+  it('www.galicia.ar SVG download ships nosniff and CSP', async () => {
+    const res = await fetch(
+      `${BASE}/api/logo-download?domain=www.galicia.ar&format=svg&size=128`,
+    )
+    assert.equal(res.status, 200)
+    assert.equal(
+      res.headers.get('content-type')?.split(';')[0],
+      'image/svg+xml',
+    )
+    assert.equal(res.headers.get('x-content-type-options'), 'nosniff')
+    assert.equal(
+      res.headers.get('content-security-policy'),
+      LOGO_SVG_CONTENT_SECURITY_POLICY,
     )
   })
 

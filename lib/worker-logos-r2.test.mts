@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
+import { LOGO_SVG_CONTENT_SECURITY_POLICY } from './logo-image-security-headers.ts'
 import {
   HOSTED_LOGO_CACHE_CONTROL,
   isValidHostedLogoSlug,
@@ -98,6 +99,7 @@ describe('maybeServeHostedLogo', () => {
     assert.equal(res?.headers.get('content-type'), 'image/png')
     assert.equal(res?.headers.get('cache-control'), HOSTED_LOGO_CACHE_CONTROL)
     assert.equal(res?.headers.get('etag'), '"abc123"')
+    assert.equal(res?.headers.get('x-content-type-options'), 'nosniff')
   })
 
   it('returns 304 when If-None-Match matches R2 etag', async () => {
@@ -160,7 +162,28 @@ describe('maybeServeHostedLogo', () => {
     )
     assert.equal(res?.headers.get('content-type'), 'image/svg+xml')
     assert.equal(res?.headers.get('x-content-type-options'), 'nosniff')
-    assert.match(res?.headers.get('content-security-policy') ?? '', /default-src 'none'/)
+    assert.equal(
+      res?.headers.get('content-security-policy'),
+      LOGO_SVG_CONTENT_SECURITY_POLICY,
+    )
+  })
+
+  it('adds SVG security headers on ASSETS fallback', async () => {
+    const svg = new TextEncoder().encode('<svg xmlns="http://www.w3.org/2000/svg"/>')
+    const res = await maybeServeHostedLogo(
+      new Request('https://loguitos.app/logos/fallback.svg'),
+      env(undefined, async () =>
+        new Response(svg, {
+          status: 200,
+          headers: { 'Content-Type': 'image/svg+xml' },
+        }),
+      ),
+    )
+    assert.equal(res?.headers.get('x-content-type-options'), 'nosniff')
+    assert.equal(
+      res?.headers.get('content-security-policy'),
+      LOGO_SVG_CONTENT_SECURITY_POLICY,
+    )
   })
 
   it('returns null for unrelated paths', async () => {
