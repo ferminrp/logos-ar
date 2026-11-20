@@ -80,6 +80,26 @@
     "permanent": true
   },
   {
+    "source": "/logo/heineken-313",
+    "destination": "/logo/heineken",
+    "permanent": true
+  },
+  {
+    "source": "/logos/heineken-313.png",
+    "destination": "/logos/heineken.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/heineken-313.svg",
+    "destination": "/logos/heineken.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logos/heineken-313/isotipo.svg",
+    "destination": "/logos/heineken/isotipo.svg",
+    "permanent": true
+  },
+  {
     "source": "/logo/edenor",
     "destination": "/logo/edenor-211",
     "permanent": true

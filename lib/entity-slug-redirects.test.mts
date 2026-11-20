@@ -1,6 +1,10 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { getAllEntities, getEntitySlugRedirects } from './entity-index.ts'
+import {
+  getAllEntities,
+  getEntityBySlug,
+  getEntitySlugRedirects,
+} from './entity-index.ts'
 
 describe('entity slug consolidation redirects', () => {
   const redirects = getEntitySlugRedirects()
@@ -43,5 +47,24 @@ describe('entity slug consolidation redirects', () => {
     const axion = getAllEntities().find((e) => e.slug === 'axion-energy')
     assert.ok(axion)
     assert.equal(axion.domain, 'axionenergy.com')
+  })
+
+  it('retired slugs still resolve via slugAliases (MCP / API)', () => {
+    for (const [alias, canonical] of [
+      ['bbva', 'bbva-argentina'],
+      ['edenor', 'edenor-211'],
+      ['metrogas', 'metrogas-214'],
+      ['pampa', 'pampa-energia'],
+      ['supervielle', 'banco-supervielle'],
+      ['heineken-313', 'heineken'],
+    ] as const) {
+      const resolved = getEntityBySlug(alias)
+      assert.ok(resolved, `alias ${alias}`)
+      assert.equal(resolved.slug, canonical)
+    }
+  })
+
+  it('heineken-313 redirects to canonical page', () => {
+    assert.equal(bySource.get('/logo/heineken-313'), '/logo/heineken')
   })
 })
