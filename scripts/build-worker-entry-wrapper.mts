@@ -12,11 +12,13 @@ export const HOME_DISCOVERY_BUNDLE = 'home-discovery-bundle.mjs'
 export const CANONICAL_REDIRECT_BUNDLE = 'canonical-redirect-bundle.mjs'
 export const HOSTED_LOGOS_BUNDLE = 'hosted-logos-bundle.mjs'
 export const MARKDOWN_NEGOTIATION_BUNDLE = 'markdown-negotiation-bundle.mjs'
+export const PERMANENT_REDIRECT_BUNDLE = 'permanent-redirect-bundle.mjs'
 
 export function buildWrapperSource(): string {
   return `import astro from './entry.mjs';
 import { applyHomeDiscoveryHeaders, resolveWorkerSiteUrl } from './${HOME_DISCOVERY_BUNDLE}';
 import { maybeCanonicalRedirect } from './${CANONICAL_REDIRECT_BUNDLE}';
+import { maybePermanentSlugRedirect } from './${PERMANENT_REDIRECT_BUNDLE}';
 import { maybeServeHostedLogo } from './${HOSTED_LOGOS_BUNDLE}';
 import { maybeServeMarkdown } from './${MARKDOWN_NEGOTIATION_BUNDLE}';
 
@@ -24,6 +26,8 @@ export default {
   async fetch(request, env, ctx) {
     const redirect = maybeCanonicalRedirect(request, env);
     if (redirect) return redirect;
+    const slugRedirect = maybePermanentSlugRedirect(request);
+    if (slugRedirect) return slugRedirect;
     const hostedLogo = await maybeServeHostedLogo(request, env);
     if (hostedLogo) return hostedLogo;
     const markdown = await maybeServeMarkdown(request, env);
@@ -56,6 +60,10 @@ export async function buildWorkerEntryWrapper(serverRoot = serverDir): Promise<v
   await bundleWorkerModule(
     'lib/worker-canonical-redirect.ts',
     path.join(serverRoot, CANONICAL_REDIRECT_BUNDLE),
+  )
+  await bundleWorkerModule(
+    'lib/worker-permanent-redirect.ts',
+    path.join(serverRoot, PERMANENT_REDIRECT_BUNDLE),
   )
   await bundleWorkerModule(
     'lib/worker-logos-r2.ts',

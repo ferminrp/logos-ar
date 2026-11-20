@@ -11,9 +11,8 @@ import {
 import { logosDatasetCatalogSlugSet } from './catalog-logo-slugs.ts'
 
 describe('isotipos-catalog', () => {
-  it('exposes 199 dataset-backed isotipos', () => {
-    assert.equal(isotiposMetadata.length, 199)
-    assert.equal(ISOTIPO_SLUGS.size, 199)
+  it('exposes dataset-backed isotipos without duplicate energía slugs', () => {
+    assert.equal(isotiposMetadata.length, ISOTIPO_SLUGS.size)
     const dataset = logosDatasetCatalogSlugSet()
     for (const row of isotiposMetadata as { slug: string }[]) {
       assert.ok(dataset.has(row.slug), `slug ${row.slug} missing from logos-dataset guard`)
@@ -26,7 +25,7 @@ describe('isotipos-catalog', () => {
     for (const row of isotiposMetadata as { source_type: string }[]) {
       counts.set(row.source_type, (counts.get(row.source_type) ?? 0) + 1)
     }
-    assert.equal(counts.get('official-site'), 136)
+    assert.equal(counts.get('official-site'), 133)
     assert.equal(counts.get('simple-icons'), 58)
     assert.equal(counts.get('wikimedia(official-sourced)'), 5)
   })
