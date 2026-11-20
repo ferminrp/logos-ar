@@ -45,11 +45,19 @@ async function wranglerHeadObject(objectKey: string): Promise<string | null> {
   try {
     const { stdout } = await execFile(
       'pnpm',
-      ['exec', 'wrangler', 'r2', 'object', 'head', `${BUCKET}/${objectKey}`],
-      { cwd: REPO_ROOT, encoding: 'utf8' },
+      [
+        'exec',
+        'wrangler',
+        'r2',
+        'object',
+        'get',
+        `${BUCKET}/${objectKey}`,
+        '--remote',
+        '--pipe',
+      ],
+      { cwd: REPO_ROOT, encoding: 'buffer', maxBuffer: 16 * 1024 * 1024 },
     )
-    const etagMatch = /etag:\s*"?([a-f0-9]{32})"?/i.exec(stdout)
-    return etagMatch?.[1]?.toLowerCase() ?? null
+    return md5Hex(new Uint8Array(stdout))
   } catch {
     return null
   }
