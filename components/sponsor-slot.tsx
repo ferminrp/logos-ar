@@ -21,11 +21,7 @@ export function SponsorSlot({ slug, categoryId }: SponsorSlotProps) {
 
   const shell = 'lg-slot min-h-[148px] sm:min-h-[88px]'
 
-  if (!enabled) {
-    return (
-      <aside className={`${shell} lg-slot--empty`} aria-hidden="true" />
-    )
-  }
+  if (!enabled) return null
 
   if (resolved?.kind === 'lemon') {
     const { campaign } = resolved
@@ -73,7 +69,5 @@ export function SponsorSlot({ slug, categoryId }: SponsorSlotProps) {
     )
   }
 
-  return (
-    <aside className={`${shell} lg-slot--empty`} aria-hidden="true" />
-  )
+  return null
 }

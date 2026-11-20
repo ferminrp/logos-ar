@@ -6,7 +6,7 @@ Monetization slot on `/logo/<slug>` below the intro copy and above the entity pr
 
 - `sponsor-shell` — `<aside aria-label="Contenido patrocinado">` (or empty reserved shell when disabled) with `min-h-[148px] sm:min-h-[88px]`
 - `sponsor-targeting` — `lib/sponsor-slot.ts` picks Lemon affiliate on fintech slugs except competitors; bancos and excluded fintechs get the house “Ver API” promo
-- `sponsor-flag` — `PUBLIC_SLOT_SPONSOR=on` at **build** time enables filled asides; `off` keeps the dashed empty shell (`lg-slot--empty`)
+- `sponsor-flag` — `PUBLIC_SLOT_SPONSOR=on` at **build** time enables filled asides; `off` renders nothing (no empty placeholder)
 - `sponsor-lemon-cta` — Lemon links use `rel="sponsored noopener"` and `target="_blank"`
 - `sponsor-cls` — Playwright CLS on capture routes must stay below 0.1
 
