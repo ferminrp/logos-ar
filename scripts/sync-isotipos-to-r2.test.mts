@@ -23,12 +23,13 @@ describe('sync-isotipos-to-r2', () => {
     assert.equal(result.errors, 0)
   })
 
-  it('dry-run upload path uses idempotent sync for catalog isotipos', async () => {
+  it('dry-run covers all 199 dataset-backed isotipos without refuses', async () => {
     const result = await syncIsotiposToR2({
       dryRun: true,
       isotiposDir: path.join(REPO_ROOT, 'data/isotipos'),
     })
     assert.equal(result.errors, 0)
-    assert.ok(result.skipped + result.uploaded > 0)
+    assert.equal(result.refused, 0)
+    assert.equal(result.skipped + result.uploaded, 199)
   })
 })

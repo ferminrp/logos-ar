@@ -1,5 +1,5 @@
 import isotiposMetadata from '../data/isotipos/metadata.json' with { type: 'json' }
-import { logosDatasetHostedSlugSet } from './catalog-logo-slugs.ts'
+import { logosDatasetCatalogSlugSet } from './catalog-logo-slugs.ts'
 import { isValidHostedLogoSlug, R2_LOGOS_PREFIX } from './hosted-logos-path.ts'
 
 export type IsotipoRecord = {
@@ -9,9 +9,10 @@ export type IsotipoRecord = {
   kind: string
   colors: string[]
   license_note: string
+  verified_official?: boolean
 }
 
-const datasetSlugSet = logosDatasetHostedSlugSet()
+const datasetSlugSet = logosDatasetCatalogSlugSet()
 
 const bySlug = new Map<string, IsotipoRecord>()
 
@@ -49,4 +50,20 @@ export function assetsFallbackPathForIsotipo(slug: string): string {
 
 export function catalogSlugSetForIsotipoSync(): ReadonlySet<string> {
   return datasetSlugSet
+}
+
+/** R2 custom metadata (string values only). */
+export function isotipoR2CustomMetadata(
+  record: IsotipoRecord,
+  syncedAt: string,
+): Record<string, string> {
+  const meta: Record<string, string> = {
+    source_url: record.source_url,
+    source_type: record.source_type,
+    synced_at: syncedAt,
+  }
+  if (record.verified_official === true) {
+    meta.verified_official = 'true'
+  }
+  return meta
 }

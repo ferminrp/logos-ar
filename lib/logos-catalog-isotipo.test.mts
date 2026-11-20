@@ -13,9 +13,9 @@ describe('queryLogosCatalog isotipoSvgUrl', () => {
       assert.equal(row.isotipoSvgUrl, '/logos/mercado-pago/isotipo.svg')
     }
 
-    const other = queryLogosCatalog({ domain: 'bna.com.ar', limit: 1 })
-    const bna = other.items[0]
-    assert.ok(bna && 'domain' in bna)
-    assert.equal(bna.isotipoSvgUrl, undefined)
+    const other = queryLogosCatalog({ domain: 'bbva.com.ar', limit: 1 })
+    const bbva = other.items[0]
+    assert.ok(bbva && 'domain' in bbva)
+    assert.equal(bbva.isotipoSvgUrl, undefined)
   })
 })

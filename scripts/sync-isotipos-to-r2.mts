@@ -2,7 +2,8 @@
  * Upload isotype SVGs from data/isotipos/ to R2 (loguitos-assets).
  *
  * Keys: loguitos.app/logos/<slug>/isotipo.svg
- * Requires CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN (custom metadata).
+ * Requires CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN (custom metadata:
+ * source_url, source_type, synced_at, optional verified_official).
  * Idempotent via MD5 vs remote etag. Refuses slugs absent from logos-dataset hosted URLs.
  */
 import { readFile, readdir } from 'node:fs/promises'
@@ -13,6 +14,7 @@ import { promisify } from 'node:util'
 import {
   catalogSlugSetForIsotipoSync,
   getIsotipoRecord,
+  isotipoR2CustomMetadata,
   r2ObjectKeyForIsotipo,
 } from '../lib/isotipos-catalog.ts'
 import { putR2ObjectViaCloudflareApi } from '../lib/r2-api-upload.ts'
@@ -149,11 +151,7 @@ export async function syncIsotiposToR2(options?: {
           body: ctx.bytes,
           contentType: ctx.contentType,
           cacheControl: HOSTED_LOGO_CACHE_CONTROL,
-          customMetadata: {
-            source_url: record.source_url,
-            source_type: record.source_type,
-            synced_at: syncedAt,
-          },
+          customMetadata: isotipoR2CustomMetadata(record, syncedAt),
         })
       },
     },

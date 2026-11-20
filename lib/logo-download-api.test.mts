@@ -59,6 +59,34 @@ describe('handleLogoDownloadGet', () => {
     assert.notEqual(logoDownloadFilenameExtension(name), 'png')
   })
 
+  it('isotipo download reads from ASSETS fallback path', async () => {
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg"/>'
+    const req = new Request(
+      'http://127.0.0.1/api/logo-download?domain=mercadopago.com.ar&format=isotipo',
+    )
+    const res = await handleLogoDownloadGet(req, {
+      origin: 'https://loguitos.app',
+      assets: {
+        fetch: async (input) => {
+          const url = new URL(
+            typeof input === 'string'
+              ? input
+              : input instanceof URL
+                ? input.href
+                : input.url,
+          )
+          assert.equal(url.pathname, '/isotipos/mercado-pago.svg')
+          return new Response(svg, {
+            headers: { 'Content-Type': 'image/svg+xml' },
+          })
+        },
+      },
+    })
+    assert.equal(res.status, 200)
+    assert.match(res.headers.get('Content-Disposition') ?? '', /isotipo/)
+    assert.equal(await res.text(), svg)
+  })
+
   it('rejects invalid domain', async () => {
     const req = new Request(
       'http://127.0.0.1/api/logo-download?domain=not-a-real-domain.invalid&format=png',
