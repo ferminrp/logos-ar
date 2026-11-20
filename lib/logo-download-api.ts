@@ -232,7 +232,14 @@ export async function handleLogoDownloadGet(
       size,
       ctx,
     )
-    if (vectorProbe.response.ok) {
+    const primaryAttempt = vectorProbe.attempts.find(
+      (attempt) => attempt.role === "primary",
+    )
+    if (
+      vectorProbe.response.ok &&
+      primaryAttempt?.status === 200 &&
+      !primaryAttempt.detail
+    ) {
       logoUrl = hostedVectorPath
     }
   }
