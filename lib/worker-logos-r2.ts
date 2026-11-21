@@ -42,7 +42,10 @@ export type HostedR2Body = HostedR2Head & {
 
 export type LogosR2Bucket = {
   head: (key: string) => Promise<HostedR2Head | null>
-  get: (key: string) => Promise<HostedR2Body | null>
+  get: (
+    key: string,
+    options?: { onlyIf?: Headers },
+  ) => Promise<HostedR2Body | null>
 }
 
 export type HostedLogoWorkerEnv = {
@@ -100,6 +103,13 @@ function etagMatches(ifNoneMatch: string | null, etag: string | null): boolean {
   return false
 }
 
+/** Release an R2 body we are not going to send (unread streams leak the object). */
+async function discardBody(object: HostedR2Head | HostedR2Body): Promise<void> {
+  if ('body' in object && object.body instanceof ReadableStream) {
+    await object.body.cancel()
+  }
+}
+
 function notModifiedHeaders(ext: HostedLogoExtension, etag: string | null): Headers {
   return buildLogoResponseHeaders(ext, etag)
 }
@@ -111,6 +121,7 @@ async function responseFromR2(
 ): Promise<Response> {
   const etag = object.httpEtag ?? object.etag ?? null
   if (etagMatches(request.headers.get('If-None-Match'), etag)) {
+    await discardBody(object)
     return new Response(null, {
       status: 304,
       headers: notModifiedHeaders(ext, etag),
@@ -139,6 +150,7 @@ async function responseFromR2Isotipo(
 ): Promise<Response> {
   const etag = object.httpEtag ?? object.etag ?? null
   if (etagMatches(request.headers.get('If-None-Match'), etag)) {
+    await discardBody(object)
     return new Response(null, {
       status: 304,
       headers: buildIsotipoSvgResponseHeaders(etag),
@@ -177,7 +189,8 @@ async function readR2Object(
   try {
     return request.method === 'HEAD'
       ? await bucket.head(key)
-      : await bucket.get(key)
+      : // Conditional read: on an If-None-Match hit R2 returns the object without a body.
+        await bucket.get(key, { onlyIf: request.headers })
   } catch (error) {
     console.error(
       JSON.stringify({
@@ -271,6 +284,7 @@ async function fallbackAssetsIsotipo(
 
   const etag = assetsResponse.headers.get('ETag')
   if (etagMatches(request.headers.get('If-None-Match'), etag)) {
+    await assetsResponse.body?.cancel()
     return new Response(null, {
       status: 304,
       headers: buildIsotipoSvgResponseHeaders(etag),

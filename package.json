@@ -27,6 +27,7 @@
     "check:logos": "node --experimental-strip-types scripts/check-logos.mts",
     "check:catalog-hosting": "node --experimental-strip-types scripts/check-catalog-self-hosted.mts",
     "sync:sitemap-lastmod": "node --experimental-strip-types scripts/sync-sitemap-lastmod.mts",
+    "generate:logo-assets": "node --experimental-strip-types scripts/generate-logo-assets.mts",
     "sync:logo-overrides": "node --experimental-strip-types scripts/sync-logo-overrides.mts",
     "test:logos": "node --experimental-strip-types --test scripts/check-logos.test.mts",
     "test:entity-seo": "node --experimental-strip-types --test lib/entity-seo.test.mts",
@@ -49,7 +50,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.577.0",
-    "next-themes": "^0.4.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "tailwind-merge": "^3.7.0"

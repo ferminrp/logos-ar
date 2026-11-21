@@ -16,6 +16,7 @@
       "thumbTone": "dark"
     },
     "adecoagro": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -186,6 +187,7 @@
       "thumbTone": "dark"
     },
     "berry": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -215,6 +217,7 @@
       "thumb": true
     },
     "booking-com": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -326,6 +329,7 @@
       "thumb": true
     },
     "cocos": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -340,6 +344,7 @@
       "thumb": true
     },
     "copa-airlines": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -377,6 +382,7 @@
       "thumb": true
     },
     "ds-automobiles": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -437,13 +443,11 @@
     "fravega": {
       "thumb": true
     },
-    "galicia": {
-      "thumb": true
-    },
     "gasti": {
       "thumb": true
     },
     "gemini": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -473,6 +477,9 @@
       "thumb": true,
       "thumbTone": "light"
     },
+    "havanna": {
+      "thumb": true
+    },
     "heineken": {
       "thumb": true
     },
@@ -495,6 +502,7 @@
       "thumbTone": "light"
     },
     "hyundai": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -577,6 +585,7 @@
       "thumb": true
     },
     "la-anonima": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -617,9 +626,6 @@
       "thumb": true
     },
     "loma-negra": {
-      "thumb": true
-    },
-    "macro": {
       "thumb": true
     },
     "makro": {
@@ -663,7 +669,7 @@
     "metamask": {
       "thumb": true
     },
-    "metrogas-214": {
+    "metrogas": {
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -734,6 +740,7 @@
       "thumbTone": "dark"
     },
     "nike": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -753,6 +760,7 @@
       "thumb": true
     },
     "nubi": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -783,6 +791,9 @@
     "osecac": {
       "thumb": true
     },
+    "osperyh": {
+      "thumb": true
+    },
     "ospia": {
       "thumb": true
     },
@@ -802,6 +813,7 @@
       "thumb": true
     },
     "pami": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -821,6 +833,7 @@
       "thumb": true
     },
     "peugeot": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -832,6 +845,7 @@
       "thumb": true
     },
     "plasma": {
+      "tone": "dark",
       "thumb": true
     },
     "pluspagos": {
@@ -839,6 +853,7 @@
       "thumbTone": "dark"
     },
     "polymarket": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -909,6 +924,7 @@
       "thumb": true
     },
     "renault": {
+      "tone": "light",
       "thumb": true,
       "thumbTone": "light"
     },
@@ -923,6 +939,7 @@
       "thumbTone": "light"
     },
     "rust": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -936,6 +953,7 @@
       "thumbTone": "dark"
     },
     "san-cristobal-seguros": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -1059,10 +1077,12 @@
       "thumb": true
     },
     "tripadvisor": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
     "tuenti": {
+      "tone": "light",
       "thumb": true,
       "thumbTone": "light"
     },
@@ -1072,10 +1092,8 @@
     "uala": {
       "thumb": true
     },
-    "uilo-bank-ex-wilobank": {
-      "thumb": true
-    },
     "unilever": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -1100,6 +1118,7 @@
       "thumb": true
     },
     "volkswagen": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -1123,11 +1142,6 @@
       "thumb": true
     },
     "ypf": {
-      "tone": "dark",
-      "thumb": true,
-      "thumbTone": "dark"
-    },
-    "ypf-161": {
       "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"

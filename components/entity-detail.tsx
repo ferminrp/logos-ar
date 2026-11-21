@@ -29,7 +29,6 @@ import {
   getDuckDuckGoCurl,
   getDuckDuckGoFaviconUrl,
   getGoogleCurl,
-  getGoogleFaviconUrl,
   getSheetsImageFormula,
 } from "@/lib/favicon-urls"
 
