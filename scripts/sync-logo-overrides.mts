@@ -33,7 +33,7 @@ async function tryUrl(url: string): Promise<Uint8Array | null> {
   }
 }
 
-async function resolveForEntity(domain: string, name: string): Promise<Override | null> {
+async function resolveForEntity(domain: string): Promise<Override | null> {
   const candidates: { url: string; source: Override["logoSource"] }[] = []
 
   for (const url of await discoverSiteLogoUrls(domain)) {
@@ -81,7 +81,7 @@ async function main() {
     const googleBytes = await tryUrl(getGoogleFaviconUrl(entity.domain, 128))
     if (googleBytes && passes(googleBytes)) return
 
-    const resolved = await resolveForEntity(entity.domain, entity.name)
+    const resolved = await resolveForEntity(entity.domain)
     if (resolved) {
       existing[entity.domain] = resolved
       added++
