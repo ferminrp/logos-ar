@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
@@ -23,6 +26,8 @@ jobs:
           node-version: "22"
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm lint
       - name: Typecheck
         run: pnpm typecheck
       - name: Unit + catalog integrity tests (offline)
