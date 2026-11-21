@@ -7,6 +7,7 @@ export const LOGO_DETAIL_A11Y_SLUGS = [
   "banco-provincia",
   "banco-de-la-nacion-argentina",
   "changan",
+  "mercado-pago",
 ] as const
 
 export const LOGO_DETAIL_A11Y_THEMES = ["light", "dark"] as const
