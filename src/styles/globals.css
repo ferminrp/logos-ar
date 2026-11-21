@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (@media (prefers-color-scheme: dark));
 
 :root {
   /* Granola-inspired warm editorial palette */
@@ -11,7 +11,8 @@
   --card-foreground: oklch(0.22 0.012 55);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.012 55);
-  --primary: oklch(0.62 0.07 240);
+  /* L 0.50 keeps text links and default buttons at WCAG AA (>= 4.5:1) on the light surfaces. */
+  --primary: oklch(0.50 0.07 240);
   --primary-foreground: oklch(0.99 0.002 95);
   --secondary: oklch(0.95 0.012 85);
   --secondary-foreground: oklch(0.28 0.015 55);
@@ -23,7 +24,7 @@
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(0.90 0.008 85);
   --input: oklch(0.90 0.008 85);
-  --ring: oklch(0.62 0.07 240);
+  --ring: oklch(0.50 0.07 240);
   --chart-1: oklch(0.62 0.07 240);
   --chart-2: oklch(0.72 0.04 80);
   --chart-3: oklch(0.55 0.05 200);
@@ -45,44 +46,46 @@
   --logo-download-png-foreground: oklch(0.99 0.002 95);
 }
 
-.dark {
-  --background: oklch(0.18 0.012 55);
-  --foreground: oklch(0.95 0.006 85);
-  --card: oklch(0.22 0.012 55);
-  --card-foreground: oklch(0.95 0.006 85);
-  --popover: oklch(0.22 0.012 55);
-  --popover-foreground: oklch(0.95 0.006 85);
-  --primary: oklch(0.72 0.07 240);
-  --primary-foreground: oklch(0.18 0.012 55);
-  --secondary: oklch(0.26 0.012 55);
-  --secondary-foreground: oklch(0.95 0.006 85);
-  --muted: oklch(0.28 0.012 55);
-  --muted-foreground: oklch(0.68 0.015 70);
-  --accent: oklch(0.30 0.02 70);
-  --accent-foreground: oklch(0.95 0.006 85);
-  --destructive: oklch(0.6 0.2 25);
-  --destructive-foreground: oklch(0.95 0 0);
-  --border: oklch(0.32 0.012 55);
-  --input: oklch(0.26 0.012 55);
-  --ring: oklch(0.72 0.07 240);
-  --chart-1: oklch(0.72 0.07 240);
-  --chart-2: oklch(0.72 0.04 80);
-  --chart-3: oklch(0.65 0.05 200);
-  --chart-4: oklch(0.78 0.06 70);
-  --chart-5: oklch(0.65 0.08 30);
-  --sidebar: oklch(0.22 0.012 55);
-  --sidebar-foreground: oklch(0.95 0.006 85);
-  --sidebar-primary: oklch(0.72 0.07 240);
-  --sidebar-primary-foreground: oklch(0.18 0.012 55);
-  --sidebar-accent: oklch(0.28 0.012 55);
-  --sidebar-accent-foreground: oklch(0.95 0.006 85);
-  --sidebar-border: oklch(0.32 0.012 55);
-  --sidebar-ring: oklch(0.72 0.07 240);
-  --slot-muted: oklch(0.72 0.015 70);
-  --slot-border: oklch(0.70 0.012 55);
-  --logo-download-png: oklch(0.48 0.07 240);
-  --logo-download-png-hover: oklch(0.44 0.07 240);
-  --logo-download-png-foreground: oklch(0.99 0.002 95);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: oklch(0.18 0.012 55);
+    --foreground: oklch(0.95 0.006 85);
+    --card: oklch(0.22 0.012 55);
+    --card-foreground: oklch(0.95 0.006 85);
+    --popover: oklch(0.22 0.012 55);
+    --popover-foreground: oklch(0.95 0.006 85);
+    --primary: oklch(0.72 0.07 240);
+    --primary-foreground: oklch(0.18 0.012 55);
+    --secondary: oklch(0.26 0.012 55);
+    --secondary-foreground: oklch(0.95 0.006 85);
+    --muted: oklch(0.28 0.012 55);
+    --muted-foreground: oklch(0.68 0.015 70);
+    --accent: oklch(0.30 0.02 70);
+    --accent-foreground: oklch(0.95 0.006 85);
+    --destructive: oklch(0.6 0.2 25);
+    --destructive-foreground: oklch(0.95 0 0);
+    --border: oklch(0.32 0.012 55);
+    --input: oklch(0.26 0.012 55);
+    --ring: oklch(0.72 0.07 240);
+    --chart-1: oklch(0.72 0.07 240);
+    --chart-2: oklch(0.72 0.04 80);
+    --chart-3: oklch(0.65 0.05 200);
+    --chart-4: oklch(0.78 0.06 70);
+    --chart-5: oklch(0.65 0.08 30);
+    --sidebar: oklch(0.22 0.012 55);
+    --sidebar-foreground: oklch(0.95 0.006 85);
+    --sidebar-primary: oklch(0.72 0.07 240);
+    --sidebar-primary-foreground: oklch(0.18 0.012 55);
+    --sidebar-accent: oklch(0.28 0.012 55);
+    --sidebar-accent-foreground: oklch(0.95 0.006 85);
+    --sidebar-border: oklch(0.32 0.012 55);
+    --sidebar-ring: oklch(0.72 0.07 240);
+    --slot-muted: oklch(0.72 0.015 70);
+    --slot-border: oklch(0.70 0.012 55);
+    --logo-download-png: oklch(0.48 0.07 240);
+    --logo-download-png-hover: oklch(0.44 0.07 240);
+    --logo-download-png-foreground: oklch(0.99 0.002 95);
+  }
 }
 
 @theme inline {
@@ -144,6 +147,16 @@
 }
 
 @layer components {
+  /* Copy buttons are plain HTML driven by the delegated script in BaseLayout. */
+  [data-copy] .copy-icon-done,
+  [data-copy][data-copied] .copy-icon-idle {
+    display: none;
+  }
+
+  [data-copy][data-copied] .copy-icon-done {
+    display: inline-block;
+  }
+
   .brand-verify-slot__cta:focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
@@ -248,5 +261,23 @@
   .lg-slot__cta:focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
+  }
+}
+
+/*
+ * Contrast tiles for transparent logos whose ink would vanish on the page background
+ * (tones come from data/logo-assets.json). Unlayered so they win over utilities.
+ */
+.logo-ink-light {
+  background-color: oklch(0.26 0.012 55);
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo-ink-light {
+    background-color: transparent;
+  }
+
+  .logo-ink-dark {
+    background-color: oklch(0.95 0.006 85);
   }
 }

@@ -1,7 +1,7 @@
 ---
 import '@/src/styles/globals.css'
 import { SiteNavbar } from '@/components/site-navbar'
-import { ThemeProvider } from '@/components/theme-provider'
+import { categoryNavItems } from '@/lib/category-nav'
 import { getSiteUrl } from '@/lib/site-url'
 import { HOME_DESCRIPTION } from '@/lib/site-brand'
 
@@ -80,7 +80,7 @@ const gaMeasurementId = 'G-GZLZ092Z7S'
   )}
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="shortcut icon" href="/icon.svg" />
-    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -102,16 +102,68 @@ const gaMeasurementId = 'G-GZLZ092Z7S'
     </style>
   </head>
   <body class="font-sans antialiased">
-    <ThemeProvider
-      client:load
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <SiteNavbar client:load />
-      <slot />
-    </ThemeProvider>
+    <SiteNavbar client:load categories={categoryNavItems} />
+    <slot />
+    <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>
+    <script is:inline>
+      ;(function () {
+        function legacyCopy(text) {
+          var area = document.createElement('textarea')
+          area.value = text
+          area.setAttribute('readonly', '')
+          area.style.position = 'fixed'
+          area.style.opacity = '0'
+          document.body.appendChild(area)
+          area.select()
+          var ok = false
+          try {
+            ok = document.execCommand('copy')
+          } catch (_) {}
+          area.remove()
+          return ok
+        }
+        function copyText(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text).then(
+              function () { return true },
+              function () { return legacyCopy(text) },
+            )
+          }
+          return Promise.resolve(legacyCopy(text))
+        }
+        var timers = new WeakMap()
+        document.addEventListener('click', function (event) {
+          var target = event.target instanceof Element ? event.target : null
+          if (!target) return
+          var copyButton = target.closest('[data-copy]')
+          if (copyButton) {
+            copyText(copyButton.getAttribute('data-copy') || '').then(function (ok) {
+              var status = document.getElementById('copy-status')
+              if (status) status.textContent = ok ? 'Copiado' : 'No se pudo copiar'
+              if (!ok) return
+              copyButton.setAttribute('data-copied', '')
+              clearTimeout(timers.get(copyButton))
+              timers.set(
+                copyButton,
+                setTimeout(function () {
+                  copyButton.removeAttribute('data-copied')
+                  if (status) status.textContent = ''
+                }, 2000),
+              )
+            })
+            return
+          }
+          var download = target.closest('[data-logo-download]')
+          if (download && typeof window.gtag === 'function') {
+            window.gtag('event', 'logo_download', {
+              logo_slug: download.getAttribute('data-logo-slug'),
+              logo_name: download.getAttribute('data-logo-name'),
+              format: download.getAttribute('data-logo-download'),
+            })
+          }
+        })
+      })()
+    </script>
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
     <script is:inline define:vars={{ gaMeasurementId }}>
       window.dataLayer = window.dataLayer || []

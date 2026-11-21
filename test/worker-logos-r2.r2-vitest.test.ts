@@ -31,7 +31,9 @@ describe('hosted logos in workerd', () => {
     const res = await SELF.fetch('https://example.com/logos/workerd-hit.png')
     expect(res.status).toBe(200)
     expect(res.headers.get('content-type')).toBe('image/png')
-    expect(res.headers.get('cache-control')).toContain('immutable')
+    expect(res.headers.get('cache-control')).toBe(
+      'public, max-age=86400, stale-while-revalidate=604800',
+    )
     expect(res.headers.get('x-content-type-options')).toBe('nosniff')
     const bytes = new Uint8Array(await res.arrayBuffer())
     expect(bytes[0]).toBe(0x89)

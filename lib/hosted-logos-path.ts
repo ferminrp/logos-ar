@@ -1,7 +1,12 @@
 /** Shared path/key helpers for flat logos and isotipos (no worker imports). */
 
+/**
+ * Logo URLs are not versioned, so they must not be `immutable`: a corrected logo
+ * has to reach browsers and hotlinkers. One day fresh, a week stale-while-revalidate
+ * (ETag/304 keeps revalidation cheap).
+ */
 export const HOSTED_LOGO_CACHE_CONTROL =
-  'public, max-age=31536000, immutable'
+  'public, max-age=86400, stale-while-revalidate=604800'
 
 export const R2_LOGOS_PREFIX = 'loguitos.app/logos/'
 

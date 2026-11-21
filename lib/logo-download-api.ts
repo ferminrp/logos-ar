@@ -2,6 +2,7 @@
 import { getAllEntities } from "./entity-index.ts"
 import { getEntityLogoUrl } from "./entity-logo.ts"
 import { getGoogleFaviconUrl } from "./favicon-urls.ts"
+import { hasHostedLogoSvg } from "./logo-assets.ts"
 import {
   fetchLogoUpstream,
   formatLogoUpstreamFailureReason,
@@ -268,24 +269,10 @@ export async function handleLogoDownloadGet(
     ? getEntityLogoUrl(entity, size)
     : getGoogleFaviconUrl(domain, size)
 
-  if (format === "svg" && entity) {
-    const hostedVectorPath = `/logos/${entity.slug}.svg`
-    const vectorProbe = await fetchLogoUpstream(
-      hostedVectorPath,
-      faviconDomain,
-      size,
-      ctx,
-    )
-    const primaryAttempt = vectorProbe.attempts.find(
-      (attempt) => attempt.role === "primary",
-    )
-    if (
-      vectorProbe.response.ok &&
-      primaryAttempt?.status === 200 &&
-      !primaryAttempt.detail
-    ) {
-      logoUrl = hostedVectorPath
-    }
+  // Only slugs with a real hosted vector get it; the rest embed the raster in an SVG
+  // wrapper (kept for API compatibility; the site only links SVG for real vectors).
+  if (format === "svg" && entity && hasHostedLogoSvg(entity.slug)) {
+    logoUrl = `/logos/${entity.slug}.svg`
   }
   const workerDecodeBudget =
     format === "png" && isCloudflareWorkersRuntime()
@@ -417,10 +404,15 @@ export async function handleLogoDownloadGet(
       pngBody instanceof Uint8Array
         ? pngBody
         : new Uint8Array(pngBody as ArrayBuffer)
+    // An ICO without an embedded PNG is delivered untouched: label it as what it is
+    // instead of serving ICO bytes as image/png (nosniff would make it unopenable).
+    const deliveredIco = measureImage(responseBody).format === "ico"
     return new Response(responseBody as BodyInit, {
       headers: logoDownloadPngHeaders({
-        "Content-Type": "image/png",
-        "Content-Disposition": `attachment; filename="${filename}"`,
+        "Content-Type": deliveredIco ? "image/x-icon" : "image/png",
+        "Content-Disposition": `attachment; filename="${
+          deliveredIco ? rasterDownloadFilename(domain, "ico") : filename
+        }"`,
         "Cache-Control": CACHE_CONTROL,
       }),
     })

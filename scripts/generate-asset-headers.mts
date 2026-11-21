@@ -21,6 +21,9 @@ export function buildSitemapHeadersBlock(): string {
 /sitemap.xml
   Cache-Control: ${SITEMAP_CACHE_CONTROL}
 
+/thumbs/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
 /*.md
   Content-Type: text/markdown; charset=utf-8
   X-Robots-Tag: ${MARKDOWN_TWIN_ROBOTS}

@@ -1,0 +1,1150 @@
+{
+  "items": {
+    "a24": {
+      "thumb": true
+    },
+    "a3-mercados": {
+      "thumb": true
+    },
+    "aave": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "accor-ibis-novotel-etc": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "adecoagro": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "adidas": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "aerolineas-argentinas": {
+      "thumb": true
+    },
+    "agip": {
+      "thumb": true
+    },
+    "airbnb": {
+      "thumb": true
+    },
+    "allaria": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "almacen-de-pizzas": {
+      "thumb": true
+    },
+    "almundo": {
+      "thumb": true
+    },
+    "aluar": {
+      "tone": "light",
+      "thumb": true
+    },
+    "america-tv": {
+      "thumb": true
+    },
+    "andreani": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "anmat": {
+      "thumb": true
+    },
+    "antina": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "arba": {
+      "thumb": true
+    },
+    "arbitrum": {
+      "thumb": true
+    },
+    "arcor": {
+      "thumb": true
+    },
+    "arq": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "astro": {
+      "thumb": true
+    },
+    "astropay": {
+      "thumb": true
+    },
+    "audi": {
+      "tone": "dark",
+      "thumb": true
+    },
+    "avalian": {
+      "thumb": true
+    },
+    "avis": {
+      "thumb": true
+    },
+    "awada": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "axion-energy": {
+      "thumb": true
+    },
+    "bajaj": {
+      "thumb": true
+    },
+    "balanz": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "banco-ciudad": {
+      "thumb": true
+    },
+    "banco-comafi": {
+      "thumb": true
+    },
+    "banco-de-cordoba-bancor": {
+      "thumb": true
+    },
+    "banco-de-corrientes": {
+      "thumb": true
+    },
+    "banco-de-formosa": {
+      "thumb": true
+    },
+    "banco-de-la-nacion-argentina": {
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "banco-de-la-pampa": {
+      "thumb": true
+    },
+    "banco-de-valores": {
+      "thumb": true
+    },
+    "banco-entre-rios-bersa": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "banco-galicia": {
+      "thumb": true
+    },
+    "banco-hipotecario": {
+      "thumb": true
+    },
+    "banco-julio": {
+      "thumb": true
+    },
+    "banco-macro": {
+      "thumb": true
+    },
+    "banco-municipal-de-rosario": {
+      "thumb": true
+    },
+    "banco-patagonia": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "banco-piano": {
+      "thumb": true
+    },
+    "banco-provincia": {
+      "thumb": true
+    },
+    "banco-santander-rio": {
+      "thumb": true
+    },
+    "banco-supervielle": {
+      "thumb": true
+    },
+    "base": {
+      "tone": "light",
+      "thumb": true
+    },
+    "bbva-argentina": {
+      "thumb": true
+    },
+    "beaudroit": {
+      "thumb": true
+    },
+    "belo": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "berry": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "bimbo": {
+      "thumb": true
+    },
+    "binance": {
+      "thumb": true
+    },
+    "bitget": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "bitkey": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "bitso": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "bmw": {
+      "thumb": true
+    },
+    "bond-terminal": {
+      "thumb": true
+    },
+    "booking-com": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "bpn-banco-provincia-de-neuquen": {
+      "thumb": true
+    },
+    "brahma": {
+      "thumb": true
+    },
+    "brubank": {
+      "thumb": true
+    },
+    "bull-market-brokers": {
+      "thumb": true
+    },
+    "bun": {
+      "thumb": true
+    },
+    "burger-king": {
+      "thumb": true
+    },
+    "bybit": {
+      "thumb": true
+    },
+    "byd": {
+      "thumb": true
+    },
+    "byma": {
+      "thumb": true
+    },
+    "c5n": {
+      "thumb": true
+    },
+    "cabify": {
+      "thumb": true
+    },
+    "cagnoli": {
+      "svg": true,
+      "thumb": true
+    },
+    "camuzzi-gas": {
+      "thumb": true
+    },
+    "canal-26": {
+      "thumb": true
+    },
+    "carrefour": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "casa-del-audio": {
+      "thumb": true
+    },
+    "catena-zapata": {
+      "svg": true,
+      "thumb": true
+    },
+    "celulosa-argentina": {
+      "thumb": true
+    },
+    "cencosud": {
+      "thumb": true
+    },
+    "central-puerto": {
+      "thumb": true
+    },
+    "cerveceria-patagonia": {
+      "thumb": true
+    },
+    "cetrogar": {
+      "svg": true,
+      "thumb": true
+    },
+    "chainlink": {
+      "thumb": true
+    },
+    "changan": {
+      "thumb": true
+    },
+    "cheeky": {
+      "thumb": true
+    },
+    "chery": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "chevrolet": {
+      "thumb": true
+    },
+    "circle": {
+      "thumb": true
+    },
+    "citroen": {
+      "thumb": true
+    },
+    "clarin": {
+      "thumb": true
+    },
+    "claro-pay": {
+      "tone": "light",
+      "thumb": true
+    },
+    "clerk": {
+      "tone": "dark",
+      "thumb": true
+    },
+    "cloudflare": {
+      "thumb": true
+    },
+    "cocos": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "cohen-aliados": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "coinbase": {
+      "thumb": true
+    },
+    "conicet": {
+      "thumb": true
+    },
+    "copa-airlines": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "coto": {
+      "thumb": true
+    },
+    "cresud": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "crypto-com": {
+      "thumb": true
+    },
+    "decrypto": {
+      "thumb": true
+    },
+    "deno": {
+      "tone": "light",
+      "thumb": true
+    },
+    "despegar": {
+      "thumb": true
+    },
+    "docker": {
+      "thumb": true
+    },
+    "dodge": {
+      "thumb": true
+    },
+    "dolarito": {
+      "thumb": true
+    },
+    "don-satur": {
+      "thumb": true
+    },
+    "ds-automobiles": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "el-destape": {
+      "thumb": true
+    },
+    "el-dia-la-plata": {
+      "thumb": true
+    },
+    "el-trece": {
+      "thumb": true
+    },
+    "enargas": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "ethena": {
+      "thumb": true
+    },
+    "ethereum": {
+      "thumb": true
+    },
+    "exactly": {
+      "thumb": true
+    },
+    "expedia": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "experta-seguros": {
+      "thumb": true
+    },
+    "farmacity": {
+      "thumb": true
+    },
+    "fiat": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "finanzasargy": {
+      "thumb": true
+    },
+    "fiwind": {
+      "thumb": true
+    },
+    "fluidkey": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "flybondi": {
+      "thumb": true
+    },
+    "ford": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "fravega": {
+      "thumb": true
+    },
+    "gasti": {
+      "thumb": true
+    },
+    "gemini": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "genomma-lab": {
+      "thumb": true
+    },
+    "github": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "gol-linhas-aereas": {
+      "thumb": true
+    },
+    "grido": {
+      "thumb": true
+    },
+    "grimoldi": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "guaymallen": {
+      "svg": true,
+      "thumb": true
+    },
+    "gwm-great-wall": {
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "havanna": {
+      "thumb": true
+    },
+    "heineken": {
+      "thumb": true
+    },
+    "honda": {
+      "thumb": true
+    },
+    "hospital-aleman": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "hospital-italiano-de-buenos-aires": {
+      "thumb": true
+    },
+    "hyatt": {
+      "thumb": true
+    },
+    "hyperliquid": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "hyundai": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "ieb-invertir-en-bolsa": {
+      "thumb": true
+    },
+    "impuestito": {
+      "thumb": true
+    },
+    "incaa": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "indec": {
+      "thumb": true
+    },
+    "infleta": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "infobae": {
+      "thumb": true
+    },
+    "intercontinental-ihg": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "invertir-online-iol": {
+      "thumb": true
+    },
+    "ioio": {
+      "thumb": true
+    },
+    "iosfa": {
+      "thumb": true
+    },
+    "iveco": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "jeep": {
+      "thumb": true
+    },
+    "jerarquicos-salud": {
+      "thumb": true
+    },
+    "jumbo": {
+      "thumb": true
+    },
+    "jumper": {
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "jupiter": {
+      "thumb": true
+    },
+    "kayak": {
+      "thumb": true
+    },
+    "kia": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "kosiuko": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "kraken": {
+      "thumb": true
+    },
+    "ktm": {
+      "thumb": true
+    },
+    "kucoin": {
+      "thumb": true
+    },
+    "la-anonima": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "la-nacion": {
+      "thumb": true
+    },
+    "la-prensa": {
+      "thumb": true
+    },
+    "la-segunda-seguros": {
+      "thumb": true
+    },
+    "la-serenisima-mastellone": {
+      "thumb": true
+    },
+    "la-voz-del-interior": {
+      "tone": "dark",
+      "thumb": true
+    },
+    "lacoste": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "latam": {
+      "thumb": true
+    },
+    "ledesma": {
+      "thumb": true
+    },
+    "ledger": {
+      "thumb": true
+    },
+    "lido": {
+      "thumb": true
+    },
+    "loginter": {
+      "thumb": true
+    },
+    "loma-negra": {
+      "thumb": true
+    },
+    "makro": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "mapfre": {
+      "thumb": true
+    },
+    "markova": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "marriott": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "mcdonald-s": {
+      "thumb": true
+    },
+    "medicus": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "medife": {
+      "thumb": true
+    },
+    "megatone": {
+      "thumb": true
+    },
+    "mercado-libre": {
+      "thumb": true
+    },
+    "mercado-pago": {
+      "svg": true,
+      "thumb": true
+    },
+    "metamask": {
+      "thumb": true
+    },
+    "metrogas": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "mg-motor": {
+      "thumb": true
+    },
+    "mi-argentina": {
+      "thumb": true
+    },
+    "mini": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "minipay": {
+      "thumb": true
+    },
+    "mitsubishi-motors": {
+      "thumb": true
+    },
+    "mobbex": {
+      "thumb": true
+    },
+    "modo": {
+      "thumb": true
+    },
+    "molino-canuelas": {
+      "thumb": true
+    },
+    "moneygram": {
+      "thumb": true
+    },
+    "morpho": {
+      "thumb": true
+    },
+    "mostaza": {
+      "thumb": true
+    },
+    "movistar-argentina": {
+      "thumb": true
+    },
+    "naldo": {
+      "thumb": true
+    },
+    "naranja-x": {
+      "thumb": true
+    },
+    "natura-cosmeticos": {
+      "thumb": true
+    },
+    "neon": {
+      "tone": "dark",
+      "thumb": true
+    },
+    "netlify": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "new-balance": {
+      "thumb": true
+    },
+    "nexo": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "next-js": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "nike": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "nissan": {
+      "thumb": true
+    },
+    "noblex": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "node-js": {
+      "tone": "dark",
+      "thumb": true
+    },
+    "norton": {
+      "thumb": true
+    },
+    "nubi": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "nuxt": {
+      "tone": "dark",
+      "thumb": true
+    },
+    "okx": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "omint": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "on-city": {
+      "thumb": true
+    },
+    "osde": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "osdepym": {
+      "thumb": true
+    },
+    "osecac": {
+      "thumb": true
+    },
+    "osperyh": {
+      "thumb": true
+    },
+    "ospia": {
+      "thumb": true
+    },
+    "osprera": {
+      "thumb": true
+    },
+    "osuthgra": {
+      "thumb": true
+    },
+    "pagomiscuentas": {
+      "thumb": true
+    },
+    "pagos360": {
+      "thumb": true
+    },
+    "paladini": {
+      "thumb": true
+    },
+    "pami": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "pampa-energia": {
+      "thumb": true
+    },
+    "payoneer": {
+      "thumb": true
+    },
+    "payway": {
+      "thumb": true
+    },
+    "peanut": {
+      "thumb": true
+    },
+    "pedidosya": {
+      "thumb": true
+    },
+    "peugeot": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "phantom": {
+      "thumb": true
+    },
+    "pipore": {
+      "svg": true,
+      "thumb": true
+    },
+    "plasma": {
+      "tone": "dark",
+      "thumb": true
+    },
+    "pluspagos": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "polymarket": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "pomelo": {
+      "thumb": true
+    },
+    "porsche": {
+      "thumb": true
+    },
+    "postgres": {
+      "thumb": true
+    },
+    "ppi": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "prevencion-salud": {
+      "thumb": true
+    },
+    "prex": {
+      "thumb": true
+    },
+    "prisma": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "prisma-medios-de-pago": {
+      "thumb": true
+    },
+    "provincia-seguros": {
+      "thumb": true
+    },
+    "puma": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "python": {
+      "thumb": true
+    },
+    "rainbow": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "ram": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "rapanui": {
+      "svg": true,
+      "thumb": true
+    },
+    "rapsodia": {
+      "thumb": true
+    },
+    "react": {
+      "thumb": true
+    },
+    "red-link": {
+      "tone": "light",
+      "thumb": true
+    },
+    "redis": {
+      "thumb": true
+    },
+    "renaper": {
+      "thumb": true
+    },
+    "renault": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "rio-negro": {
+      "thumb": true
+    },
+    "ripio": {
+      "thumb": true
+    },
+    "roxom": {
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "rust": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "safe": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "samsung": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "san-cristobal-seguros": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "sancor-salud": {
+      "thumb": true
+    },
+    "sancor-seguros": {
+      "thumb": true
+    },
+    "satoshitango": {
+      "thumb": true
+    },
+    "sbs-trading": {
+      "thumb": true
+    },
+    "senasa": {
+      "thumb": true
+    },
+    "shell": {
+      "thumb": true
+    },
+    "sla": {
+      "thumb": true
+    },
+    "sodimac": {
+      "thumb": true
+    },
+    "solana": {
+      "thumb": true
+    },
+    "sos-salud": {
+      "thumb": true
+    },
+    "sqlite": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "starbucks": {
+      "thumb": true
+    },
+    "starlink": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "steamcito": {
+      "thumb": true
+    },
+    "stella-artois": {
+      "thumb": true
+    },
+    "subaru": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "supabase": {
+      "thumb": true
+    },
+    "supermercados-dia": {
+      "thumb": true
+    },
+    "suzuki": {
+      "thumb": true
+    },
+    "svelte": {
+      "thumb": true
+    },
+    "swiss-medical": {
+      "thumb": true
+    },
+    "tailwind": {
+      "thumb": true
+    },
+    "tapi": {
+      "thumb": true
+    },
+    "tecpetrol": {
+      "svg": true,
+      "thumb": true
+    },
+    "telecentro": {
+      "thumb": true
+    },
+    "tenaris": {
+      "thumb": true
+    },
+    "ternium": {
+      "thumb": true
+    },
+    "tesla": {
+      "thumb": true
+    },
+    "tienda-dolar": {
+      "thumb": true
+    },
+    "tiendanube": {
+      "svg": true,
+      "thumb": true
+    },
+    "tn": {
+      "thumb": true
+    },
+    "todomoda": {
+      "thumb": true
+    },
+    "tommy-hilfiger": {
+      "thumb": true
+    },
+    "topper": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "toyota": {
+      "thumb": true
+    },
+    "transener": {
+      "thumb": true
+    },
+    "trapiche": {
+      "thumb": true
+    },
+    "tripadvisor": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "tuenti": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "typescript": {
+      "thumb": true
+    },
+    "uala": {
+      "thumb": true
+    },
+    "unilever": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "uniswap": {
+      "thumb": true
+    },
+    "upstash": {
+      "thumb": true
+    },
+    "vercel": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "veta-capital": {
+      "thumb": true
+    },
+    "vital": {
+      "thumb": true
+    },
+    "vite": {
+      "thumb": true
+    },
+    "volkswagen": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "volvo": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "vue": {
+      "thumb": true
+    },
+    "wise": {
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "wyndham-howard-johnson": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "yamaha": {
+      "thumb": true
+    },
+    "ypf": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    }
+  }
+}

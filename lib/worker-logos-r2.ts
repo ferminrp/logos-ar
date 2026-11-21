@@ -42,7 +42,10 @@ export type HostedR2Body = HostedR2Head & {
 
 export type LogosR2Bucket = {
   head: (key: string) => Promise<HostedR2Head | null>
-  get: (key: string) => Promise<HostedR2Body | null>
+  get: (
+    key: string,
+    options?: { onlyIf?: Headers },
+  ) => Promise<HostedR2Body | null>
 }
 
 export type HostedLogoWorkerEnv = {
@@ -100,6 +103,13 @@ function etagMatches(ifNoneMatch: string | null, etag: string | null): boolean {
   return false
 }
 
+/** Release an R2 body we are not going to send (unread streams leak the object). */
+async function discardBody(object: HostedR2Head | HostedR2Body): Promise<void> {
+  if ('body' in object && object.body instanceof ReadableStream) {
+    await object.body.cancel()
+  }
+}
+
 function notModifiedHeaders(ext: HostedLogoExtension, etag: string | null): Headers {
   return buildLogoResponseHeaders(ext, etag)
 }
@@ -111,6 +121,7 @@ async function responseFromR2(
 ): Promise<Response> {
   const etag = object.httpEtag ?? object.etag ?? null
   if (etagMatches(request.headers.get('If-None-Match'), etag)) {
+    await discardBody(object)
     return new Response(null, {
       status: 304,
       headers: notModifiedHeaders(ext, etag),
@@ -139,6 +150,7 @@ async function responseFromR2Isotipo(
 ): Promise<Response> {
   const etag = object.httpEtag ?? object.etag ?? null
   if (etagMatches(request.headers.get('If-None-Match'), etag)) {
+    await discardBody(object)
     return new Response(null, {
       status: 304,
       headers: buildIsotipoSvgResponseHeaders(etag),
@@ -161,32 +173,44 @@ async function responseFromR2Isotipo(
   return new Response(null, { status: 404 })
 }
 
+/**
+ * One R2 operation per request (`head` for HEAD, `get` otherwise). Any R2 failure
+ * resolves to null so the caller serves the static asset bundled with the Worker.
+ */
+async function readR2Object(
+  request: Request,
+  env: HostedLogoWorkerEnv,
+  key: string,
+): Promise<HostedR2Head | HostedR2Body | null> {
+  const bucket = env.LOGOS
+  if (!bucket) {
+    return null
+  }
+  try {
+    return request.method === 'HEAD'
+      ? await bucket.head(key)
+      : // Conditional read: on an If-None-Match hit R2 returns the object without a body.
+        await bucket.get(key, { onlyIf: request.headers })
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        event: 'hosted_logo_r2_error',
+        key,
+        reason: error instanceof Error ? error.message : String(error),
+      }),
+    )
+    return null
+  }
+}
+
 async function tryR2HostedLogo(
   request: Request,
   env: HostedLogoWorkerEnv,
   parsed: ParsedHostedLogoPath,
 ): Promise<Response | null> {
-  const bucket = env.LOGOS
-  if (!bucket) {
-    return null
-  }
-
   const key = r2ObjectKeyForHostedLogo(parsed.slug, parsed.ext)
-  const head = await bucket.head(key)
-  if (!head) {
-    return null
-  }
-
-  if (request.method === 'HEAD') {
-    return responseFromR2(request, head, parsed.ext)
-  }
-
-  const body = await bucket.get(key)
-  if (!body) {
-    return null
-  }
-
-  return responseFromR2(request, body, parsed.ext)
+  const object = await readR2Object(request, env, key)
+  return object ? responseFromR2(request, object, parsed.ext) : null
 }
 
 async function tryR2Isotipo(
@@ -194,27 +218,8 @@ async function tryR2Isotipo(
   env: HostedLogoWorkerEnv,
   slug: string,
 ): Promise<Response | null> {
-  const bucket = env.LOGOS
-  if (!bucket) {
-    return null
-  }
-
-  const key = r2ObjectKeyForIsotipo(slug)
-  const head = await bucket.head(key)
-  if (!head) {
-    return null
-  }
-
-  if (request.method === 'HEAD') {
-    return responseFromR2Isotipo(request, head)
-  }
-
-  const body = await bucket.get(key)
-  if (!body) {
-    return null
-  }
-
-  return responseFromR2Isotipo(request, body)
+  const object = await readR2Object(request, env, r2ObjectKeyForIsotipo(slug))
+  return object ? responseFromR2Isotipo(request, object) : null
 }
 
 async function fallbackAssetsHostedLogo(
@@ -279,6 +284,7 @@ async function fallbackAssetsIsotipo(
 
   const etag = assetsResponse.headers.get('ETag')
   if (etagMatches(request.headers.get('If-None-Match'), etag)) {
+    await assetsResponse.body?.cancel()
     return new Response(null, {
       status: 304,
       headers: buildIsotipoSvgResponseHeaders(etag),

@@ -6,21 +6,15 @@ import { catalogItemToMcpSummary, resolveLogoBySlugOrName } from './logo-present
 const SITE = 'https://loguitos.app'
 
 describe('logo-present', () => {
-  it('catalogItemToMcpSummary uses name+domain, not shared host (uala.com.ar)', () => {
-    const uilo = logosDataset.items.find(
-      (item) => item.name === 'Uilo Bank (ex Wilobank)',
-    )
+  it('catalogItemToMcpSummary resolves the entity slug and page URL', () => {
     const uala = logosDataset.items.find((item) => item.name === 'Ualá')
-    assert.ok(uilo && uala)
-    assert.equal(uilo.domain, uala.domain)
+    assert.ok(uala)
 
-    const uiloSummary = catalogItemToMcpSummary(SITE, uilo)
-    const ualaSummary = catalogItemToMcpSummary(SITE, uala)
+    const summary = catalogItemToMcpSummary(SITE, uala)
 
-    assert.equal(uiloSummary.slug, 'uilo-bank-ex-wilobank')
-    assert.equal(ualaSummary.slug, 'uala')
-    assert.match(uiloSummary.pageUrl ?? '', /\/logo\/uilo-bank-ex-wilobank$/)
-    assert.match(ualaSummary.pageUrl ?? '', /\/logo\/uala$/)
+    assert.equal(summary.slug, 'uala')
+    assert.match(summary.pageUrl ?? '', /\/logo\/uala$/)
+    assert.equal(typeof (summary as { svgIsVector?: boolean }).svgIsVector, 'boolean')
   })
 
   it('includes isotipoSvgUrl when the brand has an isotipo', () => {

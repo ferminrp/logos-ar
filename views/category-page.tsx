@@ -70,7 +70,7 @@ export function CategoryPageView({ slug }: { slug: string }) {
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {seo.featuredLogoLink.description}
             </p>
-            <p className="mt-3 text-sm font-medium text-primary">Ver logo BNA →</p>
+            <p className="mt-3 text-sm font-medium text-primary">Ver la página del logo →</p>
           </Link>
         </section>
       ) : null}

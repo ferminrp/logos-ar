@@ -12,13 +12,17 @@ import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { categories, type Category } from "@/lib/logos-data"
-import { entityMatchesSearchQuery } from "@/lib/entity-search"
+import {
+  entityMatchesSearchQuery,
+  sortBySearchRelevance,
+  textMatchesSearchQuery,
+} from "@/lib/entity-search"
 import { FLAGS_CATEGORY, flags } from "@/lib/flags-data"
 import { cn } from "@/lib/utils"
 
 function categoryChipClassName() {
   return cn(
-    "rounded-xl px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors",
+    "shrink-0 whitespace-nowrap rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors",
     "hover:bg-muted hover:text-foreground"
   )
 }
@@ -32,15 +36,16 @@ export function HomePage() {
   const filteredCategories: Category[] = categories
     .map((category) => ({
       ...category,
-      entities: category.entities.filter((entity) =>
-        entityMatchesSearchQuery(entity, searchQuery)
+      entities: sortBySearchRelevance(
+        category.entities.filter((entity) =>
+          entityMatchesSearchQuery(entity, searchQuery)
+        ),
+        searchQuery
       ),
     }))
     .filter((category) => category.entities.length > 0)
-  const filteredFlags = flags.filter(
-    (flag) =>
-      flag.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      flag.code.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredFlags = flags.filter((flag) =>
+    textMatchesSearchQuery(`${flag.name} ${flag.code}`, searchQuery)
   )
   const showFlagsSection = filteredFlags.length > 0
   const hasResults = filteredCategories.length > 0 || filteredFlags.length > 0
@@ -72,32 +77,38 @@ export function HomePage() {
     <div className="min-h-screen bg-background">
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <form
+          role="search"
+          action="/"
+          method="get"
           onSubmit={handleSearchSubmit}
           className="relative mb-6 w-full lg:hidden"
         >
           <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             type="search"
-            placeholder="Buscar por nombre, dominio o código..."
-            className="h-12 rounded-2xl border border-border bg-white pl-10 pr-4 text-base text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 md:text-sm"
+            name="q"
+            aria-label="Buscar logos"
+            placeholder="Buscar por nombre o dominio"
+            className="h-12 rounded-2xl border border-border bg-card pl-10 pr-4 text-base text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/60 md:text-sm"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
           />
         </form>
 
         {searchQuery ? (
-          <p className="mb-6 text-sm text-muted-foreground">
+          <p className="mb-6 break-words text-sm text-muted-foreground [overflow-wrap:anywhere]">
             Resultados para &quot;{searchQuery}&quot;
           </p>
         ) : null}
 
         <nav
           aria-label="Categorías"
-          className="mb-8 flex flex-wrap items-center gap-2 lg:hidden"
+          className="-mx-4 mb-8 flex items-center gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden"
         >
           <span
+            aria-current="page"
             className={cn(
-              "rounded-xl bg-accent px-3 py-1.5 text-sm font-medium text-accent-foreground"
+              "shrink-0 whitespace-nowrap rounded-xl bg-accent px-3 py-2.5 text-sm font-medium text-accent-foreground"
             )}
           >
             Todos
@@ -131,7 +142,7 @@ export function HomePage() {
             </>
           ) : (
             <div className="py-12 text-center">
-              <p className="text-lg text-muted-foreground">
+              <p className="break-words text-lg text-muted-foreground [overflow-wrap:anywhere]">
                 No se encontraron resultados para &quot;{searchQuery}&quot;
               </p>
             </div>

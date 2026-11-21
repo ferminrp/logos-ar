@@ -19,11 +19,16 @@ import {
   publicIsotipoSvgPath,
 } from "@/lib/isotipos-catalog"
 import {
+  getLogoAssetInfo,
+  hasHostedLogoSvg,
+  logoToneClassName,
+} from "@/lib/logo-assets"
+import { cn } from "@/lib/utils"
+import {
   defaultCurlConfig,
   getDuckDuckGoCurl,
   getDuckDuckGoFaviconUrl,
   getGoogleCurl,
-  getGoogleFaviconUrl,
   getSheetsImageFormula,
 } from "@/lib/favicon-urls"
 
@@ -51,6 +56,11 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
   const isotipoSvgUrl = isotipoRelative
     ? resolveEntityLogoUrl(isotipoRelative)
     : undefined
+  const hasVector = hasHostedLogoSvg(slug)
+  const formatsLabel = hasVector || isotipoSvgUrl ? "PNG y SVG" : "PNG"
+  const toneClassName = isHostedLogo
+    ? logoToneClassName(getLogoAssetInfo(slug).tone)
+    : ""
 
   return (
     <div className="space-y-8">
@@ -63,11 +73,12 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
           name={entity.name}
           domain={entity.domain}
           layout="hero"
+          hasVector={hasVector}
           isotipoSvgUrl={isotipoSvgUrl}
         />
         <p className="text-sm text-muted-foreground">
-          Logo de {entity.name} en PNG transparente y SVG. Descarga gratis para
-          diseño web, presentaciones y documentos. Más logos en{" "}
+          Logo de {entity.name} en {formatsLabel}. Descarga gratis para diseño
+          web, presentaciones y documentos. Más logos en{" "}
           <Link
             href={`/categoria/${entity.categoryId}`}
             className="text-primary hover:underline"
@@ -82,11 +93,11 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
 
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <div
-          className={
-            isHostedLogo
-              ? "flex h-64 w-64 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary p-4 sm:h-72 sm:w-72"
-              : "flex h-40 w-40 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary p-4"
-          }
+          className={cn(
+            "flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-secondary p-4",
+            isHostedLogo ? "h-64 w-64 sm:h-72 sm:w-72" : "h-40 w-40",
+            toneClassName
+          )}
         >
           <img
             src={googleUrl}
@@ -121,7 +132,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
       </div>
 
       <section className="space-y-4">
-        <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">URLs de favicon</h2>
+        <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">URLs del logo</h2>
 
         <div className="space-y-3">
           <div>
@@ -162,7 +173,9 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
         <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">Comandos curl</h2>
         <div className="space-y-3">
           <div>
-            <p className="mb-1 text-xs font-medium text-muted-foreground">Google</p>
+            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+              Google
+            </p>
             <div className="flex items-start gap-2">
               <pre className="flex-1 overflow-x-auto rounded bg-secondary p-2 font-mono text-xs text-foreground">
                 {googleCurl}
@@ -170,13 +183,12 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
               <CopyButton
                 value={googleCurl}
                 label="Copiar curl de Google"
-                variant="outline"
                 size="touch"
               />
             </div>
           </div>
           <div>
-            <p className="mb-1 text-xs font-medium text-muted-foreground">
+            <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               DuckDuckGo
             </p>
             <div className="flex items-start gap-2">
@@ -186,7 +198,6 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
               <CopyButton
                 value={duckCurl}
                 label="Copiar curl de DuckDuckGo"
-                variant="outline"
                 size="touch"
               />
             </div>
@@ -197,7 +208,7 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
       <section className="space-y-3">
         <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">Google Sheets</h2>
         <p className="text-sm text-muted-foreground">
-          Pegá esta fórmula en una celda para mostrar el favicon:
+          Pegá esta fórmula en una celda para mostrar el logo:
         </p>
         <div className="flex items-center gap-2">
           <code className="flex-1 break-all rounded bg-secondary px-2 py-1.5 font-mono text-sm text-foreground">
@@ -219,9 +230,8 @@ export function EntityDetail({ entity, related, slug }: EntityDetailProps) {
       ) : null}
 
       <p className="text-sm text-muted-foreground">
-        Los favicons se obtienen de servicios públicos según el dominio de la entidad.
-        No somos fuente oficial de marca; para uso corporativo consultá las guías de cada
-        organización.
+        Los logos pertenecen a sus respectivas marcas. No somos fuente oficial; para uso
+        corporativo consultá las guías de marca de cada organización.
       </p>
 
       {related.length > 0 && (

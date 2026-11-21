@@ -6,10 +6,10 @@ import { maybePermanentSlugRedirect } from './worker-permanent-redirect.ts'
 describe('maybePermanentSlugRedirect', () => {
   it('redirects consolidated logo asset paths', () => {
     const res = maybePermanentSlugRedirect(
-      new Request('https://loguitos.app/logos/metrogas/isotipo.svg'),
+      new Request('https://loguitos.app/logos/metrogas-214/isotipo.svg'),
     )
     assert.ok(res)
     assert.equal(res.status, PERMANENT_REDIRECT_HTTP_STATUS)
-    assert.equal(res.headers.get('location'), 'https://loguitos.app/logos/metrogas-214/isotipo.svg')
+    assert.equal(res.headers.get('location'), 'https://loguitos.app/logos/metrogas/isotipo.svg')
   })
 })

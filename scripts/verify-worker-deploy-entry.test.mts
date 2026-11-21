@@ -1,7 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { mkdtemp, readFile, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import {
@@ -9,8 +8,6 @@ import {
   buildWorkerEntryWrapper,
 } from './build-worker-entry-wrapper.mts'
 import { verifyWorkerDeployEntry } from './verify-worker-deploy-entry.mts'
-
-const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
 test('verifyWorkerDeployEntry after postbuild wrapper', { skip: !process.env.FULL_BUILD_TEST }, async () => {
   await verifyWorkerDeployEntry()

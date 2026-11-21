@@ -3,6 +3,8 @@ import {
   API_DOCS_BASE_API,
   API_DOCS_CACHE_ITEMS,
   API_DOCS_EXAMPLES,
+  API_DOCS_DOWNLOAD_NOTE,
+  API_DOCS_FIELD_NOTES,
   API_DOCS_INTRO,
   API_DOCS_QUERY_PARAMS,
   API_DOCS_RESPONSE_EXAMPLE,
@@ -12,10 +14,20 @@ import {
   MCP_CLIENT_STEPS,
   MCP_DOCS_INTRO,
   MCP_ENDPOINT_PATH,
-  MCP_GA4_NOTE,
   getMcpEndpointUrl,
 } from "@/lib/mcp-docs-content"
 import { TOOL_DEFINITIONS } from "@/lib/mcp/tools"
+
+/** Renders `backtick` spans of a plain docs string as <code>. */
+function InlineCode({ text }: { text: string }) {
+  return (
+    <>
+      {text.split("`").map((part, index) =>
+        index % 2 === 1 ? <code key={index}>{part}</code> : part,
+      )}
+    </>
+  )
+}
 
 export default function DocsPage() {
   return (
@@ -66,10 +78,26 @@ export default function DocsPage() {
       <section className="mt-6 space-y-3">
         <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">Respuesta</h2>
         <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs">{API_DOCS_RESPONSE_EXAMPLE}</pre>
+        <ul className="list-disc space-y-2 pl-6 text-sm text-muted-foreground">
+          {API_DOCS_FIELD_NOTES.map((note) => (
+            <li key={note}>
+              <InlineCode text={note} />
+            </li>
+          ))}
+        </ul>
         <p className="text-xs text-muted-foreground">
           {API_DOCS_RESPONSE_NOTE.before}
           <code>{API_DOCS_RESPONSE_NOTE.header}</code>
           {API_DOCS_RESPONSE_NOTE.after}
+        </p>
+      </section>
+
+      <section className="mt-6 space-y-3">
+        <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">
+          Descarga de un logo
+        </h2>
+        <p className="text-sm text-muted-foreground">
+          <InlineCode text={API_DOCS_DOWNLOAD_NOTE} />
         </p>
       </section>
 
@@ -100,7 +128,6 @@ export default function DocsPage() {
             </li>
           ))}
         </ul>
-        <p className="text-xs text-muted-foreground">{MCP_GA4_NOTE}</p>
       </section>
 
       <section className="mt-6 space-y-3">

@@ -34,9 +34,10 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .cache/indexnow-previous-sitemap.xml
-          key: indexnow-sitemap-${{ github.repository }}
+          # Caches are immutable per key: restore the newest baseline by prefix.
+          key: indexnow-sitemap-${{ github.repository }}-${{ github.run_id }}
           restore-keys: |
-            indexnow-sitemap-${{ github.repository }}
+            indexnow-sitemap-${{ github.repository }}-
 
       - name: Ping IndexNow for changed URLs
         env:
@@ -49,4 +50,4 @@ jobs:
         if: success()
         with:
           path: .cache/indexnow-previous-sitemap.xml
-          key: indexnow-sitemap-${{ github.repository }}
+          key: indexnow-sitemap-${{ github.repository }}-${{ github.run_id }}

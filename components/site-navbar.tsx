@@ -15,14 +15,19 @@ import {
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { categoryNavItems } from "@/lib/category-nav"
 import { cn } from "@/lib/utils"
 
-export function SiteNavbar() {
+interface SiteNavbarProps {
+  /** Resolved on the server so the catalog never ships in this island's bundle. */
+  categories: { id: string; name: string }[]
+}
+
+export function SiteNavbar({ categories: categoryNavItems }: SiteNavbarProps) {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -77,13 +82,21 @@ export function SiteNavbar() {
   const mobileNavButtonClassName = cn(navButtonClassName, "px-3 text-sm")
 
   const searchForm = (className?: string, inputClassName?: string) => (
-    <form onSubmit={handleSubmit} className={cn("relative w-full", className)}>
+    <form
+      role="search"
+      action="/"
+      method="get"
+      onSubmit={handleSubmit}
+      className={cn("relative w-full", className)}
+    >
       <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       <Input
         type="search"
-        placeholder="Buscar por nombre, dominio o código..."
+        name="q"
+        aria-label="Buscar logos"
+        placeholder="Buscar por nombre o dominio"
         className={cn(
-          "h-12 rounded-2xl border border-border bg-white pl-10 pr-4 text-base text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring/50 focus-visible:ring-2 focus-visible:ring-ring/25 md:text-sm",
+          "h-12 rounded-2xl border border-border bg-card pl-10 pr-4 text-base text-foreground placeholder:text-muted-foreground shadow-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/60 md:text-sm",
           inputClassName
         )}
         value={searchValue}
@@ -131,6 +144,9 @@ export function SiteNavbar() {
               <SheetContent side="right" className="w-full gap-0 sm:max-w-sm">
                 <SheetHeader className="border-b border-border pb-4">
                   <SheetTitle>Menú</SheetTitle>
+                  <SheetDescription className="sr-only">
+                    Buscador y categorías del catálogo
+                  </SheetDescription>
                 </SheetHeader>
 
 
@@ -207,7 +223,7 @@ export function SiteNavbar() {
                 href="https://github.com/ferminrp/logos-ar"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Repositorio de Logos AR en GitHub"
+                aria-label="Repositorio de Loguitos en GitHub"
               >
                 <Github className="h-4 w-4" />
               </a>

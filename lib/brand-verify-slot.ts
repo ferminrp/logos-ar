@@ -1,7 +1,19 @@
 export const BRAND_VERIFY_MAIL = "marcas@loguitos.app"
 
+// `import.meta.env.PUBLIC_*` is inlined by Vite in server and client builds alike;
+// `process.env` covers plain Node (tests, scripts).
+const buildTimeSlotVerify =
+  typeof import.meta !== "undefined"
+    ? import.meta.env?.PUBLIC_SLOT_VERIFY
+    : undefined
+
 export function isBrandVerifySlotEnabled(): boolean {
-  return process.env.NEXT_PUBLIC_SLOT_VERIFY !== "off"
+  const value =
+    buildTimeSlotVerify ??
+    (typeof process !== "undefined"
+      ? (process.env.PUBLIC_SLOT_VERIFY ?? process.env.NEXT_PUBLIC_SLOT_VERIFY)
+      : undefined)
+  return value !== "off"
 }
 
 export function buildBrandVerifyMailtoHref(brandName: string): string {

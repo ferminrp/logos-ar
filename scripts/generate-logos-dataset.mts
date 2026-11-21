@@ -4,7 +4,7 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { categories } from "../lib/logos-data.ts"
 import { getEntitySearchHaystack } from "../lib/entity-search.ts"
-import { getEntityLogoUrl } from "../lib/entity-logo.ts"
+import { getEntityLogoSource, getEntityLogoUrl } from "../lib/entity-logo.ts"
 import {
   getDuckDuckGoFaviconUrl,
   getGoogleFaviconUrl,
@@ -41,7 +41,8 @@ async function main() {
       google_domain: getGoogleFaviconUrl(entity.domain),
       duck_domain: getDuckDuckGoFaviconUrl(entity.domain),
       catalog_logo_url: getEntityLogoUrl(entity),
-      logo_source: entity.logoSource ?? (entity.logoUrl ? "hosted" : "google"),
+      // Real source of `catalog_logo_url`: entity field, then override, else Google favicon.
+      logo_source: getEntityLogoSource(entity),
       categoryId: category.id,
       categoryName: category.name,
       searchText: getEntitySearchHaystack(entity),

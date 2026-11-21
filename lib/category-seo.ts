@@ -26,7 +26,7 @@ const CATEGORY_SEO: Partial<Record<string, CategorySeoCopy>> = {
       slug: "banco-de-la-nacion-argentina",
       heading: "Logo Banco Nación (BNA)",
       description:
-        "PNG y SVG con fondo transparente y descarga gratis. Página dedicada al BNA para búsquedas como logo banco nación png.",
+        "PNG y SVG con fondo transparente y descarga gratis. El Banco Nación tiene su propia página.",
     },
   },
   prepagas: {
@@ -63,13 +63,29 @@ const CATEGORY_SEO: Partial<Record<string, CategorySeoCopy>> = {
   },
 }
 
+const META_DESCRIPTION_MAX_LENGTH = 155
+
+function buildCategoryMetaDescription(category: Category): string {
+  const names = category.seoTopEntities.slice(0, 4).join(", ")
+  const lead = `Logos de ${category.name} en Argentina`
+  const candidates = [
+    `${lead}: ${names} y más. ${category.entities.length} marcas en PNG y SVG, descarga gratis.`,
+    `${lead}: ${names} y más. Descarga gratis en PNG y SVG.`,
+    `${lead}: ${category.entities.length} marcas en PNG y SVG, descarga gratis.`,
+  ]
+  return (
+    candidates.find((text) => text.length <= META_DESCRIPTION_MAX_LENGTH) ??
+    candidates[candidates.length - 1]
+  )
+}
+
 export function getCategorySeoCopy(category: Category): CategorySeoCopy {
   const override = CATEGORY_SEO[category.id]
   if (override) return override
 
   return {
     h1: `Logos de ${category.name} en Argentina`,
-    title: `Logos de ${category.name} en Argentina (PNG, SVG) | ${category.seoTopEntities[0]}`,
-    metaDescription: `${category.seoIntro} ${category.entities.length} entidades con URLs y favicon en PNG/SVG.`,
+    title: `Logos de ${category.name} en Argentina (PNG, SVG) | Loguitos`,
+    metaDescription: buildCategoryMetaDescription(category),
   }
 }

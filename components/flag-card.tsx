@@ -1,8 +1,4 @@
-"use client"
-
-import { useState } from "react"
-import { Check, Copy } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { CopyButton } from "@/components/copy-button"
 import type { Flag } from "@/lib/flags-data"
 import { getFlagImgSnippet, getFlagSvgUrl, type FlagRatio } from "@/lib/flag-urls"
 
@@ -12,14 +8,6 @@ interface FlagCardProps {
 }
 
 export function FlagCard({ flag, ratio = "3x2" }: FlagCardProps) {
-  const [copiedField, setCopiedField] = useState<string | null>(null)
-
-  const copyToClipboard = async (text: string, field: string) => {
-    await navigator.clipboard.writeText(text)
-    setCopiedField(field)
-    setTimeout(() => setCopiedField(null), 2000)
-  }
-
   const svgUrl = getFlagSvgUrl(flag.code, ratio)
   const imgSnippet = getFlagImgSnippet(flag.code, flag.name, ratio)
 
@@ -47,40 +35,32 @@ export function FlagCard({ flag, ratio = "3x2" }: FlagCardProps) {
         </div>
 
         <div className="min-w-0 flex-1">
-          <h3 className="truncate font-medium text-foreground">{flag.name}</h3>
+          <h3 className="truncate font-medium text-foreground" title={flag.name}>
+            {flag.name}
+          </h3>
           <p className="font-mono text-sm text-muted-foreground">{flag.code}</p>
         </div>
       </div>
 
       <div className="mt-3 grid grid-cols-2 gap-2">
-        <Button
-          type="button"
+        <CopyButton
+          value={svgUrl}
           variant="outline"
-          size="sm"
-          className="h-9 min-w-0 px-2 text-xs"
-          onClick={() => copyToClipboard(svgUrl, "svg-url")}
+          className="h-10 min-w-0 px-2 text-xs"
+          iconClassName="h-3.5 w-3.5"
+          label={`Copiar URL de la bandera de ${flag.name}`}
         >
-          {copiedField === "svg-url" ? (
-            <Check className="mr-1.5 h-3.5 w-3.5 shrink-0 text-primary" />
-          ) : (
-            <Copy className="mr-1.5 h-3.5 w-3.5 shrink-0" />
-          )}
           <span className="truncate">Copiar URL</span>
-        </Button>
-        <Button
-          type="button"
+        </CopyButton>
+        <CopyButton
+          value={imgSnippet}
           variant="outline"
-          size="sm"
-          className="h-9 min-w-0 px-2 text-xs"
-          onClick={() => copyToClipboard(imgSnippet, "img-snippet")}
+          className="h-10 min-w-0 px-2 text-xs"
+          iconClassName="h-3.5 w-3.5"
+          label={`Copiar HTML de la bandera de ${flag.name}`}
         >
-          {copiedField === "img-snippet" ? (
-            <Check className="mr-1.5 h-3.5 w-3.5 shrink-0 text-primary" />
-          ) : (
-            <Copy className="mr-1.5 h-3.5 w-3.5 shrink-0" />
-          )}
           <span className="truncate">Copiar HTML</span>
-        </Button>
+        </CopyButton>
       </div>
     </div>
   )

@@ -1,10 +1,6 @@
-"use client"
-
-import { useState } from "react"
 import { Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { CopyButton } from "@/components/copy-button"
-import { resolveLogoDownloadFilename } from "@/lib/logo-download-attachment"
 
 type LogoFormat = "png" | "svg" | "isotipo"
 
@@ -13,151 +9,83 @@ interface LogoDownloadButtonsProps {
   name: string
   domain: string
   layout?: "hero" | "full"
+  /** True only when the catalog hosts a real vector for this logo. */
+  hasVector?: boolean
   isotipoSvgUrl?: string
 }
 
-function trackLogoDownload(slug: string, name: string, format: LogoFormat) {
-  if (typeof window === "undefined") return
-  const params = { logo_slug: slug, logo_name: name, format }
-  if (typeof window.gtag === "function") {
-    window.gtag("event", "logo_download", params)
-    return
-  }
-  if (Array.isArray(window.dataLayer)) {
-    window.dataLayer.push(["event", "logo_download", params])
-  }
-}
-
 function getDownloadUrl(domain: string, format: LogoFormat): string {
-  const params = new URLSearchParams({
-    domain,
-    format,
-    size: "256",
-  })
-
+  const params = new URLSearchParams({ domain, format, size: "256" })
   return `/api/logo-download?${params.toString()}`
 }
 
-function getFilename(domain: string, format: LogoFormat): string {
-  const base = domain.replace(/\./g, "_")
-  if (format === "isotipo") {
-    return `${base}_isotipo.svg`
-  }
-  return `${base}_logo.${format}`
+const FORMAT_LABEL: Record<LogoFormat, string> = {
+  png: "Descargar PNG",
+  svg: "Descargar SVG",
+  isotipo: "Descargar isotipo SVG",
 }
 
-async function triggerDownload(url: string, fallbackFilename: string) {
-  const response = await fetch(url)
-
-  if (!response.ok) {
-    throw new Error("download_failed")
-  }
-
-  const filename = resolveLogoDownloadFilename(response, fallbackFilename)
-  const blob = await response.blob()
-  const objectUrl = URL.createObjectURL(blob)
-  const anchor = document.createElement("a")
-  anchor.href = objectUrl
-  anchor.download = filename
-  document.body.appendChild(anchor)
-  anchor.click()
-  document.body.removeChild(anchor)
-  URL.revokeObjectURL(objectUrl)
-}
-
+/**
+ * Plain download links: the API answers with `Content-Disposition: attachment`,
+ * so they work without JavaScript. The delegated script in BaseLayout reports
+ * `[data-logo-download]` clicks to analytics.
+ */
 export function LogoDownloadButtons({
   slug,
   name,
   domain,
   layout = "full",
+  hasVector = false,
   isotipoSvgUrl,
 }: LogoDownloadButtonsProps) {
-  const [downloadingFormat, setDownloadingFormat] = useState<LogoFormat | null>(
-    null,
-  )
-  const [error, setError] = useState<string | null>(null)
-
-  async function handleDownload(format: LogoFormat) {
-    setDownloadingFormat(format)
-    setError(null)
-    trackLogoDownload(slug, name, format)
-
-    try {
-      await triggerDownload(
-        getDownloadUrl(domain, format),
-        getFilename(domain, format),
-      )
-    } catch {
-      setError("No se pudo descargar el logo. Intentá de nuevo.")
-    } finally {
-      setDownloadingFormat(null)
-    }
-  }
-
-  const showPng = true
-  const showSvg = true
-  const showIsotipo = Boolean(isotipoSvgUrl)
-  const pngVariant =
-    layout === "hero" ? ("logo-download-png" as const) : ("outline" as const)
+  const formats: LogoFormat[] = [
+    "png",
+    ...(hasVector ? (["svg"] as const) : []),
+    ...(isotipoSvgUrl ? (["isotipo"] as const) : []),
+  ]
 
   return (
     <div className="space-y-2">
       <div className="flex flex-wrap gap-2">
-        {showPng ? (
+        {formats.map((format) => (
           <Button
-            type="button"
-            variant={pngVariant}
+            key={format}
+            asChild
+            variant={
+              format === "png" && layout === "hero" ? "logo-download-png" : "outline"
+            }
             size="touch"
-            disabled={downloadingFormat !== null}
-            onClick={() => void handleDownload("png")}
           >
-            <Download className="h-4 w-4" />
-            {downloadingFormat === "png" ? "Descargando..." : "Descargar PNG"}
+            <a
+              href={getDownloadUrl(domain, format)}
+              download
+              rel="nofollow"
+              data-logo-download={format}
+              data-logo-slug={slug}
+              data-logo-name={name}
+            >
+              <Download className="h-4 w-4" aria-hidden />
+              {FORMAT_LABEL[format]}
+            </a>
           </Button>
-        ) : null}
-        {showSvg ? (
-          <Button
-            type="button"
-            variant="outline"
-            size="touch"
-            disabled={downloadingFormat !== null}
-            onClick={() => void handleDownload("svg")}
-          >
-            <Download className="h-4 w-4" />
-            {downloadingFormat === "svg" ? "Descargando..." : "Descargar SVG"}
-          </Button>
-        ) : null}
-        {showIsotipo ? (
-          <Button
-            type="button"
-            variant="outline"
-            size="touch"
-            disabled={downloadingFormat !== null}
-            onClick={() => void handleDownload("isotipo")}
-          >
-            <Download className="h-4 w-4" />
-            {downloadingFormat === "isotipo"
-              ? "Descargando..."
-              : "Descargar isotipo SVG"}
-          </Button>
-        ) : null}
+        ))}
       </div>
-      {showIsotipo && isotipoSvgUrl ? (
-        <div className="flex flex-wrap items-center gap-2">
-          <code className="max-w-full flex-1 break-all rounded bg-secondary px-2 py-1.5 font-mono text-xs text-foreground">
-            {isotipoSvgUrl}
-          </code>
-          <CopyButton
-            value={isotipoSvgUrl}
-            size="touch"
-            label="Copiar URL del isotipo SVG"
-          />
+      {isotipoSvgUrl ? (
+        <div>
+          <p className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            URL del isotipo SVG
+          </p>
+          <div className="flex items-center gap-2">
+            <code className="max-w-full flex-1 break-all rounded bg-secondary px-2 py-1.5 font-mono text-xs text-foreground">
+              {isotipoSvgUrl}
+            </code>
+            <CopyButton
+              value={isotipoSvgUrl}
+              size="touch"
+              label="Copiar URL del isotipo SVG"
+            />
+          </div>
         </div>
-      ) : null}
-      {error ? (
-        <p className="text-sm text-destructive" role="alert">
-          {error}
-        </p>
       ) : null}
     </div>
   )
