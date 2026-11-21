@@ -33,7 +33,7 @@ export function hammingDistance(a: bigint, b: bigint): number {
 
 /** Difference hash (dHash) on 64-bit grayscale grid — stable across minor resize/compression. */
 export async function computeDHash(bytes: Uint8Array): Promise<bigint> {
-  const { data, info } = await sharp(Buffer.from(bytes), { failOn: "none" })
+  const { data } = await sharp(Buffer.from(bytes), { failOn: "none" })
     .resize(DHASH_SIZE + 1, DHASH_SIZE, { fit: "fill" })
     .grayscale()
     .raw()

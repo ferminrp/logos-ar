@@ -1,21 +1,22 @@
 # Loguitos (Logos Argentina)
 
-Directorio de logos/favicons de entidades financieras argentinas para uso rápido en proyectos web.
+Directorio de logos/favicons de marcas y entidades argentinas para uso rápido en proyectos web. El catálogo cubre unas 22 categorías (bancos, fintechs, crypto, retail, medios, telecomunicaciones, entes estatales, salud, energía, etc.) más banderas de países.
 
 La app permite:
 - buscar entidades por nombre o dominio,
 - filtrar por categoría,
-- previsualizar y copiar endpoints/curls de Google y DuckDuckGo.
+- ver la ficha de cada logo, copiar sus URLs y descargarlo en PNG o SVG.
 
-Documentación de API disponible en [`/docs`](http://localhost:3000/docs) al correr la app localmente.
+Documentación de API disponible en [`/docs`](http://localhost:4321/docs) al correr la app localmente.
 
 **Producción:** [https://loguitos.app](https://loguitos.app) — documentación en [https://loguitos.app/docs](https://loguitos.app/docs).
 
 ## Stack
 
-- Astro 5 + `@astrojs/cloudflare` (Cloudflare Workers)
+- Astro 7 + `@astrojs/cloudflare` (Cloudflare Workers)
 - React 19 islands + TypeScript
-- Tailwind CSS 4
+- Tailwind CSS 4 (vía `@tailwindcss/vite`)
+- Descarga de logos en el Worker con WASM: `@jsquash/*`, `@cf-wasm/photon` y `@resvg/resvg-wasm` (`sharp` es solo dev dependency para scripts y tests)
 - pnpm
 
 ## Requisitos
@@ -36,6 +37,8 @@ Abrí [http://localhost:4321](http://localhost:4321).
 
 - `pnpm dev`: entorno de desarrollo
 - `pnpm lint`: lint del proyecto
+- `pnpm typecheck`: `astro check`
+- `pnpm test`: tests offline
 - `pnpm build`: build de producción
 - `pnpm preview`: vista previa del build Astro
 - `pnpm start`: Worker local con Wrangler (`dist/server/wrangler.json`, incluye el wrapper post-build; corré `pnpm build` antes)
@@ -77,7 +80,7 @@ Si Search Console muestra **Couldn't fetch** después de un deploy:
 1. Verificá en vivo con inspección de URL que el sitemap devuelva **200** y XML válido.
 2. En **Sitemaps**, eliminá el envío fallido y volvé a enviar la misma URL.
 3. Si el error persiste (caché de GSC), probá una URL alternativa para forzar un fetch nuevo, por ejemplo `https://loguitos.app/sitemap.xml?v=2`.
-4. En Vercel → **Security**, confirmá que no haya *Deployment Protection* ni reglas de firewall que bloqueen a Googlebot.
+4. En Cloudflare, confirmá que no haya reglas de WAF/firewall que bloqueen a Googlebot.
 
 ### `lastmod` real e imágenes en el sitemap
 
@@ -105,7 +108,7 @@ pnpm indexnow:ping-changed
 
 Variables opcionales para `indexnow:ping-changed`:
 
-- `INDEXNOW_FETCH_CURRENT=1` — lee el sitemap en vivo desde `NEXT_PUBLIC_SITE_URL` / `https://loguitos.app`
+- `INDEXNOW_FETCH_CURRENT=1` — lee el sitemap en vivo desde `PUBLIC_SITE_URL` / `https://loguitos.app`
 - `INDEXNOW_PREVIOUS_SITEMAP_PATH` — ruta al XML baseline anterior
 - `INDEXNOW_CURRENT_SITEMAP_PATH` — ruta al sitemap actual (si no se usa fetch)
 
@@ -113,17 +116,17 @@ Variables opcionales para `indexnow:ping-changed`:
 
 Puntos clave para contributors:
 
-- `app`: layout global y página principal
-  - `app/page.tsx`: búsqueda, filtros, render de categorías, panel de configuración
-  - `app/layout.tsx`: metadata y estructura raíz
-- `components`: componentes de UI y bloques funcionales
-  - `components/category-section.tsx`: render por categoría
-  - `components/logo-card.tsx`: tarjeta de logo/endpoints
-  - `components/config-panel.tsx`: controles de parámetros
+- `src/pages`: rutas Astro (páginas, gemelos `.md`, `api/`, `mcp`, `robots.txt`, `llms.txt`)
+- `src/layouts`, `src/styles/globals.css`: layout base y estilos globales (Tailwind)
+- `views`: vistas React de cada página
+- `components`: componentes de UI y bloques funcionales (`components/ui`: primitivas shadcn en uso)
 - `lib`: datos y helpers de dominio
   - `lib/logos-data.ts`: fuente principal de categorías/entidades
-  - `lib/config-context.tsx`: estado/configuración de curls y endpoints
-  - `lib/utils.ts`: utilidades compartidas
+  - `lib/logo-download-*.ts`: endpoint de descarga de logos
+  - `lib/worker-*.ts`: lógica del wrapper del Worker (R2, redirects, headers)
+- `data`: datasets generados y overrides (JSON, isotipos)
+- `scripts`: prebuild/postbuild, sync a R2, chequeos de calidad de logos
+- `public/logos`: logos alojados (fallback de R2)
 
 ## Cómo contribuir
 
@@ -135,6 +138,7 @@ Puntos clave para contributors:
 2. Hacé cambios acotados y enfocados.
 3. Validá localmente antes de abrir PR:
    - `pnpm lint`
+   - `pnpm typecheck`
    - `pnpm build`
 4. Abrí un Pull Request con contexto claro:
    - problema/oportunidad,
@@ -150,14 +154,14 @@ Editá `lib/logos-data.ts` respetando:
 - unicidad de `id` dentro del archivo,
 - dominios válidos y sin duplicados innecesarios.
 
-Después verificá en la UI:
+Después corré `pnpm build` (regenera los datasets en `data/`) y verificá en la UI:
 - resultados de búsqueda,
 - conteos por categoría,
-- generación de endpoint/curl.
+- ficha del logo y descarga.
 
 #### Cambios de UI o interacción
 
-- Ubicá la lógica principal en `app/page.tsx`.
+- Las rutas viven en `src/pages` y renderizan vistas de `views` (la home usa `components/home-page.tsx`).
 - Si el cambio es reutilizable, movelo a `components`.
 - Mantené consistencia visual con componentes de `components/ui`.
 
