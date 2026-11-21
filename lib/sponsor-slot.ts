@@ -42,8 +42,8 @@ const lemonCampaign = {
   advertiserInitials: 'LC',
   headline: 'Abrí tu cuenta en Lemon y llevate USD 5 en BTC',
   subline: 'Sin costo de apertura. Aplican términos.',
-  /** Placeholder until final affiliate URL is configured. */
-  href: buildTimeLemonHref ?? 'https://example.com/?ref=loguitos',
+  /** Affiliate URL from `PUBLIC_SPONSOR_LEMON_HREF`; SponsorSlot shows the house ad without it. */
+  href: buildTimeLemonHref ?? '',
 } as const
 
 export type SponsorSlotResolved =

@@ -23,7 +23,8 @@ export function SponsorSlot({ slug, categoryId }: SponsorSlotProps) {
 
   if (!enabled) return null
 
-  if (resolved?.kind === 'lemon') {
+  // Never render a sponsored link without a configured affiliate URL.
+  if (resolved?.kind === 'lemon' && resolved.campaign.href) {
     const { campaign } = resolved
     return (
       <aside className={shell} aria-label="Contenido patrocinado">
@@ -47,7 +48,7 @@ export function SponsorSlot({ slug, categoryId }: SponsorSlotProps) {
     )
   }
 
-  if (resolved?.kind === 'house') {
+  if (resolved) {
     return (
       <aside className={shell} aria-label="Contenido patrocinado">
         <div className="lg-slot__mark" aria-hidden="true">
