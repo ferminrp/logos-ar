@@ -6,8 +6,13 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const repoRoot = path.resolve(__dirname, "..")
 
+/**
+ * `data/logos-dataset.json` is imported by the isotipo staging step (through
+ * lib/isotipos-catalog.ts), so it must be fully written before the rest start.
+ */
+const datasetGenerator = "scripts/generate-logos-dataset.mts"
+
 const generators = [
-  "scripts/generate-logos-dataset.mts",
   "scripts/generate-flags-dataset.mts",
   "scripts/generate-permanent-redirects.mts",
   "scripts/stage-isotipo-fallback-assets.mts",
@@ -33,6 +38,7 @@ function runNodeScript(relativePath: string): Promise<void> {
 }
 
 async function main() {
+  await runNodeScript(datasetGenerator)
   await Promise.all(generators.map((script) => runNodeScript(script)))
   // Reads the datasets generated above, so it runs after them.
   await runNodeScript("scripts/sync-sitemap-lastmod.mts")

@@ -25,9 +25,16 @@ const __dirname = path.dirname(__filename)
 const outputDir = path.resolve(__dirname, "../data")
 const outputPath = path.resolve(outputDir, "flags-dataset.json")
 
+/**
+ * Codes shipped by country-flag-icons that are not real flags:
+ * XA / XC are pseudo-locales (pseudo-accents, pseudo-bidi) and XO has no
+ * assigned territory. XK (Kosovo) is a real user-assigned code and stays.
+ */
+const EXCLUDED_FLAG_CODES = new Set(["XA", "XC", "XO"])
+
 async function main() {
   const items: FlagItem[] = countries
-    .filter((code) => hasFlag(code))
+    .filter((code) => hasFlag(code) && !EXCLUDED_FLAG_CODES.has(code))
     .map((code) => ({
       code,
       name: getFlagName(code),
