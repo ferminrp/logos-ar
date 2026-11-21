@@ -1,6 +1,6 @@
 {
-  "version": "baac132bd986",
-  "totalItems": 265,
+  "version": "0a859d90be30",
+  "totalItems": 262,
   "items": [
     {
       "code": "AC",
@@ -1795,30 +1795,9 @@
       "categoryName": "Banderas"
     },
     {
-      "code": "XA",
-      "name": "Pseudoacentos",
-      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/XA.svg",
-      "categoryId": "banderas",
-      "categoryName": "Banderas"
-    },
-    {
-      "code": "XC",
-      "name": "XC",
-      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/XC.svg",
-      "categoryId": "banderas",
-      "categoryName": "Banderas"
-    },
-    {
       "code": "XK",
       "name": "Kosovo",
       "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/XK.svg",
-      "categoryId": "banderas",
-      "categoryName": "Banderas"
-    },
-    {
-      "code": "XO",
-      "name": "XO",
-      "svgUrl": "https://catamphetamine.gitlab.io/country-flag-icons/3x2/XO.svg",
       "categoryId": "banderas",
       "categoryName": "Banderas"
     },
