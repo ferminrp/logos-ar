@@ -1,5 +1,5 @@
-import { TOOL_DEFINITIONS } from '@/lib/mcp/tools'
-import { getSiteUrl } from '@/lib/site-url'
+import { TOOL_DEFINITIONS } from './mcp/tools.ts'
+import { getSiteUrl } from './site-url.ts'
 
 export const MCP_ENDPOINT_PATH = '/mcp'
 
@@ -41,5 +41,3 @@ export function formatToolListMarkdown(): string {
     (tool) => `- **${tool.name}**: ${tool.description}`,
   ).join('\n')
 }
-
-export const MCP_GA4_NOTE = `Cada tools/call exitoso dispara un evento server-side GA4 \`mcp_tool_call\` con parámetro \`tool_name\` (Measurement Protocol, ID G-GZLZ092Z7S). Requiere el secret \`GA4_API_SECRET\` en el Worker; si falta, se omite. Para validar, repetí la llamada con el header \`X-Ga-Debug: 1\` y revisá la respuesta de https://www.google-analytics.com/debug/mp/collect.`

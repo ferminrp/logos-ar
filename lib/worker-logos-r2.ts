@@ -161,32 +161,43 @@ async function responseFromR2Isotipo(
   return new Response(null, { status: 404 })
 }
 
+/**
+ * One R2 operation per request (`head` for HEAD, `get` otherwise). Any R2 failure
+ * resolves to null so the caller serves the static asset bundled with the Worker.
+ */
+async function readR2Object(
+  request: Request,
+  env: HostedLogoWorkerEnv,
+  key: string,
+): Promise<HostedR2Head | HostedR2Body | null> {
+  const bucket = env.LOGOS
+  if (!bucket) {
+    return null
+  }
+  try {
+    return request.method === 'HEAD'
+      ? await bucket.head(key)
+      : await bucket.get(key)
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        event: 'hosted_logo_r2_error',
+        key,
+        reason: error instanceof Error ? error.message : String(error),
+      }),
+    )
+    return null
+  }
+}
+
 async function tryR2HostedLogo(
   request: Request,
   env: HostedLogoWorkerEnv,
   parsed: ParsedHostedLogoPath,
 ): Promise<Response | null> {
-  const bucket = env.LOGOS
-  if (!bucket) {
-    return null
-  }
-
   const key = r2ObjectKeyForHostedLogo(parsed.slug, parsed.ext)
-  const head = await bucket.head(key)
-  if (!head) {
-    return null
-  }
-
-  if (request.method === 'HEAD') {
-    return responseFromR2(request, head, parsed.ext)
-  }
-
-  const body = await bucket.get(key)
-  if (!body) {
-    return null
-  }
-
-  return responseFromR2(request, body, parsed.ext)
+  const object = await readR2Object(request, env, key)
+  return object ? responseFromR2(request, object, parsed.ext) : null
 }
 
 async function tryR2Isotipo(
@@ -194,27 +205,8 @@ async function tryR2Isotipo(
   env: HostedLogoWorkerEnv,
   slug: string,
 ): Promise<Response | null> {
-  const bucket = env.LOGOS
-  if (!bucket) {
-    return null
-  }
-
-  const key = r2ObjectKeyForIsotipo(slug)
-  const head = await bucket.head(key)
-  if (!head) {
-    return null
-  }
-
-  if (request.method === 'HEAD') {
-    return responseFromR2Isotipo(request, head)
-  }
-
-  const body = await bucket.get(key)
-  if (!body) {
-    return null
-  }
-
-  return responseFromR2Isotipo(request, body)
+  const object = await readR2Object(request, env, r2ObjectKeyForIsotipo(slug))
+  return object ? responseFromR2Isotipo(request, object) : null
 }
 
 async function fallbackAssetsHostedLogo(

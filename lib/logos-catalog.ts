@@ -1,6 +1,10 @@
 import logosDataset from '../data/logos-dataset.json' with { type: 'json' }
 import flagsDataset from '../data/flags-dataset.json' with { type: 'json' }
-import { entityMatchesSearchQuery } from './entity-search.ts'
+import {
+  entityMatchesSearchQuery,
+  sortBySearchRelevance,
+  textMatchesSearchQuery,
+} from './entity-search.ts'
 import { entityRecordForLogoItem } from './mcp/entity-for-catalog-item.ts'
 import {
   hasCatalogIsotipo,
@@ -14,7 +18,13 @@ export type LogoCatalogItem = {
   duck_domain: string
   categoryId: string
   categoryName: string
+  /** Logo shown in the catalog: a hosted `/logos/<slug>.png` path or a remote favicon URL. */
+  catalog_logo_url?: string
+  logo_source?: string
+  /** Internal search index; never part of the public response. */
   searchText?: string
+  /** Slug of the brand page at `/logo/<slug>`. */
+  slug?: string
   /** Present only when this brand has a hosted isotipo SVG at `/logos/<slug>/isotipo.svg`. */
   isotipoSvgUrl?: string
 }
@@ -69,15 +79,35 @@ function withOptionalIsotipoUrl(item: CatalogItem): CatalogItem {
     return item
   }
   const entity = entityRecordForLogoItem(item)
-  if (!entity || !hasCatalogIsotipo(entity.slug)) {
+  if (!entity) {
     return item
   }
-  return { ...item, isotipoSvgUrl: publicIsotipoSvgPath(entity.slug) }
+  return {
+    ...item,
+    slug: entity.slug,
+    ...(hasCatalogIsotipo(entity.slug)
+      ? { isotipoSvgUrl: publicIsotipoSvgPath(entity.slug) }
+      : {}),
+  }
 }
 
 function parsePositiveInt(value: number | undefined, fallback: number): number {
   if (value === undefined) return fallback
   return Number.isNaN(value) || value < 0 ? fallback : value
+}
+
+function parseLimit(value: number | undefined): number {
+  if (value === undefined || Number.isNaN(value) || value < 1) {
+    return DEFAULT_CATALOG_LIMIT
+  }
+  return Math.min(value, MAX_CATALOG_LIMIT)
+}
+
+/** Public shape: drop the internal search index string. */
+function toPublicItem(item: CatalogItem): CatalogItem {
+  if (isFlagItem(item) || item.searchText === undefined) return item
+  const { searchText: _searchText, ...rest } = item
+  return rest
 }
 
 function normalize(value: string | undefined): string {
@@ -88,10 +118,7 @@ function matchesQuery(item: CatalogItem, q: string): boolean {
   if (!q) return true
 
   if (isFlagItem(item)) {
-    return (
-      item.name.toLowerCase().includes(q) ||
-      item.code.toLowerCase().includes(q)
-    )
+    return textMatchesSearchQuery(`${item.name} ${item.code}`, q)
   }
 
   return entityMatchesSearchQuery(item, q)
@@ -107,7 +134,10 @@ function matchesDomain(item: CatalogItem, domain: string): boolean {
   return item.domain.toLowerCase().includes(domain)
 }
 
-/** Full filtered list (no pagination). Used by MCP slug merge; GET /api/logos unchanged. */
+/**
+ * Full filtered list (no pagination), best matches first when `q` is set.
+ * An unknown category matches nothing.
+ */
 export function filterLogosCatalogItems(
   input: Pick<LogosCatalogFilters, 'q' | 'domain' | 'category'>,
 ): CatalogItem[] {
@@ -115,7 +145,10 @@ export function filterLogosCatalogItems(
   const domain = normalize(input.domain)
   const category = normalize(input.category)
 
-  const hasKnownCategory = category ? KNOWN_CATEGORIES.has(category) : false
+  if (category && !KNOWN_CATEGORIES.has(category)) {
+    return []
+  }
+  const hasKnownCategory = Boolean(category)
   const includeLogos = !hasKnownCategory || category !== 'banderas'
   const includeFlags = !hasKnownCategory || category === 'banderas'
 
@@ -124,7 +157,7 @@ export function filterLogosCatalogItems(
     ...(includeFlags ? flagsDataset.items : []),
   ]
 
-  return allItems.filter((item) => {
+  const filtered = allItems.filter((item) => {
     if (hasKnownCategory && item.categoryId.toLowerCase() !== category) {
       return false
     }
@@ -139,6 +172,8 @@ export function filterLogosCatalogItems(
 
     return true
   })
+
+  return sortBySearchRelevance(filtered, q)
 }
 
 export function queryLogosCatalog(input: LogosCatalogFilters): LogosCatalogResult {
@@ -146,12 +181,7 @@ export function queryLogosCatalog(input: LogosCatalogFilters): LogosCatalogResul
   const domain = normalize(input.domain)
   const category = normalize(input.category)
   const offset = parsePositiveInt(input.offset, 0)
-  const limit = Math.min(
-    parsePositiveInt(input.limit, DEFAULT_CATALOG_LIMIT),
-    MAX_CATALOG_LIMIT,
-  )
-
-  const hasKnownCategory = category ? KNOWN_CATEGORIES.has(category) : false
+  const limit = parseLimit(input.limit)
 
   const filteredItems = filterLogosCatalogItems({
     q: input.q,
@@ -161,10 +191,10 @@ export function queryLogosCatalog(input: LogosCatalogFilters): LogosCatalogResul
 
   const pagedItems = filteredItems
     .slice(offset, offset + limit)
-    .map((item) => withOptionalIsotipoUrl(item))
+    .map((item) => toPublicItem(withOptionalIsotipoUrl(item)))
   const hasMore = offset + pagedItems.length < filteredItems.length
   const datasetVersion = `${logosDataset.version}:${flagsDataset.version}`
-  const hasSearchFilters = Boolean(q || domain || (category && hasKnownCategory))
+  const hasSearchFilters = Boolean(q || domain || category)
 
   return {
     items: pagedItems,
@@ -175,7 +205,7 @@ export function queryLogosCatalog(input: LogosCatalogFilters): LogosCatalogResul
     filters: {
       q: q || null,
       domain: domain || null,
-      category: hasKnownCategory ? category : category || null,
+      category: category || null,
       limit,
       offset,
     },

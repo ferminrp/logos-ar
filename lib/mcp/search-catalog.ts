@@ -7,6 +7,7 @@ import {
   filterLogosCatalogItems,
   queryLogosCatalog,
 } from '../logos-catalog.ts'
+import { sortBySearchRelevance } from '../entity-search.ts'
 import { entityRecordForLogoItem } from './entity-for-catalog-item.ts'
 
 export function normalizeMcpSlugQuery(q: string): string {
@@ -19,7 +20,7 @@ export function normalizeMcpSlugQuery(q: string): string {
 
 function catalogItemKey(item: CatalogItem): string {
   if ('code' in item) return `flag:${item.code}`
-  return `logo:${item.name}\u0000${item.domain.toLowerCase()}`
+  return `logo:${item.name}\u0000${item.domain.toLowerCase()}\u0000${item.categoryId}`
 }
 
 function entitySlugMatchesQuery(slug: string, slugQuery: string): boolean {
@@ -81,10 +82,10 @@ export function queryMcpLogosCatalog(
     merged.push(item)
   }
 
-  merged.sort((a, b) => a.name.localeCompare(b.name, 'es'))
+  const ranked = sortBySearchRelevance(merged, input.q ?? '')
 
-  const total = merged.length
-  const items = merged.slice(offset, offset + limit)
+  const total = ranked.length
+  const items = ranked.slice(offset, offset + limit)
   const hasMore = offset + items.length < total
 
   const filterQ = (input.q ?? '').trim().toLowerCase() || null

@@ -54,6 +54,11 @@ const SEARCH_SCHEMA = {
       maximum: MCP_SEARCH_MAX_LIMIT,
       description: `Máximo de resultados. Default ${MCP_SEARCH_DEFAULT_LIMIT}, máx ${MCP_SEARCH_MAX_LIMIT}.`,
     },
+    offset: {
+      type: 'integer',
+      minimum: 0,
+      description: 'Desplazamiento para paginar cuando hasMore es true. Default 0.',
+    },
   },
 } as const
 
@@ -105,7 +110,7 @@ export const TOOL_DEFINITIONS: ToolDefinition[] = [
   {
     name: 'get_logo',
     description:
-      'Un logo por slug o nombre. URLs absolutas https://loguitos.app/… para PNG, SVG, ficha y metadata. Banderas incluyen svgUrl externo (country-flag-icons).',
+      'Un logo por slug o nombre. URLs absolutas https://loguitos.app/… para PNG, SVG, ficha y metadata. svgIsVector indica si el SVG es un vector real o el PNG embebido. Banderas incluyen svgUrl externo (country-flag-icons).',
     inputSchema: GET_LOGO_SCHEMA,
   },
   {
@@ -150,21 +155,41 @@ function searchLogos(args: unknown, deps: McpDeps): ToolResult {
   if (args !== undefined && !isRecord(args)) {
     return { ok: false, code: INVALID_PARAMS, message: 'arguments must be an object' }
   }
-  const query = args && typeof args.query === 'string' ? args.query : ''
-  const category =
-    args && typeof args.category === 'string' ? args.category : undefined
+  const rawQuery = args?.query
+  const rawCategory = args?.category
+  if (rawQuery !== undefined && typeof rawQuery !== 'string') {
+    return { ok: false, code: INVALID_PARAMS, message: 'query must be a string' }
+  }
+  if (rawCategory !== undefined && typeof rawCategory !== 'string') {
+    return { ok: false, code: INVALID_PARAMS, message: 'category must be a string' }
+  }
+  const query = rawQuery ?? ''
+  const category = rawCategory?.trim() ? rawCategory : undefined
+  if (category && !KNOWN_CATEGORIES.has(category.trim().toLowerCase())) {
+    return {
+      ok: false,
+      code: INVALID_PARAMS,
+      message: `Unknown category: ${category}`,
+      data: { known: [...KNOWN_CATEGORIES] },
+    }
+  }
   const limit = parseLimit(args?.limit, MCP_SEARCH_DEFAULT_LIMIT, MCP_SEARCH_MAX_LIMIT)
   if (typeof limit === 'object') {
     return { ok: false, code: INVALID_PARAMS, message: limit.error }
   }
+  const offset = args?.offset ?? 0
+  if (typeof offset !== 'number' || !Number.isInteger(offset) || offset < 0) {
+    return { ok: false, code: INVALID_PARAMS, message: 'offset must be a non-negative integer' }
+  }
 
-  const result = queryMcpLogosCatalog({ q: query, category, limit })
+  const result = queryMcpLogosCatalog({ q: query, category, limit, offset })
   return {
     ok: true,
     payload: {
       count: result.items.length,
       total: result.total,
       hasMore: result.hasMore,
+      offset: result.filters.offset,
       datasetVersion: result.datasetVersion,
       items: result.items.map((item) =>
         catalogItemToMcpSummary(deps.siteUrl, item),
@@ -180,12 +205,17 @@ function getLogo(args: unknown, deps: McpDeps): ToolResult {
   }
   const slug = typeof args.slug === 'string' ? args.slug : undefined
   const name = typeof args.name === 'string' ? args.name : undefined
-  const lookup = slug ?? name
-  if (!lookup?.trim()) {
+  const lookups = [slug, name].filter((value): value is string => Boolean(value?.trim()))
+  if (lookups.length === 0) {
     return { ok: false, code: INVALID_PARAMS, message: 'slug or name is required' }
   }
 
-  const payload = resolveLogoBySlugOrName(deps.siteUrl, lookup)
+  // Try the slug first, then fall back to the name when both were given.
+  let payload = resolveLogoBySlugOrName(deps.siteUrl, lookups[0])
+  for (const lookup of lookups.slice(1)) {
+    if ((payload as { found?: boolean }).found !== false) break
+    payload = resolveLogoBySlugOrName(deps.siteUrl, lookup)
+  }
   return { ok: true, payload }
 }
 
@@ -257,7 +287,7 @@ export function callTool(
   args: unknown,
   deps: McpDeps,
 ): ToolResult {
-  const exec = EXECUTORS[name]
+  const exec = Object.hasOwn(EXECUTORS, name) ? EXECUTORS[name] : undefined
   if (!exec) {
     return { ok: false, code: INVALID_PARAMS, message: `Unknown tool: ${name}` }
   }

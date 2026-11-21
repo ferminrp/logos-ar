@@ -39,10 +39,9 @@ export function requiresWasmRasterPipeline(
   metrics: ImageMetrics,
   targetPngSize: number,
 ): boolean {
-  if (metrics.format === 'png') {
-    const maxEdge = Math.max(metrics.width, metrics.height)
-    return maxEdge > targetPngSize
-  }
+  // PNG sources are delivered as-is (`size` is an upper bound for remote favicons,
+  // not a resize), so they never enter the WASM pipeline.
+  void targetPngSize
   return WASM_RASTER_FORMATS.has(metrics.format)
 }
 

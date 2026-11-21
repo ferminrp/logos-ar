@@ -10,8 +10,12 @@ export const defaultCurlConfig: CurlConfig = {
   includeHeaders: false,
 }
 
+/** Google s2 serves at most 256px; anything larger silently falls back to a 16px icon. */
+export const GOOGLE_FAVICON_MAX_SIZE = 256
+
 export function getGoogleFaviconUrl(domain: string, size: number = 128): string {
-  return `https://s2.googleusercontent.com/s2/favicons?domain=${domain}&sz=${size}`
+  const sz = Math.min(Math.max(Math.trunc(size) || 128, 16), GOOGLE_FAVICON_MAX_SIZE)
+  return `https://s2.googleusercontent.com/s2/favicons?domain=${domain}&sz=${sz}`
 }
 
 export function getDuckDuckGoFaviconUrl(domain: string): string {

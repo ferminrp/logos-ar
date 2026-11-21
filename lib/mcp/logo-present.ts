@@ -4,7 +4,10 @@ import type { CatalogItem, FlagCatalogItem } from '../logos-catalog.ts'
 import { categories } from '../logos-data.ts'
 import flagsDataset from '../../data/flags-dataset.json' with { type: 'json' }
 import { FLAGS_CATEGORY, flagsTotalCount } from '../flags-data.ts'
+import { normalizeSearchText } from '../entity-search.ts'
+import { hasHostedLogoSvg } from '../logo-assets.ts'
 import { entityRecordForLogoItem } from './entity-for-catalog-item.ts'
+import { normalizeMcpSlugQuery } from './search-catalog.ts'
 import { resolveEntityLogoUrl } from '../entity-logo.ts'
 import {
   hasCatalogIsotipo,
@@ -45,6 +48,7 @@ export function entityToMcpLogo(siteUrl: string, entity: EntityRecord) {
     pageUrl: `${siteUrl}/logo/${entity.slug}`,
     pngUrl: absoluteLogoDownloadUrl(siteUrl, entity.domain, 'png'),
     svgUrl: absoluteLogoDownloadUrl(siteUrl, entity.domain, 'svg'),
+    svgIsVector: hasHostedLogoSvg(entity.slug),
     ...(hasCatalogIsotipo(entity.slug)
       ? { isotipoSvgUrl: absoluteIsotipoSvgUrl(siteUrl, entity.slug) }
       : {}),
@@ -95,6 +99,7 @@ export function catalogItemToMcpSummary(siteUrl: string, item: CatalogItem) {
     pageUrl,
     pngUrl: absoluteLogoDownloadUrl(siteUrl, item.domain, 'png'),
     svgUrl: absoluteLogoDownloadUrl(siteUrl, item.domain, 'svg'),
+    svgIsVector: slug ? hasHostedLogoSvg(slug) : false,
     ...(slug && hasCatalogIsotipo(slug)
       ? { isotipoSvgUrl: absoluteIsotipoSvgUrl(siteUrl, slug) }
       : {}),
@@ -110,16 +115,18 @@ export function resolveLogoBySlugOrName(
     return { found: false, query: slugOrName }
   }
 
-  const bySlug = getEntityBySlug(trimmed.toLowerCase())
+  // Accept a bare slug or a pasted ficha URL (/logo/<slug>).
+  const slugCandidate = normalizeMcpSlugQuery(trimmed)
+  const bySlug = getEntityBySlug(slugCandidate)
   if (bySlug) {
     return entityToMcpLogo(siteUrl, bySlug)
   }
 
-  const normalized = trimmed.toLowerCase()
+  const normalized = normalizeSearchText(trimmed)
   const entity =
     getAllEntities().find(
       (row) =>
-        row.name.toLowerCase() === normalized ||
+        normalizeSearchText(row.name) === normalized ||
         row.domain.toLowerCase() === normalized ||
         row.slug === normalized,
     ) ?? null
@@ -132,7 +139,7 @@ export function resolveLogoBySlugOrName(
     flagsDataset.items.find(
       (row) =>
         row.code.toLowerCase() === normalized ||
-        row.name.toLowerCase() === normalized,
+        normalizeSearchText(row.name) === normalized,
     ) ?? null
 
   if (flag) {
