@@ -10,7 +10,9 @@ Category landing copy, entity page metadata, legacy slug recovery, and permanent
 - `ctr-entity-seo-overrides` — per-slug title and meta copy in `data/entity-seo-overrides.json` for low-CTR GSC entities (10 slugs as of 2026-11-16); doctor asserts exact `<title>` and meta description on each `/logo/<slug>`
 - `worker-canonical-redirect` — production 301 from `www` and `http` to `https://loguitos.app` (`lib/worker-canonical-redirect.ts`, first hop in Worker wrapper). Verified offline in doctor (`worker-canonical-module`); live `www`/`http` probes need production hostnames, not `127.0.0.1`
 - `gsc-brands` — high-impression brands and typo aliases from Search Console (for example Changan, Stella Artois, `seoAliases` / `searchText` variants such as Meli, Porche, Superville)
-- `permanent-redirects` — 301/308 recovery for renamed entity slugs and `/categoria/delivery` → `/categoria/gastronomia`
+- `permanent-redirects` — 301/308 recovery for renamed entity slugs, hosted `/logos/*` paths, isotipo aliases, and `/categoria/delivery` → `/categoria/gastronomia` (dedupe batch #74: `bbva` → `bbva-argentina`, `galicia` → `banco-galicia`, etc.)
+- `logo-json-ld` — `LogoPageJsonLd` emits `primaryImageOfPage` / `ImageObject` with self-hosted `contentUrl` when the entity logo is under `/logos/` (`components/logo-page-json-ld.tsx`)
+- `markdown-twins` — prerendered `*.md` pages; `Accept: text/markdown` on HTML routes returns the twin via Worker negotiation (`lib/markdown-negotiation.ts`)
 - `worker-discovery-headers` — `GET /` returns `Link` discovery headers for the API catalog and `/api/logos`; `GET /sitemap.xml` ships long-lived `Cache-Control` from `dist/client/_headers` (merged postbuild by `scripts/generate-asset-headers.mts`, asserted in `pnpm test:seo-headers`)
 
 ## How to get to it (user POV)
@@ -34,7 +36,9 @@ Preconditions:
 - **Worker canonical (offline).** `worker-canonical-module` exercises `maybeCanonicalRedirect` for www, http+www, apex loop guard, and preview hostname skip (same cases as `lib/worker-canonical-redirect.test.mts`).
 - **GSC brand.** `GET /logo/changan` returns 200 with Changan in the body (batch-1014 / GSC demand set).
 - **Search alias.** `GET /api/logos?q=meli&limit=5` returns Mercado Libre in `items` (alias baked into dataset `searchText`).
-- **Redirects (manual redirect).** `GET /categoria/delivery` with `redirect: manual` → 301 or 308 with `Location` ending in `/categoria/gastronomia`. Same pattern for `/logo/banco-provincia-bs-as` → `/logo/banco-provincia` and `/logo/tn-todo-noticias` → `/logo/tn` per `data/permanent-redirects.json`.
+- **Redirects (manual redirect).** `GET /categoria/delivery` with `redirect: manual` → 301 or 308 with `Location` ending in `/categoria/gastronomia`. Same pattern for `/logo/banco-provincia-bs-as` → `/logo/banco-provincia`, `/logo/tn-todo-noticias` → `/logo/tn`, `/logo/bbva` → `/logo/bbva-argentina`, and `/logos/galicia/isotipo.svg` → `/logos/banco-galicia/isotipo.svg` per `data/permanent-redirects.json`.
+- **JSON-LD.** `GET /logo/mercado-pago` includes `primaryImageOfPage` and hosted `/logos/mercado-pago` in JSON-LD when self-hosted.
+- **Markdown twin.** `GET /logo/banco-galicia` with `Accept: text/markdown` → 200, `Content-Type: text/markdown`, body mentions `Banco Galicia`.
 - **Automated.** `pnpm verify:loguitos drive` writes `category-bancos-seo-desktop.png` after the logo detail shot.
 - **Discovery headers.** Doctor `home-link-header` on `GET /` and `sitemap-cache-control` on `GET /sitemap.xml` (see `scripts/seo-headers-workerd.integration.mts` for full Worker parity including home document `Cache-Control`).
 - **Proof.** `doctor.json` lists `category-bancos-seo`, `logo-banco-provincia-meta`, `entity-title-compact`, `logo-melia-gone`, `ctr-entity-seo-overrides`, `gsc-priority-logo-titles`, `worker-canonical-module`, `logo-changan`, `api-gsc-alias-meli`, `home-link-header`, `sitemap-cache-control`, and the three `redirect-*` checks; screenshot shows the bancos H1.

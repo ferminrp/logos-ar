@@ -23,7 +23,7 @@ Preconditions:
 - `launch` / `all` builds with `PUBLIC_SLOT_SPONSOR=on` (default in the harness unless you override the env var)
 - Fintech slug `nubi` exists in the dataset (non-excluded fintech for Lemon)
 
-- **Lemon structure.** Doctor `GET /logo/nubi` expects the sponsor aside, PATROCINADO label, sponsored external CTA, and placement before the preview card flex shell.
+- **Lemon structure.** Doctor `GET /logo/nubi` expects the sponsor aside, house or Lemon copy, and placement before the large preview (`flex flex-col gap-6 sm:flex-row`). Without `PUBLIC_SPONSOR_LEMON_HREF` at build time, Lemon targeting falls back to the house API promo (no `rel="sponsored"` external CTA).
 - **Competitor guard.** Doctor asserts no “Abrí tu cuenta en Lemon” on `/logo/uala` or `/logo/mercado-pago`; BNA shows house ad, not Lemon.
 - **Module rules.** Offline `sponsor-slot-module` mirrors `lib/sponsor-slot.test.mts` targeting.
 - **Automated drive.** Twelve sponsor aside screenshots on `uala`, `mercado-pago`, `banco-de-la-nacion-argentina` (390/1440 × light/dark, default + CTA focus) plus `sponsor-slot-metrics.json` (CLS cap 0.1).
