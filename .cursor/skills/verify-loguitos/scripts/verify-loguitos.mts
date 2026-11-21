@@ -448,6 +448,132 @@ async function doctor(): Promise<DoctorCheck[]> {
     }
   }
 
+  async function checkHostedCatalogAsset(
+    name: string,
+    assetPath: string,
+    kind: "png" | "svg" | "isotipo",
+  ): Promise<DoctorCheck> {
+    try {
+      const securityMod = (await import(
+        pathToFileURL(path.join(REPO_ROOT, "lib/logo-image-security-headers.ts")).href
+      )) as typeof import("../../../../lib/logo-image-security-headers.ts")
+      const res = await fetch(`${baseUrl}${assetPath}`)
+      if (!res.ok) {
+        return { name, ok: false, detail: `HTTP ${res.status}` }
+      }
+      const nosniff = res.headers.get("x-content-type-options")
+      if (nosniff !== securityMod.LOGO_IMAGE_NOSNIFF) {
+        return {
+          name,
+          ok: false,
+          detail: `missing nosniff (got ${nosniff ?? "(none)"})`,
+        }
+      }
+      const expectedType = kind === "png" ? "image/png" : "image/svg+xml"
+      const contentType = res.headers.get("content-type")?.split(";")[0]?.trim()
+      if (contentType !== expectedType) {
+        return { name, ok: false, detail: `content-type ${contentType ?? "(none)"}` }
+      }
+      if (kind !== "png") {
+        const csp = res.headers.get("content-security-policy")
+        if (csp !== securityMod.LOGO_SVG_CONTENT_SECURITY_POLICY) {
+          return { name, ok: false, detail: `CSP mismatch: ${csp ?? "(none)"}` }
+        }
+      }
+      return { name, ok: true, detail: `HTTP ${res.status} ${expectedType}` }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
+  async function checkLogoDownloadSvgSecurity(
+    name: string,
+    domain: string,
+    size: number,
+  ): Promise<DoctorCheck> {
+    try {
+      const securityMod = (await import(
+        pathToFileURL(path.join(REPO_ROOT, "lib/logo-image-security-headers.ts")).href
+      )) as typeof import("../../../../lib/logo-image-security-headers.ts")
+      const url = `${baseUrl}/api/logo-download?domain=${encodeURIComponent(domain)}&format=svg&size=${size}`
+      const res = await fetch(url)
+      if (!res.ok) {
+        return { name, ok: false, detail: `HTTP ${res.status}` }
+      }
+      if (res.headers.get("x-content-type-options") !== securityMod.LOGO_IMAGE_NOSNIFF) {
+        return { name, ok: false, detail: "download SVG missing nosniff" }
+      }
+      if (
+        res.headers.get("content-security-policy") !==
+        securityMod.LOGO_SVG_CONTENT_SECURITY_POLICY
+      ) {
+        return { name, ok: false, detail: "download SVG missing sandbox CSP" }
+      }
+      return { name, ok: true, detail: `HTTP ${res.status} image/svg+xml headers OK` }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
+  async function checkApiMercadoPagoIsotipo(): Promise<DoctorCheck> {
+    const name = "api-isotipo-mercado-pago"
+    try {
+      const res = await fetch(`${baseUrl}/api/logos?q=mercado+pago&limit=5`)
+      if (!res.ok) {
+        return { name, ok: false, detail: `HTTP ${res.status}` }
+      }
+      const json = (await res.json()) as {
+        items?: Array<{ slug?: string; isotipoSvgUrl?: string }>
+      }
+      const row = (json.items ?? []).find((item) => item.slug === "mercado-pago")
+      if (!row?.isotipoSvgUrl?.includes("/logos/mercado-pago/isotipo.svg")) {
+        return { name, ok: false, detail: "missing isotipoSvgUrl on mercado-pago item" }
+      }
+      return { name, ok: true, detail: "isotipoSvgUrl present" }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
+  async function checkMarkdownTwinLogo(): Promise<DoctorCheck> {
+    const name = "markdown-twin-banco-galicia"
+    try {
+      const res = await fetch(`${baseUrl}/logo/banco-galicia`, {
+        headers: { Accept: "text/markdown" },
+      })
+      if (!res.ok) {
+        return { name, ok: false, detail: `HTTP ${res.status}` }
+      }
+      const contentType = res.headers.get("content-type") ?? ""
+      if (!contentType.includes("text/markdown")) {
+        return { name, ok: false, detail: `content-type ${contentType}` }
+      }
+      const body = await res.text()
+      if (!body.toLowerCase().includes("galicia")) {
+        return { name, ok: false, detail: "markdown body missing Galicia" }
+      }
+      return { name, ok: true, detail: "Markdown twin OK" }
+    } catch (error) {
+      return {
+        name,
+        ok: false,
+        detail: error instanceof Error ? error.message : String(error),
+      }
+    }
+  }
+
   async function checkHttpStatus(
     name: string,
     urlPath: string,
@@ -709,6 +835,18 @@ async function doctor(): Promise<DoctorCheck[]> {
     checkMcpToolsList(),
     checkMcpToolCall("mcp-search_logos", "search_logos", { query: "galicia", limit: 3 }, "galicia"),
     checkMcpToolCall("mcp-get_logo", "get_logo", { slug: "banco-galicia" }, "/api/logo-download"),
+    checkMcpToolCall(
+      "mcp-get_logo-isotipo",
+      "get_logo",
+      { slug: "mercado-pago" },
+      "isotipoSvgUrl",
+    ),
+    checkMcpToolCall(
+      "mcp-get_logo-slug-alias",
+      "get_logo",
+      { slug: "bbva" },
+      "bbva-argentina",
+    ),
     checkMcpToolCall("mcp-list_categories", "list_categories", {}, "bancos"),
     checkMcpToolCall(
       "mcp-list_by_category",
@@ -789,6 +927,34 @@ async function doctor(): Promise<DoctorCheck[]> {
       "/logo/tn-todo-noticias",
       "/logo/tn"
     ),
+    checkPermanentRedirect("redirect-logo-bbva-alias", "/logo/bbva", "/logo/bbva-argentina"),
+    checkPermanentRedirect(
+      "redirect-hosted-isotipo-galicia",
+      "/logos/galicia/isotipo.svg",
+      "/logos/banco-galicia/isotipo.svg",
+    ),
+    checkHostedCatalogAsset("hosted-logo-png", "/logos/mercado-pago.png", "png"),
+    checkHostedCatalogAsset("hosted-logo-svg", "/logos/mercado-pago.svg", "svg"),
+    checkHostedCatalogAsset(
+      "hosted-isotipo-svg",
+      "/logos/mercado-pago/isotipo.svg",
+      "isotipo",
+    ),
+    checkApiMercadoPagoIsotipo(),
+    checkMarkdownTwinLogo(),
+    check("logo-mercado-pago-isotipo-ui", `${baseUrl}/logo/mercado-pago`, (_res, body) => {
+      if (!body.includes("Descargar isotipo SVG") && !body.includes("isotipo")) {
+        throw new Error("missing isotipo download UI on mercado-pago")
+      }
+    }),
+    check("logo-page-json-ld", `${baseUrl}/logo/mercado-pago`, (_res, body) => {
+      if (!body.includes("primaryImageOfPage") || !body.includes("ImageObject")) {
+        throw new Error("missing JSON-LD primaryImageOfPage / ImageObject")
+      }
+      if (!body.includes("/logos/mercado-pago")) {
+        throw new Error("JSON-LD missing self-hosted logo URL")
+      }
+    }),
     checkApiGalicia(),
     checkApiGscAliasMeli(),
     checkLogoDownloadPng("logo-download-galicia", "www.galicia.ar", 128),
@@ -796,6 +962,11 @@ async function doctor(): Promise<DoctorCheck[]> {
     checkLogoDownloadPng("logo-download-mercadolibre", "mercadolibre.com.ar", 256),
     checkLogoDownloadPng("logo-download-naranjax-hosted", "naranjax.com", 128),
     checkLogoDownloadPng("logo-download-bbva-fallback", "bbva.com.ar", 128),
+    checkLogoDownloadSvgSecurity(
+      "logo-download-svg-security",
+      "mercadopago.com.ar",
+      256,
+    ),
     checkHttpStatus("logo-melia-gone", "/logo/melia", 404),
     checkGscPriorityTitles(),
     check("brand-verify-slot-bna", `${baseUrl}/logo/banco-de-la-nacion-argentina`, (_res, body) => {
@@ -811,10 +982,11 @@ async function doctor(): Promise<DoctorCheck[]> {
       if (!body.includes("Pedí tu logo verificado")) {
         throw new Error("missing brand verify CTA copy")
       }
+      const disclaimer = "Los logos pertenecen a sus respectivas marcas"
       if (
-        !body.includes("Los favicons se obtienen") ||
+        !body.includes(disclaimer) ||
         body.indexOf('aria-label="Para equipos de marca"') >
-          body.indexOf("Los favicons se obtienen")
+          body.indexOf(disclaimer)
       ) {
         throw new Error("brand verify slot must appear before disclaimer")
       }
@@ -835,17 +1007,23 @@ async function doctor(): Promise<DoctorCheck[]> {
       if (!body.includes("min-h-[148px]") || !body.includes("sm:min-h-[88px]")) {
         throw new Error("missing sponsor SSR min-height classes")
       }
-      if (!body.includes("PATROCINADO") && !body.includes("Patrocinado")) {
-        throw new Error("missing PATROCINADO label (case may vary)")
+      const hasCopy =
+        body.includes("Patrocinado") ||
+        body.includes("¿Querés los logos por API") ||
+        body.includes("Abrí tu cuenta en Lemon")
+      if (!hasCopy) {
+        throw new Error("missing sponsor slot copy (Lemon or house)")
       }
-      if (!body.includes('rel="sponsored noopener"')) {
-        throw new Error("sponsor CTA must use rel sponsored noopener")
-      }
-      if (!body.includes('target="_blank"')) {
-        throw new Error("sponsor CTA must target _blank")
+      if (body.includes("Abrí tu cuenta en Lemon")) {
+        if (!body.includes('rel="sponsored noopener"')) {
+          throw new Error("sponsor CTA must use rel sponsored noopener")
+        }
+        if (!body.includes('target="_blank"')) {
+          throw new Error("sponsor CTA must target _blank")
+        }
       }
       const sponsoredIdx = body.indexOf('aria-label="Contenido patrocinado"')
-      const entityCardIdx = body.indexOf("flex h-24 w-24 shrink-0")
+      const entityCardIdx = body.indexOf("flex flex-col gap-6 sm:flex-row")
       if (sponsoredIdx < 0 || entityCardIdx < 0 || sponsoredIdx > entityCardIdx) {
         throw new Error("sponsor slot must appear before entity preview card")
       }
@@ -871,7 +1049,7 @@ async function doctor(): Promise<DoctorCheck[]> {
         throw new Error("sponsor aside missing on BNA")
       }
       const sponsoredIdx = body.indexOf('aria-label="Contenido patrocinado"')
-      const entityCardIdx = body.indexOf("flex h-24 w-24 shrink-0")
+      const entityCardIdx = body.indexOf("flex flex-col gap-6 sm:flex-row")
       if (sponsoredIdx < 0 || entityCardIdx < 0 || sponsoredIdx > entityCardIdx) {
         throw new Error("sponsor slot must appear before entity preview card on BNA")
       }
@@ -912,7 +1090,10 @@ async function readBrandVerifyCssTokens(): Promise<{
     return match[1]
   }
   const rootBlock = css.match(/:root\s*\{([\s\S]*?)\n\}/)?.[1] ?? ""
-  const darkBlock = css.match(/\.dark\s*\{([\s\S]*?)\n\}/)?.[1] ?? ""
+  const darkBlock =
+    css.match(
+      /@media\s*\(prefers-color-scheme:\s*dark\)\s*\{[\s\S]*?:root\s*\{([\s\S]*?)\n\s*\}/,
+    )?.[1] ?? ""
   return {
     light: {
       background: pick(rootBlock, "--background"),
@@ -1342,7 +1523,7 @@ async function assertLogoDownloadGtag(
     if (!wrapResult.ok) {
       throw new Error(`gtag instrumentation failed: ${wrapResult.reason}`)
     }
-    await page.getByRole("button", { name: "Descargar PNG" }).click()
+    await page.getByRole("link", { name: "Descargar PNG" }).click()
     await page.waitForFunction(
       () =>
         ((window as Window & { __logoDownloadEvents?: unknown[] }).__logoDownloadEvents
@@ -1381,8 +1562,11 @@ async function drive(): Promise<void> {
   try {
     const desktop = await browser.newPage({ viewport: { width: 1280, height: 800 } })
     await desktop.goto(`${baseUrl}/`, { waitUntil: "domcontentloaded" })
-    await desktop.waitForSelector('img[src^="/logos/"]', { timeout: 20000 })
-    lines.push("home catalog tiles use self-hosted /logos/ assets")
+    await desktop.waitForSelector(
+      'img[src^="/thumbs/"], img[src^="/logos/"]',
+      { timeout: 20000 },
+    )
+    lines.push("home catalog tiles use self-hosted thumb or /logos/ assets")
     await desktop.screenshot({ path: path.join(outDir, "home-desktop.png"), fullPage: false })
     lines.push("home-desktop.png captured")
 
@@ -1439,7 +1623,7 @@ async function drive(): Promise<void> {
           waitUntil: "domcontentloaded",
         })
         await setPageColorScheme(shotPage, theme)
-        await shotPage.getByRole("button", { name: "Descargar PNG" }).waitFor({ timeout: 15000 })
+        await shotPage.getByRole("link", { name: "Descargar PNG" }).waitFor({ timeout: 15000 })
         await shotPage.screenshot({
           path: path.join(outDir, `logo-detail-a11y-${viewportName}-${theme}.png`),
           fullPage: false,

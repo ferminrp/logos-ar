@@ -24,7 +24,7 @@ Preconditions:
 - **Discovery.** `GET /llms.txt` → 200 and mentions `/mcp` and `search_logos`. `GET /.well-known/mcp.json` and `GET /.well-known/mcp` → 200 JSON descriptors.
 - **Initialize.** `POST /mcp` with `method: initialize` returns a `result` containing `protocolVersion`.
 - **Tools.** `tools/list` includes `search_logos`, `get_logo`, `list_categories`, `list_by_category`.
-- **Calls.** `search_logos` with `query: galicia` returns galicia in the payload; `get_logo` with `slug: banco-galicia` includes `/api/logo-download` URLs; `list_categories` mentions `bancos`; `list_by_category` with `category: bancos` returns `categoryId`.
+- **Calls.** `search_logos` with `query: galicia` returns galicia in the payload; `get_logo` with `slug: banco-galicia` includes `/api/logo-download` URLs; `get_logo` with `slug: mercado-pago` includes `isotipoSvgUrl` (when catalog isotipo exists) and boolean `svgIsVector`; `get_logo` with retired alias `bbva` resolves to `bbva-argentina`; `list_categories` mentions `bancos`; `list_by_category` with `category: bancos` returns `categoryId`.
 - **REST parity.** `GET /api/logos?q=galicia&limit=1` still returns an `items` array (shared `lib/logos-catalog.ts`).
 - **Docs.** `GET /docs` includes heading **MCP público** and tool name `search_logos`.
 - **Optional bash parity.** `bash scripts/smoke-mcp.sh "$VERIFY_LOGUITOS_BASE_URL"` mirrors the RPC sequence against any running base URL.

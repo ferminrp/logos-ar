@@ -5,7 +5,7 @@ description: End-to-end verification for Logos Argentina (Loguitos) — Astro on
 
 # Verify Loguitos (Logos Argentina)
 
-Loguitos is an **Astro 7** + Cloudflare Workers app: home search, category hubs, per-entity logo pages, `/docs`, JSON at `/api/logos`, public MCP JSON-RPC at `/mcp` (same catalog as the REST API), discovery at `/llms.txt` and `/.well-known/mcp.json`, and raster/SVG logo download at `/api/logo-download`. No database or required env vars for local runs.
+Loguitos is an **Astro 7** + Cloudflare Workers app: home search, category hubs, per-entity logo pages, `/docs`, JSON at `/api/logos`, public MCP JSON-RPC at `/mcp` (same catalog as the REST API), discovery at `/llms.txt` and `/.well-known/mcp.json`, self-hosted catalog assets at `/logos/<slug>.{png,svg}` and `/logos/<slug>/isotipo.svg` (R2 + static fallback), and raster/SVG logo download at `/api/logo-download`. No database or required env vars for local runs.
 
 ## Launch
 
@@ -62,7 +62,10 @@ Read-only checks before driving:
 - `GET /docs` → 200; HTML includes **MCP público**, tool name `search_logos`, and `GET /api/logos`
 - `GET /llms.txt` → 200; body links `/mcp` and lists MCP tools (e.g. `search_logos`)
 - `GET /.well-known/mcp.json` and `GET /.well-known/mcp` → 200 (MCP discovery)
-- MCP JSON-RPC on `POST /mcp` — `initialize` returns `protocolVersion`; `tools/list` exposes `search_logos`, `get_logo`, `list_categories`, `list_by_category`; `tools/call` smoke: `search_logos` with `query: galicia`, `get_logo` with `slug: banco-galicia` (download URLs under `/api/logo-download`), `list_categories` mentions `bancos`, `list_by_category` with `category: bancos` returns `categoryId` (`lib/mcp/`, shared filter `lib/logos-catalog.ts`)
+- MCP JSON-RPC on `POST /mcp` — `initialize` returns `protocolVersion`; `tools/list` exposes `search_logos`, `get_logo`, `list_categories`, `list_by_category`; `tools/call` smoke: `search_logos` with `query: galicia`, `get_logo` with `slug: banco-galicia` (download URLs under `/api/logo-download`), `get_logo` with `slug: mercado-pago` includes `isotipoSvgUrl` and `svgIsVector`, alias `bbva` resolves to `bbva-argentina`, `list_categories` mentions `bancos`, `list_by_category` with `category: bancos` returns `categoryId` (`lib/mcp/`, shared filter `lib/logos-catalog.ts`)
+- Hosted catalog assets — `GET /logos/mercado-pago.png|svg` and `/logos/mercado-pago/isotipo.svg` return 200 with `X-Content-Type-Options: nosniff` (SVG + isotipo also ship sandbox CSP); dedupe redirects `/logo/bbva` → `/logo/bbva-argentina` and `/logos/galicia/isotipo.svg` → canonical isotipo path (`lib/worker-logos-r2.ts`, feature: `hosted-logos-r2.md`)
+- `GET /api/logos?q=mercado+pago` includes `isotipoSvgUrl` on the `mercado-pago` item; `GET /logo/mercado-pago` shows isotipo download UI when the slug has a catalog isotipo
+- Logo page SEO — `GET /logo/mercado-pago` JSON-LD includes `primaryImageOfPage`; `GET /logo/banco-galicia` with `Accept: text/markdown` returns the prerendered Markdown twin (`lib/markdown-negotiation.ts`)
 - `GET /api/logos?q=galicia&limit=5` → 200, JSON `items` array with at least one match whose `name` or `domain` mentions galicia (case-insensitive)
 - `GET /robots.txt` → 200
 - `GET /categoria/bancos` → 200, HTML contains SEO H1 `Logos de bancos argentinos`, prominent link to `/logo/banco-de-la-nacion-argentina`, and heading `Logo Banco Nación (BNA)`

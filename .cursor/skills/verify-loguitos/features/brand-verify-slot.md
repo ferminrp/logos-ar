@@ -6,14 +6,14 @@ Monetization house ad on entity pages inviting brand teams to submit an official
 
 - `verify-render` — `<aside aria-label="Para equipos de marca">` with dynamic `{Marca}` copy
 - `verify-mailto` — CTA links to `mailto:marcas@loguitos.app` with encoded subject
-- `verify-placement` — slot sits after Google Sheets and before the disclaimer paragraph
+- `verify-placement` — slot sits after Google Sheets and before the disclaimer (“Los logos pertenecen a sus respectivas marcas”)
 - `verify-cls` — SSR `min-h-[132px]` / `sm:min-h-[72px]` on the aside shell
 
 ## How to get to it (user POV)
 
 - Open any entity detail page, for example `/logo/uala` or `/logo/banco-de-la-nacion-argentina`
 - Scroll past favicon URLs, curl blocks, and Google Sheets
-- The dashed card appears above “Los favicons se obtienen…”
+- The dashed card appears above the brand-ownership disclaimer
 
 ## Driving it with verify-loguitos
 

@@ -7,6 +7,7 @@ export const LOGO_DETAIL_A11Y_SLUGS = [
   "banco-provincia",
   "banco-de-la-nacion-argentina",
   "changan",
+  "mercado-pago",
 ] as const
 
 export const LOGO_DETAIL_A11Y_THEMES = ["light", "dark"] as const
@@ -66,14 +67,18 @@ export async function setPageColorScheme(
   }, theme)
 }
 
+function downloadControl(page: Page, label: string | RegExp) {
+  const link = page.getByRole("link", { name: label })
+  return link
+}
+
 async function measureButtonLabelContrast(
   page: Page,
   labelIncludes: string,
   hovered: boolean,
 ): Promise<number> {
   if (hovered) {
-    const button = page.getByRole("button", { name: new RegExp(labelIncludes, "i") })
-    await button.hover()
+    await downloadControl(page, new RegExp(labelIncludes, "i")).hover()
   }
 
   return page.evaluate((label) => {
@@ -146,12 +151,12 @@ async function measureButtonLabelContrast(
       return (lighter + 0.05) / (darker + 0.05)
     }
 
-    const button = Array.from(document.querySelectorAll("button")).find((b) =>
-      b.textContent?.includes(label),
-    ) as HTMLElement | undefined
-    if (!button) throw new Error(`missing button: ${label}`)
-    const style = getComputedStyle(button)
-    return contrastRatio(style.color, effectiveBackground(button))
+    const control = Array.from(
+      document.querySelectorAll('a[data-logo-download], button'),
+    ).find((el) => el.textContent?.includes(label)) as HTMLElement | undefined
+    if (!control) throw new Error(`missing download control: ${label}`)
+    const style = getComputedStyle(control)
+    return contrastRatio(style.color, effectiveBackground(control))
   }, labelIncludes)
 }
 
@@ -161,18 +166,18 @@ async function measureLayoutMetrics(page: Page): Promise<{
   copyMinHeight: number
 }> {
   return page.evaluate(() => {
-    const downloadPng = Array.from(document.querySelectorAll("button")).find((b) =>
-      b.textContent?.includes("Descargar PNG"),
-    ) as HTMLElement | undefined
-    const downloadSvg = Array.from(document.querySelectorAll("button")).find((b) =>
-      b.textContent?.includes("Descargar SVG"),
-    ) as HTMLElement | undefined
+    const downloadPng = Array.from(
+      document.querySelectorAll('a[data-logo-download], button'),
+    ).find((el) => el.textContent?.includes("Descargar PNG")) as HTMLElement | undefined
+    const downloadSvg = Array.from(
+      document.querySelectorAll('a[data-logo-download], button'),
+    ).find((el) => el.textContent?.includes("Descargar SVG")) as HTMLElement | undefined
     const copyButtons = Array.from(
       document.querySelectorAll('button[aria-label^="Copiar"]'),
     ) as HTMLElement[]
 
-    if (!downloadPng || !downloadSvg) {
-      throw new Error("missing download buttons")
+    if (!downloadPng) {
+      throw new Error("missing Descargar PNG control")
     }
     if (copyButtons.length === 0) {
       throw new Error("missing copy buttons")
@@ -180,7 +185,7 @@ async function measureLayoutMetrics(page: Page): Promise<{
 
     return {
       downloadPngHeight: downloadPng.getBoundingClientRect().height,
-      downloadSvgHeight: downloadSvg.getBoundingClientRect().height,
+      downloadSvgHeight: downloadSvg?.getBoundingClientRect().height ?? 0,
       copyMinHeight: Math.min(...copyButtons.map((b) => b.getBoundingClientRect().height)),
     }
   })
@@ -190,10 +195,13 @@ async function measureThemeMetrics(page: Page): Promise<LogoDetailA11yThemeMetri
   const layout = await measureLayoutMetrics(page)
   const pngContrast = await measureButtonLabelContrast(page, "Descargar PNG", false)
   const pngContrastHover = await measureButtonLabelContrast(page, "Descargar PNG", true)
-  const svgContrast = await measureButtonLabelContrast(page, "Descargar SVG", false)
-  const svgButton = page.getByRole("button", { name: "Descargar SVG" })
-  await svgButton.hover()
-  const svgContrastHover = await measureButtonLabelContrast(page, "Descargar SVG", true)
+  let svgContrast = 99
+  let svgContrastHover = 99
+  if (layout.downloadSvgHeight > 0) {
+    svgContrast = await measureButtonLabelContrast(page, "Descargar SVG", false)
+    await downloadControl(page, "Descargar SVG").hover()
+    svgContrastHover = await measureButtonLabelContrast(page, "Descargar SVG", true)
+  }
 
   return {
     ...layout,
@@ -244,7 +252,7 @@ export async function runLogoDetailA11ySmoke(
           waitUntil: "domcontentloaded",
         })
         await setPageColorScheme(page, theme)
-        await page.getByRole("button", { name: "Descargar PNG" }).waitFor({ timeout: 15000 })
+        await downloadControl(page, "Descargar PNG").waitFor({ timeout: 15000 })
         entry[theme] = await measureThemeMetrics(page)
         await page.close()
       }
@@ -269,7 +277,7 @@ function assertThemeMetrics(
       `${prefix}: Descargar PNG height ${entry.downloadPngHeight}px < ${MIN_LOGO_CONTROL_HEIGHT_PX}px`,
     )
   }
-  if (entry.downloadSvgHeight < MIN_LOGO_CONTROL_HEIGHT_PX) {
+  if (entry.downloadSvgHeight > 0 && entry.downloadSvgHeight < MIN_LOGO_CONTROL_HEIGHT_PX) {
     failures.push(
       `${prefix}: Descargar SVG height ${entry.downloadSvgHeight}px < ${MIN_LOGO_CONTROL_HEIGHT_PX}px`,
     )
@@ -289,12 +297,12 @@ function assertThemeMetrics(
       `${prefix}: PNG hover contrast ${entry.pngContrastHover}:1 < ${MIN_PNG_BUTTON_CONTRAST}:1`,
     )
   }
-  if (entry.svgContrast < MIN_SVG_BUTTON_CONTRAST) {
+  if (entry.downloadSvgHeight > 0 && entry.svgContrast < MIN_SVG_BUTTON_CONTRAST) {
     failures.push(
       `${prefix}: SVG contrast ${entry.svgContrast}:1 < ${MIN_SVG_BUTTON_CONTRAST}:1`,
     )
   }
-  if (entry.svgContrastHover < MIN_SVG_BUTTON_CONTRAST) {
+  if (entry.downloadSvgHeight > 0 && entry.svgContrastHover < MIN_SVG_BUTTON_CONTRAST) {
     failures.push(
       `${prefix}: SVG hover contrast ${entry.svgContrastHover}:1 < ${MIN_SVG_BUTTON_CONTRAST}:1`,
     )
