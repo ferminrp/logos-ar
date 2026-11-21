@@ -24,7 +24,7 @@ describe('permanent redirects', () => {
   it('omits flat .svg redirects when canonical asset is missing', () => {
     const dropped = [
       '/logos/bbva.svg',
-      '/logos/metrogas.svg',
+      '/logos/metrogas-214.svg',
       '/logos/banco-patagonia-380.svg',
       '/logos/tn-todo-noticias.svg',
       '/logos/banco-provincia-bs-as.svg',
@@ -37,10 +37,10 @@ describe('permanent redirects', () => {
   })
 
   it('keeps png and isotipo redirects with existing targets', () => {
-    assert.equal(permanentRedirectTargetExists('/logos/metrogas-214.png'), true)
-    assert.equal(permanentRedirectTargetExists('/logos/metrogas-214.svg'), false)
+    assert.equal(permanentRedirectTargetExists('/logos/metrogas.png'), true)
+    assert.equal(permanentRedirectTargetExists('/logos/metrogas.svg'), false)
     assert.equal(
-      permanentRedirectTargetExists('/logos/metrogas-214/isotipo.svg'),
+      permanentRedirectTargetExists('/logos/metrogas/isotipo.svg'),
       true,
     )
   })

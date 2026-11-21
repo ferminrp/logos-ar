@@ -779,18 +779,6 @@
     "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
   },
   {
-    "slug": "galicia",
-    "source_url": "https://onlinebanking.bancogalicia.com.ar/images/default/logo.svg",
-    "source_type": "official-site",
-    "kind": "iso",
-    "colors": [
-      "#ffffff",
-      "#fa6400"
-    ],
-    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
-    "verified_official": true
-  },
-  {
     "slug": "gemini",
     "source_url": "https://www.gemini.com/",
     "source_type": "official-site",
@@ -1168,7 +1156,7 @@
     "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
   },
   {
-    "slug": "metrogas-214",
+    "slug": "metrogas",
     "source_url": "https://www.metrogas.com.ar/assets/themes/metrogas/safari-pinned-tab.svg",
     "source_type": "official-site",
     "kind": "iso",

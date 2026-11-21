@@ -41,19 +41,15 @@
   },
   "axionenergy.com": {
     "logoUrl": "/logos/axion-energy.png",
-    "logoSource": "site"
+    "logoSource": "hosted"
   },
   "www.cetrogar.com.ar": {
     "logoUrl": "/logos/cetrogar.png",
-    "logoSource": "site"
+    "logoSource": "hosted"
   },
   "belo.app": {
     "logoUrl": "/logos/belo.png",
     "logoSource": "hosted"
-  },
-  "prex.com.ar": {
-    "logoUrl": "/logos/prex.png",
-    "logoSource": "site"
   },
   "www.arqfinance.com": {
     "logoUrl": "/logos/arq.png",
@@ -95,17 +91,9 @@
     "logoUrl": "/logos/red-link.png",
     "logoSource": "hosted"
   },
-  "voii.com.ar": {
-    "logoUrl": "/logos/voii.png",
-    "logoSource": "hosted"
-  },
   "decrypto.com.ar": {
     "logoUrl": "/logos/decrypto.png",
     "logoSource": "hosted"
-  },
-  "lbfinanzas.com": {
-    "logoUrl": "https://cdn.prod.website-files.com/62292d20539d2621a575044e/68f624fb2fac5aeef8c5a7f5_Logo_app_256.jpg",
-    "logoSource": "site"
   },
   "tiendadolar.com.ar": {
     "logoUrl": "/logos/tienda-dolar.png",
@@ -116,8 +104,8 @@
     "logoSource": "hosted"
   },
   "binance.com": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=binance.com&sz=256",
-    "logoSource": "google"
+    "logoUrl": "/logos/binance.png",
+    "logoSource": "hosted"
   },
   "okx.com": {
     "logoUrl": "/logos/okx.png",
@@ -162,10 +150,6 @@
   "www.fluidkey.com": {
     "logoUrl": "/logos/fluidkey.png",
     "logoSource": "hosted"
-  },
-  "phantom.app": {
-    "logoUrl": "https://phantom.com/_web_platform_assets/images/og-image.jpg",
-    "logoSource": "site"
   },
   "rainbow.me": {
     "logoUrl": "/logos/rainbow.png",
@@ -279,10 +263,6 @@
     "logoUrl": "/logos/allaria.png",
     "logoSource": "hosted"
   },
-  "bullmarketbrokers.com": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=bullmarketbrokers.com&sz=256",
-    "logoSource": "google"
-  },
   "www.portfoliopersonal.com": {
     "logoUrl": "/logos/ppi.png",
     "logoSource": "hosted"
@@ -304,7 +284,7 @@
     "logoSource": "hosted"
   },
   "metrogas.com.ar": {
-    "logoUrl": "/logos/metrogas-214.png",
+    "logoUrl": "/logos/metrogas.png",
     "logoSource": "hosted"
   },
   "a3mercados.com.ar": {
@@ -335,10 +315,6 @@
     "logoUrl": "/logos/sancor-salud.png",
     "logoSource": "hosted"
   },
-  "www.accordsalud.com.ar": {
-    "logoUrl": "/logos/accord-salud.png",
-    "logoSource": "hosted"
-  },
   "www.hospitalitaliano.org.ar": {
     "logoUrl": "/logos/hospital-italiano-de-buenos-aires.png",
     "logoSource": "hosted"
@@ -355,10 +331,6 @@
     "logoUrl": "/logos/iosfa.png",
     "logoSource": "hosted"
   },
-  "www.osseg.org.ar": {
-    "logoUrl": "https://www.osseg.org.ar/favicon.ico",
-    "logoSource": "site"
-  },
   "www.osprera.org.ar": {
     "logoUrl": "/logos/osprera.png",
     "logoSource": "hosted"
@@ -372,12 +344,8 @@
     "logoSource": "hosted"
   },
   "laanonima.com.ar": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=laanonima.com.ar&sz=256",
-    "logoSource": "google"
-  },
-  "farmacity.com.ar": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=farmacity.com.ar&sz=256",
-    "logoSource": "google"
+    "logoUrl": "/logos/la-anonima.png",
+    "logoSource": "hosted"
   },
   "changomas.com.ar": {
     "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=changomas.com.ar&sz=256",
@@ -386,14 +354,6 @@
   "www.megatone.net": {
     "logoUrl": "/logos/megatone.png",
     "logoSource": "hosted"
-  },
-  "prune.com.ar": {
-    "logoUrl": "/logos/prune.png",
-    "logoSource": "hosted"
-  },
-  "www.kevingston.com": {
-    "logoUrl": "https://images.kevingston.com/imagenes/varios/fav-eshop-24-apple-180x180-touch-icon.png",
-    "logoSource": "site"
   },
   "www.casadelaudio.com": {
     "logoUrl": "/logos/casa-del-audio.png",
@@ -467,10 +427,6 @@
     "logoUrl": "/logos/telecentro.png",
     "logoSource": "hosted"
   },
-  "www.directv.com.ar": {
-    "logoUrl": "https://dtv-cms-prd.s3.amazonaws.com/HISPAN_(Images)/logo-dtv.png",
-    "logoSource": "site"
-  },
   "www.antina.com.ar": {
     "logoUrl": "/logos/antina.png",
     "logoSource": "hosted"
@@ -522,10 +478,6 @@
   "www.bajaj.com.ar": {
     "logoUrl": "/logos/bajaj.png",
     "logoSource": "hosted"
-  },
-  "www.ktm.com.ar": {
-    "logoUrl": "https://www.ktm.com/icon-192x192.png",
-    "logoSource": "site"
   },
   "www.mitsubishi-motors.com.ar": {
     "logoUrl": "/logos/mitsubishi-motors.png",
@@ -611,17 +563,13 @@
     "logoUrl": "/logos/flybondi.png",
     "logoSource": "hosted"
   },
-  "latam.com": {
-    "logoUrl": "https://s.latamairlines.com/images/seo/logo_latam.jpg",
-    "logoSource": "site"
-  },
   "despegar.com.ar": {
     "logoUrl": "/logos/despegar.png",
     "logoSource": "hosted"
   },
   "booking.com": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=booking.com&sz=256",
-    "logoSource": "google"
+    "logoUrl": "/logos/booking-com.png",
+    "logoSource": "hosted"
   },
   "all.accor.com": {
     "logoUrl": "/logos/accor-ibis-novotel-etc.png",
@@ -675,10 +623,6 @@
     "logoUrl": "/logos/uala.png",
     "logoSource": "hosted"
   },
-  "www.openpay.mx": {
-    "logoUrl": "/logos/openpay-argentina.png",
-    "logoSource": "hosted"
-  },
   "nexo.com": {
     "logoUrl": "/logos/nexo.png",
     "logoSource": "hosted"
@@ -686,14 +630,6 @@
   "phantom.com": {
     "logoUrl": "/logos/phantom.png",
     "logoSource": "hosted"
-  },
-  "www.argentina.gob.ar": {
-    "logoUrl": "https://www.argentina.gob.ar/sites/default/files/icon/icon-180x180.png",
-    "logoSource": "site"
-  },
-  "pampaenergia.com": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=pampaenergia.com&sz=256",
-    "logoSource": "google"
   },
   "www.bancopiano.com.ar": {
     "logoUrl": "/logos/banco-piano.png",
@@ -708,7 +644,7 @@
     "logoSource": "hosted"
   },
   "macro.com.ar": {
-    "logoUrl": "/logos/macro.png",
+    "logoUrl": "/logos/banco-macro.png",
     "logoSource": "hosted"
   },
   "www.lomanegra.com": {
@@ -751,10 +687,6 @@
     "logoUrl": "/logos/sodimac.png",
     "logoSource": "hosted"
   },
-  "opensports.com.ar": {
-    "logoUrl": "/logos/open-sports.png",
-    "logoSource": "hosted"
-  },
   "honda.com.ar": {
     "logoUrl": "/logos/honda.png",
     "logoSource": "hosted"
@@ -772,7 +704,7 @@
     "logoSource": "hosted"
   },
   "ypf.com": {
-    "logoUrl": "/logos/ypf-161.png",
+    "logoUrl": "/logos/ypf.png",
     "logoSource": "hosted"
   },
   "sancorseguros.com.ar": {
@@ -887,20 +819,12 @@
     "logoUrl": "/logos/farmacity.png",
     "logoSource": "hosted"
   },
-  "www.directvla.com": {
-    "logoUrl": "/logos/directv.png",
-    "logoSource": "hosted"
-  },
   "www.ktm.com": {
     "logoUrl": "/logos/ktm.png",
     "logoSource": "hosted"
   },
   "www.latamairlines.com": {
     "logoUrl": "/logos/latam.png",
-    "logoSource": "hosted"
-  },
-  "www.toyota.com": {
-    "logoUrl": "/logos/toyota.png",
     "logoSource": "hosted"
   },
   "toyota.com.ar": {
@@ -925,10 +849,6 @@
   },
   "www.arba.gob.ar": {
     "logoUrl": "/logos/arba.png",
-    "logoSource": "hosted"
-  },
-  "www.fravega.com": {
-    "logoUrl": "/logos/fravega.png",
     "logoSource": "hosted"
   },
   "oncity.com": {
@@ -975,14 +895,6 @@
     "logoUrl": "/logos/experta-seguros.png",
     "logoSource": "hosted"
   },
-  "lamartina.com": {
-    "logoUrl": "/logos/la-martina.png",
-    "logoSource": "hosted"
-  },
-  "natura.com.ar": {
-    "logoUrl": "/logos/natura.png",
-    "logoSource": "hosted"
-  },
   "www.samsung.com.ar": {
     "logoUrl": "/logos/samsung.png",
     "logoSource": "hosted"
@@ -993,10 +905,6 @@
   },
   "bondterminal.com": {
     "logoUrl": "/logos/bond-terminal.png",
-    "logoSource": "hosted"
-  },
-  "www.premier.com.ar": {
-    "logoUrl": "/logos/premier.png",
     "logoSource": "hosted"
   },
   "ioio.com.ar": {
@@ -1051,7 +959,7 @@
     "logoUrl": "/logos/heineken.png",
     "logoSource": "hosted"
   },
-  "www.fiwind.io": {
+  "fiwind.io": {
     "logoUrl": "/logos/fiwind.png",
     "logoSource": "hosted"
   },
@@ -1097,6 +1005,302 @@
   },
   "cagnoli.com": {
     "logoUrl": "/logos/cagnoli.png",
+    "logoSource": "hosted"
+  },
+  "www.galicia.ar": {
+    "logoUrl": "/logos/banco-galicia.png",
+    "logoSource": "hosted"
+  },
+  "www.supervielle.com.ar": {
+    "logoUrl": "/logos/banco-supervielle.png",
+    "logoSource": "hosted"
+  },
+  "www.comafi.com.ar": {
+    "logoUrl": "/logos/banco-comafi.png",
+    "logoSource": "hosted"
+  },
+  "www.bancoformosa.com.ar": {
+    "logoUrl": "/logos/banco-de-formosa.png",
+    "logoSource": "hosted"
+  },
+  "berry.app": {
+    "logoUrl": "/logos/berry.png",
+    "logoSource": "hosted"
+  },
+  "pomelo.la": {
+    "logoUrl": "/logos/pomelo.png",
+    "logoSource": "hosted"
+  },
+  "nubi.com.ar": {
+    "logoUrl": "/logos/nubi.png",
+    "logoSource": "hosted"
+  },
+  "satoshitango.com": {
+    "logoUrl": "/logos/satoshitango.png",
+    "logoSource": "hosted"
+  },
+  "www.payway.com.ar": {
+    "logoUrl": "/logos/payway.png",
+    "logoSource": "hosted"
+  },
+  "www.moneygram.com": {
+    "logoUrl": "/logos/moneygram.png",
+    "logoSource": "hosted"
+  },
+  "coinbase.com": {
+    "logoUrl": "/logos/coinbase.png",
+    "logoSource": "hosted"
+  },
+  "www.plasma.org": {
+    "logoUrl": "/logos/plasma.png",
+    "logoSource": "hosted"
+  },
+  "uniswap.org": {
+    "logoUrl": "/logos/uniswap.png",
+    "logoSource": "hosted"
+  },
+  "morpho.org": {
+    "logoUrl": "/logos/morpho.png",
+    "logoSource": "hosted"
+  },
+  "lido.fi": {
+    "logoUrl": "/logos/lido.png",
+    "logoSource": "hosted"
+  },
+  "ethena.fi": {
+    "logoUrl": "/logos/ethena.png",
+    "logoSource": "hosted"
+  },
+  "jup.ag": {
+    "logoUrl": "/logos/jupiter.png",
+    "logoSource": "hosted"
+  },
+  "arbitrum.io": {
+    "logoUrl": "/logos/arbitrum.png",
+    "logoSource": "hosted"
+  },
+  "www.circle.com": {
+    "logoUrl": "/logos/circle.png",
+    "logoSource": "hosted"
+  },
+  "crypto.com": {
+    "logoUrl": "/logos/crypto-com.png",
+    "logoSource": "hosted"
+  },
+  "www.gemini.com": {
+    "logoUrl": "/logos/gemini.png",
+    "logoSource": "hosted"
+  },
+  "polymarket.com": {
+    "logoUrl": "/logos/polymarket.png",
+    "logoSource": "hosted"
+  },
+  "astro.build": {
+    "logoUrl": "/logos/astro.png",
+    "logoSource": "hosted"
+  },
+  "react.dev": {
+    "logoUrl": "/logos/react.png",
+    "logoSource": "hosted"
+  },
+  "svelte.dev": {
+    "logoUrl": "/logos/svelte.png",
+    "logoSource": "hosted"
+  },
+  "rust-lang.org": {
+    "logoUrl": "/logos/rust.png",
+    "logoSource": "hosted"
+  },
+  "bun.sh": {
+    "logoUrl": "/logos/bun.png",
+    "logoSource": "hosted"
+  },
+  "www.cloudflare.com": {
+    "logoUrl": "/logos/cloudflare.png",
+    "logoSource": "hosted"
+  },
+  "redis.io": {
+    "logoUrl": "/logos/redis.png",
+    "logoSource": "hosted"
+  },
+  "upstash.com": {
+    "logoUrl": "/logos/upstash.png",
+    "logoSource": "hosted"
+  },
+  "invertironline.com": {
+    "logoUrl": "/logos/invertir-online-iol.png",
+    "logoSource": "hosted"
+  },
+  "www.gruposbs.com": {
+    "logoUrl": "/logos/sbs-trading.png",
+    "logoSource": "hosted"
+  },
+  "cocos.capital": {
+    "logoUrl": "/logos/cocos.png",
+    "logoSource": "hosted"
+  },
+  "www.byma.com.ar": {
+    "logoUrl": "/logos/byma.png",
+    "logoSource": "hosted"
+  },
+  "www.centralpuerto.com": {
+    "logoUrl": "/logos/central-puerto.png",
+    "logoSource": "hosted"
+  },
+  "ar.ternium.com": {
+    "logoUrl": "/logos/ternium.png",
+    "logoSource": "hosted"
+  },
+  "valo.ar": {
+    "logoUrl": "/logos/banco-de-valores.png",
+    "logoSource": "hosted"
+  },
+  "www.adecoagro.com": {
+    "logoUrl": "/logos/adecoagro.png",
+    "logoSource": "hosted"
+  },
+  "www.pami.org.ar": {
+    "logoUrl": "/logos/pami.png",
+    "logoSource": "hosted"
+  },
+  "www.indec.gob.ar": {
+    "logoUrl": "/logos/indec.png",
+    "logoSource": "hosted"
+  },
+  "www.jerarquicos.com": {
+    "logoUrl": "/logos/jerarquicos-salud.png",
+    "logoSource": "hosted"
+  },
+  "www.ospia.org.ar": {
+    "logoUrl": "/logos/ospia.png",
+    "logoSource": "hosted"
+  },
+  "mercadolibre.com.ar": {
+    "logoUrl": "/logos/mercado-libre.png",
+    "logoSource": "hosted"
+  },
+  "jumbo.com.ar": {
+    "logoUrl": "/logos/jumbo.png",
+    "logoSource": "hosted"
+  },
+  "canal26.com": {
+    "logoUrl": "/logos/canal-26.png",
+    "logoSource": "hosted"
+  },
+  "www.tuenti.com.ar": {
+    "logoUrl": "/logos/tuenti.png",
+    "logoSource": "hosted"
+  },
+  "volkswagen.com.ar": {
+    "logoUrl": "/logos/volkswagen.png",
+    "logoSource": "hosted"
+  },
+  "renault.com.ar": {
+    "logoUrl": "/logos/renault.png",
+    "logoSource": "hosted"
+  },
+  "peugeot.com.ar": {
+    "logoUrl": "/logos/peugeot.png",
+    "logoSource": "hosted"
+  },
+  "nissan.com.ar": {
+    "logoUrl": "/logos/nissan.png",
+    "logoSource": "hosted"
+  },
+  "hyundai.com.ar": {
+    "logoUrl": "/logos/hyundai.png",
+    "logoSource": "hosted"
+  },
+  "www.yamaha-motor.com.ar": {
+    "logoUrl": "/logos/yamaha.png",
+    "logoSource": "hosted"
+  },
+  "bmw.com.ar": {
+    "logoUrl": "/logos/bmw.png",
+    "logoSource": "hosted"
+  },
+  "www.tesla.com": {
+    "logoUrl": "/logos/tesla.png",
+    "logoSource": "hosted"
+  },
+  "www.dsautomobiles.com.ar": {
+    "logoUrl": "/logos/ds-automobiles.png",
+    "logoSource": "hosted"
+  },
+  "arcor.com": {
+    "logoUrl": "/logos/arcor.png",
+    "logoSource": "hosted"
+  },
+  "unilever.com.ar": {
+    "logoUrl": "/logos/unilever.png",
+    "logoSource": "hosted"
+  },
+  "ledesma.com.ar": {
+    "logoUrl": "/logos/ledesma.png",
+    "logoSource": "hosted"
+  },
+  "www.paladini.com": {
+    "logoUrl": "/logos/paladini.png",
+    "logoSource": "hosted"
+  },
+  "norton.com.ar": {
+    "logoUrl": "/logos/norton.png",
+    "logoSource": "hosted"
+  },
+  "shell.com.ar": {
+    "logoUrl": "/logos/shell.png",
+    "logoSource": "hosted"
+  },
+  "sancristobal.com.ar": {
+    "logoUrl": "/logos/san-cristobal-seguros.png",
+    "logoSource": "hosted"
+  },
+  "nike.com.ar": {
+    "logoUrl": "/logos/nike.png",
+    "logoSource": "hosted"
+  },
+  "almacendepizzas.com": {
+    "logoUrl": "/logos/almacen-de-pizzas.png",
+    "logoSource": "hosted"
+  },
+  "www.starbucks.com.ar": {
+    "logoUrl": "/logos/starbucks.png",
+    "logoSource": "hosted"
+  },
+  "airbnb.com.ar": {
+    "logoUrl": "/logos/airbnb.png",
+    "logoSource": "hosted"
+  },
+  "kayak.com.ar": {
+    "logoUrl": "/logos/kayak.png",
+    "logoSource": "hosted"
+  },
+  "tripadvisor.com.ar": {
+    "logoUrl": "/logos/tripadvisor.png",
+    "logoSource": "hosted"
+  },
+  "copaair.com": {
+    "logoUrl": "/logos/copa-airlines.png",
+    "logoSource": "hosted"
+  },
+  "pampa.com": {
+    "logoUrl": "/logos/pampa-energia.png",
+    "logoSource": "hosted"
+  },
+  "www.dolarito.ar": {
+    "logoUrl": "/logos/dolarito.png",
+    "logoSource": "hosted"
+  },
+  "steamcito.com.ar": {
+    "logoUrl": "/logos/steamcito.png",
+    "logoSource": "hosted"
+  },
+  "www.havanna.com.ar": {
+    "logoUrl": "/logos/havanna.png",
+    "logoSource": "hosted"
+  },
+  "www.osperyh.org.ar": {
+    "logoUrl": "/logos/osperyh.png",
     "logoSource": "hosted"
   }
 }

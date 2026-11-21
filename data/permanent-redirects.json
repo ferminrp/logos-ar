@@ -10,6 +10,31 @@
     "permanent": true
   },
   {
+    "source": "/logo/galicia",
+    "destination": "/logo/banco-galicia",
+    "permanent": true
+  },
+  {
+    "source": "/logos/galicia.png",
+    "destination": "/logos/banco-galicia.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/galicia/isotipo.svg",
+    "destination": "/logos/banco-galicia/isotipo.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logo/macro",
+    "destination": "/logo/banco-macro",
+    "permanent": true
+  },
+  {
+    "source": "/logos/macro.png",
+    "destination": "/logos/banco-macro.png",
+    "permanent": true
+  },
+  {
     "source": "/logo/banco-provincia-bs-as",
     "destination": "/logo/banco-provincia",
     "permanent": true
@@ -40,8 +65,23 @@
     "permanent": true
   },
   {
+    "source": "/logos/supervielle.png",
+    "destination": "/logos/banco-supervielle.png",
+    "permanent": true
+  },
+  {
     "source": "/logos/supervielle/isotipo.svg",
     "destination": "/logos/banco-supervielle/isotipo.svg",
+    "permanent": true
+  },
+  {
+    "source": "/logo/uilo-bank-ex-wilobank",
+    "destination": "/logo/uala",
+    "permanent": true
+  },
+  {
+    "source": "/logos/uilo-bank-ex-wilobank.png",
+    "destination": "/logos/uala.png",
     "permanent": true
   },
   {
@@ -75,28 +115,43 @@
     "permanent": true
   },
   {
-    "source": "/logo/edenor",
-    "destination": "/logo/edenor-211",
+    "source": "/logo/ypf-161",
+    "destination": "/logo/ypf",
     "permanent": true
   },
   {
-    "source": "/logo/metrogas",
-    "destination": "/logo/metrogas-214",
+    "source": "/logos/ypf-161.png",
+    "destination": "/logos/ypf.png",
     "permanent": true
   },
   {
-    "source": "/logos/metrogas.png",
-    "destination": "/logos/metrogas-214.png",
+    "source": "/logo/edenor-211",
+    "destination": "/logo/edenor",
     "permanent": true
   },
   {
-    "source": "/logos/metrogas/isotipo.svg",
-    "destination": "/logos/metrogas-214/isotipo.svg",
+    "source": "/logo/metrogas-214",
+    "destination": "/logo/metrogas",
+    "permanent": true
+  },
+  {
+    "source": "/logos/metrogas-214.png",
+    "destination": "/logos/metrogas.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/metrogas-214/isotipo.svg",
+    "destination": "/logos/metrogas/isotipo.svg",
     "permanent": true
   },
   {
     "source": "/logo/pampa",
     "destination": "/logo/pampa-energia",
+    "permanent": true
+  },
+  {
+    "source": "/logos/pampa.png",
+    "destination": "/logos/pampa-energia.png",
     "permanent": true
   },
   {
