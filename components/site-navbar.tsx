@@ -4,7 +4,8 @@ import { AppLink as Link } from "@/components/app-link"
 import { usePathname, useRouter, useSearchParams } from "@/lib/client-navigation"
 import { useEffect, useState } from "react"
 import type { FormEvent } from "react"
-import { ChevronDown, Github, Menu, Search } from "lucide-react"
+import { ChevronDown, Menu, Search } from "lucide-react"
+import { GithubIcon } from "@/components/github-icon"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import {
@@ -182,7 +183,7 @@ export function SiteNavbar({ categories: categoryNavItems }: SiteNavbarProps) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Github className="h-4 w-4" />
+                      <GithubIcon className="h-4 w-4" />
                       Repositorio en GitHub
                     </a>
                   </Button>
@@ -225,7 +226,7 @@ export function SiteNavbar({ categories: categoryNavItems }: SiteNavbarProps) {
                 rel="noopener noreferrer"
                 aria-label="Repositorio de Loguitos en GitHub"
               >
-                <Github className="h-4 w-4" />
+                <GithubIcon className="h-4 w-4" />
               </a>
             </Button>
           </div>
