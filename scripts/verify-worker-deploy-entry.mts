@@ -20,7 +20,7 @@ export async function verifyWorkerDeployEntry(): Promise<void> {
 
   await readFile(wrapperPath)
 
-  let deployRedirect: { configPath?: string } | null = null
+  let deployRedirect: { configPath?: string } | null
   try {
     deployRedirect = JSON.parse(await readFile(deployRedirectPath, 'utf8'))
   } catch {
