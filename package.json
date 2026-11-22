@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
-    "@cloudflare/vitest-pool-workers": "0.12.5",
+    "@cloudflare/vitest-plugin": "1.9.0",
     "@eslint/js": "^9.39.5",
     "@tailwindcss/vite": "^4.3.5",
     "@types/node": "^22",
@@ -74,7 +74,7 @@
     "typescript": "5.9.3",
     "typescript-eslint": "^8.73.0",
     "vite-plugin-wasm": "^3.6.0",
-    "vitest": "3.2.7",
+    "vitest": "4.1.12",
     "wrangler": "^4.166.0"
   }
 }
