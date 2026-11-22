@@ -54,7 +54,7 @@ async function initStep<T>(label: string, fn: () => Promise<T>): Promise<T> {
     return await fn()
   } catch (error) {
     const reason = error instanceof Error ? error.message : String(error)
-    throw new Error(`${label}: ${reason}`)
+    throw new Error(`${label}: ${reason}`, { cause: error })
   }
 }
 
