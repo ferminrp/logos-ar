@@ -45,7 +45,7 @@ Abrí [http://localhost:4321](http://localhost:4321).
 - `pnpm indexnow:submit-all`: notificar todas las URLs del sitemap a IndexNow
 - `pnpm indexnow:ping-changed`: notificar solo URLs con `<lastmod>` cambiado
 - `pnpm sync:logos-r2`: subir `public/logos/*` al bucket R2 `loguitos-assets` (salta objetos ya idénticos por MD5/etag; requiere `wrangler login` o `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` con lectura R2 para el listado rápido)
-- `pnpm sync:isotipos-r2`: subir `data/isotipos/<slug>.svg` (205 isotipos) a `loguitos.app/logos/<slug>/isotipo.svg` (idempotente; `--dry-run`; requiere `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` con escritura R2 y metadata `source_url` / `source_type` / `synced_at` / `verified_official` cuando aplique; slugs validados contra `data/logos-dataset.json`)
+- `pnpm sync:isotipos-r2`: subir `data/isotipos/<slug>.svg` (204 isotipos) a `loguitos.app/logos/<slug>/isotipo.svg` (idempotente; `--dry-run`; requiere `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` con escritura R2 y metadata `source_url` / `source_type` / `synced_at` / `verified_official` cuando aplique; slugs validados contra `data/logos-dataset.json`)
 
 Hoy el proyecto no requiere variables de entorno obligatorias para ejecutarse localmente.
 

@@ -1,5 +1,5 @@
 {
-  "version": "c54c9cd5ec71",
+  "version": "edfa5b39e476",
   "totalItems": 396,
   "items": [
     {
@@ -337,8 +337,8 @@
       "domain": "www.personal.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.personal.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.personal.com.ar.ico",
-      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=www.personal.com.ar&sz=128",
-      "logo_source": "google",
+      "catalog_logo_url": "/logos/personal-pay.png",
+      "logo_source": "hosted",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
       "searchText": "personal pay www.personal.com.ar personal-pay"

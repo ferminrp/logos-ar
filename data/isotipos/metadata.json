@@ -271,15 +271,6 @@
     "verified_official": true
   },
   {
-    "slug": "banco-macro",
-    "source_url": "https://d18sfile8nklfm.cloudfront.net/imagen/macrologoheader2025alternativo/logoheader_macro.svg",
-    "source_type": "official-site",
-    "kind": "iso",
-    "colors": [],
-    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
-    "verified_official": true
-  },
-  {
     "slug": "banco-municipal-de-rosario",
     "source_url": "https://www.bmros.com.ar/img/bmr.svg",
     "source_type": "official-site",
