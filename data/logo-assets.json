@@ -617,7 +617,9 @@
       "thumb": true
     },
     "ledger": {
-      "thumb": true
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
     },
     "lido": {
       "thumb": true
@@ -895,9 +897,7 @@
       "thumb": true
     },
     "rainbow": {
-      "tone": "dark",
-      "thumb": true,
-      "thumbTone": "dark"
+      "thumb": true
     },
     "ram": {
       "thumb": true,
@@ -1142,9 +1142,7 @@
       "thumb": true
     },
     "ypf": {
-      "tone": "dark",
-      "thumb": true,
-      "thumbTone": "dark"
+      "thumb": true
     }
   }
 }
