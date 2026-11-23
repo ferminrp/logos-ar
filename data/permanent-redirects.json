@@ -35,6 +35,11 @@
     "permanent": true
   },
   {
+    "source": "/logos/macro/isotipo.svg",
+    "destination": "/logos/banco-macro/isotipo.svg",
+    "permanent": true
+  },
+  {
     "source": "/logo/banco-provincia-bs-as",
     "destination": "/logo/banco-provincia",
     "permanent": true

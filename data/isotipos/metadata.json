@@ -41,6 +41,17 @@
     "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
   },
   {
+    "slug": "aerolineas-argentinas",
+    "source_url": "https://www.aerolineas.com.ar/static/media/icon-aerolineas.af11868e.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#396fa5"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
     "slug": "airbnb",
     "source_url": "https://www.airbnb.com",
     "source_type": "simple-icons",
@@ -224,6 +235,17 @@
     "verified_official": true
   },
   {
+    "slug": "banco-entre-rios-bersa",
+    "source_url": "https://www.bancoentrerios.com.ar/assets/logos/entre-rios/logo-color-text-black.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#b10f36"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
     "slug": "banco-galicia",
     "source_url": "https://onlinebanking.bancogalicia.com.ar/images/default/logo.svg",
     "source_type": "official-site",
@@ -245,6 +267,15 @@
       "#f1801f",
       "#fff"
     ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "banco-macro",
+    "source_url": "https://d18sfile8nklfm.cloudfront.net/imagen/macrologoheader2025alternativo/logoheader_macro.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
     "license_note": "marca registrada del titular; asset oficial, uso nominativo",
     "verified_official": true
   },
@@ -481,6 +512,17 @@
     "license_note": "simple-icons: SVG CC0, la marca es trademark del dueño (ver DISCLAIMER/guidelines); monocromo con hex de marca"
   },
   {
+    "slug": "carrefour-banco",
+    "source_url": "https://carrefourar.vtexassets.com/assets/vtex/assets-builder/carrefourar.theme/17.1.1/logo/isotipo___6ef9d993a624c69c95cffe86770b1517.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#005baa"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
     "slug": "central-puerto",
     "source_url": "https://www.centralpuerto.com/wp-content/themes/bootscore-main/bootscore-main/img/logo/logo-footer.svg",
     "source_type": "official-site",
@@ -629,6 +671,22 @@
     "verified_official": true
   },
   {
+    "slug": "curve",
+    "source_url": "https://resources.curve.finance/assets/images/CRV_lg-809e67dc0c02fb5794fcf2b415dbb804.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#80ff77",
+      "#ffe600",
+      "#ffd700",
+      "#fbf100",
+      "#ff6c00",
+      "#ffdb00"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
     "slug": "decrypto",
     "source_url": "https://decrypto.com.ar/favicon.svg",
     "source_type": "official-site",
@@ -706,6 +764,17 @@
       "#1616b4"
     ],
     "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
+  },
+  {
+    "slug": "exactly",
+    "source_url": "https://exact.ly/assets/Isologo.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#0e0e0e"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
   },
   {
     "slug": "expedia",
@@ -1076,6 +1145,26 @@
     "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
   },
   {
+    "slug": "ledger",
+    "source_url": "https://www.ledger.com/wp-content/themes/ledger-v2/public/images/ledger-logo-short.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "lemon-cash",
+    "source_url": "https://www.lemon.me/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#003d1b"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
     "slug": "lido",
     "source_url": "https://lido.fi/",
     "source_type": "official-site",
@@ -1430,6 +1519,19 @@
     "license_note": "asset del sitio oficial de la marca; marca registrada, uso nominativo"
   },
   {
+    "slug": "pagos360",
+    "source_url": "https://pagos360.com/",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#0050f5",
+      "#0036a3",
+      "#00e5f5"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
     "slug": "paladini",
     "source_url": "https://paladini.com/assets/images/logo-paladini-nZMplrz.svg",
     "source_type": "official-site",
@@ -1502,6 +1604,17 @@
     "kind": "iso",
     "colors": [
       "#fa0050"
+    ],
+    "license_note": "marca registrada del titular; asset oficial, uso nominativo",
+    "verified_official": true
+  },
+  {
+    "slug": "personal-pay",
+    "source_url": "https://www.personal.com.ar/content/dam/teco-cms-ecosystem/componentes-cross/vidrieras/iso-pay.svg",
+    "source_type": "official-site",
+    "kind": "iso",
+    "colors": [
+      "#5a50f9"
     ],
     "license_note": "marca registrada del titular; asset oficial, uso nominativo",
     "verified_official": true

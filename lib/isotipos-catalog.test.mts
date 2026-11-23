@@ -25,7 +25,7 @@ describe('isotipos-catalog', () => {
     for (const row of isotiposMetadata as { source_type: string }[]) {
       counts.set(row.source_type, (counts.get(row.source_type) ?? 0) + 1)
     }
-    assert.equal(counts.get('official-site'), 132)
+    assert.equal(counts.get('official-site'), 142)
     assert.equal(counts.get('simple-icons'), 58)
     assert.equal(counts.get('wikimedia(official-sourced)'), 5)
   })
