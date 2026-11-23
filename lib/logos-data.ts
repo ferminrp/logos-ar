@@ -33,7 +33,13 @@ export const categories: Category[] = [
     seoIntro:
       "Logos oficiales de bancos argentinos en PNG y SVG transparente. Banco Nación, Galicia, BBVA, Santander, Macro, Provincia y más entidades. Descarga gratis los logos de los principales bancos tradicionales y públicos de Argentina para diseño, presentaciones y proyectos.",
     entities: [
-      { id: 1, name: "Banco de la Nación Argentina", domain: "bna.com.ar" },
+      {
+        id: 1,
+        name: "Banco de la Nación Argentina",
+        domain: "bna.com.ar",
+        slugAliases: ["banco-nacion"],
+        seoAliases: ["BNA", "Banco Nación"],
+      },
       { id: 2, name: "Banco Santander Río", domain: "santander.com.ar" },
       {
         id: 3,
@@ -317,7 +323,9 @@ export const categories: Category[] = [
         id: 61,
         name: "ARCA (ex AFIP)",
         domain: "www.afip.gob.ar",
-        seoAliases: ["ex AFIP", "nuevo logo", "AFIP"],
+        slug: "arca-ex-afip",
+        slugAliases: ["arca"],
+        seoAliases: ["ex AFIP", "nuevo logo", "AFIP", "ARCA AFIP"],
       },
       { id: 62, name: "AGIP", domain: "www.agip.gob.ar" },
       { id: 65, name: "BCRA", domain: "bcra.gob.ar" },
@@ -420,7 +428,13 @@ export const categories: Category[] = [
       { id: 86, name: "Disco", domain: "disco.com.ar" },
       { id: 87, name: "Vea", domain: "vea.com.ar" },
       { id: 88, name: "La Anónima", domain: "laanonima.com.ar" },
-      { id: 89, name: "Supermercados DIA", domain: "supermercadosdia.com.ar" },
+      {
+        id: 89,
+        name: "Supermercados DIA",
+        domain: "supermercadosdia.com.ar",
+        slugAliases: ["dia"],
+        seoAliases: ["Supermercado Día", "Supermercado Dia", "Día"],
+      },
       { id: 91, name: "Makro", domain: "makro.com.ar" },
       { id: 92, name: "Farmacity", domain: "www.farmacity.com" },
       { id: 93, name: "Easy", domain: "easy.com.ar" },
@@ -579,7 +593,12 @@ export const categories: Category[] = [
       { id: 149, name: "Bimbo", domain: "www.bimbo.com.ar" },
       { id: 152, name: "Cervecería Quilmes", domain: "quilmes.com.ar" },
       { id: 153, name: "Havanna", domain: "www.havanna.com.ar" },
-      { id: 155, name: "Molino Cañuelas", domain: "molinocanuelas.com" },
+      {
+        id: 155,
+        name: "Molino Cañuelas",
+        domain: "molinocanuelas.com",
+        seoAliases: ["Molinos Cañuelas", "molinos cañuelas", "Molinos Canuelas"],
+      },
       { id: 156, name: "Ledesma", domain: "ledesma.com.ar" },
       { id: 157, name: "Cervecería Patagonia", domain: "www.cervezapatagonia.com.ar" },
       { id: 310, name: "Coca-Cola (Femsa)", domain: "coca-colafemsa.com" },
@@ -700,7 +719,7 @@ export const categories: Category[] = [
         id: 191,
         name: "PedidosYa",
         domain: "pedidosya.com.ar",
-        seoAliases: ["Pedidos Ya", "logo PedidosYa png", "delivery"],
+        seoAliases: ["Pedidos Ya", "pedido ya", "logo PedidosYa png", "delivery"],
       },
       {
         id: 192,

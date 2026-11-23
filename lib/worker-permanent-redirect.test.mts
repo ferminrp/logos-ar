@@ -12,4 +12,20 @@ describe('maybePermanentSlugRedirect', () => {
     assert.equal(res.status, PERMANENT_REDIRECT_HTTP_STATUS)
     assert.equal(res.headers.get('location'), 'https://loguitos.app/logos/metrogas/isotipo.svg')
   })
+
+  it('redirects retired logo slugs with a trailing slash', () => {
+    const res = maybePermanentSlugRedirect(
+      new Request('https://loguitos.app/logo/banco-provincia-bs-as/'),
+    )
+    assert.ok(res)
+    assert.equal(res.headers.get('location'), 'https://loguitos.app/logo/banco-provincia')
+  })
+
+  it('redirects /logo/arca to arca-ex-afip', () => {
+    const res = maybePermanentSlugRedirect(
+      new Request('https://loguitos.app/logo/arca'),
+    )
+    assert.ok(res)
+    assert.equal(res.headers.get('location'), 'https://loguitos.app/logo/arca-ex-afip')
+  })
 })

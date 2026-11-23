@@ -81,11 +81,19 @@ describe('entity slug consolidation redirects', () => {
       ['pampa', 'pampa-energia'],
       ['supervielle', 'banco-supervielle'],
       ['heineken-313', 'heineken'],
+      ['banco-provincia-bs-as', 'banco-provincia'],
+      ['arca', 'arca-ex-afip'],
+      ['banco-nacion', 'banco-de-la-nacion-argentina'],
+      ['dia', 'supermercados-dia'],
     ] as const) {
       const resolved = getEntityBySlug(alias)
       assert.ok(resolved, `alias ${alias}`)
       assert.equal(resolved.slug, canonical)
     }
+  })
+
+  it('banco-provincia-bs-as 301s to banco-provincia', () => {
+    assert.equal(bySource.get('/logo/banco-provincia-bs-as'), '/logo/banco-provincia')
   })
 
   it('heineken-313 redirects to canonical page', () => {

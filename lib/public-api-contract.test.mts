@@ -80,6 +80,26 @@ describe('GET /api/logos', () => {
     const { body } = await getJson('?q=espana&category=banderas')
     assert.equal(body.total, 1)
   })
+
+  it('resolves GSC search aliases to canonical logo slugs', async () => {
+    const cases: { q: string; slug: string }[] = [
+      { q: 'pedido ya', slug: 'pedidosya' },
+      { q: 'supermercado dia', slug: 'supermercados-dia' },
+      { q: 'supermercado día', slug: 'supermercados-dia' },
+      { q: 'bna', slug: 'banco-de-la-nacion-argentina' },
+      { q: 'molinos canuelas', slug: 'molino-canuelas' },
+    ]
+    for (const { q, slug } of cases) {
+      const { body } = await getJson(`?q=${encodeURIComponent(q)}&limit=5`)
+      assert.ok(body.total >= 1, `no match for ${q}`)
+      assert.equal(
+        body.items[0].slug,
+        slug,
+        `q=${q}`,
+      )
+      assert.match(body.items[0].pageUrl, new RegExp(`/logo/${slug}$`))
+    }
+  })
 })
 
 describe('MCP tools', () => {

@@ -1,19 +1,12 @@
 import { defineMiddleware } from 'astro:middleware'
-import permanentRedirects from '../data/permanent-redirects.json'
 import { PERMANENT_REDIRECT_HTTP_STATUS } from '../lib/permanent-redirect-status.ts'
+import { getPermanentRedirectDestination } from '../lib/worker-permanent-redirect.ts'
 import { prefersMarkdown } from '@/lib/accept'
 import { GONE_LOGO_SLUGS } from '@/lib/gone-logo-slugs'
 import { getMarkdownForPath } from '@/lib/site-markdown'
 import { applyHomeDiscoveryHeaders } from '@/lib/apply-home-discovery-headers'
 import { prefersMcpDocsHtml } from '@/lib/mcp/accept'
 import { getSiteUrl } from '@/lib/site-url'
-
-const redirectMap = new Map(
-  permanentRedirects.map((entry: { source: string; destination: string }) => [
-    entry.source,
-    entry.destination,
-  ]),
-)
 
 const SITEMAP_CACHE_CONTROL =
   'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800'
@@ -43,7 +36,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return new Response('Not Found', { status: 404 })
   }
 
-  const destination = redirectMap.get(pathname)
+  const destination = getPermanentRedirectDestination(pathname)
 
   if (destination) {
     return context.redirect(destination, PERMANENT_REDIRECT_HTTP_STATUS)

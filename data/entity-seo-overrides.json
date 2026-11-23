@@ -1,8 +1,18 @@
 {
+  "arca-ex-afip": {
+    "motivatingQueries": ["logo arca", "arca png", "logo afip arca"],
+    "title": "Logo ARCA (ex AFIP): PNG y SVG gratis | Loguitos",
+    "metaDescription": "Descargá el logo de ARCA en PNG y SVG de alta calidad, fondo transparente. Ícono del organismo tributario (ex AFIP) para trámites y diseño. Gratis aquí."
+  },
+  "jumbo": {
+    "motivatingQueries": ["logo jumbo", "jumbo png", "supermercado jumbo logo"],
+    "title": "Logo Jumbo: PNG y SVG gratis | Loguitos",
+    "metaDescription": "Descargá el logo de Jumbo en PNG y SVG transparente. Archivos oficiales en alta calidad para retail, apps y diseño de supermercados. Descarga gratis aquí."
+  },
   "mercado-pago": {
     "motivatingQueries": ["logo mercado pago", "mercado pago png", "mp logo"],
-    "title": "Logo Mercado Pago: PNG y SVG gratis | Loguitos",
-    "metaDescription": "Descargá el logo de Mercado Pago en PNG y SVG con fondo transparente. Favicon oficial para diseño, apps y presentaciones. Descarga gratis en Loguitos."
+    "title": "Mercado Pago: logo PNG y SVG gratis | Loguitos",
+    "metaDescription": "Descargá el ícono de Mercado Pago en PNG y SVG, fondo transparente y alta calidad. Listo para apps, checkout y piezas digitales. Gratis en Loguitos."
   },
   "mercado-libre": {
     "motivatingQueries": ["mercado libre png", "logo mercado libre", "meli"],
@@ -26,8 +36,8 @@
   },
   "swiss-medical": {
     "motivatingQueries": ["logo swiss medical", "swiss medical logo png", "swiss medical prepaga"],
-    "title": "Swiss Medical: logo PNG y SVG gratis | Loguitos",
-    "metaDescription": "Descargá el logo de Swiss Medical en PNG y SVG transparente. Ícono de la prepaga para diseño institucional y material de salud. Descarga gratis aquí."
+    "title": "Swiss Medical: ícono PNG y SVG gratis | Loguitos",
+    "metaDescription": "Descargá el logo de Swiss Medical en PNG y SVG transparente. Archivos de alta calidad para prepaga, salud y diseño institucional. Descarga gratis aquí."
   },
   "bbva-argentina": {
     "motivatingQueries": ["logo bbva png", "logo bbva", "bbva argentina logo"],
@@ -48,5 +58,10 @@
     "motivatingQueries": ["brubank logo", "logo brubank png", "brubank png"],
     "title": "Logo Brubank en PNG y SVG gratis | Loguitos",
     "metaDescription": "Logo de Brubank en PNG y SVG con fondo transparente. Descargá el ícono del neobanco para apps, informes y piezas fintech. Descarga gratis en Loguitos."
+  },
+  "banco-provincia": {
+    "motivatingQueries": ["logo banco provincia", "bapro logo", "banco provincia png"],
+    "title": "Banco Provincia: logo PNG y SVG gratis | Loguitos",
+    "metaDescription": "Descargá el logo de Banco Provincia (Buenos Aires) en PNG y SVG transparente, alta calidad. También Bapro. Para informes y diseño. Descarga gratis aquí."
   }
 }
