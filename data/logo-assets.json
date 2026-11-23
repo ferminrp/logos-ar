@@ -407,7 +407,9 @@
       "thumb": true
     },
     "exactly": {
-      "thumb": true
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
     },
     "expedia": {
       "thumb": true,
