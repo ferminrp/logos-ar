@@ -333,11 +333,6 @@
       "tone": "dark",
       "thumb": true
     },
-    "clinica-y-maternidad-suizo-argentina": {
-      "tone": "light",
-      "thumb": true,
-      "thumbTone": "light"
-    },
     "cloudflare": {
       "thumb": true
     },
