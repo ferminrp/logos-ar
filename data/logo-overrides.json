@@ -1478,5 +1478,33 @@
   "maria-cher.com.ar": {
     "logoUrl": "/logos/maria-cher.png",
     "logoSource": "hosted"
+  },
+  "carrefour.com.ar": {
+    "logoUrl": "/logos/carrefour.png",
+    "logoSource": "hosted"
+  },
+  "ethereum.org": {
+    "logoUrl": "/logos/ethereum.png",
+    "logoSource": "hosted"
+  },
+  "www.genommalab.com": {
+    "logoUrl": "/logos/genomma-lab.png",
+    "logoSource": "hosted"
+  },
+  "payoneer.com": {
+    "logoUrl": "/logos/payoneer.png",
+    "logoSource": "hosted"
+  },
+  "www.python.org": {
+    "logoUrl": "/logos/python.png",
+    "logoSource": "hosted"
+  },
+  "fiat.com.ar": {
+    "logoUrl": "/logos/fiat.png",
+    "logoSource": "hosted"
+  },
+  "porsche.com": {
+    "logoUrl": "/logos/porsche.png",
+    "logoSource": "hosted"
   }
 }
