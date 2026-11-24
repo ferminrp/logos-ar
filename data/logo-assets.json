@@ -418,6 +418,7 @@
       "thumb": true
     },
     "ethereum": {
+      "tone": "light",
       "thumb": true
     },
     "exactly": {
@@ -468,6 +469,7 @@
       "thumbTone": "dark"
     },
     "genomma-lab": {
+      "tone": "dark",
       "thumb": true
     },
     "github": {
@@ -638,6 +640,7 @@
       "thumbTone": "dark"
     },
     "lemon-cash": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -1089,6 +1092,7 @@
       "thumbTone": "dark"
     },
     "toyota": {
+      "tone": "dark",
       "thumb": true
     },
     "transener": {
@@ -1164,6 +1168,162 @@
     },
     "ypf": {
       "thumb": true
+    },
+    "allianz": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "anses": {
+      "thumb": true
+    },
+    "banco-de-tierra-del-fuego": {
+      "thumb": true
+    },
+    "bcra": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "cafe-martinez": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "cerveceria-quilmes": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "claro-argentina": {
+      "thumb": true
+    },
+    "clinica-y-maternidad-suizo-argentina": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "cronica": {
+      "thumb": true
+    },
+    "diarco": {
+      "thumb": true
+    },
+    "diario-uno": {
+      "thumb": true
+    },
+    "disco": {
+      "thumb": true
+    },
+    "dollar-rent-a-car": {
+      "thumb": true
+    },
+    "easy": {
+      "thumb": true
+    },
+    "el-cronista": {
+      "thumb": true
+    },
+    "federacion-patronal-seguros": {
+      "thumb": true
+    },
+    "go": {
+      "thumb": true
+    },
+    "gulf": {
+      "thumb": true
+    },
+    "hertz": {
+      "thumb": true
+    },
+    "hilton": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "isuzu": {
+      "thumb": true
+    },
+    "jetsmart": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "la-caja-seguros": {
+      "thumb": true
+    },
+    "la-capital": {
+      "thumb": true
+    },
+    "los-andes-mendoza": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "maria-cher": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "mercedes-benz": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "mimo": {
+      "thumb": true
+    },
+    "mondelez": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "morfy": {
+      "thumb": true
+    },
+    "nestle": {
+      "thumb": true
+    },
+    "pagina-12": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "pepsico": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "perfil": {
+      "thumb": true
+    },
+    "puma-energy": {
+      "thumb": true
+    },
+    "radisson": {
+      "thumb": true
+    },
+    "rappi": {
+      "thumb": true
+    },
+    "sherman": {
+      "thumb": true
+    },
+    "telefe": {
+      "thumb": true
+    },
+    "tgs": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
+    "vea": {
+      "thumb": true
+    },
+    "zara": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
     }
   }
 }
