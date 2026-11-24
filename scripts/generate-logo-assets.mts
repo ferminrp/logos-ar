@@ -35,6 +35,14 @@ const OPAQUE_SHARE = 0.9
 type Tone = 'light' | 'dark'
 type AssetInfo = { svg?: true; thumb?: true; tone?: Tone; thumbTone?: Tone }
 
+/**
+ * Automatic luminance measurement can miss a dark wordmark when an isologo
+ * has enough light ink. These slugs still need a contrast tile on dark surfaces.
+ */
+const TONE_OVERRIDES: Partial<Record<string, Tone>> = {
+  exactly: 'dark',
+}
+
 function channelToLinear(value: number): number {
   const c = value / 255
   return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4
@@ -120,7 +128,7 @@ async function main() {
         : null
 
     if (hostedPng) {
-      const tone = await measureTone(hostedPng)
+      const tone = TONE_OVERRIDES[slug] ?? (await measureTone(hostedPng))
       if (tone) info.tone = tone
     }
 
@@ -141,7 +149,7 @@ async function main() {
         }
         expectedThumbs.add(file)
         info.thumb = true
-        const thumbTone = await measureTone(thumb)
+        const thumbTone = TONE_OVERRIDES[slug] ?? (await measureTone(thumb))
         if (thumbTone) info.thumbTone = thumbTone
       } catch (error) {
         console.warn(
