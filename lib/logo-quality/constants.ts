@@ -11,3 +11,15 @@ export const REDIRECT_BRAND_MISMATCH: Record<string, string> = {}
 
 /** Hostnames seen when a site bot-wall blocks GitHub Actions (not a real brand redirect). */
 export const REDIRECT_BOT_WALL_HOST_FRAGMENTS = ["perfdrive.com", "incapsula.com"]
+
+/**
+ * Distinct catalog entities that officially share the same mark.
+ * duplicate-hash is skipped when both slugs belong to the same group.
+ */
+export const SHARED_LOGO_SLUG_GROUPS: readonly (readonly string[])[] = [
+  ["carrefour", "carrefour-banco"],
+]
+
+export function slugsShareOfficialLogo(a: string, b: string): boolean {
+  return SHARED_LOGO_SLUG_GROUPS.some((group) => group.includes(a) && group.includes(b))
+}

@@ -374,7 +374,7 @@ export const categories: Category[] = [
         domain: "www.hospitalitaliano.org.ar",
       },
       { id: 486, name: "Hospital Alemán", domain: "www.hospitalaleman.org.ar" },
-      { id: 568, name: "Clínica y Maternidad Suizo Argentina", domain: "www.suizoargentina.com.ar" },
+      { id: 568, name: "Clínica y Maternidad Suizo Argentina", domain: "suizoargentina.com" },
     ],
   },
   {

@@ -223,7 +223,13 @@ export function evaluateVisualAnalysis(
       code: "blank-or-faint",
       message: `Logo demasiado chico en el lienzo (${(maxDimRatio * 100).toFixed(1)}% del lado largo)`,
     })
-  } else if (analysis.opaqueRatio < minOpaque) {
+  } else if (
+    analysis.opaqueRatio / Math.max(analysis.contentFillRatio, 1e-6) <
+    minOpaque
+  ) {
+    // Compare ink density inside the content bbox, not vs the whole square tile.
+    // Official lockups (star + wordmark) can be sparse on a 256 canvas and still
+    // be a complete, well-scaled mark.
     issues.push({
       code: "blank-or-faint",
       message: `Logo casi vacío (${(analysis.opaqueRatio * 100).toFixed(1)}% píxeles visibles)`,

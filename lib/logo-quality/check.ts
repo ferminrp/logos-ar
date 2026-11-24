@@ -10,7 +10,9 @@ import {
   MIN_LOGO_PX,
   REDIRECT_BOT_WALL_HOST_FRAGMENTS,
   REDIRECT_BRAND_MISMATCH,
+  slugsShareOfficialLogo,
 } from "./constants.ts"
+import { getLogoAssetInfo } from "../logo-assets.ts"
 import {
   domainsEquivalent,
   hostnameFromDomain,
@@ -216,7 +218,8 @@ export function evaluateLogoBytes(
   const otherBrand = owners.find(
     (owner) =>
       owner.slug !== slug &&
-      !domainsEquivalent(owner.domain, domain),
+      !domainsEquivalent(owner.domain, domain) &&
+      !slugsShareOfficialLogo(owner.slug, slug),
   )
   if (otherBrand) {
     issues.push({
@@ -338,21 +341,25 @@ export async function checkEntityLogo(
         for (const issue of evaluateVisualAnalysis(analysis)) {
           visualIssues.push({ code: issue.code, message: issue.message })
         }
-        const onWhite = await sharp(Buffer.from(bytes), { failOn: "none" })
-          .flatten({ background: "#ffffff" })
-          .png()
-          .toBuffer()
-        const lightAnalysis = await analyzeLogoVisual(new Uint8Array(onWhite))
-        if (lightAnalysis) {
-          for (const issue of evaluateInvisibleOnLightBackground(
-            lightAnalysis,
-            DEFAULT_VISUAL_THRESHOLDS,
-            analysis,
-          )) {
-            visualIssues.push({
-              code: "blank-or-faint",
-              message: `Logo casi invisible sobre fondo claro (${issue.message})`,
-            })
+        // Light-ink marks are shown on a contrasting dark tile (logo-ink-light).
+        // Flattening them onto white would flag official white wordmarks as invisible.
+        if (getLogoAssetInfo(entity.slug).tone !== "light") {
+          const onWhite = await sharp(Buffer.from(bytes), { failOn: "none" })
+            .flatten({ background: "#ffffff" })
+            .png()
+            .toBuffer()
+          const lightAnalysis = await analyzeLogoVisual(new Uint8Array(onWhite))
+          if (lightAnalysis) {
+            for (const issue of evaluateInvisibleOnLightBackground(
+              lightAnalysis,
+              DEFAULT_VISUAL_THRESHOLDS,
+              analysis,
+            )) {
+              visualIssues.push({
+                code: "blank-or-faint",
+                message: `Logo casi invisible sobre fondo claro (${issue.message})`,
+              })
+            }
           }
         }
         if (entity.id >= VISUAL_NEAR_DUP_MIN_ID) {

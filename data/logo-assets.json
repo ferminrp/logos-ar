@@ -1257,9 +1257,9 @@
       "thumb": true
     },
     "los-andes-mendoza": {
-      "tone": "light",
+      "tone": "dark",
       "thumb": true,
-      "thumbTone": "light"
+      "thumbTone": "dark"
     },
     "maria-cher": {
       "tone": "dark",

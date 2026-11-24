@@ -112,6 +112,24 @@ test("evaluateLogoBytes flags duplicate hash", () => {
   assert.ok(issues.some((issue) => issue.code === "duplicate-hash"))
 })
 
+test("evaluateLogoBytes allows official shared marks", () => {
+  const bytes = new Uint8Array(MIN_LOGO_BYTES + 10).fill(8)
+  const map = new Map<string, HashOwner[]>()
+  const { metrics } = evaluateLogoBytes(bytes, map, "carrefour", "carrefour.com.ar")
+  const hash = metrics.sha256
+  map.set(hash, [
+    { slug: "carrefour", domain: "carrefour.com.ar" },
+    { slug: "carrefour-banco", domain: "www.bancodeserviciosfinancieros.com.ar" },
+  ])
+  const { issues } = evaluateLogoBytes(
+    bytes,
+    map,
+    "carrefour-banco",
+    "www.bancodeserviciosfinancieros.com.ar",
+  )
+  assert.ok(!issues.some((issue) => issue.code === "duplicate-hash"))
+})
+
 test("evaluateLogoBytes flags generic icon hash", () => {
   const bytes = new Uint8Array(MIN_LOGO_BYTES + 10).fill(1)
   const hash = createHash("sha256").update(bytes).digest("hex")
