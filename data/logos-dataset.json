@@ -3,7 +3,7 @@
   "totalItems": 396,
   "items": [
     {
-      "name": "Banco de la Naci\u00f3n Argentina",
+      "name": "Banco de la Nación Argentina",
       "domain": "bna.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bna.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/bna.com.ar.ico",
@@ -14,7 +14,7 @@
       "searchText": "banco de la nacion argentina bna.com.ar banco-de-la-nacion-argentina"
     },
     {
-      "name": "Banco Santander R\u00edo",
+      "name": "Banco Santander Río",
       "domain": "santander.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=santander.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/santander.com.ar.ico",
@@ -135,7 +135,7 @@
       "searchText": "banco piano www.bancopiano.com.ar banco-piano"
     },
     {
-      "name": "Banco de C\u00f3rdoba (BANCOR)",
+      "name": "Banco de Córdoba (BANCOR)",
       "domain": "bancor.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bancor.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/bancor.com.ar.ico",
@@ -146,7 +146,7 @@
       "searchText": "banco de cordoba (bancor) bancor.com.ar banco-de-cordoba-bancor bancor banco de cordoba"
     },
     {
-      "name": "BPN (Banco Provincia de Neuqu\u00e9n)",
+      "name": "BPN (Banco Provincia de Neuquén)",
       "domain": "www.bpn.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.bpn.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.bpn.com.ar.ico",
@@ -223,7 +223,7 @@
       "searchText": "banco del sol bancodelsol.com banco-del-sol"
     },
     {
-      "name": "Banco Entre R\u00edos (BERSA)",
+      "name": "Banco Entre Ríos (BERSA)",
       "domain": "bersa.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=bersa.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/bersa.com.ar.ico",
@@ -289,7 +289,7 @@
       "searchText": "bice www.bice.com.ar bice banco de inversion y comercio exterior"
     },
     {
-      "name": "Ual\u00e1",
+      "name": "Ualá",
       "domain": "uala.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=uala.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/uala.com.ar.ico",
@@ -575,7 +575,7 @@
       "searchText": "satoshitango satoshitango.com satoshitango"
     },
     {
-      "name": "Tienda D\u00f3lar",
+      "name": "Tienda Dólar",
       "domain": "tiendadolar.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=tiendadolar.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/tiendadolar.com.ar.ico",
@@ -1077,7 +1077,7 @@
       "catalog_logo_url": "/logos/next-js.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "next.js nextjs.org next-js"
     },
     {
@@ -1088,7 +1088,7 @@
       "catalog_logo_url": "/logos/astro.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "astro astro.build astro"
     },
     {
@@ -1099,7 +1099,7 @@
       "catalog_logo_url": "/logos/react.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "react react.dev react"
     },
     {
@@ -1110,7 +1110,7 @@
       "catalog_logo_url": "/logos/vue.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "vue vuejs.org vue"
     },
     {
@@ -1121,7 +1121,7 @@
       "catalog_logo_url": "/logos/svelte.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "svelte svelte.dev svelte"
     },
     {
@@ -1132,7 +1132,7 @@
       "catalog_logo_url": "/logos/nuxt.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "nuxt nuxt.com nuxt"
     },
     {
@@ -1143,7 +1143,7 @@
       "catalog_logo_url": "/logos/vite.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "vite vite.dev vite"
     },
     {
@@ -1154,7 +1154,7 @@
       "catalog_logo_url": "/logos/tailwind.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "tailwind tailwindcss.com tailwind"
     },
     {
@@ -1165,7 +1165,7 @@
       "catalog_logo_url": "/logos/typescript.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "typescript www.typescriptlang.org typescript"
     },
     {
@@ -1176,7 +1176,7 @@
       "catalog_logo_url": "/logos/python.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "python www.python.org python"
     },
     {
@@ -1187,7 +1187,7 @@
       "catalog_logo_url": "/logos/go.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "go go.dev go"
     },
     {
@@ -1198,7 +1198,7 @@
       "catalog_logo_url": "/logos/rust.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "rust rust-lang.org rust"
     },
     {
@@ -1209,7 +1209,7 @@
       "catalog_logo_url": "/logos/node-js.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "node.js nodejs.org node-js"
     },
     {
@@ -1220,7 +1220,7 @@
       "catalog_logo_url": "/logos/deno.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "deno deno.com deno"
     },
     {
@@ -1231,7 +1231,7 @@
       "catalog_logo_url": "/logos/bun.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "bun bun.sh bun"
     },
     {
@@ -1242,7 +1242,7 @@
       "catalog_logo_url": "/logos/vercel.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "vercel vercel.com vercel"
     },
     {
@@ -1253,7 +1253,7 @@
       "catalog_logo_url": "/logos/cloudflare.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "cloudflare www.cloudflare.com cloudflare"
     },
     {
@@ -1264,7 +1264,7 @@
       "catalog_logo_url": "/logos/netlify.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "netlify www.netlify.com netlify"
     },
     {
@@ -1275,7 +1275,7 @@
       "catalog_logo_url": "/logos/redis.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "redis redis.io redis"
     },
     {
@@ -1286,7 +1286,7 @@
       "catalog_logo_url": "/logos/samsung.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "samsung www.samsung.com.ar samsung"
     },
     {
@@ -1297,7 +1297,7 @@
       "catalog_logo_url": "/logos/postgres.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "postgres www.postgresql.org postgres"
     },
     {
@@ -1308,7 +1308,7 @@
       "catalog_logo_url": "/logos/sqlite.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "sqlite sqlite.org sqlite"
     },
     {
@@ -1319,7 +1319,7 @@
       "catalog_logo_url": "/logos/prisma.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "prisma www.prisma.io prisma"
     },
     {
@@ -1330,7 +1330,7 @@
       "catalog_logo_url": "/logos/supabase.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "supabase supabase.com supabase"
     },
     {
@@ -1341,7 +1341,7 @@
       "catalog_logo_url": "/logos/upstash.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "upstash upstash.com upstash"
     },
     {
@@ -1352,7 +1352,7 @@
       "catalog_logo_url": "/logos/neon.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "neon neon.com neon"
     },
     {
@@ -1363,7 +1363,7 @@
       "catalog_logo_url": "/logos/docker.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "docker www.docker.com docker"
     },
     {
@@ -1374,7 +1374,7 @@
       "catalog_logo_url": "/logos/clerk.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "clerk clerk.com clerk"
     },
     {
@@ -1385,7 +1385,7 @@
       "catalog_logo_url": "/logos/github.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "github github.com github"
     },
     {
@@ -1396,7 +1396,7 @@
       "catalog_logo_url": "/logos/tiendanube.png",
       "logo_source": "hosted",
       "categoryId": "tecnologias",
-      "categoryName": "Tecnolog\u00edas",
+      "categoryName": "Tecnologías",
       "searchText": "tiendanube tiendanube.com tiendanube"
     },
     {
@@ -1873,7 +1873,7 @@
       "searchText": "omint www.omint.com.ar omint"
     },
     {
-      "name": "Medif\u00e9",
+      "name": "Medifé",
       "domain": "medife.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=medife.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/medife.com.ar.ico",
@@ -1906,7 +1906,7 @@
       "searchText": "sancor salud sancorsalud.com.ar sancor-salud"
     },
     {
-      "name": "Prevenci\u00f3n Salud",
+      "name": "Prevención Salud",
       "domain": "www.prevencionsalud.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.prevencionsalud.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.prevencionsalud.com.ar.ico",
@@ -1928,7 +1928,7 @@
       "searchText": "sos salud www.sossalud.com.ar sos-salud"
     },
     {
-      "name": "Jer\u00e1rquicos Salud",
+      "name": "Jerárquicos Salud",
       "domain": "www.jerarquicos.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.jerarquicos.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.jerarquicos.com.ico",
@@ -1950,7 +1950,7 @@
       "searchText": "hospital italiano de buenos aires www.hospitalitaliano.org.ar hospital-italiano-de-buenos-aires"
     },
     {
-      "name": "Hospital Alem\u00e1n",
+      "name": "Hospital Alemán",
       "domain": "www.hospitalaleman.org.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.hospitalaleman.org.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.hospitalaleman.org.ar.ico",
@@ -1961,7 +1961,7 @@
       "searchText": "hospital aleman www.hospitalaleman.org.ar hospital-aleman"
     },
     {
-      "name": "Cl\u00ednica y Maternidad Suizo Argentina",
+      "name": "Clínica y Maternidad Suizo Argentina",
       "domain": "www.suizoargentina.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.suizoargentina.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.suizoargentina.com.ar.ico",
@@ -2071,7 +2071,7 @@
       "searchText": "carrefour carrefour.com.ar carrefour"
     },
     {
-      "name": "Fr\u00e1vega",
+      "name": "Frávega",
       "domain": "fravega.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=fravega.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/fravega.com.ico",
@@ -2126,7 +2126,7 @@
       "searchText": "vea vea.com.ar vea"
     },
     {
-      "name": "La An\u00f3nima",
+      "name": "La Anónima",
       "domain": "laanonima.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=laanonima.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/laanonima.com.ar.ico",
@@ -2412,7 +2412,7 @@
       "searchText": "infobae infobae.com infobae"
     },
     {
-      "name": "La Naci\u00f3n",
+      "name": "La Nación",
       "domain": "lanacion.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=lanacion.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/lanacion.com.ar.ico",
@@ -2434,7 +2434,7 @@
       "searchText": "tn (todo noticias) tn.com.ar tn todo noticias logo tn"
     },
     {
-      "name": "Clar\u00edn",
+      "name": "Clarín",
       "domain": "clarin.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=clarin.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/clarin.com.ico",
@@ -2456,7 +2456,7 @@
       "searchText": "el cronista cronista.com el-cronista"
     },
     {
-      "name": "P\u00e1gina/12",
+      "name": "Página/12",
       "domain": "pagina12.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pagina12.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/pagina12.com.ar.ico",
@@ -2478,7 +2478,7 @@
       "searchText": "perfil perfil.com perfil"
     },
     {
-      "name": "\u00c1mbito Financiero",
+      "name": "Ámbito Financiero",
       "domain": "ambito.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ambito.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/ambito.com.ico",
@@ -2511,7 +2511,7 @@
       "searchText": "la voz del interior lavoz.com.ar la-voz-del-interior"
     },
     {
-      "name": "La Gaceta (Tucum\u00e1n)",
+      "name": "La Gaceta (Tucumán)",
       "domain": "lagaceta.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=lagaceta.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/lagaceta.com.ar.ico",
@@ -2533,7 +2533,7 @@
       "searchText": "diario uno diariouno.com.ar diario-uno"
     },
     {
-      "name": "Cr\u00f3nica",
+      "name": "Crónica",
       "domain": "cronica.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=cronica.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/cronica.com.ar.ico",
@@ -2610,7 +2610,7 @@
       "searchText": "el trece eltrece.com el-trece"
     },
     {
-      "name": "Am\u00e9rica TV",
+      "name": "América TV",
       "domain": "americatv.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=americatv.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/americatv.com.ar.ico",
@@ -2643,7 +2643,7 @@
       "searchText": "la prensa laprensa.com.ar la-prensa"
     },
     {
-      "name": "El D\u00eda (La Plata)",
+      "name": "El Día (La Plata)",
       "domain": "eldia.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=eldia.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/eldia.com.ico",
@@ -2654,7 +2654,7 @@
       "searchText": "el dia (la plata) eldia.com el-dia-la-plata"
     },
     {
-      "name": "R\u00edo Negro",
+      "name": "Río Negro",
       "domain": "rionegro.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=rionegro.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/rionegro.com.ar.ico",
@@ -2830,7 +2830,7 @@
       "searchText": "chevrolet chevrolet.com.ar chevrolet"
     },
     {
-      "name": "Citro\u00ebn",
+      "name": "Citroën",
       "domain": "citroen.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=citroen.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/citroen.com.ar.ico",
@@ -3171,7 +3171,7 @@
       "searchText": "arcor arcor.com arcor"
     },
     {
-      "name": "Molinos R\u00edo de la Plata",
+      "name": "Molinos Río de la Plata",
       "domain": "molinos.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=molinos.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/molinos.com.ar.ico",
@@ -3182,7 +3182,7 @@
       "searchText": "molinos rio de la plata molinos.com.ar molinos-rio-de-la-plata"
     },
     {
-      "name": "La Seren\u00edsima (Mastellone)",
+      "name": "La Serenísima (Mastellone)",
       "domain": "laserenisima.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=laserenisima.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/laserenisima.com.ar.ico",
@@ -3193,7 +3193,7 @@
       "searchText": "la serenisima (mastellone) laserenisima.com.ar la-serenisima-mastellone"
     },
     {
-      "name": "Nestl\u00e9",
+      "name": "Nestlé",
       "domain": "nestle.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=nestle.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/nestle.com.ar.ico",
@@ -3237,7 +3237,7 @@
       "searchText": "bimbo www.bimbo.com.ar bimbo"
     },
     {
-      "name": "Cervecer\u00eda Quilmes",
+      "name": "Cervecería Quilmes",
       "domain": "quilmes.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=quilmes.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/quilmes.com.ar.ico",
@@ -3259,7 +3259,7 @@
       "searchText": "havanna www.havanna.com.ar havanna"
     },
     {
-      "name": "Molino Ca\u00f1uelas",
+      "name": "Molino Cañuelas",
       "domain": "molinocanuelas.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=molinocanuelas.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/molinocanuelas.com.ico",
@@ -3281,7 +3281,7 @@
       "searchText": "ledesma ledesma.com.ar ledesma"
     },
     {
-      "name": "Cervecer\u00eda Patagonia",
+      "name": "Cervecería Patagonia",
       "domain": "www.cervezapatagonia.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.cervezapatagonia.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.cervezapatagonia.com.ar.ico",
@@ -3435,7 +3435,7 @@
       "searchText": "don satur donsatur.com.ar don-satur"
     },
     {
-      "name": "Guaymall\u00e9n",
+      "name": "Guaymallén",
       "domain": "alfajoresguaymallen.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=alfajoresguaymallen.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/alfajoresguaymallen.com.ar.ico",
@@ -3457,7 +3457,7 @@
       "searchText": "rapanui rapanui.com.ar rapanui"
     },
     {
-      "name": "Pipor\u00e9",
+      "name": "Piporé",
       "domain": "pipore.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pipore.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/pipore.com.ar.ico",
@@ -3567,7 +3567,7 @@
       "searchText": "oil combustibles oilcombustibles.com oil-combustibles"
     },
     {
-      "name": "Federaci\u00f3n Patronal Seguros",
+      "name": "Federación Patronal Seguros",
       "domain": "fedpat.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=fedpat.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/fedpat.com.ar.ico",
@@ -3600,7 +3600,7 @@
       "searchText": "la segunda seguros www.lasegunda.com.ar la-segunda-seguros"
     },
     {
-      "name": "San Crist\u00f3bal Seguros",
+      "name": "San Cristóbal Seguros",
       "domain": "sancristobal.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=sancristobal.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/sancristobal.com.ar.ico",
@@ -3809,7 +3809,7 @@
       "searchText": "awada www.awada.com.ar awada"
     },
     {
-      "name": "Natura Cosm\u00e9ticos",
+      "name": "Natura Cosméticos",
       "domain": "www.natura.com.br",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.natura.com.br&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.natura.com.br.ico",
@@ -3827,7 +3827,7 @@
       "catalog_logo_url": "/logos/pedidosya.png",
       "logo_source": "hosted",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "pedidosya pedidosya.com.ar pedidosya pedidos ya logo pedidosya png delivery"
     },
     {
@@ -3838,7 +3838,7 @@
       "catalog_logo_url": "/logos/rappi.png",
       "logo_source": "hosted",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "rappi rappi.com.ar rappi rappi argentina logo rappi png delivery"
     },
     {
@@ -3849,7 +3849,7 @@
       "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=ubereats.com&sz=128",
       "logo_source": "google",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "uber eats ubereats.com uber-eats"
     },
     {
@@ -3860,7 +3860,7 @@
       "catalog_logo_url": "/logos/morfy.png",
       "logo_source": "hosted",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "morfy www.morfy.app morfy"
     },
     {
@@ -3871,7 +3871,7 @@
       "catalog_logo_url": "/logos/mcdonald-s.png",
       "logo_source": "hosted",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "mcdonald's www.mcdonalds.com.ar mcdonald-s"
     },
     {
@@ -3882,7 +3882,7 @@
       "catalog_logo_url": "/logos/mostaza.png",
       "logo_source": "hosted",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "mostaza www.mostazaweb.com.ar mostaza"
     },
     {
@@ -3893,7 +3893,7 @@
       "catalog_logo_url": "/logos/burger-king.png",
       "logo_source": "hosted",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "burger king www.burgerking.com.ar burger-king"
     },
     {
@@ -3904,18 +3904,18 @@
       "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=elclubdelamilanesa.com&sz=128",
       "logo_source": "google",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "el club de la milanesa elclubdelamilanesa.com el-club-de-la-milanesa"
     },
     {
-      "name": "Almac\u00e9n de Pizzas",
+      "name": "Almacén de Pizzas",
       "domain": "almacendepizzas.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=almacendepizzas.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/almacendepizzas.com.ico",
       "catalog_logo_url": "/logos/almacen-de-pizzas.png",
       "logo_source": "hosted",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "almacen de pizzas almacendepizzas.com almacen-de-pizzas"
     },
     {
@@ -3926,22 +3926,22 @@
       "catalog_logo_url": "/logos/starbucks.png",
       "logo_source": "hosted",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "starbucks www.starbucks.com.ar starbucks"
     },
     {
-      "name": "Caf\u00e9 Mart\u00ednez",
+      "name": "Café Martínez",
       "domain": "www.cafemartinez.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.cafemartinez.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.cafemartinez.com.ico",
       "catalog_logo_url": "/logos/cafe-martinez.png",
       "logo_source": "hosted",
       "categoryId": "gastronomia",
-      "categoryName": "Gastronom\u00eda",
+      "categoryName": "Gastronomía",
       "searchText": "cafe martinez www.cafemartinez.com cafe-martinez"
     },
     {
-      "name": "Aerol\u00edneas Argentinas",
+      "name": "Aerolíneas Argentinas",
       "domain": "aerolineas.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=aerolineas.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/aerolineas.com.ar.ico",
@@ -4172,7 +4172,7 @@
       "searchText": "tripadvisor tripadvisor.com.ar tripadvisor"
     },
     {
-      "name": "Gol Linhas A\u00e9reas",
+      "name": "Gol Linhas Aéreas",
       "domain": "voegol.com.br",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=voegol.com.br&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/voegol.com.br.ico",
@@ -4201,7 +4201,7 @@
       "catalog_logo_url": "/logos/edenor.png",
       "logo_source": "hosted",
       "categoryId": "energia",
-      "categoryName": "Energ\u00eda",
+      "categoryName": "Energía",
       "searchText": "edenor edenor.com edenor"
     },
     {
@@ -4212,7 +4212,7 @@
       "catalog_logo_url": "/logos/camuzzi-gas.png",
       "logo_source": "hosted",
       "categoryId": "energia",
-      "categoryName": "Energ\u00eda",
+      "categoryName": "Energía",
       "searchText": "camuzzi gas camuzzigas.com camuzzi-gas"
     },
     {
@@ -4223,18 +4223,18 @@
       "catalog_logo_url": "/logos/metrogas.png",
       "logo_source": "hosted",
       "categoryId": "energia",
-      "categoryName": "Energ\u00eda",
+      "categoryName": "Energía",
       "searchText": "metrogas metrogas.com.ar metrogas"
     },
     {
-      "name": "Pampa Energ\u00eda",
+      "name": "Pampa Energía",
       "domain": "pampa.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=pampa.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/pampa.com.ico",
       "catalog_logo_url": "/logos/pampa-energia.png",
       "logo_source": "hosted",
       "categoryId": "energia",
-      "categoryName": "Energ\u00eda",
+      "categoryName": "Energía",
       "searchText": "pampa energia pampa.com pampa-energia"
     },
     {
@@ -4245,7 +4245,7 @@
       "catalog_logo_url": "/logos/tgs.png",
       "logo_source": "hosted",
       "categoryId": "energia",
-      "categoryName": "Energ\u00eda",
+      "categoryName": "Energía",
       "searchText": "tgs www.tgs.com.ar tgs"
     },
     {
@@ -4256,7 +4256,7 @@
       "catalog_logo_url": "/logos/tecpetrol.png",
       "logo_source": "hosted",
       "categoryId": "energia",
-      "categoryName": "Energ\u00eda",
+      "categoryName": "Energía",
       "searchText": "tecpetrol tecpetrol.com tecpetrol"
     },
     {
