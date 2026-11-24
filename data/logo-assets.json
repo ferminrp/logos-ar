@@ -483,9 +483,7 @@
       "thumb": true
     },
     "grimoldi": {
-      "tone": "dark",
-      "thumb": true,
-      "thumbTone": "dark"
+      "thumb": true
     },
     "guaymallen": {
       "svg": true,
@@ -565,7 +563,9 @@
       "thumbTone": "dark"
     },
     "jeep": {
-      "thumb": true
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
     },
     "jerarquicos-salud": {
       "thumb": true
@@ -584,9 +584,7 @@
       "thumb": true
     },
     "kia": {
-      "tone": "dark",
-      "thumb": true,
-      "thumbTone": "dark"
+      "thumb": true
     },
     "kosiuko": {
       "tone": "dark",
@@ -629,6 +627,7 @@
       "thumbTone": "dark"
     },
     "latam": {
+      "tone": "dark",
       "thumb": true
     },
     "ledesma": {
@@ -667,6 +666,7 @@
       "thumbTone": "dark"
     },
     "marriott": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -799,6 +799,7 @@
       "thumbTone": "dark"
     },
     "omint": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
