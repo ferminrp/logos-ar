@@ -1302,5 +1302,9 @@
   "www.osperyh.org.ar": {
     "logoUrl": "/logos/osperyh.png",
     "logoSource": "hosted"
+  },
+  "www.personal.com.ar": {
+    "logoUrl": "/logos/personal-pay.png",
+    "logoSource": "hosted"
   }
 }

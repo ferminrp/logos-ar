@@ -136,8 +136,7 @@
     },
     "banco-entre-rios-bersa": {
       "tone": "dark",
-      "thumb": true,
-      "thumbTone": "dark"
+      "thumb": true
     },
     "banco-galicia": {
       "thumb": true
@@ -268,6 +267,9 @@
       "thumb": true,
       "thumbTone": "dark"
     },
+    "carrefour-banco": {
+      "thumb": true
+    },
     "casa-del-audio": {
       "thumb": true
     },
@@ -357,6 +359,9 @@
       "thumbTone": "dark"
     },
     "crypto-com": {
+      "thumb": true
+    },
+    "curve": {
       "thumb": true
     },
     "decrypto": {
@@ -623,6 +628,10 @@
       "thumb": true,
       "thumbTone": "dark"
     },
+    "lemon-cash": {
+      "thumb": true,
+      "thumbTone": "dark"
+    },
     "lido": {
       "thumb": true
     },
@@ -834,6 +843,9 @@
       "thumb": true
     },
     "pedidosya": {
+      "thumb": true
+    },
+    "personal-pay": {
       "thumb": true
     },
     "peugeot": {
