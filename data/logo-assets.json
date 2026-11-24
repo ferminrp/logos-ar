@@ -134,6 +134,9 @@
     "banco-de-valores": {
       "thumb": true
     },
+    "banco-del-sol": {
+      "thumb": true
+    },
     "banco-entre-rios-bersa": {
       "tone": "dark",
       "thumb": true
@@ -189,6 +192,9 @@
       "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
+    },
+    "bice": {
+      "thumb": true
     },
     "bimbo": {
       "thumb": true
@@ -390,6 +396,9 @@
       "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
+    },
+    "edenor": {
+      "thumb": true
     },
     "el-destape": {
       "thumb": true
@@ -883,9 +892,7 @@
       "thumb": true
     },
     "ppi": {
-      "tone": "light",
-      "thumb": true,
-      "thumbTone": "light"
+      "thumb": true
     },
     "prevencion-salud": {
       "thumb": true

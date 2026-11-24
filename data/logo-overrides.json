@@ -1306,5 +1306,17 @@
   "www.personal.com.ar": {
     "logoUrl": "/logos/personal-pay.png",
     "logoSource": "hosted"
+  },
+  "bancodelsol.com": {
+    "logoUrl": "/logos/banco-del-sol.png",
+    "logoSource": "hosted"
+  },
+  "www.bice.com.ar": {
+    "logoUrl": "/logos/bice.png",
+    "logoSource": "hosted"
+  },
+  "edenor.com": {
+    "logoUrl": "/logos/edenor.png",
+    "logoSource": "hosted"
   }
 }
