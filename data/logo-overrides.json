@@ -1335,10 +1335,6 @@
     "logoUrl": "/logos/cafe-martinez.png",
     "logoSource": "hosted"
   },
-  "carrefour.com.ar": {
-    "logoUrl": "/logos/carrefour.png",
-    "logoSource": "hosted"
-  },
   "www.bancodeserviciosfinancieros.com.ar": {
     "logoUrl": "/logos/carrefour-banco.png",
     "logoSource": "hosted"
@@ -1367,16 +1363,8 @@
     "logoUrl": "/logos/easy.png",
     "logoSource": "hosted"
   },
-  "ethereum.org": {
-    "logoUrl": "/logos/ethereum.png",
-    "logoSource": "hosted"
-  },
   "fedpat.com.ar": {
     "logoUrl": "/logos/federacion-patronal-seguros.png",
-    "logoSource": "hosted"
-  },
-  "www.genommalab.com": {
-    "logoUrl": "/logos/genomma-lab.png",
     "logoSource": "hosted"
   },
   "go.dev": {
@@ -1399,10 +1387,6 @@
     "logoUrl": "/logos/pagina-12.png",
     "logoSource": "hosted"
   },
-  "payoneer.com": {
-    "logoUrl": "/logos/payoneer.png",
-    "logoSource": "hosted"
-  },
   "perfil.com": {
     "logoUrl": "/logos/perfil.png",
     "logoSource": "hosted"
@@ -1413,10 +1397,6 @@
   },
   "pumaenergyarg.com.ar": {
     "logoUrl": "/logos/puma-energy.png",
-    "logoSource": "hosted"
-  },
-  "www.python.org": {
-    "logoUrl": "/logos/python.png",
     "logoSource": "hosted"
   },
   "www.tgs.com.ar": {
@@ -1481,14 +1461,6 @@
   },
   "www.lacapital.com.ar": {
     "logoUrl": "/logos/la-capital.png",
-    "logoSource": "hosted"
-  },
-  "fiat.com.ar": {
-    "logoUrl": "/logos/fiat.png",
-    "logoSource": "hosted"
-  },
-  "porsche.com": {
-    "logoUrl": "/logos/porsche.png",
     "logoSource": "hosted"
   },
   "nestle.com.ar": {

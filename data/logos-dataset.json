@@ -1,5 +1,5 @@
 {
-  "version": "52a1f7d82f98",
+  "version": "200f6c9d802f",
   "totalItems": 396,
   "items": [
     {
@@ -469,8 +469,8 @@
       "domain": "payoneer.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=payoneer.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/payoneer.com.ico",
-      "catalog_logo_url": "/logos/payoneer.png",
-      "logo_source": "hosted",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=payoneer.com&sz=128",
+      "logo_source": "google",
       "categoryId": "fintechs",
       "categoryName": "Fintechs",
       "searchText": "payoneer payoneer.com payoneer"
@@ -953,8 +953,8 @@
       "domain": "ethereum.org",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=ethereum.org&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/ethereum.org.ico",
-      "catalog_logo_url": "/logos/ethereum.png",
-      "logo_source": "hosted",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=ethereum.org&sz=128",
+      "logo_source": "google",
       "categoryId": "crypto",
       "categoryName": "Crypto",
       "searchText": "ethereum ethereum.org ethereum"
@@ -1173,8 +1173,8 @@
       "domain": "www.python.org",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.python.org&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.python.org.ico",
-      "catalog_logo_url": "/logos/python.png",
-      "logo_source": "hosted",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=www.python.org&sz=128",
+      "logo_source": "google",
       "categoryId": "tecnologias",
       "categoryName": "Tecnolog\u00edas",
       "searchText": "python www.python.org python"
@@ -1635,8 +1635,8 @@
       "domain": "www.genommalab.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.genommalab.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.genommalab.com.ico",
-      "catalog_logo_url": "/logos/genomma-lab.png",
-      "logo_source": "hosted",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=www.genommalab.com&sz=128",
+      "logo_source": "google",
       "categoryId": "acciones",
       "categoryName": "Acciones",
       "searchText": "genomma lab www.genommalab.com genomma-lab"
@@ -2064,8 +2064,8 @@
       "domain": "carrefour.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=carrefour.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/carrefour.com.ar.ico",
-      "catalog_logo_url": "/logos/carrefour.png",
-      "logo_source": "hosted",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=carrefour.com.ar&sz=128",
+      "logo_source": "google",
       "categoryId": "retail",
       "categoryName": "Retail",
       "searchText": "carrefour carrefour.com.ar carrefour"
@@ -2779,8 +2779,8 @@
       "domain": "fiat.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=fiat.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/fiat.com.ar.ico",
-      "catalog_logo_url": "/logos/fiat.png",
-      "logo_source": "hosted",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=fiat.com.ar&sz=128",
+      "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
       "searchText": "fiat fiat.com.ar fiat"
@@ -2977,8 +2977,8 @@
       "domain": "porsche.com",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=porsche.com&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/porsche.com.ico",
-      "catalog_logo_url": "/logos/porsche.png",
-      "logo_source": "hosted",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=porsche.com&sz=128",
+      "logo_source": "google",
       "categoryId": "automotrices",
       "categoryName": "Automotrices",
       "searchText": "porsche porsche.com porsche porche"
