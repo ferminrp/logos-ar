@@ -1,5 +1,5 @@
 {
-  "version": "52a1f7d82f98",
+  "version": "47b9d0b5e831",
   "totalItems": 396,
   "items": [
     {
@@ -1965,8 +1965,8 @@
       "domain": "www.suizoargentina.com.ar",
       "google_domain": "https://s2.googleusercontent.com/s2/favicons?domain=www.suizoargentina.com.ar&sz=128",
       "duck_domain": "https://icons.duckduckgo.com/ip3/www.suizoargentina.com.ar.ico",
-      "catalog_logo_url": "/logos/clinica-y-maternidad-suizo-argentina.png",
-      "logo_source": "hosted",
+      "catalog_logo_url": "https://s2.googleusercontent.com/s2/favicons?domain=www.suizoargentina.com.ar&sz=128",
+      "logo_source": "google",
       "categoryId": "sanatorios",
       "categoryName": "Sanatorios",
       "searchText": "clinica y maternidad suizo argentina www.suizoargentina.com.ar clinica-y-maternidad-suizo-argentina"
