@@ -20,7 +20,7 @@ Preconditions:
 - Server running and doctor pass
 
 - **Search.** `GET /api/logos?q=galicia&limit=5` returns 200, JSON with `items` length ≥ 1, and `total` ≥ 1.
-- **Isotipo field.** Items for brands with a catalog isotipo expose `isotipoSvgUrl` pointing at `/logos/<slug>/isotipo.svg` (doctor asserts on `mercado-pago`).
+- **Isotipo field.** Items for brands with a catalog isotipo expose `isotipoSvgUrl` pointing at `/logos/<slug>/isotipo.svg` (doctor asserts on `mercado-pago` and batch-3 `personal-pay`).
 - **GSC alias.** `GET /api/logos?q=meli&limit=5` matches Mercado Libre via dataset `searchText` (also covers typo-style queries such as `porche` → Porsche when present in `searchText`).
 - **Category.** `GET /api/logos?category=bancos&limit=3` returns only `categoryId` bancos when category is valid.
 - **Automated.** Included in `pnpm verify:loguitos doctor` (galicia search assertion).
