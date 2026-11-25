@@ -8,6 +8,25 @@ const redirectMap = new Map(
   ]),
 )
 
+/** Normalize paths before permanent redirect lookup (`trailingSlash: never`). */
+export function normalizePathnameForPermanentRedirect(pathname: string): string {
+  if (pathname.length > 1 && pathname.endsWith('/')) {
+    return pathname.slice(0, -1)
+  }
+  return pathname
+}
+
+export function getPermanentRedirectDestination(pathname: string): string | null {
+  const normalized = normalizePathnameForPermanentRedirect(pathname)
+  return redirectMap.get(normalized) ?? null
+}
+
+/** Path after slug consolidation redirects, if any (for canonical host fixes in one hop). */
+export function resolvePermanentRedirectPath(pathname: string): string {
+  const normalized = normalizePathnameForPermanentRedirect(pathname)
+  return redirectMap.get(normalized) ?? normalized
+}
+
 /** Apply slug consolidation redirects (includes `/logos/*` assets). */
 export function maybePermanentSlugRedirect(request: Request): Response | null {
   if (request.method !== 'GET' && request.method !== 'HEAD') {
@@ -15,7 +34,7 @@ export function maybePermanentSlugRedirect(request: Request): Response | null {
   }
 
   const { pathname, search } = new URL(request.url)
-  const destination = redirectMap.get(pathname)
+  const destination = getPermanentRedirectDestination(pathname)
   if (!destination) {
     return null
   }

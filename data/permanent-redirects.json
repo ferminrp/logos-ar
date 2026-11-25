@@ -1,5 +1,20 @@
 [
   {
+    "source": "/logo/banco-nacion",
+    "destination": "/logo/banco-de-la-nacion-argentina",
+    "permanent": true
+  },
+  {
+    "source": "/logos/banco-nacion.png",
+    "destination": "/logos/banco-de-la-nacion-argentina.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/banco-nacion/isotipo.svg",
+    "destination": "/logos/banco-de-la-nacion-argentina/isotipo.svg",
+    "permanent": true
+  },
+  {
     "source": "/logo/bbva",
     "destination": "/logo/bbva-argentina",
     "permanent": true
@@ -82,6 +97,26 @@
   {
     "source": "/logos/uilo-bank-ex-wilobank.png",
     "destination": "/logos/uala.png",
+    "permanent": true
+  },
+  {
+    "source": "/logo/arca",
+    "destination": "/logo/arca-ex-afip",
+    "permanent": true
+  },
+  {
+    "source": "/logo/dia",
+    "destination": "/logo/supermercados-dia",
+    "permanent": true
+  },
+  {
+    "source": "/logos/dia.png",
+    "destination": "/logos/supermercados-dia.png",
+    "permanent": true
+  },
+  {
+    "source": "/logos/dia/isotipo.svg",
+    "destination": "/logos/supermercados-dia/isotipo.svg",
     "permanent": true
   },
   {

@@ -15,6 +15,8 @@ import {
 } from "./entity-seo.ts"
 
 const CTR_LOW_IMPRESSION_LOGO_SLUGS = [
+  "arca-ex-afip",
+  "jumbo",
   "mercado-pago",
   "mercado-libre",
   "tn",
@@ -25,6 +27,7 @@ const CTR_LOW_IMPRESSION_LOGO_SLUGS = [
   "naranja-x",
   "pedidosya",
   "brubank",
+  "banco-provincia",
 ] as const
 
 const GSC_PRIORITY_LOGO_SLUGS = [

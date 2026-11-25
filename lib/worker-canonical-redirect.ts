@@ -1,4 +1,5 @@
 import { getSiteUrl } from './site-url.ts'
+import { resolvePermanentRedirectPath } from './worker-permanent-redirect.ts'
 
 const PRODUCTION_HOSTS = new Set(['loguitos.app', 'www.loguitos.app'])
 
@@ -52,7 +53,7 @@ export function maybeCanonicalRedirect(
   }
 
   const target = new URL(canonical.origin)
-  target.pathname = pathname
+  target.pathname = resolvePermanentRedirectPath(pathname)
   target.search = requestUrl.search
 
   if (

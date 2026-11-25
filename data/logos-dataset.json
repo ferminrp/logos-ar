@@ -1,5 +1,5 @@
 {
-  "version": "edfa5b39e476",
+  "version": "1806f2979ceb",
   "totalItems": 396,
   "items": [
     {
@@ -11,7 +11,7 @@
       "logo_source": "hosted",
       "categoryId": "bancos",
       "categoryName": "Bancos",
-      "searchText": "banco de la nacion argentina bna.com.ar banco-de-la-nacion-argentina"
+      "searchText": "banco de la nacion argentina bna.com.ar banco-de-la-nacion-argentina bna banco nacion"
     },
     {
       "name": "Banco Santander Río",
@@ -1672,7 +1672,7 @@
       "logo_source": "google",
       "categoryId": "entes-estatales",
       "categoryName": "Entes estatales",
-      "searchText": "arca (ex afip) www.afip.gob.ar arca-ex-afip ex afip nuevo logo afip"
+      "searchText": "arca (ex afip) www.afip.gob.ar arca-ex-afip ex afip nuevo logo afip arca afip"
     },
     {
       "name": "AGIP",
@@ -2145,7 +2145,7 @@
       "logo_source": "hosted",
       "categoryId": "retail",
       "categoryName": "Retail",
-      "searchText": "supermercados dia supermercadosdia.com.ar supermercados-dia"
+      "searchText": "supermercados dia supermercadosdia.com.ar supermercados-dia supermercado dia supermercado dia dia"
     },
     {
       "name": "Makro",
@@ -3267,7 +3267,7 @@
       "logo_source": "hosted",
       "categoryId": "alimentos",
       "categoryName": "Alimentos y bebidas",
-      "searchText": "molino canuelas molinocanuelas.com molino-canuelas"
+      "searchText": "molino canuelas molinocanuelas.com molino-canuelas molinos canuelas molinos canuelas molinos canuelas"
     },
     {
       "name": "Ledesma",
@@ -3828,7 +3828,7 @@
       "logo_source": "hosted",
       "categoryId": "gastronomia",
       "categoryName": "Gastronomía",
-      "searchText": "pedidosya pedidosya.com.ar pedidosya pedidos ya logo pedidosya png delivery"
+      "searchText": "pedidosya pedidosya.com.ar pedidosya pedidos ya pedido ya logo pedidosya png delivery"
     },
     {
       "name": "Rappi",
