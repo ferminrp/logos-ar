@@ -523,19 +523,25 @@ async function doctor(): Promise<DoctorCheck[]> {
     }
   }
 
-  async function checkApiMercadoPagoIsotipo(): Promise<DoctorCheck> {
-    const name = "api-isotipo-mercado-pago"
+  async function checkApiIsotipoSlug(
+    name: string,
+    query: string,
+    slug: string,
+  ): Promise<DoctorCheck> {
     try {
-      const res = await fetch(`${baseUrl}/api/logos?q=mercado+pago&limit=5`)
+      const res = await fetch(
+        `${baseUrl}/api/logos?q=${encodeURIComponent(query)}&limit=8`,
+      )
       if (!res.ok) {
         return { name, ok: false, detail: `HTTP ${res.status}` }
       }
       const json = (await res.json()) as {
         items?: Array<{ slug?: string; isotipoSvgUrl?: string }>
       }
-      const row = (json.items ?? []).find((item) => item.slug === "mercado-pago")
-      if (!row?.isotipoSvgUrl?.includes("/logos/mercado-pago/isotipo.svg")) {
-        return { name, ok: false, detail: "missing isotipoSvgUrl on mercado-pago item" }
+      const row = (json.items ?? []).find((item) => item.slug === slug)
+      const expected = `/logos/${slug}/isotipo.svg`
+      if (!row?.isotipoSvgUrl?.includes(expected)) {
+        return { name, ok: false, detail: `missing isotipoSvgUrl on ${slug}` }
       }
       return { name, ok: true, detail: "isotipoSvgUrl present" }
     } catch (error) {
@@ -842,6 +848,12 @@ async function doctor(): Promise<DoctorCheck[]> {
       "isotipoSvgUrl",
     ),
     checkMcpToolCall(
+      "mcp-get_logo-isotipo-personal-pay",
+      "get_logo",
+      { slug: "personal-pay" },
+      "isotipoSvgUrl",
+    ),
+    checkMcpToolCall(
       "mcp-get_logo-slug-alias",
       "get_logo",
       { slug: "bbva" },
@@ -940,11 +952,42 @@ async function doctor(): Promise<DoctorCheck[]> {
       "/logos/mercado-pago/isotipo.svg",
       "isotipo",
     ),
-    checkApiMercadoPagoIsotipo(),
+    checkHostedCatalogAsset(
+      "hosted-logo-personal-pay",
+      "/logos/personal-pay.png",
+      "png",
+    ),
+    checkHostedCatalogAsset(
+      "hosted-isotipo-personal-pay",
+      "/logos/personal-pay/isotipo.svg",
+      "isotipo",
+    ),
+    checkHostedCatalogAsset(
+      "hosted-isotipo-ledger",
+      "/logos/ledger/isotipo.svg",
+      "isotipo",
+    ),
+    checkApiIsotipoSlug("api-isotipo-mercado-pago", "mercado pago", "mercado-pago"),
+    checkApiIsotipoSlug("api-isotipo-personal-pay", "personal pay", "personal-pay"),
     checkMarkdownTwinLogo(),
     check("logo-mercado-pago-isotipo-ui", `${baseUrl}/logo/mercado-pago`, (_res, body) => {
       if (!body.includes("Descargar isotipo SVG") && !body.includes("isotipo")) {
         throw new Error("missing isotipo download UI on mercado-pago")
+      }
+    }),
+    check("logo-personal-pay-isotipo-ui", `${baseUrl}/logo/personal-pay`, (_res, body) => {
+      if (!body.includes("Descargar isotipo SVG") && !body.includes("isotipo")) {
+        throw new Error("missing isotipo download UI on personal-pay")
+      }
+    }),
+    check("logo-ledger-preview-tone", `${baseUrl}/logo/ledger`, (_res, body) => {
+      if (!body.includes("logo-ink-dark")) {
+        throw new Error("ledger preview missing logo-ink-dark (dark wordmark tile)")
+      }
+    }),
+    check("logo-exactly-preview-tone", `${baseUrl}/logo/exactly`, (_res, body) => {
+      if (!body.includes("logo-ink-dark")) {
+        throw new Error("exactly preview missing logo-ink-dark (TONE_OVERRIDES)")
       }
     }),
     check("logo-page-json-ld", `${baseUrl}/logo/mercado-pago`, (_res, body) => {
