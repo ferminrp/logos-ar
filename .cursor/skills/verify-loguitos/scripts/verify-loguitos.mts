@@ -46,6 +46,14 @@ function assertCompactEntityTitle(title: string, slug: string): void {
   }
 }
 
+/** Hosted detail preview is h-64; related thumbs use h-5 w-5 with the same tone class. */
+function hostedMainPreviewHasToneClass(body: string, toneClass: string): boolean {
+  const re = new RegExp(
+    `class="(?=[^"]*h-64 w-64)(?=[^"]*${toneClass})[^"]*"`,
+  )
+  return re.test(body)
+}
+
 type DoctorCheck = {
   name: string
   ok: boolean
@@ -981,12 +989,12 @@ async function doctor(): Promise<DoctorCheck[]> {
       }
     }),
     check("logo-ledger-preview-tone", `${baseUrl}/logo/ledger`, (_res, body) => {
-      if (!body.includes("logo-ink-dark")) {
+      if (!hostedMainPreviewHasToneClass(body, "logo-ink-dark")) {
         throw new Error("ledger preview missing logo-ink-dark (dark wordmark tile)")
       }
     }),
     check("logo-exactly-preview-tone", `${baseUrl}/logo/exactly`, (_res, body) => {
-      if (!body.includes("logo-ink-dark")) {
+      if (!hostedMainPreviewHasToneClass(body, "logo-ink-dark")) {
         throw new Error("exactly preview missing logo-ink-dark (TONE_OVERRIDES)")
       }
     }),
