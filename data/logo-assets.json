@@ -39,6 +39,11 @@
       "thumb": true,
       "thumbTone": "dark"
     },
+    "allianz": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
     "almacen-de-pizzas": {
       "thumb": true
     },
@@ -58,6 +63,9 @@
       "thumbTone": "light"
     },
     "anmat": {
+      "thumb": true
+    },
+    "anses": {
       "thumb": true
     },
     "antina": {
@@ -131,7 +139,13 @@
     "banco-de-la-pampa": {
       "thumb": true
     },
+    "banco-de-tierra-del-fuego": {
+      "thumb": true
+    },
     "banco-de-valores": {
+      "thumb": true
+    },
+    "banco-del-sol": {
       "thumb": true
     },
     "banco-entre-rios-bersa": {
@@ -177,6 +191,11 @@
     "bbva-argentina": {
       "thumb": true
     },
+    "bcra": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
     "beaudroit": {
       "thumb": true
     },
@@ -189,6 +208,9 @@
       "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
+    },
+    "bice": {
+      "thumb": true
     },
     "bimbo": {
       "thumb": true
@@ -253,6 +275,11 @@
     "cabify": {
       "thumb": true
     },
+    "cafe-martinez": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
     "cagnoli": {
       "svg": true,
       "thumb": true
@@ -289,6 +316,11 @@
     "cerveceria-patagonia": {
       "thumb": true
     },
+    "cerveceria-quilmes": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
     "cetrogar": {
       "svg": true,
       "thumb": true
@@ -317,6 +349,9 @@
       "thumb": true
     },
     "clarin": {
+      "thumb": true
+    },
+    "claro-argentina": {
       "thumb": true
     },
     "claro-pay": {
@@ -358,6 +393,9 @@
       "thumb": true,
       "thumbTone": "dark"
     },
+    "cronica": {
+      "thumb": true
+    },
     "crypto-com": {
       "thumb": true
     },
@@ -374,6 +412,15 @@
     "despegar": {
       "thumb": true
     },
+    "diarco": {
+      "thumb": true
+    },
+    "diario-uno": {
+      "thumb": true
+    },
+    "disco": {
+      "thumb": true
+    },
     "docker": {
       "thumb": true
     },
@@ -383,6 +430,9 @@
     "dolarito": {
       "thumb": true
     },
+    "dollar-rent-a-car": {
+      "thumb": true
+    },
     "don-satur": {
       "thumb": true
     },
@@ -390,6 +440,15 @@
       "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
+    },
+    "easy": {
+      "thumb": true
+    },
+    "edenor": {
+      "thumb": true
+    },
+    "el-cronista": {
+      "thumb": true
     },
     "el-destape": {
       "thumb": true
@@ -409,6 +468,7 @@
       "thumb": true
     },
     "ethereum": {
+      "tone": "light",
       "thumb": true
     },
     "exactly": {
@@ -424,6 +484,9 @@
       "thumb": true
     },
     "farmacity": {
+      "thumb": true
+    },
+    "federacion-patronal-seguros": {
       "thumb": true
     },
     "fiat": {
@@ -459,11 +522,15 @@
       "thumbTone": "dark"
     },
     "genomma-lab": {
+      "tone": "dark",
       "thumb": true
     },
     "github": {
       "thumb": true,
       "thumbTone": "dark"
+    },
+    "go": {
+      "thumb": true
     },
     "gol-linhas-aereas": {
       "thumb": true
@@ -472,12 +539,13 @@
       "thumb": true
     },
     "grimoldi": {
-      "tone": "dark",
-      "thumb": true,
-      "thumbTone": "dark"
+      "thumb": true
     },
     "guaymallen": {
       "svg": true,
+      "thumb": true
+    },
+    "gulf": {
       "thumb": true
     },
     "gwm-great-wall": {
@@ -489,6 +557,14 @@
     },
     "heineken": {
       "thumb": true
+    },
+    "hertz": {
+      "thumb": true
+    },
+    "hilton": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
     },
     "honda": {
       "thumb": true
@@ -548,16 +624,26 @@
     "iosfa": {
       "thumb": true
     },
+    "isuzu": {
+      "thumb": true
+    },
     "iveco": {
       "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
     "jeep": {
-      "thumb": true
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
     },
     "jerarquicos-salud": {
       "thumb": true
+    },
+    "jetsmart": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
     },
     "jumbo": {
       "thumb": true
@@ -573,9 +659,7 @@
       "thumb": true
     },
     "kia": {
-      "tone": "dark",
-      "thumb": true,
-      "thumbTone": "dark"
+      "thumb": true
     },
     "kosiuko": {
       "tone": "dark",
@@ -595,6 +679,12 @@
       "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
+    },
+    "la-caja-seguros": {
+      "thumb": true
+    },
+    "la-capital": {
+      "thumb": true
     },
     "la-nacion": {
       "thumb": true
@@ -618,6 +708,7 @@
       "thumbTone": "dark"
     },
     "latam": {
+      "tone": "dark",
       "thumb": true
     },
     "ledesma": {
@@ -629,6 +720,7 @@
       "thumbTone": "dark"
     },
     "lemon-cash": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -641,6 +733,11 @@
     "loma-negra": {
       "thumb": true
     },
+    "los-andes-mendoza": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
     "makro": {
       "tone": "dark",
       "thumb": true,
@@ -649,12 +746,18 @@
     "mapfre": {
       "thumb": true
     },
+    "maria-cher": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
     "markova": {
       "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
     "marriott": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -679,6 +782,11 @@
       "svg": true,
       "thumb": true
     },
+    "mercedes-benz": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
     "metamask": {
       "thumb": true
     },
@@ -690,6 +798,9 @@
       "thumb": true
     },
     "mi-argentina": {
+      "thumb": true
+    },
+    "mimo": {
       "thumb": true
     },
     "mini": {
@@ -711,7 +822,15 @@
     "molino-canuelas": {
       "thumb": true
     },
+    "mondelez": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
     "moneygram": {
+      "thumb": true
+    },
+    "morfy": {
       "thumb": true
     },
     "morpho": {
@@ -734,6 +853,9 @@
     },
     "neon": {
       "tone": "dark",
+      "thumb": true
+    },
+    "nestle": {
       "thumb": true
     },
     "netlify": {
@@ -787,6 +909,7 @@
       "thumbTone": "dark"
     },
     "omint": {
+      "tone": "dark",
       "thumb": true,
       "thumbTone": "dark"
     },
@@ -816,6 +939,11 @@
     "osuthgra": {
       "thumb": true
     },
+    "pagina-12": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
+    },
     "pagomiscuentas": {
       "thumb": true
     },
@@ -843,6 +971,14 @@
       "thumb": true
     },
     "pedidosya": {
+      "thumb": true
+    },
+    "pepsico": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
+    },
+    "perfil": {
       "thumb": true
     },
     "personal-pay": {
@@ -883,9 +1019,7 @@
       "thumb": true
     },
     "ppi": {
-      "tone": "light",
-      "thumb": true,
-      "thumbTone": "light"
+      "thumb": true
     },
     "prevencion-salud": {
       "thumb": true
@@ -907,7 +1041,13 @@
       "thumb": true,
       "thumbTone": "dark"
     },
+    "puma-energy": {
+      "thumb": true
+    },
     "python": {
+      "thumb": true
+    },
+    "radisson": {
       "thumb": true
     },
     "rainbow": {
@@ -919,6 +1059,9 @@
     },
     "rapanui": {
       "svg": true,
+      "thumb": true
+    },
+    "rappi": {
       "thumb": true
     },
     "rapsodia": {
@@ -989,6 +1132,9 @@
     "shell": {
       "thumb": true
     },
+    "sherman": {
+      "thumb": true
+    },
     "sla": {
       "thumb": true
     },
@@ -1051,6 +1197,9 @@
     "telecentro": {
       "thumb": true
     },
+    "telefe": {
+      "thumb": true
+    },
     "tenaris": {
       "thumb": true
     },
@@ -1059,6 +1208,11 @@
     },
     "tesla": {
       "thumb": true
+    },
+    "tgs": {
+      "tone": "light",
+      "thumb": true,
+      "thumbTone": "light"
     },
     "tienda-dolar": {
       "thumb": true
@@ -1082,6 +1236,7 @@
       "thumbTone": "dark"
     },
     "toyota": {
+      "tone": "dark",
       "thumb": true
     },
     "transener": {
@@ -1115,6 +1270,9 @@
       "thumb": true
     },
     "upstash": {
+      "thumb": true
+    },
+    "vea": {
       "thumb": true
     },
     "vercel": {
@@ -1157,6 +1315,11 @@
     },
     "ypf": {
       "thumb": true
+    },
+    "zara": {
+      "tone": "dark",
+      "thumb": true,
+      "thumbTone": "dark"
     }
   }
 }

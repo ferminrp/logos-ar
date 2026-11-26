@@ -130,6 +130,11 @@
     "permanent": true
   },
   {
+    "source": "/logos/edenor-211.png",
+    "destination": "/logos/edenor.png",
+    "permanent": true
+  },
+  {
     "source": "/logo/metrogas-214",
     "destination": "/logo/metrogas",
     "permanent": true

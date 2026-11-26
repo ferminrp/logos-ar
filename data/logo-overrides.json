@@ -488,8 +488,8 @@
     "logoSource": "hosted"
   },
   "quilmes.com.ar": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=quilmes.com.ar&sz=256",
-    "logoSource": "google"
+    "logoUrl": "/logos/cerveceria-quilmes.png",
+    "logoSource": "hosted"
   },
   "www.cervezapatagonia.com.ar": {
     "logoUrl": "/logos/cerveceria-patagonia.png",
@@ -520,12 +520,12 @@
     "logoSource": "hosted"
   },
   "mimo.com.ar": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=mimo.com.ar&sz=256",
-    "logoSource": "google"
+    "logoUrl": "/logos/mimo.png",
+    "logoSource": "hosted"
   },
   "zara.com": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=zara.com&sz=256",
-    "logoSource": "google"
+    "logoUrl": "/logos/zara.png",
+    "logoSource": "hosted"
   },
   "adidas.com.ar": {
     "logoUrl": "/logos/adidas.png",
@@ -544,8 +544,8 @@
     "logoSource": "hosted"
   },
   "rappi.com.ar": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=rappi.com.ar&sz=256",
-    "logoSource": "google"
+    "logoUrl": "/logos/rappi.png",
+    "logoSource": "hosted"
   },
   "www.mostazaweb.com.ar": {
     "logoUrl": "/logos/mostaza.png",
@@ -588,8 +588,8 @@
     "logoSource": "hosted"
   },
   "radisson.com.ar": {
-    "logoUrl": "https://s2.googleusercontent.com/s2/favicons?domain=radisson.com.ar&sz=256",
-    "logoSource": "google"
+    "logoUrl": "/logos/radisson.png",
+    "logoSource": "hosted"
   },
   "expedia.com.ar": {
     "logoUrl": "/logos/expedia.png",
@@ -1305,6 +1305,202 @@
   },
   "www.personal.com.ar": {
     "logoUrl": "/logos/personal-pay.png",
+    "logoSource": "hosted"
+  },
+  "bancodelsol.com": {
+    "logoUrl": "/logos/banco-del-sol.png",
+    "logoSource": "hosted"
+  },
+  "www.bice.com.ar": {
+    "logoUrl": "/logos/bice.png",
+    "logoSource": "hosted"
+  },
+  "edenor.com": {
+    "logoUrl": "/logos/edenor.png",
+    "logoSource": "hosted"
+  },
+  "www.allianz.com.ar": {
+    "logoUrl": "/logos/allianz.png",
+    "logoSource": "hosted"
+  },
+  "www.btf.com.ar": {
+    "logoUrl": "/logos/banco-de-tierra-del-fuego.png",
+    "logoSource": "hosted"
+  },
+  "bcra.gob.ar": {
+    "logoUrl": "/logos/bcra.png",
+    "logoSource": "hosted"
+  },
+  "www.cafemartinez.com": {
+    "logoUrl": "/logos/cafe-martinez.png",
+    "logoSource": "hosted"
+  },
+  "www.bancodeserviciosfinancieros.com.ar": {
+    "logoUrl": "/logos/carrefour-banco.png",
+    "logoSource": "hosted"
+  },
+  "www.claro.com.ar": {
+    "logoUrl": "/logos/claro-argentina.png",
+    "logoSource": "hosted"
+  },
+  "curve.finance": {
+    "logoUrl": "/logos/curve.png",
+    "logoSource": "hosted"
+  },
+  "diariouno.com.ar": {
+    "logoUrl": "/logos/diario-uno.png",
+    "logoSource": "hosted"
+  },
+  "disco.com.ar": {
+    "logoUrl": "/logos/disco.png",
+    "logoSource": "hosted"
+  },
+  "dollar.com": {
+    "logoUrl": "/logos/dollar-rent-a-car.png",
+    "logoSource": "hosted"
+  },
+  "easy.com.ar": {
+    "logoUrl": "/logos/easy.png",
+    "logoSource": "hosted"
+  },
+  "fedpat.com.ar": {
+    "logoUrl": "/logos/federacion-patronal-seguros.png",
+    "logoSource": "hosted"
+  },
+  "go.dev": {
+    "logoUrl": "/logos/go.png",
+    "logoSource": "hosted"
+  },
+  "hertz.com.ar": {
+    "logoUrl": "/logos/hertz.png",
+    "logoSource": "hosted"
+  },
+  "lemon.me": {
+    "logoUrl": "/logos/lemon-cash.png",
+    "logoSource": "hosted"
+  },
+  "losandes.com.ar": {
+    "logoUrl": "/logos/los-andes-mendoza.png",
+    "logoSource": "hosted"
+  },
+  "pagina12.com.ar": {
+    "logoUrl": "/logos/pagina-12.png",
+    "logoSource": "hosted"
+  },
+  "perfil.com": {
+    "logoUrl": "/logos/perfil.png",
+    "logoSource": "hosted"
+  },
+  "pumaenergyarg.com.ar": {
+    "logoUrl": "/logos/puma-energy.png",
+    "logoSource": "hosted"
+  },
+  "www.tgs.com.ar": {
+    "logoUrl": "/logos/tgs.png",
+    "logoSource": "hosted"
+  },
+  "vea.com.ar": {
+    "logoUrl": "/logos/vea.png",
+    "logoSource": "hosted"
+  },
+  "diarco.com.ar": {
+    "logoUrl": "/logos/diarco.png",
+    "logoSource": "hosted"
+  },
+  "sherman.ar": {
+    "logoUrl": "/logos/sherman.png",
+    "logoSource": "hosted"
+  },
+  "anses.gob.ar": {
+    "logoUrl": "/logos/anses.png",
+    "logoSource": "hosted"
+  },
+  "lacaja.com.ar": {
+    "logoUrl": "/logos/la-caja-seguros.png",
+    "logoSource": "hosted"
+  },
+  "jetsmart.com": {
+    "logoUrl": "/logos/jetsmart.png",
+    "logoSource": "hosted"
+  },
+  "www.isuzu.com.ar": {
+    "logoUrl": "/logos/isuzu.png",
+    "logoSource": "hosted"
+  },
+  "www.pepsico.com": {
+    "logoUrl": "/logos/pepsico.png",
+    "logoSource": "hosted"
+  },
+  "hilton.com": {
+    "logoUrl": "/logos/hilton.png",
+    "logoSource": "hosted"
+  },
+  "gulfcombustibles.com": {
+    "logoUrl": "/logos/gulf.png",
+    "logoSource": "hosted"
+  },
+  "mercedes-benz.com.ar": {
+    "logoUrl": "/logos/mercedes-benz.png",
+    "logoSource": "hosted"
+  },
+  "mondelezinternational.com": {
+    "logoUrl": "/logos/mondelez.png",
+    "logoSource": "hosted"
+  },
+  "cronista.com": {
+    "logoUrl": "/logos/el-cronista.png",
+    "logoSource": "hosted"
+  },
+  "mitelefe.com": {
+    "logoUrl": "/logos/telefe.png",
+    "logoSource": "hosted"
+  },
+  "www.lacapital.com.ar": {
+    "logoUrl": "/logos/la-capital.png",
+    "logoSource": "hosted"
+  },
+  "nestle.com.ar": {
+    "logoUrl": "/logos/nestle.png",
+    "logoSource": "hosted"
+  },
+  "www.morfy.app": {
+    "logoUrl": "/logos/morfy.png",
+    "logoSource": "hosted"
+  },
+  "cronica.com.ar": {
+    "logoUrl": "/logos/cronica.png",
+    "logoSource": "hosted"
+  },
+  "maria-cher.com.ar": {
+    "logoUrl": "/logos/maria-cher.png",
+    "logoSource": "hosted"
+  },
+  "carrefour.com.ar": {
+    "logoUrl": "/logos/carrefour.png",
+    "logoSource": "hosted"
+  },
+  "ethereum.org": {
+    "logoUrl": "/logos/ethereum.png",
+    "logoSource": "hosted"
+  },
+  "www.genommalab.com": {
+    "logoUrl": "/logos/genomma-lab.png",
+    "logoSource": "hosted"
+  },
+  "payoneer.com": {
+    "logoUrl": "/logos/payoneer.png",
+    "logoSource": "hosted"
+  },
+  "www.python.org": {
+    "logoUrl": "/logos/python.png",
+    "logoSource": "hosted"
+  },
+  "fiat.com.ar": {
+    "logoUrl": "/logos/fiat.png",
+    "logoSource": "hosted"
+  },
+  "porsche.com": {
+    "logoUrl": "/logos/porsche.png",
     "logoSource": "hosted"
   }
 }
